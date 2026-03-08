@@ -1,0 +1,3822 @@
+[
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "wins_above_replacement_all",
+    "stat_label": "Wins Above Replacement--all",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 9.7
+      },
+      {
+        "rank": 2,
+        "player": "Sánchez",
+        "first_name": null,
+        "team": "PHI",
+        "value": 8.0
+      },
+      {
+        "rank": 3,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 7.7
+      },
+      {
+        "rank": 4,
+        "player": "Skenes",
+        "first_name": null,
+        "team": "PIT",
+        "value": 7.7
+      },
+      {
+        "rank": 5,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 7.4
+      },
+      {
+        "rank": 6,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 7.1
+      },
+      {
+        "rank": 7,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 7.0
+      },
+      {
+        "rank": 8,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 6.8
+      },
+      {
+        "rank": 9,
+        "player": "Skubal",
+        "first_name": null,
+        "team": "DET",
+        "value": 6.5
+      },
+      {
+        "rank": 10,
+        "player": "Crochet",
+        "first_name": null,
+        "team": "BOS",
+        "value": 6.3
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "war_position_players",
+    "stat_label": "WAR Position Players",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 9.7
+      },
+      {
+        "rank": 2,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 7.4
+      },
+      {
+        "rank": 3,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 7.1
+      },
+      {
+        "rank": 4,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 7.0
+      },
+      {
+        "rank": 5,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 6.8
+      },
+      {
+        "rank": 6,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 6.6
+      },
+      {
+        "rank": 7,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 6.2
+      },
+      {
+        "rank": 8,
+        "player": "Hoerner",
+        "first_name": null,
+        "team": "CHC",
+        "value": 6.2
+      },
+      {
+        "rank": 9,
+        "player": "Seager",
+        "first_name": null,
+        "team": "TEX",
+        "value": 6.2
+      },
+      {
+        "rank": 10,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 6.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "offensive_war",
+    "stat_label": "Offensive WAR",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 9.4
+      },
+      {
+        "rank": 2,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 7.7
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 7.0
+      },
+      {
+        "rank": 4,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 6.8
+      },
+      {
+        "rank": 5,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 6.7
+      },
+      {
+        "rank": 6,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 6.7
+      },
+      {
+        "rank": 7,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 6.0
+      },
+      {
+        "rank": 8,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 5.8
+      },
+      {
+        "rank": 9,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 5.7
+      },
+      {
+        "rank": 10,
+        "player": "Henderson",
+        "first_name": null,
+        "team": "BAL",
+        "value": 5.6
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "defensive_war",
+    "stat_label": "Defensive WAR",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Clement",
+        "first_name": null,
+        "team": "TOR",
+        "value": 2.9
+      },
+      {
+        "rank": 2,
+        "player": "Rafaela",
+        "first_name": null,
+        "team": "BOS",
+        "value": 2.8
+      },
+      {
+        "rank": 3,
+        "player": "Betts",
+        "first_name": null,
+        "team": "LAD",
+        "value": 2.6
+      },
+      {
+        "rank": 4,
+        "player": "Walls",
+        "first_name": null,
+        "team": "TBR",
+        "value": 2.5
+      },
+      {
+        "rank": 5,
+        "player": "Hayes",
+        "first_name": null,
+        "team": "2TM",
+        "value": 2.4
+      },
+      {
+        "rank": 6,
+        "player": "Seager",
+        "first_name": null,
+        "team": "TEX",
+        "value": 2.3
+      },
+      {
+        "rank": 7,
+        "player": "Hoerner",
+        "first_name": null,
+        "team": "CHC",
+        "value": 2.3
+      },
+      {
+        "rank": 8,
+        "player": "Neto",
+        "first_name": null,
+        "team": "LAA",
+        "value": 2.2
+      },
+      {
+        "rank": 9,
+        "player": "Lopez",
+        "first_name": null,
+        "team": "MIA",
+        "value": 2.1
+      },
+      {
+        "rank": 10,
+        "player": "Fermin",
+        "first_name": null,
+        "team": "2TM",
+        "value": 2.1
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "batting_average",
+    "stat_label": "Batting Average",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 0.331
+      },
+      {
+        "rank": 2,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.311
+      },
+      {
+        "rank": 3,
+        "player": "Wilson",
+        "first_name": null,
+        "team": "ATH",
+        "value": 0.311
+      },
+      {
+        "rank": 4,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.309
+      },
+      {
+        "rank": 5,
+        "player": "Peña",
+        "first_name": null,
+        "team": "HOU",
+        "value": 0.304
+      },
+      {
+        "rank": 6,
+        "player": "Turner",
+        "first_name": null,
+        "team": "PHI",
+        "value": 0.304
+      },
+      {
+        "rank": 7,
+        "player": "Díaz",
+        "first_name": null,
+        "team": "TBR",
+        "value": 0.3
+      },
+      {
+        "rank": 8,
+        "player": "Hoerner",
+        "first_name": null,
+        "team": "CHC",
+        "value": 0.297
+      },
+      {
+        "rank": 9,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 0.295
+      },
+      {
+        "rank": 10,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "LAD",
+        "value": 0.295
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "on_base",
+    "stat_label": "On-Base%",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 0.457
+      },
+      {
+        "rank": 2,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.399
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 0.396
+      },
+      {
+        "rank": 4,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 0.392
+      },
+      {
+        "rank": 5,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.389
+      },
+      {
+        "rank": 6,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.381
+      },
+      {
+        "rank": 7,
+        "player": "Tucker",
+        "first_name": null,
+        "team": "CHC",
+        "value": 0.377
+      },
+      {
+        "rank": 8,
+        "player": "Marte",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.376
+      },
+      {
+        "rank": 10,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 0.372
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "slugging",
+    "stat_label": "Slugging %",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 0.688
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 0.622
+      },
+      {
+        "rank": 4,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 0.589
+      },
+      {
+        "rank": 5,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 0.563
+      },
+      {
+        "rank": 6,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.56
+      },
+      {
+        "rank": 7,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 0.551
+      },
+      {
+        "rank": 8,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.541
+      },
+      {
+        "rank": 9,
+        "player": "Langeliers",
+        "first_name": null,
+        "team": "ATH",
+        "value": 0.536
+      },
+      {
+        "rank": 10,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 0.535
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "on_base_plus_slugging",
+    "stat_label": "On-Base Plus Slugging",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 1.144
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 1.014
+      },
+      {
+        "rank": 4,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.959
+      },
+      {
+        "rank": 5,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 0.948
+      },
+      {
+        "rank": 6,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 0.928
+      },
+      {
+        "rank": 7,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 0.921
+      },
+      {
+        "rank": 8,
+        "player": "Marte",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.893
+      },
+      {
+        "rank": 9,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.883
+      },
+      {
+        "rank": 10,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 0.878
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "games_played",
+    "stat_label": "Games Played",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 163.0
+      },
+      {
+        "rank": 2,
+        "player": "Rooker",
+        "first_name": null,
+        "team": "ATH",
+        "value": 162.0
+      },
+      {
+        "rank": 2,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 162.0
+      },
+      {
+        "rank": 2,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 162.0
+      },
+      {
+        "rank": 2,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 162.0
+      },
+      {
+        "rank": 2,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 162.0
+      },
+      {
+        "rank": 7,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 161.0
+      },
+      {
+        "rank": 8,
+        "player": "Harris",
+        "first_name": null,
+        "team": "ATL",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Garcia",
+        "first_name": null,
+        "team": "KCR",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Pasquantino",
+        "first_name": null,
+        "team": "KCR",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Arozarena",
+        "first_name": null,
+        "team": "SEA",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 160.0
+      },
+      {
+        "rank": 8,
+        "player": "Adames",
+        "first_name": null,
+        "team": "SFG",
+        "value": 160.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "at_bats",
+    "stat_label": "At Bats",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 652.0
+      },
+      {
+        "rank": 2,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 644.0
+      },
+      {
+        "rank": 3,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 629.0
+      },
+      {
+        "rank": 4,
+        "player": "Rooker",
+        "first_name": null,
+        "team": "ATH",
+        "value": 626.0
+      },
+      {
+        "rank": 5,
+        "player": "Kwan",
+        "first_name": null,
+        "team": "CLE",
+        "value": 625.0
+      },
+      {
+        "rank": 6,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 624.0
+      },
+      {
+        "rank": 6,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 624.0
+      },
+      {
+        "rank": 8,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 623.0
+      },
+      {
+        "rank": 9,
+        "player": "Pasquantino",
+        "first_name": null,
+        "team": "KCR",
+        "value": 621.0
+      },
+      {
+        "rank": 10,
+        "player": "Duran",
+        "first_name": null,
+        "team": "BOS",
+        "value": 620.0
+      },
+      {
+        "rank": 10,
+        "player": "Arráez",
+        "first_name": null,
+        "team": "SDP",
+        "value": 620.0
+      },
+      {
+        "rank": 10,
+        "player": "Ramos",
+        "first_name": null,
+        "team": "SFG",
+        "value": 620.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "plate_appearances",
+    "stat_label": "Plate Appearances",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 732.0
+      },
+      {
+        "rank": 2,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 729.0
+      },
+      {
+        "rank": 3,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 727.0
+      },
+      {
+        "rank": 4,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 724.0
+      },
+      {
+        "rank": 4,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 724.0
+      },
+      {
+        "rank": 6,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 720.0
+      },
+      {
+        "rank": 7,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 715.0
+      },
+      {
+        "rank": 8,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 710.0
+      },
+      {
+        "rank": 9,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 709.0
+      },
+      {
+        "rank": 9,
+        "player": "Arozarena",
+        "first_name": null,
+        "team": "SEA",
+        "value": 709.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "runs_scored",
+    "stat_label": "Runs Scored",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 146.0
+      },
+      {
+        "rank": 2,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 137.0
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 120.0
+      },
+      {
+        "rank": 4,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 117.0
+      },
+      {
+        "rank": 5,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 111.0
+      },
+      {
+        "rank": 5,
+        "player": "Tatís",
+        "first_name": null,
+        "team": "SDP",
+        "value": 111.0
+      },
+      {
+        "rank": 7,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 110.0
+      },
+      {
+        "rank": 8,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 107.0
+      },
+      {
+        "rank": 9,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 106.0
+      },
+      {
+        "rank": 9,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 106.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "hits",
+    "stat_label": "Hits",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 184.0
+      },
+      {
+        "rank": 2,
+        "player": "Arráez",
+        "first_name": null,
+        "team": "SDP",
+        "value": 181.0
+      },
+      {
+        "rank": 2,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 181.0
+      },
+      {
+        "rank": 4,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 179.0
+      },
+      {
+        "rank": 4,
+        "player": "Turner",
+        "first_name": null,
+        "team": "PHI",
+        "value": 179.0
+      },
+      {
+        "rank": 6,
+        "player": "Hoerner",
+        "first_name": null,
+        "team": "CHC",
+        "value": 178.0
+      },
+      {
+        "rank": 7,
+        "player": "Díaz",
+        "first_name": null,
+        "team": "TBR",
+        "value": 175.0
+      },
+      {
+        "rank": 8,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 174.0
+      },
+      {
+        "rank": 9,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 173.0
+      },
+      {
+        "rank": 10,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 172.0
+      },
+      {
+        "rank": 10,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 172.0
+      },
+      {
+        "rank": 10,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 172.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "total_bases",
+    "stat_label": "Total Bases",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 380.0
+      },
+      {
+        "rank": 2,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 372.0
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 351.0
+      },
+      {
+        "rank": 4,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 340.0
+      },
+      {
+        "rank": 5,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 327.0
+      },
+      {
+        "rank": 6,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 322.0
+      },
+      {
+        "rank": 7,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 312.0
+      },
+      {
+        "rank": 8,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 309.0
+      },
+      {
+        "rank": 8,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 309.0
+      },
+      {
+        "rank": 10,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 305.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "doubles",
+    "stat_label": "Doubles",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 47.0
+      },
+      {
+        "rank": 2,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 44.0
+      },
+      {
+        "rank": 3,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 41.0
+      },
+      {
+        "rank": 3,
+        "player": "Duran",
+        "first_name": null,
+        "team": "BOS",
+        "value": 41.0
+      },
+      {
+        "rank": 3,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 41.0
+      },
+      {
+        "rank": 6,
+        "player": "Rooker",
+        "first_name": null,
+        "team": "ATH",
+        "value": 40.0
+      },
+      {
+        "rank": 7,
+        "player": "Garcia",
+        "first_name": null,
+        "team": "KCR",
+        "value": 39.0
+      },
+      {
+        "rank": 7,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "LAD",
+        "value": 39.0
+      },
+      {
+        "rank": 9,
+        "player": "Reynolds",
+        "first_name": null,
+        "team": "PIT",
+        "value": 38.0
+      },
+      {
+        "rank": 9,
+        "player": "Wood",
+        "first_name": null,
+        "team": "WSN",
+        "value": 38.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "triples",
+    "stat_label": "Triples",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 17.0
+      },
+      {
+        "rank": 2,
+        "player": "Duran",
+        "first_name": null,
+        "team": "BOS",
+        "value": 13.0
+      },
+      {
+        "rank": 3,
+        "player": "Lee",
+        "first_name": null,
+        "team": "SFG",
+        "value": 12.0
+      },
+      {
+        "rank": 4,
+        "player": "McKinstry",
+        "first_name": null,
+        "team": "DET",
+        "value": 11.0
+      },
+      {
+        "rank": 4,
+        "player": "Lile",
+        "first_name": null,
+        "team": "WSN",
+        "value": 11.0
+      },
+      {
+        "rank": 6,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 9.0
+      },
+      {
+        "rank": 7,
+        "player": "Moniak",
+        "first_name": null,
+        "team": "COL",
+        "value": 8.0
+      },
+      {
+        "rank": 8,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 7.0
+      },
+      {
+        "rank": 8,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 7.0
+      },
+      {
+        "rank": 8,
+        "player": "Turner",
+        "first_name": null,
+        "team": "PHI",
+        "value": 7.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "home_runs",
+    "stat_label": "Home Runs",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 60.0
+      },
+      {
+        "rank": 2,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 56.0
+      },
+      {
+        "rank": 3,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 55.0
+      },
+      {
+        "rank": 4,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 53.0
+      },
+      {
+        "rank": 5,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 49.0
+      },
+      {
+        "rank": 6,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 45.0
+      },
+      {
+        "rank": 7,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 43.0
+      },
+      {
+        "rank": 8,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 38.0
+      },
+      {
+        "rank": 9,
+        "player": "Adell",
+        "first_name": null,
+        "team": "LAA",
+        "value": 37.0
+      },
+      {
+        "rank": 10,
+        "player": "Kurtz",
+        "first_name": null,
+        "team": "ATH",
+        "value": 36.0
+      },
+      {
+        "rank": 10,
+        "player": "Greene",
+        "first_name": null,
+        "team": "DET",
+        "value": 36.0
+      },
+      {
+        "rank": 10,
+        "player": "Ward",
+        "first_name": null,
+        "team": "LAA",
+        "value": 36.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "runs_batted_in",
+    "stat_label": "Runs Batted In",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 132.0
+      },
+      {
+        "rank": 2,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 126.0
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 125.0
+      },
+      {
+        "rank": 4,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 118.0
+      },
+      {
+        "rank": 5,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 114.0
+      },
+      {
+        "rank": 6,
+        "player": "Pasquantino",
+        "first_name": null,
+        "team": "KCR",
+        "value": 113.0
+      },
+      {
+        "rank": 7,
+        "player": "Greene",
+        "first_name": null,
+        "team": "DET",
+        "value": 111.0
+      },
+      {
+        "rank": 8,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 110.0
+      },
+      {
+        "rank": 9,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 109.0
+      },
+      {
+        "rank": 10,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 105.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "bases_on_balls",
+    "stat_label": "Bases on Balls",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 127.0
+      },
+      {
+        "rank": 2,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 124.0
+      },
+      {
+        "rank": 3,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 112.0
+      },
+      {
+        "rank": 4,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 109.0
+      },
+      {
+        "rank": 5,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 108.0
+      },
+      {
+        "rank": 6,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 97.0
+      },
+      {
+        "rank": 7,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 94.0
+      },
+      {
+        "rank": 7,
+        "player": "Ozuna",
+        "first_name": null,
+        "team": "ATL",
+        "value": 94.0
+      },
+      {
+        "rank": 9,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 91.0
+      },
+      {
+        "rank": 10,
+        "player": "Tatís",
+        "first_name": null,
+        "team": "SDP",
+        "value": 89.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "strikeouts",
+    "stat_label": "Strikeouts",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Wood",
+        "first_name": null,
+        "team": "WSN",
+        "value": 221.0
+      },
+      {
+        "rank": 2,
+        "player": "Greene",
+        "first_name": null,
+        "team": "DET",
+        "value": 201.0
+      },
+      {
+        "rank": 3,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 197.0
+      },
+      {
+        "rank": 4,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 196.0
+      },
+      {
+        "rank": 5,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 192.0
+      },
+      {
+        "rank": 6,
+        "player": "Arozarena",
+        "first_name": null,
+        "team": "SEA",
+        "value": 191.0
+      },
+      {
+        "rank": 7,
+        "player": "McMahon",
+        "first_name": null,
+        "team": "2TM",
+        "value": 189.0
+      },
+      {
+        "rank": 8,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 188.0
+      },
+      {
+        "rank": 9,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 187.0
+      },
+      {
+        "rank": 10,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 181.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "stolen_bases",
+    "stat_label": "Stolen Bases",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Caballero",
+        "first_name": null,
+        "team": "2TM",
+        "value": 49.0
+      },
+      {
+        "rank": 2,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 44.0
+      },
+      {
+        "rank": 2,
+        "player": "Simpson",
+        "first_name": null,
+        "team": "TBR",
+        "value": 44.0
+      },
+      {
+        "rank": 4,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 38.0
+      },
+      {
+        "rank": 4,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 38.0
+      },
+      {
+        "rank": 4,
+        "player": "Cruz",
+        "first_name": null,
+        "team": "PIT",
+        "value": 38.0
+      },
+      {
+        "rank": 7,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 37.0
+      },
+      {
+        "rank": 8,
+        "player": "Turner",
+        "first_name": null,
+        "team": "PHI",
+        "value": 36.0
+      },
+      {
+        "rank": 9,
+        "player": "Crow-Armstrong",
+        "first_name": null,
+        "team": "CHC",
+        "value": 35.0
+      },
+      {
+        "rank": 10,
+        "player": "Scott",
+        "first_name": null,
+        "team": "STL",
+        "value": 34.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "singles",
+    "stat_label": "Singles",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Arráez",
+        "first_name": null,
+        "team": "SDP",
+        "value": 139.0
+      },
+      {
+        "rank": 2,
+        "player": "Hoerner",
+        "first_name": null,
+        "team": "CHC",
+        "value": 138.0
+      },
+      {
+        "rank": 3,
+        "player": "Edwards",
+        "first_name": null,
+        "team": "MIA",
+        "value": 131.0
+      },
+      {
+        "rank": 4,
+        "player": "Kwan",
+        "first_name": null,
+        "team": "CLE",
+        "value": 129.0
+      },
+      {
+        "rank": 5,
+        "player": "Turner",
+        "first_name": null,
+        "team": "PHI",
+        "value": 126.0
+      },
+      {
+        "rank": 6,
+        "player": "Turang",
+        "first_name": null,
+        "team": "MIL",
+        "value": 120.0
+      },
+      {
+        "rank": 6,
+        "player": "Díaz",
+        "first_name": null,
+        "team": "TBR",
+        "value": 120.0
+      },
+      {
+        "rank": 8,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 118.0
+      },
+      {
+        "rank": 9,
+        "player": "Frelick",
+        "first_name": null,
+        "team": "MIL",
+        "value": 117.0
+      },
+      {
+        "rank": 10,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 115.0
+      },
+      {
+        "rank": 10,
+        "player": "Crawford",
+        "first_name": null,
+        "team": "SEA",
+        "value": 115.0
+      },
+      {
+        "rank": 10,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 115.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "adjusted_ops",
+    "stat_label": "Adjusted OPS+",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 215.0
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 179.0
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 169.0
+      },
+      {
+        "rank": 4,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 161.0
+      },
+      {
+        "rank": 5,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 160.0
+      },
+      {
+        "rank": 6,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 150.0
+      },
+      {
+        "rank": 7,
+        "player": "Busch",
+        "first_name": null,
+        "team": "CHC",
+        "value": 147.0
+      },
+      {
+        "rank": 8,
+        "player": "Marte",
+        "first_name": null,
+        "team": "ARI",
+        "value": 145.0
+      },
+      {
+        "rank": 9,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 144.0
+      },
+      {
+        "rank": 10,
+        "player": "Tucker",
+        "first_name": null,
+        "team": "CHC",
+        "value": 143.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "runs_created",
+    "stat_label": "Runs Created",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 173.0
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 154.0
+      },
+      {
+        "rank": 3,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 134.0
+      },
+      {
+        "rank": 4,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 132.0
+      },
+      {
+        "rank": 5,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 130.0
+      },
+      {
+        "rank": 6,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 118.0
+      },
+      {
+        "rank": 7,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 116.0
+      },
+      {
+        "rank": 8,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 114.0
+      },
+      {
+        "rank": 8,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 114.0
+      },
+      {
+        "rank": 10,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 113.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "adj_batting_runs",
+    "stat_label": "Adj. Batting Runs",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 92.0
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 66.0
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 56.0
+      },
+      {
+        "rank": 4,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 52.0
+      },
+      {
+        "rank": 5,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 44.0
+      },
+      {
+        "rank": 6,
+        "player": "Kurtz",
+        "first_name": null,
+        "team": "ATH",
+        "value": 42.0
+      },
+      {
+        "rank": 7,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 42.0
+      },
+      {
+        "rank": 8,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 38.0
+      },
+      {
+        "rank": 9,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 37.0
+      },
+      {
+        "rank": 10,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 35.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "adj_batting_wins",
+    "stat_label": "Adj. Batting Wins",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 8.9
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 6.4
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 5.5
+      },
+      {
+        "rank": 4,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 5.1
+      },
+      {
+        "rank": 5,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 4.3
+      },
+      {
+        "rank": 6,
+        "player": "Kurtz",
+        "first_name": null,
+        "team": "ATH",
+        "value": 4.2
+      },
+      {
+        "rank": 7,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 4.1
+      },
+      {
+        "rank": 8,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 3.7
+      },
+      {
+        "rank": 9,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 3.6
+      },
+      {
+        "rank": 10,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 3.4
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "extra_base_hits",
+    "stat_label": "Extra Base Hits",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 89.0
+      },
+      {
+        "rank": 2,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 85.0
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 84.0
+      },
+      {
+        "rank": 4,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 81.0
+      },
+      {
+        "rank": 5,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 80.0
+      },
+      {
+        "rank": 5,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 80.0
+      },
+      {
+        "rank": 7,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 77.0
+      },
+      {
+        "rank": 8,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 76.0
+      },
+      {
+        "rank": 9,
+        "player": "Rooker",
+        "first_name": null,
+        "team": "ATH",
+        "value": 73.0
+      },
+      {
+        "rank": 9,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 73.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "times_on_base",
+    "stat_label": "Times On Base",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 310.0
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 284.0
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 282.0
+      },
+      {
+        "rank": 4,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 277.0
+      },
+      {
+        "rank": 5,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 271.0
+      },
+      {
+        "rank": 6,
+        "player": "Olson",
+        "first_name": null,
+        "team": "ATL",
+        "value": 265.0
+      },
+      {
+        "rank": 7,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 264.0
+      },
+      {
+        "rank": 8,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 259.0
+      },
+      {
+        "rank": 9,
+        "player": "Tatís",
+        "first_name": null,
+        "team": "SDP",
+        "value": 254.0
+      },
+      {
+        "rank": 10,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 253.0
+      },
+      {
+        "rank": 10,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 253.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "offensive_win",
+    "stat_label": "Offensive Win %",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 0.857
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 0.781
+      },
+      {
+        "rank": 3,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.766
+      },
+      {
+        "rank": 4,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 0.728
+      },
+      {
+        "rank": 5,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 0.727
+      },
+      {
+        "rank": 6,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 0.726
+      },
+      {
+        "rank": 7,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 0.701
+      },
+      {
+        "rank": 8,
+        "player": "Marte",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.689
+      },
+      {
+        "rank": 9,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.683
+      },
+      {
+        "rank": 10,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 0.682
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "hit_by_pitch",
+    "stat_label": "Hit By Pitch",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Arozarena",
+        "first_name": null,
+        "team": "SEA",
+        "value": 27.0
+      },
+      {
+        "rank": 2,
+        "player": "Durbin",
+        "first_name": null,
+        "team": "MIL",
+        "value": 24.0
+      },
+      {
+        "rank": 3,
+        "player": "Contreras",
+        "first_name": null,
+        "team": "STL",
+        "value": 23.0
+      },
+      {
+        "rank": 4,
+        "player": "France",
+        "first_name": null,
+        "team": "2TM",
+        "value": 21.0
+      },
+      {
+        "rank": 5,
+        "player": "Ramos",
+        "first_name": null,
+        "team": "SFG",
+        "value": 17.0
+      },
+      {
+        "rank": 6,
+        "player": "Friedl",
+        "first_name": null,
+        "team": "CIN",
+        "value": 16.0
+      },
+      {
+        "rank": 6,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 16.0
+      },
+      {
+        "rank": 6,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 16.0
+      },
+      {
+        "rank": 9,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 15.0
+      },
+      {
+        "rank": 9,
+        "player": "Cronenworth",
+        "first_name": null,
+        "team": "SDP",
+        "value": 15.0
+      },
+      {
+        "rank": 9,
+        "player": "Herrera",
+        "first_name": null,
+        "team": "STL",
+        "value": 15.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "sacrifice_hits",
+    "stat_label": "Sacrifice Hits",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Isbel",
+        "first_name": null,
+        "team": "KCR",
+        "value": 13.0
+      },
+      {
+        "rank": 2,
+        "player": "Arráez",
+        "first_name": null,
+        "team": "SDP",
+        "value": 12.0
+      },
+      {
+        "rank": 3,
+        "player": "Herrera",
+        "first_name": null,
+        "team": "ARI",
+        "value": 11.0
+      },
+      {
+        "rank": 3,
+        "player": "Straw",
+        "first_name": null,
+        "team": "TOR",
+        "value": 11.0
+      },
+      {
+        "rank": 5,
+        "player": "Scott",
+        "first_name": null,
+        "team": "STL",
+        "value": 10.0
+      },
+      {
+        "rank": 6,
+        "player": "Young",
+        "first_name": null,
+        "team": "WSN",
+        "value": 9.0
+      },
+      {
+        "rank": 7,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 8.0
+      },
+      {
+        "rank": 7,
+        "player": "Allen",
+        "first_name": null,
+        "team": "ATL",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Clement",
+        "first_name": null,
+        "team": "TOR",
+        "value": 7.0
+      },
+      {
+        "rank": 9,
+        "player": "Lukes",
+        "first_name": null,
+        "team": "TOR",
+        "value": 7.0
+      },
+      {
+        "rank": 9,
+        "player": "Fermin",
+        "first_name": null,
+        "team": "2TM",
+        "value": 7.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "sacrifice_flies",
+    "stat_label": "Sacrifice Flies",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Crow-Armstrong",
+        "first_name": null,
+        "team": "CHC",
+        "value": 12.0
+      },
+      {
+        "rank": 2,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 11.0
+      },
+      {
+        "rank": 2,
+        "player": "Wells",
+        "first_name": null,
+        "team": "NYY",
+        "value": 11.0
+      },
+      {
+        "rank": 4,
+        "player": "Betts",
+        "first_name": null,
+        "team": "LAD",
+        "value": 10.0
+      },
+      {
+        "rank": 4,
+        "player": "Urías",
+        "first_name": null,
+        "team": "2TM",
+        "value": 10.0
+      },
+      {
+        "rank": 6,
+        "player": "Gurriel",
+        "first_name": null,
+        "team": "ARI",
+        "value": 9.0
+      },
+      {
+        "rank": 6,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 9.0
+      },
+      {
+        "rank": 6,
+        "player": "Bellinger",
+        "first_name": null,
+        "team": "NYY",
+        "value": 9.0
+      },
+      {
+        "rank": 6,
+        "player": "Adames",
+        "first_name": null,
+        "team": "SFG",
+        "value": 9.0
+      },
+      {
+        "rank": 6,
+        "player": "Semien",
+        "first_name": null,
+        "team": "TEX",
+        "value": 9.0
+      },
+      {
+        "rank": 6,
+        "player": "García",
+        "first_name": null,
+        "team": "WSN",
+        "value": 9.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "intentional_bases_on_balls",
+    "stat_label": "Intentional Bases on Balls",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 36.0
+      },
+      {
+        "rank": 2,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 22.0
+      },
+      {
+        "rank": 3,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 20.0
+      },
+      {
+        "rank": 4,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 17.0
+      },
+      {
+        "rank": 5,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 13.0
+      },
+      {
+        "rank": 6,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 10.0
+      },
+      {
+        "rank": 6,
+        "player": "Trout",
+        "first_name": null,
+        "team": "LAA",
+        "value": 10.0
+      },
+      {
+        "rank": 6,
+        "player": "Seager",
+        "first_name": null,
+        "team": "TEX",
+        "value": 10.0
+      },
+      {
+        "rank": 6,
+        "player": "Devers",
+        "first_name": null,
+        "team": "2TM",
+        "value": 10.0
+      },
+      {
+        "rank": 10,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 8.0
+      },
+      {
+        "rank": 10,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 8.0
+      },
+      {
+        "rank": 10,
+        "player": "Wood",
+        "first_name": null,
+        "team": "WSN",
+        "value": 8.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "double_plays_grounded_into",
+    "stat_label": "Double Plays Grounded Into",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 31.0
+      },
+      {
+        "rank": 2,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 23.0
+      },
+      {
+        "rank": 3,
+        "player": "Altuve",
+        "first_name": null,
+        "team": "HOU",
+        "value": 20.0
+      },
+      {
+        "rank": 3,
+        "player": "Herrera",
+        "first_name": null,
+        "team": "STL",
+        "value": 20.0
+      },
+      {
+        "rank": 5,
+        "player": "Larnach",
+        "first_name": null,
+        "team": "MIN",
+        "value": 19.0
+      },
+      {
+        "rank": 5,
+        "player": "Correa",
+        "first_name": null,
+        "team": "2TM",
+        "value": 19.0
+      },
+      {
+        "rank": 7,
+        "player": "Soderstrom",
+        "first_name": null,
+        "team": "ATH",
+        "value": 18.0
+      },
+      {
+        "rank": 7,
+        "player": "Rice",
+        "first_name": null,
+        "team": "NYY",
+        "value": 18.0
+      },
+      {
+        "rank": 9,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 17.0
+      },
+      {
+        "rank": 9,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 17.0
+      },
+      {
+        "rank": 9,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 17.0
+      },
+      {
+        "rank": 9,
+        "player": "Naylor",
+        "first_name": null,
+        "team": "2TM",
+        "value": 17.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "caught_stealing",
+    "stat_label": "Caught Stealing",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Simpson",
+        "first_name": null,
+        "team": "TBR",
+        "value": 12.0
+      },
+      {
+        "rank": 2,
+        "player": "Holliday",
+        "first_name": null,
+        "team": "BAL",
+        "value": 11.0
+      },
+      {
+        "rank": 2,
+        "player": "Caballero",
+        "first_name": null,
+        "team": "2TM",
+        "value": 11.0
+      },
+      {
+        "rank": 2,
+        "player": "Young",
+        "first_name": null,
+        "team": "WSN",
+        "value": 11.0
+      },
+      {
+        "rank": 5,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "COL",
+        "value": 9.0
+      },
+      {
+        "rank": 5,
+        "player": "Garcia",
+        "first_name": null,
+        "team": "KCR",
+        "value": 9.0
+      },
+      {
+        "rank": 5,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 9.0
+      },
+      {
+        "rank": 5,
+        "player": "Neto",
+        "first_name": null,
+        "team": "LAA",
+        "value": 9.0
+      },
+      {
+        "rank": 9,
+        "player": "Crow-Armstrong",
+        "first_name": null,
+        "team": "CHC",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Robert",
+        "first_name": null,
+        "team": "CHW",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Beck",
+        "first_name": null,
+        "team": "COL",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Turang",
+        "first_name": null,
+        "team": "MIL",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Chisholm",
+        "first_name": null,
+        "team": "NYY",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Volpe",
+        "first_name": null,
+        "team": "NYY",
+        "value": 8.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "sb",
+    "stat_label": "SB %",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 100.0
+      },
+      {
+        "rank": 2,
+        "player": "Story",
+        "first_name": null,
+        "team": "BOS",
+        "value": 96.88
+      },
+      {
+        "rank": 3,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 94.74
+      },
+      {
+        "rank": 4,
+        "player": "Acuña",
+        "first_name": null,
+        "team": "NYM",
+        "value": 94.12
+      },
+      {
+        "rank": 5,
+        "player": "Naylor",
+        "first_name": null,
+        "team": "2TM",
+        "value": 93.75
+      },
+      {
+        "rank": 6,
+        "player": "Tolbert",
+        "first_name": null,
+        "team": "KCR",
+        "value": 91.3
+      },
+      {
+        "rank": 7,
+        "player": "Abrams",
+        "first_name": null,
+        "team": "WSN",
+        "value": 91.18
+      },
+      {
+        "rank": 8,
+        "player": "Peña",
+        "first_name": null,
+        "team": "HOU",
+        "value": 90.91
+      },
+      {
+        "rank": 8,
+        "player": "Bogaerts",
+        "first_name": null,
+        "team": "SDP",
+        "value": 90.91
+      },
+      {
+        "rank": 10,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 90.48
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "power_speed",
+    "stat_label": "Power-Speed #",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 40.3
+      },
+      {
+        "rank": 2,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 35.7
+      },
+      {
+        "rank": 3,
+        "player": "Crow-Armstrong",
+        "first_name": null,
+        "team": "CHC",
+        "value": 32.9
+      },
+      {
+        "rank": 4,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 31.5
+      },
+      {
+        "rank": 5,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 31.0
+      },
+      {
+        "rank": 5,
+        "player": "Chisholm",
+        "first_name": null,
+        "team": "NYY",
+        "value": 31.0
+      },
+      {
+        "rank": 7,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 31.0
+      },
+      {
+        "rank": 8,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 29.3
+      },
+      {
+        "rank": 9,
+        "player": "Arozarena",
+        "first_name": null,
+        "team": "SEA",
+        "value": 28.9
+      },
+      {
+        "rank": 10,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 28.7
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "ab_per_so",
+    "stat_label": "AB per SO",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Arráez",
+        "first_name": null,
+        "team": "SDP",
+        "value": 29.5
+      },
+      {
+        "rank": 2,
+        "player": "Wilson",
+        "first_name": null,
+        "team": "ATH",
+        "value": 12.5
+      },
+      {
+        "rank": 3,
+        "player": "Hoerner",
+        "first_name": null,
+        "team": "CHC",
+        "value": 12.2
+      },
+      {
+        "rank": 4,
+        "player": "Kwan",
+        "first_name": null,
+        "team": "CLE",
+        "value": 10.4
+      },
+      {
+        "rank": 5,
+        "player": "Clement",
+        "first_name": null,
+        "team": "TOR",
+        "value": 8.9
+      },
+      {
+        "rank": 6,
+        "player": "Durbin",
+        "first_name": null,
+        "team": "MIL",
+        "value": 8.9
+      },
+      {
+        "rank": 7,
+        "player": "Betts",
+        "first_name": null,
+        "team": "LAD",
+        "value": 8.7
+      },
+      {
+        "rank": 8,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 8.0
+      },
+      {
+        "rank": 9,
+        "player": "Lee",
+        "first_name": null,
+        "team": "SFG",
+        "value": 7.9
+      },
+      {
+        "rank": 10,
+        "player": "Kirk",
+        "first_name": null,
+        "team": "TOR",
+        "value": 7.6
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "ab_per_hr",
+    "stat_label": "AB per HR",
+    "players": [
+      {
+        "rank": 10,
+        "player": "Adell",
+        "first_name": null,
+        "team": "LAA",
+        "value": 14.2
+      },
+      {
+        "rank": 9,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 13.9
+      },
+      {
+        "rank": 7,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 13.4
+      },
+      {
+        "rank": 8,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 13.4
+      },
+      {
+        "rank": 5,
+        "player": "Suárez",
+        "first_name": null,
+        "team": "2TM",
+        "value": 12.0
+      },
+      {
+        "rank": 4,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 11.1
+      },
+      {
+        "rank": 3,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 10.8
+      },
+      {
+        "rank": 2,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 10.2
+      },
+      {
+        "rank": 1,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 9.9
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "outs_made",
+    "stat_label": "Outs Made",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Rodríguez",
+        "first_name": null,
+        "team": "SEA",
+        "value": 501.0
+      },
+      {
+        "rank": 2,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 494.0
+      },
+      {
+        "rank": 3,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 488.0
+      },
+      {
+        "rank": 4,
+        "player": "Arozarena",
+        "first_name": null,
+        "team": "SEA",
+        "value": 487.0
+      },
+      {
+        "rank": 4,
+        "player": "Ramos",
+        "first_name": null,
+        "team": "SFG",
+        "value": 487.0
+      },
+      {
+        "rank": 6,
+        "player": "De La Cruz",
+        "first_name": null,
+        "team": "CIN",
+        "value": 486.0
+      },
+      {
+        "rank": 7,
+        "player": "Harris",
+        "first_name": null,
+        "team": "ATL",
+        "value": 483.0
+      },
+      {
+        "rank": 8,
+        "player": "Caminero",
+        "first_name": null,
+        "team": "TBR",
+        "value": 482.0
+      },
+      {
+        "rank": 9,
+        "player": "Adames",
+        "first_name": null,
+        "team": "SFG",
+        "value": 480.0
+      },
+      {
+        "rank": 10,
+        "player": "Rooker",
+        "first_name": null,
+        "team": "ATH",
+        "value": 478.0
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "base_out_runs_added_re24",
+    "stat_label": "Base-Out Runs Added (RE24)",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 73.52
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 57.35
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 51.47
+      },
+      {
+        "rank": 4,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 51.41
+      },
+      {
+        "rank": 5,
+        "player": "Kurtz",
+        "first_name": null,
+        "team": "ATH",
+        "value": 42.1
+      },
+      {
+        "rank": 6,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 41.86
+      },
+      {
+        "rank": 7,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 41.05
+      },
+      {
+        "rank": 8,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 40.76
+      },
+      {
+        "rank": 9,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 40.48
+      },
+      {
+        "rank": 10,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "LAD",
+        "value": 38.98
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "win_probability_added_wpa",
+    "stat_label": "Win Probability Added (WPA)",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 5.9
+      },
+      {
+        "rank": 2,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 5.6
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 5.0
+      },
+      {
+        "rank": 4,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "LAD",
+        "value": 4.8
+      },
+      {
+        "rank": 5,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 4.2
+      },
+      {
+        "rank": 6,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 3.9
+      },
+      {
+        "rank": 7,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 3.7
+      },
+      {
+        "rank": 8,
+        "player": "Polanco",
+        "first_name": null,
+        "team": "SEA",
+        "value": 3.7
+      },
+      {
+        "rank": 9,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 3.6
+      },
+      {
+        "rank": 10,
+        "player": "Tatís",
+        "first_name": null,
+        "team": "SDP",
+        "value": 3.6
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "situ_wins_added_wpa_li",
+    "stat_label": "Situ. Wins Added (WPA/LI)",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 7.9
+      },
+      {
+        "rank": 2,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 6.4
+      },
+      {
+        "rank": 3,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 6.1
+      },
+      {
+        "rank": 4,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 4.5
+      },
+      {
+        "rank": 5,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 4.4
+      },
+      {
+        "rank": 6,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 4.4
+      },
+      {
+        "rank": 7,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 4.2
+      },
+      {
+        "rank": 8,
+        "player": "Witt",
+        "first_name": null,
+        "team": "KCR",
+        "value": 3.4
+      },
+      {
+        "rank": 9,
+        "player": "Kurtz",
+        "first_name": null,
+        "team": "ATH",
+        "value": 3.4
+      },
+      {
+        "rank": 10,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 3.3
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "championship_wpa_cwpa",
+    "stat_label": "Championship WPA (cWPA)",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 4.9
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 4.4
+      },
+      {
+        "rank": 3,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 3.5
+      },
+      {
+        "rank": 4,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "LAD",
+        "value": 3.4
+      },
+      {
+        "rank": 5,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 3.2
+      },
+      {
+        "rank": 6,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 3.0
+      },
+      {
+        "rank": 7,
+        "player": "Guerrero",
+        "first_name": null,
+        "team": "TOR",
+        "value": 3.0
+      },
+      {
+        "rank": 8,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 2.9
+      },
+      {
+        "rank": 9,
+        "player": "Lindor",
+        "first_name": null,
+        "team": "NYM",
+        "value": 2.9
+      },
+      {
+        "rank": 10,
+        "player": "Bichette",
+        "first_name": null,
+        "team": "TOR",
+        "value": 2.8
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "base_out_wins_added_rew",
+    "stat_label": "Base-Out Wins Added (REW)",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 7.2
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 5.6
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 5.3
+      },
+      {
+        "rank": 4,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 5.1
+      },
+      {
+        "rank": 5,
+        "player": "Kurtz",
+        "first_name": null,
+        "team": "ATH",
+        "value": 4.1
+      },
+      {
+        "rank": 6,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 4.0
+      },
+      {
+        "rank": 7,
+        "player": "Ramírez",
+        "first_name": null,
+        "team": "CLE",
+        "value": 4.0
+      },
+      {
+        "rank": 8,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 4.0
+      },
+      {
+        "rank": 9,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 3.9
+      },
+      {
+        "rank": 10,
+        "player": "Freeman",
+        "first_name": null,
+        "team": "LAD",
+        "value": 3.8
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "roba",
+    "stat_label": "rOBA",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 0.461
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 0.423
+      },
+      {
+        "rank": 3,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 0.414
+      },
+      {
+        "rank": 4,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 0.41
+      },
+      {
+        "rank": 5,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 0.396
+      },
+      {
+        "rank": 6,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 0.392
+      },
+      {
+        "rank": 7,
+        "player": "Buxton",
+        "first_name": null,
+        "team": "MIN",
+        "value": 0.383
+      },
+      {
+        "rank": 8,
+        "player": "Perdomo",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.382
+      },
+      {
+        "rank": 9,
+        "player": "Carroll",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.382
+      },
+      {
+        "rank": 10,
+        "player": "Marte",
+        "first_name": null,
+        "team": "ARI",
+        "value": 0.381
+      }
+    ]
+  },
+  {
+    "sport": "mlb",
+    "season": 2025,
+    "stat_id": "rbat",
+    "stat_label": "Rbat+",
+    "players": [
+      {
+        "rank": 1,
+        "player": "Judge",
+        "first_name": null,
+        "team": "NYY",
+        "value": 212.0
+      },
+      {
+        "rank": 2,
+        "player": "Ohtani",
+        "first_name": null,
+        "team": "LAD",
+        "value": 175.0
+      },
+      {
+        "rank": 3,
+        "player": "Raleigh",
+        "first_name": null,
+        "team": "SEA",
+        "value": 165.0
+      },
+      {
+        "rank": 4,
+        "player": "Springer",
+        "first_name": null,
+        "team": "TOR",
+        "value": 165.0
+      },
+      {
+        "rank": 5,
+        "player": "Soto",
+        "first_name": null,
+        "team": "NYM",
+        "value": 163.0
+      },
+      {
+        "rank": 6,
+        "player": "Schwarber",
+        "first_name": null,
+        "team": "PHI",
+        "value": 149.0
+      },
+      {
+        "rank": 7,
+        "player": "Busch",
+        "first_name": null,
+        "team": "CHC",
+        "value": 148.0
+      },
+      {
+        "rank": 8,
+        "player": "Tucker",
+        "first_name": null,
+        "team": "CHC",
+        "value": 143.0
+      },
+      {
+        "rank": 9,
+        "player": "Marte",
+        "first_name": null,
+        "team": "ARI",
+        "value": 142.0
+      },
+      {
+        "rank": 10,
+        "player": "Alonso",
+        "first_name": null,
+        "team": "NYM",
+        "value": 142.0
+      }
+    ]
+  }
+]
