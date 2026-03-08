@@ -25,12 +25,15 @@
     Snack Finder
 </button>
 
-</body>
+
+
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
   import { getDatabase, ref, set, onValue } 
     from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+  import { getAuth, signInAnonymously, onAuthStateChanged } 
+    from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCdihTsDUM9ny1AKNAZl8JejYFRt4nXEz4",
@@ -46,8 +49,27 @@
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
-  // TEMP TEST: write a value to confirm Firebase works
-  set(ref(db, "test/value"), "hello world");
+  const auth = getAuth();
+  signInAnonymously(auth).catch((error) => {
+    console.error("Auth error:", error);
+  });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("Signed in as:", user.uid);
+
+      // TEMP TEST: write to database using your UID
+      set(ref(db, "test/" + user.uid), {
+        joinedAt: Date.now()
+      });
+    }
+  });
 </script>
 
+
+
+
+
+
+</body>
 </html>
