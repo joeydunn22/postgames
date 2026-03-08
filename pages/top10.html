@@ -5,7 +5,7 @@
   <title>Top 10 Trivia</title>
   <link rel="stylesheet" href="../assets/global/global.css">
   <link rel="stylesheet" href="../assets/top10/css/top10.css">
-  </head>
+</head>
 
 <body>
 
@@ -25,93 +25,88 @@
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
   </div>
 
-<!-- TOP CONTROL BAR: GAME SETUP -->
-<div class="top-control-bar top-control-bar--dark">
+  <!-- Create Room Buttons -->
+  <button id="createRoomBtn" onclick="createRoom()">Create Room</button>
 
-  <!-- SPORT -->
-  <div class="control-group">
-    <div class="control-label">Sport</div>
-    <div id="sport-buttons" class="button-group">
-      <button class="pg-button" data-sport="mlb">MLB</button>
-      <button class="pg-button" data-sport="nba">NBA</button>
-      <button class="pg-button" data-sport="nfl">NFL</button>
+  <input id="joinCodeInput" placeholder="Enter room code">
+  <button id="joinRoomBtn" onclick="joinRoom(document.getElementById('joinCodeInput').value)">
+    Join Room
+  </button>
+
+  <div id="roomStatus" style="margin-top: 10px; font-weight: bold;"></div>
+  <div id="roomCodeDisplay" style="margin-top: 10px;"></div>
+
+  <!-- TOP CONTROL BAR: GAME SETUP -->
+  <div class="top-control-bar top-control-bar--dark">
+
+    <!-- SPORT -->
+    <div class="control-group">
+      <div class="control-label">Sport</div>
+      <div id="sport-buttons" class="button-group">
+        <button class="pg-button" data-sport="mlb">MLB</button>
+        <button class="pg-button" data-sport="nba">NBA</button>
+        <button class="pg-button" data-sport="nfl">NFL</button>
+      </div>
     </div>
-  </div>
 
-  <!-- MLB CATEGORY -->
-  <div class="control-group" id="mlb-category-wrapper">
-    <div class="control-label">MLB Category</div>
-    <div id="mlb-category-buttons" class="button-group hidden">
-      <button class="pg-button" data-category="batting">Batting</button>
-      <button class="pg-button" data-category="pitching">Pitching</button>
+    <!-- MLB CATEGORY -->
+    <div class="control-group" id="mlb-category-wrapper">
+      <div class="control-label">MLB Category</div>
+      <div id="mlb-category-buttons" class="button-group hidden">
+        <button class="pg-button" data-category="batting">Batting</button>
+        <button class="pg-button" data-category="pitching">Pitching</button>
+      </div>
     </div>
-  </div>
 
-  <!-- YEAR -->
-  <div class="control-group">
-    <div class="control-label">Year</div>
-    <div id="year-buttons" class="button-group">
-      <button class="pg-button" data-year="2024">2024</button>
-      <button class="pg-button" data-year="2025">2025</button>
-      <button class="pg-button" data-year="2026">2026</button>
+    <!-- YEAR -->
+    <div class="control-group">
+      <div class="control-label">Year</div>
+      <div id="year-buttons" class="button-group">
+        <button class="pg-button" data-year="2024">2024</button>
+        <button class="pg-button" data-year="2025">2025</button>
+        <button class="pg-button" data-year="2026">2026</button>
+      </div>
     </div>
+
   </div>
 
-</div>
+  <!-- PLAYER SETUP -->
+  <div id="player-setup" class="player-setup player-setup--dark">
 
-<!-- PLAYER SETUP: ROSTER ABOVE THE GAME -->
-<div id="player-setup" class="player-setup player-setup--dark">
-
-  <div class="player-setup-header">
-    <span class="player-setup-title">Players</span>
-    <div class="player-setup-controls">
-      <button id="addPlayerBtn" class="btn player-setup-btn">+ Add Player</button>
-      <button id="removePlayerBtn" class="btn player-setup-btn">– Remove Player</button>
+    <div class="player-setup-header">
+      <span class="player-setup-title">Players</span>
+      <div class="player-setup-controls">
+        <button id="addPlayerBtn" class="btn player-setup-btn">+ Add Player</button>
+        <button id="removePlayerBtn" class="btn player-setup-btn">– Remove Player</button>
+      </div>
     </div>
+
+    <div id="playerNameInputs" class="player-name-inputs"></div>
+
   </div>
 
-  <!-- Dynamic Name Inputs -->
-  <div id="playerNameInputs" class="player-name-inputs">
-    <!-- populated by renderPlayerSetup() -->
-  </div>
-
-</div>
-
-  <h2 id="statTitle" class="stat-title">
-    Select a stat to begin
-  </h2>
+  <h2 id="statTitle" class="stat-title">Select a stat to begin</h2>
 
   <select id="statSelect" class="btn stat-select" disabled>
     <option value="">Select a stat...</option>
   </select>
 
-  <input id="userGuess"
-       type="text"
-       placeholder="Type a player name..."
-       class="guess-input">
+  <input id="userGuess" type="text" placeholder="Type a player name..." class="guess-input">
 
   <button id="submitGuessBtn" class="btn">Submit Guess</button>
 
-  <!-- Current Player Indicator -->
   <div id="currentPlayerDisplay" class="current-player-display">
     Current Turn: Player 1
   </div>
 
-  <!-- Player Columns (dynamic) -->
   <div class="players-container"></div>
 
   <div id="top10List"></div>
 
-  <!-- Results Section -->
   <div id="resultsSection" class="hidden">
-
     <h2 style="color:#00ff88;">Results</h2>
-
     <div id="resultsWinner" style="font-size:22px; margin-bottom:20px;"></div>
-
-    <!-- Dynamic Results Columns -->
     <div id="resultsPlayers" class="players-container"></div>
-
   </div>
 
   <button id="actionButton" class="btn">Reveal Answers</button>
@@ -120,6 +115,130 @@
   <script src="../assets/top10/js/top10-state.js"></script>
   <script src="../assets/top10/js/top10-render.js"></script>
   <script src="../assets/top10/js/top10-logic.js"></script>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+    import { getDatabase, ref, set, update, onValue, remove }
+      from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+    import { getAuth, onAuthStateChanged }
+      from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCdihTsDUM9ny1AKNAZl8JejYFRt4nXEz4",
+      authDomain: "postgames-web.firebaseapp.com",
+      databaseURL: "https://postgames-web-default-rtdb.firebaseio.com",
+      projectId: "postgames-web",
+      storageBucket: "postgames-web.firebasestorage.app",
+      messagingSenderId: "95643944168",
+      appId: "1:95643944168:web:25177dedf2dcd55b31755d",
+      measurementId: "G-KCZD35F23V"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth();
+
+    let currentUser = null;
+    let currentRoomCode = null;
+
+    // Disable buttons until auth is ready
+    document.getElementById("createRoomBtn").disabled = true;
+    document.getElementById("joinRoomBtn").disabled = true;
+
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+      console.log("Top10 signed in as:", user.uid);
+
+      // Enable buttons now that auth is ready
+      document.getElementById("createRoomBtn").disabled = false;
+      document.getElementById("joinRoomBtn").disabled = false;
+
+      document.getElementById("roomStatus").textContent = "";
+    });
+
+    function generateRoomCode() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      let code = "";
+      for (let i = 0; i < 4; i++) {
+        code += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return code;
+    }
+
+    async function leaveCurrentRoom() {
+      if (!currentRoomCode || !currentUser) return;
+
+      const playerRef = ref(db, `rooms/${currentRoomCode}/players/${currentUser.uid}`);
+      await remove(playerRef);
+
+      currentRoomCode = null;
+      document.getElementById("roomCodeDisplay").textContent = "";
+    }
+
+    window.createRoom = async function () {
+      await leaveCurrentRoom();
+
+      const roomCode = generateRoomCode();
+      const roomRef = ref(db, "rooms/" + roomCode);
+
+      await set(roomRef, {
+        host: currentUser.uid,
+        players: {
+          [currentUser.uid]: true
+        }
+      });
+
+      currentRoomCode = roomCode;
+
+      document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
+      document.getElementById("roomStatus").textContent = "Room created successfully.";
+
+      listenToRoom(roomCode);
+    };
+
+    window.joinRoom = async function (roomCode) {
+      roomCode = roomCode.trim().toUpperCase();
+      if (!roomCode) {
+        document.getElementById("roomStatus").textContent = "Please enter a room code.";
+        return;
+      }
+
+      const roomRef = ref(db, "rooms/" + roomCode);
+
+      onValue(roomRef, async (snapshot) => {
+        const roomData = snapshot.val();
+
+        if (!roomData) {
+          document.getElementById("roomStatus").textContent = "Room not found.";
+          return;
+        }
+
+        await leaveCurrentRoom();
+
+        const playersRef = ref(db, `rooms/${roomCode}/players`);
+        await update(playersRef, {
+          [currentUser.uid]: true
+        });
+
+        currentRoomCode = roomCode;
+
+        document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
+        document.getElementById("roomStatus").textContent = "Joined room successfully.";
+
+        listenToRoom(roomCode);
+      }, { onlyOnce: true });
+    };
+
+    function listenToRoom(roomCode) {
+      const playersRef = ref(db, `rooms/${roomCode}/players`);
+
+      onValue(playersRef, (snapshot) => {
+        const players = snapshot.val() || {};
+        console.log("Players in room:", players);
+      });
+    }
+  </script>
 
 </body>
 </html>
