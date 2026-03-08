@@ -1,0 +1,424 @@
+/* =========================================
+   TOP 10 TRIVIA — LIST + ANIMATIONS
+   ========================================= */
+
+#top10List {
+  margin-top: 30px;
+  font-size: 24px;
+  text-align: left;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 38px;
+  display: flex;
+  justify-content: center;
+}
+
+#top10List ol {
+  padding-left: 20px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#top10List li {
+  margin: 6px 0;
+}
+
+.revealed {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input flashes */
+.correct-flash {
+  animation: correctFlash 0.7s ease-out;
+}
+
+@keyframes correctFlash {
+  0% {
+    background-color: #00e676;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+.duplicate-flash {
+  animation: duplicateFlash 0.7s ease-out;
+}
+
+@keyframes duplicateFlash {
+  0% {
+    background-color: #ffeb3b;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+.wrong-flash {
+  animation: wrongFlash 0.7s ease-out;
+}
+
+@keyframes wrongFlash {
+  0% {
+    background-color: #ff5252;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+/* Player column flashes */
+.player-correct {
+  animation: playerCorrect 0.7s ease-out;
+}
+
+.player-duplicate {
+  animation: playerDuplicate 0.7s ease-out;
+}
+
+.player-wrong {
+  animation: playerWrong 0.7s ease-out;
+}
+
+@keyframes playerCorrect {
+  0% {
+    border-color: #00e676;
+    box-shadow: 0 0 18px #00e676, 0 0 8px #00e676 inset;
+  }
+
+  100% {
+    border-color: #2e2e2e;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@keyframes playerDuplicate {
+  0% {
+    border-color: #ffeb3b;
+    box-shadow: 0 0 18px #ffeb3b, 0 0 8px #ffeb3b inset;
+  }
+
+  100% {
+    border-color: #2e2e2e;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  }
+}
+
+@keyframes playerWrong {
+  0% {
+    border-color: #ff5252;
+    box-shadow: 0 0 18px #ff5252, 0 0 8px #ff5252 inset;
+  }
+
+  100% {
+    border-color: #2e2e2e;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  }
+}
+
+
+/* =========================================
+   TOP 10 TRIVIA — PLAYER COLUMNS
+   ========================================= */
+
+.players-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 24px;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 28px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.player-column {
+  width: 48%;
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.player-name-input {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  width: 160px;
+  text-align: center;
+}
+
+/* Center layout when only one player is active */
+.players-container.single-player {
+  justify-content: center;
+}
+
+.players-container.single-player .player-column {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.player-column:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
+}
+
+.player-column h3 {
+  margin-top: 0;
+  color: #4da3ff;
+}
+
+.player-column ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.player-column li {
+  padding: 6px 0;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.player-score {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.current-player {
+  border-color: #4da3ff;
+  box-shadow: 0 0 12px rgba(77, 163, 255, 0.35),
+    0 0 4px rgba(77, 163, 255, 0.25) inset;
+}
+
+
+/* =========================================
+   TOP 10 TRIVIA — RESULTS SECTION
+   ========================================= */
+
+#resultsSection {
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 40px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+#resultsSection h2 {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+#resultsWinner {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #4da3ff;
+}
+
+
+/* =========================================
+   TOP 10 TRIVIA — NEW UTILITY + COMPONENT CLASSES
+   ========================================= */
+
+/* Player setup controls (Add/Remove buttons container) */
+.player-setup-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Player name inputs container */
+.player-name-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Stat title styling */
+.stat-title {
+  color: #00ff88;
+  margin-top: 30px;
+}
+
+/* Stat dropdown styling */
+.stat-select {
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* Guess input styling */
+.guess-input {
+  width: 80%;
+  padding: 15px;
+  font-size: 22px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+}
+
+/* Current player display */
+.current-player-display {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Generic hidden utility (for later JS use) */
+.hidden {
+  display: none !important;
+}
+
+
+
+
+
+/* =========================================
+   UPGRADED ABOVE‑THE‑GAME CONTROL SURFACE
+   ========================================= */
+
+/* Shared spacing scale */
+:root {
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+}
+
+/* -----------------------------------------
+   TOP CONTROL BAR (Sport / Category / Year)
+   ----------------------------------------- */
+
+.top-control-bar--dark {
+  width: 100%;
+  background: #1a1a1a;
+  padding: var(--space-lg);
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  margin-bottom: 24px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.control-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* -----------------------------------------
+   PLAYER SETUP BLOCK
+   ----------------------------------------- */
+
+.player-setup--dark {
+  width: 100%;
+  background: #1a1a1a;
+  padding: var(--space-lg);
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: 24px;
+}
+
+.player-setup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-setup-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e6e6e6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.player-setup-controls {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.player-setup-btn {
+  width: auto;
+  margin: 0;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+/* -----------------------------------------
+   PLAYER NAME INPUT GRID
+   ----------------------------------------- */
+
+.player-name-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.player-name-inputs input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #0f0f0f;
+  color: #e6e6e6;
+  font-size: 15px;
+}
+
+.player-name-inputs input:focus {
+  outline: 2px solid #4da3ff;
+  outline-offset: 2px;
+}
+
+/* -----------------------------------------
+   RESPONSIVE TWEAKS
+   ----------------------------------------- */
+
+@media (max-width: 700px) {
+  .top-control-bar--dark {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .control-group {
+    width: 100%;
+  }
+}
