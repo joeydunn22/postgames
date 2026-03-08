@@ -26,4 +26,28 @@
 </button>
 
 </body>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getDatabase, ref, set, onValue } 
+    from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCdihTsDUM9ny1AKNAZl8JejYFRt4nXEz4",
+    authDomain: "postgames-web.firebaseapp.com",
+    databaseURL: "https://postgames-web-default-rtdb.firebaseio.com",
+    projectId: "postgames-web",
+    storageBucket: "postgames-web.firebasestorage.app",
+    messagingSenderId: "95643944168",
+    appId: "1:95643944168:web:25177dedf2dcd55b31755d",
+    measurementId: "G-KCZD35F23V"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // TEMP TEST: write a value to confirm Firebase works
+  set(ref(db, "test/value"), "hello world");
+</script>
+
 </html>
