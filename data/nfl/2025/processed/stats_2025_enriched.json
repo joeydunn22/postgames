@@ -1,0 +1,8535 @@
+[
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "approximate_value_ic",
+    "stat_label": "Approximate Value (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Anderson",
+        "first_name": "Will",
+        "team": "HOU",
+        "value": 20.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Allen",
+        "first_name": "Zach",
+        "team": "DEN",
+        "value": 19.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Garrett",
+        "first_name": "Myles",
+        "team": "CLE",
+        "value": 19.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jones",
+        "first_name": "Ernest",
+        "team": "SEA",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Williams",
+        "first_name": "Leonard",
+        "team": "SEA",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 16.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Hunter",
+        "first_name": "Danielle",
+        "team": "HOU",
+        "value": 16.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Lloyd",
+        "first_name": "Devin",
+        "team": "JAX",
+        "value": 16.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passes_completed",
+    "stat_label": "Passes Completed",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 404.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 393.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 388.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 388.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 354.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 343.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 341.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 340.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 330.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Rodgers",
+        "first_name": "Aaron",
+        "team": "PIT",
+        "value": 327.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pass_attempts",
+    "stat_label": "Pass Attempts",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 612.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 600.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 597.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 578.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 568.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 560.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 543.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Ward",
+        "first_name": "Cam",
+        "team": "TEN",
+        "value": 540.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 512.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 502.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passing_yds",
+    "stat_label": "Passing Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 4707.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 4564.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 4552.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 4394.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 4048.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 4007.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 3942.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 3931.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 3727.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 3693.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passing_td",
+    "stat_label": "Passing TD",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 46.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 34.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 31.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 30.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 29.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 27.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 26.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 26.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 25.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 25.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 25.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 25.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passer_rating",
+    "stat_label": "Passer Rating",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 113.5,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 109.2,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 105.5,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 103.8,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 102.2,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 101.2,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Burrow",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 100.7,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 100.5,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 100.2,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 99.5,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_pass",
+    "stat_label": "Long Pass",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 88.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Rattler",
+        "first_name": "Spencer",
+        "team": "NOR",
+        "value": 87.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 86.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Wentz",
+        "first_name": "Carson",
+        "team": "MIN",
+        "value": 81.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Rodgers",
+        "first_name": "Aaron",
+        "team": "PIT",
+        "value": 80.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 79.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 77.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 75.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Stroud",
+        "first_name": "C.J.",
+        "team": "HOU",
+        "value": 75.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 72.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passes_intercepted",
+    "stat_label": "Passes Intercepted",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Smith",
+        "first_name": "Geno",
+        "team": "LVR",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 15.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 12.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "McCarthy",
+        "first_name": "J.J.",
+        "team": "MIN",
+        "value": 12.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Young",
+        "first_name": "Bryce",
+        "team": "CAR",
+        "value": 11.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "sacked",
+    "stat_label": "Sacked",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Smith",
+        "first_name": "Geno",
+        "team": "LVR",
+        "value": 55.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Ward",
+        "first_name": "Cam",
+        "team": "TEN",
+        "value": 55.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 54.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 47.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Brissett",
+        "first_name": "Jacoby",
+        "team": "ARI",
+        "value": 43.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 41.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 40.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 38.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 36.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 36.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "sacked_yds_lost",
+    "stat_label": "Sacked Yds Lost",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Ward",
+        "first_name": "Cam",
+        "team": "TEN",
+        "value": 410.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Smith",
+        "first_name": "Geno",
+        "team": "LVR",
+        "value": 405.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 301.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 298.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Brissett",
+        "first_name": "Jacoby",
+        "team": "ARI",
+        "value": 288.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 259.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 247.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 239.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 234.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 208.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pick_sixes_ic",
+    "stat_label": "Pick Sixes (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Burrow",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Flacco",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Allen",
+        "first_name": "Brandon",
+        "team": "TEN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Brosmer",
+        "first_name": "Max",
+        "team": "MIN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Browning",
+        "first_name": "Jake",
+        "team": "CIN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Cousins",
+        "first_name": "Kirk",
+        "team": "ATL",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Lance",
+        "first_name": "Trey",
+        "team": "LAC",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Mariota",
+        "first_name": "Marcus",
+        "team": "WAS",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passing_yds_game",
+    "stat_label": "Passing Yds/Game",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 276.9,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 268.5,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 267.8,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 258.5,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 256.2,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 240.8,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Brissett",
+        "first_name": "Jacoby",
+        "team": "ARI",
+        "value": 240.4,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 238.5,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 238.1,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 235.7,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_pass_att",
+    "stat_label": "Yds/Pass Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 8.9,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 8.5,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 8.4,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 8.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 8.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 7.9,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 7.9,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 7.7,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 7.6,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 7.6,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_pass_cmp",
+    "stat_label": "Yds/Pass Cmp",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 13.3,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 12.5,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 12.4,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 12.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 11.9,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Penix",
+        "first_name": "Michael",
+        "team": "ATL",
+        "value": 11.9,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 11.9,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 11.8,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "McCarthy",
+        "first_name": "J.J.",
+        "team": "MIN",
+        "value": 11.7,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 11.6,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 11.6,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pass_attempts_game",
+    "stat_label": "Pass Attempts/Game",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 36.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 35.9,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 35.3,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 35.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Brissett",
+        "first_name": "Jacoby",
+        "team": "ARI",
+        "value": 34.6,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 34.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 33.4,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 32.9,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 32.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 31.9,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "adj_yds_pass_att",
+    "stat_label": "Adj Yds/Pass Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 9.46,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 8.82,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 8.79,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 8.45,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 8.21,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 8.13,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 8.13,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 8.08,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 7.84,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 7.61,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "net_yds_pass_att",
+    "stat_label": "Net Yds/Pass Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 7.78,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 7.66,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 7.35,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 7.25,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 7.17,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 6.99,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 6.98,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 6.88,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 6.83,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 6.74,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "adj_net_yds_pass_att",
+    "stat_label": "Adj Net Yds/Pass Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 8.26,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 8.25,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 7.51,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 7.4,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 7.4,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 7.3,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 7.14,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 7.12,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 7.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 6.84,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passes_completed_game",
+    "stat_label": "Passes Completed/Game",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 23.8,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 23.1,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 22.8,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 22.8,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Brissett",
+        "first_name": "Jacoby",
+        "team": "ARI",
+        "value": 22.5,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 22.5,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 21.9,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 21.3,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 20.8,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Rodgers",
+        "first_name": "Aaron",
+        "team": "PIT",
+        "value": 20.4,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pass_completion",
+    "stat_label": "Pass Completion %",
+    "is_percent_stat": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 72.0,
+        "is_percent": true
+      },
+      {
+        "rank": 2,
+        "player": "Jones",
+        "first_name": "Mac",
+        "team": "SFO",
+        "value": 69.6,
+        "is_percent": true
+      },
+      {
+        "rank": 3,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 69.4,
+        "is_percent": true
+      },
+      {
+        "rank": 4,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 69.3,
+        "is_percent": true
+      },
+      {
+        "rank": 5,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 68.0,
+        "is_percent": true
+      },
+      {
+        "rank": 5,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 68.0,
+        "is_percent": true
+      },
+      {
+        "rank": 7,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 67.7,
+        "is_percent": true
+      },
+      {
+        "rank": 7,
+        "player": "Rattler",
+        "first_name": "Spencer",
+        "team": "NOR",
+        "value": 67.7,
+        "is_percent": true
+      },
+      {
+        "rank": 7,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 67.7,
+        "is_percent": true
+      },
+      {
+        "rank": 10,
+        "player": "Shough",
+        "first_name": "Tyler",
+        "team": "NOR",
+        "value": 67.6,
+        "is_percent": true
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pass_intercept",
+    "stat_label": "Pass Intercept. %",
+    "is_percent_stat": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Penix",
+        "first_name": "Michael",
+        "team": "ATL",
+        "value": 1.1,
+        "is_percent": true
+      },
+      {
+        "rank": 2,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 1.2,
+        "is_percent": true
+      },
+      {
+        "rank": 3,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 1.3,
+        "is_percent": true
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 1.3,
+        "is_percent": true
+      },
+      {
+        "rank": 3,
+        "player": "Ward",
+        "first_name": "Cam",
+        "team": "TEN",
+        "value": 1.3,
+        "is_percent": true
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 1.4,
+        "is_percent": true
+      },
+      {
+        "rank": 6,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 1.4,
+        "is_percent": true
+      },
+      {
+        "rank": 6,
+        "player": "Rodgers",
+        "first_name": "Aaron",
+        "team": "PIT",
+        "value": 1.4,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Dart",
+        "first_name": "Jaxson",
+        "team": "NYG",
+        "value": 1.5,
+        "is_percent": true
+      },
+      {
+        "rank": 10,
+        "player": "Brissett",
+        "first_name": "Jacoby",
+        "team": "ARI",
+        "value": 1.6,
+        "is_percent": true
+      },
+      {
+        "rank": 10,
+        "player": "Flacco",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 1.6,
+        "is_percent": true
+      },
+      {
+        "rank": 10,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 1.6,
+        "is_percent": true
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passing_td",
+    "stat_label": "Passing TD %",
+    "is_percent_stat": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 7.7,
+        "is_percent": true
+      },
+      {
+        "rank": 2,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 7.0,
+        "is_percent": true
+      },
+      {
+        "rank": 2,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 7.0,
+        "is_percent": true
+      },
+      {
+        "rank": 4,
+        "player": "Burrow",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 6.6,
+        "is_percent": true
+      },
+      {
+        "rank": 5,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 6.3,
+        "is_percent": true
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 5.9,
+        "is_percent": true
+      },
+      {
+        "rank": 7,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 5.5,
+        "is_percent": true
+      },
+      {
+        "rank": 8,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 5.4,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 5.2,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 5.2,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 5.2,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 5.2,
+        "is_percent": true
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "sack",
+    "stat_label": "Sack %",
+    "is_percent_stat": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Flacco",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 3.4,
+        "is_percent": true
+      },
+      {
+        "rank": 2,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 3.47,
+        "is_percent": true
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 3.71,
+        "is_percent": true
+      },
+      {
+        "rank": 4,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 3.73,
+        "is_percent": true
+      },
+      {
+        "rank": 5,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 4.05,
+        "is_percent": true
+      },
+      {
+        "rank": 6,
+        "player": "Penix",
+        "first_name": "Michael",
+        "team": "ATL",
+        "value": 4.5,
+        "is_percent": true
+      },
+      {
+        "rank": 7,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 4.57,
+        "is_percent": true
+      },
+      {
+        "rank": 8,
+        "player": "Cousins",
+        "first_name": "Kirk",
+        "team": "ATL",
+        "value": 4.61,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 4.91,
+        "is_percent": true
+      },
+      {
+        "rank": 10,
+        "player": "Stroud",
+        "first_name": "C.J.",
+        "team": "HOU",
+        "value": 5.16,
+        "is_percent": true
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "qbr",
+    "stat_label": "QBR",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 77.1,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 72.8,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 72.7,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 71.2,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 70.2,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Mahomes",
+        "first_name": "Patrick",
+        "team": "KAN",
+        "value": 68.5,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 65.4,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Burrow",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 63.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 63.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 62.7,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "game_winning_drives_ic",
+    "stat_label": "Game-Winning Drives (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 7.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 6.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Young",
+        "first_name": "Bryce",
+        "team": "CAR",
+        "value": 6.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Mills",
+        "first_name": "Davis",
+        "team": "HOU",
+        "value": 3.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "comebacks",
+    "stat_label": "Comebacks",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 6.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Young",
+        "first_name": "Bryce",
+        "team": "CAR",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 3.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pass_completion_idx",
+    "stat_label": "Pass Completion % Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 127.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Jones",
+        "first_name": "Mac",
+        "team": "SFO",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 112.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 112.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 111.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Rattler",
+        "first_name": "Spencer",
+        "team": "NOR",
+        "value": 111.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 111.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 110.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Shough",
+        "first_name": "Tyler",
+        "team": "NOR",
+        "value": 110.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Smith",
+        "first_name": "Geno",
+        "team": "LVR",
+        "value": 110.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_pass_att_idx",
+    "stat_label": "Yds/Pass Att Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 140.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 131.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 130.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 122.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 120.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 112.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 111.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "adj_yds_pass_att_idx",
+    "stat_label": "Adj Yds/Pass Att Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 137.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 127.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 126.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 121.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 116.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 112.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 109.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "net_yds_pass_att_idx",
+    "stat_label": "Net Yds/Pass Att Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 134.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 131.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 125.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 123.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 121.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 115.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 112.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "adj_net_yds_pass_att_idx",
+    "stat_label": "Adj Net Yds/Pass Att Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 131.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 131.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 121.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 119.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 119.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 115.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 115.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 113.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 111.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "pass_intercept_idx",
+    "stat_label": "Pass Intercept. % Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Penix",
+        "first_name": "Michael",
+        "team": "ATL",
+        "value": 119.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 116.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 115.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Ward",
+        "first_name": "Cam",
+        "team": "TEN",
+        "value": 115.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 113.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Rodgers",
+        "first_name": "Aaron",
+        "team": "PIT",
+        "value": 113.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Dart",
+        "first_name": "Jaxson",
+        "team": "NYG",
+        "value": 112.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Flacco",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 110.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "sack_idx",
+    "stat_label": "Sack % Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Flacco",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 124.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 124.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 122.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 122.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 120.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Penix",
+        "first_name": "Michael",
+        "team": "ATL",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Cousins",
+        "first_name": "Kirk",
+        "team": "ATL",
+        "value": 116.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 116.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Stroud",
+        "first_name": "C.J.",
+        "team": "HOU",
+        "value": 112.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passing_td_idx",
+    "stat_label": "Passing TD % Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 138.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 130.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 129.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Burrow",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 124.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 121.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 116.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 111.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 110.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 108.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 108.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 108.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passer_rating_idx",
+    "stat_label": "Passer Rating Idx",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 133.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 127.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 121.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 116.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Burrow",
+        "first_name": "Joe",
+        "team": "CIN",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 114.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 113.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Purdy",
+        "first_name": "Brock",
+        "team": "SFO",
+        "value": 113.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 112.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "rushing_att",
+    "stat_label": "Rushing Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 323.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 311.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 309.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 307.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 287.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Barkley",
+        "first_name": "Saquon",
+        "team": "PHI",
+        "value": 280.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jeanty",
+        "first_name": "Ashton",
+        "team": "LVR",
+        "value": 266.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Etienne",
+        "first_name": "Travis",
+        "team": "JAX",
+        "value": 260.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 259.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 252.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "rushing_yds",
+    "stat_label": "Rushing Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 1621.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 1595.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 1585.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 1478.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 1350.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 1252.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 1223.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 1202.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 1201.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Barkley",
+        "first_name": "Saquon",
+        "team": "PHI",
+        "value": 1140.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "rushing_td",
+    "stat_label": "Rushing TD",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 16.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jacobs",
+        "first_name": "Josh",
+        "team": "GNB",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Charbonnet",
+        "first_name": "Zach",
+        "team": "SEA",
+        "value": 12.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 12.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 10.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 10.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_rush",
+    "stat_label": "Long Rush",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 93.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 83.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 78.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Croskey-Merritt",
+        "first_name": "Jacory",
+        "team": "WAS",
+        "value": 72.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Montgomery",
+        "first_name": "David",
+        "team": "DET",
+        "value": 72.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Demercado",
+        "first_name": "Emari",
+        "team": "ARI",
+        "value": 71.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Etienne",
+        "first_name": "Travis",
+        "team": "JAX",
+        "value": 71.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Hill",
+        "first_name": "Justice",
+        "team": "BAL",
+        "value": 71.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Henderson",
+        "first_name": "TreVeyon",
+        "team": "NWE",
+        "value": 69.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 66.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_rushing_att",
+    "stat_label": "Yds/Rushing Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 5.7,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 5.2,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 5.2,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 5.2,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Corum",
+        "first_name": "Blake",
+        "team": "LAR",
+        "value": 5.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Henderson",
+        "first_name": "TreVeyon",
+        "team": "NWE",
+        "value": 5.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 5.1,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Dobbins",
+        "first_name": "J.K.",
+        "team": "DEN",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Swift",
+        "first_name": "D'Andre",
+        "team": "CHI",
+        "value": 4.9,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 4.9,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "rushing_yds_game",
+    "stat_label": "Rushing Yds/Game",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 95.4,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 93.8,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 93.2,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 86.9,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 84.4,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Dobbins",
+        "first_name": "J.K.",
+        "team": "DEN",
+        "value": 77.2,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 75.1,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 73.6,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 71.9,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Barkley",
+        "first_name": "Saquon",
+        "team": "PHI",
+        "value": 71.3,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "receptions",
+    "stat_label": "Receptions",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 129.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "McBride",
+        "first_name": "Trey",
+        "team": "ARI",
+        "value": 126.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Chase",
+        "first_name": "Ja'Marr",
+        "team": "CIN",
+        "value": 125.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 119.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "St. Brown",
+        "first_name": "Amon-Ra",
+        "team": "DET",
+        "value": 117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 102.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Olave",
+        "first_name": "Chris",
+        "team": "NOR",
+        "value": 100.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Pickens",
+        "first_name": "George",
+        "team": "DAL",
+        "value": 93.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Robinson",
+        "first_name": "Wan'Dale",
+        "team": "NYG",
+        "value": 92.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Pitts",
+        "first_name": "Kyle",
+        "team": "ATL",
+        "value": 88.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "receiving_yds",
+    "stat_label": "Receiving Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 1793.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 1715.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Pickens",
+        "first_name": "George",
+        "team": "DAL",
+        "value": 1429.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Chase",
+        "first_name": "Ja'Marr",
+        "team": "CIN",
+        "value": 1412.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "St. Brown",
+        "first_name": "Amon-Ra",
+        "team": "DET",
+        "value": 1401.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "McBride",
+        "first_name": "Trey",
+        "team": "ARI",
+        "value": 1239.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Flowers",
+        "first_name": "Zay",
+        "team": "BAL",
+        "value": 1211.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Olave",
+        "first_name": "Chris",
+        "team": "NOR",
+        "value": 1163.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Collins",
+        "first_name": "Nico",
+        "team": "HOU",
+        "value": 1117.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Jameson",
+        "team": "DET",
+        "value": 1117.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "receiving_td",
+    "stat_label": "Receiving TD",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Adams",
+        "first_name": "Davante",
+        "team": "LAR",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Goedert",
+        "first_name": "Dallas",
+        "team": "PHI",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Higgins",
+        "first_name": "Tee",
+        "team": "CIN",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "McBride",
+        "first_name": "Trey",
+        "team": "ARI",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "St. Brown",
+        "first_name": "Amon-Ra",
+        "team": "DET",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 10.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 10.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jennings",
+        "first_name": "Jauan",
+        "team": "SFO",
+        "value": 9.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Olave",
+        "first_name": "Chris",
+        "team": "NOR",
+        "value": 9.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Pickens",
+        "first_name": "George",
+        "team": "DAL",
+        "value": 9.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_reception",
+    "stat_label": "Long Reception",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Atwell",
+        "first_name": "Tutu",
+        "team": "LAR",
+        "value": 88.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Shaheed",
+        "first_name": "Rashid",
+        "team": "2TM",
+        "value": 87.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 86.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Addison",
+        "first_name": "Jordan",
+        "team": "MIN",
+        "value": 81.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Metcalf",
+        "first_name": "D.K.",
+        "team": "PIT",
+        "value": 80.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Smith",
+        "first_name": "DeVonta",
+        "team": "PHI",
+        "value": 79.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Egbuka",
+        "first_name": "Emeka",
+        "team": "TAM",
+        "value": 77.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Higgins",
+        "first_name": "Jayden",
+        "team": "HOU",
+        "value": 75.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Mitchell",
+        "first_name": "Adonai",
+        "team": "2TM",
+        "value": 75.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Lamb",
+        "first_name": "CeeDee",
+        "team": "DAL",
+        "value": 74.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_reception",
+    "stat_label": "Yds/Reception",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Pierce",
+        "first_name": "Alec",
+        "team": "IND",
+        "value": 21.3,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Watson",
+        "first_name": "Christian",
+        "team": "GNB",
+        "value": 17.5,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Williams",
+        "first_name": "Jameson",
+        "team": "DET",
+        "value": 17.2,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Boutte",
+        "first_name": "Kayshon",
+        "team": "NWE",
+        "value": 16.7,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Collins",
+        "first_name": "Nico",
+        "team": "HOU",
+        "value": 15.7,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Pickens",
+        "first_name": "George",
+        "team": "DAL",
+        "value": 15.4,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Kraft",
+        "first_name": "Tucker",
+        "team": "GNB",
+        "value": 15.3,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "McLaurin",
+        "first_name": "Terry",
+        "team": "WAS",
+        "value": 15.3,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 15.1,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Odunze",
+        "first_name": "Rome",
+        "team": "CHI",
+        "value": 15.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "receiving_yds_game",
+    "stat_label": "Receiving Yds/Game",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 107.2,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 105.5,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Chase",
+        "first_name": "Ja'Marr",
+        "team": "CIN",
+        "value": 88.3,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Pickens",
+        "first_name": "George",
+        "team": "DAL",
+        "value": 84.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "St. Brown",
+        "first_name": "Amon-Ra",
+        "team": "DET",
+        "value": 82.4,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Lamb",
+        "first_name": "CeeDee",
+        "team": "DAL",
+        "value": 76.9,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "London",
+        "first_name": "Drake",
+        "team": "ATL",
+        "value": 76.6,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Collins",
+        "first_name": "Nico",
+        "team": "HOU",
+        "value": 74.5,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "McBride",
+        "first_name": "Trey",
+        "team": "ARI",
+        "value": 72.9,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Olave",
+        "first_name": "Chris",
+        "team": "NOR",
+        "value": 72.7,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "touchdowns",
+    "stat_label": "Touchdowns",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 20.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 16.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Adams",
+        "first_name": "Davante",
+        "team": "LAR",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Jacobs",
+        "first_name": "Josh",
+        "team": "GNB",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Etienne",
+        "first_name": "Travis",
+        "team": "JAX",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 13.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "points_scored",
+    "stat_label": "Points Scored",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Myers",
+        "first_name": "Jason",
+        "team": "SEA",
+        "value": 171.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Fairbairn",
+        "first_name": "Ka'imi",
+        "team": "HOU",
+        "value": 160.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Aubrey",
+        "first_name": "Brandon",
+        "team": "DAL",
+        "value": 155.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Dicker",
+        "first_name": "Cameron",
+        "team": "LAC",
+        "value": 148.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Little",
+        "first_name": "Cam",
+        "team": "JAX",
+        "value": 140.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Bates",
+        "first_name": "Jake",
+        "team": "DET",
+        "value": 135.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Borregales",
+        "first_name": "Andres",
+        "team": "NWE",
+        "value": 134.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Loop",
+        "first_name": "Tyler",
+        "team": "BAL",
+        "value": 134.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Butker",
+        "first_name": "Harrison",
+        "team": "KAN",
+        "value": 130.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Reichard",
+        "first_name": "Will",
+        "team": "MIN",
+        "value": 130.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "rushing_receiving_td",
+    "stat_label": "Rushing/Receiving TD",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 20.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 16.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Adams",
+        "first_name": "Davante",
+        "team": "LAR",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Jacobs",
+        "first_name": "Josh",
+        "team": "GNB",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Etienne",
+        "first_name": "Travis",
+        "team": "JAX",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Javonte",
+        "team": "DAL",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 13.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "non_offensive_tds",
+    "stat_label": "Non-Offensive TDs",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Jones",
+        "first_name": "Marcus",
+        "team": "NWE",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Benford",
+        "first_name": "Christian",
+        "team": "BUF",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Bush Jr.",
+        "first_name": "Devin",
+        "team": "CLE",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Lane",
+        "first_name": "Jaylin",
+        "team": "WAS",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Lawrence",
+        "first_name": "DeMarcus",
+        "team": "SEA",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Rodgers",
+        "first_name": "Isaiah",
+        "team": "MIN",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Shaheed",
+        "first_name": "Rashid",
+        "team": "2TM",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Washington",
+        "first_name": "Parker",
+        "team": "JAX",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 2.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_from_scrimmage",
+    "stat_label": "Yds From Scrimmage",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 2298.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 2126.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 1963.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 1912.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 1839.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 1838.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 1829.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 1820.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 1745.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Williams",
+        "first_name": "Kyren",
+        "team": "LAR",
+        "value": 1533.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "all_purpose_yds",
+    "stat_label": "All-Purpose Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 2427.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 2354.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 2298.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 2126.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 1963.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 1912.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 1839.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 1838.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 1829.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 1820.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "total_offense",
+    "stat_label": "Total Offense",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 4643.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Stafford",
+        "first_name": "Matthew",
+        "team": "LAR",
+        "value": 4558.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Prescott",
+        "first_name": "Dak",
+        "team": "DAL",
+        "value": 4521.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Goff",
+        "first_name": "Jared",
+        "team": "DET",
+        "value": 4350.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Nix",
+        "first_name": "Bo",
+        "team": "DEN",
+        "value": 4168.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 4165.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Lawrence",
+        "first_name": "Trevor",
+        "team": "JAX",
+        "value": 4119.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 3957.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 3949.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 3924.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "touches",
+    "stat_label": "Touches",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "McCaffrey",
+        "first_name": "Christian",
+        "team": "SFO",
+        "value": 413.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Taylor",
+        "first_name": "Jonathan",
+        "team": "IND",
+        "value": 369.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 366.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 342.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Henry",
+        "first_name": "Derrick",
+        "team": "BAL",
+        "value": 322.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Jeanty",
+        "first_name": "Ashton",
+        "team": "LVR",
+        "value": 321.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 320.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Barkley",
+        "first_name": "Saquon",
+        "team": "PHI",
+        "value": 317.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 305.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Brown",
+        "first_name": "Chase",
+        "team": "CIN",
+        "value": 301.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_touch",
+    "stat_label": "Yds/Touch",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Smith-Njigba",
+        "first_name": "Jaxon",
+        "team": "SEA",
+        "value": 14.5,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Nacua",
+        "first_name": "Puka",
+        "team": "LAR",
+        "value": 13.1,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "St. Brown",
+        "first_name": "Amon-Ra",
+        "team": "DET",
+        "value": 11.8,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Chase",
+        "first_name": "Ja'Marr",
+        "team": "CIN",
+        "value": 11.1,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "McBride",
+        "first_name": "Trey",
+        "team": "ARI",
+        "value": 9.8,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Robinson",
+        "first_name": "Bijan",
+        "team": "ATL",
+        "value": 6.3,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Achane",
+        "first_name": "De'Von",
+        "team": "MIA",
+        "value": 6.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Stevenson",
+        "first_name": "Rhamondre",
+        "team": "NWE",
+        "value": 5.9,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Gibbs",
+        "first_name": "Jahmyr",
+        "team": "DET",
+        "value": 5.7,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Cook",
+        "first_name": "James",
+        "team": "BUF",
+        "value": 5.6,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "kick_returns",
+    "stat_label": "Kick Returns",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 69.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 62.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 57.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Charlie",
+        "team": "CIN",
+        "value": 42.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Duvernay",
+        "first_name": "Devin",
+        "team": "CHI",
+        "value": 40.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 36.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Laube",
+        "first_name": "Dylan",
+        "team": "LVR",
+        "value": 33.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 33.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Saylors",
+        "first_name": "Jacob",
+        "team": "DET",
+        "value": 33.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Davis",
+        "first_name": "Ray",
+        "team": "BUF",
+        "value": 31.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Dortch",
+        "first_name": "Greg",
+        "team": "ARI",
+        "value": 31.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Etienne",
+        "first_name": "Trevor",
+        "team": "CAR",
+        "value": 31.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "kick_return_yds",
+    "stat_label": "Kick Return Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 1814.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 1588.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 1479.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Charlie",
+        "team": "CIN",
+        "value": 1084.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Duvernay",
+        "first_name": "Devin",
+        "team": "CHI",
+        "value": 1069.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 965.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Davis",
+        "first_name": "Ray",
+        "team": "BUF",
+        "value": 943.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 907.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Saylors",
+        "first_name": "Jacob",
+        "team": "DET",
+        "value": 897.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Laube",
+        "first_name": "Dylan",
+        "team": "LVR",
+        "value": 855.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "kick_return_td",
+    "stat_label": "Kick Return TD",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Banks",
+        "first_name": "Deonte",
+        "team": "NYG",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Davis",
+        "first_name": "Ray",
+        "team": "BUF",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Gibson",
+        "first_name": "Antonio",
+        "team": "NWE",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Jones",
+        "first_name": "Charlie",
+        "team": "CIN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Nwangwu",
+        "first_name": "Kene",
+        "team": "NYJ",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Shaheed",
+        "first_name": "Rashid",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_kick_return",
+    "stat_label": "Long Kick Return",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Shaheed",
+        "first_name": "Rashid",
+        "team": "2TM",
+        "value": 100.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Nwangwu",
+        "first_name": "Kene",
+        "team": "NYJ",
+        "value": 99.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Jones",
+        "first_name": "Charlie",
+        "team": "CIN",
+        "value": 98.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 98.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Davis",
+        "first_name": "Ray",
+        "team": "BUF",
+        "value": 97.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Banks",
+        "first_name": "Deonte",
+        "team": "NYG",
+        "value": 95.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Gibson",
+        "first_name": "Antonio",
+        "team": "NWE",
+        "value": 90.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 84.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 83.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Abdullah",
+        "first_name": "Ameer",
+        "team": "IND",
+        "value": 81.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_kick_return",
+    "stat_label": "Yds/Kick Return",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Davis",
+        "first_name": "Ray",
+        "team": "BUF",
+        "value": 30.4,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 29.9,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "McCaffrey",
+        "first_name": "Luke",
+        "team": "WAS",
+        "value": 29.6,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Mostert",
+        "first_name": "Raheem",
+        "team": "LVR",
+        "value": 29.3,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Noel",
+        "first_name": "Jaylin",
+        "team": "HOU",
+        "value": 27.6,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 27.5,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Saylors",
+        "first_name": "Jacob",
+        "team": "DET",
+        "value": 27.2,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Mitchell",
+        "first_name": "Keaton",
+        "team": "BAL",
+        "value": 26.9,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Shipley",
+        "first_name": "Will",
+        "team": "PHI",
+        "value": 26.8,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 26.8,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "punt_returns",
+    "stat_label": "Punt Returns",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Raymond",
+        "first_name": "Kalif",
+        "team": "DET",
+        "value": 32.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Noel",
+        "first_name": "Jaylin",
+        "team": "HOU",
+        "value": 31.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 30.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 29.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 28.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Smith",
+        "first_name": "Xavier",
+        "team": "LAR",
+        "value": 27.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Johnson",
+        "first_name": "Kameron",
+        "team": "TAM",
+        "value": 26.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 25.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Remigio",
+        "first_name": "Nikko",
+        "team": "KAN",
+        "value": 25.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Washington",
+        "first_name": "Parker",
+        "team": "JAX",
+        "value": 25.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "punt_return_yds",
+    "stat_label": "Punt Return Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 452.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 398.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 396.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Marcus",
+        "team": "NWE",
+        "value": 363.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Washington",
+        "first_name": "Parker",
+        "team": "JAX",
+        "value": 341.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Shaheed",
+        "first_name": "Rashid",
+        "team": "2TM",
+        "value": 339.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Noel",
+        "first_name": "Jaylin",
+        "team": "HOU",
+        "value": 335.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Lane",
+        "first_name": "Jaylin",
+        "team": "WAS",
+        "value": 314.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 298.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Johnson",
+        "first_name": "Kameron",
+        "team": "TAM",
+        "value": 291.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 291.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "punt_return_td",
+    "stat_label": "Punt Return TD",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Jones",
+        "first_name": "Marcus",
+        "team": "NWE",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Lane",
+        "first_name": "Jaylin",
+        "team": "WAS",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Washington",
+        "first_name": "Parker",
+        "team": "JAX",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Horton",
+        "first_name": "Tory",
+        "team": "SEA",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Raymond",
+        "first_name": "Kalif",
+        "team": "DET",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Shaheed",
+        "first_name": "Rashid",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_punt_return",
+    "stat_label": "Long Punt Return",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Horton",
+        "first_name": "Tory",
+        "team": "SEA",
+        "value": 95.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Jones",
+        "first_name": "Marcus",
+        "team": "NWE",
+        "value": 94.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 90.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Lane",
+        "first_name": "Jaylin",
+        "team": "WAS",
+        "value": 90.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Washington",
+        "first_name": "Parker",
+        "team": "JAX",
+        "value": 87.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 78.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 74.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 70.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 66.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Raymond",
+        "first_name": "Kalif",
+        "team": "DET",
+        "value": 65.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_punt_return",
+    "stat_label": "Yds/Punt Return",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 17.3,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 15.6,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 14.1,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Lane",
+        "first_name": "Jaylin",
+        "team": "WAS",
+        "value": 13.7,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Washington",
+        "first_name": "Parker",
+        "team": "JAX",
+        "value": 13.6,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 11.6,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Johnson",
+        "first_name": "Kameron",
+        "team": "TAM",
+        "value": 11.2,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Noel",
+        "first_name": "Jaylin",
+        "team": "HOU",
+        "value": 10.8,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 9.9,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Smith",
+        "first_name": "Xavier",
+        "team": "LAR",
+        "value": 9.3,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "kick_punt_returns",
+    "stat_label": "Kick & Punt Returns",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 87.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 85.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 79.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Duvernay",
+        "first_name": "Devin",
+        "team": "CHI",
+        "value": 61.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Noel",
+        "first_name": "Jaylin",
+        "team": "HOU",
+        "value": 60.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 58.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 56.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 56.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jones",
+        "first_name": "Charlie",
+        "team": "CIN",
+        "value": 55.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 54.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Remigio",
+        "first_name": "Nikko",
+        "team": "KAN",
+        "value": 54.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "kick_punt_return_yds",
+    "stat_label": "Kick & Punt Return Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Dike",
+        "first_name": "Chimere",
+        "team": "TEN",
+        "value": 1986.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Turpin",
+        "first_name": "KaVontae",
+        "team": "DAL",
+        "value": 1869.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Price",
+        "first_name": "Myles",
+        "team": "MIN",
+        "value": 1777.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Duvernay",
+        "first_name": "Devin",
+        "team": "CHI",
+        "value": 1300.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Williams",
+        "first_name": "Isaiah",
+        "team": "NYJ",
+        "value": 1233.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Washington",
+        "first_name": "Malik",
+        "team": "MIA",
+        "value": 1225.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jones",
+        "first_name": "Charlie",
+        "team": "CIN",
+        "value": 1199.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Moore",
+        "first_name": "Skyy",
+        "team": "SFO",
+        "value": 1198.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Noel",
+        "first_name": "Jaylin",
+        "team": "HOU",
+        "value": 1134.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Mims",
+        "first_name": "Marvin",
+        "team": "DEN",
+        "value": 1110.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "extra_pt_made",
+    "stat_label": "Extra Pt Made",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bates",
+        "first_name": "Jake",
+        "team": "DET",
+        "value": 54.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Borregales",
+        "first_name": "Andres",
+        "team": "NWE",
+        "value": 53.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Little",
+        "first_name": "Cam",
+        "team": "JAX",
+        "value": 50.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Myers",
+        "first_name": "Jason",
+        "team": "SEA",
+        "value": 48.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Aubrey",
+        "first_name": "Brandon",
+        "team": "DAL",
+        "value": 47.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Prater",
+        "first_name": "Matt",
+        "team": "BUF",
+        "value": 46.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Loop",
+        "first_name": "Tyler",
+        "team": "BAL",
+        "value": 44.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Boswell",
+        "first_name": "Chris",
+        "team": "PIT",
+        "value": 42.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Elliott",
+        "first_name": "Jake",
+        "team": "PHI",
+        "value": 41.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "McPherson",
+        "first_name": "Evan",
+        "team": "CIN",
+        "value": 41.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "extra_pt_att",
+    "stat_label": "Extra Pt Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bates",
+        "first_name": "Jake",
+        "team": "DET",
+        "value": 56.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Borregales",
+        "first_name": "Andres",
+        "team": "NWE",
+        "value": 55.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Little",
+        "first_name": "Cam",
+        "team": "JAX",
+        "value": 51.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Prater",
+        "first_name": "Matt",
+        "team": "BUF",
+        "value": 49.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Aubrey",
+        "first_name": "Brandon",
+        "team": "DAL",
+        "value": 48.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Myers",
+        "first_name": "Jason",
+        "team": "SEA",
+        "value": 48.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Loop",
+        "first_name": "Tyler",
+        "team": "BAL",
+        "value": 46.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "McPherson",
+        "first_name": "Evan",
+        "team": "CIN",
+        "value": 44.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Boswell",
+        "first_name": "Chris",
+        "team": "PIT",
+        "value": 43.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Elliott",
+        "first_name": "Jake",
+        "team": "PHI",
+        "value": 42.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "field_goals_made",
+    "stat_label": "Field Goals Made",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Fairbairn",
+        "first_name": "Ka'imi",
+        "team": "HOU",
+        "value": 44.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Myers",
+        "first_name": "Jason",
+        "team": "SEA",
+        "value": 41.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Dicker",
+        "first_name": "Cameron",
+        "team": "LAC",
+        "value": 38.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Aubrey",
+        "first_name": "Brandon",
+        "team": "DAL",
+        "value": 36.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Butker",
+        "first_name": "Harrison",
+        "team": "KAN",
+        "value": 33.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Reichard",
+        "first_name": "Will",
+        "team": "MIN",
+        "value": 33.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "McLaughlin",
+        "first_name": "Chase",
+        "team": "TAM",
+        "value": 32.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Little",
+        "first_name": "Cam",
+        "team": "JAX",
+        "value": 30.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Loop",
+        "first_name": "Tyler",
+        "team": "BAL",
+        "value": 30.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Grupe",
+        "first_name": "Blake",
+        "team": "2TM",
+        "value": 29.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "field_goals_att",
+    "stat_label": "Field Goals Att",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Fairbairn",
+        "first_name": "Ka'imi",
+        "team": "HOU",
+        "value": 48.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Myers",
+        "first_name": "Jason",
+        "team": "SEA",
+        "value": 48.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Aubrey",
+        "first_name": "Brandon",
+        "team": "DAL",
+        "value": 42.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Dicker",
+        "first_name": "Cameron",
+        "team": "LAC",
+        "value": 41.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Butker",
+        "first_name": "Harrison",
+        "team": "KAN",
+        "value": 38.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "McLaughlin",
+        "first_name": "Chase",
+        "team": "TAM",
+        "value": 38.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Grupe",
+        "first_name": "Blake",
+        "team": "2TM",
+        "value": 37.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Reichard",
+        "first_name": "Will",
+        "team": "MIN",
+        "value": 35.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Slye",
+        "first_name": "Joey",
+        "team": "TEN",
+        "value": 35.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Bates",
+        "first_name": "Jake",
+        "team": "DET",
+        "value": 34.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Little",
+        "first_name": "Cam",
+        "team": "JAX",
+        "value": 34.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Loop",
+        "first_name": "Tyler",
+        "team": "BAL",
+        "value": 34.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "field_goal",
+    "stat_label": "Field Goal %",
+    "is_percent_stat": true,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Folk",
+        "first_name": "Nick",
+        "team": "NYJ",
+        "value": 96.552,
+        "is_percent": true
+      },
+      {
+        "rank": 1,
+        "player": "Piñeiro",
+        "first_name": "Eddy",
+        "team": "SFO",
+        "value": 96.552,
+        "is_percent": true
+      },
+      {
+        "rank": 3,
+        "player": "Reichard",
+        "first_name": "Will",
+        "team": "MIN",
+        "value": 94.286,
+        "is_percent": true
+      },
+      {
+        "rank": 4,
+        "player": "Patterson",
+        "first_name": "Riley",
+        "team": "MIA",
+        "value": 93.103,
+        "is_percent": true
+      },
+      {
+        "rank": 5,
+        "player": "Shrader",
+        "first_name": "Spencer",
+        "team": "IND",
+        "value": 92.857,
+        "is_percent": true
+      },
+      {
+        "rank": 6,
+        "player": "Dicker",
+        "first_name": "Cameron",
+        "team": "LAC",
+        "value": 92.683,
+        "is_percent": true
+      },
+      {
+        "rank": 7,
+        "player": "Mevis",
+        "first_name": "Harrison",
+        "team": "LAR",
+        "value": 92.308,
+        "is_percent": true
+      },
+      {
+        "rank": 8,
+        "player": "Fairbairn",
+        "first_name": "Ka'imi",
+        "team": "HOU",
+        "value": 91.667,
+        "is_percent": true
+      },
+      {
+        "rank": 9,
+        "player": "Prater",
+        "first_name": "Matt",
+        "team": "BUF",
+        "value": 90.0,
+        "is_percent": true
+      },
+      {
+        "rank": 10,
+        "player": "McPherson",
+        "first_name": "Evan",
+        "team": "CIN",
+        "value": 89.286,
+        "is_percent": true
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "punts",
+    "stat_label": "Punts",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bojorquez",
+        "first_name": "Corey",
+        "team": "CLE",
+        "value": 91.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Hekker",
+        "first_name": "Johnny",
+        "team": "TEN",
+        "value": 78.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Crawshaw",
+        "first_name": "Jeremy",
+        "team": "DEN",
+        "value": 75.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Mann",
+        "first_name": "Braden",
+        "team": "PHI",
+        "value": 72.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Townsend",
+        "first_name": "Tommy",
+        "team": "HOU",
+        "value": 72.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Cole III",
+        "first_name": "AJ",
+        "team": "LVR",
+        "value": 71.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "McNamara",
+        "first_name": "Austin",
+        "team": "NYJ",
+        "value": 71.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Rehkow",
+        "first_name": "Ryan",
+        "team": "CIN",
+        "value": 65.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Wright",
+        "first_name": "Ryan",
+        "team": "MIN",
+        "value": 65.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Pinion",
+        "first_name": "Bradley",
+        "team": "ATL",
+        "value": 64.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "punting_yds",
+    "stat_label": "Punting Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bojorquez",
+        "first_name": "Corey",
+        "team": "CLE",
+        "value": 4165.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Hekker",
+        "first_name": "Johnny",
+        "team": "TEN",
+        "value": 3653.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Mann",
+        "first_name": "Braden",
+        "team": "PHI",
+        "value": 3591.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Crawshaw",
+        "first_name": "Jeremy",
+        "team": "DEN",
+        "value": 3573.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Townsend",
+        "first_name": "Tommy",
+        "team": "HOU",
+        "value": 3424.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Cole III",
+        "first_name": "AJ",
+        "team": "LVR",
+        "value": 3379.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "McNamara",
+        "first_name": "Austin",
+        "team": "NYJ",
+        "value": 3317.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Rehkow",
+        "first_name": "Ryan",
+        "team": "CIN",
+        "value": 3285.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Wright",
+        "first_name": "Ryan",
+        "team": "MIN",
+        "value": 3184.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Bailey",
+        "first_name": "Jake",
+        "team": "MIA",
+        "value": 3005.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_punt",
+    "stat_label": "Long Punt",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Wright",
+        "first_name": "Ryan",
+        "team": "MIN",
+        "value": 77.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Crawshaw",
+        "first_name": "Jeremy",
+        "team": "DEN",
+        "value": 76.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Stout",
+        "first_name": "Jordan",
+        "team": "BAL",
+        "value": 74.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Baringer",
+        "first_name": "Bryce",
+        "team": "NWE",
+        "value": 73.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Townsend",
+        "first_name": "Tommy",
+        "team": "HOU",
+        "value": 73.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "McNamara",
+        "first_name": "Austin",
+        "team": "NYJ",
+        "value": 72.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Whelan",
+        "first_name": "Daniel",
+        "team": "GNB",
+        "value": 72.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Way",
+        "first_name": "Tress",
+        "team": "WAS",
+        "value": 71.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Fox",
+        "first_name": "Jack",
+        "team": "DET",
+        "value": 70.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Mann",
+        "first_name": "Braden",
+        "team": "PHI",
+        "value": 70.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Rehkow",
+        "first_name": "Ryan",
+        "team": "CIN",
+        "value": 70.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "punts_blocked",
+    "stat_label": "Punts Blocked",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bojorquez",
+        "first_name": "Corey",
+        "team": "CLE",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Cole III",
+        "first_name": "AJ",
+        "team": "LVR",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Dixon",
+        "first_name": "Riley",
+        "team": "TAM",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Kroeger",
+        "first_name": "Kai",
+        "team": "NOR",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "O'Donnell",
+        "first_name": "Pat",
+        "team": "ARI",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "yds_punt",
+    "stat_label": "Yds/Punt",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Gillikin",
+        "first_name": "Blake",
+        "team": "ARI",
+        "value": 51.7,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Whelan",
+        "first_name": "Daniel",
+        "team": "GNB",
+        "value": 51.7,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Haack",
+        "first_name": "Matt",
+        "team": "ARI",
+        "value": 51.3,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Rehkow",
+        "first_name": "Ryan",
+        "team": "CIN",
+        "value": 50.5,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Stout",
+        "first_name": "Jordan",
+        "team": "BAL",
+        "value": 50.1,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Mann",
+        "first_name": "Braden",
+        "team": "PHI",
+        "value": 49.9,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Dickson",
+        "first_name": "Michael",
+        "team": "SEA",
+        "value": 49.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Wright",
+        "first_name": "Ryan",
+        "team": "MIN",
+        "value": 49.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Sanchez",
+        "first_name": "Rigoberto",
+        "team": "IND",
+        "value": 48.8,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Anger",
+        "first_name": "Bryan",
+        "team": "DAL",
+        "value": 48.6,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "fumbles_ic",
+    "stat_label": "Fumbles (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Darnold",
+        "first_name": "Sam",
+        "team": "SEA",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Ward",
+        "first_name": "Cam",
+        "team": "TEN",
+        "value": 11.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 9.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 9.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 8.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 8.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 8.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Allen",
+        "first_name": "Josh",
+        "team": "BUF",
+        "value": 7.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 7.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 7.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 7.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "fumbles_recovered_ic",
+    "stat_label": "Fumbles Recovered (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Williams",
+        "first_name": "Caleb",
+        "team": "CHI",
+        "value": 6.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Love",
+        "first_name": "Jordan",
+        "team": "GNB",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Maye",
+        "first_name": "Drake",
+        "team": "NWE",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Mayfield",
+        "first_name": "Baker",
+        "team": "TAM",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "McCarthy",
+        "first_name": "J.J.",
+        "team": "MIN",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Tagovailoa",
+        "first_name": "Tua",
+        "team": "MIA",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Herbert",
+        "first_name": "Justin",
+        "team": "LAC",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Hurts",
+        "first_name": "Jalen",
+        "team": "PHI",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jackson",
+        "first_name": "Lamar",
+        "team": "BAL",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jones",
+        "first_name": "Daniel",
+        "team": "IND",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Jones",
+        "first_name": "Marcus",
+        "team": "NWE",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Larvadain",
+        "first_name": "Gage",
+        "team": "CLE",
+        "value": 3.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "fumble_return_yds",
+    "stat_label": "Fumble Return Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Howden",
+        "first_name": "Jordan",
+        "team": "NOR",
+        "value": 86.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Rodgers",
+        "first_name": "Isaiah",
+        "team": "MIN",
+        "value": 66.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Smith",
+        "first_name": "Roquan",
+        "team": "BAL",
+        "value": 63.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Lawrence",
+        "first_name": "DeMarcus",
+        "team": "SEA",
+        "value": 56.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Webb",
+        "first_name": "Sam",
+        "team": "CLE",
+        "value": 47.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Pierre",
+        "first_name": "James",
+        "team": "PIT",
+        "value": 34.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Rankins",
+        "first_name": "Sheldon",
+        "team": "HOU",
+        "value": 32.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Young",
+        "first_name": "Chase",
+        "team": "NOR",
+        "value": 28.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Nubin",
+        "first_name": "Tyler",
+        "team": "NYG",
+        "value": 27.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Pearce",
+        "first_name": "James",
+        "team": "ATL",
+        "value": 27.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Sanker",
+        "first_name": "Jonas",
+        "team": "NOR",
+        "value": 27.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "fumble_return_td_ic",
+    "stat_label": "Fumble Return TD (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Lawrence",
+        "first_name": "DeMarcus",
+        "team": "SEA",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Anderson",
+        "first_name": "Will",
+        "team": "HOU",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Benford",
+        "first_name": "Christian",
+        "team": "BUF",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Chaisson",
+        "first_name": "K'Lavon",
+        "team": "NWE",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Collins",
+        "first_name": "Zaven",
+        "team": "ARI",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Herbig",
+        "first_name": "Nick",
+        "team": "PIT",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Howden",
+        "first_name": "Jordan",
+        "team": "NOR",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Lockett",
+        "first_name": "Tyler",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Marks",
+        "first_name": "Woody",
+        "team": "HOU",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Nolen",
+        "first_name": "Walter",
+        "team": "ARI",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Nubin",
+        "first_name": "Tyler",
+        "team": "NYG",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Pierre",
+        "first_name": "James",
+        "team": "PIT",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "interceptions_ic",
+    "stat_label": "Interceptions (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Byard",
+        "first_name": "Kevin",
+        "team": "CHI",
+        "value": 7.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Horn",
+        "first_name": "Jaycee",
+        "team": "CAR",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Johnson",
+        "first_name": "Antonio",
+        "team": "JAX",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Jones",
+        "first_name": "Ernest",
+        "team": "SEA",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Lloyd",
+        "first_name": "Devin",
+        "team": "JAX",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Watts",
+        "first_name": "Xavier",
+        "team": "ATL",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Wright",
+        "first_name": "Nahshon",
+        "team": "CHI",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Battle",
+        "first_name": "Jordan",
+        "team": "CIN",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Bryant",
+        "first_name": "Coby",
+        "team": "SEA",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Bullock",
+        "first_name": "Calen",
+        "team": "HOU",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Bynum",
+        "first_name": "Camryn",
+        "team": "IND",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Edmunds",
+        "first_name": "Tremaine",
+        "team": "CHI",
+        "value": 4.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "intercept_ret_yds",
+    "stat_label": "Intercept. Ret. Yds",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bush Jr.",
+        "first_name": "Devin",
+        "team": "CLE",
+        "value": 164.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Jones",
+        "first_name": "Ernest",
+        "team": "SEA",
+        "value": 150.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Lloyd",
+        "first_name": "Devin",
+        "team": "JAX",
+        "value": 135.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Wright",
+        "first_name": "Nahshon",
+        "team": "CHI",
+        "value": 118.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Johnson",
+        "first_name": "Antonio",
+        "team": "JAX",
+        "value": 107.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Jackson",
+        "first_name": "Michael",
+        "team": "CAR",
+        "value": 102.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Byard",
+        "first_name": "Kevin",
+        "team": "CHI",
+        "value": 91.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Lenoir",
+        "first_name": "Deommodore",
+        "team": "SFO",
+        "value": 90.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Rodgers",
+        "first_name": "Isaiah",
+        "team": "MIN",
+        "value": 87.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Gilman",
+        "first_name": "Alohi",
+        "team": "2TM",
+        "value": 84.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Wiggins",
+        "first_name": "Nate",
+        "team": "BAL",
+        "value": 84.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "intercept_ret_td_ic",
+    "stat_label": "Intercept. Ret. TD (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bush Jr.",
+        "first_name": "Devin",
+        "team": "CLE",
+        "value": 2.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Barton",
+        "first_name": "Cody",
+        "team": "TEN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Bates III",
+        "first_name": "Jessie",
+        "team": "ATL",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Benford",
+        "first_name": "Christian",
+        "team": "BUF",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Bland",
+        "first_name": "DaRon",
+        "team": "DAL",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Campbell",
+        "first_name": "Tyson",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dean",
+        "first_name": "Jamel",
+        "team": "TAM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Dugger",
+        "first_name": "Kyle",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Durant",
+        "first_name": "Cobie",
+        "team": "LAR",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Edwards",
+        "first_name": "T.J.",
+        "team": "CHI",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Gilman",
+        "first_name": "Alohi",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Hunt",
+        "first_name": "Jalyx",
+        "team": "PHI",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "long_intercep_return",
+    "stat_label": "Long Intercep. Return",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Lloyd",
+        "first_name": "Devin",
+        "team": "JAX",
+        "value": 99.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Bush Jr.",
+        "first_name": "Devin",
+        "team": "CLE",
+        "value": 97.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Rodgers",
+        "first_name": "Isaiah",
+        "team": "MIN",
+        "value": 87.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Jones",
+        "first_name": "Ernest",
+        "team": "SEA",
+        "value": 85.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Gilman",
+        "first_name": "Alohi",
+        "team": "2TM",
+        "value": 84.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Winters",
+        "first_name": "Dee",
+        "team": "SFO",
+        "value": 74.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Wright",
+        "first_name": "Nahshon",
+        "team": "CHI",
+        "value": 74.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Dugger",
+        "first_name": "Kyle",
+        "team": "2TM",
+        "value": 73.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Bland",
+        "first_name": "DaRon",
+        "team": "DAL",
+        "value": 68.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Flott",
+        "first_name": "Cordale",
+        "team": "NYG",
+        "value": 68.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "tackles_solo",
+    "stat_label": "Tackles Solo",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Brooks",
+        "first_name": "Jordyn",
+        "team": "MIA",
+        "value": 99.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Gray",
+        "first_name": "Cedric",
+        "team": "TEN",
+        "value": 97.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "White",
+        "first_name": "Devin",
+        "team": "LVR",
+        "value": 95.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Campbell",
+        "first_name": "Jack",
+        "team": "DET",
+        "value": 89.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Curl",
+        "first_name": "Kamren",
+        "team": "LAR",
+        "value": 79.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Wagner",
+        "first_name": "Bobby",
+        "team": "WAS",
+        "value": 79.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Okereke",
+        "first_name": "Bobby",
+        "team": "NYG",
+        "value": 78.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Smith",
+        "first_name": "Roquan",
+        "team": "BAL",
+        "value": 76.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Conner",
+        "first_name": "Chamarri",
+        "team": "KAN",
+        "value": 75.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Wilson",
+        "first_name": "Payton",
+        "team": "PIT",
+        "value": 74.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "tackles_combined",
+    "stat_label": "Tackles Combined",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Brooks",
+        "first_name": "Jordyn",
+        "team": "MIA",
+        "value": 183.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Campbell",
+        "first_name": "Jack",
+        "team": "DET",
+        "value": 176.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "White",
+        "first_name": "Devin",
+        "team": "LVR",
+        "value": 174.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Gray",
+        "first_name": "Cedric",
+        "team": "TEN",
+        "value": 164.0,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Wagner",
+        "first_name": "Bobby",
+        "team": "WAS",
+        "value": 162.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Schwesinger",
+        "first_name": "Carson",
+        "team": "CLE",
+        "value": 156.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Bolton",
+        "first_name": "Nick",
+        "team": "KAN",
+        "value": 154.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Sherwood",
+        "first_name": "Jamien",
+        "team": "NYJ",
+        "value": 154.0,
+        "is_percent": false
+      },
+      {
+        "rank": 9,
+        "player": "Cashman",
+        "first_name": "Blake",
+        "team": "MIN",
+        "value": 144.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Davis",
+        "first_name": "Demario",
+        "team": "NOR",
+        "value": 143.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Okereke",
+        "first_name": "Bobby",
+        "team": "NYG",
+        "value": 143.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "Oluokun",
+        "first_name": "Foyesade",
+        "team": "JAX",
+        "value": 143.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "tackles_for_loss",
+    "stat_label": "Tackles For Loss",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Garrett",
+        "first_name": "Myles",
+        "team": "CLE",
+        "value": 33.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Crosby",
+        "first_name": "Maxx",
+        "team": "LVR",
+        "value": 28.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Burns",
+        "first_name": "Brian",
+        "team": "NYG",
+        "value": 22.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Anderson",
+        "first_name": "Will",
+        "team": "HOU",
+        "value": 20.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Tuipulotu",
+        "first_name": "Tuli",
+        "team": "LAC",
+        "value": 20.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Simmons",
+        "first_name": "Jeffery",
+        "team": "TEN",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Wilson",
+        "first_name": "Eric",
+        "team": "MIN",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Highsmith",
+        "first_name": "Alex",
+        "team": "PIT",
+        "value": 15.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Hunter",
+        "first_name": "Danielle",
+        "team": "HOU",
+        "value": 15.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Jordan",
+        "first_name": "Cameron",
+        "team": "NOR",
+        "value": 15.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "fumbles_forced_ic",
+    "stat_label": "Fumbles Forced (IC)",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Bosa",
+        "first_name": "Joey",
+        "team": "BUF",
+        "value": 5.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Hutchinson",
+        "first_name": "Aidan",
+        "team": "DET",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Landman",
+        "first_name": "Nathan",
+        "team": "LAR",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Mack",
+        "first_name": "Khalil",
+        "team": "LAC",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Sweat",
+        "first_name": "Josh",
+        "team": "ARI",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Turner",
+        "first_name": "Dallas",
+        "team": "MIN",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Wilson",
+        "first_name": "Eric",
+        "team": "MIN",
+        "value": 4.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Anderson",
+        "first_name": "Will",
+        "team": "HOU",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Belton",
+        "first_name": "Dane",
+        "team": "NYG",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Burns",
+        "first_name": "Brian",
+        "team": "NYG",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Campbell",
+        "first_name": "Jack",
+        "team": "DET",
+        "value": 3.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Garrett",
+        "first_name": "Myles",
+        "team": "CLE",
+        "value": 3.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "passes_defended",
+    "stat_label": "Passes Defended",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Jackson",
+        "first_name": "Michael",
+        "team": "CAR",
+        "value": 19.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Moss",
+        "first_name": "Riley",
+        "team": "DEN",
+        "value": 19.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Campbell",
+        "first_name": "Tyson",
+        "team": "2TM",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Forbes",
+        "first_name": "Emmanuel",
+        "team": "LAR",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Turner",
+        "first_name": "DJ",
+        "team": "CIN",
+        "value": 18.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Lassiter",
+        "first_name": "Kamari",
+        "team": "HOU",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "McKinstry",
+        "first_name": "Kool-Aid",
+        "team": "NOR",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Mitchell",
+        "first_name": "Quinyon",
+        "team": "PHI",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Nixon",
+        "first_name": "Keisean",
+        "team": "GNB",
+        "value": 17.0,
+        "is_percent": false
+      },
+      {
+        "rank": 10,
+        "player": "DeJean",
+        "first_name": "Cooper",
+        "team": "PHI",
+        "value": 16.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "sacks",
+    "stat_label": "Sacks",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Garrett",
+        "first_name": "Myles",
+        "team": "CLE",
+        "value": 23.0,
+        "is_percent": false
+      },
+      {
+        "rank": 2,
+        "player": "Burns",
+        "first_name": "Brian",
+        "team": "NYG",
+        "value": 16.5,
+        "is_percent": false
+      },
+      {
+        "rank": 3,
+        "player": "Hunter",
+        "first_name": "Danielle",
+        "team": "HOU",
+        "value": 15.0,
+        "is_percent": false
+      },
+      {
+        "rank": 4,
+        "player": "Hutchinson",
+        "first_name": "Aidan",
+        "team": "DET",
+        "value": 14.5,
+        "is_percent": false
+      },
+      {
+        "rank": 5,
+        "player": "Bonitto",
+        "first_name": "Nik",
+        "team": "DEN",
+        "value": 14.0,
+        "is_percent": false
+      },
+      {
+        "rank": 6,
+        "player": "Tuipulotu",
+        "first_name": "Tuli",
+        "team": "LAC",
+        "value": 13.0,
+        "is_percent": false
+      },
+      {
+        "rank": 7,
+        "player": "Parsons",
+        "first_name": "Micah",
+        "team": "GNB",
+        "value": 12.5,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Anderson",
+        "first_name": "Will",
+        "team": "HOU",
+        "value": 12.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Sweat",
+        "first_name": "Josh",
+        "team": "ARI",
+        "value": 12.0,
+        "is_percent": false
+      },
+      {
+        "rank": 8,
+        "player": "Young",
+        "first_name": "Byron",
+        "team": "LAR",
+        "value": 12.0,
+        "is_percent": false
+      }
+    ]
+  },
+  {
+    "sport": "nfl",
+    "season": 2025,
+    "stat_id": "safeties",
+    "stat_label": "Safeties",
+    "is_percent_stat": false,
+    "players": [
+      {
+        "rank": 1,
+        "player": "Hines-Allen",
+        "first_name": "Josh",
+        "team": "JAX",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Barnes",
+        "first_name": "Derrick",
+        "team": "DET",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Dugger",
+        "first_name": "Kyle",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Ezeiruaku",
+        "first_name": "Donovan",
+        "team": "DAL",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Mack",
+        "first_name": "Khalil",
+        "team": "LAC",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Merriweather",
+        "first_name": "Kaevon",
+        "team": "2TM",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Payne",
+        "first_name": "Daron",
+        "team": "WAS",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Simmons",
+        "first_name": "Jeffery",
+        "team": "TEN",
+        "value": 1.0,
+        "is_percent": false
+      },
+      {
+        "rank": 1,
+        "player": "Wilson",
+        "first_name": "Tyree",
+        "team": "LVR",
+        "value": 1.0,
+        "is_percent": false
+      }
+    ]
+  }
+]
