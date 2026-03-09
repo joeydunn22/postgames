@@ -257,6 +257,36 @@
       onValue(gameRef, (snapshot) => {
         const game = snapshot.val() || {};
         console.log("GAME UPDATED:", game);
+
+        // -----------------------------
+        // SPORT HIGHLIGHT
+        // -----------------------------
+        if (game.sport) {
+          document.querySelectorAll('#sport-buttons .pg-button')
+            .forEach(btn => {
+              btn.classList.toggle('active', btn.dataset.sport === game.sport);
+            });
+        }
+
+        // -----------------------------
+        // CATEGORY HIGHLIGHT
+        // -----------------------------
+        if (game.category) {
+          document.querySelectorAll('#mlb-category-buttons .pg-button')
+            .forEach(btn => {
+              btn.classList.toggle('active', btn.dataset.category === game.category);
+            });
+        }
+
+        // -----------------------------
+        // YEAR HIGHLIGHT
+        // -----------------------------
+        if (game.year) {
+          document.querySelectorAll('#year-buttons .pg-button')
+            .forEach(btn => {
+              btn.classList.toggle('active', btn.dataset.year === game.year);
+            });
+        }
       });
     }
 
@@ -272,6 +302,36 @@
 
         set(sportRef, sport)
           .catch(err => console.error("Failed to update sport:", err));
+      });
+    });
+
+    // -----------------------------
+    // SYNC: CATEGORY SELECTION
+    // -----------------------------
+    document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!currentRoomCode) return;
+
+        const category = btn.dataset.category;
+        const categoryRef = ref(db, `rooms/${currentRoomCode}/game/category`);
+
+        set(categoryRef, category)
+          .catch(err => console.error("Failed to update category:", err));
+      });
+    });
+
+    // -----------------------------
+    // SYNC: YEAR SELECTION
+    // -----------------------------
+    document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!currentRoomCode) return;
+
+        const year = btn.dataset.year;
+        const yearRef = ref(db, `rooms/${currentRoomCode}/game/year`);
+
+        set(yearRef, year)
+          .catch(err => console.error("Failed to update year:", err));
       });
     });
 
