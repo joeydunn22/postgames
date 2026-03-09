@@ -182,12 +182,14 @@
       const roomCode = generateRoomCode();
       const roomRef = ref(db, "rooms/" + roomCode);
 
-      await set(roomRef, {
-        host: currentUser.uid,
-        players: {
-          [currentUser.uid]: true
-        }
-      });
+      // 1. Write host
+      await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
+
+      // 2. Write players/<uid>
+      await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), true);
+
+      // 3. Initialize empty game object (host is allowed)
+      await set(ref(db, `rooms/${roomCode}/game`), {});
 
       currentRoomCode = roomCode;
 
