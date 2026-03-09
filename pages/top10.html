@@ -367,9 +367,8 @@
     });
 
     function renderPlayers(players) {
-      console.log("RENDERING PLAYERS:", players);
       const container = document.getElementById("playerNameInputs");
-      container.innerHTML = ""; // clear existing
+      container.innerHTML = "";
 
       Object.entries(players).forEach(([uid, data]) => {
         const wrapper = document.createElement("div");
@@ -380,10 +379,15 @@
         input.type = "text";
         input.value = data.name || "Player";
 
+        // Sync name edits to Firebase
+        input.addEventListener("input", () => {
+          const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
+          set(nameRef, input.value);
+        });
+
         wrapper.appendChild(input);
         container.appendChild(wrapper);
       });
-      console.log("CONTAINER:", document.getElementById("playerNameInputs"));
     }
 
 </script>
