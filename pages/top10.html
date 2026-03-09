@@ -380,9 +380,9 @@
         input.value = data.name || "Player";
 
         // Sync name edits to Firebase
-        input.addEventListener("input", () => {
+        input.addEventListener("blur", () => {
           const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
-          set(nameRef, input.value);
+          set(nameRef, input.value.trim() || "Player");
         });
 
         wrapper.appendChild(input);
