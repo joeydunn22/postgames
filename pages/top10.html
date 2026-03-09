@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 0.6</p>
+    <p>Testing: Version 0.7</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -143,9 +143,21 @@
     let currentUser = null;
     let currentRoomCode = null;
 
+    let roomActive = false;
+
     // Disable buttons until auth is ready
     document.getElementById("createRoomBtn").disabled = true;
     document.getElementById("joinRoomBtn").disabled = true;
+
+    function hideAddRemoveButtons() {
+      document.getElementById("addPlayerBtn").style.display = "none";
+      document.getElementById("removePlayerBtn").style.display = "none";
+    }
+
+    function showAddRemoveButtons() {
+      document.getElementById("addPlayerBtn").style.display = "inline-block";
+      document.getElementById("removePlayerBtn").style.display = "inline-block";
+    }
 
     // 🔥 REQUIRED: Create anonymous user
     signInAnonymously(auth).catch(err => {
@@ -183,6 +195,9 @@
       await remove(playerRef);
 
       currentRoomCode = null;
+      roomActive = false;
+      showAddRemoveButtons();
+
       document.getElementById("roomCodeDisplay").textContent = "";
     }
 
@@ -191,18 +206,17 @@
 
       const roomCode = generateRoomCode();
 
-      // 1. Write host
       await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
 
-      // 2. Write players/<uid> as an object (not true)
       await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
         name: "Player 1"
       });
 
-      // 3. Initialize empty game object
       await set(ref(db, `rooms/${roomCode}/game`), {});
 
       currentRoomCode = roomCode;
+      roomActive = true;
+      hideAddRemoveButtons();
 
       document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
       document.getElementById("roomStatus").textContent = "Room created successfully.";
@@ -239,6 +253,8 @@
         });
 
         currentRoomCode = roomCode;
+        roomActive = true;
+        hideAddRemoveButtons();
 
         document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
         document.getElementById("roomStatus").textContent = "Joined room successfully.";
