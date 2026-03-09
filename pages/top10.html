@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 0.2</p>
+    <p>Testing: Version 0.3</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -194,8 +194,10 @@
       // 1. Write host
       await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
 
-      // 2. Write players/<uid>
-      await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), true);
+      // 2. Write players/<uid> as an object (not true)
+      await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
+        name: "Player 1"
+      });
 
       // 3. Initialize empty game object
       await set(ref(db, `rooms/${roomCode}/game`), {});
@@ -207,6 +209,7 @@
 
       listenToRoom(roomCode);
       listenToGame(roomCode);
+      listenToPlayers(roomCode);
     };
 
     window.joinRoom = async function (roomCode) {
@@ -230,7 +233,9 @@
 
         const playersRef = ref(db, `rooms/${roomCode}/players`);
         await update(playersRef, {
-          [currentUser.uid]: true
+          [currentUser.uid]: {
+            name: "Player"
+          }
         });
 
         currentRoomCode = roomCode;
@@ -240,6 +245,7 @@
 
         listenToRoom(roomCode);
         listenToGame(roomCode);
+        listenToPlayers(roomCode);
       }, { onlyOnce: true });
     };
 
@@ -305,6 +311,15 @@
       });
     }
 
+    function listenToPlayers(roomCode) {
+    const playersRef = ref(db, `rooms/${roomCode}/players`);
+
+    onValue(playersRef, (snapshot) => {
+      const players = snapshot.val() || {};
+      renderPlayers(players);
+    });
+  }
+
     // -----------------------------
     // SYNC: SPORT SELECTION
     // -----------------------------
@@ -349,6 +364,24 @@
           .catch(err => console.error("Failed to update year:", err));
       });
     });
+
+    function renderPlayers(players) {
+      const container = document.getElementById("playerNameInputs");
+      container.innerHTML = ""; // clear existing
+
+      Object.entries(players).forEach(([uid, data]) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "player-name-row";
+
+        const input = document.createElement("input");
+        input.className = "player-name-input";
+        input.type = "text";
+        input.value = data.name || "Player";
+
+        wrapper.appendChild(input);
+        container.appendChild(wrapper);
+      });
+    }
 
 </script>
 
