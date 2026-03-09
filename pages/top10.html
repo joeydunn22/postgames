@@ -270,7 +270,7 @@
         const sport = btn.dataset.sport;
         const sportRef = ref(db, `rooms/${currentRoomCode}/game/sport`);
 
-        update(sportRef, sport)
+        set(sportRef, sport)
           .catch(err => console.error("Failed to update sport:", err));
       });
     });
