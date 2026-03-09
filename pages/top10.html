@@ -116,12 +116,12 @@
   <script src="../assets/top10/js/top10-render.js"></script>
   <script src="../assets/top10/js/top10-logic.js"></script>
 
-  <!-- Firebase -->
+<!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
     import { getDatabase, ref, set, update, onValue, remove }
       from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
-    import { getAuth, onAuthStateChanged }
+    import { getAuth, onAuthStateChanged, signInAnonymously }
       from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
     const firebaseConfig = {
@@ -145,6 +145,11 @@
     // Disable buttons until auth is ready
     document.getElementById("createRoomBtn").disabled = true;
     document.getElementById("joinRoomBtn").disabled = true;
+
+    // 🔥 REQUIRED: Create anonymous user
+    signInAnonymously(auth).catch(err => {
+      console.error("Anonymous sign-in failed:", err);
+    });
 
     onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -184,7 +189,6 @@
       await leaveCurrentRoom();
 
       const roomCode = generateRoomCode();
-      const roomRef = ref(db, "rooms/" + roomCode);
 
       // 1. Write host
       await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
@@ -192,7 +196,7 @@
       // 2. Write players/<uid>
       await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), true);
 
-      // 3. Initialize empty game object (host is allowed)
+      // 3. Initialize empty game object
       await set(ref(db, `rooms/${roomCode}/game`), {});
 
       currentRoomCode = roomCode;
@@ -255,13 +259,13 @@
         console.log("GAME UPDATED:", game);
       });
     }
-  
+
     // -----------------------------
     // SYNC: SPORT SELECTION
     // -----------------------------
     document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
-        if (!currentRoomCode) return; // not in a room yet
+        if (!currentRoomCode) return;
 
         const sport = btn.dataset.sport;
         const sportRef = ref(db, `rooms/${currentRoomCode}/game/sport`);
@@ -270,8 +274,8 @@
           .catch(err => console.error("Failed to update sport:", err));
       });
     });
-  
-  </script>
+
+</script>
 
 </body>
 </html>
