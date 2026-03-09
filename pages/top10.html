@@ -147,10 +147,14 @@
     document.getElementById("joinRoomBtn").disabled = true;
 
     onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        console.log("Auth not ready yet…");
+        return;
+      }
+
       currentUser = user;
       console.log("Top10 signed in as:", user.uid);
 
-      // Enable buttons now that auth is ready
       document.getElementById("createRoomBtn").disabled = false;
       document.getElementById("joinRoomBtn").disabled = false;
 
