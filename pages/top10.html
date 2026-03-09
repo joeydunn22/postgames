@@ -195,6 +195,7 @@
       document.getElementById("roomStatus").textContent = "Room created successfully.";
 
       listenToRoom(roomCode);
+      listenToGame(roomCode);
     };
 
     window.joinRoom = async function (roomCode) {
@@ -227,6 +228,7 @@
         document.getElementById("roomStatus").textContent = "Joined room successfully.";
 
         listenToRoom(roomCode);
+        listenToGame(roomCode);
       }, { onlyOnce: true });
     };
 
@@ -238,6 +240,31 @@
         console.log("Players in room:", players);
       });
     }
+
+    function listenToGame(roomCode) {
+      const gameRef = ref(db, `rooms/${roomCode}/game`);
+
+      onValue(gameRef, (snapshot) => {
+        const game = snapshot.val() || {};
+        console.log("GAME UPDATED:", game);
+      });
+    }
+  
+    // -----------------------------
+    // SYNC: SPORT SELECTION
+    // -----------------------------
+    document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!currentRoomCode) return; // not in a room yet
+
+        const sport = btn.dataset.sport;
+        const sportRef = ref(db, `rooms/${currentRoomCode}/game/sport`);
+
+        update(sportRef, sport)
+          .catch(err => console.error("Failed to update sport:", err));
+      });
+    });
+  
   </script>
 
 </body>
