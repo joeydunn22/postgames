@@ -216,6 +216,16 @@
     }
 
     window.createRoom = async function () {
+      
+        if (roomActive) {
+          document.getElementById("roomStatus").textContent = "You are already in a room.";
+          setTimeout(() => {
+            document.getElementById("roomStatus").textContent = "";
+          }, 2000);
+          return;
+        }
+
+      
       await leaveCurrentRoom();
 
       const roomCode = generateRoomCode();
@@ -253,13 +263,16 @@
       onValue(roomRef, async (snapshot) => {
         const roomData = snapshot.val();
 
+        // 1. Room does NOT exist → do NOT reset UI
         if (!roomData) {
           document.getElementById("roomStatus").textContent = "Room not found.";
           return;
         }
 
+        // 2. Room exists → NOW leave current room
         await leaveCurrentRoom();
 
+        // 3. Add this player to the new room
         const playersRef = ref(db, `rooms/${roomCode}/players`);
         await update(playersRef, {
           [currentUser.uid]: {
@@ -267,13 +280,16 @@
           }
         });
 
+        // 4. Activate multiplayer mode
         currentRoomCode = roomCode;
         roomActive = true;
         hideAddRemoveButtons();
+        showLeaveRoomButton();
 
         document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
         document.getElementById("roomStatus").textContent = "Joined room successfully.";
 
+        // 5. Start listeners
         listenToRoom(roomCode);
         listenToGame(roomCode);
         listenToPlayers(roomCode);

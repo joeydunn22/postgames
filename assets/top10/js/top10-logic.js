@@ -364,7 +364,10 @@ loadSport();
 /* Initialize game and UI once DOM is ready */
 document.addEventListener("DOMContentLoaded", () => {
 
-    initializePlayers(2);
+    game.players = [
+        { name: "Player 1", guesses: [], score: 0 }
+    ];
+
     renderPlayerSetup();
     renderList();
 
