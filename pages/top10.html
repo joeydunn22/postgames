@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 16</p>
+    <p>Testing: Version 17</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -340,8 +340,16 @@
       const gameRef = ref(db, `rooms/${roomCode}/game`);
 
       onValue(gameRef, (snapshot) => {
-        const game = snapshot.val() || {};
-        console.log("GAME UPDATED:", game);
+
+          // REPLACE the old line with this:
+          const fb = snapshot.val() || {};
+
+          game.sport = fb.sport ?? null;
+          game.category = fb.category ?? null;
+          game.year = fb.year ?? null;
+          game.stat = fb.stat ?? null;
+
+          console.log("GAME UPDATED:", fb);
 
         // -----------------------------
         // SPORT HIGHLIGHT
@@ -419,42 +427,68 @@
     });
   }
 
-    // SYNC: SPORT SELECTION
+    // SPORT SELECTION — unified single-player + multiplayer
     document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
-        if (!currentRoomCode) return;
-
         const sport = btn.dataset.sport;
-        const sportRef = ref(db, `rooms/${currentRoomCode}/game/sport`);
 
-        set(sportRef, sport)
-          .catch(err => console.error("Failed to update sport:", err));
+        if (!roomActive) {
+          // SINGLE‑PLAYER MODE
+          game.sport = sport;
+          game.category = null;
+          game.year = null;
+
+          resetStatUI();
+          ui.statTitle.textContent = "Select a stat to begin";
+
+          const hideCategory = sport !== "mlb";
+          document.getElementById("mlb-category-buttons").classList.toggle("hidden", hideCategory);
+          document.getElementById("mlb-category-wrapper").classList.toggle("hidden", hideCategory);
+
+          maybeLoadData();
+          return;
+        }
+
+        // MULTIPLAYER MODE
+        set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
       });
     });
 
-    // SYNC: CATEGORY SELECTION
+    // CATEGORY SELECTION — unified single-player + multiplayer
     document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
-        if (!currentRoomCode) return;
-
         const category = btn.dataset.category;
-        const categoryRef = ref(db, `rooms/${currentRoomCode}/game/category`);
 
-        set(categoryRef, category)
-          .catch(err => console.error("Failed to update category:", err));
+        if (!roomActive) {
+          // SINGLE‑PLAYER MODE
+          game.category = category;
+          resetStatUI();
+          return;
+        }
+
+        // MULTIPLAYER MODE
+        set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
       });
     });
 
-    // SYNC: YEAR SELECTION
+    // YEAR SELECTION — unified single-player + multiplayer
     document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
-        if (!currentRoomCode) return;
-
         const year = btn.dataset.year;
-        const yearRef = ref(db, `rooms/${currentRoomCode}/game/year`);
 
-        set(yearRef, year)
-          .catch(err => console.error("Failed to update year:", err));
+        if (!roomActive) {
+          // SINGLE‑PLAYER MODE
+          if (!game.sport) return;
+          if (game.sport === "mlb" && !game.category) return;
+
+          game.year = year;
+          resetStatUI();
+          maybeLoadData();
+          return;
+        }
+
+        // MULTIPLAYER MODE
+        set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
       });
     });
 

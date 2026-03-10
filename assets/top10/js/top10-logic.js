@@ -29,23 +29,30 @@ ui.actionButton.addEventListener("click", () => {
     }
 });
 
-/* Handle stat dropdown selection */
 ui.statSelect.addEventListener("change", () => {
-    game.stat = ui.statSelect.value;
+    const selected = ui.statSelect.value || null;
 
-    const titleEl = ui.statTitle;
+    // SINGLE‑PLAYER
+    if (!roomActive) {
+        game.stat = selected;
 
-    if (!game.stat) {
-        titleEl.textContent = "Select a stat to begin";
+        if (!selected) {
+            ui.statTitle.textContent = "Select a stat to begin";
+            return;
+        }
+
+        ui.statTitle.textContent =
+            ui.statSelect.options[ui.statSelect.selectedIndex].text;
+
+        resetGame();
         return;
     }
 
-    titleEl.textContent =
-        ui.statSelect.options[ui.statSelect.selectedIndex].text;
-
-    resetGame();
+    // MULTIPLAYER
+    update(ref(db, `rooms/${currentRoomCode}/game`), {
+        stat: selected
+    });
 });
-
 
 /* ============================================================
    TOP 10 — CORE LOGIC FUNCTIONS
@@ -120,11 +127,9 @@ function resetGame() {
 
     game.globalGuessed = [];
 
-    game.stat = ui.statSelect.value;
-
-    ui.statTitle.innerHTML =
+    ui.statTitle.textContent =
         game.sport.toUpperCase() + " - Top 10 " +
-        ui.statSelect.selectedOptions[0].text;
+        (ui.statSelect.selectedOptions[0]?.text || "");
 
     const input = ui.input;
     input.value = "";
@@ -379,62 +384,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderPlayerSetup();
     renderList();
-
-    ui.sportButtons.querySelectorAll('.pg-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-
-            ui.sportButtons.querySelector('.active')?.classList.remove('active');
-            btn.classList.add('active');
-
-            game.sport = btn.dataset.sport;
-            game.category = null;
-            game.year = null;
-
-            ui.mlbCategoryButtons.querySelector('.active')?.classList.remove('active');
-            ui.yearButtons.querySelector('.active')?.classList.remove('active');
-
-            resetStatUI();
-            ui.statTitle.textContent = "Select a stat to begin";
-
-            const catRow = document.getElementById("mlb-category-buttons");
-            const catWrapper = document.getElementById("mlb-category-wrapper");
-
-            // Hide both the wrapper and the buttons when not MLB
-            const hideCategory = game.sport !== "mlb";
-            catRow.classList.toggle("hidden", hideCategory);
-            catWrapper.classList.toggle("hidden", hideCategory);
-
-            maybeLoadData();
-        });
-    });
-
-    ui.mlbCategoryButtons.querySelectorAll('.pg-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-
-            ui.mlbCategoryButtons.querySelector('.active')?.classList.remove('active');
-            btn.classList.add('active');
-
-            game.category = btn.dataset.category;
-
-            resetStatUI();
-        });
-    });
-
-    ui.yearButtons.querySelectorAll('.pg-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-
-            if (!game.sport) return;
-            if (game.sport === "mlb" && !game.category) return;
-
-            ui.yearButtons.querySelector('.active')?.classList.remove('active');
-            btn.classList.add('active');
-
-            game.year = btn.dataset.year;
-
-            resetStatUI();
-            maybeLoadData();
-        });
-    });
 
     const addBtn = document.getElementById("addPlayerBtn");
     const removeBtn = document.getElementById("removePlayerBtn");
