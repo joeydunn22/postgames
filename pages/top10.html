@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 13</p>
+    <p>Testing: Version 14</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -388,30 +388,24 @@
         }
 
         // -----------------------------
-        // STAT SYNC (NEW)
+        // LOAD DATA + POPULATE STAT DROPDOWN FOR ALL PLAYERS
+        // -----------------------------
+        if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
+          maybeLoadData();          // loads JSON → fills game.data
+          populateStatDropdown();   // uses game.data to build dropdown
+        }
+
+        // -----------------------------
+        // STAT SYNC
         // -----------------------------
         if (game.stat !== undefined) {
-          // Update dropdown selection
           ui.statSelect.value = game.stat || "";
 
-          // Update title
           ui.statTitle.textContent = game.stat
             ? game.stat.replace(/_/g, " ").toUpperCase()
             : "Select a stat to begin";
 
-          // Re-render list if data is loaded
           renderList();
-        }
-
-        // -----------------------------
-        // STAT DROPDOWN POPULATION SYNC
-        // -----------------------------
-        if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
-          // Load the data for this combination
-          maybeLoadData();
-
-          // Once data is loaded, populate the dropdown
-          populateStatDropdown();
         }
       });
     }
