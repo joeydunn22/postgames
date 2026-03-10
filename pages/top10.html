@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 0.11</p>
+    <p>Testing: Version 12</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -333,13 +333,6 @@
 
       onValue(hostRef, (snapshot) => {
         const hostId = snapshot.val();
-
-        // Enable for host, disable for non-host
-        if (currentUser.uid === hostId) {
-          ui.statSelect.disabled = false;
-        } else {
-          ui.statSelect.disabled = true;
-        }
       });
     }
 
@@ -495,13 +488,7 @@
         return;
       }
 
-      // Multiplayer → only host can write
-      const hostRef = ref(db, `rooms/${currentRoomCode}/host`);
-      const hostSnap = await get(hostRef);
-      const hostId = hostSnap.val();
-
-      if (currentUser.uid !== hostId) return;
-
+      // Multiplayer → ANY player can write the stat
       await update(ref(db, `rooms/${currentRoomCode}/game`), {
         stat: selected
       });
