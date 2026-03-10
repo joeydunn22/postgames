@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 0.9</p>
+    <p>Testing: Version 0.10</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -328,6 +328,19 @@
         const players = snapshot.val() || {};
         console.log("Players in room:", players);
       });
+
+      const hostRef = ref(db, `rooms/${roomCode}/host`);
+
+      onValue(hostRef, (snapshot) => {
+        const hostId = snapshot.val();
+
+        // Enable for host, disable for non-host
+        if (currentUser.uid === hostId) {
+          ui.statSelect.disabled = false;
+        } else {
+          ui.statSelect.disabled = true;
+        }
+      });
     }
 
     function listenToGame(roomCode) {
@@ -380,6 +393,22 @@
               btn.classList.toggle('active', btn.dataset.year === game.year);
             });
         }
+
+        // -----------------------------
+        // STAT SYNC (NEW)
+        // -----------------------------
+        if (game.stat !== undefined) {
+          // Update dropdown selection
+          ui.statSelect.value = game.stat || "";
+
+          // Update title
+          ui.statTitle.textContent = game.stat
+            ? game.stat.replace(/_/g, " ").toUpperCase()
+            : "Select a stat to begin";
+
+          // Re-render list if data is loaded
+          renderList();
+        }
       });
     }
 
@@ -393,9 +422,7 @@
     });
   }
 
-    // -----------------------------
     // SYNC: SPORT SELECTION
-    // -----------------------------
     document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
         if (!currentRoomCode) return;
@@ -408,9 +435,7 @@
       });
     });
 
-    // -----------------------------
     // SYNC: CATEGORY SELECTION
-    // -----------------------------
     document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
         if (!currentRoomCode) return;
@@ -423,9 +448,7 @@
       });
     });
 
-    // -----------------------------
     // SYNC: YEAR SELECTION
-    // -----------------------------
     document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
       btn.addEventListener('click', () => {
         if (!currentRoomCode) return;
@@ -461,6 +484,28 @@
         container.appendChild(wrapper);
       });
     }
+
+    ui.statSelect.addEventListener("change", async () => {
+      const selected = ui.statSelect.value || null;
+
+      // Local mode → normal behavior
+      if (!roomActive) {
+        game.stat = selected;
+        renderList();
+        return;
+      }
+
+      // Multiplayer → only host can write
+      const hostRef = ref(db, `rooms/${currentRoomCode}/host`);
+      const hostSnap = await get(hostRef);
+      const hostId = hostSnap.val();
+
+      if (currentUser.uid !== hostId) return;
+
+      await update(ref(db, `rooms/${currentRoomCode}/game`), {
+        stat: selected
+      });
+    });
 
 </script>
 
