@@ -315,6 +315,7 @@ function maybeLoadData() {
    ============================================================ */
 
 /* Load sport/year/category JSON file */
+/* Load sport/year/category JSON file */
 function loadSport() {
     let file = "";
 
@@ -348,7 +349,15 @@ function loadSport() {
                 };
             });
 
+            // Rebuild dropdown options
             populateStatDropdown();
+
+            // 🔑 Reapply the currently synced stat selection (if any)
+            if (game.stat) {
+                ui.statSelect.value = game.stat;
+            } else {
+                ui.statSelect.value = "";
+            }
         })
         .catch(err => console.error("Error loading data:", err));
 }
