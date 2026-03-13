@@ -184,19 +184,24 @@ function submitGuess() {
         if (isMatch(guess, a.name)) matches.push(a);
     }
 
+    // ----------------------------------------------------
+    // WRONG GUESS
+    // ----------------------------------------------------
     if (matches.length === 0) {
         playGuessAnimation("wrong");
 
-        requestAnimationFrame(() => {
-            game.currentPlayerIndex =
-                (game.currentPlayerIndex + 1) % game.players.length;
-            renderList();
-        });
+        // 🔥 Turn rotation MUST be synchronous
+        game.currentPlayerIndex =
+            (game.currentPlayerIndex + 1) % game.players.length;
 
+        renderList();
         input.value = "";
         return;
     }
 
+    // ----------------------------------------------------
+    // MULTIPLE MATCHES
+    // ----------------------------------------------------
     if (matches.length > 1) {
         alert("Multiple players match:\n\n" +
             matches.map(m => m.name).join("\n"));
@@ -207,17 +212,22 @@ function submitGuess() {
     const matchedAnswer = matches[0];
     const normalizedAnswer = normalize(matchedAnswer.name);
 
+    // ----------------------------------------------------
+    // DUPLICATE GUESS
+    // ----------------------------------------------------
     if (game.globalGuessed.includes(normalizedAnswer)) {
         playGuessAnimation("duplicate");
 
-        requestAnimationFrame(() => {
-            renderList();
-        });
+        // This is fine — no turn rotation here
+        renderList();
 
         input.value = "";
         return;
     }
 
+    // ----------------------------------------------------
+    // CORRECT GUESS
+    // ----------------------------------------------------
     game.globalGuessed.push(normalizedAnswer);
     game.players[game.currentPlayerIndex].guesses.push(matchedAnswer);
     game.players[game.currentPlayerIndex].score++;
@@ -225,6 +235,9 @@ function submitGuess() {
     renderList();
     playGuessAnimation("correct");
 
+    // ----------------------------------------------------
+    // ALL ANSWERS FOUND → END GAME
+    // ----------------------------------------------------
     if (game.globalGuessed.length === answers.length) {
         input.value = "";
         input.blur();
@@ -236,12 +249,14 @@ function submitGuess() {
         return;
     }
 
-    requestAnimationFrame(() => {
-        game.currentPlayerIndex =
-            (game.currentPlayerIndex + 1) % game.players.length;
-        renderList();
-    });
+    // ----------------------------------------------------
+    // NORMAL TURN ROTATION (CORRECT GUESS)
+    // ----------------------------------------------------
+    // 🔥 Must be synchronous for multiplayer
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
 
+    renderList();
     input.value = "";
 }
 
