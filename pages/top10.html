@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 22</p>
+    <p>Testing: Version 23</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -506,31 +506,39 @@
       });
     });
 
-    function renderPlayers(players) {
-      const container = document.getElementById("playerNameInputs");
-      container.innerHTML = "";
+    function renderPlayers(playersObj) {
+      ui.playerNameInputs.innerHTML = "";
 
-      Object.entries(players).forEach(([uid, data]) => {
+      Object.entries(playersObj).forEach(([uid, data]) => {
         const wrapper = document.createElement("div");
         wrapper.className = "player-name-row";
 
         const input = document.createElement("input");
-        input.className = "player-name-input";
         input.type = "text";
         input.value = data.name || "Player";
+        input.className = "player-name-input";
 
-        const isMe = uid === currentUser.uid;
-        input.disabled = !isMe;
+        const isMe = uid === myPlayerId;
 
         if (isMe) {
+          input.classList.add("me"); // highlight
+          input.disabled = false;
+
           input.addEventListener("blur", () => {
             const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
             set(nameRef, input.value.trim() || "Player");
           });
+
+          const badge = document.createElement("span");
+          badge.className = "you-badge";
+          badge.textContent = "You";
+          wrapper.appendChild(badge);
+        } else {
+          input.disabled = true;
         }
 
         wrapper.appendChild(input);
-        container.appendChild(wrapper);
+        ui.playerNameInputs.appendChild(wrapper);
       });
     }
 

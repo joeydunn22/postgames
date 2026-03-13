@@ -422,3 +422,26 @@
     width: 100%;
   }
 }
+
+
+
+
+
+/* temp style for player name */
+/* Highlight the local player's name input */
+.player-name-input.me {
+  border: 2px solid #00ff88;
+  background: #0d261a;
+}
+
+/* Small "You" badge */
+.you-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  font-size: 11px;
+  background: #00ff88;
+  color: #000;
+  border-radius: 4px;
+  font-weight: bold;
+}
