@@ -124,7 +124,8 @@ function renderList() {
     ui.currentPlayerDisplay.textContent =
         "Current Turn: " + game.players[game.currentPlayerIndex].name;
 
-    updateGuessInputLock();
+    // ❌ REMOVE THIS
+    // updateGuessInputLock();
 
     const container = ui.playersContainer;
 
