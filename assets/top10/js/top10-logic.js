@@ -403,6 +403,7 @@ function levenshtein(a, b) {
 
 /* Load data only when sport/category/year are selected */
 function maybeLoadData() {
+    console.log("maybeLoadData fired:", Date.now(), game.currentPlayerIndex);
     const listEl = ui.top10List;
     if (listEl) listEl.innerHTML = "";
 
