@@ -1,3 +1,6 @@
+
+import { ref, set, onValue, update } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
 /* ============================================================
    TOP 10 — EVENT LISTENERS
    ============================================================ */

@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 24</p>
+    <p>Testing: Version 25</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -247,8 +247,8 @@
       document.getElementById("roomStatus").textContent = "Room created successfully.";
 
       listenToRoom(roomCode);
-      listenToGame(roomCode);
       listenToPlayers(roomCode);
+      listenToGame(roomCode);
       listenToPendingGuess(roomCode);
     };
 
@@ -295,8 +295,8 @@
 
         // 5. Start listeners
         listenToRoom(roomCode);
-        listenToGame(roomCode);
         listenToPlayers(roomCode);
+        listenToGame(roomCode);
         listenToPendingGuess(roomCode);
       }, { onlyOnce: true });
     };
