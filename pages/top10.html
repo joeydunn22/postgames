@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 20</p>
+    <p>Testing: Version 20.1</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -429,24 +429,17 @@
       onValue(playersRef, (snapshot) => {
         const playersObj = snapshot.val() || {};
 
-        // Convert Firebase object → ordered array (join order)
         const playersArray = Object.entries(playersObj).map(([uid, data]) => ({
           id: uid,
           name: data.name || "Player",
-          guesses: data.guesses || [],   // local-only for now
-          score: data.score || 0         // local-only for now
+          guesses: data.guesses || [],
+          score: data.score || 0
         }));
 
-        // Update local game state
         game.players = playersArray;
 
-        // Re-render main game UI
         renderList();
-
-        // Re-run input locking
         updateGuessInputLock();
-
-        // Re-render name-edit UI
         renderPlayers(playersObj);
       });
     }
