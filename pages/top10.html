@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 25.1</p>
+    <p>Testing: Version 26</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -165,21 +165,11 @@
       document.getElementById("leaveRoomBtn").style.display = "none";
     }
 
-    // 🔥 REQUIRED: Create anonymous user
-    signInAnonymously(auth).catch(err => {
-      console.error("Anonymous sign-in failed:", err);
-    });
-
     onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        console.log("Auth not ready yet…");
-        return;
-      }
+      if (!user) return;
 
       currentUser = user;
       myPlayerId = user.uid;   // ⭐️ REQUIRED FOR MULTIPLAYER IDENTITY
-
-      console.log("Top10 signed in as:", user.uid);
 
       document.getElementById("createRoomBtn").disabled = false;
       document.getElementById("joinRoomBtn").disabled = false;
@@ -331,31 +321,26 @@
       const playersRef = ref(db, `rooms/${roomCode}/players`);
       onValue(playersRef, (snapshot) => {
         const players = snapshot.val() || {};
-        console.log("Players in room:", players);
       });
 
       // Listen for host ID and store globally
       const hostRef = ref(db, `rooms/${roomCode}/host`);
       onValue(hostRef, (snapshot) => {
         hostId = snapshot.val();
-        console.log("Host ID:", hostId);
       });
     }
+
 
     function listenToGame(roomCode) {
       const gameRef = ref(db, `rooms/${roomCode}/game`);
 
       onValue(gameRef, (snapshot) => {
+        const fb = snapshot.val() || {};
 
-          // REPLACE the old line with this:
-          const fb = snapshot.val() || {};
-
-          game.sport = fb.sport ?? null;
-          game.category = fb.category ?? null;
-          game.year = fb.year ?? null;
-          game.stat = fb.stat ?? null;
-
-          console.log("GAME UPDATED:", fb);
+        game.sport = fb.sport ?? null;
+        game.category = fb.category ?? null;
+        game.year = fb.year ?? null;
+        game.stat = fb.stat ?? null;
 
         // -----------------------------
         // SPORT HIGHLIGHT
@@ -422,6 +407,7 @@
         }
       });
     }
+
 
     function listenToPlayers(roomCode) {
       const playersRef = ref(db, `rooms/${roomCode}/players`);
