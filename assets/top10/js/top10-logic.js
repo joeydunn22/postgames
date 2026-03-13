@@ -245,6 +245,80 @@ function submitGuess() {
     input.value = "";
 }
 
+async function sendGuessToHost() {
+    const rawGuess = ui.input.value.trim();
+    if (!rawGuess) return;
+
+    // Only allow if it's your turn
+    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
+    if (myIndex !== game.currentPlayerIndex) return;
+
+    // Only non-hosts send guesses
+    if (myPlayerId === hostId) return;
+
+    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+    await set(pendingRef, {
+        playerId: myPlayerId,
+        guess: rawGuess,
+        timestamp: Date.now()
+    });
+
+    ui.input.value = "";
+}
+
+function listenToPendingGuess(roomCode) {
+    const pendingRef = ref(db, `rooms/${roomCode}/pendingGuess`);
+
+    onValue(pendingRef, (snapshot) => {
+        const pending = snapshot.val();
+        if (!pending) return;
+
+        // Only host processes guesses
+        if (myPlayerId !== hostId) return;
+
+        // Must be the correct player's turn
+        const currentPlayer = game.players[game.currentPlayerIndex];
+        if (!currentPlayer || currentPlayer.id !== pending.playerId) return;
+
+        hostProcessGuess(pending);
+    });
+}
+
+async function hostProcessGuess(pending) {
+    // Inject guess into the input so submitGuess() uses it
+    ui.input.value = pending.guess;
+
+    // Run your existing logic
+    submitGuess();
+
+    // Sync updated game state to Firebase
+    const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+    await set(gameRef, {
+        currentPlayerIndex: game.currentPlayerIndex,
+        globalGuessed: game.globalGuessed,
+        state: game.state,
+        sport: game.sport,
+        year: game.year,
+        stat: game.stat,
+        category: game.category
+    });
+
+    // Sync updated players
+    const playersRef = ref(db, `rooms/${currentRoomCode}/players`);
+    await set(playersRef, game.players);
+
+    // Clear pending guess
+    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+    await set(pendingRef, null);
+}
+
+function onGuessSubmit() {
+    if (myPlayerId === hostId) {
+        submitGuess(); // host processes locally
+    } else {
+        sendGuessToHost(); // non-host sends to Firebase
+    }
+}
 
 /* ============================================================
    TOP 10 — MATCHING + NORMALIZATION

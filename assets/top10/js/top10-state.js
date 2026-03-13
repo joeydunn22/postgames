@@ -7,7 +7,7 @@ let currentUser = null;
 let currentRoomCode = null;
 let roomActive = false;
 let myPlayerId = null;
-
+let hostId = null;
 
 
 /* Game state object */
