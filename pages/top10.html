@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 33</p>
+    <p>Testing: Version 34</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -346,14 +346,20 @@
       onValue(gameRef, (snapshot) => {
         const fb = snapshot.val() || {};
 
+        // core game state from Firebase
+        game.state = fb.state ?? game.state ?? "playing";
+        game.currentPlayerIndex =
+          fb.currentPlayerIndex ?? game.currentPlayerIndex ?? 0;
+        game.globalGuessed = Array.isArray(fb.globalGuessed)
+          ? fb.globalGuessed
+          : (game.globalGuessed || []);
+
         game.sport = fb.sport ?? null;
         game.category = fb.category ?? null;
         game.year = fb.year ?? null;
         game.stat = fb.stat ?? null;
 
-        // -----------------------------
         // SPORT HIGHLIGHT
-        // -----------------------------
         if (game.sport) {
           document.querySelectorAll('#sport-buttons .pg-button')
             .forEach(btn => {
@@ -361,9 +367,7 @@
             });
         }
 
-        // -----------------------------
         // CATEGORY HIGHLIGHT
-        // -----------------------------
         if (game.category) {
           document.querySelectorAll('#mlb-category-buttons .pg-button')
             .forEach(btn => {
@@ -371,9 +375,6 @@
             });
         }
 
-        // -----------------------------
-        // SHOW/HIDE MLB CATEGORY ROW
-        // -----------------------------
         const catWrapper = document.getElementById("mlb-category-wrapper");
         const catButtons = document.getElementById("mlb-category-buttons");
 
@@ -385,9 +386,6 @@
           catButtons.classList.add("hidden");
         }
 
-        // -----------------------------
-        // YEAR HIGHLIGHT
-        // -----------------------------
         if (game.year) {
           document.querySelectorAll('#year-buttons .pg-button')
             .forEach(btn => {
@@ -395,25 +393,18 @@
             });
         }
 
-        // -----------------------------
-        // LOAD DATA + POPULATE STAT DROPDOWN FOR ALL PLAYERS
-        // -----------------------------
         if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
-          maybeLoadData();          // loads JSON → fills game.data
+          maybeLoadData();
         }
 
-        // -----------------------------
-        // STAT SYNC
-        // -----------------------------
         if (game.stat !== undefined) {
           ui.statSelect.value = game.stat || "";
-
           ui.statTitle.textContent = game.stat
             ? game.stat.replace(/_/g, " ").toUpperCase()
             : "Select a stat to begin";
-
           renderList();
         }
+
         updateGuessInputLock();
       });
     }
