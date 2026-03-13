@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 19</p>
+    <p>Testing: Version 20</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -234,7 +234,9 @@
 
       await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
         id: currentUser.uid,
-        name: "Player 1"
+        name: "Player 1",
+        guesses: [],
+        score: 0
       });
 
       await set(ref(db, `rooms/${roomCode}/game`), {});
@@ -278,7 +280,9 @@
         await update(playersRef, {
           [currentUser.uid]: {
             id: currentUser.uid,
-            name: "Player"
+            name: "Player",
+            guesses: [],
+            score: 0
           }
         });
 
@@ -525,7 +529,6 @@
         input.type = "text";
         input.value = data.name || "Player";
 
-        // Only allow editing your own name
         const isMe = uid === currentUser.uid;
         input.disabled = !isMe;
 
