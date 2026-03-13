@@ -472,14 +472,17 @@ loadSport();
 
 /* Initialize game and UI once DOM is ready */
 document.addEventListener("DOMContentLoaded", () => {
-
     const addBtn = document.getElementById("addPlayerBtn");
     const removeBtn = document.getElementById("removePlayerBtn");
 
+    // --- LOCAL MODE ONLY ---
+    // These buttons must NEVER modify game.players during multiplayer.
     addBtn.addEventListener("click", () => {
+        if (roomActive) return;                 // ⬅️ HARD BLOCK
         if (game.players.length >= 4) return;
 
         game.players.push({
+            id: crypto.randomUUID(),            // ⬅️ Give local players stable IDs
             name: `Player ${game.players.length + 1}`,
             guesses: [],
             score: 0
@@ -490,6 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     removeBtn.addEventListener("click", () => {
+        if (roomActive) return;                 // ⬅️ HARD BLOCK
         if (game.players.length <= 1) return;
 
         game.players.pop();
@@ -501,5 +505,4 @@ document.addEventListener("DOMContentLoaded", () => {
         renderPlayerSetup();
         renderList();
     });
-
 });
