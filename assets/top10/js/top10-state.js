@@ -45,18 +45,22 @@ const ui = {
     sportButtons: document.getElementById("sport-buttons"),
     yearButtons: document.getElementById("year-buttons"),
     mlbCategoryButtons: document.getElementById("mlb-category-buttons"),
+
+    submitGuessBtn: document.getElementById("submitGuessBtn"),
 };
 
 
 /* ============================================================
    TOP 10 — INITIALIZATION HELPERS
    ============================================================ */
-
 /* Create initial player objects */
-function initializePlayers(count) {
-    game.players = Array.from({ length: count }, (_, i) => ({
-        name: `Player ${i + 1}`,
-        guesses: [],
-        score: 0
-    }));
-}
+// function initializePlayers(count) {
+//     game.players = Array.from({ length: count }, (_, i) => ({
+//         name: `Player ${i + 1}`,
+//         guesses: [],
+//         score: 0
+//     }));
+// }
+//
+
+// i removed this idt it does anything
