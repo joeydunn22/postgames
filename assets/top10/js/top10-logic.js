@@ -473,13 +473,6 @@ loadSport();
 /* Initialize game and UI once DOM is ready */
 document.addEventListener("DOMContentLoaded", () => {
 
-    game.players = [
-        { name: "Player 1", guesses: [], score: 0 }
-    ];
-
-    renderPlayerSetup();
-    renderList();
-
     const addBtn = document.getElementById("addPlayerBtn");
     const removeBtn = document.getElementById("removePlayerBtn");
 
