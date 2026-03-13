@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 41</p>
+    <p>Testing: Version 42</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -97,7 +97,7 @@
 
   <input id="userGuess" type="text" placeholder="Type a player name..." class="guess-input">
 
-  <button id="submitGuessBtn" class="btn">Submit Guess</button>
+  <button id="submitGuessBtn" class="btn" type="button">Submit Guess</button>
 
   <div id="currentPlayerDisplay" class="current-player-display">
     Current Turn: Player 1
@@ -344,7 +344,6 @@
       const gameRef = ref(db, `rooms/${roomCode}/game`);
 
       onValue(gameRef, (snapshot) => {
-        console.log("listenToGame fired:", Date.now(), snapshot.val());
         const fb = snapshot.val() || {};
 
         // core game state from Firebase
@@ -414,7 +413,6 @@
       const playersRef = ref(db, `rooms/${roomCode}/players`);
 
       onValue(playersRef, (snapshot) => {
-        console.log("listenToPlayers fired:", Date.now(), snapshot.val());
         const playersObj = snapshot.val() || {};
 
         const playersArray = Object.entries(playersObj).map(([uid, data]) => ({
