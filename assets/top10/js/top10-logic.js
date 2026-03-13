@@ -309,9 +309,27 @@ async function hostProcessGuess(pending) {
 
 function onGuessSubmit() {
     if (myPlayerId === hostId) {
-        submitGuess(); // host processes locally
+        // Host processes locally
+        submitGuess();
+
+        // Then sync game + players to Firebase so guests see the update
+        const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+        set(gameRef, {
+            state: game.state,
+            currentPlayerIndex: game.currentPlayerIndex,
+            globalGuessed: game.globalGuessed,
+            players: game.players,
+            sport: game.sport,
+            category: game.category,
+            year: game.year,
+            stat: game.stat
+        });
+
+        const playersRef = ref(db, `rooms/${currentRoomCode}/players`);
+        set(playersRef, game.players);
     } else {
-        sendGuessToHost(); // non-host sends to Firebase
+        // Guest path stays the same
+        sendGuessToHost();
     }
 }
 
