@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 18</p>
+    <p>Testing: Version 19</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -233,6 +233,7 @@
       await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
 
       await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
+        id: currentUser.uid,
         name: "Player 1"
       });
 
@@ -276,6 +277,7 @@
         const playersRef = ref(db, `rooms/${roomCode}/players`);
         await update(playersRef, {
           [currentUser.uid]: {
+            id: currentUser.uid,
             name: "Player"
           }
         });
@@ -418,14 +420,32 @@
     }
 
     function listenToPlayers(roomCode) {
-    console.log("LISTENING TO PLAYERS FOR ROOM:", roomCode);
-    const playersRef = ref(db, `rooms/${roomCode}/players`);
+      const playersRef = ref(db, `rooms/${roomCode}/players`);
 
-    onValue(playersRef, (snapshot) => {
-      const players = snapshot.val() || {};
-      renderPlayers(players);
-    });
-  }
+      onValue(playersRef, (snapshot) => {
+        const playersObj = snapshot.val() || {};
+
+        // Convert Firebase object → ordered array (join order)
+        const playersArray = Object.entries(playersObj).map(([uid, data]) => ({
+          id: uid,
+          name: data.name || "Player",
+          guesses: data.guesses || [],   // local-only for now
+          score: data.score || 0         // local-only for now
+        }));
+
+        // Update local game state
+        game.players = playersArray;
+
+        // Re-render main game UI
+        renderList();
+
+        // Re-run input locking
+        updateGuessInputLock();
+
+        // Re-render name-edit UI
+        renderPlayers(playersObj);
+      });
+    }
 
     // SPORT SELECTION — unified single-player + multiplayer
     document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
@@ -505,11 +525,16 @@
         input.type = "text";
         input.value = data.name || "Player";
 
-        // Sync name edits to Firebase
-        input.addEventListener("blur", () => {
-          const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
-          set(nameRef, input.value.trim() || "Player");
-        });
+        // Only allow editing your own name
+        const isMe = uid === currentUser.uid;
+        input.disabled = !isMe;
+
+        if (isMe) {
+          input.addEventListener("blur", () => {
+            const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
+            set(nameRef, input.value.trim() || "Player");
+          });
+        }
 
         wrapper.appendChild(input);
         container.appendChild(wrapper);
