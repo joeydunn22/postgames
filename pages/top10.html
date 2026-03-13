@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 36</p>
+    <p>Testing: Version 37</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -341,6 +341,7 @@
     }
 
     function listenToGame(roomCode) {
+      console.log("listenToGame fired:", Date.now(), snapshot.val());
       const gameRef = ref(db, `rooms/${roomCode}/game`);
 
       onValue(gameRef, (snapshot) => {
@@ -410,6 +411,7 @@
     }
 
     function listenToPlayers(roomCode) {
+      console.log("listenToPlayers fired:", Date.now(), snapshot.val());
       const playersRef = ref(db, `rooms/${roomCode}/players`);
 
       onValue(playersRef, (snapshot) => {
