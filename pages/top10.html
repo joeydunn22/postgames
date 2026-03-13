@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 20.1</p>
+    <p>Testing: Version 21</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -182,6 +182,8 @@
       }
 
       currentUser = user;
+      myPlayerId = user.uid;   // ⭐️ REQUIRED FOR MULTIPLAYER IDENTITY
+
       console.log("Top10 signed in as:", user.uid);
 
       document.getElementById("createRoomBtn").disabled = false;
