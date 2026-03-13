@@ -52,6 +52,8 @@ ui.statSelect.addEventListener("change", () => {
     update(ref(db, `rooms/${currentRoomCode}/game`), {
         stat: selected
     });
+
+    updateGuessInputLock();
 });
 
 /* ============================================================
@@ -84,6 +86,18 @@ function playGuessAnimation(type) {
         playerCol.classList.add(classes.player);
         setTimeout(() => playerCol.classList.remove(classes.player), 700);
     }
+}
+
+function updateGuessInputLock() {
+    if (!roomActive) {
+        ui.input.disabled = false;
+        return;
+    }
+
+    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
+    const isMyTurn = myIndex === game.currentPlayerIndex;
+
+    ui.input.disabled = !isMyTurn;
 }
 
 /* Update the Reveal/Play Again button text */
