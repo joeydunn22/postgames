@@ -168,7 +168,7 @@ function giveUp() {
 }
 
 /* Handle guess submission, scoring, and turn rotation */
-function submitGuess() {
+async function submitGuess() {
     const input = ui.input;
     const rawGuess = input.value;
     const guess = normalize(rawGuess);
@@ -184,13 +184,10 @@ function submitGuess() {
         if (isMatch(guess, a.name)) matches.push(a);
     }
 
-    // ----------------------------------------------------
-    // WRONG GUESS
-    // ----------------------------------------------------
     if (matches.length === 0) {
         playGuessAnimation("wrong");
+        await Promise.resolve();   // ⭐ ensures animation microtasks finish
 
-        // 🔥 Turn rotation MUST be synchronous
         game.currentPlayerIndex =
             (game.currentPlayerIndex + 1) % game.players.length;
 
@@ -199,9 +196,6 @@ function submitGuess() {
         return;
     }
 
-    // ----------------------------------------------------
-    // MULTIPLE MATCHES
-    // ----------------------------------------------------
     if (matches.length > 1) {
         alert("Multiple players match:\n\n" +
             matches.map(m => m.name).join("\n"));
@@ -212,32 +206,23 @@ function submitGuess() {
     const matchedAnswer = matches[0];
     const normalizedAnswer = normalize(matchedAnswer.name);
 
-    // ----------------------------------------------------
-    // DUPLICATE GUESS
-    // ----------------------------------------------------
     if (game.globalGuessed.includes(normalizedAnswer)) {
         playGuessAnimation("duplicate");
+        await Promise.resolve();   // ⭐
 
-        // This is fine — no turn rotation here
         renderList();
-
         input.value = "";
         return;
     }
 
-    // ----------------------------------------------------
-    // CORRECT GUESS
-    // ----------------------------------------------------
     game.globalGuessed.push(normalizedAnswer);
     game.players[game.currentPlayerIndex].guesses.push(matchedAnswer);
     game.players[game.currentPlayerIndex].score++;
 
     renderList();
     playGuessAnimation("correct");
+    await Promise.resolve();   // ⭐ ensures animation microtasks finish
 
-    // ----------------------------------------------------
-    // ALL ANSWERS FOUND → END GAME
-    // ----------------------------------------------------
     if (game.globalGuessed.length === answers.length) {
         input.value = "";
         input.blur();
@@ -249,10 +234,6 @@ function submitGuess() {
         return;
     }
 
-    // ----------------------------------------------------
-    // NORMAL TURN ROTATION (CORRECT GUESS)
-    // ----------------------------------------------------
-    // 🔥 Must be synchronous for multiplayer
     game.currentPlayerIndex =
         (game.currentPlayerIndex + 1) % game.players.length;
 
@@ -304,7 +285,7 @@ async function hostProcessGuess(pending) {
     ui.input.value = pending.guess;
 
     // Run your existing logic
-    submitGuess();
+    await submitGuess();
 
     // Sync updated game state to Firebase
     const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
