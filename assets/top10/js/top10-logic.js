@@ -168,7 +168,7 @@ function giveUp() {
 }
 
 /* Handle guess submission, scoring, and turn rotation */
-async function submitGuess() {
+function submitGuess() {
     const input = ui.input;
     const rawGuess = input.value;
     const guess = normalize(rawGuess);
@@ -184,9 +184,9 @@ async function submitGuess() {
         if (isMatch(guess, a.name)) matches.push(a);
     }
 
+    // WRONG GUESS
     if (matches.length === 0) {
         playGuessAnimation("wrong");
-        await Promise.resolve();   // ⭐ ensures animation microtasks finish
 
         game.currentPlayerIndex =
             (game.currentPlayerIndex + 1) % game.players.length;
@@ -196,6 +196,7 @@ async function submitGuess() {
         return;
     }
 
+    // MULTIPLE MATCHES
     if (matches.length > 1) {
         alert("Multiple players match:\n\n" +
             matches.map(m => m.name).join("\n"));
@@ -206,23 +207,23 @@ async function submitGuess() {
     const matchedAnswer = matches[0];
     const normalizedAnswer = normalize(matchedAnswer.name);
 
+    // DUPLICATE GUESS
     if (game.globalGuessed.includes(normalizedAnswer)) {
         playGuessAnimation("duplicate");
-        await Promise.resolve();   // ⭐
-
         renderList();
         input.value = "";
         return;
     }
 
+    // CORRECT GUESS
     game.globalGuessed.push(normalizedAnswer);
     game.players[game.currentPlayerIndex].guesses.push(matchedAnswer);
     game.players[game.currentPlayerIndex].score++;
 
     renderList();
     playGuessAnimation("correct");
-    await Promise.resolve();   // ⭐ ensures animation microtasks finish
 
+    // ALL ANSWERS FOUND → END GAME
     if (game.globalGuessed.length === answers.length) {
         input.value = "";
         input.blur();
@@ -234,6 +235,7 @@ async function submitGuess() {
         return;
     }
 
+    // NORMAL TURN ROTATION
     game.currentPlayerIndex =
         (game.currentPlayerIndex + 1) % game.players.length;
 
@@ -281,13 +283,11 @@ function listenToPendingGuess(roomCode) {
 }
 
 async function hostProcessGuess(pending) {
-    // Inject guess into the input so submitGuess() uses it
     ui.input.value = pending.guess;
 
-    // Run your existing logic
-    await submitGuess();
+    // process guess locally
+    submitGuess();
 
-    // Sync updated game state to Firebase
     const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
     await set(gameRef, {
         state: game.state,
@@ -300,11 +300,9 @@ async function hostProcessGuess(pending) {
         stat: game.stat
     });
 
-    // Sync updated players
     const playersRef = ref(db, `rooms/${currentRoomCode}/players`);
     await set(playersRef, game.players);
 
-    // Clear pending guess
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
     await set(pendingRef, null);
 }
