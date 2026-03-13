@@ -294,13 +294,14 @@ async function hostProcessGuess(pending) {
     // Sync updated game state to Firebase
     const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
     await set(gameRef, {
+        state: game.state,
         currentPlayerIndex: game.currentPlayerIndex,
         globalGuessed: game.globalGuessed,
-        state: game.state,
+        players: game.players,
         sport: game.sport,
+        category: game.category,
         year: game.year,
-        stat: game.stat,
-        category: game.category
+        stat: game.stat
     });
 
     // Sync updated players
