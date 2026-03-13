@@ -243,17 +243,7 @@ function submitGuess() {
     input.value = "";
 }
 
-async function sendGuessToHost() {
-    const rawGuess = ui.input.value.trim();
-    if (!rawGuess) return;
-
-    // Only allow if it's your turn
-    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
-    if (myIndex !== game.currentPlayerIndex) return;
-
-    // Only non-hosts send guesses
-    if (myPlayerId === hostId) return;
-
+async function sendGuessToHost(rawGuess) {
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
     await set(pendingRef, {
         playerId: myPlayerId,
@@ -308,11 +298,16 @@ async function hostProcessGuess(pending) {
 }
 
 function onGuessSubmit() {
+    const rawGuess = ui.input.value.trim();
+    if (!rawGuess) return;
+
+    // Turn check HERE — always correct because UI is already updated
+    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
+    if (myIndex !== game.currentPlayerIndex) return;
+
     if (myPlayerId === hostId) {
-        // Host processes locally
         submitGuess();
 
-        // Then sync game + players to Firebase so guests see the update
         const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
         set(gameRef, {
             state: game.state,
@@ -328,8 +323,7 @@ function onGuessSubmit() {
         const playersRef = ref(db, `rooms/${currentRoomCode}/players`);
         set(playersRef, game.players);
     } else {
-        // Guest path stays the same
-        sendGuessToHost();
+        sendGuessToHost(rawGuess);
     }
 }
 
