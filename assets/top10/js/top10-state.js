@@ -2,6 +2,14 @@
    TOP 10 — STATE & UI REFERENCES
    ============================================================ */
 
+// Told to move from top10.html
+let currentUser = null;
+let currentRoomCode = null;
+let roomActive = false;
+let myPlayerId = null;
+
+
+
 /* Game state object */
 const game = {
     state: "playing",

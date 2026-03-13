@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 21.1</p>
+    <p>Testing: Version 22</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -142,13 +142,6 @@
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
     const auth = getAuth();
-
-    let currentUser = null;
-    let currentRoomCode = null;
-
-    let roomActive = false;
-
-    let myPlayerId = null;
 
     // Disable buttons until auth is ready
     document.getElementById("createRoomBtn").disabled = true;
