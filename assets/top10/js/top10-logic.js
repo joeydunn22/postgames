@@ -5,13 +5,13 @@
 /* Handle Enter key for submitting guesses */
 ui.input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        submitGuess();
+        onGuessSubmit();
     }
 });
 
 /* Handle Submit Guess button */
 document.getElementById("submitGuessBtn").addEventListener("click", () => {
-    submitGuess();
+    onGuessSubmit();
 });
 
 /* Handle Reveal Answers / Play Again button */
