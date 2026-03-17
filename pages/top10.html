@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 49</p>
+    <p>Testing: Version 50</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -360,7 +360,7 @@
             game.year = fb.year ?? null;
             game.stat = fb.stat ?? null;
 
-            // --- CRITICAL: SYNC PLAYERS FROM /game + NORMALIZE ---
+            // --- SYNC + NORMALIZE PLAYERS ---
             if (Array.isArray(fb.players)) {
                 game.players = fb.players.map(p => ({
                     id: p.id,
@@ -368,6 +368,13 @@
                     guesses: Array.isArray(p.guesses) ? p.guesses : [],
                     score: typeof p.score === "number" ? p.score : 0
                 }));
+            }
+
+            // --- RESULTS SCREEN SYNC ---
+            if (game.state === "results") {
+                renderResults();
+                updateGuessInputLock();
+                return; // stop here so list UI doesn't overwrite results UI
             }
 
             // --- SPORT HIGHLIGHT ---
@@ -405,7 +412,7 @@
                     });
             }
 
-            // --- LOAD DATA IF SPORT/YEAR READY ---
+            // --- LOAD DATA IF READY ---
             if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
                 maybeLoadData();
             }
@@ -417,7 +424,7 @@
                     ? game.stat.replace(/_/g, " ").toUpperCase()
                     : "Select a stat to begin";
 
-                renderList();   // ensures scoreboard + list update
+                renderList();
             }
 
             updateGuessInputLock();
