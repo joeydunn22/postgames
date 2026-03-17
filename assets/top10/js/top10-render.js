@@ -85,6 +85,8 @@ function renderPlayerColumn(col, player, index, isPercent) {
         col.classList.add("current-player");
     }
 
+    const guesses = player.guesses;
+
     const guessesHTML = guesses.map(g => {
         const displayValue = isPercent ? g.value + "%" : g.value;
         return `<li>${g.name} — ${g.team} — ${displayValue}</li>`;
