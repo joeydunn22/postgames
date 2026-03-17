@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 51</p>
+    <p>Testing: Version 52</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -361,10 +361,11 @@
             game.stat = fb.stat ?? null;
 
             // --- SYNC + NORMALIZE PLAYERS ---
+            // game.playerNames is populated by listenToPlayers()
             if (Array.isArray(fb.players)) {
                 game.players = fb.players.map(p => ({
                     id: p.id,
-                    name: p.name ?? "Player",
+                    name: game.playerNames?.[p.id]?.name ?? p.name ?? "Player",
                     guesses: Array.isArray(p.guesses) ? p.guesses : [],
                     score: typeof p.score === "number" ? p.score : 0
                 }));
@@ -437,13 +438,8 @@
         onValue(playersRef, (snapshot) => {
             const playersObj = snapshot.val() || {};
 
-            // Merge updated names into existing game.players
-            if (Array.isArray(game.players)) {
-                game.players = game.players.map(p => ({
-                    ...p,
-                    name: playersObj[p.id]?.name ?? p.name
-                }));
-            }
+            // Store names only
+            game.playerNames = playersObj;
 
             renderPlayers(playersObj);
             renderList();
