@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 50</p>
+    <p>Testing: Version 51</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -374,7 +374,7 @@
             if (game.state === "results") {
                 renderResults();
                 updateGuessInputLock();
-                return; // stop here so list UI doesn't overwrite results UI
+                return; // prevent list UI from overwriting results UI
             }
 
             // --- SPORT HIGHLIGHT ---
@@ -432,23 +432,22 @@
     }
 
     function listenToPlayers(roomCode) {
-      const playersRef = ref(db, `rooms/${roomCode}/players`);
+        const playersRef = ref(db, `rooms/${roomCode}/players`);
 
-      onValue(playersRef, (snapshot) => {
-        const playersObj = snapshot.val() || {};
+        onValue(playersRef, (snapshot) => {
+            const playersObj = snapshot.val() || {};
 
-        const playersArray = Object.entries(playersObj).map(([uid, data]) => ({
-          id: uid,
-          name: data.name || "Player",
-          guesses: data.guesses || [],
-          score: data.score || 0
-        }));
+            // Merge updated names into existing game.players
+            if (Array.isArray(game.players)) {
+                game.players = game.players.map(p => ({
+                    ...p,
+                    name: playersObj[p.id]?.name ?? p.name
+                }));
+            }
 
-        game.players = playersArray;
-
-        renderPlayers(playersObj);
-        renderList();
-      });
+            renderPlayers(playersObj);
+            renderList();
+        });
     }
 
     // SPORT SELECTION — unified single-player + multiplayer
@@ -517,39 +516,39 @@
     });
 
     function renderPlayers(playersObj) {
-      ui.playerNameInputs.innerHTML = "";
+        ui.playerNameInputs.innerHTML = "";
 
-      Object.entries(playersObj).forEach(([uid, data]) => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "player-name-row";
+        Object.entries(playersObj).forEach(([uid, data]) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "player-name-row";
 
-        const input = document.createElement("input");
-        input.type = "text";
-        input.value = data.name || "Player";
-        input.className = "player-name-input";
+            const input = document.createElement("input");
+            input.type = "text";
+            input.value = data.name || "Player";
+            input.className = "player-name-input";
 
-        const isMe = uid === myPlayerId;
+            const isMe = uid === myPlayerId;
 
-        if (isMe) {
-          input.classList.add("me"); // highlight
-          input.disabled = false;
+            if (isMe) {
+                input.classList.add("me");
+                input.disabled = false;
 
-          input.addEventListener("blur", () => {
-            const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
-            set(nameRef, input.value.trim() || "Player");
-          });
+                input.addEventListener("blur", () => {
+                    const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
+                    set(nameRef, input.value.trim() || "Player");
+                });
 
-          const badge = document.createElement("span");
-          badge.className = "you-badge";
-          badge.textContent = "You";
-          wrapper.appendChild(badge);
-        } else {
-          input.disabled = true;
-        }
+                const badge = document.createElement("span");
+                badge.className = "you-badge";
+                badge.textContent = "You";
+                wrapper.appendChild(badge);
+            } else {
+                input.disabled = true;
+            }
 
-        wrapper.appendChild(input);
-        ui.playerNameInputs.appendChild(wrapper);
-      });
+            wrapper.appendChild(input);
+            ui.playerNameInputs.appendChild(wrapper);
+        });
     }
 
     ui.statSelect.addEventListener("change", async () => {
