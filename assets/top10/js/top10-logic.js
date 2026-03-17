@@ -94,12 +94,6 @@ function updateGuessInputLock() {
         return;
     }
 
-    // 🚨 NEW: do not lock input until players are loaded
-    if (!Array.isArray(game.players) || game.players.length === 0) {
-        ui.input.disabled = true;  // or false if you want P1 always unlocked until ready
-        return;
-    }
-
     const myIndex = game.players.findIndex(p => p.id === myPlayerId);
     const isMyTurn = myIndex === game.currentPlayerIndex;
 
