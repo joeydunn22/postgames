@@ -123,8 +123,26 @@ function renderList() {
     html += "</ol>";
     ui.top10List.innerHTML = html;
 
+    // --- SAFETY: ensure players + index are valid before using them ---
+    if (!Array.isArray(game.players) || game.players.length === 0) {
+        ui.currentPlayerDisplay.textContent = "Current Turn: —";
+        return;
+    }
+
+    if (
+        typeof game.currentPlayerIndex !== "number" ||
+        game.currentPlayerIndex < 0 ||
+        game.currentPlayerIndex >= game.players.length ||
+        !game.players[game.currentPlayerIndex]
+    ) {
+        ui.currentPlayerDisplay.textContent = "Current Turn: —";
+        return;
+    }
+
+    const currentPlayer = game.players[game.currentPlayerIndex];
+
     ui.currentPlayerDisplay.textContent =
-        "Current Turn: " + game.players[game.currentPlayerIndex].name;
+        "Current Turn: " + (currentPlayer.name || "Player");
 
     const container = ui.playersContainer;
 
@@ -144,6 +162,7 @@ function renderList() {
 
     game.players.forEach((player, index) => {
         const col = container.children[index];
+        if (!player) return; // extra guard
         renderPlayerColumn(col, player, index, isPercent);
     });
 }
