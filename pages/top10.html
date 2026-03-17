@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 46</p>
+    <p>Testing: Version 47</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -341,72 +341,79 @@
     }
 
     function listenToGame(roomCode) {
-      const gameRef = ref(db, `rooms/${roomCode}/game`);
+        const gameRef = ref(db, `rooms/${roomCode}/game`);
 
-      onValue(gameRef, (snapshot) => {
-        const fb = snapshot.val() || {};
+        onValue(gameRef, (snapshot) => {
+            const fb = snapshot.val() || {};
 
-        // core game state from Firebase
-        game.state = fb.state ?? game.state ?? "playing";
-        game.currentPlayerIndex =
-          fb.currentPlayerIndex ?? game.currentPlayerIndex ?? 0;
-        game.globalGuessed = Array.isArray(fb.globalGuessed)
-          ? fb.globalGuessed
-          : (game.globalGuessed || []);
+            // Core game state
+            game.state = fb.state ?? game.state ?? "playing";
+            game.currentPlayerIndex =
+                fb.currentPlayerIndex ?? game.currentPlayerIndex ?? 0;
 
-        game.sport = fb.sport ?? null;
-        game.category = fb.category ?? null;
-        game.year = fb.year ?? null;
-        game.stat = fb.stat ?? null;
+            game.globalGuessed = Array.isArray(fb.globalGuessed)
+                ? fb.globalGuessed
+                : (game.globalGuessed || []);
 
-        // SPORT HIGHLIGHT
-        if (game.sport) {
-          document.querySelectorAll('#sport-buttons .pg-button')
-            .forEach(btn => {
-              btn.classList.toggle('active', btn.dataset.sport === game.sport);
-            });
-        }
+            game.sport = fb.sport ?? null;
+            game.category = fb.category ?? null;
+            game.year = fb.year ?? null;
+            game.stat = fb.stat ?? null;
 
-        // CATEGORY HIGHLIGHT
-        if (game.category) {
-          document.querySelectorAll('#mlb-category-buttons .pg-button')
-            .forEach(btn => {
-              btn.classList.toggle('active', btn.dataset.category === game.category);
-            });
-        }
+            // *** CRITICAL FIX — sync players from /game ***
+            if (Array.isArray(fb.players)) {
+                game.players = fb.players;
+            }
 
-        const catWrapper = document.getElementById("mlb-category-wrapper");
-        const catButtons = document.getElementById("mlb-category-buttons");
+            // SPORT HIGHLIGHT
+            if (game.sport) {
+                document.querySelectorAll('#sport-buttons .pg-button')
+                    .forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.sport === game.sport);
+                    });
+            }
 
-        if (game.sport === "mlb") {
-          catWrapper.classList.remove("hidden");
-          catButtons.classList.remove("hidden");
-        } else {
-          catWrapper.classList.add("hidden");
-          catButtons.classList.add("hidden");
-        }
+            // CATEGORY HIGHLIGHT
+            if (game.category) {
+                document.querySelectorAll('#mlb-category-buttons .pg-button')
+                    .forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.category === game.category);
+                    });
+            }
 
-        if (game.year) {
-          document.querySelectorAll('#year-buttons .pg-button')
-            .forEach(btn => {
-              btn.classList.toggle('active', btn.dataset.year === game.year);
-            });
-        }
+            const catWrapper = document.getElementById("mlb-category-wrapper");
+            const catButtons = document.getElementById("mlb-category-buttons");
 
-        if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
-          maybeLoadData();
-        }
+            if (game.sport === "mlb") {
+                catWrapper.classList.remove("hidden");
+                catButtons.classList.remove("hidden");
+            } else {
+                catWrapper.classList.add("hidden");
+                catButtons.classList.add("hidden");
+            }
 
-        if (game.stat !== undefined) {
-          ui.statSelect.value = game.stat || "";
-          ui.statTitle.textContent = game.stat
-            ? game.stat.replace(/_/g, " ").toUpperCase()
-            : "Select a stat to begin";
-          renderList();
-        }
+            if (game.year) {
+                document.querySelectorAll('#year-buttons .pg-button')
+                    .forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.year === game.year);
+                    });
+            }
 
-        updateGuessInputLock();
-      });
+            if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
+                maybeLoadData();
+            }
+
+            if (game.stat !== undefined) {
+                ui.statSelect.value = game.stat || "";
+                ui.statTitle.textContent = game.stat
+                    ? game.stat.replace(/_/g, " ").toUpperCase()
+                    : "Select a stat to begin";
+
+                renderList();   // <-- ensures scoreboard updates
+            }
+
+            updateGuessInputLock();
+        });
     }
 
     function listenToPlayers(roomCode) {

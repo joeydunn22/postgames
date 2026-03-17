@@ -290,9 +290,6 @@ async function hostProcessGuess(pending) {
         stat: game.stat
     });
 
-    //const playersRef = ref(db, `rooms/${currentRoomCode}/players`);
-    //await set(playersRef, game.players);
-
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
     await set(pendingRef, null);
 }
@@ -320,8 +317,6 @@ function onGuessSubmit() {
             stat: game.stat
         });
 
-        //const playersRef = ref(db, `rooms/${currentRoomCode}/players`);
-        //set(playersRef, game.players);
     } else {
         sendGuessToHost(rawGuess);
     }
