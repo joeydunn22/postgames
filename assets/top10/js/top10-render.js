@@ -85,7 +85,7 @@ function renderPlayerColumn(col, player, index, isPercent) {
         col.classList.add("current-player");
     }
 
-    const guessesHTML = player.guesses.map(g => {
+    const guessesHTML = guesses.map(g => {
         const displayValue = isPercent ? g.value + "%" : g.value;
         return `<li>${g.name} — ${g.team} — ${displayValue}</li>`;
     }).join("");
@@ -93,7 +93,7 @@ function renderPlayerColumn(col, player, index, isPercent) {
     col.innerHTML = `
         <h3>${player.name}</h3>
         <ul>${guessesHTML}</ul>
-        <div class="player-score">Score: ${player.score}</div>
+        <div class="player-score">Score: ${player.score ?? 0}</div>
     `;
 }
 

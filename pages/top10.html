@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 47</p>
+    <p>Testing: Version 48</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -346,7 +346,7 @@
         onValue(gameRef, (snapshot) => {
             const fb = snapshot.val() || {};
 
-            // Core game state
+            // --- CORE GAME STATE ---
             game.state = fb.state ?? game.state ?? "playing";
             game.currentPlayerIndex =
                 fb.currentPlayerIndex ?? game.currentPlayerIndex ?? 0;
@@ -360,12 +360,17 @@
             game.year = fb.year ?? null;
             game.stat = fb.stat ?? null;
 
-            // *** CRITICAL FIX — sync players from /game ***
+            // --- CRITICAL: SYNC PLAYERS FROM /game + NORMALIZE ---
             if (Array.isArray(fb.players)) {
-                game.players = fb.players;
+                game.players = fb.players.map(p => ({
+                    id: p.id,
+                    name: p.name ?? "Player",
+                    guesses: Array.isArray(p.guesses) ? p.guesses : [],
+                    score: typeof p.score === "number" ? p.score : 0
+                }));
             }
 
-            // SPORT HIGHLIGHT
+            // --- SPORT HIGHLIGHT ---
             if (game.sport) {
                 document.querySelectorAll('#sport-buttons .pg-button')
                     .forEach(btn => {
@@ -373,7 +378,7 @@
                     });
             }
 
-            // CATEGORY HIGHLIGHT
+            // --- CATEGORY HIGHLIGHT ---
             if (game.category) {
                 document.querySelectorAll('#mlb-category-buttons .pg-button')
                     .forEach(btn => {
@@ -392,6 +397,7 @@
                 catButtons.classList.add("hidden");
             }
 
+            // --- YEAR HIGHLIGHT ---
             if (game.year) {
                 document.querySelectorAll('#year-buttons .pg-button')
                     .forEach(btn => {
@@ -399,17 +405,19 @@
                     });
             }
 
+            // --- LOAD DATA IF SPORT/YEAR READY ---
             if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
                 maybeLoadData();
             }
 
+            // --- STAT SYNC + RENDER ---
             if (game.stat !== undefined) {
                 ui.statSelect.value = game.stat || "";
                 ui.statTitle.textContent = game.stat
                     ? game.stat.replace(/_/g, " ").toUpperCase()
                     : "Select a stat to begin";
 
-                renderList();   // <-- ensures scoreboard updates
+                renderList();   // ensures scoreboard + list update
             }
 
             updateGuessInputLock();
