@@ -123,26 +123,16 @@ function renderList() {
     html += "</ol>";
     ui.top10List.innerHTML = html;
 
-    // --- SAFETY: ensure players + index are valid before using them ---
-    if (!Array.isArray(game.players) || game.players.length === 0) {
-        ui.currentPlayerDisplay.textContent = "Current Turn: —";
-        return;
+    // At this point, listenToGame() guarantees game.players is an array with length > 0
+    let idx = game.currentPlayerIndex;
+    if (typeof idx !== "number" || idx < 0 || idx >= game.players.length) {
+        idx = 0;
     }
 
-    if (
-        typeof game.currentPlayerIndex !== "number" ||
-        game.currentPlayerIndex < 0 ||
-        game.currentPlayerIndex >= game.players.length ||
-        !game.players[game.currentPlayerIndex]
-    ) {
-        ui.currentPlayerDisplay.textContent = "Current Turn: —";
-        return;
-    }
-
-    const currentPlayer = game.players[game.currentPlayerIndex];
+    const currentPlayer = game.players[idx];
 
     ui.currentPlayerDisplay.textContent =
-        "Current Turn: " + (currentPlayer.name || "Player");
+        "Current Turn: " + (currentPlayer?.name || "Player");
 
     const container = ui.playersContainer;
 
@@ -162,7 +152,6 @@ function renderList() {
 
     game.players.forEach((player, index) => {
         const col = container.children[index];
-        if (!player) return; // extra guard
         renderPlayerColumn(col, player, index, isPercent);
     });
 }
