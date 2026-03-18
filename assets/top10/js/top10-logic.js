@@ -46,7 +46,9 @@ function applyCorrectGuess(game, matchedAnswer) {
     }
 }
 
-
+function applyEndGame(game) {
+    game.state = "results";
+}
 
 
 
@@ -296,6 +298,8 @@ function submitGuess() {
         input.value = "";
         input.blur();
 
+        game.state = "results"; // this might be wrong moving forward
+
         if (myPlayerId === hostId) {
             syncGameState();
         }
@@ -307,10 +311,6 @@ function submitGuess() {
 
         return;
     }
-
-    // NORMAL TURN ROTATION
-    game.currentPlayerIndex =
-        (game.currentPlayerIndex + 1) % game.players.length;
 
     renderList();
     input.value = "";
@@ -349,11 +349,59 @@ function listenToPendingGuess(roomCode) {
 }
 
 async function hostProcessGuess(pending) {
-    ui.input.value = pending.guess;
+    const rawGuess = pending.guess;
+    const guess = normalize(rawGuess);
+    if (!guess) return;
 
-    // process guess locally
-    submitGuess();
+    const answers = game.data[game.stat].players;
 
+    // Find matches
+    let matches = [];
+    for (let a of answers) {
+        if (isMatch(guess, a.name)) matches.push(a);
+    }
+
+    // WRONG GUESS
+    if (matches.length === 0) {
+        applyWrongGuess(game);
+        syncGameState();
+
+        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        await set(pendingRef, null);
+        return;
+    }
+
+    // MULTIPLE MATCHES
+    if (matches.length > 1) {
+        // Host cannot show alerts to remote players
+        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        await set(pendingRef, null);
+        return;
+    }
+
+    const matchedAnswer = matches[0];
+    const normalizedAnswer = normalize(matchedAnswer.name);
+
+    // DUPLICATE GUESS
+    if (game.globalGuessed.includes(normalizedAnswer)) {
+        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        await set(pendingRef, null);
+        return;
+    }
+
+    // CORRECT GUESS
+    applyCorrectGuess(game, matchedAnswer);
+
+    // END GAME?
+    if (game.state === "results") {
+        syncGameState();
+
+        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        await set(pendingRef, null);
+        return;
+    }
+
+    // NORMAL CASE
     syncGameState();
 
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
