@@ -10,17 +10,18 @@ let myPlayerId = null;
 let hostId = null;
 
 
-/* Game state object */
 const game = {
-    state: "playing",
+    state: "setup",            // start in setup, not playing
     currentPlayerIndex: 0,
-    players: [],
-    globalGuessed: [],
-    category: null,
+    players: [],               // [{ id, name, guesses[], score }]
+    globalGuessed: [],         // ["aaron_judge", ...]
     sport: null,
+    category: null,
     year: null,
     stat: null,
-    data: {}
+
+    // LOCAL ONLY (not synced)
+    data: {}                   // loaded from JSON, stays local
 };
 
 /* Cached UI elements */

@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 64.1</p>
+    <p>Testing: Version 65</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -376,7 +376,7 @@
             const fb = snapshot.val() || {};
 
             // --- CORE GAME STATE ---
-            game.state = fb.state ?? game.state ?? "playing";
+            game.state = fb.state ?? game.state ?? "setup";
             game.currentPlayerIndex =
                 fb.currentPlayerIndex ?? game.currentPlayerIndex ?? 0;
 
@@ -389,11 +389,11 @@
             game.year = fb.year ?? null;
             game.stat = fb.stat ?? null;
 
-            // --- SYNC + NORMALIZE PLAYERS ---
+            // --- SYNC PLAYERS ---
             if (Array.isArray(fb.players)) {
                 game.players = fb.players.map(p => ({
                     id: p.id,
-                    name: game.playerNames?.[p.id]?.name ?? p.name ?? "Player",
+                    name: p.name ?? "Player",
                     guesses: Array.isArray(p.guesses) ? p.guesses : [],
                     score: typeof p.score === "number" ? p.score : 0
                 }));
@@ -409,11 +409,9 @@
                     typeof game.currentPlayerIndex === "number" &&
                     game.stat &&
                     game.data &&
-                    game.data[game.stat];   // <-- ensures loadSport() finished
+                    game.data[game.stat];
 
-                if (!ready) {
-                    return; // wait for next snapshot OR loadSport() completion
-                }
+                if (!ready) return;
 
                 renderResults();
                 updateGuessInputLock();

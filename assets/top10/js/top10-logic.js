@@ -1,3 +1,68 @@
+// all new functions will live here for now until reorganization
+
+function syncGameState() {
+    if (!currentRoomCode) return;
+
+    const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+    set(gameRef, {
+        state: game.state,
+        players: game.players,
+        currentPlayerIndex: game.currentPlayerIndex,
+        globalGuessed: game.globalGuessed,
+        sport: game.sport,
+        category: game.category,
+        year: game.year,
+        stat: game.stat
+    });
+}
+
+function applyWrongGuess(game) {
+    // Rotate turn
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
+}
+
+function applyCorrectGuess(game, matchedAnswer) {
+    const normalized = normalize(matchedAnswer.name);
+
+    // Add to global guessed list
+    game.globalGuessed.push(normalized);
+
+    // Add to player's guesses
+    const player = game.players[game.currentPlayerIndex];
+    player.guesses.push(matchedAnswer);
+
+    // Increment score
+    player.score++;
+
+    // Rotate turn (Option A — always rotate)
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
+
+    // Check for end of game
+    const totalAnswers = game.data[game.stat].players.length;
+    if (game.globalGuessed.length === totalAnswers) {
+        game.state = "results";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================================
    TOP 10 — EVENT LISTENERS
    ============================================================ */
@@ -194,8 +259,7 @@ function submitGuess() {
     if (matches.length === 0) {
         playGuessAnimation("wrong");
 
-        game.currentPlayerIndex =
-            (game.currentPlayerIndex + 1) % game.players.length;
+        applyWrongGuess(game);
 
         renderList();
         input.value = "";
@@ -222,34 +286,18 @@ function submitGuess() {
     }
 
     // CORRECT GUESS
-    game.globalGuessed.push(normalizedAnswer);
-    game.players[game.currentPlayerIndex].guesses.push(matchedAnswer);
-    game.players[game.currentPlayerIndex].score++;
+    applyCorrectGuess(game, matchedAnswer);
 
     renderList();
     playGuessAnimation("correct");
 
-    // ALL ANSWERS FOUND → END GAME
-    if (game.globalGuessed.length === answers.length) {
+    // If game ended, host syncs and render results
+    if (game.state === "results") {
         input.value = "";
         input.blur();
 
-        // 🔥 MUST HAPPEN BEFORE renderResults()
-        game.state = "results";
-
-        // 🔥 Host must sync results state to Firebase
         if (myPlayerId === hostId) {
-            const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-            set(gameRef, {
-                state: game.state,
-                currentPlayerIndex: game.currentPlayerIndex,
-                globalGuessed: game.globalGuessed,
-                players: game.players,
-                sport: game.sport,
-                category: game.category,
-                year: game.year,
-                stat: game.stat
-            });
+            syncGameState();
         }
 
         setTimeout(() => {
@@ -306,17 +354,7 @@ async function hostProcessGuess(pending) {
     // process guess locally
     submitGuess();
 
-    const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-    await set(gameRef, {
-        state: game.state,
-        currentPlayerIndex: game.currentPlayerIndex,
-        globalGuessed: game.globalGuessed,
-        players: game.players,
-        sport: game.sport,
-        category: game.category,
-        year: game.year,
-        stat: game.stat
-    });
+    syncGameState();
 
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
     await set(pendingRef, null);
@@ -333,17 +371,7 @@ function onGuessSubmit() {
     if (myPlayerId === hostId) {
         submitGuess();
 
-        const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-        set(gameRef, {
-            state: game.state,
-            currentPlayerIndex: game.currentPlayerIndex,
-            globalGuessed: game.globalGuessed,
-            players: game.players,
-            sport: game.sport,
-            category: game.category,
-            year: game.year,
-            stat: game.stat
-        });
+        syncGameState();
 
     } else {
         sendGuessToHost(rawGuess);
