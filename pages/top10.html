@@ -23,7 +23,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 58</p>
+    <p>Testing: Version 59</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -401,9 +401,22 @@
 
             // --- RESULTS SCREEN SYNC ---
             if (game.state === "results") {
+
+                const ready =
+                    Array.isArray(game.players) &&
+                    game.players.length > 0 &&
+                    Array.isArray(game.globalGuessed) &&
+                    game.stat &&
+                    game.data?.[game.stat] &&              // ensure data is loaded
+                    typeof game.currentPlayerIndex === "number";
+
+                if (!ready) {
+                    return; // wait for next snapshot
+                }
+
                 renderResults();
                 updateGuessInputLock();
-                return; // prevent list UI from overwriting results UI
+                return;
             }
 
             // --- SPORT HIGHLIGHT ---

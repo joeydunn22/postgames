@@ -432,7 +432,6 @@ function maybeLoadData() {
    ============================================================ */
 
 /* Load sport/year/category JSON file */
-/* Load sport/year/category JSON file */
 function loadSport() {
     let file = "";
 
