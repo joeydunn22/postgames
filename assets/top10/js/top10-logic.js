@@ -89,6 +89,12 @@ function playGuessAnimation(type) {
 }
 
 function updateGuessInputLock() {
+    // Always lock input during results
+    if (game.state === "results") {
+        ui.input.disabled = true;
+        return;
+    }
+
     if (!roomActive) {
         ui.input.disabled = false;
         return;
