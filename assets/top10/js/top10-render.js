@@ -163,6 +163,41 @@ function renderList() {
 
 /* Render final results screen */
 function renderResults() {
+    // 🔁 RECONCILE globalGuessed FROM players.guesses
+    const guessedSet = new Set();
+
+    if (Array.isArray(game.players)) {
+        game.players.forEach(player => {
+            if (Array.isArray(player.guesses)) {
+                player.guesses.forEach(g => {
+                    if (g && g.name) {
+                        guessedSet.add(normalize(g.name));
+                    }
+                });
+            }
+        });
+    }
+
+    game.globalGuessed = Array.from(guessedSet);
+
+    // If host, sync this corrected globalGuessed back to Firebase
+    if (myPlayerId === hostId && currentRoomCode) {
+        const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+        set(gameRef, {
+            state: game.state,
+            currentPlayerIndex: game.currentPlayerIndex,
+            globalGuessed: game.globalGuessed,
+            players: game.players,
+            sport: game.sport,
+            category: game.category,
+            year: game.year,
+            stat: game.stat
+        });
+    }
+
+    // 🔄 Now the Top 10 list will be consistent with players.guesses
+    renderList();
+
     const stat = game.data[game.stat];
     const list = stat.players;
     const isPercent = stat.isPercent;
@@ -199,12 +234,10 @@ function renderResults() {
         ui.resultsPlayers.appendChild(div);
     });
 
-    // visibility toggles: now class-based
     ui.resultsSection.classList.remove("hidden");
     ui.currentPlayerDisplay.classList.add("hidden");
     ui.playersContainer.classList.add("hidden");
 
-    // leave these as-is for now (we'll clean them later if needed)
     document.getElementById("addPlayerBtn").style.display = "inline-block";
     document.getElementById("removePlayerBtn").style.display = "inline-block";
 }
