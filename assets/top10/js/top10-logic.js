@@ -227,11 +227,30 @@ function submitGuess() {
     if (game.globalGuessed.length === answers.length) {
         input.value = "";
         input.blur();
+
+        // 🔥 MUST HAPPEN BEFORE renderResults()
+        game.state = "results";
+
+        // 🔥 Host must sync results state to Firebase
+        if (myPlayerId === hostId) {
+            const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+            set(gameRef, {
+                state: game.state,
+                currentPlayerIndex: game.currentPlayerIndex,
+                globalGuessed: game.globalGuessed,
+                players: game.players,
+                sport: game.sport,
+                category: game.category,
+                year: game.year,
+                stat: game.stat
+            });
+        }
+
         setTimeout(() => {
             renderResults();
-            game.state = "results";
             updateActionButton();
         }, 50);
+
         return;
     }
 
@@ -260,6 +279,9 @@ function listenToPendingGuess(roomCode) {
     onValue(pendingRef, (snapshot) => {
         const pending = snapshot.val();
         if (!pending) return;
+
+        // 🚨 Prevent overwriting the results state
+        if (game.state === "results") return;
 
         // Only host processes guesses
         if (myPlayerId !== hostId) return;
