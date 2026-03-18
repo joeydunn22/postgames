@@ -465,14 +465,18 @@ function loadSport() {
                 };
             });
 
-            // Rebuild dropdown options
             populateStatDropdown();
 
-            // 🔑 Reapply the currently synced stat selection (if any)
             if (game.stat) {
                 ui.statSelect.value = game.stat;
             } else {
                 ui.statSelect.value = "";
+            }
+
+            // 🔥 NEW: If we are already in results, re-render now that data is loaded
+            if (game.state === "results" && game.data[game.stat]) {
+                renderResults();
+                updateGuessInputLock();
             }
         })
         .catch(err => console.error("Error loading data:", err));
