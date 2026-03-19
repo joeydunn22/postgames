@@ -35,26 +35,147 @@ function applyCorrectGuess(game, matchedAnswer) {
     // Increment score
     player.score++;
 
-    // Rotate turn (Option A — always rotate)
+    // Rotate turn
     game.currentPlayerIndex =
         (game.currentPlayerIndex + 1) % game.players.length;
 
-    // Check for end of game
+    // Determine if the game is now complete
     const totalAnswers = game.data[game.stat].players.length;
-    if (game.globalGuessed.length === totalAnswers) {
-        game.state = "results";
-    }
+    return game.globalGuessed.length === totalAnswers;
 }
 
 function applyEndGame(game) {
     game.state = "results";
 }
 
+function startGame() {
+    // Only start if we are in setup mode
+    if (game.state !== "setup") return;
 
+    // Must have a valid stat
+    if (!game.stat) return;
 
+    // Reset core game state
+    game.state = "playing";
+    game.currentPlayerIndex = 0;
+    game.globalGuessed = [];
 
+    // Reset each player's guesses and score
+    for (let p of game.players) {
+        p.guesses = [];
+        p.score = 0;
+    }
 
+    // Host syncs the new state
+    if (roomActive && myPlayerId === hostId) {
+        syncGameState();
+    }
 
+    // Update UI
+    renderList();
+    updateActionButton();
+    updateGuessInputLock();
+}
+
+function resetGame() {
+    // Return to setup mode
+    game.state = "setup";
+
+    // Reset gameplay state
+    game.currentPlayerIndex = 0;
+    game.globalGuessed = [];
+
+    for (let p of game.players) {
+        p.guesses = [];
+        p.score = 0;
+    }
+
+    // Clear stat selection (required for next round)
+    game.stat = null;
+    ui.statSelect.value = "";
+    ui.statTitle.textContent = "Select a stat to begin";
+
+    // UI: return to setup mode
+    ui.resultsSection.classList.add("hidden");
+    ui.currentPlayerDisplay.classList.add("hidden");
+    ui.playersContainer.classList.remove("hidden");
+
+    // Local-only: show add/remove buttons again
+    if (!roomActive) {
+        document.getElementById("addPlayerBtn").classList.remove("hidden");
+        document.getElementById("removePlayerBtn").classList.remove("hidden");
+    }
+
+    // Clear input
+    const input = ui.input;
+    input.value = "";
+    input.blur();
+
+    // Re-render setup UI
+    renderPlayerSetup();
+    renderList();
+    updateActionButton();
+    updateGuessInputLock();
+
+    // Host syncs the reset state
+    if (roomActive && myPlayerId === hostId) {
+        syncGameState();
+    }
+}
+
+function updateActionButton() {
+    const btn = ui.actionButton;
+
+    // SETUP MODE — hide the button entirely
+    if (game.state === "setup") {
+        btn.classList.add("hidden");
+        btn.onclick = null;
+        return;
+    }
+
+    // PLAYING MODE — show "Give Up"
+    if (game.state === "playing") {
+        btn.textContent = "Give Up";
+        btn.classList.remove("hidden");
+
+        btn.onclick = () => {
+            // Only host can trigger end-game logic
+            if (roomActive && myPlayerId !== hostId) return;
+
+            applyEndGame(game);
+
+            if (roomActive && myPlayerId === hostId) {
+                syncGameState();
+            }
+
+            renderResults();
+            updateActionButton();
+        };
+
+        return;
+    }
+
+    // RESULTS MODE — show "Play Again"
+    if (game.state === "results") {
+        btn.textContent = "Play Again";
+        btn.classList.remove("hidden");
+
+        btn.onclick = () => {
+            // Only host can reset the game
+            if (roomActive && myPlayerId !== hostId) return;
+
+            resetGame();
+
+            if (roomActive && myPlayerId === hostId) {
+                syncGameState();
+            }
+
+            updateActionButton();
+        };
+
+        return;
+    }
+}
 
 
 
@@ -81,21 +202,6 @@ document.getElementById("submitGuessBtn").addEventListener("click", () => {
     onGuessSubmit();
 });
 
-/* Handle Reveal Answers / Play Again button */
-ui.actionButton.addEventListener("click", () => {
-    if (game.state === "playing") {
-        revealAllAnswers();
-        updateActionButton();
-        return;
-    }
-
-    if (game.state === "results") {
-        resetGame();
-        updateActionButton();
-        return;
-    }
-});
-
 ui.statSelect.addEventListener("change", () => {
     const selected = ui.statSelect.value || null;
 
@@ -111,14 +217,20 @@ ui.statSelect.addEventListener("change", () => {
         ui.statTitle.textContent =
             ui.statSelect.options[ui.statSelect.selectedIndex].text;
 
-        resetGame();
+        // NEW: start the game formally
+        startGame();
         return;
     }
 
-    // MULTIPLAYER
-    update(ref(db, `rooms/${currentRoomCode}/game`), {
-        stat: selected
-    });
+    // MULTIPLAYER — only host can start the game
+    if (myPlayerId === hostId) {
+        update(ref(db, `rooms/${currentRoomCode}/game`), {
+            stat: selected
+        });
+
+        // NEW: host starts the game once stat is chosen
+        if (selected) startGame();
+    }
 
     updateGuessInputLock();
 });
@@ -173,73 +285,6 @@ function updateGuessInputLock() {
     ui.input.disabled = !isMyTurn;
 }
 
-/* Update the Reveal/Play Again button text */
-function updateActionButton() {
-    const btn = ui.actionButton;
-
-    switch (game.state) {
-        case "playing":
-            btn.textContent = "Reveal Answers";
-            break;
-        case "results":
-            btn.textContent = "Play Again";
-            break;
-    }
-}
-
-/* Reveal all answers and show results */
-function revealAllAnswers() {
-    const stat = game.data[game.stat];
-    const answers = stat.players;
-
-    game.globalGuessed = answers.map(a => normalize(a.name));
-
-    renderList();
-    renderResults();
-
-    game.state = "results";
-}
-
-/* Reset the game for a new round */
-function resetGame() {
-    game.state = "playing";
-    updateActionButton();
-
-    game.currentPlayerIndex = 0;
-
-    game.players.forEach(p => {
-        p.guesses = [];
-        p.score = 0;
-    });
-
-    game.globalGuessed = [];
-
-    ui.statTitle.textContent =
-        game.sport.toUpperCase() + " - Top 10 " +
-        (ui.statSelect.selectedOptions[0]?.text || "");
-
-    const input = ui.input;
-    input.value = "";
-    input.focus();
-
-    ui.resultsSection.classList.add("hidden");
-    ui.currentPlayerDisplay.classList.remove("hidden");
-    ui.playersContainer.classList.remove("hidden");
-
-    renderPlayerSetup();
-    renderList();
-}
-
-/* Give up and reveal all answers */
-function giveUp() {
-    const answers = game.data[game.stat];
-
-    game.globalGuessed = answers.map(a => normalize(a.name));
-
-    renderList();
-    renderResults();
-}
-
 /* Handle guess submission, scoring, and turn rotation */
 function submitGuess() {
     const input = ui.input;
@@ -247,11 +292,13 @@ function submitGuess() {
     const guess = normalize(rawGuess);
     if (!guess) return;
 
+    // Hide add/remove buttons once guessing begins (local only)
     document.getElementById("addPlayerBtn").classList.add("hidden");
     document.getElementById("removePlayerBtn").classList.add("hidden");
 
     const answers = game.data[game.stat].players;
 
+    // Find matches
     let matches = [];
     for (let a of answers) {
         if (isMatch(guess, a.name)) matches.push(a);
@@ -263,7 +310,14 @@ function submitGuess() {
 
         applyWrongGuess(game);
 
+        if (roomActive && myPlayerId === hostId) {
+            syncGameState();
+        }
+
         renderList();
+        updateGuessInputLock();
+        updateActionButton();
+
         input.value = "";
         return;
     }
@@ -288,31 +342,39 @@ function submitGuess() {
     }
 
     // CORRECT GUESS
-    applyCorrectGuess(game, matchedAnswer);
+    const isComplete = applyCorrectGuess(game, matchedAnswer);
 
-    renderList();
     playGuessAnimation("correct");
 
-    // If game ended, host syncs and render results
-    if (game.state === "results") {
-        input.value = "";
-        input.blur();
+    // END GAME?
+    if (isComplete) {
+        applyEndGame(game);
 
-        game.state = "results"; // this might be wrong moving forward
-
-        if (myPlayerId === hostId) {
+        if (roomActive && myPlayerId === hostId) {
             syncGameState();
         }
+
+        input.value = "";
+        input.blur();
 
         setTimeout(() => {
             renderResults();
             updateActionButton();
+            updateGuessInputLock();
         }, 50);
 
         return;
     }
 
+    // NORMAL TURN CONTINUES
+    if (roomActive && myPlayerId === hostId) {
+        syncGameState();
+    }
+
     renderList();
+    updateGuessInputLock();
+    updateActionButton();
+
     input.value = "";
 }
 
@@ -412,15 +474,16 @@ function onGuessSubmit() {
     const rawGuess = ui.input.value.trim();
     if (!rawGuess) return;
 
-    // Turn check HERE — always correct because UI is already updated
+    // Block guessing unless the game is actively being played
+    if (game.state !== "playing") return;
+
+    // Turn check — always correct because UI is already updated
     const myIndex = game.players.findIndex(p => p.id === myPlayerId);
     if (myIndex !== game.currentPlayerIndex) return;
 
     if (myPlayerId === hostId) {
         submitGuess();
-
         syncGameState();
-
     } else {
         sendGuessToHost(rawGuess);
     }

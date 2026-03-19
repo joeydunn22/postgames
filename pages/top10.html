@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 66</p>
+    <p>Testing: Version 67</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -587,22 +587,6 @@
             ui.playerNameInputs.appendChild(wrapper);
         });
     }
-
-    ui.statSelect.addEventListener("change", async () => {
-      const selected = ui.statSelect.value || null;
-
-      // Local mode → normal behavior
-      if (!roomActive) {
-        game.stat = selected;
-        renderList();
-        return;
-      }
-
-      // Multiplayer → ANY player can write the stat
-      await update(ref(db, `rooms/${currentRoomCode}/game`), {
-        stat: selected
-      });
-    });
 
 </script>
 
