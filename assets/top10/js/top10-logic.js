@@ -177,7 +177,14 @@ function updateActionButton() {
     }
 }
 
+function maybeLoadData() {
 
+    if (!game.sport) return;
+    if (game.sport === "mlb" && !game.category) return;
+    if (!game.year) return;
+
+    loadSport();
+}
 
 
 
@@ -550,25 +557,6 @@ function levenshtein(a, b) {
     }
 
     return matrix[b.length][a.length];
-}
-
-
-/* ============================================================
-   TOP 10 — GAME FLOW HELPERS
-   ============================================================ */
-
-/* Load data only when sport/category/year are selected */
-function maybeLoadData() {
-    const listEl = ui.top10List;
-    if (listEl) listEl.innerHTML = "";
-
-    if (!game.sport) return;
-
-    if (game.sport === "mlb" && !game.category) return;
-
-    if (!game.year) return;
-
-    loadSport();
 }
 
 
