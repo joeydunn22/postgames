@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 71</p>
+    <p>Testing: Version 72</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -547,6 +547,11 @@
   <!-- JS: Top 10 Game -->
   <script src="../assets/top10/js/top10-state.js"></script>
   <script src="../assets/top10/js/top10-render.js"></script>
+  <script>
+    if (typeof renderUIForState === 'function' && typeof game !== 'undefined') {
+      try { renderUIForState(game); } catch (e) { console.error('initial render failed', e); }
+    }
+  </script>
   <script src="../assets/top10/js/top10-logic.js"></script>
 
 

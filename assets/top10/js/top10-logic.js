@@ -222,11 +222,13 @@ ui.statSelect.addEventListener("change", () => {
    TOP 10 — CORE LOGIC FUNCTIONS
    ============================================================ */
 
-/* Animate input + player column based on guess type */
+// playGuessAnimation(type)
 function playGuessAnimation(type) {
-    const inputEl = ui.input;
-    const playerCol =
-        document.querySelectorAll(".player-column")[game.currentPlayerIndex];
+    const inputEl = ui && ui.input;
+    if (!inputEl) return;
+
+    const playerCols = document.querySelectorAll(".player-column");
+    const playerCol = playerCols && playerCols[game.currentPlayerIndex];
 
     const map = {
         correct: { input: "correct-flash", player: "player-correct" },
@@ -237,35 +239,58 @@ function playGuessAnimation(type) {
     const classes = map[type];
     if (!classes) return;
 
-    inputEl.classList.remove(classes.input);
-    void inputEl.offsetWidth;
-    inputEl.classList.add(classes.input);
-    setTimeout(() => inputEl.classList.remove(classes.input), 700);
+    // Input animation (safe toggles)
+    try {
+        inputEl.classList.remove(classes.input);
+        // force reflow for restart
+        void inputEl.offsetWidth;
+        inputEl.classList.add(classes.input);
+        setTimeout(() => inputEl.classList.remove(classes.input), 700);
+    } catch (e) {
+        console.warn("input animation failed", e);
+    }
 
+    // Player column animation (if present)
     if (playerCol) {
-        playerCol.classList.remove(classes.player);
-        void playerCol.offsetWidth;
-        playerCol.classList.add(classes.player);
-        setTimeout(() => playerCol.classList.remove(classes.player), 700);
+        try {
+            playerCol.classList.remove(classes.player);
+            void playerCol.offsetWidth;
+            playerCol.classList.add(classes.player);
+            setTimeout(() => playerCol.classList.remove(classes.player), 700);
+        } catch (e) {
+            console.warn("player animation failed", e);
+        }
     }
 }
 
 function updateGuessInputLock() {
-    // Always lock input during results
+    // Guard: ensure ui.input exists
+    const inputEl = ui && ui.input;
+    if (!inputEl) return;
+
+    // Always disable during results
     if (game.state === "results") {
-        ui.input.disabled = true;
+        inputEl.disabled = true;
+        inputEl.setAttribute("aria-disabled", "true");
         return;
     }
 
+    // If not in a room, allow local play
     if (!roomActive) {
-        ui.input.disabled = false;
+        inputEl.disabled = false;
+        inputEl.setAttribute("aria-disabled", "false");
         return;
     }
 
-    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
-    const isMyTurn = myIndex === game.currentPlayerIndex;
+    // Find my player index safely
+    const myIndex = Array.isArray(game.players)
+        ? game.players.findIndex(p => p.id === myPlayerId)
+        : -1;
 
-    ui.input.disabled = !isMyTurn;
+    const isMyTurn = myIndex !== -1 && myIndex === game.currentPlayerIndex;
+
+    inputEl.disabled = !isMyTurn;
+    inputEl.setAttribute("aria-disabled", String(!isMyTurn));
 }
 
 /* Handle guess submission, scoring, and turn rotation */
@@ -361,15 +386,27 @@ function submitGuess() {
     input.value = "";
 }
 
+// sendGuessToHost(rawGuess)
 async function sendGuessToHost(rawGuess) {
-    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
-    await set(pendingRef, {
-        playerId: myPlayerId,
-        guess: rawGuess,
-        timestamp: Date.now()
-    });
+    if (!currentRoomCode) return;
+    if (!rawGuess) return;
 
-    ui.input.value = "";
+    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+    try {
+        await set(pendingRef, {
+            playerId: myPlayerId,
+            guess: rawGuess,
+            timestamp: Date.now()
+        });
+    } catch (e) {
+        console.error("sendGuessToHost failed:", e);
+        return;
+    }
+
+    // Clear local input immediately for UX; UI state will be reconciled from sync.
+    if (ui && ui.input) {
+        ui.input.value = "";
+    }
 }
 
 function listenToPendingGuess(roomCode) {
@@ -453,21 +490,26 @@ async function hostProcessGuess(pending) {
     await set(pendingRef, null);
 }
 
+// onGuessSubmit()
 function onGuessSubmit() {
-    const rawGuess = ui.input.value.trim();
+    const rawGuess = ui && ui.input && ui.input.value ? ui.input.value.trim() : "";
     if (!rawGuess) return;
 
     // Block guessing unless the game is actively being played
     if (game.state !== "playing") return;
 
-    // Turn check — always correct because UI is already updated
-    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
+    // Turn check — ensure it's our turn
+    const myIndex = Array.isArray(game.players)
+        ? game.players.findIndex(p => p.id === myPlayerId)
+        : -1;
     if (myIndex !== game.currentPlayerIndex) return;
 
     if (myPlayerId === hostId) {
+        // Host handles guesses locally via submitGuess which already performs state transitions.
         submitGuess();
-        syncGameState();
+        // submitGuess is responsible for calling syncGameState when needed.
     } else {
+        // Non-host: send guess to host and clear input (sendGuessToHost clears input too)
         sendGuessToHost(rawGuess);
     }
 }
