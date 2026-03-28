@@ -346,16 +346,16 @@ function renderUIForState(state = {}) {
     const isGuessLocked = !!s.isGuessLocked;
     const canStart = !!s.canStart;
 
-    if (ui.actionBtn) {
+    if (ui.actionButton) {
         if (phase === "setup") {
-            ui.actionBtn.textContent = canStart ? "Start Game" : "Waiting";
-            ui.actionBtn.disabled = !canStart;
+            ui.actionButton.textContent = canStart ? "Start Game" : "Waiting";
+            ui.actionButton.disabled = !canStart;
         } else if (phase === "playing") {
-            ui.actionBtn.textContent = isYourTurn ? "Submit Guess" : "Waiting";
-            ui.actionBtn.disabled = isGuessLocked || !isYourTurn;
+            ui.actionButton.textContent = isYourTurn ? "Submit Guess" : "Waiting";
+            ui.actionButton.disabled = isGuessLocked || !isYourTurn;
         } else { // results
-            ui.actionBtn.textContent = "Play Again";
-            ui.actionBtn.disabled = false;
+            ui.actionButton.textContent = "Play Again";
+            ui.actionButton.disabled = false;
         }
     }
 

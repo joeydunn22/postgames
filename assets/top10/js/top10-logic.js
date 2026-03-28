@@ -4,7 +4,7 @@ function syncGameState() {
     if (!currentRoomCode) return;
 
     const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-    set(gameRef, {
+    update(gameRef, {
         state: game.state,
         players: game.players,
         currentPlayerIndex: game.currentPlayerIndex,
