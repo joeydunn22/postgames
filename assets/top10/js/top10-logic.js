@@ -48,6 +48,7 @@ function applyEndGame(game) {
     game.state = "results";
 }
 
+// startGame()
 function startGame() {
     // Only start if we are in setup mode
     if (game.state !== "setup") return;
@@ -71,12 +72,10 @@ function startGame() {
         syncGameState();
     }
 
-    // Update UI
-    renderList();
-    updateActionButton();
-    updateGuessInputLock();
+    // UI is now driven by renderUIForState via listenToGame -> onValue
 }
 
+// resetGame()
 function resetGame() {
     // Return to setup mode
     game.state = "setup";
@@ -92,31 +91,8 @@ function resetGame() {
 
     // Clear stat selection (required for next round)
     game.stat = null;
-    ui.statSelect.value = "";
-    ui.statTitle.textContent = "Select a stat to begin";
 
-    // UI: return to setup mode
-    ui.resultsSection.classList.add("hidden");
-    ui.currentPlayerDisplay.classList.add("hidden");
-    ui.playersContainer.classList.remove("hidden");
-
-    // Local-only: show add/remove buttons again
-    if (!roomActive) {
-        document.getElementById("addPlayerBtn").classList.remove("hidden");
-        document.getElementById("removePlayerBtn").classList.remove("hidden");
-    }
-
-    // Clear input
-    const input = ui.input;
-    input.value = "";
-    input.blur();
-
-    // Re-render setup UI
-    renderPlayerSetup();
-    renderList();
-    updateActionButton();
-    updateGuessInputLock();
-
+    // Remove UI side effects here; renderer will update UI after sync
     // Host syncs the reset state
     if (roomActive && myPlayerId === hostId) {
         syncGameState();
@@ -125,6 +101,25 @@ function resetGame() {
 
 function updateActionButton() {
     const btn = ui.actionButton;
+    if (!btn) return;
+
+    // Helper to set a safe click handler that only mutates state and syncs
+    function setHostAction(handler) {
+        btn.onclick = () => {
+            // Only host may perform state-changing actions
+            if (roomActive && myPlayerId !== hostId) return;
+            try {
+                handler();
+            } catch (e) {
+                console.error("action handler error:", e);
+            }
+            if (roomActive && myPlayerId === hostId) {
+                syncGameState();
+            }
+            // Do not call renderResults/updateActionButton here;
+            // listenToGame -> renderUIForState will update the UI.
+        };
+    }
 
     // SETUP MODE — hide the button entirely
     if (game.state === "setup") {
@@ -138,19 +133,9 @@ function updateActionButton() {
         btn.textContent = "Give Up";
         btn.classList.remove("hidden");
 
-        btn.onclick = () => {
-            // Only host can trigger end-game logic
-            if (roomActive && myPlayerId !== hostId) return;
-
+        setHostAction(() => {
             applyEndGame(game);
-
-            if (roomActive && myPlayerId === hostId) {
-                syncGameState();
-            }
-
-            renderResults();
-            updateActionButton();
-        };
+        });
 
         return;
     }
@@ -160,18 +145,9 @@ function updateActionButton() {
         btn.textContent = "Play Again";
         btn.classList.remove("hidden");
 
-        btn.onclick = () => {
-            // Only host can reset the game
-            if (roomActive && myPlayerId !== hostId) return;
-
+        setHostAction(() => {
             resetGame();
-
-            if (roomActive && myPlayerId === hostId) {
-                syncGameState();
-            }
-
-            updateActionButton();
-        };
+        });
 
         return;
     }

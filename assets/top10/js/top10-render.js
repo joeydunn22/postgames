@@ -241,3 +241,158 @@ function renderResults() {
     document.getElementById("addPlayerBtn").style.display = "inline-block";
     document.getElementById("removePlayerBtn").style.display = "inline-block";
 }
+
+
+
+
+
+
+// new renderer
+
+/* ============================================================
+   TOP 10 — DECLARATIVE RENDERER
+   ============================================================ */
+
+/**
+ * initRenderer(optionalDom)
+ * Optional: call if you want to pass explicit DOM refs instead of relying on global `ui`.
+ * Example: initRenderer({ input: document.getElementById('guessInput') })
+ */
+function initRenderer(domRefs = {}) {
+    if (typeof domRefs !== "object" || domRefs === null) return;
+    Object.keys(domRefs).forEach(k => {
+        if (domRefs[k]) ui[k] = domRefs[k];
+    });
+}
+
+let _prevPhase = null;
+
+/**
+ * renderUIForState(state)
+ * Idempotent renderer that drives visibility and high-level UI from `game` state.
+ * - Uses existing helpers: renderList(), renderResults(), updateActionButton(), updateGuessInputLock()
+ * - Safe if some helpers are missing (falls back to minimal behavior)
+ */
+function renderUIForState(state = {}) {
+    // Accept either the full game object or a partial state object
+    const s = state.state ? state : game;
+
+    const phase = s.state || s.phase || "setup";
+
+    // Phase visibility
+    if (ui.resultsSection) ui.resultsSection.classList.toggle("hidden", phase !== "results");
+    if (ui.playersContainer) ui.playersContainer.classList.toggle("hidden", phase === "results");
+    if (ui.currentPlayerDisplay) ui.currentPlayerDisplay.classList.toggle("hidden", phase !== "playing");
+
+    // Stat UI
+    if (ui.statSelect) ui.statSelect.value = s.stat || "";
+    if (ui.statTitle) ui.statTitle.textContent = s.stat ? s.stat.replace(/_/g, " ").toUpperCase() : "Select a stat to begin";
+
+    // Sport / category / year highlights (reuse existing selectors)
+    if (s.sport) {
+        document.querySelectorAll('#sport-buttons .pg-button')
+            .forEach(btn => btn.classList.toggle('active', btn.dataset.sport === s.sport));
+    }
+    if (s.category) {
+        document.querySelectorAll('#mlb-category-buttons .pg-button')
+            .forEach(btn => btn.classList.toggle('active', btn.dataset.category === s.category));
+    }
+    const catWrapper = document.getElementById("mlb-category-wrapper");
+    const catButtons = document.getElementById("mlb-category-buttons");
+    if (catWrapper && catButtons) {
+        if (s.sport === "mlb") {
+            catWrapper.classList.remove("hidden");
+            catButtons.classList.remove("hidden");
+        } else {
+            catWrapper.classList.add("hidden");
+            catButtons.classList.add("hidden");
+        }
+    }
+    if (s.year) {
+        document.querySelectorAll('#year-buttons .pg-button')
+            .forEach(btn => btn.classList.toggle('active', btn.dataset.year === s.year));
+    }
+
+    // Action button / guess input logic
+    const isYourTurn = !!s.isYourTurn;
+    const isGuessLocked = !!s.isGuessLocked;
+    const canStart = !!s.canStart;
+
+    if (ui.actionBtn) {
+        if (phase === "setup") {
+            ui.actionBtn.textContent = canStart ? "Start Game" : "Waiting";
+            ui.actionBtn.disabled = !canStart;
+        } else if (phase === "playing") {
+            ui.actionBtn.textContent = isYourTurn ? "Submit Guess" : "Waiting";
+            ui.actionBtn.disabled = isGuessLocked || !isYourTurn;
+        } else { // results
+            ui.actionBtn.textContent = "Play Again";
+            ui.actionBtn.disabled = false;
+        }
+    }
+
+    if (ui.input) ui.input.disabled = isGuessLocked || phase !== "playing";
+
+    // Players list / top10 rendering
+    // Prefer your existing renderList() to keep behavior identical
+    if (typeof renderList === "function") {
+        // renderList expects game and game.data to be present; guard briefly
+        try { renderList(); } catch (e) { /* swallow render errors to avoid breaking UI */ }
+    } else {
+        // Minimal fallback: update current player display and players container
+        if (ui.currentPlayerDisplay) {
+            const idx = (typeof game.currentPlayerIndex === "number") ? game.currentPlayerIndex : 0;
+            ui.currentPlayerDisplay.textContent = "Current Turn: " + (game.players[idx]?.name || "Player");
+        }
+        if (ui.playersContainer) {
+            ui.playersContainer.innerHTML = "";
+            (game.players || []).forEach((p, i) => {
+                const col = document.createElement("div");
+                col.className = "player-column" + (i === game.currentPlayerIndex ? " current-player" : "");
+                col.innerHTML = `<h3>${p.name}</h3><div class="player-score">Score: ${p.score ?? 0}</div>`;
+                ui.playersContainer.appendChild(col);
+            });
+        }
+    }
+
+    // Results rendering
+    if (phase === "results") {
+        if (typeof renderResults === "function") {
+            try { renderResults(); } catch (e) { /* ignore */ }
+        } else {
+            // fallback: show a simple results summary
+            if (ui.resultsSection) {
+                ui.resultsSection.innerHTML = `<div class="results-fallback">Results</div>`;
+                ui.resultsSection.classList.remove("hidden");
+            }
+        }
+    } else {
+        // ensure results cleared when not in results
+        if (ui.resultsSection && ui.resultsSection.innerHTML) {
+            ui.resultsSection.innerHTML = "";
+        }
+    }
+
+    // Add/remove player buttons visibility (local-only)
+    const addBtn = document.getElementById("addPlayerBtn");
+    const removeBtn = document.getElementById("removePlayerBtn");
+    if (addBtn && removeBtn) {
+        const hidden = !!s.roomActive; // if in a room, hide add/remove
+        addBtn.classList.toggle("hidden", hidden);
+        removeBtn.classList.toggle("hidden", hidden);
+    }
+
+    // Call small UI helpers to ensure locks/buttons are consistent
+    if (typeof updateActionButton === "function") {
+        try { updateActionButton(); } catch (e) { /* ignore */ }
+    }
+    if (typeof updateGuessInputLock === "function") {
+        try { updateGuessInputLock(); } catch (e) { /* ignore */ }
+    }
+
+    // Phase change hook (useful for CSS transitions)
+    if (_prevPhase !== phase) {
+        _prevPhase = phase;
+        // document.body.dataset.phase = phase; // uncomment if you want a global hook
+    }
+}

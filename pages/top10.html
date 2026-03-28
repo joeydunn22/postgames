@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 70</p>
+    <p>Testing: Version 71</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -369,6 +369,7 @@
       });
     }
 
+    // listenToGame(roomCode)
     function listenToGame(roomCode) {
         const gameRef = ref(db, `rooms/${roomCode}/game`);
 
@@ -398,81 +399,31 @@
                 }));
             }
 
-            // --- RESULTS MODE ---
-            if (game.state === "results") {
-                const ready =
-                    Array.isArray(game.players) &&
-                    game.players.length > 0 &&
-                    Array.isArray(game.globalGuessed) &&
-                    typeof game.currentPlayerIndex === "number" &&
-                    game.stat &&
-                    game.data &&
-                    game.data[game.stat];
-
-                if (!ready) return;
-
-                renderResults();
-                updateGuessInputLock();
-                updateActionButton();
-                return;
-            }
-
-            ui.resultsSection.classList.add("hidden");
-
-            // --- SPORT HIGHLIGHT ---
-            if (game.sport) {
-                document.querySelectorAll('#sport-buttons .pg-button')
-                    .forEach(btn => {
-                        btn.classList.toggle('active', btn.dataset.sport === game.sport);
-                    });
-            }
-
-            // --- CATEGORY HIGHLIGHT ---
-            if (game.category) {
-                document.querySelectorAll('#mlb-category-buttons .pg-button')
-                    .forEach(btn => {
-                        btn.classList.toggle('active', btn.dataset.category === game.category);
-                    });
-            }
-
-            const catWrapper = document.getElementById("mlb-category-wrapper");
-            const catButtons = document.getElementById("mlb-category-buttons");
-
-            if (game.sport === "mlb") {
-                catWrapper.classList.remove("hidden");
-                catButtons.classList.remove("hidden");
-            } else {
-                catWrapper.classList.add("hidden");
-                catButtons.classList.add("hidden");
-            }
-
-            // --- YEAR HIGHLIGHT ---
-            if (game.year) {
-                document.querySelectorAll('#year-buttons .pg-button')
-                    .forEach(btn => {
-                        btn.classList.toggle('active', btn.dataset.year === game.year);
-                    });
-            }
-
             // --- LOAD DATA IF READY ---
             if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
                 maybeLoadData();
             }
 
-            // --- STAT SYNC + RENDER ---
-            if (game.stat !== undefined) {
-                ui.statSelect.value = game.stat || "";
-                ui.statTitle.textContent = game.stat
-                    ? game.stat.replace(/_/g, " ").toUpperCase()
-                    : "Select a stat to begin";
+            // --- DELEGATE ALL UI UPDATES TO RENDERER ---
+            // renderUIForState will call renderList/renderResults/update helpers as needed.
+            if (typeof renderUIForState === "function") {
+                try { renderUIForState(game); } catch (e) { console.error("renderUIForState error:", e); }
+            } else {
+                // Fallback: keep previous minimal updates if renderer missing
+                ui.resultsSection.classList.add("hidden");
+                if (game.stat !== undefined) {
+                    ui.statSelect.value = game.stat || "";
+                    ui.statTitle.textContent = game.stat
+                        ? game.stat.replace(/_/g, " ").toUpperCase()
+                        : "Select a stat to begin";
 
-                if (Array.isArray(game.players) && game.players.length > 0) {
-                    renderList();
+                    if (Array.isArray(game.players) && game.players.length > 0) {
+                        renderList();
+                    }
                 }
+                updateGuessInputLock();
+                updateActionButton();
             }
-
-            updateGuessInputLock();
-            updateActionButton();
         });
     }
 
