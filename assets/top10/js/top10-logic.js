@@ -435,6 +435,14 @@ async function hostProcessGuess(pending) {
     const guess = normalize(rawGuess);
     if (!guess) return;
 
+    // Guard: ensure stat and data exist on host
+    if (!game.stat || !game.data || !game.data[game.stat] || !Array.isArray(game.data[game.stat].players)) {
+        // Clear pending and bail if host doesn't have the stat data
+        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        await set(pendingRef, null);
+        return;
+    }
+
     const answers = game.data[game.stat].players;
 
     // Find matches
@@ -443,20 +451,19 @@ async function hostProcessGuess(pending) {
         if (isMatch(guess, a.name)) matches.push(a);
     }
 
+    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+
     // WRONG GUESS
     if (matches.length === 0) {
         applyWrongGuess(game);
         syncGameState();
-
-        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
         await set(pendingRef, null);
         return;
     }
 
     // MULTIPLE MATCHES
     if (matches.length > 1) {
-        // Host cannot show alerts to remote players
-        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        // Drop the pending guess; host cannot resolve ambiguous guesses for remote players
         await set(pendingRef, null);
         return;
     }
@@ -466,27 +473,49 @@ async function hostProcessGuess(pending) {
 
     // DUPLICATE GUESS
     if (game.globalGuessed.includes(normalizedAnswer)) {
-        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
         await set(pendingRef, null);
         return;
     }
 
     // CORRECT GUESS
-    applyCorrectGuess(game, matchedAnswer);
+    const isComplete = applyCorrectGuess(game, matchedAnswer);
 
-    // END GAME?
-    if (game.state === "results") {
-        syncGameState();
+    // If this guess completed the game, set results and include a stat snapshot in Firebase
+    if (isComplete) {
+        applyEndGame(game);
 
-        const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+        const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+
+        // Prepare payload; include a snapshot of the stat players so clients can render results immediately
+        const payload = {
+            state: game.state,
+            currentPlayerIndex: game.currentPlayerIndex,
+            globalGuessed: game.globalGuessed,
+            players: game.players,
+            sport: game.sport,
+            category: game.category,
+            year: game.year,
+            stat: game.stat
+        };
+
+        // Attach stat snapshot if available on host
+        const statData = game.data && game.data[game.stat];
+        if (statData && Array.isArray(statData.players)) {
+            payload.statPlayers = statData.players;
+            if (typeof statData.isPercent !== "undefined") {
+                payload.statIsPercent = !!statData.isPercent;
+            }
+        }
+
+        // Use update to avoid clobbering unrelated fields
+        await update(gameRef, payload);
+
         await set(pendingRef, null);
         return;
     }
 
-    // NORMAL CASE
+    // NORMAL CASE: sync updated game state
     syncGameState();
-
-    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
     await set(pendingRef, null);
 }
 

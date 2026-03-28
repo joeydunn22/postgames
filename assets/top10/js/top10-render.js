@@ -163,83 +163,111 @@ function renderList() {
 
 /* Render final results screen */
 function renderResults() {
-    // 🔁 RECONCILE globalGuessed FROM players.guesses
+    // Reconcile globalGuessed from players' guesses (authoritative source)
     const guessedSet = new Set();
-
     if (Array.isArray(game.players)) {
-        game.players.forEach(player => {
-            if (Array.isArray(player.guesses)) {
-                player.guesses.forEach(g => {
-                    if (g && g.name) {
-                        guessedSet.add(normalize(g.name));
-                    }
-                });
+        for (const p of game.players) {
+            if (!Array.isArray(p.guesses)) continue;
+            for (const g of p.guesses) {
+                if (g && g.name) guessedSet.add(normalize(g.name));
             }
-        });
+        }
     }
-
     game.globalGuessed = Array.from(guessedSet);
 
-    // If host, sync this corrected globalGuessed back to Firebase
+    // If host, persist corrected globalGuessed (use update to avoid clobbering)
     if (myPlayerId === hostId && currentRoomCode) {
         const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-        set(gameRef, {
-            state: game.state,
-            currentPlayerIndex: game.currentPlayerIndex,
+        update(gameRef, {
             globalGuessed: game.globalGuessed,
             players: game.players,
+            currentPlayerIndex: game.currentPlayerIndex,
+            state: game.state,
             sport: game.sport,
             category: game.category,
             year: game.year,
             stat: game.stat
-        });
+        }).catch(() => { });
     }
 
-    // 🔄 Now the Top 10 list will be consistent with players.guesses
-    renderList();
+    // Require stat data to render the canonical Top 10; bail if missing
+    const statKey = game.stat;
+    const statData = statKey && game.data && game.data[statKey] ? game.data[statKey] : null;
+    if (!statData || !Array.isArray(statData.players)) {
+        // If stat data is not present, do not attempt to render results list.
+        // The listener should ensure stat snapshot is available; return early.
+        return;
+    }
 
-    const stat = game.data[game.stat];
-    const list = stat.players;
-    const isPercent = stat.isPercent;
-
-    let highest = Math.max(...game.players.map(p => p.score));
-    let winners = game.players.filter(p => p.score === highest);
-
-    let winnerText = "";
-    if (winners.length === 1) {
-        winnerText = `${winners[0].name} wins!`;
+    // Use existing renderList when possible (keeps behavior consistent)
+    if (typeof renderList === "function") {
+        renderList();
     } else {
-        winnerText = "It's a tie!";
+        // Minimal top10 fallback rendering
+        const list = statData.players;
+        const isPercent = !!statData.isPercent;
+        const total = list.length;
+        let html = "<ol>";
+        for (let i = 0; i < total; i++) {
+            const item = list[i];
+            const norm = normalize(item.name);
+            const revealed = game.globalGuessed.includes(norm);
+            const displayValue = isPercent ? (item.value + "%") : item.value;
+            html += revealed
+                ? `<li class="revealed">${item.name}${item.team ? " — " + item.team : ""}${displayValue ? " — " + displayValue : ""}</li>`
+                : "<li>__________</li>";
+        }
+        html += "</ol>";
+        if (ui && ui.top10List) ui.top10List.innerHTML = html;
     }
 
-    ui.resultsWinner.textContent = winnerText;
+    // Compute winners from player scores
+    const players = Array.isArray(game.players) ? game.players : [];
+    const scores = players.map(p => (typeof p.score === "number" ? p.score : 0));
+    const highest = scores.length ? Math.max(...scores) : 0;
+    const winners = players.filter(p => (p.score ?? 0) === highest);
 
-    ui.resultsPlayers.innerHTML = "";
+    const winnerText = winners.length === 1
+        ? `${winners[0].name} wins!`
+        : winners.length > 1
+            ? "It's a tie!"
+            : "No winners";
 
-    game.players.forEach(player => {
-        const div = document.createElement("div");
-        div.className = "player-column";
+    if (ui && ui.resultsWinner) ui.resultsWinner.textContent = winnerText;
 
-        const guessesHTML = player.guesses.map(g => {
-            const displayValue = isPercent ? g.value + "%" : g.value;
-            return `<li>${g.name} — ${g.team} — ${displayValue}</li>`;
-        }).join("");
+    // Render per-player results
+    if (ui && ui.resultsPlayers) {
+        ui.resultsPlayers.innerHTML = "";
+        const isPercent = !!statData.isPercent;
+        for (const p of players) {
+            const div = document.createElement("div");
+            div.className = "player-column";
 
-        div.innerHTML = `
-            <h3>${player.name}</h3>
-            <div class="player-score">${player.score} correct</div>
-            <ul>${guessesHTML}</ul>
-        `;
+            const guesses = Array.isArray(p.guesses) ? p.guesses : [];
+            const guessesHTML = guesses.map(g => {
+                const displayValue = (g && g.value !== undefined && g.value !== "") ? (isPercent ? g.value + "%" : g.value) : "";
+                return `<li>${g.name}${g.team ? " — " + g.team : ""}${displayValue ? " — " + displayValue : ""}</li>`;
+            }).join("");
 
-        ui.resultsPlayers.appendChild(div);
-    });
+            div.innerHTML = `
+                <h3>${p.name}</h3>
+                <div class="player-score">${p.score ?? 0} correct</div>
+                <ul>${guessesHTML}</ul>
+            `;
+            ui.resultsPlayers.appendChild(div);
+        }
+    }
 
-    ui.resultsSection.classList.remove("hidden");
-    ui.currentPlayerDisplay.classList.add("hidden");
-    ui.playersContainer.classList.add("hidden");
+    // Show results, hide gameplay UI
+    if (ui && ui.resultsSection) ui.resultsSection.classList.remove("hidden");
+    if (ui && ui.currentPlayerDisplay) ui.currentPlayerDisplay.classList.add("hidden");
+    if (ui && ui.playersContainer) ui.playersContainer.classList.add("hidden");
 
-    document.getElementById("addPlayerBtn").style.display = "inline-block";
-    document.getElementById("removePlayerBtn").style.display = "inline-block";
+    // Restore local add/remove buttons for non-room play
+    const addBtn = document.getElementById("addPlayerBtn");
+    const removeBtn = document.getElementById("removePlayerBtn");
+    if (addBtn) addBtn.style.display = "inline-block";
+    if (removeBtn) removeBtn.style.display = "inline-block";
 }
 
 
