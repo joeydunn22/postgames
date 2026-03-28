@@ -199,6 +199,14 @@ function renderResults() {
         return;
     }
 
+    // Ensure result elements are placed inside the visible resultsSection
+    if (ui && ui.resultsSection) {
+        const rs = ui.resultsSection;
+        if (ui.top10List && ui.top10List.parentElement !== rs) rs.appendChild(ui.top10List);
+        if (ui.resultsWinner && ui.resultsWinner.parentElement !== rs) rs.appendChild(ui.resultsWinner);
+        if (ui.resultsPlayers && ui.resultsPlayers.parentElement !== rs) rs.appendChild(ui.resultsPlayers);
+    }
+
     // Use existing renderList when possible (keeps behavior consistent)
     if (typeof renderList === "function") {
         renderList();
