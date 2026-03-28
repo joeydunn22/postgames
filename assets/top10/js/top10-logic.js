@@ -435,15 +435,17 @@ async function hostProcessGuess(pending) {
     const guess = normalize(rawGuess);
     if (!guess) return;
 
-    // Guard: ensure stat and data exist on host
-    if (!game.stat || !game.data || !game.data[game.stat] || !Array.isArray(game.data[game.stat].players)) {
-        // Clear pending and bail if host doesn't have the stat data
+    // If host doesn't have stat data yet, we still allow matching only if answers exist.
+    const answers = (game.data && game.stat && Array.isArray(game.data[game.stat]?.players))
+        ? game.data[game.stat].players
+        : [];
+
+    // If we don't have answers locally, clear pending and bail (host can't validate)
+    if (!answers.length) {
         const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
         await set(pendingRef, null);
         return;
     }
-
-    const answers = game.data[game.stat].players;
 
     // Find matches
     let matches = [];
@@ -463,7 +465,6 @@ async function hostProcessGuess(pending) {
 
     // MULTIPLE MATCHES
     if (matches.length > 1) {
-        // Drop the pending guess; host cannot resolve ambiguous guesses for remote players
         await set(pendingRef, null);
         return;
     }
@@ -484,9 +485,26 @@ async function hostProcessGuess(pending) {
     if (isComplete) {
         applyEndGame(game);
 
+        // Ensure host attempts to include stat snapshot. If missing, try to load it and wait briefly.
+        let statData = game.data && game.stat ? game.data[game.stat] : null;
+        if (!statData) {
+            // Trigger data load (may be a no-op if already loading)
+            try { maybeLoadData(); } catch (e) { /* ignore */ }
+
+            // Poll for a short bounded time for the stat snapshot to appear
+            const start = Date.now();
+            const timeout = 3000; // ms
+            while (!(game.data && game.stat && Array.isArray(game.data[game.stat]?.players)) && (Date.now() - start) < timeout) {
+                // small delay
+                // eslint-disable-next-line no-await-in-loop
+                await new Promise(r => setTimeout(r, 100));
+            }
+            statData = game.data && game.stat ? game.data[game.stat] : null;
+        }
+
         const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
 
-        // Prepare payload; include a snapshot of the stat players so clients can render results immediately
+        // Prepare payload; include statPlayers if we have them
         const payload = {
             state: game.state,
             currentPlayerIndex: game.currentPlayerIndex,
@@ -498,8 +516,6 @@ async function hostProcessGuess(pending) {
             stat: game.stat
         };
 
-        // Attach stat snapshot if available on host
-        const statData = game.data && game.data[game.stat];
         if (statData && Array.isArray(statData.players)) {
             payload.statPlayers = statData.players;
             if (typeof statData.isPercent !== "undefined") {
