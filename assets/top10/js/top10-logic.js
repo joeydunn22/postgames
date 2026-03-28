@@ -478,6 +478,12 @@ async function hostProcessGuess(pending) {
         return;
     }
 
+    // Ensure the guess is attributed to the submitting player
+    if (pending && pending.playerId && Array.isArray(game.players)) {
+        const idx = game.players.findIndex(p => p.id === pending.playerId);
+        if (idx !== -1) game.currentPlayerIndex = idx;
+    }
+
     // CORRECT GUESS
     const isComplete = applyCorrectGuess(game, matchedAnswer);
 
@@ -488,10 +494,8 @@ async function hostProcessGuess(pending) {
         // Ensure host attempts to include stat snapshot. If missing, try to load it and wait briefly.
         let statData = game.data && game.stat ? game.data[game.stat] : null;
         if (!statData) {
-            // Trigger data load (may be a no-op if already loading)
             try { maybeLoadData(); } catch (e) { /* ignore */ }
 
-            // Poll for a short bounded time for the stat snapshot to appear
             const start = Date.now();
             const timeout = 3000; // ms
             while (!(game.data && game.stat && Array.isArray(game.data[game.stat]?.players)) && (Date.now() - start) < timeout) {
