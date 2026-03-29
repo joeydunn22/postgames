@@ -16,34 +16,6 @@ function syncGameState() {
     });
 }
 
-function applyWrongGuess(game) {
-    // Rotate turn
-    game.currentPlayerIndex =
-        (game.currentPlayerIndex + 1) % game.players.length;
-}
-
-function applyCorrectGuess(game, matchedAnswer) {
-    const normalized = normalize(matchedAnswer.name);
-
-    // Add to global guessed list
-    game.globalGuessed.push(normalized);
-
-    // Add to player's guesses
-    const player = game.players[game.currentPlayerIndex];
-    player.guesses.push(matchedAnswer);
-
-    // Increment score
-    player.score++;
-
-    // Rotate turn
-    game.currentPlayerIndex =
-        (game.currentPlayerIndex + 1) % game.players.length;
-
-    // Determine if the game is now complete
-    const totalAnswers = game.data[game.stat].players.length;
-    return game.globalGuessed.length === totalAnswers;
-}
-
 function applyEndGame() {
     game.state = "results";
 
@@ -103,12 +75,6 @@ function maybeLoadData() {
 }
 
 
-
-
-
-
-
-
 /* ============================================================
    TOP 10 — EVENT LISTENERS
    ============================================================ */
@@ -142,11 +108,33 @@ ui.statSelect.addEventListener("change", () => {
     }
 });
 
+
+
 /* ============================================================
-   TOP 10 — CORE LOGIC FUNCTIONS
+   TOP 10 — CORE GUESS LOGIC FUNCTIONS
    ============================================================ */
 
-// playGuessAnimation(type)
+function applyWrongGuess(game) {
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
+}
+
+function applyCorrectGuess(game, matchedAnswer) {
+    const normalized = normalize(matchedAnswer.name);
+
+    game.globalGuessed.push(normalized);
+
+    const player = game.players[game.currentPlayerIndex];
+    player.guesses.push(matchedAnswer);
+    player.score++;
+
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
+
+    const totalAnswers = game.data[game.stat].players.length;
+    return game.globalGuessed.length === totalAnswers;
+}
+
 function playGuessAnimation(type) {
     const inputEl = ui && ui.input;
     if (!inputEl) return;
@@ -163,10 +151,8 @@ function playGuessAnimation(type) {
     const classes = map[type];
     if (!classes) return;
 
-    // Input animation (safe toggles)
     try {
         inputEl.classList.remove(classes.input);
-        // force reflow for restart
         void inputEl.offsetWidth;
         inputEl.classList.add(classes.input);
         setTimeout(() => inputEl.classList.remove(classes.input), 700);
@@ -174,7 +160,6 @@ function playGuessAnimation(type) {
         console.warn("input animation failed", e);
     }
 
-    // Player column animation (if present)
     if (playerCol) {
         try {
             playerCol.classList.remove(classes.player);
@@ -187,105 +172,55 @@ function playGuessAnimation(type) {
     }
 }
 
-/* Handle guess submission, scoring, and turn rotation */
-function submitGuess() {
-    const input = ui.input;
-    const rawGuess = input.value;
+function handleLocalGuess(rawGuess) {
     const guess = normalize(rawGuess);
     if (!guess) return;
 
-    // Hide add/remove buttons once guessing begins (local only)
-    document.getElementById("addPlayerBtn").classList.add("hidden");
-    document.getElementById("removePlayerBtn").classList.add("hidden");
-
     const answers = game.data[game.stat].players;
+    const matches = answers.filter(a => isMatch(guess, a.name));
 
-    // Find matches
-    let matches = [];
-    for (let a of answers) {
-        if (isMatch(guess, a.name)) matches.push(a);
-    }
-
-    // WRONG GUESS
+    // Wrong
     if (matches.length === 0) {
         playGuessAnimation("wrong");
-
         applyWrongGuess(game);
-
-        if (roomActive && myPlayerId === hostId) {
-            syncGameState();
-        }
-
-        renderList();
-        updateGuessInputLock();
-        updateActionButton();
-
-        input.value = "";
+        syncGameState();
         return;
     }
 
-    // MULTIPLE MATCHES
+    // Multiple
     if (matches.length > 1) {
-        alert("Multiple players match:\n\n" +
-            matches.map(m => m.name).join("\n"));
-        input.value = "";
+        alert("Multiple players match:\n\n" + matches.map(m => m.name).join("\n"));
         return;
     }
 
-    const matchedAnswer = matches[0];
-    const normalizedAnswer = normalize(matchedAnswer.name);
+    const matched = matches[0];
+    const normalizedAnswer = normalize(matched.name);
 
-    // DUPLICATE GUESS
+    // Duplicate
     if (game.globalGuessed.includes(normalizedAnswer)) {
         playGuessAnimation("duplicate");
-        renderList();
-        input.value = "";
         return;
     }
 
-    // CORRECT GUESS
-    const isComplete = applyCorrectGuess(game, matchedAnswer);
-
+    // Correct
+    const isComplete = applyCorrectGuess(game, matched);
     playGuessAnimation("correct");
 
-    // END GAME?
     if (isComplete) {
-        applyEndGame(game);
-
-        if (roomActive && myPlayerId === hostId) {
-            syncGameState();
-        }
-
-        input.value = "";
-        input.blur();
-
-        setTimeout(() => {
-            renderResults();
-            updateActionButton();
-            updateGuessInputLock();
-        }, 50);
-
+        applyEndGame();
+        syncGameState();
         return;
     }
 
-    // NORMAL TURN CONTINUES
-    if (roomActive && myPlayerId === hostId) {
-        syncGameState();
-    }
-
-    renderList();
-    updateGuessInputLock();
-    updateActionButton();
-
-    input.value = "";
+    syncGameState();
 }
 
-// sendGuessToHost(rawGuess)
 async function sendGuessToHost(rawGuess) {
     if (!currentRoomCode) return;
     if (!rawGuess) return;
 
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+
     try {
         await set(pendingRef, {
             playerId: myPlayerId,
@@ -297,7 +232,6 @@ async function sendGuessToHost(rawGuess) {
         return;
     }
 
-    // Clear local input immediately for UX; UI state will be reconciled from sync.
     if (ui && ui.input) {
         ui.input.value = "";
     }
@@ -310,13 +244,9 @@ function listenToPendingGuess(roomCode) {
         const pending = snapshot.val();
         if (!pending) return;
 
-        // 🚨 Prevent overwriting the results state
         if (game.state === "results") return;
-
-        // Only host processes guesses
         if (myPlayerId !== hostId) return;
 
-        // Must be the correct player's turn
         const currentPlayer = game.players[game.currentPlayerIndex];
         if (!currentPlayer || currentPlayer.id !== pending.playerId) return;
 
@@ -325,137 +255,41 @@ function listenToPendingGuess(roomCode) {
 }
 
 async function hostProcessGuess(pending) {
-    const rawGuess = pending.guess;
-    const guess = normalize(rawGuess);
-    if (!guess) return;
+    const rawGuess = pending?.guess;
+    if (!rawGuess) return;
 
-    // If host doesn't have stat data yet, we still allow matching only if answers exist.
-    const answers = (game.data && game.stat && Array.isArray(game.data[game.stat]?.players))
-        ? game.data[game.stat].players
-        : [];
-
-    // If we don't have answers locally, clear pending and bail (host can't validate)
-    if (!answers.length) {
+    const currentPlayer = game.players[game.currentPlayerIndex];
+    if (!currentPlayer || currentPlayer.id !== pending.playerId) {
         const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
         await set(pendingRef, null);
         return;
     }
 
-    // Find matches
-    let matches = [];
-    for (let a of answers) {
-        if (isMatch(guess, a.name)) matches.push(a);
-    }
+    handleLocalGuess(rawGuess);
 
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
-
-    // WRONG GUESS
-    if (matches.length === 0) {
-        applyWrongGuess(game);
-        syncGameState();
-        await set(pendingRef, null);
-        return;
-    }
-
-    // MULTIPLE MATCHES
-    if (matches.length > 1) {
-        await set(pendingRef, null);
-        return;
-    }
-
-    const matchedAnswer = matches[0];
-    const normalizedAnswer = normalize(matchedAnswer.name);
-
-    // DUPLICATE GUESS
-    if (game.globalGuessed.includes(normalizedAnswer)) {
-        await set(pendingRef, null);
-        return;
-    }
-
-    // Ensure the guess is attributed to the submitting player
-    if (pending && pending.playerId && Array.isArray(game.players)) {
-        const idx = game.players.findIndex(p => p.id === pending.playerId);
-        if (idx !== -1) game.currentPlayerIndex = idx;
-    }
-
-    // CORRECT GUESS
-    const isComplete = applyCorrectGuess(game, matchedAnswer);
-
-    // If this guess completed the game, set results and include a stat snapshot in Firebase
-    if (isComplete) {
-        applyEndGame(game);
-
-        // Ensure host attempts to include stat snapshot. If missing, try to load it and wait briefly.
-        let statData = game.data && game.stat ? game.data[game.stat] : null;
-        if (!statData) {
-            try { maybeLoadData(); } catch (e) { /* ignore */ }
-
-            const start = Date.now();
-            const timeout = 3000; // ms
-            while (!(game.data && game.stat && Array.isArray(game.data[game.stat]?.players)) && (Date.now() - start) < timeout) {
-                // small delay
-                // eslint-disable-next-line no-await-in-loop
-                await new Promise(r => setTimeout(r, 100));
-            }
-            statData = game.data && game.stat ? game.data[game.stat] : null;
-        }
-
-        const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-
-        // Prepare payload; include statPlayers if we have them
-        const payload = {
-            state: game.state,
-            currentPlayerIndex: game.currentPlayerIndex,
-            globalGuessed: game.globalGuessed,
-            players: game.players,
-            sport: game.sport,
-            category: game.category,
-            year: game.year,
-            stat: game.stat
-        };
-
-        if (statData && Array.isArray(statData.players)) {
-            payload.statPlayers = statData.players;
-            if (typeof statData.isPercent !== "undefined") {
-                payload.statIsPercent = !!statData.isPercent;
-            }
-        }
-
-        // Use update to avoid clobbering unrelated fields
-        await update(gameRef, payload);
-
-        await set(pendingRef, null);
-        return;
-    }
-
-    // NORMAL CASE: sync updated game state
-    syncGameState();
     await set(pendingRef, null);
 }
 
-// onGuessSubmit()
 function onGuessSubmit() {
-    const rawGuess = ui && ui.input && ui.input.value ? ui.input.value.trim() : "";
+    const rawGuess = ui.input.value.trim();
     if (!rawGuess) return;
 
-    // Block guessing unless the game is actively being played
+    ui.input.value = "";
+
     if (game.state !== "playing") return;
 
-    // Turn check — ensure it's our turn
-    const myIndex = Array.isArray(game.players)
-        ? game.players.findIndex(p => p.id === myPlayerId)
-        : -1;
+    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
     if (myIndex !== game.currentPlayerIndex) return;
 
     if (myPlayerId === hostId) {
-        // Host handles guesses locally via submitGuess which already performs state transitions.
-        submitGuess();
-        // submitGuess is responsible for calling syncGameState when needed.
+        handleLocalGuess(rawGuess);
     } else {
-        // Non-host: send guess to host and clear input (sendGuessToHost clears input too)
         sendGuessToHost(rawGuess);
     }
 }
+
+
 
 /* ============================================================
    TOP 10 — MATCHING + NORMALIZATION
@@ -470,26 +304,6 @@ function normalize(str) {
         .replace(/[^a-z0-9 ]/g, "")
         .replace(/\s+/g, " ")
         .trim();
-}
-
-/* Determine if a guess matches an answer */
-function isMatch(guess, answer) {
-    const g = normalize(guess);
-    const a = normalize(answer);
-
-    if (g === a) return true;
-
-    const parts = a.split(" ");
-    const last = parts[parts.length - 1];
-    const first = parts[0];
-
-    if (g === last) return true;
-    if (g === first) return true;
-
-    if (levenshtein(g, a) <= 2) return true;
-    if (levenshtein(g, last) <= 1) return true;
-
-    return false;
 }
 
 /* Compute Levenshtein distance */
@@ -518,6 +332,26 @@ function levenshtein(a, b) {
     }
 
     return matrix[b.length][a.length];
+}
+
+/* Determine if a guess matches an answer */
+function isMatch(guess, answer) {
+    const g = normalize(guess);
+    const a = normalize(answer);
+
+    if (g === a) return true;
+
+    const parts = a.split(" ");
+    const last = parts[parts.length - 1];
+    const first = parts[0];
+
+    if (g === last) return true;
+    if (g === first) return true;
+
+    if (levenshtein(g, a) <= 2) return true;
+    if (levenshtein(g, last) <= 1) return true;
+
+    return false;
 }
 
 

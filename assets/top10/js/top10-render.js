@@ -2,7 +2,6 @@
    TOP 10 — RENDER HELPERS
    ============================================================ */
 
-/* Render player name input fields */
 function renderPlayerSetup() {
     ui.playerNameInputs.innerHTML = "";
 
@@ -14,35 +13,27 @@ function renderPlayerSetup() {
 
         input.addEventListener("input", () => {
             player.name = input.value.trim() || `Player ${index + 1}`;
-            updateDisplayedNames();
-            renderList();
+            renderUIForState();
         });
 
         ui.playerNameInputs.appendChild(input);
     });
 }
 
-/* Reset stat dropdown and title */
 function resetStatUI() {
     game.stat = null;
 
     ui.statSelect.disabled = true;
     ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
 
-    const titleEl = ui.statTitle;
-    if (titleEl) {
-        titleEl.textContent = "Select a stat to begin";
-    }
+    ui.statTitle.textContent = "Select a stat to begin";
 }
 
-/* Populate stat dropdown with loaded stats */
 function populateStatDropdown() {
     ui.statSelect.disabled = false;
     ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
 
-    const stats = Object.keys(game.data);
-
-    stats.forEach(stat => {
+    Object.keys(game.data).forEach(stat => {
         const option = document.createElement("option");
         option.value = stat;
         option.textContent = stat.replace(/_/g, " ").toUpperCase();
@@ -50,44 +41,15 @@ function populateStatDropdown() {
     });
 }
 
-/* Update displayed player names across UI */
-function updateDisplayedNames() {
-    const currentPlayerDisplay = ui.currentPlayerDisplay;
-    if (currentPlayerDisplay) {
-        currentPlayerDisplay.textContent =
-            `Current Turn: ${game.players[game.currentPlayerIndex].name}`;
-    }
-
-    ui.playersContainer.querySelectorAll(".player-column h3")
-        .forEach((header, index) => {
-            if (game.players[index]) {
-                header.textContent = game.players[index].name;
-            }
-        });
-
-    ui.resultsSection.querySelectorAll(".player-column h3")
-        .forEach((header, index) => {
-            if (game.players[index]) {
-                header.textContent = game.players[index].name;
-            }
-        });
-}
-
 
 /* ============================================================
    TOP 10 — MAIN RENDER FUNCTIONS
    ============================================================ */
 
-/* Render a single player column */
 function renderPlayerColumn(col, player, index, isPercent) {
-    col.classList.remove("current-player");
-    if (index === game.currentPlayerIndex) {
-        col.classList.add("current-player");
-    }
+    col.classList.toggle("current-player", index === game.currentPlayerIndex);
 
-    const guesses = player.guesses;
-
-    const guessesHTML = guesses.map(g => {
+    const guessesHTML = player.guesses.map(g => {
         const displayValue = isPercent ? g.value + "%" : g.value;
         return `<li>${g.name} — ${g.team} — ${displayValue}</li>`;
     }).join("");
@@ -99,48 +61,39 @@ function renderPlayerColumn(col, player, index, isPercent) {
     `;
 }
 
-/* Render the full Top 10 list */
 function renderList() {
-    if (!game.stat || !game.data[game.stat]) {
-        return;
-    }
+    if (!game.stat || !game.data[game.stat]) return;
 
     const stat = game.data[game.stat];
     const list = stat.players;
     const isPercent = stat.isPercent;
 
-    let html = "<ol>";
-    for (let i = 0; i < list.length; i++) {
-        const normalized = normalize(list[i].name);
-        const displayValue = isPercent ? list[i].value + "%" : list[i].value;
+    // Render Top 10 list
+    ui.top10List.innerHTML = `
+        <ol>
+            ${list.map(item => {
+        const norm = normalize(item.name);
+        const revealed = game.globalGuessed.includes(norm);
+        const value = isPercent ? item.value + "%" : item.value;
+        return revealed
+            ? `<li class="revealed">${item.name} — ${item.team} — ${value}</li>`
+            : `<li>__________</li>`;
+    }).join("")}
+        </ol>
+    `;
 
-        if (game.globalGuessed.includes(normalized)) {
-            html += `<li class="revealed">${list[i].name} — ${list[i].team} — ${displayValue}</li>`;
-        } else {
-            html += "<li>__________</li>";
-        }
-    }
-    html += "</ol>";
-    ui.top10List.innerHTML = html;
-
-    // At this point, listenToGame() guarantees game.players is an array with length > 0
-    let idx = game.currentPlayerIndex;
-    if (typeof idx !== "number" || idx < 0 || idx >= game.players.length) {
-        idx = 0;
-    }
-
-    const currentPlayer = game.players[idx];
-
+    // Current player display
+    const currentPlayer = game.players[game.currentPlayerIndex];
     ui.currentPlayerDisplay.textContent =
         "Current Turn: " + (currentPlayer?.name || "Player");
 
+    // Player columns
     const container = ui.playersContainer;
-
     container.style.justifyContent =
         game.players.length === 1 ? "center" : "space-between";
-
     container.classList.toggle("single-player", game.players.length === 1);
 
+    // Ensure correct number of columns
     while (container.children.length < game.players.length) {
         const col = document.createElement("div");
         col.classList.add("player-column");
@@ -150,35 +103,25 @@ function renderList() {
         container.removeChild(container.lastChild);
     }
 
+    // Render each column
     game.players.forEach((player, index) => {
-        const col = container.children[index];
-        renderPlayerColumn(col, player, index, isPercent);
+        renderPlayerColumn(container.children[index], player, index, isPercent);
     });
 }
 
-
-/* ============================================================
-   TOP 10 — RESULTS RENDERING
-   ============================================================ */
-
-/* Render final results screen */
 function renderResults() {
-    // Reconcile globalGuessed from players' guesses (authoritative source)
+    // Rebuild globalGuessed from authoritative player guesses
     const guessedSet = new Set();
-    if (Array.isArray(game.players)) {
-        for (const p of game.players) {
-            if (!Array.isArray(p.guesses)) continue;
-            for (const g of p.guesses) {
-                if (g && g.name) guessedSet.add(normalize(g.name));
-            }
+    for (const p of game.players) {
+        for (const g of p.guesses || []) {
+            if (g?.name) guessedSet.add(normalize(g.name));
         }
     }
-    game.globalGuessed = Array.from(guessedSet);
+    game.globalGuessed = [...guessedSet];
 
-    // If host, persist corrected globalGuessed (use update to avoid clobbering)
+    // Host syncs corrected state
     if (myPlayerId === hostId && currentRoomCode) {
-        const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-        update(gameRef, {
+        update(ref(db, `rooms/${currentRoomCode}/game`), {
             globalGuessed: game.globalGuessed,
             players: game.players,
             currentPlayerIndex: game.currentPlayerIndex,
@@ -190,80 +133,55 @@ function renderResults() {
         }).catch(() => { });
     }
 
-    // Require stat data to render the canonical Top 10; bail if missing
-    const statKey = game.stat;
-    const statData = statKey && game.data && game.data[statKey] ? game.data[statKey] : null;
-    if (!statData || !Array.isArray(statData.players)) {
-        return;
+    const statData = game.data?.[game.stat];
+    if (!statData?.players) return;
+
+    // Render Top 10 list
+    renderList();
+
+    // Winner calculation
+    const scores = game.players.map(p => p.score ?? 0);
+    const highest = Math.max(...scores);
+    const winners = game.players.filter(p => (p.score ?? 0) === highest);
+
+    ui.resultsWinner.textContent =
+        winners.length === 1
+            ? `${winners[0].name} wins!`
+            : winners.length > 1
+                ? "It's a tie!"
+                : "No winners";
+
+    // Render per-player results
+    ui.resultsPlayers.innerHTML = "";
+    const isPercent = !!statData.isPercent;
+
+    for (const p of game.players) {
+        const div = document.createElement("div");
+        div.className = "player-column";
+
+        const guessesHTML = (p.guesses || []).map(g => {
+            const value = g.value !== undefined
+                ? (isPercent ? g.value + "%" : g.value)
+                : "";
+            return `<li>${g.name}${g.team ? " — " + g.team : ""}${value ? " — " + value : ""}</li>`;
+        }).join("");
+
+        div.innerHTML = `
+            <h3>${p.name}</h3>
+            <div class="player-score">${p.score ?? 0} correct</div>
+            <ul>${guessesHTML}</ul>
+        `;
+        ui.resultsPlayers.appendChild(div);
     }
 
-    // Render top 10 list (assumes ui.top10List is already in the stat area)
-    if (typeof renderList === "function") {
-        renderList();
-    } else {
-        const list = statData.players;
-        const isPercent = !!statData.isPercent;
-        let html = "<ol>";
-        for (let i = 0; i < list.length; i++) {
-            const item = list[i];
-            const norm = normalize(item.name);
-            const revealed = game.globalGuessed.includes(norm);
-            const displayValue = isPercent ? (item.value + "%") : item.value;
-            html += revealed
-                ? `<li class="revealed">${item.name}${item.team ? " — " + item.team : ""}${displayValue ? " — " + displayValue : ""}</li>`
-                : "<li>__________</li>";
-        }
-        html += "</ol>";
-        if (ui && ui.top10List) ui.top10List.innerHTML = html;
-    }
+    // Show results UI
+    ui.resultsSection.classList.remove("hidden");
+    ui.currentPlayerDisplay.classList.add("hidden");
+    ui.playersContainer.classList.add("hidden");
 
-    // Compute winners from player scores
-    const players = Array.isArray(game.players) ? game.players : [];
-    const scores = players.map(p => (typeof p.score === "number" ? p.score : 0));
-    const highest = scores.length ? Math.max(...scores) : 0;
-    const winners = players.filter(p => (p.score ?? 0) === highest);
-
-    const winnerText = winners.length === 1
-        ? `${winners[0].name} wins!`
-        : winners.length > 1
-            ? "It's a tie!"
-            : "No winners";
-
-    if (ui && ui.resultsWinner) ui.resultsWinner.textContent = winnerText;
-
-    // Render per-player results (assumes ui.resultsPlayers is owned by resultsSection)
-    if (ui && ui.resultsPlayers) {
-        ui.resultsPlayers.innerHTML = "";
-        const isPercent = !!statData.isPercent;
-        for (const p of players) {
-            const div = document.createElement("div");
-            div.className = "player-column";
-
-            const guesses = Array.isArray(p.guesses) ? p.guesses : [];
-            const guessesHTML = guesses.map(g => {
-                const displayValue = (g && g.value !== undefined && g.value !== "") ? (isPercent ? g.value + "%" : g.value) : "";
-                return `<li>${g.name}${g.team ? " — " + g.team : ""}${displayValue ? " — " + displayValue : ""}</li>`;
-            }).join("");
-
-            div.innerHTML = `
-                <h3>${p.name}</h3>
-                <div class="player-score">${p.score ?? 0} correct</div>
-                <ul>${guessesHTML}</ul>
-            `;
-            ui.resultsPlayers.appendChild(div);
-        }
-    }
-
-    // Show results, hide gameplay UI
-    if (ui && ui.resultsSection) ui.resultsSection.classList.remove("hidden");
-    if (ui && ui.currentPlayerDisplay) ui.currentPlayerDisplay.classList.add("hidden");
-    if (ui && ui.playersContainer) ui.playersContainer.classList.add("hidden");
-
-    // Restore local add/remove buttons for non-room play
-    const addBtn = document.getElementById("addPlayerBtn");
-    const removeBtn = document.getElementById("removePlayerBtn");
-    if (addBtn) addBtn.style.display = "inline-block";
-    if (removeBtn) removeBtn.style.display = "inline-block";
+    // Restore local add/remove buttons
+    document.getElementById("addPlayerBtn").style.display = "inline-block";
+    document.getElementById("removePlayerBtn").style.display = "inline-block";
 }
 
 
