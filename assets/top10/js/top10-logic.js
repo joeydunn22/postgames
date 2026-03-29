@@ -404,7 +404,6 @@ function loadSport() {
             // 🔥 NEW: If we are already in results, re-render now that data is loaded
             if (game.state === "results" && game.data[game.stat]) {
                 renderResults();
-                updateGuessInputLock();
             }
         })
         .catch(err => console.error("Error loading data:", err));

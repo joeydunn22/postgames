@@ -329,10 +329,8 @@ function renderUIForState(state = {}) {
             }
         }
     } else {
-        // ensure results cleared when not in results
-        if (ui.resultsSection && ui.resultsSection.innerHTML) {
-            ui.resultsSection.innerHTML = "";
-        }
+        // Just hide results; do NOT clear content
+        if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
     }
 
     // Add/remove player buttons visibility (local-only)
