@@ -355,7 +355,27 @@ function renderUIForState(state = {}) {
         }
     }
 
-    if (ui.input) ui.input.disabled = isGuessLocked || phase !== "playing";
+    if (ui.input) {
+        let disabled = false;
+
+        if (phase !== "playing") {
+            disabled = true;
+        } else if (roomActive) {
+            // Multiplayer: only current player may type
+            const myIndex = Array.isArray(game.players)
+                ? game.players.findIndex(p => p.id === myPlayerId)
+                : -1;
+
+            const isMyTurn = myIndex !== -1 && myIndex === game.currentPlayerIndex;
+            disabled = !isMyTurn;
+        } else {
+            // Local mode: always enabled
+            disabled = false;
+        }
+
+        ui.input.disabled = disabled;
+        ui.input.setAttribute("aria-disabled", String(disabled));
+    }
 
     // Players list / top10 rendering
     // Prefer your existing renderList() to keep behavior identical
