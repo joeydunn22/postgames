@@ -24,28 +24,40 @@ const game = {
     data: {}                   // loaded from JSON, stays local
 };
 
-/* Cached UI elements */
-const ui = {
-    top10List: document.getElementById("top10List"),
-    input: document.getElementById("userGuess"),
-    statSelect: document.getElementById("statSelect"),
-    statTitle: document.getElementById("statTitle"),
+// Put this near the top of your main script (before any render functions run)
+function initUI() {
+    window.ui = window.ui || {};
 
-    resultsSection: document.getElementById("resultsSection"),
-    resultsWinner: document.getElementById("resultsWinner"),
-    resultsPlayers: document.getElementById("resultsPlayers"),
+    // Gameplay / stat area
+    ui.statSection = document.getElementById('statSection');
+    ui.top10List = document.getElementById('top10List');
 
-    currentPlayerDisplay: document.getElementById("currentPlayerDisplay"),
+    // Stat controls
+    ui.statSelect = document.getElementById('statSelect');
+    ui.statTitle = document.getElementById('statTitle');
+    ui.input = document.getElementById('userGuess');
+    ui.submitGuessBtn = document.getElementById('submitGuessBtn');
 
-    playerNameInputs: document.getElementById("playerNameInputs"),
-    playerSetup: document.getElementById("player-setup"),
-    playersContainer: document.querySelector(".players-container"),
+    // Player UI
+    ui.playerSetup = document.getElementById('player-setup');
+    ui.playerNameInputs = document.getElementById('playerNameInputs');
+    ui.playersContainer = document.querySelector('.players-container');
+    ui.currentPlayerDisplay = document.getElementById('currentPlayerDisplay');
+    ui.addPlayerBtn = document.getElementById('addPlayerBtn');
+    ui.removePlayerBtn = document.getElementById('removePlayerBtn');
 
-    actionButton: document.getElementById("actionButton"),
+    // Results area (end-game)
+    ui.resultsSection = document.getElementById('resultsSection');
+    ui.resultsWinner = document.getElementById('resultsWinner');
+    ui.resultsPlayers = document.getElementById('resultsPlayers');
 
-    sportButtons: document.getElementById("sport-buttons"),
-    yearButtons: document.getElementById("year-buttons"),
-    mlbCategoryButtons: document.getElementById("mlb-category-buttons"),
+    // Controls / misc
+    ui.actionButton = document.getElementById('actionButton');
+    ui.actionBtn = ui.actionButton; // alias for older code
+    ui.sportButtons = document.getElementById('sport-buttons');
+    ui.mlbCategoryButtons = document.getElementById('mlb-category-buttons');
+    ui.yearButtons = document.getElementById('year-buttons');
+}
 
-    submitGuessBtn: document.getElementById("submitGuessBtn"),
-};
+// Call once during app bootstrap
+initUI();

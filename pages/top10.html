@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 77</p>
+    <p>Testing: Version 78</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -35,8 +35,8 @@
     Join Room
   </button>
   <button id="leaveRoomBtn" onclick="leaveRoom()" style="display:none;">
-  Leave Room
-</button>
+    Leave Room
+  </button>
 
   <div id="roomStatus" style="margin-top: 10px; font-weight: bold;"></div>
   <div id="roomCodeDisplay" style="margin-top: 10px;"></div>
@@ -90,23 +90,26 @@
 
   </div>
 
-  <h2 id="statTitle" class="stat-title">Host select a stat to begin</h2>
+  <!-- Stat / Gameplay area -->
+  <section id="statSection">
+    <h2 id="statTitle" class="stat-title">Host select a stat to begin</h2>
 
-  <select id="statSelect" class="btn stat-select" disabled>
-    <option value="">Select a stat...</option>
-  </select>
+    <select id="statSelect" class="btn stat-select" disabled>
+      <option value="">Select a stat...</option>
+    </select>
 
-  <input id="userGuess" type="text" placeholder="Type a player name..." class="guess-input">
+    <input id="userGuess" type="text" placeholder="Type a player name..." class="guess-input">
 
-  <button id="submitGuessBtn" class="btn" type="button">Submit Guess</button>
+    <button id="submitGuessBtn" class="btn" type="button">Submit Guess</button>
 
-  <div id="currentPlayerDisplay" class="current-player-display">
-    Current Turn: Player 1
-  </div>
+    <div id="currentPlayerDisplay" class="current-player-display">
+      Current Turn: Player 1
+    </div>
 
-  <div class="players-container"></div>
+    <div class="players-container"></div>
 
-  <div id="top10List"></div>
+    <div id="top10List" class="top10-list"></div>
+  </section>
 
   <div id="resultsSection" class="hidden">
     <h2 style="color:#00ff88;">Results</h2>
@@ -115,7 +118,6 @@
   </div>
 
   <button id="actionButton" class="btn">Reveal Answers</button>
-
 
 
 <!-- Firebase -->
