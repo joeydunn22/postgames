@@ -1,33 +1,43 @@
 /* ============================================================
-   TOP 10 — STATE & UI REFERENCES
+   TOP 10 — GLOBAL STATE (must exist before logic/render)
    ============================================================ */
 
-// Told to move from top10.html
-let currentUser = null;
-let currentRoomCode = null;
-let roomActive = false;
-let myPlayerId = null;
-let hostId = null;
+// Multiplayer identity + room state
+window.currentUser = null;
+window.myPlayerId = null;
+window.currentRoomCode = null;
+window.roomActive = false;
+window.hostId = null;
 
-
-const game = {
-    state: "setup",            // start in setup, not playing
+// Core game state (shared by single + multiplayer)
+window.game = {
+    state: "setup",            // "setup" | "playing" | "results"
     currentPlayerIndex: 0,
+
     players: [],               // [{ id, name, guesses[], score }]
+    playerNames: {},           // multiplayer name map (uid → {name})
+
     globalGuessed: [],         // ["aaron_judge", ...]
+
     sport: null,
     category: null,
     year: null,
     stat: null,
 
+    authReady: false,          // set true when Firebase auth resolves
+
     // LOCAL ONLY (not synced)
-    data: {}                   // loaded from JSON, stays local
+    data: {}                   // loaded JSON stat data
 };
 
-// Put this near the top of your main script (before any render functions run)
-function initUI() {
-    window.ui = window.ui || {};
 
+/* ============================================================
+   TOP 10 — UI REFERENCES
+   ============================================================ */
+
+window.ui = {};   // ensure global
+
+function initUI() {
     // Gameplay / stat area
     ui.statSection = document.getElementById('statSection');
     ui.top10List = document.getElementById('top10List');
@@ -46,7 +56,7 @@ function initUI() {
     ui.addPlayerBtn = document.getElementById('addPlayerBtn');
     ui.removePlayerBtn = document.getElementById('removePlayerBtn');
 
-    // Results area (end-game)
+    // Results area
     ui.resultsSection = document.getElementById('resultsSection');
     ui.resultsWinner = document.getElementById('resultsWinner');
     ui.resultsPlayers = document.getElementById('resultsPlayers');
@@ -58,36 +68,47 @@ function initUI() {
     ui.yearButtons = document.getElementById('year-buttons');
 }
 
+
+/* ============================================================
+   TOP 10 — ACTION BUTTON HANDLER
+   ============================================================ */
+
 function initActionButtonHandlers() {
     if (!ui.actionButton) return;
 
     ui.actionButton.onclick = () => {
         const s = game.state;
 
+        // Only host can advance phases in multiplayer
+        if (roomActive && myPlayerId !== hostId) return;
+
         if (s === "setup") {
-            if (roomActive && myPlayerId !== hostId) return;
             startGame();
         }
-
         else if (s === "playing") {
-            if (roomActive && myPlayerId !== hostId) return;
             applyEndGame(game);
         }
-
         else if (s === "results") {
-            if (roomActive && myPlayerId !== hostId) return;
             resetGame();
         }
 
+        // Sync state if host in multiplayer
         if (roomActive && myPlayerId === hostId) {
             syncGameState();
         }
     };
 }
 
+
+/* ============================================================
+   TOP 10 — LOCAL PLAYER ADD/REMOVE
+   ============================================================ */
+
 function initLocalPlayerButtons() {
     const addBtn = ui.addPlayerBtn;
     const removeBtn = ui.removePlayerBtn;
+
+    if (!addBtn || !removeBtn) return;
 
     addBtn.onclick = () => {
         if (roomActive) return;
@@ -100,7 +121,7 @@ function initLocalPlayerButtons() {
             score: 0
         });
 
-        renderUIForState();
+        renderUIForState(game);
     };
 
     removeBtn.onclick = () => {
@@ -113,11 +134,15 @@ function initLocalPlayerButtons() {
             game.currentPlayerIndex = 0;
         }
 
-        renderUIForState();
+        renderUIForState(game);
     };
 }
 
-// Call once during app bootstrap
+
+/* ============================================================
+   INITIALIZE UI + BUTTONS
+   ============================================================ */
+
 initUI();
 initActionButtonHandlers();
 initLocalPlayerButtons();
