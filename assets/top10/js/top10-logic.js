@@ -114,9 +114,6 @@ async function createRoom() {
     listenToPendingGuess(roomCode);
 }
 
-window.createRoom = createRoom;
-
-
 // ---------------------------------------------------------
 // JOIN ROOM
 // ---------------------------------------------------------
@@ -180,9 +177,6 @@ async function joinRoom(roomCode) {
     }, { onlyOnce: true });
 }
 
-window.joinRoom = joinRoom;
-
-
 // ---------------------------------------------------------
 // LEAVE ROOM (UI BUTTON)
 // ---------------------------------------------------------
@@ -195,9 +189,6 @@ async function leaveRoom() {
 
     renderUIForState(game);
 }
-
-window.leaveRoom = leaveRoom;
-
 
 // ---------------------------------------------------------
 // LISTEN TO ROOM (host + players)
@@ -705,3 +696,43 @@ function loadSport() {
 }
 
 loadSport();
+
+
+/* ============================================================
+   PUBLIC API — EXPORTED FOR RENDERER, HTML, AND FIREBASE
+   ============================================================ */
+
+// Room / multiplayer controls
+window.createRoom = createRoom;
+window.joinRoom = joinRoom;
+window.leaveRoom = leaveRoom;
+
+// Firebase listeners
+window.listenToRoom = listenToRoom;
+window.listenToPlayers = listenToPlayers;
+window.listenToGame = listenToGame;
+window.listenToPendingGuess = listenToPendingGuess;
+
+// Game flow
+window.startGame = startGame;
+window.applyEndGame = applyEndGame;
+window.resetGame = resetGame;
+window.syncGameState = syncGameState;
+
+// Guess handling
+window.applyWrongGuess = applyWrongGuess;
+window.applyCorrectGuess = applyCorrectGuess;
+window.playGuessAnimation = playGuessAnimation;
+window.handleLocalGuess = handleLocalGuess;
+window.sendGuessToHost = sendGuessToHost;
+window.hostProcessGuess = hostProcessGuess;
+window.onGuessSubmit = onGuessSubmit;
+
+// Data loading / stat loading
+window.maybeLoadData = maybeLoadData;
+window.loadSport = loadSport;
+
+// Utility functions used across modules
+window.normalize = normalize;
+window.levenshtein = levenshtein;
+window.isMatch = isMatch;
