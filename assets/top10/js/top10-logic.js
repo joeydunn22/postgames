@@ -108,6 +108,66 @@ ui.statSelect.addEventListener("change", () => {
     }
 });
 
+// eventually change the below 3 into functions
+document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const sport = btn.dataset.sport;
+
+        if (!roomActive) {
+            // SINGLE‑PLAYER MODE
+            game.sport = sport;
+            game.category = null;
+            game.year = null;
+            game.stat = null;
+
+            renderUIForState(game);
+            return;
+        }
+
+        // MULTIPLAYER MODE
+        set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
+    });
+});
+
+document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+
+        if (!roomActive) {
+            // SINGLE‑PLAYER MODE
+            game.category = category;
+            game.stat = null;
+
+            renderUIForState(game);
+            return;
+        }
+
+        // MULTIPLAYER MODE
+        set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
+    });
+});
+
+document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const year = btn.dataset.year;
+
+        if (!roomActive) {
+            // SINGLE‑PLAYER MODE
+            if (!game.sport) return;
+            if (game.sport === "mlb" && !game.category) return;
+
+            game.year = year;
+            game.stat = null;
+
+            renderUIForState(game);
+            return;
+        }
+
+        // MULTIPLAYER MODE
+        set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
+    });
+});
+
 
 
 /* ============================================================

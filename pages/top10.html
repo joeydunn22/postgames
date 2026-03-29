@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 82</p>
+    <p>Testing: Version 83</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -155,28 +155,6 @@
 
     window.onAuthStateChanged = onAuthStateChanged;
     window.signInAnonymously = signInAnonymously;
-
-    // Disable buttons until auth is ready
-    document.getElementById("createRoomBtn").disabled = true;
-    document.getElementById("joinRoomBtn").disabled = true;
-
-    function hideAddRemoveButtons() {
-      document.getElementById("addPlayerBtn").style.display = "none";
-      document.getElementById("removePlayerBtn").style.display = "none";
-    }
-
-    function showAddRemoveButtons() {
-      document.getElementById("addPlayerBtn").style.display = "inline-block";
-      document.getElementById("removePlayerBtn").style.display = "inline-block";
-    }
-
-    function showLeaveRoomButton() {
-      document.getElementById("leaveRoomBtn").style.display = "inline-block";
-    }
-
-    function hideLeaveRoomButton() {
-      document.getElementById("leaveRoomBtn").style.display = "none";
-    }
 
     onAuthStateChanged(auth, (user) => {
       if (!user) return;
@@ -341,22 +319,6 @@
       resetLocalPlayersToOne();
     };
 
-    function resetLocalPlayersToOne() {
-      const container = document.getElementById("playerNameInputs");
-      container.innerHTML = "";
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "player-name-row";
-
-      const input = document.createElement("input");
-      input.className = "player-name-input";
-      input.type = "text";
-      input.value = "Player 1";
-
-      wrapper.appendChild(input);
-      container.appendChild(wrapper);
-    }
-
     function listenToRoom(roomCode) {
       // Listen for players joining/leaving
       const playersRef = ref(db, `rooms/${roomCode}/players`);
@@ -400,10 +362,8 @@
                 }));
             }
 
-            // --- CONSUME STAT SNAPSHOT (host wrote this on end-game) ---
-            // If the host included statPlayers in the Firebase payload, map it into local game.data
+            // --- OPTIONAL: STAT SNAPSHOT HYDRATION ---
             if (fb.stat && Array.isArray(fb.statPlayers)) {
-                // Only set if we don't already have the stat data loaded
                 if (!game.data) game.data = {};
                 if (!game.data[fb.stat] || !Array.isArray(game.data[fb.stat].players)) {
                     game.data[fb.stat] = {
@@ -413,29 +373,21 @@
                 }
             }
 
-            // --- LOAD DATA IF READY ---
-            if (game.sport && (game.sport !== "mlb" || game.category) && game.year) {
+            // --- LOAD STAT DATA IF READY ---
+            const readyForData =
+                game.sport &&
+                (game.sport !== "mlb" || game.category) &&
+                game.year;
+
+            if (readyForData) {
                 maybeLoadData();
             }
 
             // --- DELEGATE ALL UI UPDATES TO RENDERER ---
-            if (typeof renderUIForState === "function") {
-                try { renderUIForState(game); } catch (e) { console.error("renderUIForState error:", e); }
-            } else {
-                // Fallback: minimal UI updates (kept for safety)
-                ui.resultsSection.classList.add("hidden");
-                if (game.stat !== undefined) {
-                    ui.statSelect.value = game.stat || "";
-                    ui.statTitle.textContent = game.stat
-                        ? game.stat.replace(/_/g, " ").toUpperCase()
-                        : "Select a stat to begin";
-
-                    if (Array.isArray(game.players) && game.players.length > 0) {
-                        renderList();
-                    }
-                }
-                updateGuessInputLock();
-                updateActionButton();
+            try {
+                renderUIForState(game);
+            } catch (e) {
+                console.error("renderUIForState error:", e);
             }
         });
     }
@@ -446,111 +398,15 @@
         onValue(playersRef, (snapshot) => {
             const playersObj = snapshot.val() || {};
 
-            // Store names only
+            // Store raw player names keyed by UID
             game.playerNames = playersObj;
 
-            renderPlayers(playersObj);
-        });
-    }
-
-    // SPORT SELECTION — unified single-player + multiplayer
-    document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const sport = btn.dataset.sport;
-
-        if (!roomActive) {
-          // SINGLE‑PLAYER MODE
-          game.sport = sport;
-          game.category = null;
-          game.year = null;
-
-          resetStatUI();
-          ui.statTitle.textContent = "Select a stat to begin";
-
-          const hideCategory = sport !== "mlb";
-          document.getElementById("mlb-category-buttons").classList.toggle("hidden", hideCategory);
-          document.getElementById("mlb-category-wrapper").classList.toggle("hidden", hideCategory);
-
-          maybeLoadData();
-          return;
-        }
-
-        // MULTIPLAYER MODE
-        set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
-      });
-    });
-
-    // CATEGORY SELECTION — unified single-player + multiplayer
-    document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const category = btn.dataset.category;
-
-        if (!roomActive) {
-          // SINGLE‑PLAYER MODE
-          game.category = category;
-          resetStatUI();
-          return;
-        }
-
-        // MULTIPLAYER MODE
-        set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
-      });
-    });
-
-    // YEAR SELECTION — unified single-player + multiplayer
-    document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const year = btn.dataset.year;
-
-        if (!roomActive) {
-          // SINGLE‑PLAYER MODE
-          if (!game.sport) return;
-          if (game.sport === "mlb" && !game.category) return;
-
-          game.year = year;
-          resetStatUI();
-          maybeLoadData();
-          return;
-        }
-
-        // MULTIPLAYER MODE
-        set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
-      });
-    });
-
-    function renderPlayers(playersObj) {
-        ui.playerNameInputs.innerHTML = "";
-
-        Object.entries(playersObj).forEach(([uid, data]) => {
-            const wrapper = document.createElement("div");
-            wrapper.className = "player-name-row";
-
-            const input = document.createElement("input");
-            input.type = "text";
-            input.value = data.name || "Player";
-            input.className = "player-name-input";
-
-            const isMe = uid === myPlayerId;
-
-            if (isMe) {
-                input.classList.add("me");
-                input.disabled = false;
-
-                input.addEventListener("blur", () => {
-                    const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
-                    set(nameRef, input.value.trim() || "Player");
-                });
-
-                const badge = document.createElement("span");
-                badge.className = "you-badge";
-                badge.textContent = "You";
-                wrapper.appendChild(badge);
-            } else {
-                input.disabled = true;
+            // Let the renderer handle all UI updates
+            try {
+                renderUIForState(game);
+            } catch (e) {
+                console.error("renderUIForState error:", e);
             }
-
-            wrapper.appendChild(input);
-            ui.playerNameInputs.appendChild(wrapper);
         });
     }
 

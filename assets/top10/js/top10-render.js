@@ -2,21 +2,73 @@
    TOP 10 — RENDER HELPERS
    ============================================================ */
 
-function renderPlayerSetup() {
-    ui.playerNameInputs.innerHTML = "";
+function renderPlayerNames() {
+    const container = ui.playerNameInputs;
+    if (!container) return;
 
-    game.players.forEach((player, index) => {
+    container.innerHTML = "";
+
+    const isMultiplayer = !!roomActive;
+
+    let entries = [];
+
+    if (isMultiplayer && game.playerNames) {
+        // Multiplayer: Firebase stores players keyed by UID
+        entries = Object.entries(game.playerNames).map(([uid, data]) => ({
+            uid,
+            name: data.name || "Player"
+        }));
+    } else {
+        // Single-player: use local game.players array
+        entries = (game.players || []).map((p, index) => ({
+            uid: p.id || index,
+            name: p.name || `Player ${index + 1}`
+        }));
+    }
+
+    entries.forEach(({ uid, name }) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "player-name-row";
+
         const input = document.createElement("input");
         input.type = "text";
-        input.value = player.name;
+        input.value = name;
         input.className = "player-name-input";
 
-        input.addEventListener("input", () => {
-            player.name = input.value.trim() || `Player ${index + 1}`;
-            renderUIForState();
-        });
+        const isMe = uid === myPlayerId;
 
-        ui.playerNameInputs.appendChild(input);
+        if (isMultiplayer) {
+            // Multiplayer: only your own input is editable
+            if (isMe) {
+                input.classList.add("me");
+                input.disabled = false;
+
+                // Blur → Firebase sync
+                input.addEventListener("blur", () => {
+                    const nameRef = ref(db, `rooms/${currentRoomCode}/players/${uid}/name`);
+                    set(nameRef, input.value.trim() || "Player");
+                });
+
+                const badge = document.createElement("span");
+                badge.className = "you-badge";
+                badge.textContent = "You";
+                wrapper.appendChild(badge);
+            } else {
+                input.disabled = true;
+            }
+        } else {
+            // Single-player: update local state
+            input.addEventListener("input", () => {
+                const index = entries.findIndex(e => e.uid === uid);
+                if (index !== -1) {
+                    game.players[index].name = input.value.trim() || `Player ${index + 1}`;
+                    renderUIForState(game);
+                }
+            });
+        }
+
+        wrapper.appendChild(input);
+        container.appendChild(wrapper);
     });
 }
 
@@ -39,6 +91,24 @@ function populateStatDropdown() {
         option.textContent = stat.replace(/_/g, " ").toUpperCase();
         ui.statSelect.appendChild(option);
     });
+}
+
+function resetLocalPlayersToOne() {
+    const container = ui.playerNameInputs;
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "player-name-row";
+
+    const input = document.createElement("input");
+    input.className = "player-name-input";
+    input.type = "text";
+    input.value = "Player 1";
+
+    wrapper.appendChild(input);
+    container.appendChild(wrapper);
 }
 
 
@@ -221,41 +291,49 @@ function renderUIForState(state = {}) {
 
     const phase = s.state || s.phase || "setup";
 
-    // Phase visibility
-    if (ui.resultsSection) ui.resultsSection.classList.toggle("hidden", phase !== "results");
-    if (ui.playersContainer) ui.playersContainer.classList.toggle("hidden", phase === "results");
-    if (ui.currentPlayerDisplay) ui.currentPlayerDisplay.classList.toggle("hidden", phase !== "playing");
+    // --- PHASE VISIBILITY ---
+    ui.resultsSection?.classList.toggle("hidden", phase !== "results");
+    ui.playersContainer?.classList.toggle("hidden", phase === "results");
+    ui.currentPlayerDisplay?.classList.toggle("hidden", phase !== "playing");
 
-    // Stat UI
+    // --- PLAYER NAME INPUTS (single + multiplayer unified) ---
+    if (typeof renderPlayerNames === "function") {
+        try { renderPlayerNames(); } catch (e) { console.error(e); }
+    }
+
+    // --- STAT UI ---
     if (ui.statSelect) ui.statSelect.value = s.stat || "";
-    if (ui.statTitle) ui.statTitle.textContent = s.stat ? s.stat.replace(/_/g, " ").toUpperCase() : "Select a stat to begin";
+    if (ui.statTitle) {
+        ui.statTitle.textContent = s.stat
+            ? s.stat.replace(/_/g, " ").toUpperCase()
+            : "Select a stat to begin";
+    }
 
-    // Sport / category / year highlights (reuse existing selectors)
+    // --- SPORT / CATEGORY / YEAR HIGHLIGHTS ---
     if (s.sport) {
         document.querySelectorAll('#sport-buttons .pg-button')
             .forEach(btn => btn.classList.toggle('active', btn.dataset.sport === s.sport));
     }
+
     if (s.category) {
         document.querySelectorAll('#mlb-category-buttons .pg-button')
             .forEach(btn => btn.classList.toggle('active', btn.dataset.category === s.category));
     }
+
     const catWrapper = document.getElementById("mlb-category-wrapper");
     const catButtons = document.getElementById("mlb-category-buttons");
     if (catWrapper && catButtons) {
-        if (s.sport === "mlb") {
-            catWrapper.classList.remove("hidden");
-            catButtons.classList.remove("hidden");
-        } else {
-            catWrapper.classList.add("hidden");
-            catButtons.classList.add("hidden");
-        }
+        const show = s.sport === "mlb";
+        catWrapper.classList.toggle("hidden", !show);
+        catButtons.classList.toggle("hidden", !show);
     }
+
     if (s.year) {
         document.querySelectorAll('#year-buttons .pg-button')
             .forEach(btn => btn.classList.toggle('active', btn.dataset.year === s.year));
     }
 
-    // Action button / guess input logic
+    // --- ACTION BUTTON / GUESS INPUT LOGIC ---
     const isYourTurn = !!s.isYourTurn;
     const isGuessLocked = !!s.isGuessLocked;
     const canStart = !!s.canStart;
@@ -267,7 +345,7 @@ function renderUIForState(state = {}) {
         } else if (phase === "playing") {
             ui.actionButton.textContent = isYourTurn ? "Submit Guess" : "Waiting";
             ui.actionButton.disabled = isGuessLocked || !isYourTurn;
-        } else { // results
+        } else {
             ui.actionButton.textContent = "Play Again";
             ui.actionButton.disabled = false;
         }
@@ -286,65 +364,45 @@ function renderUIForState(state = {}) {
 
             const isMyTurn = myIndex !== -1 && myIndex === game.currentPlayerIndex;
             disabled = !isMyTurn;
-        } else {
-            // Local mode: always enabled
-            disabled = false;
         }
 
         ui.input.disabled = disabled;
         ui.input.setAttribute("aria-disabled", String(disabled));
     }
 
-    // Players list / top10 rendering
-    // Prefer your existing renderList() to keep behavior identical
+    // --- TOP 10 LIST RENDERING ---
     if (typeof renderList === "function") {
-        // renderList expects game and game.data to be present; guard briefly
-        try { renderList(); } catch (e) { /* swallow render errors to avoid breaking UI */ }
-    } else {
-        // Minimal fallback: update current player display and players container
-        if (ui.currentPlayerDisplay) {
-            const idx = (typeof game.currentPlayerIndex === "number") ? game.currentPlayerIndex : 0;
-            ui.currentPlayerDisplay.textContent = "Current Turn: " + (game.players[idx]?.name || "Player");
-        }
-        if (ui.playersContainer) {
-            ui.playersContainer.innerHTML = "";
-            (game.players || []).forEach((p, i) => {
-                const col = document.createElement("div");
-                col.className = "player-column" + (i === game.currentPlayerIndex ? " current-player" : "");
-                col.innerHTML = `<h3>${p.name}</h3><div class="player-score">Score: ${p.score ?? 0}</div>`;
-                ui.playersContainer.appendChild(col);
-            });
-        }
+        try { renderList(); } catch (e) { console.error(e); }
     }
 
-    // Results rendering
+    // --- RESULTS RENDERING ---
     if (phase === "results") {
         if (typeof renderResults === "function") {
-            try { renderResults(); } catch (e) { /* ignore */ }
-        } else {
-            // fallback: show a simple results summary
-            if (ui.resultsSection) {
-                ui.resultsSection.innerHTML = `<div class="results-fallback">Results</div>`;
-                ui.resultsSection.classList.remove("hidden");
-            }
+            try { renderResults(); } catch (e) { console.error(e); }
         }
     } else {
-        // Just hide results; do NOT clear content
-        if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
+        // Only hide results; do NOT clear content
+        ui.resultsSection?.classList.add("hidden");
     }
 
-    // Add/remove player buttons visibility (local-only)
+    // --- ADD/REMOVE PLAYER BUTTONS (local-only) ---
     const addBtn = document.getElementById("addPlayerBtn");
     const removeBtn = document.getElementById("removePlayerBtn");
     if (addBtn && removeBtn) {
-        const hidden = !!s.roomActive; // if in a room, hide add/remove
+        const hidden = !!s.roomActive;
         addBtn.classList.toggle("hidden", hidden);
         removeBtn.classList.toggle("hidden", hidden);
     }
 
-    // Phase change hook (useful for CSS transitions)
+    // --- LEAVE ROOM BUTTON ---
+    const leaveBtn = document.getElementById("leaveRoomBtn");
+    if (leaveBtn) {
+        leaveBtn.classList.toggle("hidden", !roomActive);
+    }
+
+    // --- PHASE CHANGE HOOK ---
     if (_prevPhase !== phase) {
         _prevPhase = phase;
-        // document.body.dataset.phase = phase; // uncomment if you want a global hook
+        // document.body.dataset.phase = phase;
     }
 }
