@@ -44,112 +44,52 @@ function applyCorrectGuess(game, matchedAnswer) {
     return game.globalGuessed.length === totalAnswers;
 }
 
-function applyEndGame(game) {
+function applyEndGame() {
     game.state = "results";
+
+    if (roomActive && myPlayerId === hostId) {
+        syncGameState();
+    }
 }
 
-// startGame()
 function startGame() {
-    // Only start if we are in setup mode
     if (game.state !== "setup") return;
-
-    // Must have a valid stat
     if (!game.stat) return;
 
-    // Reset core game state
+    // Reset core state
     game.state = "playing";
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
 
-    // Reset each player's guesses and score
-    for (let p of game.players) {
-        p.guesses = [];
-        p.score = 0;
-    }
+    // Reset players
+    game.players = game.players.map((p, i) => ({
+        ...p,
+        guesses: [],
+        score: 0,
+        name: p.name || `Player ${i + 1}`
+    }));
 
-    // Host syncs the new state
+    // Host syncs
     if (roomActive && myPlayerId === hostId) {
         syncGameState();
     }
-
-    // UI is now driven by renderUIForState via listenToGame -> onValue
 }
 
-// resetGame()
 function resetGame() {
-    // Return to setup mode
     game.state = "setup";
-
-    // Reset gameplay state
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
-
-    for (let p of game.players) {
-        p.guesses = [];
-        p.score = 0;
-    }
-
-    // Clear stat selection (required for next round)
     game.stat = null;
 
-    // Remove UI side effects here; renderer will update UI after sync
-    // Host syncs the reset state
+    game.players = game.players.map((p, i) => ({
+        ...p,
+        guesses: [],
+        score: 0,
+        name: p.name || `Player ${i + 1}`
+    }));
+
     if (roomActive && myPlayerId === hostId) {
         syncGameState();
-    }
-}
-
-function updateActionButton() {
-    const btn = ui.actionButton;
-    if (!btn) return;
-
-    // Helper to set a safe click handler that only mutates state and syncs
-    function setHostAction(handler) {
-        btn.onclick = () => {
-            // Only host may perform state-changing actions
-            if (roomActive && myPlayerId !== hostId) return;
-            try {
-                handler();
-            } catch (e) {
-                console.error("action handler error:", e);
-            }
-            if (roomActive && myPlayerId === hostId) {
-                syncGameState();
-            }
-            // Do not call renderResults/updateActionButton here;
-            // listenToGame -> renderUIForState will update the UI.
-        };
-    }
-
-    // SETUP MODE — hide the button entirely
-    if (game.state === "setup") {
-        btn.classList.add("hidden");
-        btn.onclick = null;
-        return;
-    }
-
-    // PLAYING MODE — show "Give Up"
-    if (game.state === "playing") {
-        btn.textContent = "Give Up";
-        btn.classList.remove("hidden");
-
-        setHostAction(() => {
-            applyEndGame(game);
-        });
-
-        return;
-    }
-
-    // RESULTS MODE — show "Play Again"
-    if (game.state === "results") {
-        btn.textContent = "Play Again";
-        btn.classList.remove("hidden");
-
-        setHostAction(() => {
-            resetGame();
-        });
-
-        return;
     }
 }
 
@@ -188,34 +128,18 @@ document.getElementById("submitGuessBtn").addEventListener("click", () => {
 ui.statSelect.addEventListener("change", () => {
     const selected = ui.statSelect.value || null;
 
-    // SINGLE‑PLAYER
+    // Local mode
     if (!roomActive) {
         game.stat = selected;
-
-        if (!selected) {
-            ui.statTitle.textContent = "Select a stat to begin";
-            return;
-        }
-
-        ui.statTitle.textContent =
-            ui.statSelect.options[ui.statSelect.selectedIndex].text;
-
-        // NEW: start the game formally
-        startGame();
+        if (selected) startGame();
         return;
     }
 
-    // MULTIPLAYER — only host can start the game
+    // Multiplayer — only host can set stat and start game
     if (myPlayerId === hostId) {
-        update(ref(db, `rooms/${currentRoomCode}/game`), {
-            stat: selected
-        });
-
-        // NEW: host starts the game once stat is chosen
+        update(ref(db, `rooms/${currentRoomCode}/game`), { stat: selected });
         if (selected) startGame();
     }
-
-    updateGuessInputLock();
 });
 
 /* ============================================================
@@ -227,7 +151,7 @@ function playGuessAnimation(type) {
     const inputEl = ui && ui.input;
     if (!inputEl) return;
 
-    const playerCols = document.querySelectorAll(".player-column");
+    const playerCols = ui.playersContainer.querySelectorAll(".player-column");
     const playerCol = playerCols && playerCols[game.currentPlayerIndex];
 
     const map = {
@@ -261,36 +185,6 @@ function playGuessAnimation(type) {
             console.warn("player animation failed", e);
         }
     }
-}
-
-function updateGuessInputLock() {
-    // Guard: ensure ui.input exists
-    const inputEl = ui && ui.input;
-    if (!inputEl) return;
-
-    // Always disable during results
-    if (game.state === "results") {
-        inputEl.disabled = true;
-        inputEl.setAttribute("aria-disabled", "true");
-        return;
-    }
-
-    // If not in a room, allow local play
-    if (!roomActive) {
-        inputEl.disabled = false;
-        inputEl.setAttribute("aria-disabled", "false");
-        return;
-    }
-
-    // Find my player index safely
-    const myIndex = Array.isArray(game.players)
-        ? game.players.findIndex(p => p.id === myPlayerId)
-        : -1;
-
-    const isMyTurn = myIndex !== -1 && myIndex === game.currentPlayerIndex;
-
-    inputEl.disabled = !isMyTurn;
-    inputEl.setAttribute("aria-disabled", String(!isMyTurn));
 }
 
 /* Handle guess submission, scoring, and turn rotation */
@@ -628,7 +522,7 @@ function levenshtein(a, b) {
 
 
 /* ============================================================
-   TOP 10 — STAT LOADING
+   TOP 10 — INITIAL LOAD
    ============================================================ */
 
 /* Load sport/year/category JSON file */
@@ -682,47 +576,4 @@ function loadSport() {
         .catch(err => console.error("Error loading data:", err));
 }
 
-
-/* ============================================================
-   TOP 10 — INITIAL LOAD
-   ============================================================ */
-
-/* Load initial sport data (if any) */
 loadSport();
-
-/* Initialize game and UI once DOM is ready */
-document.addEventListener("DOMContentLoaded", () => {
-    const addBtn = document.getElementById("addPlayerBtn");
-    const removeBtn = document.getElementById("removePlayerBtn");
-
-    // --- LOCAL MODE ONLY ---
-    // These buttons must NEVER modify game.players during multiplayer.
-    addBtn.addEventListener("click", () => {
-        if (roomActive) return;                 // ⬅️ HARD BLOCK
-        if (game.players.length >= 4) return;
-
-        game.players.push({
-            id: crypto.randomUUID(),            // ⬅️ Give local players stable IDs
-            name: `Player ${game.players.length + 1}`,
-            guesses: [],
-            score: 0
-        });
-
-        renderPlayerSetup();
-        renderList();
-    });
-
-    removeBtn.addEventListener("click", () => {
-        if (roomActive) return;                 // ⬅️ HARD BLOCK
-        if (game.players.length <= 1) return;
-
-        game.players.pop();
-
-        if (game.currentPlayerIndex >= game.players.length) {
-            game.currentPlayerIndex = 0;
-        }
-
-        renderPlayerSetup();
-        renderList();
-    });
-});

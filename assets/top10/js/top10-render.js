@@ -194,29 +194,17 @@ function renderResults() {
     const statKey = game.stat;
     const statData = statKey && game.data && game.data[statKey] ? game.data[statKey] : null;
     if (!statData || !Array.isArray(statData.players)) {
-        // If stat data is not present, do not attempt to render results list.
-        // The listener should ensure stat snapshot is available; return early.
         return;
     }
 
-    // Ensure result elements are placed inside the visible resultsSection
-    if (ui && ui.resultsSection) {
-        const rs = ui.resultsSection;
-        if (ui.top10List && ui.top10List.parentElement !== rs) rs.appendChild(ui.top10List);
-        if (ui.resultsWinner && ui.resultsWinner.parentElement !== rs) rs.appendChild(ui.resultsWinner);
-        if (ui.resultsPlayers && ui.resultsPlayers.parentElement !== rs) rs.appendChild(ui.resultsPlayers);
-    }
-
-    // Use existing renderList when possible (keeps behavior consistent)
+    // Render top 10 list (assumes ui.top10List is already in the stat area)
     if (typeof renderList === "function") {
         renderList();
     } else {
-        // Minimal top10 fallback rendering
         const list = statData.players;
         const isPercent = !!statData.isPercent;
-        const total = list.length;
         let html = "<ol>";
-        for (let i = 0; i < total; i++) {
+        for (let i = 0; i < list.length; i++) {
             const item = list[i];
             const norm = normalize(item.name);
             const revealed = game.globalGuessed.includes(norm);
@@ -243,7 +231,7 @@ function renderResults() {
 
     if (ui && ui.resultsWinner) ui.resultsWinner.textContent = winnerText;
 
-    // Render per-player results
+    // Render per-player results (assumes ui.resultsPlayers is owned by resultsSection)
     if (ui && ui.resultsPlayers) {
         ui.resultsPlayers.innerHTML = "";
         const isPercent = !!statData.isPercent;
@@ -416,14 +404,6 @@ function renderUIForState(state = {}) {
         const hidden = !!s.roomActive; // if in a room, hide add/remove
         addBtn.classList.toggle("hidden", hidden);
         removeBtn.classList.toggle("hidden", hidden);
-    }
-
-    // Call small UI helpers to ensure locks/buttons are consistent
-    if (typeof updateActionButton === "function") {
-        try { updateActionButton(); } catch (e) { /* ignore */ }
-    }
-    if (typeof updateGuessInputLock === "function") {
-        try { updateGuessInputLock(); } catch (e) { /* ignore */ }
     }
 
     // Phase change hook (useful for CSS transitions)

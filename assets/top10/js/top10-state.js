@@ -53,11 +53,71 @@ function initUI() {
 
     // Controls / misc
     ui.actionButton = document.getElementById('actionButton');
-    ui.actionBtn = ui.actionButton; // alias for older code
     ui.sportButtons = document.getElementById('sport-buttons');
     ui.mlbCategoryButtons = document.getElementById('mlb-category-buttons');
     ui.yearButtons = document.getElementById('year-buttons');
 }
 
+function initActionButtonHandlers() {
+    if (!ui.actionButton) return;
+
+    ui.actionButton.onclick = () => {
+        const s = game.state;
+
+        if (s === "setup") {
+            if (roomActive && myPlayerId !== hostId) return;
+            startGame();
+        }
+
+        else if (s === "playing") {
+            if (roomActive && myPlayerId !== hostId) return;
+            applyEndGame(game);
+        }
+
+        else if (s === "results") {
+            if (roomActive && myPlayerId !== hostId) return;
+            resetGame();
+        }
+
+        if (roomActive && myPlayerId === hostId) {
+            syncGameState();
+        }
+    };
+}
+
+function initLocalPlayerButtons() {
+    const addBtn = ui.addPlayerBtn;
+    const removeBtn = ui.removePlayerBtn;
+
+    addBtn.onclick = () => {
+        if (roomActive) return;
+        if (game.players.length >= 4) return;
+
+        game.players.push({
+            id: crypto.randomUUID(),
+            name: `Player ${game.players.length + 1}`,
+            guesses: [],
+            score: 0
+        });
+
+        renderUIForState();
+    };
+
+    removeBtn.onclick = () => {
+        if (roomActive) return;
+        if (game.players.length <= 1) return;
+
+        game.players.pop();
+
+        if (game.currentPlayerIndex >= game.players.length) {
+            game.currentPlayerIndex = 0;
+        }
+
+        renderUIForState();
+    };
+}
+
 // Call once during app bootstrap
 initUI();
+initActionButtonHandlers();
+initLocalPlayerButtons();
