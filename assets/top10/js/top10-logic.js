@@ -191,7 +191,7 @@ async function leaveRoom() {
 }
 
 // ---------------------------------------------------------
-// LISTEN TO ROOM (host + players)
+// LISTEN TO (host + players + game)
 // ---------------------------------------------------------
 function listenToRoom(roomCode) {
     // Listen for players joining/leaving
@@ -208,9 +208,82 @@ function listenToRoom(roomCode) {
     });
 }
 
+function listenToPlayers(roomCode) {
+    const playersRef = ref(db, `rooms/${roomCode}/players`);
 
+    onValue(playersRef, (snapshot) => {
+        const playersObj = snapshot.val() || {};
 
+        // Store raw player names keyed by UID
+        game.playerNames = playersObj;
 
+        // Let the renderer handle all UI updates
+        try {
+            renderUIForState(game);
+        } catch (e) {
+            console.error("renderUIForState error:", e);
+        }
+    });
+}
+
+function listenToGame(roomCode) {
+    const gameRef = ref(db, `rooms/${roomCode}/game`);
+
+    onValue(gameRef, (snapshot) => {
+        const fb = snapshot.val() || {};
+
+        // --- CORE GAME STATE ---
+        game.state = fb.state ?? "setup";
+        game.currentPlayerIndex = fb.currentPlayerIndex ?? 0;
+
+        game.globalGuessed = Array.isArray(fb.globalGuessed)
+            ? fb.globalGuessed
+            : [];
+
+        game.sport = fb.sport ?? null;
+        game.category = fb.category ?? null;
+        game.year = fb.year ?? null;
+        game.stat = fb.stat ?? null;
+
+        // --- SYNC PLAYERS ---
+        if (Array.isArray(fb.players)) {
+            game.players = fb.players.map(p => ({
+                id: p.id,
+                name: p.name ?? "Player",
+                guesses: Array.isArray(p.guesses) ? p.guesses : [],
+                score: typeof p.score === "number" ? p.score : 0
+            }));
+        }
+
+        // --- OPTIONAL: STAT SNAPSHOT HYDRATION ---
+        if (fb.stat && Array.isArray(fb.statPlayers)) {
+            if (!game.data) game.data = {};
+            if (!game.data[fb.stat] || !Array.isArray(game.data[fb.stat].players)) {
+                game.data[fb.stat] = {
+                    players: fb.statPlayers,
+                    isPercent: !!fb.statIsPercent
+                };
+            }
+        }
+
+        // --- LOAD STAT DATA IF READY ---
+        const readyForData =
+            game.sport &&
+            (game.sport !== "mlb" || game.category) &&
+            game.year;
+
+        if (readyForData) {
+            try { maybeLoadData(); } catch (e) { console.error(e); }
+        }
+
+        // --- DELEGATE ALL UI UPDATES TO RENDERER ---
+        try {
+            renderUIForState(game);
+        } catch (e) {
+            console.error("renderUIForState error:", e);
+        }
+    });
+}
 
 
 
