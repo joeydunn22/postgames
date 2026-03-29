@@ -1,3 +1,238 @@
+// below functions came from firebase <script> 
+
+// ---------------------------------------------------------
+// AUTH STATE HANDLER
+// ---------------------------------------------------------
+onAuthStateChanged(auth, (user) => {
+    if (!user) return;
+
+    currentUser = user;
+    myPlayerId = user.uid; // REQUIRED FOR MULTIPLAYER IDENTITY
+
+    // Store auth readiness in state
+    game.authReady = true;
+
+    // Renderer handles enabling/disabling buttons
+    renderUIForState(game);
+
+    document.getElementById("roomStatus").textContent = "";
+});
+
+
+// ---------------------------------------------------------
+// ROOM CODE GENERATOR
+// ---------------------------------------------------------
+function generateRoomCode() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let code = "";
+    for (let i = 0; i < 4; i++) {
+        code += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return code;
+}
+
+
+// ---------------------------------------------------------
+// LEAVE CURRENT ROOM
+// ---------------------------------------------------------
+async function leaveCurrentRoom() {
+    if (!currentRoomCode || !currentUser) return;
+
+    const playerRef = ref(db, `rooms/${currentRoomCode}/players/${currentUser.uid}`);
+    await remove(playerRef);
+
+    currentRoomCode = null;
+    roomActive = false;
+
+    // Renderer handles button visibility
+    renderUIForState(game);
+
+    document.getElementById("roomCodeDisplay").textContent = "";
+    document.getElementById("roomStatus").textContent = "Left room.";
+}
+
+
+// ---------------------------------------------------------
+// CREATE ROOM
+// ---------------------------------------------------------
+async function createRoom() {
+
+    if (roomActive) {
+        document.getElementById("roomStatus").textContent = "You are already in a room.";
+        setTimeout(() => {
+            document.getElementById("roomStatus").textContent = "";
+        }, 2000);
+        return;
+    }
+
+    await leaveCurrentRoom();
+
+    const roomCode = generateRoomCode();
+
+    // Host ID
+    await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
+
+    // Identity entry
+    await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
+        id: currentUser.uid,
+        name: "Player 1",
+        guesses: [],
+        score: 0
+    });
+
+    // GAME STATE ENTRY
+    await set(ref(db, `rooms/${roomCode}/game`), {
+        players: [
+            {
+                id: currentUser.uid,
+                name: "Player 1",
+                guesses: [],
+                score: 0
+            }
+        ],
+        currentPlayerIndex: 0,
+        globalGuessed: [],
+        state: "playing",
+        sport: null,
+        category: null,
+        year: null,
+        stat: null
+    });
+
+    currentRoomCode = roomCode;
+    roomActive = true;
+
+    // Renderer handles UI visibility
+    renderUIForState(game);
+
+    document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
+    document.getElementById("roomStatus").textContent = "Room created successfully.";
+
+    listenToRoom(roomCode);
+    listenToPlayers(roomCode);
+    listenToGame(roomCode);
+    listenToPendingGuess(roomCode);
+}
+
+window.createRoom = createRoom;
+
+
+// ---------------------------------------------------------
+// JOIN ROOM
+// ---------------------------------------------------------
+async function joinRoom(roomCode) {
+    roomCode = roomCode.trim().toUpperCase();
+    if (!roomCode) {
+        document.getElementById("roomStatus").textContent = "Please enter a room code.";
+        return;
+    }
+
+    const roomRef = ref(db, "rooms/" + roomCode);
+
+    onValue(roomRef, async (snapshot) => {
+        const roomData = snapshot.val();
+
+        if (!roomData) {
+            document.getElementById("roomStatus").textContent = "Room not found.";
+            return;
+        }
+
+        await leaveCurrentRoom();
+
+        // Add identity entry
+        const playersRef = ref(db, `rooms/${roomCode}/players`);
+        await update(playersRef, {
+            [currentUser.uid]: {
+                id: currentUser.uid,
+                name: "Player",
+                guesses: [],
+                score: 0
+            }
+        });
+
+        // Add to game.players array
+        const gamePlayersRef = ref(db, `rooms/${roomCode}/game/players`);
+        const gamePlayersSnap = await get(gamePlayersRef);
+        const gamePlayers = gamePlayersSnap.val() || [];
+
+        gamePlayers.push({
+            id: currentUser.uid,
+            name: "Player",
+            guesses: [],
+            score: 0
+        });
+
+        await set(gamePlayersRef, gamePlayers);
+
+        currentRoomCode = roomCode;
+        roomActive = true;
+
+        // Renderer handles UI visibility
+        renderUIForState(game);
+
+        document.getElementById("roomCodeDisplay").textContent = "Room Code: " + roomCode;
+        document.getElementById("roomStatus").textContent = "Joined room successfully.";
+
+        listenToRoom(roomCode);
+        listenToPlayers(roomCode);
+        listenToGame(roomCode);
+        listenToPendingGuess(roomCode);
+    }, { onlyOnce: true });
+}
+
+window.joinRoom = joinRoom;
+
+
+// ---------------------------------------------------------
+// LEAVE ROOM (UI BUTTON)
+// ---------------------------------------------------------
+async function leaveRoom() {
+    await leaveCurrentRoom();
+
+    // Clear UI and reset local players
+    document.getElementById("playerNameInputs").innerHTML = "";
+    resetLocalPlayersToOne();
+
+    renderUIForState(game);
+}
+
+window.leaveRoom = leaveRoom;
+
+
+// ---------------------------------------------------------
+// LISTEN TO ROOM (host + players)
+// ---------------------------------------------------------
+function listenToRoom(roomCode) {
+    // Listen for players joining/leaving
+    const playersRef = ref(db, `rooms/${roomCode}/players`);
+    onValue(playersRef, (snapshot) => {
+        const players = snapshot.val() || {};
+        // No UI logic here — renderer handles everything
+    });
+
+    // Listen for host ID
+    const hostRef = ref(db, `rooms/${roomCode}/host`);
+    onValue(hostRef, (snapshot) => {
+        hostId = snapshot.val();
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------
+// --------------------------------------------------------------
+// --------------------------------------------------------------
+// --------------------------------------------------------------
+// --------------------------------------------------------------
 // all new functions will live here for now until reorganization
 
 function syncGameState() {
