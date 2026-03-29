@@ -248,18 +248,8 @@ function renderResults() {
     ui.resultsSection.classList.remove("hidden");
     ui.currentPlayerDisplay.classList.add("hidden");
     ui.playersContainer.classList.add("hidden");
-
-    // Restore local add/remove buttons
-    document.getElementById("addPlayerBtn").style.display = "inline-block";
-    document.getElementById("removePlayerBtn").style.display = "inline-block";
 }
 
-
-
-
-
-
-// new renderer
 
 /* ============================================================
    TOP 10 — DECLARATIVE RENDERER
@@ -406,3 +396,18 @@ function renderUIForState(state = {}) {
         // document.body.dataset.phase = phase;
     }
 }
+
+
+
+
+// Expose renderer + helpers globally so logic and Firebase listeners can call them
+window.renderUIForState = renderUIForState;
+window.renderPlayerNames = renderPlayerNames;
+window.renderList = renderList;
+window.renderResults = renderResults;
+
+window.resetStatUI = resetStatUI;
+window.populateStatDropdown = populateStatDropdown;
+window.resetLocalPlayersToOne = resetLocalPlayersToOne;
+
+window.initRenderer = initRenderer;
