@@ -8,16 +8,9 @@
 onAuthStateChanged(auth, (user) => {
     if (!user) return;
 
-    currentUser = user;
-    myPlayerId = user.uid; // REQUIRED FOR MULTIPLAYER IDENTITY
-
-    // Store auth readiness in state
-    game.authReady = true;
-
-    // Renderer handles enabling/disabling buttons
+    setAuthState(user);
     renderUIForState(game);
-
-    document.getElementById("roomStatus").textContent = "";
+    onAuthUIUpdate();
 });
 
 function generateRoomCode() {
