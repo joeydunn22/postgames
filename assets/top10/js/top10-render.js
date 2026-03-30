@@ -254,99 +254,6 @@ function renderResults() {
 /* ============================================================
    4. MAIN RENDER FUNCTION
    ============================================================ */
-function initEventHandlers() {
-    // --- GUESS INPUT (Enter key) ---
-    if (ui.input) {
-        ui.input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") onGuessSubmit();
-        });
-    }
-
-    // --- SUBMIT GUESS BUTTON ---
-    if (ui.submitGuessBtn) {
-        ui.submitGuessBtn.addEventListener("click", () => onGuessSubmit());
-    }
-
-    // --- STAT SELECT ---
-    if (ui.statSelect) {
-        ui.statSelect.addEventListener("change", () => {
-            const selected = ui.statSelect.value || null;
-
-            // Local mode
-            if (!roomActive) {
-                game.stat = selected;
-                if (selected) startGame();
-                return;
-            }
-
-            // Multiplayer — only host can set stat and start game
-            if (myPlayerId === hostId) {
-                update(ref(db, `rooms/${currentRoomCode}/game`), { stat: selected });
-                if (selected) startGame();
-            }
-        });
-    }
-
-    // --- SPORT BUTTONS ---
-    if (ui.sportButtons) {
-        ui.sportButtons.querySelectorAll('.pg-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const sport = btn.dataset.sport;
-
-                if (!roomActive) {
-                    game.sport = sport;
-                    game.category = null;
-                    game.year = null;
-                    game.stat = null;
-                    renderUIForState(game);
-                    return;
-                }
-
-                set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
-            });
-        });
-    }
-
-    // --- MLB CATEGORY BUTTONS ---
-    if (ui.mlbCategoryButtons) {
-        ui.mlbCategoryButtons.querySelectorAll('.pg-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.dataset.category;
-
-                if (!roomActive) {
-                    game.category = category;
-                    game.stat = null;
-                    renderUIForState(game);
-                    return;
-                }
-
-                set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
-            });
-        });
-    }
-
-    // --- YEAR BUTTONS ---
-    if (ui.yearButtons) {
-        ui.yearButtons.querySelectorAll('.pg-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const year = btn.dataset.year;
-
-                if (!roomActive) {
-                    if (!game.sport) return;
-                    if (game.sport === "mlb" && !game.category) return;
-
-                    game.year = year;
-                    game.stat = null;
-                    renderUIForState(game);
-                    return;
-                }
-
-                set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
-            });
-        });
-    }
-}
-
 function renderUIForState(state = {}) {
     // Accept either the full game object or a partial state object
     const s = state.state ? state : game;
@@ -481,9 +388,8 @@ function initEventHandlers() {
     }
 
     // --- SUBMIT GUESS BUTTON ---
-    const submitBtn = document.getElementById("submitGuessBtn");
-    if (submitBtn) {
-        submitBtn.addEventListener("click", () => onGuessSubmit());
+    if (ui.submitGuessBtn) {
+        ui.submitGuessBtn.addEventListener("click", () => onGuessSubmit());
     }
 
     // --- STAT SELECT ---
@@ -507,57 +413,63 @@ function initEventHandlers() {
     }
 
     // --- SPORT BUTTONS ---
-    document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const sport = btn.dataset.sport;
+    if (ui.sportButtons) {
+        ui.sportButtons.querySelectorAll('.pg-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const sport = btn.dataset.sport;
 
-            if (!roomActive) {
-                game.sport = sport;
-                game.category = null;
-                game.year = null;
-                game.stat = null;
-                renderUIForState(game);
-                return;
-            }
+                if (!roomActive) {
+                    game.sport = sport;
+                    game.category = null;
+                    game.year = null;
+                    game.stat = null;
+                    renderUIForState(game);
+                    return;
+                }
 
-            set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
+                set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
+            });
         });
-    });
+    }
 
     // --- MLB CATEGORY BUTTONS ---
-    document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const category = btn.dataset.category;
+    if (ui.mlbCategoryButtons) {
+        ui.mlbCategoryButtons.querySelectorAll('.pg-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
 
-            if (!roomActive) {
-                game.category = category;
-                game.stat = null;
-                renderUIForState(game);
-                return;
-            }
+                if (!roomActive) {
+                    game.category = category;
+                    game.stat = null;
+                    renderUIForState(game);
+                    return;
+                }
 
-            set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
+                set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
+            });
         });
-    });
+    }
 
     // --- YEAR BUTTONS ---
-    document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const year = btn.dataset.year;
+    if (ui.yearButtons) {
+        ui.yearButtons.querySelectorAll('.pg-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const year = btn.dataset.year;
 
-            if (!roomActive) {
-                if (!game.sport) return;
-                if (game.sport === "mlb" && !game.category) return;
+                if (!roomActive) {
+                    if (!game.sport) return;
+                    if (game.sport === "mlb" && !game.category) return;
 
-                game.year = year;
-                game.stat = null;
-                renderUIForState(game);
-                return;
-            }
+                    game.year = year;
+                    game.stat = null;
+                    renderUIForState(game);
+                    return;
+                }
 
-            set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
+                set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
+            });
         });
-    });
+    }
 }
 
 /* ============================================================
