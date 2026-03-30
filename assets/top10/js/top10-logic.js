@@ -1,8 +1,10 @@
-// below functions came from firebase <script> 
+/* ============================================================
+   TOP 10 — LOGIC (Organized)
+   ============================================================ */
 
-// ---------------------------------------------------------
-// AUTH STATE HANDLER
-// ---------------------------------------------------------
+/* ============================================================
+   1. AUTH & IDENTITY
+   ============================================================ */
 onAuthStateChanged(auth, (user) => {
     if (!user) return;
 
@@ -18,10 +20,6 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById("roomStatus").textContent = "";
 });
 
-
-// ---------------------------------------------------------
-// ROOM CODE GENERATOR
-// ---------------------------------------------------------
 function generateRoomCode() {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let code = "";
@@ -31,10 +29,6 @@ function generateRoomCode() {
     return code;
 }
 
-
-// ---------------------------------------------------------
-// LEAVE CURRENT ROOM
-// ---------------------------------------------------------
 async function leaveCurrentRoom() {
     if (!currentRoomCode || !currentUser) return;
 
@@ -51,10 +45,9 @@ async function leaveCurrentRoom() {
     document.getElementById("roomStatus").textContent = "Left room.";
 }
 
-
-// ---------------------------------------------------------
-// CREATE ROOM
-// ---------------------------------------------------------
+/* ============================================================
+   2. ROOM & MULTIPLAYER LOGIC
+   ============================================================ */
 async function createRoom() {
 
     if (roomActive) {
@@ -114,9 +107,6 @@ async function createRoom() {
     listenToPendingGuess(roomCode);
 }
 
-// ---------------------------------------------------------
-// JOIN ROOM
-// ---------------------------------------------------------
 async function joinRoom(roomCode) {
     roomCode = roomCode.trim().toUpperCase();
     if (!roomCode) {
@@ -177,9 +167,6 @@ async function joinRoom(roomCode) {
     }, { onlyOnce: true });
 }
 
-// ---------------------------------------------------------
-// LEAVE ROOM (UI BUTTON)
-// ---------------------------------------------------------
 async function leaveRoom() {
     await leaveCurrentRoom();
 
@@ -190,9 +177,31 @@ async function leaveRoom() {
     renderUIForState(game);
 }
 
-// ---------------------------------------------------------
-// LISTEN TO (host + players + game)
-// ---------------------------------------------------------
+async function sendGuessToHost(rawGuess) {
+    if (!currentRoomCode) return;
+    if (!rawGuess) return;
+
+    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
+
+    try {
+        await set(pendingRef, {
+            playerId: myPlayerId,
+            guess: rawGuess,
+            timestamp: Date.now()
+        });
+    } catch (e) {
+        console.error("sendGuessToHost failed:", e);
+        return;
+    }
+
+    if (ui && ui.input) {
+        ui.input.value = "";
+    }
+}
+
+/* ============================================================
+   3. FIREBASE LISTENERS
+   ============================================================ */
 function listenToRoom(roomCode) {
     // Listen for players joining/leaving
     const playersRef = ref(db, `rooms/${roomCode}/players`);
@@ -285,44 +294,26 @@ function listenToGame(roomCode) {
     });
 }
 
+function listenToPendingGuess(roomCode) {
+    const pendingRef = ref(db, `rooms/${roomCode}/pendingGuess`);
 
+    onValue(pendingRef, (snapshot) => {
+        const pending = snapshot.val();
+        if (!pending) return;
 
+        if (game.state === "results") return;
+        if (myPlayerId !== hostId) return;
 
+        const currentPlayer = game.players[game.currentPlayerIndex];
+        if (!currentPlayer || currentPlayer.id !== pending.playerId) return;
 
-
-
-
-// --------------------------------------------------------------
-// --------------------------------------------------------------
-// --------------------------------------------------------------
-// --------------------------------------------------------------
-// --------------------------------------------------------------
-// all new functions will live here for now until reorganization
-
-function syncGameState() {
-    if (!currentRoomCode) return;
-
-    const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
-    update(gameRef, {
-        state: game.state,
-        players: game.players,
-        currentPlayerIndex: game.currentPlayerIndex,
-        globalGuessed: game.globalGuessed,
-        sport: game.sport,
-        category: game.category,
-        year: game.year,
-        stat: game.stat
+        hostProcessGuess(pending);
     });
 }
 
-function applyEndGame() {
-    game.state = "results";
-
-    if (roomActive && myPlayerId === hostId) {
-        syncGameState();
-    }
-}
-
+/* ============================================================
+   4. GAME FLOW (START / END / RESET)
+   ============================================================ */
 function startGame() {
     if (game.state !== "setup") return;
     if (!game.stat) return;
@@ -346,6 +337,14 @@ function startGame() {
     }
 }
 
+function applyEndGame() {
+    game.state = "results";
+
+    if (roomActive && myPlayerId === hostId) {
+        syncGameState();
+    }
+}
+
 function resetGame() {
     game.state = "setup";
     game.currentPlayerIndex = 0;
@@ -364,170 +363,41 @@ function resetGame() {
     }
 }
 
-function maybeLoadData() {
+function syncGameState() {
+    if (!currentRoomCode) return;
 
-    if (!game.sport) return;
-    if (game.sport === "mlb" && !game.category) return;
-    if (!game.year) return;
-
-    loadSport();
+    const gameRef = ref(db, `rooms/${currentRoomCode}/game`);
+    update(gameRef, {
+        state: game.state,
+        players: game.players,
+        currentPlayerIndex: game.currentPlayerIndex,
+        globalGuessed: game.globalGuessed,
+        sport: game.sport,
+        category: game.category,
+        year: game.year,
+        stat: game.stat
+    });
 }
 
 
 /* ============================================================
-   TOP 10 — EVENT LISTENERS
+   5. GUESS FLOW (LOCAL + HOST)
    ============================================================ */
+function onGuessSubmit() {
+    const rawGuess = ui.input.value.trim();
+    if (!rawGuess) return;
 
-/* Handle Enter key for submitting guesses */
-ui.input.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") {
-        onGuessSubmit();
-    }
-});
+    ui.input.value = "";
 
-/* Handle Submit Guess button */
-document.getElementById("submitGuessBtn").addEventListener("click", () => {
-    onGuessSubmit();
-});
+    if (game.state !== "playing") return;
 
-ui.statSelect.addEventListener("change", () => {
-    const selected = ui.statSelect.value || null;
+    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
+    if (myIndex !== game.currentPlayerIndex) return;
 
-    // Local mode
-    if (!roomActive) {
-        game.stat = selected;
-        if (selected) startGame();
-        return;
-    }
-
-    // Multiplayer — only host can set stat and start game
     if (myPlayerId === hostId) {
-        update(ref(db, `rooms/${currentRoomCode}/game`), { stat: selected });
-        if (selected) startGame();
-    }
-});
-
-// eventually change the below 3 into functions
-document.querySelectorAll('#sport-buttons .pg-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const sport = btn.dataset.sport;
-
-        if (!roomActive) {
-            // SINGLE‑PLAYER MODE
-            game.sport = sport;
-            game.category = null;
-            game.year = null;
-            game.stat = null;
-
-            renderUIForState(game);
-            return;
-        }
-
-        // MULTIPLAYER MODE
-        set(ref(db, `rooms/${currentRoomCode}/game/sport`), sport);
-    });
-});
-
-document.querySelectorAll('#mlb-category-buttons .pg-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const category = btn.dataset.category;
-
-        if (!roomActive) {
-            // SINGLE‑PLAYER MODE
-            game.category = category;
-            game.stat = null;
-
-            renderUIForState(game);
-            return;
-        }
-
-        // MULTIPLAYER MODE
-        set(ref(db, `rooms/${currentRoomCode}/game/category`), category);
-    });
-});
-
-document.querySelectorAll('#year-buttons .pg-button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const year = btn.dataset.year;
-
-        if (!roomActive) {
-            // SINGLE‑PLAYER MODE
-            if (!game.sport) return;
-            if (game.sport === "mlb" && !game.category) return;
-
-            game.year = year;
-            game.stat = null;
-
-            renderUIForState(game);
-            return;
-        }
-
-        // MULTIPLAYER MODE
-        set(ref(db, `rooms/${currentRoomCode}/game/year`), year);
-    });
-});
-
-
-
-/* ============================================================
-   TOP 10 — CORE GUESS LOGIC FUNCTIONS
-   ============================================================ */
-
-function applyWrongGuess(game) {
-    game.currentPlayerIndex =
-        (game.currentPlayerIndex + 1) % game.players.length;
-}
-
-function applyCorrectGuess(game, matchedAnswer) {
-    const normalized = normalize(matchedAnswer.name);
-
-    game.globalGuessed.push(normalized);
-
-    const player = game.players[game.currentPlayerIndex];
-    player.guesses.push(matchedAnswer);
-    player.score++;
-
-    game.currentPlayerIndex =
-        (game.currentPlayerIndex + 1) % game.players.length;
-
-    const totalAnswers = game.data[game.stat].players.length;
-    return game.globalGuessed.length === totalAnswers;
-}
-
-function playGuessAnimation(type) {
-    const inputEl = ui && ui.input;
-    if (!inputEl) return;
-
-    const playerCols = ui.playersContainer.querySelectorAll(".player-column");
-    const playerCol = playerCols && playerCols[game.currentPlayerIndex];
-
-    const map = {
-        correct: { input: "correct-flash", player: "player-correct" },
-        duplicate: { input: "duplicate-flash", player: "player-duplicate" },
-        wrong: { input: "wrong-flash", player: "player-wrong" }
-    };
-
-    const classes = map[type];
-    if (!classes) return;
-
-    try {
-        inputEl.classList.remove(classes.input);
-        void inputEl.offsetWidth;
-        inputEl.classList.add(classes.input);
-        setTimeout(() => inputEl.classList.remove(classes.input), 700);
-    } catch (e) {
-        console.warn("input animation failed", e);
-    }
-
-    if (playerCol) {
-        try {
-            playerCol.classList.remove(classes.player);
-            void playerCol.offsetWidth;
-            playerCol.classList.add(classes.player);
-            setTimeout(() => playerCol.classList.remove(classes.player), 700);
-        } catch (e) {
-            console.warn("player animation failed", e);
-        }
+        handleLocalGuess(rawGuess);
+    } else {
+        sendGuessToHost(rawGuess);
     }
 }
 
@@ -574,45 +444,6 @@ function handleLocalGuess(rawGuess) {
     syncGameState();
 }
 
-async function sendGuessToHost(rawGuess) {
-    if (!currentRoomCode) return;
-    if (!rawGuess) return;
-
-    const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
-
-    try {
-        await set(pendingRef, {
-            playerId: myPlayerId,
-            guess: rawGuess,
-            timestamp: Date.now()
-        });
-    } catch (e) {
-        console.error("sendGuessToHost failed:", e);
-        return;
-    }
-
-    if (ui && ui.input) {
-        ui.input.value = "";
-    }
-}
-
-function listenToPendingGuess(roomCode) {
-    const pendingRef = ref(db, `rooms/${roomCode}/pendingGuess`);
-
-    onValue(pendingRef, (snapshot) => {
-        const pending = snapshot.val();
-        if (!pending) return;
-
-        if (game.state === "results") return;
-        if (myPlayerId !== hostId) return;
-
-        const currentPlayer = game.players[game.currentPlayerIndex];
-        if (!currentPlayer || currentPlayer.id !== pending.playerId) return;
-
-        hostProcessGuess(pending);
-    });
-}
-
 async function hostProcessGuess(pending) {
     const rawGuess = pending?.guess;
     if (!rawGuess) return;
@@ -630,95 +461,76 @@ async function hostProcessGuess(pending) {
     await set(pendingRef, null);
 }
 
-function onGuessSubmit() {
-    const rawGuess = ui.input.value.trim();
-    if (!rawGuess) return;
+function applyCorrectGuess(game, matchedAnswer) {
+    const normalized = normalize(matchedAnswer.name);
 
-    ui.input.value = "";
+    game.globalGuessed.push(normalized);
 
-    if (game.state !== "playing") return;
+    const player = game.players[game.currentPlayerIndex];
+    player.guesses.push(matchedAnswer);
+    player.score++;
 
-    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
-    if (myIndex !== game.currentPlayerIndex) return;
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
 
-    if (myPlayerId === hostId) {
-        handleLocalGuess(rawGuess);
-    } else {
-        sendGuessToHost(rawGuess);
-    }
+    const totalAnswers = game.data[game.stat].players.length;
+    return game.globalGuessed.length === totalAnswers;
 }
 
-
-
-/* ============================================================
-   TOP 10 — MATCHING + NORMALIZATION
-   ============================================================ */
-
-/* Normalize strings for matching */
-function normalize(str) {
-    return str
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9 ]/g, "")
-        .replace(/\s+/g, " ")
-        .trim();
+function applyWrongGuess(game) {
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
 }
 
-/* Compute Levenshtein distance */
-function levenshtein(a, b) {
-    const matrix = [];
+function playGuessAnimation(type) {
+    const inputEl = ui && ui.input;
+    if (!inputEl) return;
 
-    for (let i = 0; i <= b.length; i++) {
-        matrix[i] = [i];
-    }
-    for (let j = 0; j <= a.length; j++) {
-        matrix[0][j] = j;
+    const playerCols = ui.playersContainer.querySelectorAll(".player-column");
+    const playerCol = playerCols && playerCols[game.currentPlayerIndex];
+
+    const map = {
+        correct: { input: "correct-flash", player: "player-correct" },
+        duplicate: { input: "duplicate-flash", player: "player-duplicate" },
+        wrong: { input: "wrong-flash", player: "player-wrong" }
+    };
+
+    const classes = map[type];
+    if (!classes) return;
+
+    try {
+        inputEl.classList.remove(classes.input);
+        void inputEl.offsetWidth;
+        inputEl.classList.add(classes.input);
+        setTimeout(() => inputEl.classList.remove(classes.input), 700);
+    } catch (e) {
+        console.warn("input animation failed", e);
     }
 
-    for (let i = 1; i <= b.length; i++) {
-        for (let j = 1; j <= a.length; j++) {
-            if (b.charAt(i - 1) === a.charAt(j - 1)) {
-                matrix[i][j] = matrix[i - 1][j - 1];
-            } else {
-                matrix[i][j] = Math.min(
-                    matrix[i - 1][j - 1] + 1,
-                    matrix[i][j - 1] + 1,
-                    matrix[i - 1][j] + 1
-                );
-            }
+    if (playerCol) {
+        try {
+            playerCol.classList.remove(classes.player);
+            void playerCol.offsetWidth;
+            playerCol.classList.add(classes.player);
+            setTimeout(() => playerCol.classList.remove(classes.player), 700);
+        } catch (e) {
+            console.warn("player animation failed", e);
         }
     }
-
-    return matrix[b.length][a.length];
 }
-
-/* Determine if a guess matches an answer */
-function isMatch(guess, answer) {
-    const g = normalize(guess);
-    const a = normalize(answer);
-
-    if (g === a) return true;
-
-    const parts = a.split(" ");
-    const last = parts[parts.length - 1];
-    const first = parts[0];
-
-    if (g === last) return true;
-    if (g === first) return true;
-
-    if (levenshtein(g, a) <= 2) return true;
-    if (levenshtein(g, last) <= 1) return true;
-
-    return false;
-}
-
 
 /* ============================================================
-   TOP 10 — INITIAL LOAD
+   6. DATA & UTILITIES
    ============================================================ */
+function maybeLoadData() {
 
-/* Load sport/year/category JSON file */
+    if (!game.sport) return;
+    if (game.sport === "mlb" && !game.category) return;
+    if (!game.year) return;
+
+    loadSport();
+}
+
 function loadSport() {
     let file = "";
 
@@ -768,44 +580,107 @@ function loadSport() {
         .catch(err => console.error("Error loading data:", err));
 }
 
-loadSport();
+function normalize(str) {
+    return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9 ]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
 
+function levenshtein(a, b) {
+    const matrix = [];
+
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
+}
+
+function isMatch(guess, answer) {
+    const g = normalize(guess);
+    const a = normalize(answer);
+
+    if (g === a) return true;
+
+    const parts = a.split(" ");
+    const last = parts[parts.length - 1];
+    const first = parts[0];
+
+    if (g === last) return true;
+    if (g === first) return true;
+
+    if (levenshtein(g, a) <= 2) return true;
+    if (levenshtein(g, last) <= 1) return true;
+
+    return false;
+}
 
 /* ============================================================
-   PUBLIC API — EXPORTED FOR RENDERER, HTML, AND FIREBASE
+   7. PUBLIC API EXPORT
    ============================================================ */
+const PUBLIC_API = {
+    // Room / multiplayer controls
+    createRoom,
+    joinRoom,
+    leaveRoom,
 
-// Room / multiplayer controls
-window.createRoom = createRoom;
-window.joinRoom = joinRoom;
-window.leaveRoom = leaveRoom;
+    // Firebase listeners
+    listenToRoom,
+    listenToPlayers,
+    listenToGame,
+    listenToPendingGuess,
 
-// Firebase listeners
-window.listenToRoom = listenToRoom;
-window.listenToPlayers = listenToPlayers;
-window.listenToGame = listenToGame;
-window.listenToPendingGuess = listenToPendingGuess;
+    // Game flow
+    startGame,
+    applyEndGame,
+    resetGame,
+    syncGameState,
 
-// Game flow
-window.startGame = startGame;
-window.applyEndGame = applyEndGame;
-window.resetGame = resetGame;
-window.syncGameState = syncGameState;
+    // Guess handling
+    applyWrongGuess,
+    applyCorrectGuess,
+    playGuessAnimation,
+    handleLocalGuess,
+    sendGuessToHost,
+    hostProcessGuess,
+    onGuessSubmit,
 
-// Guess handling
-window.applyWrongGuess = applyWrongGuess;
-window.applyCorrectGuess = applyCorrectGuess;
-window.playGuessAnimation = playGuessAnimation;
-window.handleLocalGuess = handleLocalGuess;
-window.sendGuessToHost = sendGuessToHost;
-window.hostProcessGuess = hostProcessGuess;
-window.onGuessSubmit = onGuessSubmit;
+    // Data loading / stat loading
+    maybeLoadData,
+    loadSport,
 
-// Data loading / stat loading
-window.maybeLoadData = maybeLoadData;
-window.loadSport = loadSport;
+    // Utility functions used across modules
+    normalize,
+    levenshtein,
+    isMatch
+};
 
-// Utility functions used across modules
-window.normalize = normalize;
-window.levenshtein = levenshtein;
-window.isMatch = isMatch;
+// Attach everything automatically
+Object.entries(PUBLIC_API).forEach(([name, fn]) => {
+    if (typeof fn === "function") {
+        window[name] = fn;
+    } else {
+        console.warn(`PUBLIC_API: ${name} is not a function`);
+    }
+});
