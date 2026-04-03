@@ -174,7 +174,6 @@ async function sendGuessToHost(rawGuess) {
         });
     } catch (e) {
         console.error("sendGuessToHost failed:", e);
-        game.isGuessLocked = false;
         return;
     }
 
@@ -244,6 +243,7 @@ function listenToGame(roomCode) {
         game.category = fb.category ?? null;
         game.year = fb.year ?? null;
         game.stat = fb.stat ?? null;
+        game.isGuessLocked = fb.isGuessLocked ?? false;
 
         // --- SYNC PLAYERS ---
         if (Array.isArray(fb.players)) {
@@ -366,7 +366,8 @@ function syncGameState() {
         sport: game.sport,
         category: game.category,
         year: game.year,
-        stat: game.stat
+        stat: game.stat,
+        isGuessLocked: game.isGuessLocked
     });
 }
 
@@ -442,7 +443,6 @@ async function hostProcessGuess(pending) {
     if (!currentPlayer || currentPlayer.id !== pending.playerId) {
         const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
         await set(pendingRef, null);
-        game.isGuessLocked = false;
         return;
     }
 
