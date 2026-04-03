@@ -31,7 +31,9 @@ window.game = {
 
     authReady: false,
 
-    data: {}   // local-only stat data
+    isGuessLocked: false,
+
+    data: {}   // local-only stat data    
 };
 
 

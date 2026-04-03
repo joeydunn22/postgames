@@ -160,9 +160,13 @@ async function sendGuessToHost(rawGuess) {
     if (!currentRoomCode) return;
     if (!rawGuess) return;
 
+    // NEW: don't send if a guess is already pending
+    if (game.isGuessLocked) return;
+
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
 
     try {
+        game.isGuessLocked = true;
         await set(pendingRef, {
             playerId: myPlayerId,
             guess: rawGuess,
@@ -170,6 +174,7 @@ async function sendGuessToHost(rawGuess) {
         });
     } catch (e) {
         console.error("sendGuessToHost failed:", e);
+        game.isGuessLocked = false;
         return;
     }
 
@@ -373,12 +378,15 @@ function onGuessSubmit() {
     const rawGuess = ui.input.value.trim();
     if (!rawGuess) return;
 
-    ui.input.value = "";
-
     if (game.state !== "playing") return;
+
+    // NEW: don't allow input while a guess is being processed
+    if (game.isGuessLocked) return;
 
     const myIndex = game.players.findIndex(p => p.id === myPlayerId);
     if (myIndex !== game.currentPlayerIndex) return;
+
+    ui.input.value = "";
 
     if (myPlayerId === hostId) {
         handleLocalGuess(rawGuess);
@@ -388,45 +396,39 @@ function onGuessSubmit() {
 }
 
 function handleLocalGuess(rawGuess) {
-    const guess = normalize(rawGuess);
-    if (!guess) return;
+    const result = processGuess(rawGuess, myPlayerId);
 
-    const answers = game.data[game.stat].players;
-    const matches = answers.filter(a => isMatch(guess, a.name));
+    // --- INVALID GUESS CASES ---
+    if (!result.ok) {
+        if (result.reason === "duplicate") {
+            playGuessAnimation("duplicate");
+        } else if (result.reason === "ambiguous") {
+            alert(
+                "Multiple players match:\n\n" +
+                result.matches.map(m => m.name).join("\n")
+            );
+        } else {
+            // empty, no-data, not-your-turn, etc.
+            playGuessAnimation("wrong");
+        }
+        return;
+    }
 
-    // Wrong
-    if (matches.length === 0) {
+    // --- VALID GUESS ---
+    if (result.correct) {
+        playGuessAnimation("correct");
+    } else {
         playGuessAnimation("wrong");
-        applyWrongGuess(game);
-        syncGameState();
-        return;
     }
 
-    // Multiple
-    if (matches.length > 1) {
-        alert("Multiple players match:\n\n" + matches.map(m => m.name).join("\n"));
-        return;
-    }
-
-    const matched = matches[0];
-    const normalizedAnswer = normalize(matched.name);
-
-    // Duplicate
-    if (game.globalGuessed.includes(normalizedAnswer)) {
-        playGuessAnimation("duplicate");
-        return;
-    }
-
-    // Correct
-    const isComplete = applyCorrectGuess(game, matched);
-    playGuessAnimation("correct");
-
-    if (isComplete) {
+    // --- END GAME ---
+    if (result.isComplete) {
         applyEndGame();
         syncGameState();
         return;
     }
 
+    // --- NORMAL TURN ROTATION ---
     syncGameState();
 }
 
@@ -434,17 +436,39 @@ async function hostProcessGuess(pending) {
     const rawGuess = pending?.guess;
     if (!rawGuess) return;
 
+    if (game.state !== "playing") return;
+
     const currentPlayer = game.players[game.currentPlayerIndex];
     if (!currentPlayer || currentPlayer.id !== pending.playerId) {
         const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
         await set(pendingRef, null);
+        game.isGuessLocked = false;
         return;
     }
 
-    handleLocalGuess(rawGuess);
+    game.isGuessLocked = true;
+
+    const result = processGuess(rawGuess, pending.playerId);
+
+    // Handle UI‑side effects separately (next step)
+    if (result.correct) {
+        playGuessAnimation("correct");
+    } else if (result.reason === "duplicate") {
+        playGuessAnimation("duplicate");
+    } else if (result.ok === true && result.correct === false) {
+        playGuessAnimation("wrong");
+    }
+
+    if (result.isComplete) {
+        applyEndGame();
+    }
+
+    syncGameState();
 
     const pendingRef = ref(db, `rooms/${currentRoomCode}/pendingGuess`);
     await set(pendingRef, null);
+
+    game.isGuessLocked = false;
 }
 
 function applyCorrectGuess(game, matchedAnswer) {
@@ -503,6 +527,55 @@ function playGuessAnimation(type) {
             console.warn("player animation failed", e);
         }
     }
+}
+
+// NEW //
+function processGuess(rawGuess, playerId) {
+    const guess = normalize(rawGuess);
+    if (!guess) return { ok: false, reason: "empty" };
+
+    const answers = game.data[game.stat]?.players;
+    if (!answers) return { ok: false, reason: "no-data" };
+
+    const matches = answers.filter(a => isMatch(guess, a.name));
+
+    // Wrong
+    if (matches.length === 0) {
+        return { ok: true, correct: false };
+    }
+
+    // Multiple matches
+    if (matches.length > 1) {
+        return { ok: false, reason: "ambiguous", matches };
+    }
+
+    const matched = matches[0];
+    const normalizedAnswer = normalize(matched.name);
+
+    // Duplicate
+    if (game.globalGuessed.includes(normalizedAnswer)) {
+        return { ok: false, reason: "duplicate" };
+    }
+
+    // Correct
+    const player = game.players[game.currentPlayerIndex];
+    if (!player || player.id !== playerId) {
+        return { ok: false, reason: "not-your-turn" };
+    }
+
+    // Apply correct guess
+    game.globalGuessed.push(normalizedAnswer);
+    player.guesses.push(matched);
+    player.score++;
+
+    const totalAnswers = answers.length;
+    const isComplete = game.globalGuessed.length === totalAnswers;
+
+    // Rotate turn
+    game.currentPlayerIndex =
+        (game.currentPlayerIndex + 1) % game.players.length;
+
+    return { ok: true, correct: true, matched, isComplete };
 }
 
 /* ============================================================
