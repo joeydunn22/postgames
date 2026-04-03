@@ -374,7 +374,7 @@ function syncGameState() {
 }
 
 // NEW //
-function transition(nextState) {
+export function transition(nextState) {
     const prev = game.state;
 
     const allowed = {

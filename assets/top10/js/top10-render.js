@@ -3,6 +3,7 @@
    ============================================================ */
 
 import { GAME_STATES } from './top10-state.js';
+import { transition } from './top10-logic.js';
 
 /* ============================================================
    1. RENDERER STATE
