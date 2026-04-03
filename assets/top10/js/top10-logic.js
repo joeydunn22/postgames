@@ -78,7 +78,7 @@ async function createRoom() {
         ],
         currentPlayerIndex: 0,
         globalGuessed: [],
-        state: "playing",
+        state: "setup",
         sport: null,
         category: null,
         year: null,
@@ -129,20 +129,6 @@ async function joinRoom(roomCode) {
                 score: 0
             }
         });
-
-        // Add to game.players array
-        const gamePlayersRef = ref(db, `rooms/${roomCode}/game/players`);
-        const gamePlayersSnap = await get(gamePlayersRef);
-        const gamePlayers = gamePlayersSnap.val() || [];
-
-        gamePlayers.push({
-            id: currentUser.uid,
-            name: "Player",
-            guesses: [],
-            score: 0
-        });
-
-        await set(gamePlayersRef, gamePlayers);
 
         currentRoomCode = roomCode;
         roomActive = true;
