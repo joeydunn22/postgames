@@ -746,7 +746,6 @@ const PUBLIC_API = {
     listenToPendingGuess,
 
     // Game flow
-    startGame,
     applyEndGame,
     resetGame,
     syncGameState,
