@@ -202,15 +202,22 @@ function listenToPlayers(roomCode) {
     onValue(playersRef, (snapshot) => {
         const playersObj = snapshot.val() || {};
 
-        // Store raw player names keyed by UID
         game.playerNames = playersObj;
 
-        // Let the renderer handle all UI updates
-        try {
-            renderUIForState(game);
-        } catch (e) {
-            console.error("renderUIForState error:", e);
+        // ⭐ HOST syncs game.players from playersObj
+        if (myPlayerId === hostId) {
+            const syncedPlayers = Object.values(playersObj).map(p => ({
+                id: p.id,
+                name: p.name || "Player",
+                guesses: [],
+                score: 0
+            }));
+
+            game.players = syncedPlayers;
+            syncGameState();
         }
+
+        renderUIForState(game);
     });
 }
 
