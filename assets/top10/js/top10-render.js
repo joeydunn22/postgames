@@ -260,6 +260,16 @@ function renderUIForState(state = {}) {
 
     const phase = s.state || s.phase || "setup";
 
+    // --- START GAME BUTTON VISIBILITY (NEW) ---
+    if (ui.startGameBtn) {
+        const isHost = (!roomActive || myPlayerId === hostId);
+        if (phase === GAME_STATES.SETUP && isHost) {
+            ui.startGameBtn.style.display = "inline-block";
+        } else {
+            ui.startGameBtn.style.display = "none";
+        }
+    }
+
     // --- PHASE VISIBILITY ---
     ui.resultsSection?.classList.toggle("hidden", phase !== "results");
     ui.playersContainer?.classList.toggle("hidden", phase === "results");
@@ -318,10 +328,11 @@ function renderUIForState(state = {}) {
         }
     }
 
+    // --- GUESS INPUT ENABLE/DISABLE (UPDATED) ---
     if (ui.input) {
         let disabled = false;
 
-        if (phase !== "playing") {
+        if (phase !== GAME_STATES.PLAYING) {
             disabled = true;
         } else if (roomActive) {
             // Multiplayer: only current player may type
@@ -400,14 +411,15 @@ function initEventHandlers() {
             // Local mode
             if (!roomActive) {
                 game.stat = selected;
-                if (selected) startGame();
+                // NO auto-start — Start button controls PLAYING
+                renderUIForState(game);
                 return;
             }
 
-            // Multiplayer — only host can set stat and start game
+            // Multiplayer — only host can set stat
             if (myPlayerId === hostId) {
                 update(ref(db, `rooms/${currentRoomCode}/game`), { stat: selected });
-                if (selected) startGame();
+                // NO auto-start — Start button controls PLAYING
             }
         });
     }
@@ -478,6 +490,7 @@ function initEventHandlers() {
 
 function initUI() {
     // Gameplay / stat area
+    ui.startGameBtn = document.getElementById('startGameBtn');
     ui.statSection = document.getElementById('statSection');
     ui.top10List = document.getElementById('top10List');
 
@@ -514,19 +527,34 @@ function initUI() {
 function initActionButtonHandlers() {
     if (!ui.actionButton) return;
 
+    // --- START GAME BUTTON (host only) ---
+    if (ui.startGameBtn) {
+        ui.startGameBtn.onclick = () => {
+            if (roomActive && myPlayerId !== hostId) return; // host only
+            transition(GAME_STATES.PLAYING);
+        };
+    }
+
+    // --- ACTION BUTTON ---
     ui.actionButton.onclick = () => {
         const s = game.state;
 
         // Only host can advance phases in multiplayer
         if (roomActive && myPlayerId !== hostId) return;
 
-        if (s === "setup") {
-            startGame();
+        // SETUP PHASE:
+        // Action button no longer starts the game.
+        if (s === GAME_STATES.SETUP) {
+            return; // Start button handles this now
         }
-        else if (s === "playing") {
+
+        // PLAYING PHASE:
+        if (s === GAME_STATES.PLAYING) {
             applyEndGame(game);
         }
-        else if (s === "results") {
+
+        // RESULTS PHASE:
+        else if (s === GAME_STATES.RESULTS) {
             resetGame();
         }
 

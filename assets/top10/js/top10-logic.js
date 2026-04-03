@@ -2,6 +2,12 @@
    TOP 10 — LOGIC (Organized)
    ============================================================ */
 
+const GAME_STATES = {
+    SETUP: "setup",
+    PLAYING: "playing",
+    RESULTS: "results"
+};
+
 /* ============================================================
    1. AUTH & IDENTITY
    ============================================================ */
@@ -305,31 +311,31 @@ function listenToPendingGuess(roomCode) {
 /* ============================================================
    4. GAME FLOW (START / END / RESET)
    ============================================================ */
-function startGame() {
-    if (game.state !== "setup") return;
-    if (!game.stat) return;
+// function startGame() {
+//     if (game.state !== "setup") return;
+//     if (!game.stat) return;
 
-    // Reset core state
-    game.state = "playing";
-    game.currentPlayerIndex = 0;
-    game.globalGuessed = [];
+//     // Reset core state
+//     transition(GAME_STATES.PLAYING);
+//     game.currentPlayerIndex = 0;
+//     game.globalGuessed = [];
 
-    // Reset players
-    game.players = game.players.map((p, i) => ({
-        ...p,
-        guesses: [],
-        score: 0,
-        name: p.name || `Player ${i + 1}`
-    }));
+//     // Reset players
+//     game.players = game.players.map((p, i) => ({
+//         ...p,
+//         guesses: [],
+//         score: 0,
+//         name: p.name || `Player ${i + 1}`
+//     }));
 
-    // Host syncs
-    if (roomActive && myPlayerId === hostId) {
-        syncGameState();
-    }
-}
+//     // Host syncs
+//     if (roomActive && myPlayerId === hostId) {
+//         syncGameState();
+//     }
+// }
 
 function applyEndGame() {
-    game.state = "results";
+    transition(GAME_STATES.RESULTS);
 
     if (roomActive && myPlayerId === hostId) {
         syncGameState();
@@ -337,7 +343,7 @@ function applyEndGame() {
 }
 
 function resetGame() {
-    game.state = "setup";
+    transition(GAME_STATES.SETUP);
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
     game.stat = null;
@@ -371,6 +377,30 @@ function syncGameState() {
     });
 }
 
+// NEW //
+function transition(nextState) {
+    const prev = game.state;
+
+    const allowed = {
+        setup: ["playing"],   // first guess triggers this
+        playing: ["results"],   // game ends
+        results: ["setup"]      // play again
+    };
+
+    if (!allowed[prev] || !allowed[prev].includes(nextState)) {
+        console.warn(`Invalid transition: ${prev} → ${nextState}`);
+        return false;
+    }
+
+    game.state = nextState;
+
+    // Host syncs
+    if (roomActive && myPlayerId === hostId) {
+        syncGameState();
+    }
+
+    return true;
+}
 
 /* ============================================================
    5. GUESS FLOW (LOCAL + HOST)
@@ -379,19 +409,28 @@ function onGuessSubmit() {
     const rawGuess = ui.input.value.trim();
     if (!rawGuess) return;
 
-    if (game.state !== "playing") return;
+    // Must be in PLAYING
+    if (game.state !== GAME_STATES.PLAYING) {
+        console.warn("Guess ignored — game not in PLAYING state.");
+        return;
+    }
 
-    // NEW: don't allow input while a guess is being processed
+    // Guess lock (host is processing)
     if (game.isGuessLocked) return;
 
+    // Turn enforcement
     const myIndex = game.players.findIndex(p => p.id === myPlayerId);
     if (myIndex !== game.currentPlayerIndex) return;
 
+    // Clear input immediately for UX
     ui.input.value = "";
 
+    // Host processes locally
     if (myPlayerId === hostId) {
         handleLocalGuess(rawGuess);
-    } else {
+    }
+    // Clients send to host
+    else {
         sendGuessToHost(rawGuess);
     }
 }
