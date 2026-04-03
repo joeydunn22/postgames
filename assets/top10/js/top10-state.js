@@ -2,6 +2,12 @@
    GLOBAL MULTIPLAYER + ROOM STATE + UI CONTAINER
    ============================================================ */
 
+export const GAME_STATES = {
+    SETUP: "setup",
+    PLAYING: "playing",
+    RESULTS: "results"
+};
+
 window.currentUser = null;
 window.myPlayerId = null;
 window.currentRoomCode = null;

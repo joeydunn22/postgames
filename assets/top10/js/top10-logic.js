@@ -2,11 +2,7 @@
    TOP 10 — LOGIC (Organized)
    ============================================================ */
 
-const GAME_STATES = {
-    SETUP: "setup",
-    PLAYING: "playing",
-    RESULTS: "results"
-};
+import { GAME_STATES } from './top10-state.js';
 
 /* ============================================================
    1. AUTH & IDENTITY
