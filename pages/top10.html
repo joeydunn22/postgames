@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 98.2</p>
+    <p>Testing: Version 99</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -125,7 +125,7 @@
   <button id="actionButton" class="btn">Reveal Answers</button>
 
 
-<!-- Firebase -->
+  <!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
     import { getDatabase, ref, set, update, onValue, remove, get }
@@ -161,19 +161,12 @@
     window.onAuthStateChanged = onAuthStateChanged;
     window.signInAnonymously = signInAnonymously;
 
-</script>
+  </script>
 
-
-  <!-- JS: Top 10 Game -->
+  <!-- JS: Top 10 Game (Order matters!) -->
   <script type="module" src="../assets/top10/js/top10-state.js"></script>
   <script type="module" src="../assets/top10/js/top10-render.js"></script>
-  <script type="module">
-    if (typeof renderUIForState === 'function' && typeof game !== 'undefined') {
-      try { renderUIForState(game); } catch (e) { console.error('initial render failed', e); }
-    }
-  </script>
   <script type="module" src="../assets/top10/js/top10-logic.js"></script>
-
 
 
 </body>

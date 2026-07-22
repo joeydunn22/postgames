@@ -22,7 +22,7 @@ window.ui = {};   // UI reference container
    ============================================================ */
 
 window.game = {
-    state: "setup",
+    state: GAME_STATES.SETUP,
     currentPlayerIndex: 0,
 
     players: [],
@@ -48,8 +48,8 @@ window.game = {
    ============================================================ */
 
 function setAuthState(user) {
-    currentUser = user;
-    myPlayerId = user?.uid ?? null;
+    window.currentUser = user;
+    window.myPlayerId = user?.uid ?? null;
     game.authReady = !!user;
 }
 
