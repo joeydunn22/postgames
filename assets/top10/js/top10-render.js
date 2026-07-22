@@ -105,14 +105,24 @@ function renderPlayerNames() {
             input.readOnly = false;
         } else {
             input.readOnly = true;
-            input.style.opacity = "0.7";
         }
 
-        input.addEventListener("blur", () => {
+        input.addEventListener("blur", async () => {
+            const newName = input.value.trim();
+            if (!newName) {
+                input.value = name;
+                return;
+            }
+
             if (isMultiplayer && currentUser && isMyPlayer) {
-                update(ref(db, `rooms/${currentRoomCode}/playerNames/${currentUser.uid}`), input.value);
+                try {
+                    await update(ref(db, `rooms/${currentRoomCode}/playerNames/${currentUser.uid}`), newName);
+                } catch (err) {
+                    console.error("Failed to update name:", err);
+                    input.value = name;
+                }
             } else if (!isMultiplayer && isMyPlayer) {
-                game.players[uid].name = input.value;
+                game.players[uid].name = newName;
             }
         });
 

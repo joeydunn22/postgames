@@ -282,11 +282,18 @@
 .stat-select:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background: #0a0a0a;
 }
 
 .stat-select:not(:disabled) {
   opacity: 1;
   cursor: pointer;
+  background: #0f0f0f;
+}
+
+.stat-select:not(:disabled):hover {
+  background: #1a1a1a;
+  border-color: #666;
 }
 
 /* Guess input styling */
