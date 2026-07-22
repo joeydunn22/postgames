@@ -197,7 +197,7 @@ function renderResults() {
 function renderUIForState(state = {}) {
     if (!state || typeof state !== "object") return;
 
-    const phase = state.state || GAME_STATES.SETUP;
+    const phase = state.state || window.GAME_STATES.SETUP;
 
     // Calculate derived state
     const myIndex = Array.isArray(game.players)
@@ -214,7 +214,7 @@ function renderUIForState(state = {}) {
     const isHost = myPlayerId === hostId;
 
     // Render based on phase
-    if (phase === GAME_STATES.SETUP) {
+    if (phase === window.GAME_STATES.SETUP) {
         ui.statSection.classList.add("hidden");
         ui.resultsSection.classList.add("hidden");
         ui.startGameBtn.style.display = isHost ? "block" : "none";
@@ -225,13 +225,13 @@ function renderUIForState(state = {}) {
             ui.statSelect.disabled = !isHost || !game.sport || !game.year ||
                 (game.sport === "mlb" && !game.category);
         }
-    } else if (phase === GAME_STATES.PLAYING) {
+    } else if (phase === window.GAME_STATES.PLAYING) {
         ui.statSection.classList.remove("hidden");
         ui.resultsSection.classList.add("hidden");
         ui.userGuess.disabled = !isYourTurn;
         ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked;
         renderList();
-    } else if (phase === GAME_STATES.RESULTS) {
+    } else if (phase === window.GAME_STATES.RESULTS) {
         renderResults();
     }
 
@@ -419,8 +419,7 @@ const PUBLIC_RENDER_API = {
     renderPlayerColumn,
     initRenderer,
     applyDomRefs,
-    onAuthUIUpdate,
-    GAME_STATES
+    onAuthUIUpdate
 };
 
 Object.entries(PUBLIC_RENDER_API).forEach(([name, fn]) => {

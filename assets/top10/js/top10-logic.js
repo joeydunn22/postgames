@@ -62,7 +62,7 @@ async function createRoom() {
 
     // Initialize game state
     await set(ref(db, `rooms/${roomCode}/gameState`), {
-        state: GAME_STATES.SETUP,
+        state: window.GAME_STATES.SETUP,
         currentPlayerIndex: 0,
         globalGuessed: [],
         players: [],
@@ -214,11 +214,11 @@ function listenToPendingGuess(roomCode) {
    4. GAME FLOW (START / END / RESET)
    ============================================================ */
 async function startGame() {
-    if (game.state !== GAME_STATES.SETUP) return;
+    if (game.state !== window.GAME_STATES.SETUP) return;
     if (!game.stat) return;
 
     // Reset core state
-    transition(GAME_STATES.PLAYING);
+    transition(window.GAME_STATES.PLAYING);
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
 
@@ -239,7 +239,7 @@ async function startGame() {
 }
 
 function applyEndGame() {
-    transition(GAME_STATES.RESULTS);
+    transition(window.GAME_STATES.RESULTS);
     if (roomActive && myPlayerId === hostId) {
         syncGameState();
     }
@@ -247,7 +247,7 @@ function applyEndGame() {
 }
 
 function resetGame() {
-    game.state = GAME_STATES.SETUP;
+    game.state = window.GAME_STATES.SETUP;
     game.globalGuessed = [];
     game.players = game.players.map(p => ({
         ...p,
@@ -290,7 +290,7 @@ function transition(nextState) {
    5. GUESS FLOW (LOCAL + HOST)
    ============================================================ */
 function onGuessSubmit() {
-    if (game.state !== GAME_STATES.PLAYING) return;
+    if (game.state !== window.GAME_STATES.PLAYING) return;
 
     const rawGuess = ui.userGuess?.value?.trim() || "";
     if (!rawGuess) return;

@@ -2,11 +2,13 @@
    GLOBAL MULTIPLAYER + ROOM STATE + UI CONTAINER
    ============================================================ */
 
-export const GAME_STATES = {
+const GAME_STATES = {
     SETUP: "setup",
     PLAYING: "playing",
     RESULTS: "results"
 };
+
+window.GAME_STATES = GAME_STATES;
 
 window.currentUser = null;
 window.myPlayerId = null;
@@ -59,12 +61,13 @@ function setAuthState(user) {
    ============================================================ */
 
 const PUBLIC_API = {
-    setAuthState
+    setAuthState,
+    GAME_STATES
 };
 
 // Attach everything automatically
 Object.entries(PUBLIC_API).forEach(([name, fn]) => {
-    if (typeof fn === "function") {
+    if (typeof fn === "function" || typeof fn === "object") {
         window[name] = fn;
     } else {
         console.warn(`PUBLIC_API: ${name} is not a function`);
