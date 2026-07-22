@@ -242,8 +242,13 @@ function renderUIForState(state = {}) {
 
     // Render based on phase
     if (phase === window.GAME_STATES.SETUP) {
+        // Show stat selection area
+        if (ui.statSelectionArea) ui.statSelectionArea.classList.remove("hidden");
+
+        // Hide gameplay area
         if (ui.statSection) ui.statSection.classList.add("hidden");
         if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
+
         if (ui.startGameBtn) {
             ui.startGameBtn.style.display = isHost ? "block" : "none";
             ui.startGameBtn.disabled = !canStart;
@@ -254,15 +259,25 @@ function renderUIForState(state = {}) {
             const shouldEnable = isHost && game.sport && game.year &&
                 (game.sport !== "mlb" || game.category);
             ui.statSelect.disabled = !shouldEnable;
-            ui.statSelect.style.display = "block"; // Explicitly show it
         }
     } else if (phase === window.GAME_STATES.PLAYING) {
+        // Hide stat selection area
+        if (ui.statSelectionArea) ui.statSelectionArea.classList.add("hidden");
+
+        // Show gameplay area
         if (ui.statSection) ui.statSection.classList.remove("hidden");
         if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
+
         if (ui.userGuess) ui.userGuess.disabled = !isYourTurn;
         if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked;
         renderList();
     } else if (phase === window.GAME_STATES.RESULTS) {
+        // Hide stat selection and gameplay areas
+        if (ui.statSelectionArea) ui.statSelectionArea.classList.add("hidden");
+        if (ui.statSection) ui.statSection.classList.add("hidden");
+
+        // Show results
+        if (ui.resultsSection) ui.resultsSection.classList.remove("hidden");
         renderResults();
     }
 
@@ -385,6 +400,7 @@ function initEventHandlers() {
    ============================================================ */
 
 function initUI() {
+    ui.statSelectionArea = document.getElementById("statSelectionArea");
     ui.statSelect = document.getElementById("statSelect");
     ui.statTitle = document.getElementById("statTitle");
     ui.userGuess = document.getElementById("userGuess");
