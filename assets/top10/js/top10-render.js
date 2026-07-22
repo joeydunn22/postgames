@@ -228,10 +228,27 @@ function onAuthUIUpdate() {
 function initEventHandlers() {
     document.getElementById("sport-buttons")?.addEventListener("click", (e) => {
         if (e.target.dataset.sport) {
+            // Remove active class from all sport buttons
+            document.querySelectorAll("#sport-buttons .pg-button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+            // Add active class to clicked button
+            e.target.classList.add("active");
+
             game.sport = e.target.dataset.sport;
             game.category = null;
             game.stat = null;
             resetStatUI();
+
+            // Show MLB category buttons if MLB selected
+            const mlbCategoryWrapper = document.getElementById("mlb-category-wrapper");
+            const mlbCategoryButtons = document.getElementById("mlb-category-buttons");
+            if (game.sport === "mlb") {
+                mlbCategoryButtons.classList.remove("hidden");
+            } else {
+                mlbCategoryButtons.classList.add("hidden");
+            }
+
             maybeLoadData();
             renderUIForState(game);
         }
@@ -239,6 +256,13 @@ function initEventHandlers() {
 
     document.getElementById("mlb-category-buttons")?.addEventListener("click", (e) => {
         if (e.target.dataset.category) {
+            // Remove active class from all category buttons
+            document.querySelectorAll("#mlb-category-buttons .pg-button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+            // Add active class to clicked button
+            e.target.classList.add("active");
+
             game.category = e.target.dataset.category;
             game.stat = null;
             resetStatUI();
@@ -249,6 +273,13 @@ function initEventHandlers() {
 
     document.getElementById("year-buttons")?.addEventListener("click", (e) => {
         if (e.target.dataset.year) {
+            // Remove active class from all year buttons
+            document.querySelectorAll("#year-buttons .pg-button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+            // Add active class to clicked button
+            e.target.classList.add("active");
+
             game.year = e.target.dataset.year;
             game.stat = null;
             resetStatUI();

@@ -132,7 +132,6 @@
   }
 }
 
-
 /* =========================================
    TOP 10 TRIVIA — PLAYER COLUMNS
    ========================================= */
@@ -209,7 +208,6 @@
     0 0 4px rgba(77, 163, 255, 0.25) inset;
 }
 
-
 /* =========================================
    TOP 10 TRIVIA — RESULTS SECTION
    ========================================= */
@@ -234,26 +232,9 @@
   color: #4da3ff;
 }
 
-
 /* =========================================
    TOP 10 TRIVIA — NEW UTILITY + COMPONENT CLASSES
    ========================================= */
-
-/* Player setup controls (Add/Remove buttons container) */
-.player-setup-controls {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-/* Player name inputs container */
-.player-name-inputs {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
 /* Stat title styling */
 .stat-title {
@@ -284,14 +265,10 @@
   font-size: 18px;
 }
 
-/* Generic hidden utility (for later JS use) */
+/* Generic hidden utility */
 .hidden {
   display: none !important;
 }
-
-
-
-
 
 /* =========================================
    UPGRADED ABOVE‑THE‑GAME CONTROL SURFACE
@@ -321,6 +298,7 @@
   justify-content: space-between;
   gap: var(--space-xl);
   margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
 .control-group {
@@ -336,6 +314,39 @@
   color: #cccccc;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.button-group {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-group.hidden {
+  display: none !important;
+}
+
+.pg-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #0f0f0f;
+  color: #e6e6e6;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.pg-button:hover {
+  background: #1a1a1a;
+  border-color: #666;
+}
+
+.pg-button.active {
+  background: #4da3ff;
+  color: #000;
+  border-color: #4da3ff;
 }
 
 /* -----------------------------------------
@@ -386,14 +397,18 @@
    ----------------------------------------- */
 
 .player-name-inputs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--space-md);
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.player-name-row {
+  display: flex;
+  align-items: center;
 }
 
 .player-name-inputs input {
-  width: 100%;
   padding: 10px 12px;
   border-radius: 6px;
   border: 1px solid #444;
@@ -423,18 +438,12 @@
   }
 }
 
-
-
-
-
-/* temp style for player name */
-/* Highlight the local player's name input */
+/* Temp style for player name */
 .player-name-input.me {
   border: 2px solid #00ff88;
   background: #0d261a;
 }
 
-/* Small "You" badge */
 .you-badge {
   display: inline-block;
   margin-left: 6px;
