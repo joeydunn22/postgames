@@ -96,15 +96,22 @@ function renderPlayerNames() {
         input.type = "text";
         input.value = name;
 
+        // Check if this is the current user's player
+        const isMyPlayer = isMultiplayer ? (uid === currentUser?.uid) : true;
+
         // Mark current user's input
-        if (isMultiplayer && uid === currentUser?.uid) {
+        if (isMyPlayer) {
             input.classList.add("me");
+            input.readOnly = false;
+        } else {
+            input.readOnly = true;
+            input.style.opacity = "0.7";
         }
 
         input.addEventListener("blur", () => {
-            if (isMultiplayer && currentUser) {
+            if (isMultiplayer && currentUser && isMyPlayer) {
                 update(ref(db, `rooms/${currentRoomCode}/playerNames/${currentUser.uid}`), input.value);
-            } else {
+            } else if (!isMultiplayer && isMyPlayer) {
                 game.players[uid].name = input.value;
             }
         });

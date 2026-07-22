@@ -157,12 +157,34 @@
 }
 
 .player-name-input {
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 8px;
-  border: none;
-  width: 160px;
-  text-align: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #0f0f0f;
+  color: #e6e6e6;
+  font-size: 15px;
+}
+
+.player-name-input:focus {
+  outline: 2px solid #4da3ff;
+  outline-offset: 2px;
+}
+
+.player-name-input:read-only {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: #0a0a0a;
+  border-color: #333;
+}
+
+.player-name-input.me {
+  border: 2px solid #00ff88;
+  background: #0d261a;
+}
+
+.player-name-input.me:read-only {
+  opacity: 1;
+  cursor: text;
 }
 
 /* Center layout when only one player is active */
@@ -244,8 +266,27 @@
 
 /* Stat dropdown styling */
 .stat-select {
-  font-size: 20px;
+  display: block !important;
+  width: 80%;
+  margin: 20px auto;
   padding: 10px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #0f0f0f;
+  color: #e6e6e6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.stat-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.stat-select:not(:disabled) {
+  opacity: 1;
+  cursor: pointer;
 }
 
 /* Guess input styling */
@@ -420,6 +461,23 @@
 .player-name-inputs input:focus {
   outline: 2px solid #4da3ff;
   outline-offset: 2px;
+}
+
+.player-name-inputs input:read-only {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background: #0a0a0a;
+  border-color: #333;
+}
+
+.player-name-input.me {
+  border: 2px solid #00ff88;
+  background: #0d261a;
+}
+
+.player-name-input.me:read-only {
+  opacity: 1;
+  cursor: text;
 }
 
 /* -----------------------------------------
