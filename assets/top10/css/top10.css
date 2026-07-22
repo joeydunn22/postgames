@@ -265,6 +265,7 @@
 }
 
 /* Stat dropdown styling */
+#statSelect,
 .stat-select {
   display: block !important;
   width: 80%;
@@ -279,18 +280,21 @@
   font-weight: 600;
 }
 
+#statSelect:disabled,
 .stat-select:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   background: #0a0a0a;
 }
 
+#statSelect:not(:disabled),
 .stat-select:not(:disabled) {
   opacity: 1;
   cursor: pointer;
   background: #0f0f0f;
 }
 
+#statSelect:not(:disabled):hover,
 .stat-select:not(:disabled):hover {
   background: #1a1a1a;
   border-color: #666;
