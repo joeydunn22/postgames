@@ -96,6 +96,11 @@ function renderPlayerNames() {
         input.type = "text";
         input.value = name;
 
+        // Mark current user's input
+        if (isMultiplayer && uid === currentUser?.uid) {
+            input.classList.add("me");
+        }
+
         input.addEventListener("blur", () => {
             if (isMultiplayer && currentUser) {
                 update(ref(db, `rooms/${currentRoomCode}/playerNames/${currentUser.uid}`), input.value);
@@ -107,6 +112,17 @@ function renderPlayerNames() {
         wrapper.appendChild(input);
         container.appendChild(wrapper);
     });
+
+    // Update add/remove button visibility
+    const addBtn = document.getElementById("addPlayerBtn");
+    const removeBtn = document.getElementById("removePlayerBtn");
+    if (isMultiplayer) {
+        if (addBtn) addBtn.style.display = "none";
+        if (removeBtn) removeBtn.style.display = "none";
+    } else {
+        if (addBtn) addBtn.style.display = "block";
+        if (removeBtn) removeBtn.style.display = "block";
+    }
 }
 
 function renderList() {
@@ -203,6 +219,12 @@ function renderUIForState(state = {}) {
         ui.resultsSection.classList.add("hidden");
         ui.startGameBtn.style.display = isHost ? "block" : "none";
         ui.startGameBtn.disabled = !canStart;
+
+        // Only host can select stat
+        if (ui.statSelect) {
+            ui.statSelect.disabled = !isHost || !game.sport || !game.year ||
+                (game.sport === "mlb" && !game.category);
+        }
     } else if (phase === GAME_STATES.PLAYING) {
         ui.statSection.classList.remove("hidden");
         ui.resultsSection.classList.add("hidden");

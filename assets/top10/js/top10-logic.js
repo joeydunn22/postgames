@@ -60,11 +60,20 @@ async function createRoom() {
     // Host ID
     await set(ref(db, `rooms/${roomCode}/host`), currentUser.uid);
 
-    // Identity entry
-    await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
-        uid: currentUser.uid,
-        name: game.players[0]?.name || "Host"
+    // Initialize game state
+    await set(ref(db, `rooms/${roomCode}/gameState`), {
+        state: GAME_STATES.SETUP,
+        currentPlayerIndex: 0,
+        globalGuessed: [],
+        players: [],
+        sport: null,
+        category: null,
+        year: null,
+        stat: null
     });
+
+    // Identity entry
+    await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), currentUser.displayName || "Host");
 
     window.currentRoomCode = roomCode;
     window.roomActive = true;
@@ -82,6 +91,8 @@ async function createRoom() {
         listenToPendingGuess(roomCode);
         _listenersInitialized = true;
     }
+
+    renderUIForState(game);
 }
 
 async function joinRoom(roomCode) {
@@ -104,10 +115,7 @@ async function joinRoom(roomCode) {
     }
 
     // Join as player
-    await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), {
-        uid: currentUser.uid,
-        name: game.players[0]?.name || "Player"
-    });
+    await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), currentUser.displayName || "Player");
 
     window.currentRoomCode = roomCode;
     window.roomActive = true;
@@ -125,6 +133,8 @@ async function joinRoom(roomCode) {
         listenToPendingGuess(roomCode);
         _listenersInitialized = true;
     }
+
+    renderUIForState(game);
 }
 
 async function leaveRoom() {
@@ -157,8 +167,21 @@ function listenToRoom(roomCode) {
 function listenToPlayers(roomCode) {
     const playersRef = ref(db, `rooms/${roomCode}/players`);
     onValue(playersRef, (snapshot) => {
-        game.playerNames = snapshot.val() || {};
+        const playersData = snapshot.val() || {};
+        game.playerNames = playersData;
+
+        // Sync game.players array with remote players
+        const remotePlayersList = Object.entries(playersData).map(([uid, data]) => ({
+            id: uid,
+            name: typeof data === "string" ? data : data.name || "Player",
+            guesses: [],
+            score: 0
+        }));
+
+        game.players = remotePlayersList;
+
         renderPlayerNames();
+        renderUIForState(game);
     });
 }
 
