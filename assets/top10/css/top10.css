@@ -268,36 +268,36 @@
 #statSelect,
 .stat-select {
   display: block !important;
-  width: 80%;
-  margin: 20px auto;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 6px;
-  border: 1px solid #444;
-  background: #0f0f0f;
-  color: #e6e6e6;
-  cursor: pointer;
-  font-weight: 600;
+  width: 80% !important;
+  margin: 20px auto !important;
+  padding: 10px !important;
+  font-size: 20px !important;
+  border-radius: 6px !important;
+  border: 1px solid #444 !important;
+  background: #0f0f0f !important;
+  color: #e6e6e6 !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
 }
 
 #statSelect:disabled,
 .stat-select:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  background: #0a0a0a;
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  background: #0a0a0a !important;
 }
 
 #statSelect:not(:disabled),
 .stat-select:not(:disabled) {
-  opacity: 1;
-  cursor: pointer;
-  background: #0f0f0f;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  background: #0f0f0f !important;
 }
 
 #statSelect:not(:disabled):hover,
 .stat-select:not(:disabled):hover {
-  background: #1a1a1a;
-  border-color: #666;
+  background: #1a1a1a !important;
+  border-color: #666 !important;
 }
 
 /* Guess input styling */

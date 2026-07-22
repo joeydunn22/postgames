@@ -7,6 +7,7 @@
    ============================================================ */
 let _prevPhase = null;
 let _listenersInitialized = false;
+let _uiInitialized = false;
 
 /* ============================================================
    2. UI RESET / SETUP HELPERS
@@ -14,10 +15,14 @@ let _listenersInitialized = false;
 function resetStatUI() {
     game.stat = null;
 
-    ui.statSelect.disabled = true;
-    ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+    if (ui.statSelect) {
+        ui.statSelect.disabled = true;
+        ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+    }
 
-    ui.statTitle.textContent = "Select a stat to begin";
+    if (ui.statTitle) {
+        ui.statTitle.textContent = "Select a stat to begin";
+    }
 }
 
 function resetLocalPlayersToOne() {
@@ -39,15 +44,17 @@ function resetLocalPlayersToOne() {
 }
 
 function populateStatDropdown() {
-    ui.statSelect.disabled = false;
-    ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+    if (ui.statSelect) {
+        ui.statSelect.disabled = false;
+        ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
 
-    Object.keys(game.data).forEach(stat => {
-        const option = document.createElement("option");
-        option.value = stat;
-        option.textContent = stat;
-        ui.statSelect.appendChild(option);
-    });
+        Object.keys(game.data).forEach(stat => {
+            const option = document.createElement("option");
+            option.value = stat;
+            option.textContent = stat;
+            ui.statSelect.appendChild(option);
+        });
+    }
 }
 
 /* ============================================================
@@ -214,6 +221,9 @@ function renderResults() {
 function renderUIForState(state = {}) {
     if (!state || typeof state !== "object") return;
 
+    // Don't render if UI isn't initialized yet
+    if (!_uiInitialized) return;
+
     const phase = state.state || window.GAME_STATES.SETUP;
 
     // Calculate derived state
@@ -232,21 +242,25 @@ function renderUIForState(state = {}) {
 
     // Render based on phase
     if (phase === window.GAME_STATES.SETUP) {
-        ui.statSection.classList.add("hidden");
-        ui.resultsSection.classList.add("hidden");
-        ui.startGameBtn.style.display = isHost ? "block" : "none";
-        ui.startGameBtn.disabled = !canStart;
+        if (ui.statSection) ui.statSection.classList.add("hidden");
+        if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
+        if (ui.startGameBtn) {
+            ui.startGameBtn.style.display = isHost ? "block" : "none";
+            ui.startGameBtn.disabled = !canStart;
+        }
 
-        // Only host can select stat
+        // Only host can select stat - ALWAYS SHOW, but disable if conditions not met
         if (ui.statSelect) {
-            ui.statSelect.disabled = !isHost || !game.sport || !game.year ||
-                (game.sport === "mlb" && !game.category);
+            const shouldEnable = isHost && game.sport && game.year &&
+                (game.sport !== "mlb" || game.category);
+            ui.statSelect.disabled = !shouldEnable;
+            ui.statSelect.style.display = "block"; // Explicitly show it
         }
     } else if (phase === window.GAME_STATES.PLAYING) {
-        ui.statSection.classList.remove("hidden");
-        ui.resultsSection.classList.add("hidden");
-        ui.userGuess.disabled = !isYourTurn;
-        ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked;
+        if (ui.statSection) ui.statSection.classList.remove("hidden");
+        if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
+        if (ui.userGuess) ui.userGuess.disabled = !isYourTurn;
+        if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked;
         renderList();
     } else if (phase === window.GAME_STATES.RESULTS) {
         renderResults();
@@ -391,9 +405,9 @@ function initActionButtonHandlers() {
     if (!actionBtn) return;
 
     actionBtn.addEventListener("click", () => {
-        if (game.state === GAME_STATES.RESULTS) {
+        if (game.state === window.GAME_STATES.RESULTS) {
             resetGame();
-        } else if (game.state === GAME_STATES.PLAYING) {
+        } else if (game.state === window.GAME_STATES.PLAYING) {
             renderList();
         }
     });
@@ -414,13 +428,20 @@ function initRenderer() {
     if (!roomActive) {
         initLocalPlayerButtons();
     }
+
+    // Mark UI as initialized LAST
+    _uiInitialized = true;
+
+    // Now safe to render
+    renderUIForState(game);
 }
 
 function applyDomRefs(domRefs = {}) {
     Object.assign(ui, domRefs);
 }
 
-initRenderer();
+// DON'T call initRenderer() here - let it be called explicitly or via DOMContentLoaded
+// initRenderer();
 
 /* ============================================================
    7. PUBLIC RENDER API EXPORT
@@ -444,3 +465,10 @@ Object.entries(PUBLIC_RENDER_API).forEach(([name, fn]) => {
         window[name] = fn;
     }
 });
+
+// Initialize when DOM is ready
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initRenderer);
+} else {
+    initRenderer();
+}
