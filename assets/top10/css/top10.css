@@ -24,6 +24,25 @@
   margin: 6px 0;
 }
 
+.room-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 auto 10px;
+}
+
+.room-controls button {
+  display: inline-block;
+  margin: 0;
+}
+
+.room-controls input {
+  width: min(240px, 100%);
+  padding: 8px 10px;
+}
+
 .revealed {
   animation: fadeIn 0.4s ease-out;
 }
@@ -228,6 +247,14 @@
   border-color: #4da3ff;
   box-shadow: 0 0 12px rgba(77, 163, 255, 0.35),
     0 0 4px rgba(77, 163, 255, 0.25) inset;
+}
+
+.round-status {
+  margin-top: 14px;
+  color: #00ff88;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* =========================================

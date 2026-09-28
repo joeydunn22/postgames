@@ -37,6 +37,8 @@ async function leaveCurrentRoom() {
     currentRoomCode = null;
     roomActive = false;
     _listenersInitialized = false;
+    document.getElementById("createRoomBtn").style.display = "inline-block";
+    document.getElementById("leaveRoomBtn").style.display = "none";
 
     // Renderer handles button visibility
     renderUIForState(game);
@@ -83,7 +85,7 @@ async function createRoom() {
     document.getElementById("roomCodeDisplay").textContent = `Room Code: ${roomCode}`;
     document.getElementById("roomStatus").textContent = "Room created.";
     document.getElementById("createRoomBtn").style.display = "none";
-    document.getElementById("leaveRoomBtn").style.display = "block";
+    document.getElementById("leaveRoomBtn").style.display = "inline-block";
 
     if (!_listenersInitialized) {
         listenToRoom(roomCode);
@@ -127,7 +129,7 @@ async function joinRoom(roomCode) {
     document.getElementById("roomCodeDisplay").textContent = `Room Code: ${roomCode}`;
     document.getElementById("roomStatus").textContent = "Joined room.";
     document.getElementById("createRoomBtn").style.display = "none";
-    document.getElementById("leaveRoomBtn").style.display = "block";
+    document.getElementById("leaveRoomBtn").style.display = "inline-block";
 
     if (!_listenersInitialized) {
         listenToRoom(roomCode);
@@ -202,6 +204,7 @@ function listenToGame(roomCode) {
                 game.category !== remoteState.category ||
                 game.year !== remoteState.year;
             Object.assign(game, remoteState);
+            game.roundComplete = !!remoteState.roundComplete;
             if (roomActive) {
                 const savedPlayers = Array.isArray(remoteState.players) ? remoteState.players : [];
                 game.players = Object.entries(game.playerNames || {}).map(([uid, playerData], index) => {
@@ -267,6 +270,7 @@ async function startGame() {
     transition(window.GAME_STATES.PLAYING);
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
+    game.roundComplete = false;
 
     // Reset players
     game.players = game.players.map((p, i) => ({
@@ -299,6 +303,7 @@ function applyEndGame() {
 function resetGame() {
     game.state = window.GAME_STATES.SETUP;
     game.globalGuessed = [];
+    game.roundComplete = false;
     game.players = game.players.map(p => ({
         ...p,
         guesses: [],
@@ -318,6 +323,7 @@ async function syncGameState() {
         state: game.state,
         currentPlayerIndex: game.currentPlayerIndex,
         globalGuessed: game.globalGuessed,
+        roundComplete: game.roundComplete,
         players: game.players.map(p => ({
             id: p.id,
             name: p.name,
@@ -380,7 +386,6 @@ function applyCorrectGuess(gameInstance, matchedAnswer) {
     currentPlayer.score = (currentPlayer.score ?? 0) + 1;
 
     gameInstance.globalGuessed.push(matchedAnswer);
-    advanceTurn(gameInstance);
 
     playGuessAnimation("correct");
 }
@@ -407,12 +412,20 @@ function processGuess(rawGuess, playerId) {
     if (!game.stat || !game.data[game.stat]) {
         return { ok: false, reason: "no-data" };
     }
+    if (game.roundComplete) {
+        return { ok: false, reason: "round-complete" };
+    }
 
     const answers = game.data[game.stat].players;
     const match = findAnswerMatch(rawGuess, answers);
 
-    if (match) {
+    if (match && !game.globalGuessed.includes(match)) {
         applyCorrectGuess(game, match);
+        game.roundComplete = answers.length > 0 &&
+            answers.every(answer => game.globalGuessed.includes(answer.name));
+        if (!game.roundComplete) {
+            advanceTurn(game);
+        }
     } else {
         applyWrongGuess(game);
     }

@@ -172,10 +172,18 @@ function renderList() {
         </ol>
     `;
 
+    if (ui.roundStatus) {
+        ui.roundStatus.textContent = game.roundComplete
+            ? `Round complete! All ${list.length} answers have been guessed.`
+            : "";
+        ui.roundStatus.classList.toggle("hidden", !game.roundComplete);
+    }
+
     // Current player display
     const currentPlayer = game.players[game.currentPlayerIndex];
-    ui.currentPlayerDisplay.textContent =
-        "Current Turn: " + (currentPlayer?.name || "Player");
+    ui.currentPlayerDisplay.textContent = game.roundComplete
+        ? "Round complete"
+        : "Current Turn: " + (currentPlayer?.name || "Player");
 
     // Player columns
     const container = ui.playersContainer;
@@ -277,8 +285,8 @@ function renderUIForState(state = {}) {
         if (ui.statSection) ui.statSection.classList.remove("hidden");
         if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
 
-        if (ui.userGuess) ui.userGuess.disabled = !isYourTurn;
-        if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked;
+        if (ui.userGuess) ui.userGuess.disabled = !isYourTurn || game.roundComplete;
+        if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked || game.roundComplete;
         renderList();
     } else if (phase === window.GAME_STATES.RESULTS) {
         // Hide stat selection and gameplay areas
@@ -367,6 +375,7 @@ function initEventHandlers() {
 
     ui.statSelect?.addEventListener("change", (e) => {
         game.stat = e.target.value;
+        game.roundComplete = false;
         if (game.stat) {
             game.globalGuessed = [];
             renderList();
@@ -416,6 +425,7 @@ function initUI() {
     ui.userGuess = document.getElementById("userGuess");
     ui.submitGuessBtn = document.getElementById("submitGuessBtn");
     ui.currentPlayerDisplay = document.getElementById("currentPlayerDisplay");
+    ui.roundStatus = document.getElementById("roundStatus");
     ui.playersContainer = document.querySelector(".players-container");
     ui.top10List = document.getElementById("top10List");
     ui.playerNameInputs = document.getElementById("playerNameInputs");

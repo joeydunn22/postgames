@@ -31,6 +31,7 @@ window.game = {
     playerNames: {},
 
     globalGuessed: [],
+    roundComplete: false,
 
     sport: null,
     category: null,

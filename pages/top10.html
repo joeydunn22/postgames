@@ -24,19 +24,20 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 115</p>
+    <p>Testing: Version 116</p>
   </div>
 
   <!-- Create Room Buttons -->
-  <button id="createRoomBtn" onclick="createRoom()">Create Room</button>
-
-  <input id="joinCodeInput" placeholder="Enter room code">
-  <button id="joinRoomBtn" onclick="joinRoom(document.getElementById('joinCodeInput').value)">
-    Join Room
-  </button>
-  <button id="leaveRoomBtn" onclick="leaveRoom()" style="display:none;">
-    Leave Room
-  </button>
+  <div class="room-controls">
+    <button id="createRoomBtn" onclick="createRoom()">Create Room</button>
+    <input id="joinCodeInput" placeholder="Enter room code">
+    <button id="joinRoomBtn" onclick="joinRoom(document.getElementById('joinCodeInput').value)">
+      Join Room
+    </button>
+    <button id="leaveRoomBtn" onclick="leaveRoom()" style="display:none;">
+      Leave Room
+    </button>
+  </div>
 
   <div id="roomStatus" style="margin-top: 10px; font-weight: bold;"></div>
   <div id="roomCodeDisplay" style="margin-top: 10px;"></div>
@@ -113,6 +114,7 @@
     <div id="currentPlayerDisplay" class="current-player-display">
       Current Turn: Player 1
     </div>
+    <div id="roundStatus" class="round-status hidden" role="status" aria-live="polite"></div>
 
     <div class="players-container"></div>
 
