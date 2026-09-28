@@ -117,6 +117,8 @@ async function joinRoom(roomCode) {
 
     // Join as player
     await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), currentUser.displayName || "Player");
+    const joinCodeInput = document.getElementById("joinCodeInput");
+    if (joinCodeInput) joinCodeInput.value = "";
 
     window.currentRoomCode = roomCode;
     window.roomActive = true;
@@ -378,12 +380,18 @@ function applyCorrectGuess(gameInstance, matchedAnswer) {
     currentPlayer.score = (currentPlayer.score ?? 0) + 1;
 
     gameInstance.globalGuessed.push(matchedAnswer);
+    advanceTurn(gameInstance);
 
     playGuessAnimation("correct");
 }
 
-function applyWrongGuess(gameInstance) {
+function advanceTurn(gameInstance) {
+    if (gameInstance.players.length === 0) return;
     gameInstance.currentPlayerIndex = (gameInstance.currentPlayerIndex + 1) % gameInstance.players.length;
+}
+
+function applyWrongGuess(gameInstance) {
+    advanceTurn(gameInstance);
 
     playGuessAnimation("wrong");
 }
@@ -409,7 +417,7 @@ function processGuess(rawGuess, playerId) {
         applyWrongGuess(game);
     }
 
-    renderList();
+    renderUIForState(game);
 
     return { ok: true };
 }
