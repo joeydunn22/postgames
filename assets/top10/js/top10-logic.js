@@ -172,12 +172,16 @@ function listenToPlayers(roomCode) {
         game.playerNames = playersData;
 
         // Sync game.players array with remote players
-        const remotePlayersList = Object.entries(playersData).map(([uid, data]) => ({
-            id: uid,
-            name: typeof data === "string" ? data : data.name || "Player",
-            guesses: [],
-            score: 0
-        }));
+        const remotePlayersList = Object.entries(playersData).map(([uid, data], index) => {
+            const existingPlayer = game.players.find(player => player.id === uid) || game.players[index] || {};
+            return {
+                ...existingPlayer,
+                id: uid,
+                name: typeof data === "string" ? data : data.name || "Player",
+                guesses: existingPlayer.guesses || [],
+                score: existingPlayer.score || 0
+            };
+        });
 
         game.players = remotePlayersList;
 
@@ -191,10 +195,30 @@ function listenToGame(roomCode) {
     onValue(gameRef, (snapshot) => {
         const remoteState = snapshot.val();
         if (remoteState) {
+            const currentPlayers = game.players;
             const selectionChanged = game.sport !== remoteState.sport ||
                 game.category !== remoteState.category ||
                 game.year !== remoteState.year;
             Object.assign(game, remoteState);
+            if (roomActive) {
+                const savedPlayers = Array.isArray(remoteState.players) ? remoteState.players : [];
+                game.players = Object.entries(game.playerNames || {}).map(([uid, playerData], index) => {
+                    const savedPlayer = savedPlayers.find(player => player.id === uid) || savedPlayers[index] || {};
+                    return {
+                        ...savedPlayer,
+                        id: uid,
+                        name: typeof playerData === "string" ? playerData : playerData.name || savedPlayer.name || "Player",
+                        guesses: savedPlayer.guesses || [],
+                        score: savedPlayer.score || 0
+                    };
+                });
+                if (game.players.length === 0) {
+                    game.players = savedPlayers.map((player, index) => ({
+                        ...player,
+                        id: player.id || currentPlayers[index]?.id
+                    }));
+                }
+            }
             if (selectionChanged) {
                 maybeLoadData();
             }
@@ -221,8 +245,21 @@ function listenToPendingGuess(roomCode) {
    4. GAME FLOW (START / END / RESET)
    ============================================================ */
 async function startGame() {
+    if (roomActive && myPlayerId !== hostId) return;
     if (game.state !== window.GAME_STATES.SETUP) return;
-    if (!game.stat) return;
+    if (!game.stat || !game.data[game.stat]) return;
+
+    if (roomActive) {
+        game.players = Object.entries(game.playerNames || {}).map(([uid, playerData], index) => {
+            const existingPlayer = game.players.find(player => player.id === uid) || game.players[index] || {};
+            return {
+                ...existingPlayer,
+                id: uid,
+                name: typeof playerData === "string" ? playerData : playerData.name || existingPlayer.name || "Player"
+            };
+        });
+    }
+    if (game.players.length === 0) return;
 
     // Reset core state
     transition(window.GAME_STATES.PLAYING);
@@ -237,12 +274,16 @@ async function startGame() {
         name: p.name || `Player ${i + 1}`
     }));
 
-    // Host syncs
-    if (roomActive && myPlayerId === hostId) {
-        syncGameState();
-    }
-
     renderUIForState(game);
+
+    if (roomActive) {
+        try {
+            await syncGameState();
+        } catch (error) {
+            console.error("Failed to start room game:", error);
+            document.getElementById("roomStatus").textContent = "Game started here, but room sync failed.";
+        }
+    }
 }
 
 function applyEndGame() {
@@ -276,6 +317,7 @@ async function syncGameState() {
         currentPlayerIndex: game.currentPlayerIndex,
         globalGuessed: game.globalGuessed,
         players: game.players.map(p => ({
+            id: p.id,
             name: p.name,
             guesses: p.guesses,
             score: p.score

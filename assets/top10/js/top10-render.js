@@ -124,7 +124,7 @@ function renderPlayerNames() {
 
             if (isMultiplayer && currentUser && isMyPlayer) {
                 try {
-                    await update(ref(db, `rooms/${currentRoomCode}/playerNames/${currentUser.uid}`), newName);
+                    await set(ref(db, `rooms/${currentRoomCode}/players/${currentUser.uid}`), newName);
                 } catch (err) {
                     console.error("Failed to update name:", err);
                     input.value = name;
@@ -236,13 +236,17 @@ function renderUIForState(state = {}) {
     const isYourTurn = !roomActive ||
         (myIndex !== -1 && myIndex === game.currentPlayerIndex);
 
+    const playerCount = roomActive
+        ? Object.keys(game.playerNames || {}).length
+        : game.players.length;
     const canStart = !!(game.sport &&
         (game.sport !== "mlb" || game.category) &&
         game.year &&
         game.stat &&
-        game.players.length > 0);
+        game.data[game.stat] &&
+        playerCount > 0);
 
-    const isHost = myPlayerId === hostId;
+    const isHost = !roomActive || myPlayerId === hostId;
 
     // Render based on phase
     if (phase === window.GAME_STATES.SETUP) {
