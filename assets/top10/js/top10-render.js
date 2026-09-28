@@ -161,12 +161,13 @@ function renderList() {
     ui.top10List.innerHTML = `
         <ol>
             ${list.map(item => {
-        const value = item.value == null
+        const guessed = game.globalGuessed.includes(item.name);
+        const value = !guessed || item.value == null
             ? ""
             : isPercent ? (item.value * 100).toFixed(1) + "%" : item.value;
-        const guessed = game.globalGuessed.includes(item.name);
         const guessedClass = guessed ? "guessed" : "";
-        return `<li class="${guessedClass}"><strong>${item.name}</strong>${value === "" ? "" : ` - ${value}`}</li>`;
+        const answerName = guessed ? item.name : "";
+        return `<li class="${guessedClass}"><strong>${answerName}</strong>${value === "" ? "" : ` - ${value}`}</li>`;
     }).join("")}
         </ol>
     `;

@@ -410,14 +410,9 @@ function processGuess(rawGuess, playerId) {
 
     const answers = game.data[game.stat].players;
     const normalized = normalize(rawGuess);
-
-    let match = null;
-    for (const ans of answers) {
-        if (isMatch(normalized, ans.name)) {
-            match = ans.name;
-            break;
-        }
-    }
+    const exactMatch = answers.find(ans => normalize(ans.name) === normalized);
+    const fuzzyMatch = exactMatch ? null : answers.find(ans => isMatch(normalized, ans.name));
+    const match = exactMatch?.name || fuzzyMatch?.name || null;
 
     if (match) {
         applyCorrectGuess(game, match);
