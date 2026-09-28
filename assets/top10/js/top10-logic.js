@@ -383,14 +383,6 @@ function applyCorrectGuess(gameInstance, matchedAnswer) {
 }
 
 function applyWrongGuess(gameInstance) {
-    const currentPlayer = gameInstance.players[gameInstance.currentPlayerIndex];
-    if (!currentPlayer) return;
-
-    currentPlayer.guesses.push({
-        name: "?",
-        correct: false
-    });
-
     gameInstance.currentPlayerIndex = (gameInstance.currentPlayerIndex + 1) % gameInstance.players.length;
 
     playGuessAnimation("wrong");
@@ -409,10 +401,7 @@ function processGuess(rawGuess, playerId) {
     }
 
     const answers = game.data[game.stat].players;
-    const normalized = normalize(rawGuess);
-    const exactMatch = answers.find(ans => normalize(ans.name) === normalized);
-    const fuzzyMatch = exactMatch ? null : answers.find(ans => isMatch(normalized, ans.name));
-    const match = exactMatch?.name || fuzzyMatch?.name || null;
+    const match = findAnswerMatch(rawGuess, answers);
 
     if (match) {
         applyCorrectGuess(game, match);
@@ -505,7 +494,54 @@ function loadSport() {
 }
 
 function normalize(str) {
-    return str.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function findAnswerMatch(rawGuess, answers) {
+    const guess = normalize(rawGuess);
+    if (!guess) return null;
+
+    const exactFullMatch = answers.find(answer => normalize(answer.name) === guess);
+    if (exactFullMatch) return exactFullMatch.name;
+
+    const candidates = answers.map(answer => {
+        const nameParts = answer.name.split(/\s+/).map(normalize).filter(Boolean);
+        const suffixes = new Set(["jr", "sr", "ii", "iii", "iv"]);
+        const familyName = [...nameParts].reverse().find(part => !suffixes.has(part));
+        const aliases = [...new Set([
+            normalize(answer.name),
+            nameParts[0],
+            familyName
+        ].filter(Boolean))];
+
+        return { answer, aliases };
+    });
+
+    const exactAliasMatches = candidates.filter(({ aliases }) => aliases.includes(guess));
+    if (exactAliasMatches.length === 1) return exactAliasMatches[0].answer.name;
+    if (exactAliasMatches.length > 1) return null;
+
+    let bestDistance = Infinity;
+    let bestMatches = [];
+
+    for (const candidate of candidates) {
+        const distance = Math.min(...candidate.aliases.map(alias => levenshtein(guess, alias)));
+        const closestAlias = candidate.aliases.find(alias => levenshtein(guess, alias) === distance);
+        const threshold = closestAlias.length <= 5
+            ? 1
+            : Math.max(1, Math.floor(closestAlias.length * 0.2));
+
+        if (distance > threshold) continue;
+        if (distance < bestDistance) {
+            bestDistance = distance;
+            bestMatches = [candidate.answer.name];
+        } else if (distance === bestDistance) {
+            bestMatches.push(candidate.answer.name);
+        }
+    }
+
+    const uniqueMatches = [...new Set(bestMatches)];
+    return uniqueMatches.length === 1 ? uniqueMatches[0] : null;
 }
 
 function levenshtein(a, b) {
