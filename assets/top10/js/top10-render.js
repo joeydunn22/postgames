@@ -54,6 +54,7 @@ function populateStatDropdown() {
             option.textContent = stat;
             ui.statSelect.appendChild(option);
         });
+        ui.statSelect.value = game.stat || "";
     }
 }
 
@@ -160,10 +161,12 @@ function renderList() {
     ui.top10List.innerHTML = `
         <ol>
             ${list.map(item => {
-        const value = isPercent ? (item.value * 100).toFixed(1) + "%" : item.value;
+        const value = item.value == null
+            ? ""
+            : isPercent ? (item.value * 100).toFixed(1) + "%" : item.value;
         const guessed = game.globalGuessed.includes(item.name);
         const guessedClass = guessed ? "guessed" : "";
-        return `<li class="${guessedClass}"><strong>${item.name}</strong> - ${value}</li>`;
+        return `<li class="${guessedClass}"><strong>${item.name}</strong>${value === "" ? "" : ` - ${value}`}</li>`;
     }).join("")}
         </ol>
     `;

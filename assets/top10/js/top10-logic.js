@@ -3,6 +3,25 @@
    ============================================================ */
 
 let _listenersInitialized = false;
+let dataLoadRequest = 0;
+
+const STAT_LABELS = {
+    homeruns: "Home Runs",
+    hits: "Hits",
+    strikeouts: "Strikeouts",
+    points: "Points",
+    rebounds: "Rebounds",
+    assists: "Assists",
+    rushing: "Rushing",
+    passing: "Passing",
+    fumbles: "Fumbles",
+    fgmade: "Field Goals Made"
+};
+
+const MLB_CATEGORY_STATS = {
+    batting: new Set(["homeruns", "hits"]),
+    pitching: new Set(["strikeouts"])
+};
 
 /* ============================================================
    1. AUTH & IDENTITY
@@ -190,7 +209,13 @@ function listenToGame(roomCode) {
     onValue(gameRef, (snapshot) => {
         const remoteState = snapshot.val();
         if (remoteState) {
+            const selectionChanged = game.sport !== remoteState.sport ||
+                game.category !== remoteState.category ||
+                game.year !== remoteState.year;
             Object.assign(game, remoteState);
+            if (selectionChanged) {
+                maybeLoadData();
+            }
             renderUIForState(game);
         }
     });
@@ -384,26 +409,64 @@ function processGuess(rawGuess, playerId) {
 /* ============================================================
    6. DATA & UTILITIES
    ============================================================ */
-function maybeLoadData() {
-    if (!game.sport || !game.year) return;
+async function maybeLoadData() {
+    const requestId = ++dataLoadRequest;
+    const { sport, category, year } = game;
 
-    const key = game.sport === "mlb"
-        ? `mlb-${game.category}-${game.year}`
-        : `${game.sport}-${game.year}`;
+    game.data = {};
+    if (ui.statSelect) {
+        ui.statSelect.disabled = true;
+        ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+    }
 
-    // TODO: Fetch from API or local JSON
-    // For now, stub data
-    game.data = {
-        "Home Runs": {
-            players: [
-                { name: "Aaron Judge", value: 58 },
-                { name: "Juan Soto", value: 41 }
-            ],
-            isPercent: false
+    if (!sport || !year || (sport === "mlb" && !category)) {
+        if (ui.statTitle) ui.statTitle.textContent = "Select a stat to begin";
+        return;
+    }
+
+    if (ui.statTitle) ui.statTitle.textContent = "Loading stats...";
+
+    const fileName = `${sport}_top10_${year}.json`;
+    const dataUrl = new URL(`../../../data/${sport}/${year}/top10/${fileName}`, import.meta.url);
+
+    try {
+        const response = await fetch(dataUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status} loading ${fileName}`);
         }
-    };
 
-    populateStatDropdown();
+        const rawData = await response.json();
+        if (requestId !== dataLoadRequest) return;
+
+        const stats = Object.entries(rawData).filter(([key]) =>
+            sport !== "mlb" || MLB_CATEGORY_STATS[category]?.has(key)
+        );
+
+        game.data = Object.fromEntries(stats.map(([key, names]) => {
+            if (!Array.isArray(names) || names.some(name => typeof name !== "string")) {
+                throw new Error(`Invalid player list for stat "${key}" in ${fileName}`);
+            }
+
+            const statName = STAT_LABELS[key] || key.replace(/[_-]/g, " ");
+            return [statName, {
+                players: names.map(name => ({ name })),
+                isPercent: false
+            }];
+        }));
+
+        if (Object.keys(game.data).length > 0) {
+            populateStatDropdown();
+            if (ui.statTitle) ui.statTitle.textContent = "Select a stat to begin";
+        } else if (ui.statTitle) {
+            ui.statTitle.textContent = "No stats available for this selection";
+        }
+
+        renderUIForState(game);
+    } catch (error) {
+        if (requestId !== dataLoadRequest) return;
+        console.warn("Unable to load Top 10 data:", error);
+        if (ui.statTitle) ui.statTitle.textContent = "No data available for this season";
+    }
 }
 
 function loadSport() {
