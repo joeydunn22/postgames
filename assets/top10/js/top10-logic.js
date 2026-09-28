@@ -5,24 +5,6 @@
 let _listenersInitialized = false;
 let dataLoadRequest = 0;
 
-const STAT_LABELS = {
-    homeruns: "Home Runs",
-    hits: "Hits",
-    strikeouts: "Strikeouts",
-    points: "Points",
-    rebounds: "Rebounds",
-    assists: "Assists",
-    rushing: "Rushing",
-    passing: "Passing",
-    fumbles: "Fumbles",
-    fgmade: "Field Goals Made"
-};
-
-const MLB_CATEGORY_STATS = {
-    batting: new Set(["homeruns", "hits"]),
-    pitching: new Set(["strikeouts"])
-};
-
 /* ============================================================
    1. AUTH & IDENTITY
    ============================================================ */
@@ -426,8 +408,10 @@ async function maybeLoadData() {
 
     if (ui.statTitle) ui.statTitle.textContent = "Loading stats...";
 
-    const fileName = `${sport}_top10_${year}.json`;
-    const dataUrl = new URL(`../../../data/${sport}/${year}/top10/${fileName}`, import.meta.url);
+    const fileName = sport === "mlb"
+        ? `${category}_${year}_enriched.json`
+        : `stats_${year}_enriched.json`;
+    const dataUrl = new URL(`../../../data/${sport}/${year}/processed/${fileName}`, import.meta.url);
 
     try {
         const response = await fetch(dataUrl);
@@ -438,20 +422,30 @@ async function maybeLoadData() {
         const rawData = await response.json();
         if (requestId !== dataLoadRequest) return;
 
-        const stats = Object.entries(rawData).filter(([key]) =>
-            sport !== "mlb" || MLB_CATEGORY_STATS[category]?.has(key)
-        );
+        if (!Array.isArray(rawData)) {
+            throw new Error(`Expected an array of stat records in ${fileName}`);
+        }
 
-        game.data = Object.fromEntries(stats.map(([key, names]) => {
-            if (!Array.isArray(names) || names.some(name => typeof name !== "string")) {
-                throw new Error(`Invalid player list for stat "${key}" in ${fileName}`);
+        game.data = Object.fromEntries(rawData.map(stat => {
+            if (!stat.stat_label || !Array.isArray(stat.players)) {
+                throw new Error(`Invalid stat record in ${fileName}`);
             }
 
-            const statName = STAT_LABELS[key] || key.replace(/[_-]/g, " ");
-            return [statName, {
-                players: names.map(name => ({ name })),
-                isPercent: false
-            }];
+            const isPercent = stat.is_percent_stat ??
+                stat.players.some(player => player.is_percent === true);
+            const players = stat.players.map(player => {
+                const name = [player.first_name, player.player].filter(Boolean).join(" ");
+                if (!name) {
+                    throw new Error(`Missing player name for stat "${stat.stat_label}" in ${fileName}`);
+                }
+
+                return {
+                    name,
+                    value: isPercent ? player.value / 100 : player.value
+                };
+            });
+
+            return [stat.stat_label, { players, isPercent }];
         }));
 
         if (Object.keys(game.data).length > 0) {
