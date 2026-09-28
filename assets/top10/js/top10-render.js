@@ -370,6 +370,7 @@ function initEventHandlers() {
             game.globalGuessed = [];
             renderList();
         }
+        renderUIForState(game);
     });
 
     ui.submitGuessBtn?.addEventListener("click", () => {
