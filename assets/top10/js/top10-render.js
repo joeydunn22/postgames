@@ -230,7 +230,8 @@ function renderUIForState(state = {}) {
     const myIndex = Array.isArray(game.players)
         ? game.players.findIndex(p => p.id === myPlayerId)
         : -1;
-    const isYourTurn = myIndex !== -1 && myIndex === game.currentPlayerIndex;
+    const isYourTurn = !roomActive ||
+        (myIndex !== -1 && myIndex === game.currentPlayerIndex);
 
     const canStart = !!(game.sport &&
         (game.sport !== "mlb" || game.category) &&

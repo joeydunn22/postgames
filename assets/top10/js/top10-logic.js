@@ -309,7 +309,7 @@ function handleLocalGuess(rawGuess) {
 }
 
 async function hostProcessGuess(pending) {
-    if (!myPlayerId === hostId) return;
+    if (!roomActive || !currentRoomCode || myPlayerId !== hostId) return;
 
     const result = processGuess(pending.rawGuess, pending.playerId);
 
