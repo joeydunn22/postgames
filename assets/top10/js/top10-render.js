@@ -93,7 +93,7 @@ function populateStatDropdown() {
 // Sport / category / season chips: highlight the current pick, grey out
 // options with no data, and lock them unless you're the one choosing
 function renderSelectionButtons(isHost) {
-    const canChoose = isHost && game.state === window.GAME_STATES.SETUP;
+    const canChoose = isHost && game.state === GAME_STATES.SETUP;
 
     document.querySelectorAll("#sport-buttons .chip").forEach(btn => {
         const sport = btn.dataset.sport;
@@ -206,7 +206,7 @@ function renderPlayerNames() {
         addBtn.className = "pill-add";
         addBtn.textContent = "+ Add player";
         addBtn.addEventListener("click", () => {
-            game.players.push({ name: `Player ${game.players.length + 1}`, guesses: [], score: 0 });
+            game.players.push(newLocalPlayer(`Player ${game.players.length + 1}`));
             renderPlayerNames();
             container.querySelectorAll(".player-pill input")[game.players.length - 1]?.select();
         });
@@ -377,7 +377,55 @@ function renderEndGameButton() {
 
 
 /* ============================================================
-   5. RESULTS SCREEN
+   5. SESSION ("TONIGHT") LEADERBOARD
+   Shown on setup (between games) and results once 2+ people have
+   played. Sorted by wins, then total points.
+   ============================================================ */
+function renderSessionBoard(container, { justPlayed = false } = {}) {
+    if (!container) return;
+
+    const rows = Object.entries(session.players || {})
+        .map(([id, record]) => ({ id, ...record }))
+        .sort((a, b) => (b.wins - a.wins) || (b.points - a.points));
+
+    if (rows.length < 2 || !session.gamesPlayed) {
+        container.classList.add("hidden");
+        return;
+    }
+    container.classList.remove("hidden");
+
+    // Show current names for people still here, saved names for anyone who left
+    const currentNames = Object.fromEntries(game.players.map(p => [p.id, p.name]));
+    const topWins = rows[0].wins;
+    const games = session.gamesPlayed;
+
+    // Players level on wins and points share a place
+    rows.forEach((row, idx) => {
+        const prev = rows[idx - 1];
+        row.place = prev && prev.wins === row.wins && prev.points === row.points ? prev.place : idx + 1;
+    });
+
+    container.innerHTML = `
+        <div class="session-head">
+            <h2 class="section-label">Tonight</h2>
+            <span class="hint">${games} ${games === 1 ? "game" : "games"}${justPlayed ? "" : " so far"}</span>
+        </div>
+        <div class="session-cols" aria-hidden="true"><span></span><span></span><span>Wins</span><span>Pts</span></div>
+        <ol class="session-list">
+            ${rows.map(row => `
+                <li class="session-row ${topWins > 0 && row.wins === topWins ? "leader" : ""}">
+                    <span class="session-place">${row.place}</span>
+                    <span class="session-name">${escapeHTML(currentNames[row.id] || row.name)}</span>
+                    <span class="session-wins">${row.wins}</span>
+                    <span class="session-points">${row.points}</span>
+                </li>`).join("")}
+        </ol>
+    `;
+}
+
+
+/* ============================================================
+   6. RESULTS SCREEN
    ============================================================ */
 function renderResults(isHost) {
     const stat = game.data[game.stat];
@@ -415,6 +463,7 @@ function renderResults(isHost) {
     }
 
     renderBoard(ui.resultsAnswers, { final: true });
+    renderSessionBoard(ui.sessionResults, { justPlayed: true });
 
     // Only the host can start the next game in a room
     ui.newGameBtn?.classList.toggle("hidden", !isHost);
@@ -423,13 +472,13 @@ function renderResults(isHost) {
 
 
 /* ============================================================
-   6. MAIN RENDER FUNCTION
+   7. MAIN RENDER FUNCTION
    ============================================================ */
 function renderUIForState(state = {}) {
     if (!state || typeof state !== "object") return;
     if (!_uiInitialized) return;
 
-    const phase = state.state || window.GAME_STATES.SETUP;
+    const phase = state.state || GAME_STATES.SETUP;
     const isHost = !roomActive || myPlayerId === hostId;
 
     const myIndex = game.players.findIndex(p => p.id === myPlayerId);
@@ -445,19 +494,20 @@ function renderUIForState(state = {}) {
         game.data[game.stat] &&
         playerCount > 0);
 
-    ui.statSelectionArea?.classList.toggle("hidden", phase !== window.GAME_STATES.SETUP);
-    ui.statSection?.classList.toggle("hidden", phase !== window.GAME_STATES.PLAYING);
-    ui.resultsSection?.classList.toggle("hidden", phase !== window.GAME_STATES.RESULTS);
+    ui.statSelectionArea?.classList.toggle("hidden", phase !== GAME_STATES.SETUP);
+    ui.statSection?.classList.toggle("hidden", phase !== GAME_STATES.PLAYING);
+    ui.resultsSection?.classList.toggle("hidden", phase !== GAME_STATES.RESULTS);
 
     renderRoomBar();
     renderSelectionButtons(isHost);
 
-    if (phase === window.GAME_STATES.SETUP) {
+    if (phase === GAME_STATES.SETUP) {
         if (ui.startGameBtn) {
             ui.startGameBtn.classList.toggle("hidden", !isHost);
             ui.startGameBtn.disabled = !canStart;
         }
         ui.setupWaiting?.classList.toggle("hidden", isHost);
+        renderSessionBoard(ui.sessionSetup);
 
         if (ui.statSelect) {
             ui.statSelect.disabled = !(isHost && game.sport && game.year &&
@@ -466,7 +516,7 @@ function renderUIForState(state = {}) {
         }
         _wasMyTurn = false;
 
-    } else if (phase === window.GAME_STATES.PLAYING) {
+    } else if (phase === GAME_STATES.PLAYING) {
         if (ui.playContext) ui.playContext.textContent = gameContextLabel();
         if (ui.playStat) ui.playStat.textContent = game.stat || "";
 
@@ -486,7 +536,7 @@ function renderUIForState(state = {}) {
         if (canGuess && !_wasMyTurn) ui.userGuess?.focus();
         _wasMyTurn = canGuess;
 
-    } else if (phase === window.GAME_STATES.RESULTS) {
+    } else if (phase === GAME_STATES.RESULTS) {
         renderResults(isHost);
         _wasMyTurn = false;
     }
@@ -496,10 +546,10 @@ function renderUIForState(state = {}) {
 
 
 /* ============================================================
-   7. EVENT HANDLERS
+   8. EVENT HANDLERS
    ============================================================ */
 function onAuthUIUpdate() {
-    if (!window.currentUser) {
+    if (!currentUser) {
         signInAnonymously(auth).catch(err => console.error("Auth failed:", err));
     }
 }
@@ -568,7 +618,7 @@ function initEventHandlers() {
 
 
 /* ============================================================
-   8. RENDERER INITIALIZATION
+   9. RENDERER INITIALIZATION
    ============================================================ */
 function initUI() {
     const byId = id => document.getElementById(id);
@@ -583,6 +633,7 @@ function initUI() {
     ui.roomJoin = byId("roomJoin");
     ui.roomInfo = byId("roomInfo");
     ui.roomCodeDisplay = byId("roomCodeDisplay");
+    ui.sessionSetup = byId("sessionSetup");
 
     // Playing
     ui.statSection = byId("statSection");
@@ -605,6 +656,7 @@ function initUI() {
     ui.resultsSub = byId("resultsSub");
     ui.resultsPlayers = byId("resultsPlayers");
     ui.resultsAnswers = byId("resultsAnswers");
+    ui.sessionResults = byId("sessionResults");
     ui.newGameBtn = byId("newGameBtn");
     ui.newGameWaiting = byId("newGameWaiting");
 }
@@ -614,7 +666,7 @@ function initRenderer() {
     initEventHandlers();
 
     if (!roomActive && game.players.length === 0) {
-        game.players.push({ name: "Player 1", guesses: [], score: 0 });
+        game.players.push(newLocalPlayer("Player 1"));
     }
     renderPlayerNames();
 
@@ -622,26 +674,6 @@ function initRenderer() {
     renderUIForState(game);
 }
 
-
-/* ============================================================
-   9. PUBLIC RENDER API EXPORT
-   ============================================================ */
-const PUBLIC_RENDER_API = {
-    renderUIForState,
-    renderPlayerNames,
-    renderSelectionButtons,
-    renderEndGameButton,
-    renderResults,
-    renderBoard,
-    resetStatUI,
-    populateStatDropdown,
-    initRenderer,
-    onAuthUIUpdate
-};
-
-Object.entries(PUBLIC_RENDER_API).forEach(([name, fn]) => {
-    window[name] = fn;
-});
 
 // Initialize when DOM is ready
 if (document.readyState === "loading") {

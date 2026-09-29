@@ -101,6 +101,8 @@
         </div>
       </div>
 
+      <div id="sessionSetup" class="session hidden"></div>
+
       <button id="startGameBtn" class="btn btn-primary btn-block" type="button">Start Game</button>
       <p id="setupWaiting" class="hint center hidden">The host is picking the game. Hang tight.</p>
     </section>
@@ -146,6 +148,8 @@
 
       <ol id="resultsPlayers" class="standings"></ol>
 
+      <div id="sessionResults" class="session hidden"></div>
+
       <h2 class="section-label">The full list</h2>
       <ol id="resultsAnswers" class="board board-final"></ol>
 
@@ -153,7 +157,7 @@
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 120</p>
+    <p class="version">Version 121</p>
   </main>
 
 
@@ -194,10 +198,11 @@
     window.signInAnonymously = signInAnonymously;
   </script>
 
-  <!-- JS: Top 10 Game (Order matters!) -->
-  <script type="module" src="../assets/top10/js/top10-state.js"></script>
-  <script type="module" src="../assets/top10/js/top10-render.js"></script>
-  <script type="module" src="../assets/top10/js/top10-logic.js"></script>
+  <!-- JS: Top 10 Game. Plain deferred scripts: they run in this order after
+       the Firebase module above, and share top-level names with each other. -->
+  <script defer src="../assets/top10/js/top10-state.js"></script>
+  <script defer src="../assets/top10/js/top10-render.js"></script>
+  <script defer src="../assets/top10/js/top10-logic.js"></script>
 
 </body>
 </html>

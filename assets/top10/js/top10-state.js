@@ -1,5 +1,8 @@
 /* ============================================================
-   GLOBAL MULTIPLAYER + ROOM STATE + UI CONTAINER
+   TOP 10 — SHARED STATE
+   Loaded first. These are plain scripts (not modules), so every
+   variable and function declared at the top level of any of the
+   three files is visible to the other two.
    ============================================================ */
 
 const GAME_STATES = {
@@ -8,31 +11,35 @@ const GAME_STATES = {
     RESULTS: "results"
 };
 
-window.GAME_STATES = GAME_STATES;
-
 // Applies to both pass-the-phone games and rooms
-window.MAX_PLAYERS = 4;
+const MAX_PLAYERS = 4;
 
-window.currentUser = null;
-window.myPlayerId = null;
-window.currentRoomCode = null;
-window.roomActive = false;
-window.hostId = null;
 
-window.ui = {};   // UI reference container
+/* ============================================================
+   ROOM + IDENTITY
+   ============================================================ */
 
-// Entries from data/manifest.json: which sport/category/year combos have data
-window.dataManifest = [];
+let currentUser = null;
+let myPlayerId = null;
+let currentRoomCode = null;
+let roomActive = false;
+let hostId = null;
 
 // Room only: { uid: true } for each player who voted to end the game
-window.endVotes = {};
+let endVotes = {};
+
+// DOM references, filled in by the renderer
+const ui = {};
+
+// Entries from data/manifest.json: which sport/category/year combos have data
+let dataManifest = [];
 
 
 /* ============================================================
    CORE GAME STATE (shared by single + multiplayer)
    ============================================================ */
 
-window.game = {
+const game = {
     state: GAME_STATES.SETUP,
     currentPlayerIndex: 0,
 
@@ -41,6 +48,7 @@ window.game = {
 
     globalGuessed: [],
     roundComplete: false,
+    lastGuess: null,
 
     sport: null,
     category: null,
@@ -48,27 +56,43 @@ window.game = {
     stat: null,
 
     authReady: false,
-
     isGuessLocked: false,
 
-    data: {}   // local-only stat data    
+    data: {}   // local-only stat data
 };
 
 
 /* ============================================================
-   AUTH STATE HELPER
+   SESSION ("Tonight") LEADERBOARD
+   Running totals across every game played in this room, or on this
+   device when not in a room. Keyed by player id (Firebase uid in a
+   room, "local-N" on one device).
+   { gamesPlayed, players: { id: { name, wins, points, games } } }
    ============================================================ */
 
-function setAuthState(user) {
-    window.currentUser = user;
-    window.myPlayerId = user?.uid ?? null;
-    game.authReady = !!user;
+let session = emptySession();
+
+function emptySession() {
+    return { gamesPlayed: 0, players: {} };
 }
 
 
 /* ============================================================
-   DATA AVAILABILITY HELPER
+   HELPERS
    ============================================================ */
+
+function setAuthState(user) {
+    currentUser = user;
+    myPlayerId = user?.uid ?? null;
+    game.authReady = !!user;
+}
+
+// Local (one-device) players get a stable id so the session
+// leaderboard follows them through renames
+let _nextLocalId = 1;
+function newLocalPlayer(name) {
+    return { id: `local-${_nextLocalId++}`, name, guesses: [], score: 0 };
+}
 
 // True if any data exists matching the given sport/category/year (omitted = any)
 function hasData({ sport, category, year } = {}) {
@@ -77,23 +101,3 @@ function hasData({ sport, category, year } = {}) {
         (!category || entry.category === category) &&
         (!year || String(entry.year) === String(year)));
 }
-
-
-/* ============================================================
-   PUBLIC API EXPORT
-   ============================================================ */
-
-const PUBLIC_API = {
-    setAuthState,
-    hasData,
-    GAME_STATES
-};
-
-// Attach everything automatically
-Object.entries(PUBLIC_API).forEach(([name, fn]) => {
-    if (typeof fn === "function" || typeof fn === "object") {
-        window[name] = fn;
-    } else {
-        console.warn(`PUBLIC_API: ${name} is not a function`);
-    }
-});

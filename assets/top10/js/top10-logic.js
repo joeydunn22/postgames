@@ -1,5 +1,6 @@
 /* ============================================================
-   TOP 10 — LOGIC (Organized)
+   TOP 10 — LOGIC
+   Auth, rooms, game flow, guess matching, data loading.
    ============================================================ */
 
 let _listenersInitialized = false;
@@ -39,6 +40,14 @@ async function leaveCurrentRoom() {
     endVotes = {};
     _listenersInitialized = false;
 
+    // Back to a fresh one-device game with its own leaderboard
+    game.state = GAME_STATES.SETUP;
+    game.players = [newLocalPlayer("Player 1")];
+    game.globalGuessed = [];
+    game.roundComplete = false;
+    game.lastGuess = null;
+    session = emptySession();
+
     setRoomStatus("Left room.");
     renderUIForState(game);
 }
@@ -66,7 +75,7 @@ async function createRoom() {
 
     // Initialize game state
     await set(ref(db, `rooms/${roomCode}/gameState`), {
-        state: window.GAME_STATES.SETUP,
+        state: GAME_STATES.SETUP,
         currentPlayerIndex: 0,
         globalGuessed: [],
         players: [],
@@ -79,9 +88,9 @@ async function createRoom() {
     // Identity entry
     await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), currentUser.displayName || "Host");
 
-    window.currentRoomCode = roomCode;
-    window.roomActive = true;
-    window.hostId = currentUser.uid;
+    currentRoomCode = roomCode;
+    roomActive = true;
+    hostId = currentUser.uid;
 
     setRoomStatus("Share this code with your friends.");
 
@@ -91,6 +100,7 @@ async function createRoom() {
         listenToGame(roomCode);
         listenToPendingGuess(roomCode);
         listenToEndVotes(roomCode);
+        listenToSession(roomCode);
         _listenersInitialized = true;
     }
 
@@ -128,9 +138,9 @@ async function joinRoom(roomCode) {
     const joinCodeInput = document.getElementById("joinCodeInput");
     if (joinCodeInput) joinCodeInput.value = "";
 
-    window.currentRoomCode = roomCode;
-    window.roomActive = true;
-    window.hostId = snapshot.val().host;
+    currentRoomCode = roomCode;
+    roomActive = true;
+    hostId = snapshot.val().host;
 
     setRoomStatus("You're in. The host picks the game.");
 
@@ -140,6 +150,7 @@ async function joinRoom(roomCode) {
         listenToGame(roomCode);
         listenToPendingGuess(roomCode);
         listenToEndVotes(roomCode);
+        listenToSession(roomCode);
         _listenersInitialized = true;
     }
 
@@ -255,6 +266,14 @@ function listenToPendingGuess(roomCode) {
     });
 }
 
+function listenToSession(roomCode) {
+    onValue(ref(db, `rooms/${roomCode}/session`), (snapshot) => {
+        const remote = snapshot.val() || {};
+        session = { gamesPlayed: remote.gamesPlayed || 0, players: remote.players || {} };
+        renderUIForState(game);
+    });
+}
+
 function listenToEndVotes(roomCode) {
     const votesRef = ref(db, `rooms/${roomCode}/endVotes`);
     onValue(votesRef, (snapshot) => {
@@ -269,7 +288,7 @@ function listenToEndVotes(roomCode) {
    ============================================================ */
 async function startGame() {
     if (roomActive && myPlayerId !== hostId) return;
-    if (game.state !== window.GAME_STATES.SETUP) return;
+    if (game.state !== GAME_STATES.SETUP) return;
     if (!game.stat || !game.data[game.stat]) return;
 
     if (roomActive) {
@@ -286,7 +305,7 @@ async function startGame() {
 
     // Reset core state
     clearEndVotes();
-    transition(window.GAME_STATES.PLAYING);
+    transition(GAME_STATES.PLAYING);
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
     game.roundComplete = false;
@@ -315,18 +334,44 @@ async function startGame() {
 function applyEndGame() {
     // In a room, only the host ends the game (after everyone votes)
     if (roomActive && myPlayerId !== hostId) return;
-    if (game.state !== window.GAME_STATES.PLAYING) return;
+    if (game.state !== GAME_STATES.PLAYING) return;
 
-    transition(window.GAME_STATES.RESULTS);
+    transition(GAME_STATES.RESULTS);
     clearEndVotes();
+    recordGameResult();
     if (roomActive) {
         syncGameState();
     }
     renderUIForState(game);
 }
 
+// Add the finished game to the session leaderboard. A win goes to the
+// outright top scorer only; ties (and one-player games) award no win.
+function recordGameResult() {
+    const players = game.players;
+    if (players.length === 0) return;
+
+    const topScore = Math.max(...players.map(p => p.score ?? 0));
+    const leaders = players.filter(p => (p.score ?? 0) === topScore);
+    const winner = players.length > 1 && leaders.length === 1 && topScore > 0 ? leaders[0] : null;
+
+    session.gamesPlayed = (session.gamesPlayed || 0) + 1;
+    players.forEach(p => {
+        const record = session.players[p.id] || { wins: 0, points: 0, games: 0 };
+        record.name = p.name;
+        record.games += 1;
+        record.points += p.score ?? 0;
+        if (p === winner) record.wins += 1;
+        session.players[p.id] = record;
+    });
+
+    if (roomActive && currentRoomCode) {
+        set(ref(db, `rooms/${currentRoomCode}/session`), session);
+    }
+}
+
 function resetGame() {
-    game.state = window.GAME_STATES.SETUP;
+    game.state = GAME_STATES.SETUP;
     game.globalGuessed = [];
     game.roundComplete = false;
     game.lastGuess = null;
@@ -378,7 +423,7 @@ function transition(nextState) {
    once every player in the room has voted, the host ends the game.
    ============================================================ */
 function onEndGameClick() {
-    if (game.state !== window.GAME_STATES.PLAYING) return;
+    if (game.state !== GAME_STATES.PLAYING) return;
 
     if (roomActive) {
         toggleEndVote();
@@ -401,7 +446,7 @@ async function toggleEndVote() {
 // Host only: end the game once every player currently in the room has voted
 function checkEndVotes() {
     if (!roomActive || myPlayerId !== hostId) return;
-    if (game.state !== window.GAME_STATES.PLAYING) return;
+    if (game.state !== GAME_STATES.PLAYING) return;
 
     const playerIds = Object.keys(game.playerNames || {});
     if (playerIds.length > 0 && playerIds.every(uid => endVotes[uid])) {
@@ -420,7 +465,7 @@ function clearEndVotes() {
    5. GUESS FLOW (LOCAL + HOST)
    ============================================================ */
 function onGuessSubmit() {
-    if (game.state !== window.GAME_STATES.PLAYING) return;
+    if (game.state !== GAME_STATES.PLAYING) return;
 
     const rawGuess = ui.userGuess?.value?.trim() || "";
     if (!rawGuess) return;
@@ -535,7 +580,8 @@ async function maybeLoadData() {
     const fileName = sport === "mlb"
         ? `${category}_${year}_enriched.json`
         : `stats_${year}_enriched.json`;
-    const dataUrl = new URL(`../../../data/${sport}/${year}/processed/${fileName}`, import.meta.url);
+    // Paths are relative to pages/top10.html
+    const dataUrl = `../data/${sport}/${year}/processed/${fileName}`;
 
     try {
         const response = await fetch(dataUrl);
@@ -591,7 +637,7 @@ async function maybeLoadData() {
 
 async function loadDataManifest() {
     try {
-        const response = await fetch(new URL("../../../data/manifest.json", import.meta.url));
+        const response = await fetch("../data/manifest.json");
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         dataManifest = (await response.json()).available || [];
     } catch (error) {
@@ -690,50 +736,5 @@ function isMatch(guess, answer) {
 
     return distance <= threshold;
 }
-
-/* ============================================================
-   7. PUBLIC API EXPORT
-   ============================================================ */
-const PUBLIC_API = {
-    createRoom,
-    joinRoom,
-    leaveRoom,
-    listenToRoom,
-    listenToPlayers,
-    listenToGame,
-    listenToPendingGuess,
-    applyEndGame,
-    resetGame,
-    syncGameState,
-    applyWrongGuess,
-    applyCorrectGuess,
-    handleLocalGuess,
-    sendGuessToHost,
-    hostProcessGuess,
-    onGuessSubmit,
-    maybeLoadData,
-    loadDataManifest,
-    onEndGameClick,
-    toggleEndVote,
-    listenToEndVotes,
-    checkEndVotes,
-    clearEndVotes,
-    loadSport,
-    normalize,
-    levenshtein,
-    isMatch,
-    startGame,
-    transition,
-    processGuess
-};
-
-// Attach everything automatically
-Object.entries(PUBLIC_API).forEach(([name, fn]) => {
-    if (typeof fn === "function") {
-        window[name] = fn;
-    } else {
-        console.warn(`PUBLIC_API: ${name} is not a function`);
-    }
-});
 
 loadDataManifest();
