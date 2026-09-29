@@ -1,239 +1,336 @@
 /* ============================================================
    TOP 10 — RENDERER (UI MODULE)
+   Everything that touches the page lives here. renderUIForState()
+   redraws the screen from `game` after any change.
    ============================================================ */
 
 /* ============================================================
    1. RENDERER STATE
    ============================================================ */
-let _prevPhase = null;
-let _listenersInitialized = false;
 let _uiInitialized = false;
+let _lastSeenGuessAt = 0;   // so only brand-new guesses animate
+let _wasMyTurn = false;     // so we focus the guess box when your turn starts
+let _prevRoomActive = false; // so player pills redraw when you join/leave a room
+
+const SPORT_LABELS = { mlb: "MLB", nba: "NBA", nfl: "NFL" };
+
 
 /* ============================================================
-   2. UI RESET / SETUP HELPERS
+   2. SMALL HELPERS
+   ============================================================ */
+
+// Names and guesses come from players (and Firebase), so never
+// put them into innerHTML without escaping
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[ch]);
+}
+
+function formatValue(value, isPercent) {
+    if (value == null) return "";
+    return isPercent ? (value * 100).toFixed(1) + "%" : value;
+}
+
+function gameContextLabel() {
+    const category = game.sport === "mlb" && game.category
+        ? game.category[0].toUpperCase() + game.category.slice(1)
+        : null;
+    return [SPORT_LABELS[game.sport], category, game.year].filter(Boolean).join(" · ");
+}
+
+// answer name -> name of the player who got it
+function guessersByAnswer() {
+    const map = {};
+    game.players.forEach(player => {
+        (player.guesses || []).forEach(g => {
+            if (g.correct) map[g.name] = player.name;
+        });
+    });
+    return map;
+}
+
+function isFreshGuess() {
+    return !!game.lastGuess && game.lastGuess.at > _lastSeenGuessAt;
+}
+
+
+/* ============================================================
+   3. SETUP SCREEN
    ============================================================ */
 function resetStatUI() {
     game.stat = null;
 
-    if (ui.statSelect) {
+    if (Object.keys(game.data || {}).length > 0) {
+        populateStatDropdown();
+    } else if (ui.statSelect) {
         ui.statSelect.disabled = true;
-        ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+        ui.statSelect.innerHTML = `<option value="">Pick a stat</option>`;
     }
 
-    if (ui.statTitle) {
-        ui.statTitle.textContent = "Select a stat to begin";
-    }
-}
-
-function resetLocalPlayersToOne() {
-    const container = ui.playerNameInputs;
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    const wrapper = document.createElement("div");
-    wrapper.className = "player-name-row";
-
-    const input = document.createElement("input");
-    input.className = "player-name-input";
-    input.type = "text";
-    input.value = "Player 1";
-
-    wrapper.appendChild(input);
-    container.appendChild(wrapper);
+    if (ui.statHint) ui.statHint.textContent = "";
 }
 
 function populateStatDropdown() {
-    if (ui.statSelect) {
-        ui.statSelect.disabled = false;
-        ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+    if (!ui.statSelect) return;
 
-        Object.keys(game.data).forEach(stat => {
-            const option = document.createElement("option");
-            option.value = stat;
-            option.textContent = stat;
-            ui.statSelect.appendChild(option);
-        });
-        ui.statSelect.value = game.stat || "";
-    }
+    ui.statSelect.innerHTML = `<option value="">Pick a stat</option>`;
+    Object.keys(game.data).forEach(stat => {
+        const option = document.createElement("option");
+        option.value = stat;
+        option.textContent = stat;
+        ui.statSelect.appendChild(option);
+    });
+    ui.statSelect.value = game.stat || "";
 }
 
-/* ============================================================
-   3. RENDER HELPERS (SMALL PIECES)
-   ============================================================ */
-function renderPlayerColumn(col, player, index, isPercent) {
-    col.classList.toggle("current-player", index === game.currentPlayerIndex);
+// Sport / category / season chips: highlight the current pick, grey out
+// options with no data, and lock them unless you're the one choosing
+function renderSelectionButtons(isHost) {
+    const canChoose = isHost && game.state === window.GAME_STATES.SETUP;
 
-    const guessesHTML = player.guesses.map(g => {
-        const className = g.correct ? "guess-correct" : "guess-wrong";
-        return `<li class="${className}">${g.name}</li>`;
-    }).join("");
+    document.querySelectorAll("#sport-buttons .chip").forEach(btn => {
+        const sport = btn.dataset.sport;
+        btn.classList.toggle("active", game.sport === sport);
+        btn.disabled = !canChoose || !hasData({ sport });
+        btn.title = hasData({ sport }) ? "" : "No data yet";
+    });
 
-    col.innerHTML = `
-        <h3>${player.name}</h3>
-        <ul>${guessesHTML}</ul>
-        <div class="player-score">Score: ${player.score ?? 0}</div>
-    `;
+    document.getElementById("mlb-category-wrapper")
+        ?.classList.toggle("hidden", game.sport !== "mlb");
+    document.querySelectorAll("#mlb-category-buttons .chip").forEach(btn => {
+        const category = btn.dataset.category;
+        btn.classList.toggle("active", game.category === category);
+        btn.disabled = !canChoose || !hasData({ sport: game.sport, category });
+    });
+
+    document.querySelectorAll("#year-buttons .chip").forEach(btn => {
+        const year = btn.dataset.year;
+        const available = hasData({ sport: game.sport, category: game.category, year });
+        btn.classList.toggle("active", String(game.year) === year);
+        btn.disabled = !canChoose || !available;
+        btn.title = available ? "" : "No data yet";
+    });
 }
 
+// Player names as pills. Solo: add/remove/rename freely.
+// Room: one pill per person in the room; you can only rename yourself.
 function renderPlayerNames() {
     const container = ui.playerNameInputs;
     if (!container) return;
 
     container.innerHTML = "";
 
-    const isMultiplayer = !!roomActive;
-
-    let entries = [];
-
-    if (isMultiplayer && game.playerNames) {
-        entries = Object.entries(game.playerNames).map(([uid, name]) => ({ uid, name }));
-    } else {
-        entries = game.players.map((p, i) => ({
-            uid: i,
-            name: p.name || `Player ${i + 1}`
+    const entries = roomActive
+        ? Object.entries(game.playerNames || {}).map(([uid, name]) => ({
+            key: uid,
+            name: typeof name === "string" ? name : name?.name || "Player",
+            isMe: uid === currentUser?.uid,
+            isHost: uid === hostId
+        }))
+        : game.players.map((p, i) => ({
+            key: i,
+            name: p.name || `Player ${i + 1}`,
+            isMe: true,
+            isHost: false
         }));
-    }
 
-    entries.forEach(({ uid, name }) => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "player-name-row";
+    entries.forEach(({ key, name, isMe, isHost }) => {
+        const pill = document.createElement("span");
+        pill.className = "player-pill" + (roomActive && isMe ? " me" : "");
 
         const input = document.createElement("input");
-        input.className = "player-name-input";
         input.type = "text";
         input.value = name;
+        input.readOnly = !isMe;
+        input.maxLength = 16;
+        input.setAttribute("aria-label", "Player name");
+        pill.appendChild(input);
 
-        // Check if this is the current user's player
-        const isMyPlayer = isMultiplayer ? (uid === currentUser?.uid) : true;
-
-        // Mark current user's input
-        if (isMyPlayer) {
-            input.classList.add("me");
-            input.readOnly = false;
-        } else {
-            input.readOnly = true;
+        if (roomActive && (isMe || isHost)) {
+            const tag = document.createElement("span");
+            tag.className = "pill-tag";
+            tag.textContent = isMe ? "you" : "host";
+            pill.appendChild(tag);
         }
 
-        input.addEventListener("blur", async () => {
+        const save = async () => {
             const newName = input.value.trim();
             if (!newName) {
                 input.value = name;
                 return;
             }
+            if (newName === name) return;
 
-            if (isMultiplayer && currentUser && isMyPlayer) {
+            if (roomActive) {
                 try {
                     await set(ref(db, `rooms/${currentRoomCode}/players/${currentUser.uid}`), newName);
                 } catch (err) {
                     console.error("Failed to update name:", err);
                     input.value = name;
                 }
-            } else if (!isMultiplayer && isMyPlayer) {
-                game.players[uid].name = newName;
+            } else {
+                game.players[key].name = newName;
             }
+        };
+        input.addEventListener("blur", save);
+        input.addEventListener("keydown", e => {
+            if (e.key === "Enter") input.blur();
         });
 
-        wrapper.appendChild(input);
-        container.appendChild(wrapper);
+        if (!roomActive && game.players.length > 1) {
+            const removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.className = "pill-remove";
+            removeBtn.textContent = "×";
+            removeBtn.setAttribute("aria-label", `Remove ${name}`);
+            removeBtn.addEventListener("click", () => {
+                game.players.splice(key, 1);
+                renderPlayerNames();
+            });
+            pill.appendChild(removeBtn);
+        }
+
+        container.appendChild(pill);
     });
 
-    // Update add/remove button visibility
-    const addBtn = document.getElementById("addPlayerBtn");
-    const removeBtn = document.getElementById("removePlayerBtn");
-    if (isMultiplayer) {
-        if (addBtn) addBtn.style.display = "none";
-        if (removeBtn) removeBtn.style.display = "none";
+    if (!roomActive) {
+        const addBtn = document.createElement("button");
+        addBtn.type = "button";
+        addBtn.className = "pill-add";
+        addBtn.textContent = "+ Add player";
+        addBtn.addEventListener("click", () => {
+            game.players.push({ name: `Player ${game.players.length + 1}`, guesses: [], score: 0 });
+            renderPlayerNames();
+            container.querySelectorAll(".player-pill input")[game.players.length - 1]?.select();
+        });
+        container.appendChild(addBtn);
+    }
+}
+
+function renderRoomBar() {
+    // Joining or leaving a room swaps whose names show in the player pills
+    if (!!roomActive !== _prevRoomActive) {
+        _prevRoomActive = !!roomActive;
+        renderPlayerNames();
+    }
+
+    ui.roomJoin?.classList.toggle("hidden", !!roomActive);
+    ui.roomInfo?.classList.toggle("hidden", !roomActive);
+    if (ui.roomCodeDisplay) ui.roomCodeDisplay.textContent = roomActive ? currentRoomCode : "";
+}
+
+
+/* ============================================================
+   4. PLAYING SCREEN
+   ============================================================ */
+function renderScoreboard() {
+    if (!ui.scoreboard) return;
+
+    ui.scoreboard.innerHTML = game.players.map((player, idx) => `
+        <div class="score ${idx === game.currentPlayerIndex && !game.roundComplete ? "is-turn" : ""}">
+            <span class="score-name">${escapeHTML(player.name)}</span>
+            <span class="score-num">${player.score ?? 0}</span>
+        </div>
+    `).join("");
+}
+
+function renderTurn(isYourTurn) {
+    if (!ui.currentPlayerDisplay) return;
+
+    const current = game.players[game.currentPlayerIndex];
+    const name = escapeHTML(current?.name || "Player");
+
+    if (game.roundComplete) {
+        ui.currentPlayerDisplay.textContent = "Board cleared!";
+    } else if (!roomActive) {
+        ui.currentPlayerDisplay.innerHTML = game.players.length > 1 ? `${name}'s turn` : "Your turn";
+    } else if (isYourTurn) {
+        ui.currentPlayerDisplay.textContent = "Your turn";
     } else {
-        if (addBtn) addBtn.style.display = "block";
-        if (removeBtn) removeBtn.style.display = "block";
+        ui.currentPlayerDisplay.innerHTML = `<span class="waiting">Waiting on</span> ${name}`;
     }
 }
 
-function renderList() {
-    if (!game.stat || !game.data[game.stat]) return;
+function renderFeedback() {
+    const el = ui.guessFeedback;
+    if (!el) return;
 
+    const last = game.lastGuess;
+    el.className = "feedback";
+    if (!last) {
+        el.textContent = "";
+        return;
+    }
+
+    const who = game.players.length > 1 ? `${last.playerName}: ` : "";
+    if (last.result === "correct") {
+        el.textContent = `✓ ${who}${last.answer}`;
+    } else if (last.result === "repeat") {
+        el.textContent = `${who}${last.answer} is already on the board`;
+    } else {
+        el.textContent = `✗ ${who}“${last.guess}” isn't on the list`;
+    }
+    el.classList.add(last.result);
+
+    if (isFreshGuess()) {
+        void el.offsetWidth; // restart the animation
+        el.classList.add("fresh");
+        if (last.result !== "correct" && ui.guessForm) {
+            ui.guessForm.classList.remove("shake");
+            void ui.guessForm.offsetWidth;
+            ui.guessForm.classList.add("shake");
+        }
+    }
+}
+
+// The top 10 board. During play, unguessed slots are blank.
+// With `final`, everything is revealed and misses are dimmed.
+function renderBoard(listEl, { final = false } = {}) {
     const stat = game.data[game.stat];
-    const list = stat.players;
-    const isPercent = stat.isPercent;
+    if (!listEl) return;
+    if (!stat) {
+        listEl.innerHTML = "";
+        return;
+    }
 
-    // Render Top 10 list
-    ui.top10List.innerHTML = `
-        <ol>
-            ${list.map(item => {
-        const guessed = game.globalGuessed.includes(item.name);
-        const value = !guessed || item.value == null
-            ? ""
-            : isPercent ? (item.value * 100).toFixed(1) + "%" : item.value;
-        const guessedClass = guessed ? "guessed" : "";
-        const answerName = guessed ? item.name : "";
-        return `<li class="${guessedClass}"><strong>${answerName}</strong>${value === "" ? "" : ` - ${value}`}</li>`;
-    }).join("")}
-        </ol>
-    `;
+    const guessedBy = guessersByAnswer();
+    const showWho = game.players.length > 1;
+    const freshAnswer = !final && isFreshGuess() && game.lastGuess.result === "correct"
+        ? game.lastGuess.answer
+        : null;
 
-    if (ui.roundStatus) {
-        ui.roundStatus.textContent = game.roundComplete
-            ? `Round complete! All ${list.length} answers have been guessed.`
+    listEl.innerHTML = stat.players.map((item, idx) => {
+        const guessed = (game.globalGuessed || []).includes(item.name);
+        const revealed = guessed || final;
+        const classes = [
+            "slot",
+            revealed ? "filled" : "",
+            final && !guessed ? "missed" : "",
+            item.name === freshAnswer ? "fresh" : ""
+        ].filter(Boolean).join(" ");
+
+        const by = guessed && showWho && guessedBy[item.name]
+            ? `<span class="slot-by">${escapeHTML(guessedBy[item.name])}</span>`
             : "";
-        ui.roundStatus.classList.toggle("hidden", !game.roundComplete);
-    }
+        const main = revealed
+            ? `<span class="slot-name">${escapeHTML(item.name)}</span>${by}`
+            : `<span class="slot-blank"></span>`;
+        const value = revealed ? escapeHTML(formatValue(item.value, stat.isPercent)) : "";
 
-    // Current player display
-    const currentPlayer = game.players[game.currentPlayerIndex];
-    ui.currentPlayerDisplay.textContent = game.roundComplete
-        ? "Round complete"
-        : "Current Turn: " + (currentPlayer?.name || "Player");
-
-    // Player columns
-    const container = ui.playersContainer;
-    container.style.justifyContent =
-        game.players.length === 1 ? "center" : "space-between";
-
-    while (container.children.length < game.players.length) {
-        const col = document.createElement("div");
-        col.className = "player-column";
-        container.appendChild(col);
-    }
-    while (container.children.length > game.players.length) {
-        container.removeChild(container.lastChild);
-    }
-
-    // Update each column
-    game.players.forEach((player, idx) => {
-        renderPlayerColumn(container.children[idx], player, idx, isPercent);
-    });
-}
-
-// Sport / category / year buttons: highlight the current pick, grey out
-// options with no data, and lock them unless we're choosing a game
-function renderSelectionButtons(isHost) {
-    const canChoose = isHost && game.state === window.GAME_STATES.SETUP;
-
-    document.querySelectorAll("#sport-buttons .pg-button").forEach(btn => {
-        const sport = btn.dataset.sport;
-        btn.classList.toggle("active", game.sport === sport);
-        btn.disabled = !canChoose || !hasData({ sport });
-    });
-
-    document.getElementById("mlb-category-buttons")
-        ?.classList.toggle("hidden", game.sport !== "mlb");
-    document.querySelectorAll("#mlb-category-buttons .pg-button").forEach(btn => {
-        const category = btn.dataset.category;
-        btn.classList.toggle("active", game.category === category);
-        btn.disabled = !canChoose || !hasData({ sport: game.sport, category });
-    });
-
-    document.querySelectorAll("#year-buttons .pg-button").forEach(btn => {
-        const year = btn.dataset.year;
-        btn.classList.toggle("active", String(game.year) === year);
-        btn.disabled = !canChoose ||
-            !hasData({ sport: game.sport, category: game.category, year });
-    });
+        return `
+            <li class="${classes}">
+                <span class="slot-rank">${escapeHTML(item.rank ?? idx + 1)}</span>
+                <span class="slot-main">${main}</span>
+                <span class="slot-value">${value}</span>
+            </li>`;
+    }).join("");
 }
 
 function renderEndGameButton() {
     if (!ui.endGameBtn) return;
+
+    ui.endGameBtn.disabled = !!game.roundComplete;
 
     if (!roomActive) {
         ui.endGameBtn.textContent = "End Game";
@@ -256,73 +353,71 @@ function renderEndGameButton() {
             .filter(p => p.id && !endVotes[p.id])
             .map(p => p.name);
         ui.endVoteStatus.textContent = votedCount > 0 && waitingOn.length > 0
-            ? `Waiting on: ${waitingOn.join(", ")}`
+            ? `Waiting on ${waitingOn.join(", ")}`
             : "";
         ui.endVoteStatus.classList.toggle("hidden", !ui.endVoteStatus.textContent);
     }
 }
 
+
+/* ============================================================
+   5. RESULTS SCREEN
+   ============================================================ */
 function renderResults(isHost) {
-    if (!ui.resultsSection) return;
-
-    ui.resultsSection.classList.remove("hidden");
-    ui.statSection.classList.add("hidden");
-
-    const scores = [...game.players].sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
-    const winner = scores[0];
-
-    const winnerScore = winner?.score ?? 0;
-    ui.resultsWinner.textContent = `🏆 ${winner?.name || "Player"} wins with ${winnerScore} ${winnerScore === 1 ? "point" : "points"}!`;
-
-    const container = ui.resultsPlayers;
-    container.innerHTML = "";
-
-    scores.forEach((player, idx) => {
-        const col = document.createElement("div");
-        col.className = "player-column";
-        renderPlayerColumn(col, player, idx, false);
-        col.classList.remove("current-player");
-        container.appendChild(col);
-    });
-
-    // Full answer key: guessed answers normal, missed ones dimmed
     const stat = game.data[game.stat];
-    if (ui.resultsAnswers) {
-        ui.resultsAnswers.innerHTML = !stat ? "" : `
-            <ol>
-                ${stat.players.map(item => {
-            const guessed = (game.globalGuessed || []).includes(item.name);
-            const value = item.value == null
-                ? ""
-                : stat.isPercent ? (item.value * 100).toFixed(1) + "%" : item.value;
-            return `<li class="${guessed ? "guessed" : "missed"}"><strong>${item.name}</strong>${value === "" ? "" : ` - ${value}`}</li>`;
-        }).join("")}
-            </ol>
-        `;
+    const total = stat?.players.length ?? 10;
+    const standings = [...game.players].sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+    const topScore = standings[0]?.score ?? 0;
+    const leaders = standings.filter(p => (p.score ?? 0) === topScore);
+    const pts = n => `${n} ${n === 1 ? "point" : "points"}`;
+
+    if (ui.resultsContext) ui.resultsContext.textContent = `Final · ${game.stat || ""}`;
+
+    let title, sub;
+    if (standings.length === 1) {
+        title = `${topScore} of ${total}`;
+        sub = topScore === total ? "Perfect. Every single one." : `${standings[0].name}'s final score.`;
+    } else if (leaders.length > 1) {
+        title = "It's a tie";
+        sub = `${leaders.map(p => p.name).join(" & ")} with ${pts(topScore)} each.`;
+    } else {
+        title = `${standings[0].name} wins`;
+        sub = `${pts(topScore)} out of ${total}.`;
+    }
+    if (ui.resultsWinner) ui.resultsWinner.textContent = title;
+    if (ui.resultsSub) ui.resultsSub.textContent = sub;
+
+    if (ui.resultsPlayers) {
+        ui.resultsPlayers.classList.toggle("hidden", standings.length < 2);
+        ui.resultsPlayers.innerHTML = standings.map((player, idx) => `
+            <li class="standing ${(player.score ?? 0) === topScore ? "leader" : ""}">
+                <span class="standing-place">${idx + 1}</span>
+                <span class="standing-name">${escapeHTML(player.name)}</span>
+                <span class="standing-score">${player.score ?? 0}</span>
+            </li>
+        `).join("");
     }
 
+    renderBoard(ui.resultsAnswers, { final: true });
+
     // Only the host can start the next game in a room
-    if (ui.newGameBtn) ui.newGameBtn.style.display = isHost ? "inline-block" : "none";
+    ui.newGameBtn?.classList.toggle("hidden", !isHost);
     ui.newGameWaiting?.classList.toggle("hidden", isHost);
 }
 
+
 /* ============================================================
-   4. MAIN RENDER FUNCTION
+   6. MAIN RENDER FUNCTION
    ============================================================ */
 function renderUIForState(state = {}) {
     if (!state || typeof state !== "object") return;
-
-    // Don't render if UI isn't initialized yet
     if (!_uiInitialized) return;
 
     const phase = state.state || window.GAME_STATES.SETUP;
+    const isHost = !roomActive || myPlayerId === hostId;
 
-    // Calculate derived state
-    const myIndex = Array.isArray(game.players)
-        ? game.players.findIndex(p => p.id === myPlayerId)
-        : -1;
-    const isYourTurn = !roomActive ||
-        (myIndex !== -1 && myIndex === game.currentPlayerIndex);
+    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
+    const isYourTurn = !roomActive || (myIndex !== -1 && myIndex === game.currentPlayerIndex);
 
     const playerCount = roomActive
         ? Object.keys(game.playerNames || {}).length
@@ -334,59 +429,58 @@ function renderUIForState(state = {}) {
         game.data[game.stat] &&
         playerCount > 0);
 
-    const isHost = !roomActive || myPlayerId === hostId;
+    ui.statSelectionArea?.classList.toggle("hidden", phase !== window.GAME_STATES.SETUP);
+    ui.statSection?.classList.toggle("hidden", phase !== window.GAME_STATES.PLAYING);
+    ui.resultsSection?.classList.toggle("hidden", phase !== window.GAME_STATES.RESULTS);
 
+    renderRoomBar();
     renderSelectionButtons(isHost);
 
-    // Render based on phase
     if (phase === window.GAME_STATES.SETUP) {
-        // Show stat selection area
-        if (ui.statSelectionArea) ui.statSelectionArea.classList.remove("hidden");
-
-        // Hide gameplay area
-        if (ui.statSection) ui.statSection.classList.add("hidden");
-        if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
-
         if (ui.startGameBtn) {
-            ui.startGameBtn.style.display = isHost ? "block" : "none";
+            ui.startGameBtn.classList.toggle("hidden", !isHost);
             ui.startGameBtn.disabled = !canStart;
         }
+        ui.setupWaiting?.classList.toggle("hidden", isHost);
 
-        // Only host can select stat - ALWAYS SHOW, but disable if conditions not met
         if (ui.statSelect) {
-            const shouldEnable = isHost && game.sport && game.year &&
+            ui.statSelect.disabled = !(isHost && game.sport && game.year &&
                 (game.sport !== "mlb" || game.category) &&
-                Object.keys(game.data).length > 0;
-            ui.statSelect.disabled = !shouldEnable;
+                Object.keys(game.data).length > 0);
         }
+        _wasMyTurn = false;
+
     } else if (phase === window.GAME_STATES.PLAYING) {
-        // Hide stat selection area
-        if (ui.statSelectionArea) ui.statSelectionArea.classList.add("hidden");
+        if (ui.playContext) ui.playContext.textContent = gameContextLabel();
+        if (ui.playStat) ui.playStat.textContent = game.stat || "";
 
-        // Show gameplay area
-        if (ui.statSection) ui.statSection.classList.remove("hidden");
-        if (ui.resultsSection) ui.resultsSection.classList.add("hidden");
+        const canGuess = isYourTurn && !game.roundComplete;
+        if (ui.userGuess) {
+            ui.userGuess.disabled = !canGuess;
+            ui.userGuess.placeholder = canGuess ? "Name a player" : "Not your turn";
+        }
+        if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !canGuess || game.isGuessLocked;
 
-        if (ui.userGuess) ui.userGuess.disabled = !isYourTurn || game.roundComplete;
-        if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked || game.roundComplete;
-        if (ui.endGameBtn) ui.endGameBtn.disabled = game.roundComplete;
-        renderList();
+        renderScoreboard();
+        renderTurn(isYourTurn);
+        renderFeedback();
+        renderBoard(ui.top10List);
         renderEndGameButton();
-    } else if (phase === window.GAME_STATES.RESULTS) {
-        // Hide stat selection and gameplay areas
-        if (ui.statSelectionArea) ui.statSelectionArea.classList.add("hidden");
-        if (ui.statSection) ui.statSection.classList.add("hidden");
 
-        // Show results
-        if (ui.resultsSection) ui.resultsSection.classList.remove("hidden");
+        if (canGuess && !_wasMyTurn) ui.userGuess?.focus();
+        _wasMyTurn = canGuess;
+
+    } else if (phase === window.GAME_STATES.RESULTS) {
         renderResults(isHost);
+        _wasMyTurn = false;
     }
 
-    _prevPhase = phase;
+    if (game.lastGuess) _lastSeenGuessAt = Math.max(_lastSeenGuessAt, game.lastGuess.at);
 }
 
+
 /* ============================================================
-   5. EVENT HANDLERS
+   7. EVENT HANDLERS
    ============================================================ */
 function onAuthUIUpdate() {
     if (!window.currentUser) {
@@ -394,7 +488,7 @@ function onAuthUIUpdate() {
     }
 }
 
-// Switching sport/category can leave a year picked that has no data for it
+// Switching sport/category can leave a season picked that has no data for it
 function clearUnavailableYear() {
     if (game.year && !hasData({ sport: game.sport, category: game.category, year: game.year })) {
         game.year = null;
@@ -403,164 +497,134 @@ function clearUnavailableYear() {
 
 function initEventHandlers() {
     document.getElementById("sport-buttons")?.addEventListener("click", (e) => {
-        if (e.target.dataset.sport) {
-            game.sport = e.target.dataset.sport;
-            game.category = null;
-            game.stat = null;
-            clearUnavailableYear();
-            resetStatUI();
-            maybeLoadData();
-            renderUIForState(game);
-        }
-    });
+        const sport = e.target.closest(".chip")?.dataset.sport;
+        if (!sport) return;
 
-    document.getElementById("mlb-category-buttons")?.addEventListener("click", (e) => {
-        if (e.target.dataset.category) {
-            game.category = e.target.dataset.category;
-            game.stat = null;
-            clearUnavailableYear();
-            resetStatUI();
-            maybeLoadData();
-            renderUIForState(game);
-        }
-    });
-
-    document.getElementById("year-buttons")?.addEventListener("click", (e) => {
-        if (e.target.dataset.year) {
-            game.year = e.target.dataset.year;
-            game.stat = null;
-            resetStatUI();
-            maybeLoadData();
-            renderUIForState(game);
-        }
-    });
-
-    ui.statSelect?.addEventListener("change", (e) => {
-        game.stat = e.target.value;
-        game.roundComplete = false;
-        if (game.stat) {
-            game.globalGuessed = [];
-            renderList();
-        }
+        game.sport = sport;
+        game.category = null;
+        game.stat = null;
+        clearUnavailableYear();
+        resetStatUI();
+        maybeLoadData();
         renderUIForState(game);
     });
 
-    ui.submitGuessBtn?.addEventListener("click", () => {
+    document.getElementById("mlb-category-buttons")?.addEventListener("click", (e) => {
+        const category = e.target.closest(".chip")?.dataset.category;
+        if (!category) return;
+
+        game.category = category;
+        game.stat = null;
+        clearUnavailableYear();
+        resetStatUI();
+        maybeLoadData();
+        renderUIForState(game);
+    });
+
+    document.getElementById("year-buttons")?.addEventListener("click", (e) => {
+        const year = e.target.closest(".chip")?.dataset.year;
+        if (!year) return;
+
+        game.year = year;
+        game.stat = null;
+        resetStatUI();
+        maybeLoadData();
+        renderUIForState(game);
+    });
+
+    ui.statSelect?.addEventListener("change", (e) => {
+        game.stat = e.target.value || null;
+        game.roundComplete = false;
+        game.globalGuessed = [];
+        renderUIForState(game);
+    });
+
+    ui.guessForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
         onGuessSubmit();
+        ui.userGuess?.focus();
     });
 
-    ui.userGuess?.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-            onGuessSubmit();
-        }
-    });
-
-    ui.startGameBtn?.addEventListener("click", () => {
-        if (startGame) {
-            startGame();
-        }
-    });
-
-    document.getElementById("addPlayerBtn")?.addEventListener("click", () => {
-        const container = ui.playerNameInputs;
-        const newPlayer = { name: `Player ${game.players.length + 1}`, guesses: [], score: 0 };
-        game.players.push(newPlayer);
-        renderPlayerNames();
-    });
-
-    document.getElementById("removePlayerBtn")?.addEventListener("click", () => {
-        if (game.players.length > 1) {
-            game.players.pop();
-            renderPlayerNames();
-        }
-    });
-}
-
-/* ============================================================
-   6. RENDERER INITIALIZATION
-   ============================================================ */
-
-function initUI() {
-    ui.statSelectionArea = document.getElementById("statSelectionArea");
-    ui.statSelect = document.getElementById("statSelect");
-    ui.statTitle = document.getElementById("statTitle");
-    ui.userGuess = document.getElementById("userGuess");
-    ui.submitGuessBtn = document.getElementById("submitGuessBtn");
-    ui.currentPlayerDisplay = document.getElementById("currentPlayerDisplay");
-    ui.roundStatus = document.getElementById("roundStatus");
-    ui.playersContainer = document.querySelector(".players-container");
-    ui.top10List = document.getElementById("top10List");
-    ui.playerNameInputs = document.getElementById("playerNameInputs");
-    ui.startGameBtn = document.getElementById("startGameBtn");
-    ui.resultsSection = document.getElementById("resultsSection");
-    ui.resultsWinner = document.getElementById("resultsWinner");
-    ui.resultsPlayers = document.getElementById("resultsPlayers");
-    ui.statSection = document.getElementById("statSection");
-    ui.endGameBtn = document.getElementById("endGameBtn");
-    ui.endVoteStatus = document.getElementById("endVoteStatus");
-    ui.resultsAnswers = document.getElementById("resultsAnswers");
-    ui.newGameBtn = document.getElementById("newGameBtn");
-    ui.newGameWaiting = document.getElementById("newGameWaiting");
-}
-
-function initActionButtonHandlers() {
+    ui.startGameBtn?.addEventListener("click", () => startGame());
     ui.endGameBtn?.addEventListener("click", () => onEndGameClick());
     ui.newGameBtn?.addEventListener("click", () => resetGame());
 }
 
-function initLocalPlayerButtons() {
-    // Initialize with one player
-    if (game.players.length === 0) {
-        game.players.push({ name: "Player 1", guesses: [], score: 0 });
-    }
-    renderPlayerNames();
+
+/* ============================================================
+   8. RENDERER INITIALIZATION
+   ============================================================ */
+function initUI() {
+    const byId = id => document.getElementById(id);
+
+    // Setup
+    ui.statSelectionArea = byId("statSelectionArea");
+    ui.statSelect = byId("statSelect");
+    ui.statHint = byId("statHint");
+    ui.playerNameInputs = byId("playerNameInputs");
+    ui.startGameBtn = byId("startGameBtn");
+    ui.setupWaiting = byId("setupWaiting");
+    ui.roomJoin = byId("roomJoin");
+    ui.roomInfo = byId("roomInfo");
+    ui.roomCodeDisplay = byId("roomCodeDisplay");
+
+    // Playing
+    ui.statSection = byId("statSection");
+    ui.playContext = byId("playContext");
+    ui.playStat = byId("playStat");
+    ui.scoreboard = byId("scoreboard");
+    ui.currentPlayerDisplay = byId("currentPlayerDisplay");
+    ui.guessForm = byId("guessForm");
+    ui.userGuess = byId("userGuess");
+    ui.submitGuessBtn = byId("submitGuessBtn");
+    ui.guessFeedback = byId("guessFeedback");
+    ui.top10List = byId("top10List");
+    ui.endGameBtn = byId("endGameBtn");
+    ui.endVoteStatus = byId("endVoteStatus");
+
+    // Results
+    ui.resultsSection = byId("resultsSection");
+    ui.resultsContext = byId("resultsContext");
+    ui.resultsWinner = byId("resultsWinner");
+    ui.resultsSub = byId("resultsSub");
+    ui.resultsPlayers = byId("resultsPlayers");
+    ui.resultsAnswers = byId("resultsAnswers");
+    ui.newGameBtn = byId("newGameBtn");
+    ui.newGameWaiting = byId("newGameWaiting");
 }
 
 function initRenderer() {
     initUI();
     initEventHandlers();
-    initActionButtonHandlers();
-    if (!roomActive) {
-        initLocalPlayerButtons();
+
+    if (!roomActive && game.players.length === 0) {
+        game.players.push({ name: "Player 1", guesses: [], score: 0 });
     }
+    renderPlayerNames();
 
-    // Mark UI as initialized LAST
     _uiInitialized = true;
-
-    // Now safe to render
     renderUIForState(game);
 }
 
-function applyDomRefs(domRefs = {}) {
-    Object.assign(ui, domRefs);
-}
-
-// DON'T call initRenderer() here - let it be called explicitly or via DOMContentLoaded
-// initRenderer();
 
 /* ============================================================
-   7. PUBLIC RENDER API EXPORT
+   9. PUBLIC RENDER API EXPORT
    ============================================================ */
 const PUBLIC_RENDER_API = {
     renderUIForState,
     renderPlayerNames,
-    renderList,
-    renderResults,
     renderSelectionButtons,
     renderEndGameButton,
+    renderResults,
+    renderBoard,
     resetStatUI,
     populateStatDropdown,
-    resetLocalPlayersToOne,
-    renderPlayerColumn,
     initRenderer,
-    applyDomRefs,
     onAuthUIUpdate
 };
 
 Object.entries(PUBLIC_RENDER_API).forEach(([name, fn]) => {
-    if (typeof fn === "function" || typeof fn === "object") {
-        window[name] = fn;
-    }
+    window[name] = fn;
 });
 
 // Initialize when DOM is ready

@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Top 10 Trivia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 10 Trivia · Postgames</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
   <link rel="stylesheet" href="../assets/global/global.css">
   <link rel="stylesheet" href="../assets/top10/css/top10.css">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
@@ -10,133 +14,147 @@
 
 <body>
 
-  <!-- GLOBAL NAVIGATION BAR -->
-  <header class="pg-header">
-    <nav class="pg-nav">
-      <a href="../index.html" class="pg-tab">Home</a>
-      <a href="top10.html" class="pg-tab active">Trivia</a>
-      <a href="debates.html" class="pg-tab">Debate Mode</a>
-      <a href="movies.html" class="pg-tab">Movie Suggester</a>
-      <a href="snacks.html" class="pg-tab">Snack Finder</a>
+  <header class="site-header">
+    <a href="../index.html" class="brand">POSTGAMES</a>
+    <nav class="site-nav">
+      <a href="top10.html" class="active">Trivia</a>
+      <a href="debates.html">Debates</a>
+      <a href="movies.html">Movies</a>
+      <a href="snacks.html">Snacks</a>
     </nav>
   </header>
 
-  <div class="pg-page">
-    <h1>Top 10 Trivia</h1>
-    <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 118</p>
-  </div>
+  <main class="page">
 
-  <!-- Create Room Buttons -->
-  <div class="room-controls">
-    <button id="createRoomBtn" onclick="createRoom()">Create Room</button>
-    <input id="joinCodeInput" placeholder="Enter room code">
-    <button id="joinRoomBtn" onclick="joinRoom(document.getElementById('joinCodeInput').value)">
-      Join Room
-    </button>
-    <button id="leaveRoomBtn" onclick="leaveRoom()" style="display:none;">
-      Leave Room
-    </button>
-  </div>
+    <!-- ========== SETUP: pick a game ========== -->
+    <section id="statSelectionArea" class="setup">
 
-  <div id="roomStatus" style="margin-top: 10px; font-weight: bold;"></div>
-  <div id="roomCodeDisplay" style="margin-top: 10px;"></div>
-
-  <!-- TOP CONTROL BAR: GAME SETUP -->
-  <div class="top-control-bar top-control-bar--dark">
-
-    <!-- SPORT -->
-    <div class="control-group">
-      <div class="control-label">Sport</div>
-      <div id="sport-buttons" class="button-group">
-        <button class="pg-button" data-sport="mlb">MLB</button>
-        <button class="pg-button" data-sport="nba">NBA</button>
-        <button class="pg-button" data-sport="nfl">NFL</button>
+      <div class="intro">
+        <p class="eyebrow">Sports Trivia</p>
+        <h1 class="display intro-title">Name the Top&nbsp;10</h1>
+        <p class="lede">Pick a stat and take turns naming the leaders. Miss and it's the next player's turn.</p>
       </div>
-    </div>
 
-    <!-- MLB CATEGORY -->
-    <div class="control-group" id="mlb-category-wrapper">
-      <div class="control-label">MLB Category</div>
-      <div id="mlb-category-buttons" class="button-group hidden">
-        <button class="pg-button" data-category="batting">Batting</button>
-        <button class="pg-button" data-category="pitching">Pitching</button>
+      <!-- Rooms: play together from different phones -->
+      <div class="room">
+        <div id="roomJoin" class="room-join">
+          <span class="room-label">On different phones?</span>
+          <button id="createRoomBtn" class="link-btn" type="button" onclick="createRoom()">Start a room</button>
+          <form class="join-form" onsubmit="event.preventDefault(); joinRoom(document.getElementById('joinCodeInput').value)">
+            <span class="room-label">or</span>
+            <input id="joinCodeInput" class="input join-input" placeholder="CODE" maxlength="4"
+              autocapitalize="characters" autocomplete="off" spellcheck="false" aria-label="Room code">
+            <button id="joinRoomBtn" class="btn" type="submit">Join</button>
+          </form>
+        </div>
+
+        <div id="roomInfo" class="room-info hidden">
+          <span class="room-label">Room code</span>
+          <span id="roomCodeDisplay" class="room-code"></span>
+          <button id="leaveRoomBtn" class="link-btn" type="button" onclick="leaveRoom()">Leave</button>
+        </div>
+
+        <p id="roomStatus" class="hint room-status" role="status"></p>
       </div>
-    </div>
 
-    <!-- YEAR -->
-    <div class="control-group">
-      <div class="control-label">Year</div>
-      <div id="year-buttons" class="button-group">
-        <button class="pg-button" data-year="2024">2024</button>
-        <button class="pg-button" data-year="2025">2025</button>
-        <button class="pg-button" data-year="2026">2026</button>
+      <!-- Game options -->
+      <div class="picker">
+        <div class="pick-row">
+          <span class="pick-label">Sport</span>
+          <div id="sport-buttons" class="chips">
+            <button class="chip" type="button" data-sport="mlb">MLB</button>
+            <button class="chip" type="button" data-sport="nba">NBA</button>
+            <button class="chip" type="button" data-sport="nfl">NFL</button>
+          </div>
+        </div>
+
+        <div id="mlb-category-wrapper" class="pick-row hidden">
+          <span class="pick-label">Category</span>
+          <div id="mlb-category-buttons" class="chips">
+            <button class="chip" type="button" data-category="batting">Batting</button>
+            <button class="chip" type="button" data-category="pitching">Pitching</button>
+          </div>
+        </div>
+
+        <div class="pick-row">
+          <span class="pick-label">Season</span>
+          <div id="year-buttons" class="chips">
+            <button class="chip" type="button" data-year="2024">2024</button>
+            <button class="chip" type="button" data-year="2025">2025</button>
+            <button class="chip" type="button" data-year="2026">2026</button>
+          </div>
+        </div>
+
+        <div class="pick-row">
+          <label class="pick-label" for="statSelect">Stat</label>
+          <div class="pick-field">
+            <select id="statSelect" class="select" disabled>
+              <option value="">Pick a stat</option>
+            </select>
+            <p id="statHint" class="hint stat-hint"></p>
+          </div>
+        </div>
+
+        <div class="pick-row">
+          <span class="pick-label">Players</span>
+          <div id="playerNameInputs" class="player-pills"></div>
+        </div>
       </div>
-    </div>
 
-  </div>
+      <button id="startGameBtn" class="btn btn-primary btn-block" type="button">Start Game</button>
+      <p id="setupWaiting" class="hint center hidden">The host is picking the game. Hang tight.</p>
+    </section>
 
-  <!-- PLAYER SETUP -->
-  <div id="player-setup" class="player-setup player-setup--dark">
 
-    <div class="player-setup-header">
-      <span class="player-setup-title">Players</span>
-      <div class="player-setup-controls">
-        <button id="addPlayerBtn" class="btn player-setup-btn">+ Add Player</button>
-        <button id="removePlayerBtn" class="btn player-setup-btn">– Remove Player</button>
+    <!-- ========== PLAYING ========== -->
+    <section id="statSection" class="play hidden">
+
+      <header class="play-head">
+        <p id="playContext" class="eyebrow"></p>
+        <h1 id="playStat" class="display play-stat"></h1>
+      </header>
+
+      <div id="scoreboard" class="scoreboard"></div>
+
+      <p id="currentPlayerDisplay" class="turn"></p>
+
+      <form id="guessForm" class="guess-form" autocomplete="off">
+        <input id="userGuess" class="input guess-input" type="text" placeholder="Name a player"
+          autocapitalize="words" spellcheck="false" aria-label="Your guess">
+        <button id="submitGuessBtn" class="btn btn-primary guess-btn" type="submit">Guess</button>
+      </form>
+
+      <p id="guessFeedback" class="feedback" role="status" aria-live="polite"></p>
+
+      <ol id="top10List" class="board"></ol>
+
+      <div class="end-game">
+        <button id="endGameBtn" class="btn" type="button">End Game</button>
+        <p id="endVoteStatus" class="hint hidden"></p>
       </div>
-    </div>
+    </section>
 
-    <div id="playerNameInputs" class="player-name-inputs"></div>
 
-  </div>
+    <!-- ========== RESULTS ========== -->
+    <section id="resultsSection" class="results hidden">
 
-  <!-- STAT SELECTION (Always visible during SETUP) -->
-  <div id="statSelectionArea">
-    <h2 id="statTitle" class="stat-title">Host select a stat to begin</h2>
+      <header class="results-head">
+        <p id="resultsContext" class="eyebrow"></p>
+        <h1 id="resultsWinner" class="display results-title"></h1>
+        <p id="resultsSub" class="lede"></p>
+      </header>
 
-    <select id="statSelect" class="stat-select" disabled>
-      <option value="">Select a stat...</option>
-    </select>
+      <ol id="resultsPlayers" class="standings"></ol>
 
-    <button id="startGameBtn" class="btn" style="margin-top: 20px; display:none;">
-      Start Game
-    </button>
-  </div>
+      <h2 class="section-label">The full list</h2>
+      <ol id="resultsAnswers" class="board board-final"></ol>
 
-  <!-- Gameplay area (hidden during SETUP) -->
-  <section id="statSection" class="hidden">
+      <button id="newGameBtn" class="btn btn-primary btn-block" type="button">New Game</button>
+      <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
+    </section>
 
-    <input id="userGuess" type="text" placeholder="Type a player name..." class="guess-input">
-
-    <button id="submitGuessBtn" class="btn" type="button">Submit Guess</button>
-
-    <div id="currentPlayerDisplay" class="current-player-display">
-      Current Turn: Player 1
-    </div>
-    <div id="roundStatus" class="round-status hidden" role="status" aria-live="polite"></div>
-
-    <div class="players-container"></div>
-
-    <div id="top10List" class="top10-list"></div>
-
-    <div class="end-game-area">
-      <button id="endGameBtn" class="btn end-game-btn" type="button">End Game</button>
-      <div id="endVoteStatus" class="end-vote-status hidden"></div>
-    </div>
-  </section>
-
-  <div id="resultsSection" class="hidden">
-    <h2 style="color:#00ff88;">Results</h2>
-    <div id="resultsWinner" style="font-size:22px; margin-bottom:20px;"></div>
-    <div id="resultsPlayers" class="players-container"></div>
-
-    <h3 class="results-answers-title">The Top 10</h3>
-    <div id="resultsAnswers" class="top10-list results-answers"></div>
-
-    <button id="newGameBtn" class="btn" type="button">New Game</button>
-    <div id="newGameWaiting" class="end-vote-status hidden">Waiting for the host to start a new game...</div>
-  </div>
+    <p class="version">Version 119</p>
+  </main>
 
 
   <!-- Firebase -->
@@ -174,14 +192,12 @@
 
     window.onAuthStateChanged = onAuthStateChanged;
     window.signInAnonymously = signInAnonymously;
-
   </script>
 
   <!-- JS: Top 10 Game (Order matters!) -->
   <script type="module" src="../assets/top10/js/top10-state.js"></script>
   <script type="module" src="../assets/top10/js/top10-render.js"></script>
   <script type="module" src="../assets/top10/js/top10-logic.js"></script>
-
 
 </body>
 </html>

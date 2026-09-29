@@ -1,0 +1,132 @@
+/* =========================================
+   HOME PAGE
+   ========================================= */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 32px;
+}
+
+.hero-title {
+    font-size: clamp(64px, 17vw, 128px);
+    line-height: 0.88;
+}
+
+/* The one live feature: big, warm, clickable */
+.feature {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 28px 0 28px 24px;
+    border-left: 3px solid var(--accent);
+    text-decoration: none;
+    background: linear-gradient(90deg, var(--accent-soft), transparent 70%);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    transition: background 0.2s;
+}
+
+.feature:hover {
+    background: linear-gradient(90deg, rgba(255, 176, 32, 0.22), transparent 80%);
+}
+
+.feature-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.feature-title {
+    font-size: clamp(44px, 10vw, 64px);
+}
+
+.feature-desc {
+    color: var(--muted);
+    max-width: 30em;
+}
+
+.feature-cta {
+    margin-top: 6px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.feature-cta span {
+    display: inline-block;
+    transition: transform 0.2s var(--ease);
+}
+
+.feature:hover .feature-cta span {
+    transform: translateX(4px);
+}
+
+/* Everything else: a quiet list */
+.soon {
+    display: flex;
+    flex-direction: column;
+}
+
+.soon-label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.soon-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+}
+
+.soon-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color 0.15s;
+}
+
+.soon-item:hover .soon-name {
+    color: var(--text);
+}
+
+.soon-desc {
+    font-size: 15px;
+    color: var(--faint);
+}
+
+/* Placeholder "coming soon" pages reuse this file */
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 48px;
+}
+
+.placeholder-title {
+    font-size: clamp(56px, 14vw, 96px);
+}
+
+.placeholder-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}

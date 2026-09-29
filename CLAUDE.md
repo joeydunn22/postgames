@@ -31,15 +31,24 @@ Then open `http://localhost:8000/pages/top10.html`. Multiplayer requires two bro
 
 ## Versioning convention
 
-Commits are titled `vNNN | <summary>`, and each commit bumps the `Testing: Version NNN` line in `pages/top10.html` to match. Keep these in sync when committing.
+Commits are titled `vNNN | <summary>`, and each commit bumps the `Version NNN` footer line in `pages/top10.html` to match. Keep these in sync when committing.
+
+## Visual design
+
+Dark "late night at the bar" look: near-black background, a single amber accent (`--accent`), condensed display type (Big Shoulders Display) for headlines and numbers, DM Sans for body text. Layout is open and flowing — sections are separated by spacing and thin rules, not boxes or cards. Design mobile-first (players are on their phones).
+
+- `assets/global/global.css` — design tokens (`:root` variables) and shared components: `.site-header`/`.brand`/`.site-nav`, `.btn` / `.btn-primary` / `.link-btn`, `.chip`, `.input` / `.select`, `.display` / `.eyebrow` / `.lede` / `.hint`. Reuse these rather than restyling per page.
+- `assets/home/home.css` — home page and the "coming soon" placeholder pages.
+- `assets/top10/css/top10.css` — trivia only.
+- Every page loads the two Google Fonts in its `<head>`; copy that block when adding a page.
 
 ## Top 10 Trivia architecture
 
 `pages/top10.html` inlines the Firebase init and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `update`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Three module scripts then load **in order** from `assets/top10/js/`:
 
 1. `top10-state.js` — defines the global `window.game` object (single source of truth: `state`, `players`, `globalGuessed`, `sport/category/year/stat`, `data`), `GAME_STATES` (`setup` → `playing` → `results`), room globals (`currentRoomCode`, `roomActive`, `hostId`, `myPlayerId`, `endVotes`), and `dataManifest` + `hasData()`. Anything the renderer needs at page load must live here, because `top10-render.js` initializes before `top10-logic.js` has run.
-2. `top10-render.js` — all DOM work. `renderUIForState(game)` is the central re-render called after every state change; it derives what's visible from `game.state` and host/room status, including the sport/category/year buttons' active and disabled state (click handlers only set `game` fields). Also wires event handlers and fills `window.ui` with DOM refs.
-3. `top10-logic.js` — auth, rooms, game flow, guess matching, data loading.
+2. `top10-render.js` — all DOM work. `renderUIForState(game)` is the central re-render called after every state change: it shows exactly one of the setup / playing / results sections based on `game.state`, and derives everything else (chip active/disabled state, room bar, scoreboard, board, feedback) from `game` and room status. Click handlers only set `game` fields and call it. Player names and guesses come from other players via Firebase, so anything interpolated into `innerHTML` must go through `escapeHTML()`. Also wires event handlers and fills `window.ui` with DOM refs.
+3. `top10-logic.js` — auth, rooms, game flow, guess matching, data loading. It should not touch the DOM beyond `setRoomStatus()` and the stat hint; leave display decisions to the renderer.
 
 Although these are ES modules, they communicate through **globals, not imports**: each file ends with a `PUBLIC_API` object whose functions are copied onto `window`. New cross-file functions must be added to that file's `PUBLIC_API`. HTML `onclick` attributes also rely on these globals.
 
@@ -51,7 +60,8 @@ Firebase layout per room: `rooms/{CODE}/host`, `rooms/{CODE}/players/{uid}` (nam
 - Every client (including the host) applies remote `gameState` in `listenToGame`, which rebuilds `game.players` from `game.playerNames` keyed by uid, and reloads stat data when sport/category/year changes.
 - **Ending a game:** the End Game button lives inside the gameplay section. In a room each player toggles `endVotes/{uid}`; the host's `checkEndVotes()` ends the game once every player in `playerNames` has voted. Solo, it ends immediately. When all answers are guessed the game auto-ends after a short delay. Only the host sees "New Game" on the results screen.
 - Without a room, the same `processGuess` runs locally for pass-and-play with local player name inputs.
-- Firebase drops empty arrays/nulls, so code reading `gameState` defensively defaults arrays (e.g. `guesses || []`).
+- Firebase drops empty arrays/nulls, so a field reset to `[]`/`null` simply disappears from `gameState` and `Object.assign` would keep the stale local value. `listenToGame` explicitly resets `globalGuessed`, `stat` and `lastGuess`; do the same for any new field that can be emptied.
+- `game.lastGuess` (`{ playerName, guess, answer, result: correct|wrong|repeat, at }`) is set in `processGuess` and synced so every player sees feedback for each guess; the renderer animates only guesses newer than the last one it drew.
 
 Guess matching (`findAnswerMatch`) normalizes accents and punctuation, accepts full name, first name alone, or last name alone (ignoring Jr./III suffixes), and allows Levenshtein fuzziness scaled to name length. A guess that matches more than one answer equally well is rejected as a miss rather than guessed at.
 

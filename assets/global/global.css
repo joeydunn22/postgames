@@ -1,208 +1,369 @@
 /* =========================================
-   1. RESET / BASE ELEMENTS
+   POSTGAMES — GLOBAL STYLES
+   Shared by every page: colors, type, header, buttons, form controls.
+   Fonts (loaded in each page's <head>): Big Shoulders Display + DM Sans.
    ========================================= */
 
-* {
+:root {
+    /* Colors */
+    --bg: #0b0d12;
+    --bg-raise: #151923;
+    --line: #242a37;
+    --line-strong: #353c4c;
+    --text: #f3efe6;
+    --muted: #9095a4;
+    --faint: #5b6070;
+    --accent: #ffb020;
+    --accent-soft: rgba(255, 176, 32, 0.14);
+    --accent-ink: #1c1300;
+    --good: #3ddc97;
+    --good-soft: rgba(61, 220, 151, 0.12);
+    --bad: #ff6b5b;
+
+    /* Type */
+    --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* Shape + motion */
+    --radius: 12px;
+    --radius-pill: 999px;
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+/* =========================================
+   1. BASE
+   ========================================= */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    background: #121212;
-    color: #e6e6e6;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 40px;
-}
-
-h1 {
-    font-size: 48px;
-    color: #4da3ff;
-    margin-bottom: 40px;
-}
-
-h2,
-h3 {
-    color: #e6e6e6;
-}
-
-
-/* =========================================
-   2. GLOBAL PAGE LAYOUT
-   ========================================= */
-
-.pg-page {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.pg-page h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
-    color: #4da3ff;
-}
-
-.pg-page p {
-    font-size: 18px;
-    color: #4da3ff;
-    margin-bottom: 20px;
-}
-
-.pg-page button {
-    padding: 10px 18px;
+    min-height: 100vh;
+    background-color: var(--bg);
+    /* A faint amber glow at the top, like a bar sign */
+    background-image: radial-gradient(ellipse 80% 100% at 50% -20%, rgba(255, 176, 32, 0.1), transparent 70%);
+    background-size: 100% 560px;
+    background-repeat: no-repeat;
+    color: var(--text);
+    font-family: var(--font-body);
     font-size: 16px;
-    font-weight: 600;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    background: #f8f8f8;
-    cursor: pointer;
-    transition: all 0.15s ease-in-out;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-.pg-page button:hover {
-    background: #e9e9e9;
-    border-color: #bbb;
+a {
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.hidden {
+    display: none !important;
 }
 
 
 /* =========================================
-   3. GLOBAL NAVIGATION HEADER
+   2. TYPE
    ========================================= */
 
-.pg-header {
-    width: 100%;
-    background: #111;
-    padding: 0;
-    margin: 0 0 24px 0;
-    border-bottom: 3px solid #ffcc00;
-    position: relative;
-    z-index: 1000;
+.display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.95;
 }
 
-.pg-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    padding: 16px 0;
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
 }
 
-.pg-tab {
-    color: #eee;
-    text-decoration: none;
+.lede {
     font-size: 18px;
-    font-weight: 600;
-    padding: 6px 4px;
-    position: relative;
-    transition: color 0.15s ease-in-out;
+    color: var(--muted);
+    max-width: 34em;
 }
 
-.pg-tab:hover {
-    color: #ffcc00;
+.hint {
+    font-size: 14px;
+    color: var(--muted);
 }
 
-.pg-tab.active {
-    color: #ffcc00;
-}
-
-.pg-tab.active::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: #ffcc00;
-    border-radius: 2px;
+.center {
+    text-align: center;
 }
 
 
 /* =========================================
-   4. GLOBAL BUTTONS
+   3. PAGE + HEADER
+   ========================================= */
+
+.page {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 16px 80px;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 16px;
+}
+
+.brand {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-decoration: none;
+    text-shadow: 0 0 18px rgba(255, 176, 32, 0.35);
+    flex-shrink: 0;
+}
+
+.site-nav {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.site-nav a {
+    padding: 8px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+}
+
+.site-nav a:hover {
+    color: var(--text);
+}
+
+.site-nav a.active {
+    color: var(--text);
+    background: var(--bg-raise);
+}
+
+/* Phones: nav gets its own row under the logo so every link fits */
+@media (max-width: 480px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding-bottom: 8px;
+    }
+
+    .site-nav {
+        width: 100%;
+        margin-left: -12px;
+    }
+}
+
+.version {
+    margin-top: 64px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--faint);
+}
+
+
+/* =========================================
+   4. BUTTONS
    ========================================= */
 
 .btn {
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-    padding: 18px;
-    font-size: 22px;
-    background: #1f5fbf;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.btn:hover {
-    background: #2b74d6;
-    transform: translateY(-2px);
-}
-
-.pg-button {
-    padding: 10px 22px;
-    min-width: 90px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    font-weight: 700;
     font-size: 16px;
-    font-weight: 600;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    background: #f8f8f8;
     cursor: pointer;
-    transition: all 0.15s ease-in-out;
-    text-align: center;
-    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s var(--ease), opacity 0.15s;
 }
 
-.pg-button:hover {
-    background: #e9e9e9;
-    border-color: #bbb;
+.btn:hover:not(:disabled) {
+    border-color: var(--muted);
 }
 
-.pg-button.active {
-    background: #0057e7;
-    color: white;
-    border-color: #0047c0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    position: relative;
+.btn:active:not(:disabled) {
+    transform: scale(0.98);
 }
 
-.pg-button.active::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: #ffcc00;
-    border-radius: 2px;
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 30px rgba(255, 176, 32, 0.22);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #ffc04d;
+    border-color: #ffc04d;
+}
+
+.btn-primary:disabled {
+    box-shadow: none;
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+    min-height: 60px;
+}
+
+/* Looks like a text link, behaves like a button */
+.link-btn {
+    background: none;
+    border: none;
+    padding: 4px 2px;
+    font-weight: 700;
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 176, 32, 0.4);
+    text-underline-offset: 4px;
+}
+
+.link-btn:hover {
+    text-decoration-color: var(--accent);
 }
 
 
 /* =========================================
-   5. GLOBAL BUTTON ROWS / CONTROL BARS
+   5. CHIPS (single-choice pill buttons)
    ========================================= */
 
-.top-control-bar {
+.chips {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
+.chip {
+    min-height: 40px;
+    padding: 0 18px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
-.button-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 12px;
+.chip:hover:not(:disabled) {
+    border-color: var(--muted);
+}
+
+.chip.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+
+/* No data for this option yet */
+.chip:disabled:not(.active) {
+    color: var(--faint);
+    border-color: var(--line);
+    border-style: dashed;
+    cursor: not-allowed;
+}
+
+.chip.active:disabled {
+    cursor: default;
+}
+
+
+/* =========================================
+   6. FORM CONTROLS
+   ========================================= */
+
+.input,
+.select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--bg-raise);
+    font-size: 16px;
+    transition: border-color 0.15s;
+}
+
+.input::placeholder {
+    color: var(--faint);
+}
+
+.input:focus,
+.select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.select {
+    appearance: none;
+    padding-right: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%239095a4' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    cursor: pointer;
+}
+
+.select:disabled,
+.input:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
 }

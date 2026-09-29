@@ -38,14 +38,14 @@ async function leaveCurrentRoom() {
     roomActive = false;
     endVotes = {};
     _listenersInitialized = false;
-    document.getElementById("createRoomBtn").style.display = "inline-block";
-    document.getElementById("leaveRoomBtn").style.display = "none";
 
-    // Renderer handles button visibility
+    setRoomStatus("Left room.");
     renderUIForState(game);
+}
 
-    document.getElementById("roomCodeDisplay").textContent = "";
-    document.getElementById("roomStatus").textContent = "Left room.";
+function setRoomStatus(message) {
+    const el = document.getElementById("roomStatus");
+    if (el) el.textContent = message;
 }
 
 /* ============================================================
@@ -83,10 +83,7 @@ async function createRoom() {
     window.roomActive = true;
     window.hostId = currentUser.uid;
 
-    document.getElementById("roomCodeDisplay").textContent = `Room Code: ${roomCode}`;
-    document.getElementById("roomStatus").textContent = "Room created.";
-    document.getElementById("createRoomBtn").style.display = "none";
-    document.getElementById("leaveRoomBtn").style.display = "inline-block";
+    setRoomStatus("Share this code with your friends.");
 
     if (!_listenersInitialized) {
         listenToRoom(roomCode);
@@ -101,6 +98,7 @@ async function createRoom() {
 }
 
 async function joinRoom(roomCode) {
+    roomCode = (roomCode || "").trim().toUpperCase();
     if (!roomCode) {
         alert("Please enter a room code.");
         return;
@@ -128,10 +126,7 @@ async function joinRoom(roomCode) {
     window.roomActive = true;
     window.hostId = snapshot.val().host;
 
-    document.getElementById("roomCodeDisplay").textContent = `Room Code: ${roomCode}`;
-    document.getElementById("roomStatus").textContent = "Joined room.";
-    document.getElementById("createRoomBtn").style.display = "none";
-    document.getElementById("leaveRoomBtn").style.display = "inline-block";
+    setRoomStatus("You're in. The host picks the game.");
 
     if (!_listenersInitialized) {
         listenToRoom(roomCode);
@@ -208,7 +203,11 @@ function listenToGame(roomCode) {
                 game.category !== remoteState.category ||
                 game.year !== remoteState.year;
             Object.assign(game, remoteState);
+            // Firebase drops empty arrays and nulls, so reset those explicitly
             game.roundComplete = !!remoteState.roundComplete;
+            game.globalGuessed = remoteState.globalGuessed || [];
+            game.stat = remoteState.stat ?? null;
+            game.lastGuess = remoteState.lastGuess ?? null;
             if (roomActive) {
                 const savedPlayers = Array.isArray(remoteState.players) ? remoteState.players : [];
                 game.players = Object.entries(game.playerNames || {}).map(([uid, playerData], index) => {
@@ -285,6 +284,7 @@ async function startGame() {
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
     game.roundComplete = false;
+    game.lastGuess = null;
 
     // Reset players
     game.players = game.players.map((p, i) => ({
@@ -301,7 +301,7 @@ async function startGame() {
             await syncGameState();
         } catch (error) {
             console.error("Failed to start room game:", error);
-            document.getElementById("roomStatus").textContent = "Game started here, but room sync failed.";
+            setRoomStatus("Game started here, but room sync failed.");
         }
     }
 }
@@ -323,6 +323,7 @@ function resetGame() {
     game.state = window.GAME_STATES.SETUP;
     game.globalGuessed = [];
     game.roundComplete = false;
+    game.lastGuess = null;
     game.players = game.players.map(p => ({
         ...p,
         guesses: [],
@@ -344,6 +345,7 @@ async function syncGameState() {
         currentPlayerIndex: game.currentPlayerIndex,
         globalGuessed: game.globalGuessed,
         roundComplete: game.roundComplete,
+        lastGuess: game.lastGuess,
         players: game.players.map(p => ({
             id: p.id,
             name: p.name,
@@ -451,8 +453,6 @@ function applyCorrectGuess(gameInstance, matchedAnswer) {
     currentPlayer.score = (currentPlayer.score ?? 0) + 1;
 
     gameInstance.globalGuessed.push(matchedAnswer);
-
-    playGuessAnimation("correct");
 }
 
 function advanceTurn(gameInstance) {
@@ -462,15 +462,6 @@ function advanceTurn(gameInstance) {
 
 function applyWrongGuess(gameInstance) {
     advanceTurn(gameInstance);
-
-    playGuessAnimation("wrong");
-}
-
-function playGuessAnimation(type) {
-    const element = document.querySelector(type === "correct" ? ".guess-correct" : ".guess-wrong");
-    if (element) {
-        element.style.animation = "fadeIn 0.3s";
-    }
 }
 
 function processGuess(rawGuess, playerId) {
@@ -483,6 +474,16 @@ function processGuess(rawGuess, playerId) {
 
     const answers = game.data[game.stat].players;
     const match = findAnswerMatch(rawGuess, answers);
+    const guesser = game.players[game.currentPlayerIndex];
+
+    // Shown to everyone as feedback; `at` lets the renderer animate only new guesses
+    game.lastGuess = {
+        playerName: guesser?.name || "Player",
+        guess: rawGuess,
+        answer: match || null,
+        result: !match ? "wrong" : game.globalGuessed.includes(match) ? "repeat" : "correct",
+        at: Date.now()
+    };
 
     if (match && !game.globalGuessed.includes(match)) {
         applyCorrectGuess(game, match);
@@ -515,15 +516,15 @@ async function maybeLoadData() {
     game.data = {};
     if (ui.statSelect) {
         ui.statSelect.disabled = true;
-        ui.statSelect.innerHTML = `<option value="">Select a stat...</option>`;
+        ui.statSelect.innerHTML = `<option value="">Pick a stat</option>`;
     }
 
     if (!sport || !year || (sport === "mlb" && !category)) {
-        if (ui.statTitle) ui.statTitle.textContent = "Select a stat to begin";
+        if (ui.statHint) ui.statHint.textContent = "";
         return;
     }
 
-    if (ui.statTitle) ui.statTitle.textContent = "Loading stats...";
+    if (ui.statHint) ui.statHint.textContent = "Loading stats…";
 
     const fileName = sport === "mlb"
         ? `${category}_${year}_enriched.json`
@@ -558,6 +559,7 @@ async function maybeLoadData() {
 
                 return {
                     name,
+                    rank: player.rank,
                     value: isPercent ? player.value / 100 : player.value
                 };
             });
@@ -567,16 +569,16 @@ async function maybeLoadData() {
 
         if (Object.keys(game.data).length > 0) {
             populateStatDropdown();
-            if (ui.statTitle) ui.statTitle.textContent = "Select a stat to begin";
-        } else if (ui.statTitle) {
-            ui.statTitle.textContent = "No stats available for this selection";
+            if (ui.statHint) ui.statHint.textContent = "";
+        } else if (ui.statHint) {
+            ui.statHint.textContent = "No stats for this pick yet.";
         }
 
         renderUIForState(game);
     } catch (error) {
         if (requestId !== dataLoadRequest) return;
         console.warn("Unable to load Top 10 data:", error);
-        if (ui.statTitle) ui.statTitle.textContent = "No data available for this season";
+        if (ui.statHint) ui.statHint.textContent = "Couldn't load stats for this pick.";
     }
 }
 
@@ -698,7 +700,6 @@ const PUBLIC_API = {
     syncGameState,
     applyWrongGuess,
     applyCorrectGuess,
-    playGuessAnimation,
     handleLocalGuess,
     sendGuessToHost,
     hostProcessGuess,
