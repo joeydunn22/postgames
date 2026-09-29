@@ -10,7 +10,7 @@ Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no pack
 
 Postgames is a website (eventually an app) for people, mostly guys, coming home from the bar and looking for something to do. The planned features are sports trivia, a movie selector and a snack finder. **Current focus is sports trivia**; leave the other pages alone unless asked.
 
-Trivia data is currently compiled by hand from Baseball/Football Reference and parsed with the scripts below. The long-term goal is to pull it from an API automatically so each season doesn't need manual parsing, but that is future work.
+Trivia data is currently copied by hand from Baseball/Football Reference leaderboards and built with `scripts/build_trivia_data.py`. The long-term goal is to pull it from an API automatically so each season doesn't need manual parsing, but that is future work.
 
 ## Working with the owner
 
@@ -21,7 +21,7 @@ Trivia data is currently compiled by hand from Baseball/Football Reference and p
 
 ## Running locally
 
-Pages must be served over HTTP (ES modules and `fetch` of JSON fail on `file://`). From the repo root:
+Pages must be served over HTTP (`fetch` of the JSON data fails on `file://`). From the repo root:
 
 ```
 python -m http.server 8000
@@ -44,39 +44,36 @@ Dark "late night at the bar" look: near-black background, a single amber accent 
 
 ## Top 10 Trivia architecture
 
-`pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `update`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Three **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. Because they are classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — there are no imports/exports, and no two files may declare the same top-level name. Data paths in them are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
+`pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Three **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. As classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — no imports/exports, and no two files may declare the same top-level name. Fetch paths are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
 
-1. `top10-state.js` — shared state: the `game` object (single source of truth: `state`, `players`, `globalGuessed`, `lastGuess`, `sport/category/year/stat`, `data`), `GAME_STATES` (`setup` → `playing` → `results`), `MAX_PLAYERS` (4, enforced for local games and on room join), room/identity variables (`currentUser`, `myPlayerId`, `currentRoomCode`, `roomActive`, `hostId`, `endVotes`), `session`, `dataManifest` + `hasData()`, and `newLocalPlayer()`. Anything the renderer needs at page load must live here, because `top10-render.js` initializes before `top10-logic.js` has run.
-2. `top10-render.js` — all DOM work. `renderUIForState(game)` is the central re-render called after every state change: it shows exactly one of the setup / playing / results sections based on `game.state`, and derives everything else (chip active/disabled state, room bar, scoreboard, board, feedback) from `game` and room status. Click handlers only set `game` fields and call it. Player names and guesses come from other players via Firebase, so anything interpolated into `innerHTML` must go through `escapeHTML()`. Also wires event handlers and fills `window.ui` with DOM refs.
-3. `top10-logic.js` — auth, rooms, game flow, guess matching, data loading. It should not touch the DOM beyond `setRoomStatus()` and the stat hint; leave display decisions to the renderer.
-
-HTML `onclick` attributes (e.g. `createRoom()`) call these top-level functions directly.
+1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `players: [{id, name, score}]`, `currentPlayerIndex`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `newLocalPlayer()`.
+2. `top10-render.js` — the only file that touches the DOM. `render()` redraws from state after any change, showing one of the setup / playing / results sections. Event handlers call logic actions (`selectSport`, `submitGuess`, `voteToEndGame`, …) and never change state themselves. Startup runs on `DOMContentLoaded` because rendering uses helpers from the logic file. Anything interpolated into `innerHTML` must go through `escapeHTML()` — names and guesses come from other players.
+3. `top10-logic.js` — actions and rules: sign-in, rooms and their Firebase listeners, setup actions, game flow (`startGame` / `endGame` / `newGame`), end-game voting, guessing, data loading, and guess matching. Never touches the DOM: change state, then call `render()`.
 
 ### Multiplayer model (host-authoritative)
 
-Firebase layout per room: `rooms/{CODE}/host`, `rooms/{CODE}/players/{uid}` (name), `rooms/{CODE}/gameState` (mirror of `game`), `rooms/{CODE}/pendingGuess/{uid}`, `rooms/{CODE}/endVotes/{uid}`, `rooms/{CODE}/session`.
+Firebase layout per room: `rooms/{CODE}/host`, `players/{uid}` (display name), `gameState` (the `SYNCED_DEFAULTS` fields), `pendingGuess/{uid}`, `endVotes/{uid}`, `session`.
 
-- Only the host mutates game state. Non-hosts write guesses to `pendingGuess`; the host's `listenToPendingGuess` runs `hostProcessGuess` → `processGuess`, then clears `pendingGuess` and calls `syncGameState()` to push `gameState`.
-- Every client (including the host) applies remote `gameState` in `listenToGame`, which rebuilds `game.players` from `game.playerNames` keyed by uid, and reloads stat data when sport/category/year changes.
-- **Ending a game:** the End Game button lives inside the gameplay section. In a room each player toggles `endVotes/{uid}`; the host's `checkEndVotes()` ends the game once every player in `playerNames` has voted. Solo, it ends immediately. When all answers are guessed the game auto-ends after a short delay. Only the host sees "New Game" on the results screen.
-- **Session ("Tonight") leaderboard:** `recordGameResult()` runs once per game inside `applyEndGame` (host or local only) and adds each player's points and games to `session.players[id]`; a win goes only to an outright top scorer (ties and one-player games award none). In a room the host writes it to `rooms/{CODE}/session` and everyone reads it via `listenToSession`; locally it lives in memory until the page is closed. Records are keyed by player id — Firebase uid in rooms, `local-N` from `newLocalPlayer()` on one device — so renames don't split a player's record. Leaving a room resets to a fresh local game and session.
-- Without a room, the same `processGuess` runs locally for pass-and-play with local player name inputs.
-- Firebase drops empty arrays/nulls, so a field reset to `[]`/`null` simply disappears from `gameState` and `Object.assign` would keep the stale local value. `listenToGame` explicitly resets `globalGuessed`, `stat` and `lastGuess`; do the same for any new field that can be emptied.
-- `game.lastGuess` (`{ playerName, guess, answer, result: correct|wrong|repeat, at }`) is set in `processGuess` and synced so every player sees feedback for each guess; the renderer animates only guesses newer than the last one it drew.
+- Only the host changes game state, then calls `syncGameState()` to `set` the whole `gameState`. That includes setup picks, so non-hosts see the sport/season/stat live. Non-hosts send guesses to `pendingGuess`; the host applies them only if it's that player's turn.
+- Every client applies `gameState` in `onGameStateChange`. Firebase drops empty arrays and nulls, so every field falls back to its `SYNCED_DEFAULTS` value when missing — add new synced fields there and this is handled automatically.
+- `game.players` in a room is rebuilt from `roomMembers` (names, room order) plus synced scores (`roomPlayers()`).
+- Listeners are stored in `_roomUnsubscribers` and switched off on leaving. If the host leaves, the first remaining member claims `host`. The last player out deletes the room.
+- **Ending a game:** solo, End Game ends immediately; in a room each player toggles `endVotes/{uid}` and the host ends it once everyone has voted. Clearing the board auto-ends after a short delay. Only the host sees "New Game".
+- **Session ("Tonight") leaderboard:** `recordGameResult()` runs once per game in `endGame` and adds points/games per player id to `session.players`; a win goes only to an outright top scorer (ties and one-player games award none). In a room the host writes it to `rooms/{CODE}/session`; off-room it lives in memory. Ids are Firebase uids in rooms and `local-N` on one device, so renames don't split a record. Leaving a room resets to a fresh local game and session.
+- `game.lastGuess` (`{ playerName, guess, answer, result: correct|wrong|repeat, at }`) is synced so everyone sees feedback; the renderer animates only guesses newer than the last one it drew.
 
-Guess matching (`findAnswerMatch`) normalizes accents and punctuation, accepts full name, first name alone, or last name alone (ignoring Jr./III suffixes), and allows Levenshtein fuzziness scaled to name length. A guess that matches more than one answer equally well is rejected as a miss rather than guessed at.
+Guess matching (`findAnswerMatch`) ignores accents and punctuation, accepts full name, first name alone or last name alone (ignoring Jr./III), and allows about one typo per five letters. A guess that fits more than one answer equally well is a miss.
 
 ## Data pipeline
 
-The game fetches `data/{sport}/{year}/processed/`:
-- MLB: `{batting|pitching}_{year}_enriched.json`
-- NFL/NBA: `stats_{year}_enriched.json`
+`data/manifest.json` lists every playable sport/category/year and its file; the game greys out anything not listed and loads files through it. Game files are `data/{sport}/{year}/{category or "stats"}.json`: an array of `{ label, players: [{ rank, name, team, value }], more_tied? }`. `value` is the display text exactly as the source prints it (".331", "68.5%"); `more_tied` counts tied-for-10th players the source didn't list. Only MLB 2025 (batting, pitching) and NFL 2025 exist so far.
 
-Format: an array of `{ stat_id, stat_label, is_percent_stat, players: [{ rank, player (last name), first_name, team, value, is_percent }] }`. Percent values are stored ×100 and divided by 100 on load. Only MLB 2025 and NFL 2025 exist so far.
+To add or rebuild data, save the Reference leaderboard page as text to `data/{sport}/{year}/raw/{year}-{category or sport}.txt`, then run from the repo root:
 
-`data/manifest.json` lists every available sport/category/year; buttons with no matching entry are greyed out. **Add an entry there whenever a new processed file is added**, or the game won't offer it.
+```
+python scripts/build_trivia_data.py mlb batting 2025
+python scripts/build_trivia_data.py mlb pitching 2025
+python scripts/build_trivia_data.py nfl 2025
+```
 
-Scripts in `scripts/` are run from the repo root with hardcoded paths (edit the constants/defaults to change sport/year):
-- `batting_reference_parse.py`, `pitching_reference_parse.py` — parse `data/mlb/{year}/raw/*.txt` into `*_raw.json` (the write is commented out to avoid overwriting; uncomment to regenerate).
-- `enrich_names.py` — **interactive**: adds `first_name` to MLB raw JSON using `mlbplayers2025.txt`, prompting on ambiguous last names. Defaults target pitching; change `input_path`/`output_path` for batting.
-- `nfl_reference_parse.py` — parses NFL raw text and writes the enriched file directly (first names come from the source).
+It keeps every row ranked 10 or better (ties included, in source order — never re-sort by value, some stats are lower-is-better), applies `LABEL_FIXES`, writes the game file and updates the manifest. MLB leaderboards only give last names: first names come from `data/mlb/{year}/raw/mlbplayers{year}.txt`, with ambiguous ones asked interactively and every answer remembered in `data/mlb/first_names.json` (keyed `Last|TEAM`; edit it to fix a name).

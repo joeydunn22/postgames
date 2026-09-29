@@ -1,35 +1,35 @@
 /* ============================================================
-   TOP 10 — RENDERER (UI MODULE)
-   Everything that touches the page lives here. renderUIForState()
-   redraws the screen from `game` after any change.
+   TOP 10 — RENDERER
+   Everything that touches the page. render() redraws the screen from
+   state after any change; button handlers call actions in
+   top10-logic.js and never change state themselves.
    ============================================================ */
 
-/* ============================================================
-   1. RENDERER STATE
-   ============================================================ */
-let _uiInitialized = false;
-let _lastSeenGuessAt = 0;   // so only brand-new guesses animate
-let _wasMyTurn = false;     // so we focus the guess box when your turn starts
-let _prevRoomActive = false; // so player pills redraw when you join/leave a room
+let _uiReady = false;
+let _lastSeenGuessAt = 0;      // so only brand-new guesses animate
+let _wasMyTurn = false;        // so the guess box gets focus when your turn starts
+let _statOptionsKey = null;    // which stat list the dropdown currently holds
+let _playerPillsKey = null;    // which players the pills currently show
 
 const SPORT_LABELS = { mlb: "MLB", nba: "NBA", nfl: "NFL" };
 
+const STAT_HINTS = {
+    loading: "Loading stats…",
+    empty: "No stats for this pick yet.",
+    error: "Couldn't load stats for this pick."
+};
+
 
 /* ============================================================
-   2. SMALL HELPERS
+   1. HELPERS
    ============================================================ */
 
-// Names and guesses come from players (and Firebase), so never
+// Names and guesses come from other players via Firebase, so never
 // put them into innerHTML without escaping
 function escapeHTML(value) {
     return String(value ?? "").replace(/[&<>"']/g, ch => ({
         "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
     })[ch]);
-}
-
-function formatValue(value, isPercent) {
-    if (value == null) return "";
-    return isPercent ? (value * 100).toFixed(1) + "%" : value;
 }
 
 // Reference sites use "2TM"/"3TM" for players traded mid-season
@@ -39,371 +39,314 @@ function formatTeam(team) {
 }
 
 function gameContextLabel() {
-    const category = game.sport === "mlb" && game.category
-        ? game.category[0].toUpperCase() + game.category.slice(1)
-        : null;
+    const category = game.category && game.category[0].toUpperCase() + game.category.slice(1);
     return [SPORT_LABELS[game.sport], category, game.year].filter(Boolean).join(" · ");
-}
-
-// answer name -> name of the player who got it
-function guessersByAnswer() {
-    const map = {};
-    game.players.forEach(player => {
-        (player.guesses || []).forEach(g => {
-            if (g.correct) map[g.name] = player.name;
-        });
-    });
-    return map;
 }
 
 function isFreshGuess() {
     return !!game.lastGuess && game.lastGuess.at > _lastSeenGuessAt;
 }
 
+// Replay a CSS animation class on an element
+function replayAnimation(el, className) {
+    el.classList.remove(className);
+    void el.offsetWidth;
+    el.classList.add(className);
+}
+
 
 /* ============================================================
-   3. SETUP SCREEN
+   2. SETUP SCREEN
    ============================================================ */
-function resetStatUI() {
-    game.stat = null;
 
-    if (Object.keys(game.data || {}).length > 0) {
-        populateStatDropdown();
-    } else if (ui.statSelect) {
-        ui.statSelect.disabled = true;
-        ui.statSelect.innerHTML = `<option value="">Pick a stat</option>`;
+// Sport / category / season chips: highlight the current pick, grey
+// out options with no data, and lock them unless you're choosing
+function renderPickers() {
+    const locked = !canEditSetup();
+
+    for (const btn of ui.sportChips) {
+        const available = hasData({ sport: btn.dataset.sport });
+        btn.classList.toggle("active", game.sport === btn.dataset.sport);
+        btn.disabled = locked || !available;
+        btn.title = available ? "" : "No data yet";
     }
 
-    if (ui.statHint) ui.statHint.textContent = "";
-}
+    ui.categoryRow.classList.toggle("hidden", game.sport !== "mlb");
+    for (const btn of ui.categoryChips) {
+        btn.classList.toggle("active", game.category === btn.dataset.category);
+        btn.disabled = locked || !hasData({ sport: game.sport, category: btn.dataset.category });
+    }
 
-function populateStatDropdown() {
-    if (!ui.statSelect) return;
-
-    ui.statSelect.innerHTML = `<option value="">Pick a stat</option>`;
-    Object.keys(game.data).forEach(stat => {
-        const option = document.createElement("option");
-        option.value = stat;
-        option.textContent = stat;
-        ui.statSelect.appendChild(option);
-    });
-    ui.statSelect.value = game.stat || "";
-}
-
-// Sport / category / season chips: highlight the current pick, grey out
-// options with no data, and lock them unless you're the one choosing
-function renderSelectionButtons(isHost) {
-    const canChoose = isHost && game.state === GAME_STATES.SETUP;
-
-    document.querySelectorAll("#sport-buttons .chip").forEach(btn => {
-        const sport = btn.dataset.sport;
-        btn.classList.toggle("active", game.sport === sport);
-        btn.disabled = !canChoose || !hasData({ sport });
-        btn.title = hasData({ sport }) ? "" : "No data yet";
-    });
-
-    document.getElementById("mlb-category-wrapper")
-        ?.classList.toggle("hidden", game.sport !== "mlb");
-    document.querySelectorAll("#mlb-category-buttons .chip").forEach(btn => {
-        const category = btn.dataset.category;
-        btn.classList.toggle("active", game.category === category);
-        btn.disabled = !canChoose || !hasData({ sport: game.sport, category });
-    });
-
-    document.querySelectorAll("#year-buttons .chip").forEach(btn => {
-        const year = btn.dataset.year;
-        const available = hasData({ sport: game.sport, category: game.category, year });
-        btn.classList.toggle("active", String(game.year) === year);
-        btn.disabled = !canChoose || !available;
+    for (const btn of ui.yearChips) {
+        const available = hasData({ sport: game.sport, category: game.category, year: btn.dataset.year });
+        btn.classList.toggle("active", String(game.year) === btn.dataset.year);
+        btn.disabled = locked || !available;
         btn.title = available ? "" : "No data yet";
-    });
+    }
+
+    renderStatPicker(locked);
 }
 
-// Player names as pills. Solo: add/remove/rename freely.
-// Room: one pill per person in the room; you can only rename yourself.
-function renderPlayerNames() {
-    const container = ui.playerNameInputs;
-    if (!container) return;
+function renderStatPicker(locked) {
+    const labels = Object.keys(game.data);
+    const optionsKey = labels.join("|");
 
+    if (optionsKey !== _statOptionsKey) {
+        _statOptionsKey = optionsKey;
+        ui.statSelect.innerHTML = `<option value="">Pick a stat</option>` +
+            labels.map(label => `<option>${escapeHTML(label)}</option>`).join("");
+    }
+
+    ui.statSelect.value = game.stat || "";
+    ui.statSelect.disabled = locked || game.dataStatus !== "ready";
+    ui.statHint.textContent = STAT_HINTS[game.dataStatus] || "";
+}
+
+// Player names as pills. One device: add, remove and rename anyone.
+// Room: one pill per person; you can only rename yourself.
+function renderPlayerPills() {
+    // Rebuilding would kick the cursor out of a name being typed,
+    // so only rebuild when the players themselves change
+    const pillsKey = JSON.stringify([inRoom(), hostId, game.players.map(p => [p.id, p.name])]);
+    if (pillsKey === _playerPillsKey) return;
+    _playerPillsKey = pillsKey;
+
+    const container = ui.playerPills;
     container.innerHTML = "";
 
-    const entries = roomActive
-        ? Object.entries(game.playerNames || {}).map(([uid, name]) => ({
-            key: uid,
-            name: typeof name === "string" ? name : name?.name || "Player",
-            isMe: uid === currentUser?.uid,
-            isHost: uid === hostId
-        }))
-        : game.players.map((p, i) => ({
-            key: i,
-            name: p.name || `Player ${i + 1}`,
-            isMe: true,
-            isHost: false
-        }));
-
-    entries.forEach(({ key, name, isMe, isHost }) => {
+    for (const player of game.players) {
+        const isMe = !inRoom() || player.id === currentUser?.uid;
         const pill = document.createElement("span");
-        pill.className = "player-pill" + (roomActive && isMe ? " me" : "");
+        pill.className = "player-pill" + (inRoom() && isMe ? " me" : "");
 
         const input = document.createElement("input");
         input.type = "text";
-        input.value = name;
+        input.value = player.name;
         input.readOnly = !isMe;
         input.maxLength = 16;
         input.setAttribute("aria-label", "Player name");
+        input.addEventListener("keydown", e => { if (e.key === "Enter") input.blur(); });
+        input.addEventListener("blur", () => {
+            if (input.value.trim() && input.value !== player.name) renamePlayer(player.id, input.value);
+            else input.value = player.name;
+        });
         pill.appendChild(input);
 
-        if (roomActive && (isMe || isHost)) {
+        if (inRoom() && (isMe || player.id === hostId)) {
             const tag = document.createElement("span");
             tag.className = "pill-tag";
             tag.textContent = isMe ? "you" : "host";
             pill.appendChild(tag);
         }
 
-        const save = async () => {
-            const newName = input.value.trim();
-            if (!newName) {
-                input.value = name;
-                return;
-            }
-            if (newName === name) return;
-
-            if (roomActive) {
-                try {
-                    await set(ref(db, `rooms/${currentRoomCode}/players/${currentUser.uid}`), newName);
-                } catch (err) {
-                    console.error("Failed to update name:", err);
-                    input.value = name;
-                }
-            } else {
-                game.players[key].name = newName;
-            }
-        };
-        input.addEventListener("blur", save);
-        input.addEventListener("keydown", e => {
-            if (e.key === "Enter") input.blur();
-        });
-
-        if (!roomActive && game.players.length > 1) {
+        if (!inRoom() && game.players.length > 1) {
             const removeBtn = document.createElement("button");
             removeBtn.type = "button";
             removeBtn.className = "pill-remove";
             removeBtn.textContent = "×";
-            removeBtn.setAttribute("aria-label", `Remove ${name}`);
-            removeBtn.addEventListener("click", () => {
-                game.players.splice(key, 1);
-                renderPlayerNames();
-            });
+            removeBtn.setAttribute("aria-label", `Remove ${player.name}`);
+            removeBtn.addEventListener("click", () => removeLocalPlayer(player.id));
             pill.appendChild(removeBtn);
         }
 
         container.appendChild(pill);
-    });
+    }
 
-    if (!roomActive && game.players.length < MAX_PLAYERS) {
+    if (!inRoom() && game.players.length < MAX_PLAYERS) {
         const addBtn = document.createElement("button");
         addBtn.type = "button";
         addBtn.className = "pill-add";
         addBtn.textContent = "+ Add player";
         addBtn.addEventListener("click", () => {
-            game.players.push(newLocalPlayer(`Player ${game.players.length + 1}`));
-            renderPlayerNames();
-            container.querySelectorAll(".player-pill input")[game.players.length - 1]?.select();
+            addLocalPlayer();
+            container.querySelector(".player-pill:last-of-type input")?.select();
         });
         container.appendChild(addBtn);
     }
 }
 
 function renderRoomBar() {
-    // Joining or leaving a room swaps whose names show in the player pills
-    if (!!roomActive !== _prevRoomActive) {
-        _prevRoomActive = !!roomActive;
-        renderPlayerNames();
-    }
+    ui.roomJoin.classList.toggle("hidden", inRoom());
+    ui.roomInfo.classList.toggle("hidden", !inRoom());
+    ui.roomCode.textContent = currentRoomCode || "";
+    ui.roomStatus.textContent = roomStatus;
+    if (inRoom()) ui.joinCodeInput.value = "";
+}
 
-    ui.roomJoin?.classList.toggle("hidden", !!roomActive);
-    ui.roomInfo?.classList.toggle("hidden", !roomActive);
-    if (ui.roomCodeDisplay) ui.roomCodeDisplay.textContent = roomActive ? currentRoomCode : "";
+function renderSetup() {
+    renderRoomBar();
+    renderPickers();
+    renderPlayerPills();
+    renderSessionBoard(ui.sessionSetup);
+
+    ui.startGameBtn.classList.toggle("hidden", !isHost());
+    ui.startGameBtn.disabled = !canStartGame();
+    ui.setupWaiting.classList.toggle("hidden", isHost());
 }
 
 
 /* ============================================================
-   4. PLAYING SCREEN
+   3. PLAYING SCREEN
    ============================================================ */
 function renderScoreboard() {
-    if (!ui.scoreboard) return;
-
     ui.scoreboard.innerHTML = game.players.map((player, idx) => `
         <div class="score ${idx === game.currentPlayerIndex && !game.roundComplete ? "is-turn" : ""}">
             <span class="score-name">${escapeHTML(player.name)}</span>
-            <span class="score-num">${player.score ?? 0}</span>
+            <span class="score-num">${player.score}</span>
         </div>
     `).join("");
 }
 
-function renderTurn(isYourTurn) {
-    if (!ui.currentPlayerDisplay) return;
-
-    const current = game.players[game.currentPlayerIndex];
-    const name = escapeHTML(current?.name || "Player");
+function renderTurn() {
+    const name = escapeHTML(game.players[game.currentPlayerIndex]?.name || "Player");
 
     if (game.roundComplete) {
-        ui.currentPlayerDisplay.textContent = "Board cleared!";
-    } else if (!roomActive) {
-        ui.currentPlayerDisplay.innerHTML = game.players.length > 1 ? `${name}'s turn` : "Your turn";
-    } else if (isYourTurn) {
-        ui.currentPlayerDisplay.textContent = "Your turn";
+        ui.turn.textContent = "Board cleared!";
+    } else if (inRoom() && !isMyTurn()) {
+        ui.turn.innerHTML = `<span class="waiting">Waiting on</span> ${name}`;
+    } else if (!inRoom() && game.players.length > 1) {
+        ui.turn.innerHTML = `${name}'s turn`;
     } else {
-        ui.currentPlayerDisplay.innerHTML = `<span class="waiting">Waiting on</span> ${name}`;
+        ui.turn.textContent = "Your turn";
     }
 }
 
+// Who guessed (small label), then the guess itself on its own line
 function renderFeedback() {
-    const el = ui.guessFeedback;
-    if (!el) return;
-
     const last = game.lastGuess;
-    el.className = "feedback";
+    ui.feedback.className = "feedback";
     if (!last) {
-        el.textContent = "";
+        ui.feedback.innerHTML = "";
         return;
     }
 
-    // Who guessed (small label), then the guess itself on its own line
     const who = game.players.length > 1
         ? `<span class="feedback-who">${escapeHTML(last.playerName)}</span>`
         : "";
-    let main, note = "";
-    if (last.result === "correct") {
-        main = `✓ ${escapeHTML(last.answer)}`;
-    } else if (last.result === "repeat") {
-        main = escapeHTML(last.answer);
-        note = "already on the board";
-    } else {
-        main = `✗ “${escapeHTML(last.guess)}”`;
-        note = "not on the list";
-    }
-    el.innerHTML = `${who}<span class="feedback-main">${main}${note ? ` <span class="feedback-note">${note}</span>` : ""}</span>`;
-    el.classList.add(last.result);
+    const [main, note] = {
+        correct: [`✓ ${escapeHTML(last.answer)}`, ""],
+        repeat: [escapeHTML(last.answer), "already on the board"],
+        wrong: [`✗ “${escapeHTML(last.guess)}”`, "not on the list"]
+    }[last.result];
+
+    ui.feedback.innerHTML = `${who}<span class="feedback-main">${main}` +
+        (note ? ` <span class="feedback-note">${note}</span>` : "") + `</span>`;
+    ui.feedback.classList.add(last.result);
 
     if (isFreshGuess()) {
-        void el.offsetWidth; // restart the animation
-        el.classList.add("fresh");
-        if (last.result !== "correct" && ui.guessForm) {
-            ui.guessForm.classList.remove("shake");
-            void ui.guessForm.offsetWidth;
-            ui.guessForm.classList.add("shake");
-        }
+        replayAnimation(ui.feedback, "fresh");
+        if (last.result !== "correct") replayAnimation(ui.guessForm, "shake");
     }
 }
 
-// The top 10 board. During play, unguessed slots are blank.
-// With `final`, everything is revealed and misses are dimmed.
+// The top 10 board. While playing, unguessed slots are blank; with
+// `final` everything is revealed and misses are dimmed.
 function renderBoard(listEl, { final = false } = {}) {
     const stat = game.data[game.stat];
-    if (!listEl) return;
     if (!stat) {
         listEl.innerHTML = "";
         return;
     }
 
-    const guessedBy = guessersByAnswer();
-    const showWho = game.players.length > 1;
+    const guessedBy = Object.fromEntries(game.guessed.map(g => [g.answer, g.by]));
+    const nameOf = id => game.players.find(p => p.id === id)?.name;
     const freshAnswer = !final && isFreshGuess() && game.lastGuess.result === "correct"
         ? game.lastGuess.answer
         : null;
 
-    listEl.innerHTML = stat.players.map((item, idx) => {
-        const guessed = (game.globalGuessed || []).includes(item.name);
+    const slots = stat.players.map(item => {
+        const guessed = item.name in guessedBy;
         const revealed = guessed || final;
-        const classes = [
-            "slot",
-            revealed ? "filled" : "",
-            final && !guessed ? "missed" : "",
-            item.name === freshAnswer ? "fresh" : ""
-        ].filter(Boolean).join(" ");
+        const classes = ["slot", revealed && "filled", final && !guessed && "missed", item.name === freshAnswer && "fresh"]
+            .filter(Boolean).join(" ");
 
-        const by = guessed && showWho && guessedBy[item.name]
-            ? `<span class="slot-by">${escapeHTML(guessedBy[item.name])}</span>`
-            : "";
-        const team = item.team
-            ? `<span class="slot-team">${escapeHTML(formatTeam(item.team))}</span>`
+        const by = guessed && game.players.length > 1
+            ? `<span class="slot-by">${escapeHTML(nameOf(guessedBy[item.name]))}</span>`
             : "";
         const main = revealed
-            ? `<span class="slot-line"><span class="slot-name">${escapeHTML(item.name)}</span>${team}</span>${by}`
+            ? `<span class="slot-line"><span class="slot-name">${escapeHTML(item.name)}</span>` +
+              `<span class="slot-team">${escapeHTML(formatTeam(item.team))}</span></span>${by}`
             : `<span class="slot-blank"></span>`;
-        const value = revealed ? escapeHTML(formatValue(item.value, stat.isPercent)) : "";
 
         return `
             <li class="${classes}">
-                <span class="slot-rank">${escapeHTML(item.rank ?? idx + 1)}</span>
+                <span class="slot-rank">${item.rank}</span>
                 <span class="slot-main">${main}</span>
-                <span class="slot-value">${value}</span>
+                <span class="slot-value">${revealed ? escapeHTML(item.value) : ""}</span>
             </li>`;
-    }).join("");
+    });
+
+    // The source only lists some of a big tie for 10th
+    if (stat.more_tied) {
+        slots.push(`<li class="slot-note hint">+${stat.more_tied} more tied at ${escapeHTML(stat.players.at(-1).value)}, not in play</li>`);
+    }
+    listEl.innerHTML = slots.join("");
 }
 
 function renderEndGameButton() {
-    if (!ui.endGameBtn) return;
+    ui.endGameBtn.disabled = game.roundComplete;
 
-    ui.endGameBtn.disabled = !!game.roundComplete;
-
-    if (!roomActive) {
+    if (!inRoom()) {
         ui.endGameBtn.textContent = "End Game";
         ui.endGameBtn.classList.remove("voted");
-        ui.endVoteStatus?.classList.add("hidden");
+        ui.endVoteStatus.classList.add("hidden");
         return;
     }
 
-    const playerIds = Object.keys(game.playerNames || {});
-    const votedCount = playerIds.filter(uid => endVotes[uid]).length;
-    const iVoted = !!endVotes[myPlayerId];
+    const members = Object.keys(roomMembers);
+    const votes = members.filter(uid => endVotes[uid]).length;
+    const iVoted = !!endVotes[currentUser?.uid];
 
-    ui.endGameBtn.textContent = iVoted
-        ? `Cancel My Vote (${votedCount}/${playerIds.length})`
-        : `Vote to End Game (${votedCount}/${playerIds.length})`;
+    ui.endGameBtn.textContent = `${iVoted ? "Cancel My Vote" : "Vote to End Game"} (${votes}/${members.length})`;
     ui.endGameBtn.classList.toggle("voted", iVoted);
 
-    if (ui.endVoteStatus) {
-        const waitingOn = game.players
-            .filter(p => p.id && !endVotes[p.id])
-            .map(p => p.name);
-        ui.endVoteStatus.textContent = votedCount > 0 && waitingOn.length > 0
-            ? `Waiting on ${waitingOn.join(", ")}`
-            : "";
-        ui.endVoteStatus.classList.toggle("hidden", !ui.endVoteStatus.textContent);
-    }
+    const waitingOn = game.players.filter(p => !endVotes[p.id]).map(p => p.name);
+    ui.endVoteStatus.textContent = votes > 0 && waitingOn.length > 0 ? `Waiting on ${waitingOn.join(", ")}` : "";
+    ui.endVoteStatus.classList.toggle("hidden", !ui.endVoteStatus.textContent);
+}
+
+function renderPlaying() {
+    ui.playContext.textContent = gameContextLabel();
+    ui.playStat.textContent = game.stat || "";
+
+    const canGuess = isMyTurn() && !game.roundComplete;
+    ui.guessInput.disabled = !canGuess;
+    ui.guessInput.placeholder = canGuess ? "Name a player" : "Not your turn";
+    ui.guessBtn.disabled = !canGuess;
+
+    renderScoreboard();
+    renderTurn();
+    renderFeedback();
+    renderBoard(ui.board);
+    renderEndGameButton();
+
+    if (canGuess && !_wasMyTurn) ui.guessInput.focus();
+    _wasMyTurn = canGuess;
 }
 
 
 /* ============================================================
-   5. SESSION ("TONIGHT") LEADERBOARD
-   Shown on setup (between games) and results once 2+ people have
-   played. Sorted by wins, then total points.
+   4. SESSION ("TONIGHT") LEADERBOARD
+   Shown between games and on results once 2+ people have played.
+   Sorted by wins, then total points; exact ties share a place.
    ============================================================ */
 function renderSessionBoard(container, { justPlayed = false } = {}) {
-    if (!container) return;
-
-    const rows = Object.entries(session.players || {})
+    const rows = Object.entries(session.players)
         .map(([id, record]) => ({ id, ...record }))
         .sort((a, b) => (b.wins - a.wins) || (b.points - a.points));
 
-    if (rows.length < 2 || !session.gamesPlayed) {
-        container.classList.add("hidden");
-        return;
-    }
-    container.classList.remove("hidden");
+    container.classList.toggle("hidden", rows.length < 2 || !session.gamesPlayed);
+    if (rows.length < 2) return;
 
-    // Show current names for people still here, saved names for anyone who left
-    const currentNames = Object.fromEntries(game.players.map(p => [p.id, p.name]));
-    const topWins = rows[0].wins;
-    const games = session.gamesPlayed;
-
-    // Players level on wins and points share a place
     rows.forEach((row, idx) => {
         const prev = rows[idx - 1];
         row.place = prev && prev.wins === row.wins && prev.points === row.points ? prev.place : idx + 1;
     });
+
+    // Current names for people still here, saved names for anyone who left
+    const nameOf = row => game.players.find(p => p.id === row.id)?.name || row.name;
+    const topWins = rows[0].wins;
+    const games = session.gamesPlayed;
 
     container.innerHTML = `
         <div class="session-head">
@@ -415,7 +358,7 @@ function renderSessionBoard(container, { justPlayed = false } = {}) {
             ${rows.map(row => `
                 <li class="session-row ${topWins > 0 && row.wins === topWins ? "leader" : ""}">
                     <span class="session-place">${row.place}</span>
-                    <span class="session-name">${escapeHTML(currentNames[row.id] || row.name)}</span>
+                    <span class="session-name">${escapeHTML(nameOf(row))}</span>
                     <span class="session-wins">${row.wins}</span>
                     <span class="session-points">${row.points}</span>
                 </li>`).join("")}
@@ -425,17 +368,14 @@ function renderSessionBoard(container, { justPlayed = false } = {}) {
 
 
 /* ============================================================
-   6. RESULTS SCREEN
+   5. RESULTS SCREEN
    ============================================================ */
-function renderResults(isHost) {
-    const stat = game.data[game.stat];
-    const total = stat?.players.length ?? 10;
-    const standings = [...game.players].sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+function renderResults() {
+    const total = game.data[game.stat]?.players.length ?? 10;
+    const standings = [...game.players].sort((a, b) => b.score - a.score);
     const topScore = standings[0]?.score ?? 0;
-    const leaders = standings.filter(p => (p.score ?? 0) === topScore);
-    const pts = n => `${n} ${n === 1 ? "point" : "points"}`;
-
-    if (ui.resultsContext) ui.resultsContext.textContent = `Final · ${game.stat || ""}`;
+    const leaders = standings.filter(p => p.score === topScore);
+    const points = n => `${n} ${n === 1 ? "point" : "points"}`;
 
     let title, sub;
     if (standings.length === 1) {
@@ -443,241 +383,138 @@ function renderResults(isHost) {
         sub = topScore === total ? "Perfect. Every single one." : `${standings[0].name}'s final score.`;
     } else if (leaders.length > 1) {
         title = "It's a tie";
-        sub = `${leaders.map(p => p.name).join(" & ")} with ${pts(topScore)} each.`;
+        sub = `${leaders.map(p => p.name).join(" & ")} with ${points(topScore)} each.`;
     } else {
         title = `${standings[0].name} wins`;
-        sub = `${pts(topScore)} out of ${total}.`;
-    }
-    if (ui.resultsWinner) ui.resultsWinner.textContent = title;
-    if (ui.resultsSub) ui.resultsSub.textContent = sub;
-
-    if (ui.resultsPlayers) {
-        ui.resultsPlayers.classList.toggle("hidden", standings.length < 2);
-        ui.resultsPlayers.innerHTML = standings.map((player, idx) => `
-            <li class="standing ${(player.score ?? 0) === topScore ? "leader" : ""}">
-                <span class="standing-place">${idx + 1}</span>
-                <span class="standing-name">${escapeHTML(player.name)}</span>
-                <span class="standing-score">${player.score ?? 0}</span>
-            </li>
-        `).join("");
+        sub = `${points(topScore)} out of ${total}.`;
     }
 
-    renderBoard(ui.resultsAnswers, { final: true });
+    ui.resultsContext.textContent = `Final · ${game.stat || ""}`;
+    ui.resultsTitle.textContent = title;
+    ui.resultsSub.textContent = sub;
+
+    ui.standings.classList.toggle("hidden", standings.length < 2);
+    ui.standings.innerHTML = standings.map((player, idx) => `
+        <li class="standing ${player.score === topScore ? "leader" : ""}">
+            <span class="standing-place">${idx + 1}</span>
+            <span class="standing-name">${escapeHTML(player.name)}</span>
+            <span class="standing-score">${player.score}</span>
+        </li>
+    `).join("");
+
     renderSessionBoard(ui.sessionResults, { justPlayed: true });
+    renderBoard(ui.resultsBoard, { final: true });
 
-    // Only the host can start the next game in a room
-    ui.newGameBtn?.classList.toggle("hidden", !isHost);
-    ui.newGameWaiting?.classList.toggle("hidden", isHost);
+    ui.newGameBtn.classList.toggle("hidden", !isHost());
+    ui.newGameWaiting.classList.toggle("hidden", isHost());
 }
 
 
 /* ============================================================
-   7. MAIN RENDER FUNCTION
+   6. MAIN RENDER
    ============================================================ */
-function renderUIForState(state = {}) {
-    if (!state || typeof state !== "object") return;
-    if (!_uiInitialized) return;
+function render() {
+    if (!_uiReady) return;
 
-    const phase = state.state || GAME_STATES.SETUP;
-    const isHost = !roomActive || myPlayerId === hostId;
+    ui.setup.classList.toggle("hidden", game.state !== GAME_STATES.SETUP);
+    ui.playing.classList.toggle("hidden", game.state !== GAME_STATES.PLAYING);
+    ui.results.classList.toggle("hidden", game.state !== GAME_STATES.RESULTS);
 
-    const myIndex = game.players.findIndex(p => p.id === myPlayerId);
-    const isYourTurn = !roomActive || (myIndex !== -1 && myIndex === game.currentPlayerIndex);
-
-    const playerCount = roomActive
-        ? Object.keys(game.playerNames || {}).length
-        : game.players.length;
-    const canStart = !!(game.sport &&
-        (game.sport !== "mlb" || game.category) &&
-        game.year &&
-        game.stat &&
-        game.data[game.stat] &&
-        playerCount > 0);
-
-    ui.statSelectionArea?.classList.toggle("hidden", phase !== GAME_STATES.SETUP);
-    ui.statSection?.classList.toggle("hidden", phase !== GAME_STATES.PLAYING);
-    ui.resultsSection?.classList.toggle("hidden", phase !== GAME_STATES.RESULTS);
-
-    renderRoomBar();
-    renderSelectionButtons(isHost);
-
-    if (phase === GAME_STATES.SETUP) {
-        if (ui.startGameBtn) {
-            ui.startGameBtn.classList.toggle("hidden", !isHost);
-            ui.startGameBtn.disabled = !canStart;
-        }
-        ui.setupWaiting?.classList.toggle("hidden", isHost);
-        renderSessionBoard(ui.sessionSetup);
-
-        if (ui.statSelect) {
-            ui.statSelect.disabled = !(isHost && game.sport && game.year &&
-                (game.sport !== "mlb" || game.category) &&
-                Object.keys(game.data).length > 0);
-        }
-        _wasMyTurn = false;
-
-    } else if (phase === GAME_STATES.PLAYING) {
-        if (ui.playContext) ui.playContext.textContent = gameContextLabel();
-        if (ui.playStat) ui.playStat.textContent = game.stat || "";
-
-        const canGuess = isYourTurn && !game.roundComplete;
-        if (ui.userGuess) {
-            ui.userGuess.disabled = !canGuess;
-            ui.userGuess.placeholder = canGuess ? "Name a player" : "Not your turn";
-        }
-        if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !canGuess || game.isGuessLocked;
-
-        renderScoreboard();
-        renderTurn(isYourTurn);
-        renderFeedback();
-        renderBoard(ui.top10List);
-        renderEndGameButton();
-
-        if (canGuess && !_wasMyTurn) ui.userGuess?.focus();
-        _wasMyTurn = canGuess;
-
-    } else if (phase === GAME_STATES.RESULTS) {
-        renderResults(isHost);
-        _wasMyTurn = false;
-    }
+    if (game.state === GAME_STATES.SETUP) renderSetup();
+    if (game.state === GAME_STATES.PLAYING) renderPlaying();
+    else _wasMyTurn = false;
+    if (game.state === GAME_STATES.RESULTS) renderResults();
 
     if (game.lastGuess) _lastSeenGuessAt = Math.max(_lastSeenGuessAt, game.lastGuess.at);
 }
 
 
 /* ============================================================
-   8. EVENT HANDLERS
+   7. STARTUP
+   Runs on DOMContentLoaded, after all three scripts have loaded,
+   because rendering uses helpers from top10-logic.js.
    ============================================================ */
-function onAuthUIUpdate() {
-    if (!currentUser) {
-        signInAnonymously(auth).catch(err => console.error("Auth failed:", err));
-    }
-}
-
-// Switching sport/category can leave a season picked that has no data for it
-function clearUnavailableYear() {
-    if (game.year && !hasData({ sport: game.sport, category: game.category, year: game.year })) {
-        game.year = null;
-    }
-}
-
-function initEventHandlers() {
-    document.getElementById("sport-buttons")?.addEventListener("click", (e) => {
-        const sport = e.target.closest(".chip")?.dataset.sport;
-        if (!sport) return;
-
-        game.sport = sport;
-        game.category = null;
-        game.stat = null;
-        clearUnavailableYear();
-        resetStatUI();
-        maybeLoadData();
-        renderUIForState(game);
-    });
-
-    document.getElementById("mlb-category-buttons")?.addEventListener("click", (e) => {
-        const category = e.target.closest(".chip")?.dataset.category;
-        if (!category) return;
-
-        game.category = category;
-        game.stat = null;
-        clearUnavailableYear();
-        resetStatUI();
-        maybeLoadData();
-        renderUIForState(game);
-    });
-
-    document.getElementById("year-buttons")?.addEventListener("click", (e) => {
-        const year = e.target.closest(".chip")?.dataset.year;
-        if (!year) return;
-
-        game.year = year;
-        game.stat = null;
-        resetStatUI();
-        maybeLoadData();
-        renderUIForState(game);
-    });
-
-    ui.statSelect?.addEventListener("change", (e) => {
-        game.stat = e.target.value || null;
-        game.roundComplete = false;
-        game.globalGuessed = [];
-        renderUIForState(game);
-    });
-
-    ui.guessForm?.addEventListener("submit", (e) => {
-        e.preventDefault();
-        onGuessSubmit();
-        ui.userGuess?.focus();
-    });
-
-    ui.startGameBtn?.addEventListener("click", () => startGame());
-    ui.endGameBtn?.addEventListener("click", () => onEndGameClick());
-    ui.newGameBtn?.addEventListener("click", () => resetGame());
-}
-
-
-/* ============================================================
-   9. RENDERER INITIALIZATION
-   ============================================================ */
-function initUI() {
+function findElements() {
     const byId = id => document.getElementById(id);
+    const chips = id => document.querySelectorAll(`#${id} .chip`);
 
-    // Setup
-    ui.statSelectionArea = byId("statSelectionArea");
-    ui.statSelect = byId("statSelect");
-    ui.statHint = byId("statHint");
-    ui.playerNameInputs = byId("playerNameInputs");
-    ui.startGameBtn = byId("startGameBtn");
-    ui.setupWaiting = byId("setupWaiting");
-    ui.roomJoin = byId("roomJoin");
-    ui.roomInfo = byId("roomInfo");
-    ui.roomCodeDisplay = byId("roomCodeDisplay");
-    ui.sessionSetup = byId("sessionSetup");
+    Object.assign(ui, {
+        // Setup
+        setup: byId("setupSection"),
+        roomJoin: byId("roomJoin"),
+        roomInfo: byId("roomInfo"),
+        roomCode: byId("roomCode"),
+        roomStatus: byId("roomStatus"),
+        createRoomBtn: byId("createRoomBtn"),
+        leaveRoomBtn: byId("leaveRoomBtn"),
+        joinForm: byId("joinForm"),
+        joinCodeInput: byId("joinCodeInput"),
+        sportChips: chips("sportChips"),
+        categoryRow: byId("categoryRow"),
+        categoryChips: chips("categoryChips"),
+        yearChips: chips("yearChips"),
+        statSelect: byId("statSelect"),
+        statHint: byId("statHint"),
+        playerPills: byId("playerPills"),
+        sessionSetup: byId("sessionSetup"),
+        startGameBtn: byId("startGameBtn"),
+        setupWaiting: byId("setupWaiting"),
 
-    // Playing
-    ui.statSection = byId("statSection");
-    ui.playContext = byId("playContext");
-    ui.playStat = byId("playStat");
-    ui.scoreboard = byId("scoreboard");
-    ui.currentPlayerDisplay = byId("currentPlayerDisplay");
-    ui.guessForm = byId("guessForm");
-    ui.userGuess = byId("userGuess");
-    ui.submitGuessBtn = byId("submitGuessBtn");
-    ui.guessFeedback = byId("guessFeedback");
-    ui.top10List = byId("top10List");
-    ui.endGameBtn = byId("endGameBtn");
-    ui.endVoteStatus = byId("endVoteStatus");
+        // Playing
+        playing: byId("playSection"),
+        playContext: byId("playContext"),
+        playStat: byId("playStat"),
+        scoreboard: byId("scoreboard"),
+        turn: byId("turn"),
+        guessForm: byId("guessForm"),
+        guessInput: byId("guessInput"),
+        guessBtn: byId("guessBtn"),
+        feedback: byId("guessFeedback"),
+        board: byId("board"),
+        endGameBtn: byId("endGameBtn"),
+        endVoteStatus: byId("endVoteStatus"),
 
-    // Results
-    ui.resultsSection = byId("resultsSection");
-    ui.resultsContext = byId("resultsContext");
-    ui.resultsWinner = byId("resultsWinner");
-    ui.resultsSub = byId("resultsSub");
-    ui.resultsPlayers = byId("resultsPlayers");
-    ui.resultsAnswers = byId("resultsAnswers");
-    ui.sessionResults = byId("sessionResults");
-    ui.newGameBtn = byId("newGameBtn");
-    ui.newGameWaiting = byId("newGameWaiting");
+        // Results
+        results: byId("resultsSection"),
+        resultsContext: byId("resultsContext"),
+        resultsTitle: byId("resultsTitle"),
+        resultsSub: byId("resultsSub"),
+        standings: byId("standings"),
+        sessionResults: byId("sessionResults"),
+        resultsBoard: byId("resultsBoard"),
+        newGameBtn: byId("newGameBtn"),
+        newGameWaiting: byId("newGameWaiting")
+    });
 }
 
-function initRenderer() {
-    initUI();
-    initEventHandlers();
+function wireEvents() {
+    ui.createRoomBtn.addEventListener("click", createRoom);
+    ui.leaveRoomBtn.addEventListener("click", leaveRoom);
+    ui.joinForm.addEventListener("submit", e => {
+        e.preventDefault();
+        joinRoom(ui.joinCodeInput.value);
+    });
 
-    if (!roomActive && game.players.length === 0) {
-        game.players.push(newLocalPlayer("Player 1"));
-    }
-    renderPlayerNames();
+    ui.sportChips.forEach(btn => btn.addEventListener("click", () => selectSport(btn.dataset.sport)));
+    ui.categoryChips.forEach(btn => btn.addEventListener("click", () => selectCategory(btn.dataset.category)));
+    ui.yearChips.forEach(btn => btn.addEventListener("click", () => selectYear(btn.dataset.year)));
+    ui.statSelect.addEventListener("change", () => selectStat(ui.statSelect.value));
 
-    _uiInitialized = true;
-    renderUIForState(game);
+    ui.startGameBtn.addEventListener("click", startGame);
+    ui.guessForm.addEventListener("submit", e => {
+        e.preventDefault();
+        submitGuess(ui.guessInput.value);
+        ui.guessInput.value = "";
+        ui.guessInput.focus();
+    });
+    ui.endGameBtn.addEventListener("click", voteToEndGame);
+    ui.newGameBtn.addEventListener("click", newGame);
 }
 
-
-// Initialize when DOM is ready
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initRenderer);
-} else {
-    initRenderer();
-}
+document.addEventListener("DOMContentLoaded", () => {
+    findElements();
+    wireEvents();
+    game.players = [newLocalPlayer("Player 1")];
+    _uiReady = true;
+    render();
+});

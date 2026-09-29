@@ -1,8 +1,8 @@
 /* ============================================================
    TOP 10 — SHARED STATE
    Loaded first. These are plain scripts (not modules), so every
-   variable and function declared at the top level of any of the
-   three files is visible to the other two.
+   top-level variable and function in any of the three files is
+   visible to the other two.
    ============================================================ */
 
 const GAME_STATES = {
@@ -16,54 +16,57 @@ const MAX_PLAYERS = 4;
 
 
 /* ============================================================
-   ROOM + IDENTITY
+   THE GAME
+   Everything in SYNCED_DEFAULTS is mirrored to rooms/{code}/gameState.
+   Firebase drops empty arrays and nulls, so anything missing from a
+   remote update falls back to these defaults.
    ============================================================ */
 
-let currentUser = null;
-let myPlayerId = null;
-let currentRoomCode = null;
-let roomActive = false;
-let hostId = null;
-
-// Room only: { uid: true } for each player who voted to end the game
-let endVotes = {};
-
-// DOM references, filled in by the renderer
-const ui = {};
-
-// Entries from data/manifest.json: which sport/category/year combos have data
-let dataManifest = [];
-
-
-/* ============================================================
-   CORE GAME STATE (shared by single + multiplayer)
-   ============================================================ */
+const SYNCED_DEFAULTS = {
+    state: GAME_STATES.SETUP,
+    sport: null,
+    category: null,       // MLB only: "batting" | "pitching"
+    year: null,
+    stat: null,           // stat label, e.g. "Home Runs"
+    players: [],          // [{ id, name, score }] in turn order
+    currentPlayerIndex: 0,
+    guessed: [],          // [{ answer, by }] correct answers and who got them
+    roundComplete: false, // every answer found
+    lastGuess: null       // { playerName, guess, answer, result, at }, shown to everyone
+};
 
 const game = {
-    state: GAME_STATES.SETUP,
-    currentPlayerIndex: 0,
+    ...structuredClone(SYNCED_DEFAULTS),
 
-    players: [],
-    playerNames: {},
-
-    globalGuessed: [],
-    roundComplete: false,
-    lastGuess: null,
-
-    sport: null,
-    category: null,
-    year: null,
-    stat: null,
-
-    authReady: false,
-    isGuessLocked: false,
-
-    data: {}   // local-only stat data
+    // Local only
+    data: {},             // stat label -> { players: [{ name, rank, team, value }], isPercent }
+    dataStatus: "idle"    // idle | loading | ready | empty | error
 };
 
 
 /* ============================================================
-   SESSION ("Tonight") LEADERBOARD
+   ROOM + IDENTITY
+   ============================================================ */
+
+let currentUser = null;
+let currentRoomCode = null;
+let hostId = null;
+let roomMembers = {};     // uid -> display name, everyone in the room
+let endVotes = {};        // uid -> true, players who voted to end the game
+let roomStatus = "";      // short message under the room controls
+
+function inRoom() {
+    return currentRoomCode !== null;
+}
+
+// Solo/pass-the-phone players are always "host": they control everything
+function isHost() {
+    return !inRoom() || currentUser?.uid === hostId;
+}
+
+
+/* ============================================================
+   SESSION ("TONIGHT") LEADERBOARD
    Running totals across every game played in this room, or on this
    device when not in a room. Keyed by player id (Firebase uid in a
    room, "local-N" on one device).
@@ -81,18 +84,11 @@ function emptySession() {
    HELPERS
    ============================================================ */
 
-function setAuthState(user) {
-    currentUser = user;
-    myPlayerId = user?.uid ?? null;
-    game.authReady = !!user;
-}
+// DOM references, filled in by the renderer
+const ui = {};
 
-// Local (one-device) players get a stable id so the session
-// leaderboard follows them through renames
-let _nextLocalId = 1;
-function newLocalPlayer(name) {
-    return { id: `local-${_nextLocalId++}`, name, guesses: [], score: 0 };
-}
+// Entries from data/manifest.json: which sport/category/year combos have data
+let dataManifest = [];
 
 // True if any data exists matching the given sport/category/year (omitted = any)
 function hasData({ sport, category, year } = {}) {
@@ -100,4 +96,11 @@ function hasData({ sport, category, year } = {}) {
         (!sport || entry.sport === sport) &&
         (!category || entry.category === category) &&
         (!year || String(entry.year) === String(year)));
+}
+
+// One-device players get a stable id so the session leaderboard
+// follows them through renames
+let _nextLocalId = 1;
+function newLocalPlayer(name = `Player ${game.players.length + 1}`) {
+    return { id: `local-${_nextLocalId++}`, name, score: 0 };
 }

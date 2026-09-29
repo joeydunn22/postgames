@@ -1,8 +1,22 @@
 {
-  "_readme": "Every sport/category/year the trivia game has data for. Buttons with no matching entry are greyed out. Add a line here whenever you add a new processed file.",
+  "_readme": "Every sport/category/year the trivia game has data for, and its file. scripts/build_trivia_data.py keeps this up to date.",
   "available": [
-    { "sport": "mlb", "category": "batting",  "year": 2025 },
-    { "sport": "mlb", "category": "pitching", "year": 2025 },
-    { "sport": "nfl", "year": 2025 }
+    {
+      "sport": "mlb",
+      "year": 2025,
+      "file": "mlb/2025/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2025,
+      "file": "mlb/2025/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "nfl",
+      "year": 2025,
+      "file": "nfl/2025/stats.json"
+    }
   ]
 }

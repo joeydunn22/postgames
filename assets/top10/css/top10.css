@@ -498,6 +498,12 @@
     100% { background: transparent; }
 }
 
+/* "+5 more tied at 16": ties the source didn't list */
+.slot-note {
+    list-style: none;
+    padding: 12px 4px 0 60px;
+}
+
 /* Results screen: answers nobody got */
 .slot.missed .slot-rank,
 .slot.missed .slot-team,

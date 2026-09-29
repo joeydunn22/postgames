@@ -27,7 +27,7 @@
   <main class="page">
 
     <!-- ========== SETUP: pick a game ========== -->
-    <section id="statSelectionArea" class="setup">
+    <section id="setupSection" class="setup">
 
       <div class="intro">
         <p class="eyebrow">Sports Trivia</p>
@@ -39,19 +39,19 @@
       <div class="room">
         <div id="roomJoin" class="room-join">
           <span class="room-label">On different phones?</span>
-          <button id="createRoomBtn" class="link-btn" type="button" onclick="createRoom()">Start a room</button>
-          <form class="join-form" onsubmit="event.preventDefault(); joinRoom(document.getElementById('joinCodeInput').value)">
+          <button id="createRoomBtn" class="link-btn" type="button">Start a room</button>
+          <form id="joinForm" class="join-form">
             <span class="room-label">or</span>
             <input id="joinCodeInput" class="input join-input" placeholder="CODE" maxlength="4"
               autocapitalize="characters" autocomplete="off" spellcheck="false" aria-label="Room code">
-            <button id="joinRoomBtn" class="btn" type="submit">Join</button>
+            <button class="btn" type="submit">Join</button>
           </form>
         </div>
 
         <div id="roomInfo" class="room-info hidden">
           <span class="room-label">Room code</span>
-          <span id="roomCodeDisplay" class="room-code"></span>
-          <button id="leaveRoomBtn" class="link-btn" type="button" onclick="leaveRoom()">Leave</button>
+          <span id="roomCode" class="room-code"></span>
+          <button id="leaveRoomBtn" class="link-btn" type="button">Leave</button>
         </div>
 
         <p id="roomStatus" class="hint room-status" role="status"></p>
@@ -61,16 +61,16 @@
       <div class="picker">
         <div class="pick-row">
           <span class="pick-label">Sport</span>
-          <div id="sport-buttons" class="chips">
+          <div id="sportChips" class="chips">
             <button class="chip" type="button" data-sport="mlb">MLB</button>
             <button class="chip" type="button" data-sport="nba">NBA</button>
             <button class="chip" type="button" data-sport="nfl">NFL</button>
           </div>
         </div>
 
-        <div id="mlb-category-wrapper" class="pick-row hidden">
+        <div id="categoryRow" class="pick-row hidden">
           <span class="pick-label">Category</span>
-          <div id="mlb-category-buttons" class="chips">
+          <div id="categoryChips" class="chips">
             <button class="chip" type="button" data-category="batting">Batting</button>
             <button class="chip" type="button" data-category="pitching">Pitching</button>
           </div>
@@ -78,7 +78,7 @@
 
         <div class="pick-row">
           <span class="pick-label">Season</span>
-          <div id="year-buttons" class="chips">
+          <div id="yearChips" class="chips">
             <button class="chip" type="button" data-year="2024">2024</button>
             <button class="chip" type="button" data-year="2025">2025</button>
             <button class="chip" type="button" data-year="2026">2026</button>
@@ -97,7 +97,7 @@
 
         <div class="pick-row">
           <span class="pick-label">Players</span>
-          <div id="playerNameInputs" class="player-pills"></div>
+          <div id="playerPills" class="player-pills"></div>
         </div>
       </div>
 
@@ -109,7 +109,7 @@
 
 
     <!-- ========== PLAYING ========== -->
-    <section id="statSection" class="play hidden">
+    <section id="playSection" class="play hidden">
 
       <header class="play-head">
         <p id="playContext" class="eyebrow"></p>
@@ -118,17 +118,17 @@
 
       <div id="scoreboard" class="scoreboard"></div>
 
-      <p id="currentPlayerDisplay" class="turn"></p>
+      <p id="turn" class="turn"></p>
 
       <form id="guessForm" class="guess-form" autocomplete="off">
-        <input id="userGuess" class="input guess-input" type="text" placeholder="Name a player"
+        <input id="guessInput" class="input guess-input" type="text" placeholder="Name a player"
           autocapitalize="words" spellcheck="false" aria-label="Your guess">
-        <button id="submitGuessBtn" class="btn btn-primary guess-btn" type="submit">Guess</button>
+        <button id="guessBtn" class="btn btn-primary guess-btn" type="submit">Guess</button>
       </form>
 
       <p id="guessFeedback" class="feedback" role="status" aria-live="polite"></p>
 
-      <ol id="top10List" class="board"></ol>
+      <ol id="board" class="board"></ol>
 
       <div class="end-game">
         <button id="endGameBtn" class="btn" type="button">End Game</button>
@@ -142,29 +142,29 @@
 
       <header class="results-head">
         <p id="resultsContext" class="eyebrow"></p>
-        <h1 id="resultsWinner" class="display results-title"></h1>
+        <h1 id="resultsTitle" class="display results-title"></h1>
         <p id="resultsSub" class="lede"></p>
       </header>
 
-      <ol id="resultsPlayers" class="standings"></ol>
+      <ol id="standings" class="standings"></ol>
 
       <div id="sessionResults" class="session hidden"></div>
 
       <h2 class="section-label">The full list</h2>
-      <ol id="resultsAnswers" class="board board-final"></ol>
+      <ol id="resultsBoard" class="board"></ol>
 
       <button id="newGameBtn" class="btn btn-primary btn-block" type="button">New Game</button>
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 121</p>
+    <p class="version">Version 122</p>
   </main>
 
 
   <!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-    import { getDatabase, ref, set, update, onValue, remove, get }
+    import { getDatabase, ref, set, onValue, remove, get }
       from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
     import { getAuth, onAuthStateChanged, signInAnonymously }
       from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
@@ -189,7 +189,6 @@
 
     window.ref = ref;
     window.set = set;
-    window.update = update;
     window.onValue = onValue;
     window.remove = remove;
     window.get = get;
@@ -198,8 +197,8 @@
     window.signInAnonymously = signInAnonymously;
   </script>
 
-  <!-- JS: Top 10 Game. Plain deferred scripts: they run in this order after
-       the Firebase module above, and share top-level names with each other. -->
+  <!-- Top 10 game: plain deferred scripts. They run in this order after the
+       Firebase module above and share top-level names with each other. -->
   <script defer src="../assets/top10/js/top10-state.js"></script>
   <script defer src="../assets/top10/js/top10-render.js"></script>
   <script defer src="../assets/top10/js/top10-logic.js"></script>
