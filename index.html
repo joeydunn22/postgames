@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>POSTGAMES</title>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/global/global.css">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
@@ -25,52 +25,6 @@
 <button class="btn" onclick="window.location.href='pages/snacks.html'">
     Snack Finder
 </button>
-
-
-
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-  import { getDatabase, ref, set, onValue } 
-    from "https://www.gstatic.com/firebasejs/12.10.0/firebase-database.js";
-  import { getAuth, signInAnonymously, onAuthStateChanged } 
-    from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCdihTsDUM9ny1AKNAZl8JejYFRt4nXEz4",
-    authDomain: "postgames-web.firebaseapp.com",
-    databaseURL: "https://postgames-web-default-rtdb.firebaseio.com",
-    projectId: "postgames-web",
-    storageBucket: "postgames-web.firebasestorage.app",
-    messagingSenderId: "95643944168",
-    appId: "1:95643944168:web:25177dedf2dcd55b31755d",
-    measurementId: "G-KCZD35F23V"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
-  const auth = getAuth();
-  signInAnonymously(auth).catch((error) => {
-    console.error("Auth error:", error);
-  });
-
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log("Signed in as:", user.uid);
-
-      // TEMP TEST: write to database using your UID
-      set(ref(db, "test/" + user.uid), {
-        joinedAt: Date.now()
-      });
-    }
-  });
-</script>
-
-
-
-
-
 
 </body>
 </html>
