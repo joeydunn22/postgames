@@ -36,6 +36,7 @@ async function leaveCurrentRoom() {
 
     currentRoomCode = null;
     roomActive = false;
+    endVotes = {};
     _listenersInitialized = false;
     document.getElementById("createRoomBtn").style.display = "inline-block";
     document.getElementById("leaveRoomBtn").style.display = "none";
@@ -92,6 +93,7 @@ async function createRoom() {
         listenToPlayers(roomCode);
         listenToGame(roomCode);
         listenToPendingGuess(roomCode);
+        listenToEndVotes(roomCode);
         _listenersInitialized = true;
     }
 
@@ -136,6 +138,7 @@ async function joinRoom(roomCode) {
         listenToPlayers(roomCode);
         listenToGame(roomCode);
         listenToPendingGuess(roomCode);
+        listenToEndVotes(roomCode);
         _listenersInitialized = true;
     }
 
@@ -191,6 +194,7 @@ function listenToPlayers(roomCode) {
 
         renderPlayerNames();
         renderUIForState(game);
+        checkEndVotes();
     });
 }
 
@@ -246,6 +250,15 @@ function listenToPendingGuess(roomCode) {
     });
 }
 
+function listenToEndVotes(roomCode) {
+    const votesRef = ref(db, `rooms/${roomCode}/endVotes`);
+    onValue(votesRef, (snapshot) => {
+        endVotes = snapshot.val() || {};
+        renderUIForState(game);
+        checkEndVotes();
+    });
+}
+
 /* ============================================================
    4. GAME FLOW (START / END / RESET)
    ============================================================ */
@@ -267,6 +280,7 @@ async function startGame() {
     if (game.players.length === 0) return;
 
     // Reset core state
+    clearEndVotes();
     transition(window.GAME_STATES.PLAYING);
     game.currentPlayerIndex = 0;
     game.globalGuessed = [];
@@ -293,8 +307,13 @@ async function startGame() {
 }
 
 function applyEndGame() {
+    // In a room, only the host ends the game (after everyone votes)
+    if (roomActive && myPlayerId !== hostId) return;
+    if (game.state !== window.GAME_STATES.PLAYING) return;
+
     transition(window.GAME_STATES.RESULTS);
-    if (roomActive && myPlayerId === hostId) {
+    clearEndVotes();
+    if (roomActive) {
         syncGameState();
     }
     renderUIForState(game);
@@ -310,6 +329,7 @@ function resetGame() {
         score: 0
     }));
     resetStatUI();
+    clearEndVotes();
     if (roomActive && myPlayerId === hostId) {
         syncGameState();
     }
@@ -341,6 +361,51 @@ async function syncGameState() {
 
 function transition(nextState) {
     game.state = nextState;
+}
+
+/* ============================================================
+   4b. END GAME VOTING
+   Solo/pass-and-play: End Game ends immediately.
+   Room: each player toggles a vote at rooms/{code}/endVotes/{uid};
+   once every player in the room has voted, the host ends the game.
+   ============================================================ */
+function onEndGameClick() {
+    if (game.state !== window.GAME_STATES.PLAYING) return;
+
+    if (roomActive) {
+        toggleEndVote();
+    } else {
+        applyEndGame();
+    }
+}
+
+async function toggleEndVote() {
+    if (!roomActive || !currentRoomCode || !currentUser) return;
+
+    const voteRef = ref(db, `rooms/${currentRoomCode}/endVotes/${currentUser.uid}`);
+    if (endVotes[currentUser.uid]) {
+        await remove(voteRef);
+    } else {
+        await set(voteRef, true);
+    }
+}
+
+// Host only: end the game once every player currently in the room has voted
+function checkEndVotes() {
+    if (!roomActive || myPlayerId !== hostId) return;
+    if (game.state !== window.GAME_STATES.PLAYING) return;
+
+    const playerIds = Object.keys(game.playerNames || {});
+    if (playerIds.length > 0 && playerIds.every(uid => endVotes[uid])) {
+        applyEndGame();
+    }
+}
+
+function clearEndVotes() {
+    endVotes = {};
+    if (roomActive && currentRoomCode && myPlayerId === hostId) {
+        remove(ref(db, `rooms/${currentRoomCode}/endVotes`));
+    }
 }
 
 /* ============================================================
@@ -432,6 +497,11 @@ function processGuess(rawGuess, playerId) {
 
     renderUIForState(game);
 
+    // Everything's been guessed: no vote needed, show results after a beat
+    if (game.roundComplete) {
+        setTimeout(applyEndGame, 2500);
+    }
+
     return { ok: true };
 }
 
@@ -508,6 +578,17 @@ async function maybeLoadData() {
         console.warn("Unable to load Top 10 data:", error);
         if (ui.statTitle) ui.statTitle.textContent = "No data available for this season";
     }
+}
+
+async function loadDataManifest() {
+    try {
+        const response = await fetch(new URL("../../../data/manifest.json", import.meta.url));
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        dataManifest = (await response.json()).available || [];
+    } catch (error) {
+        console.warn("Unable to load data manifest:", error);
+    }
+    renderUIForState(game);
 }
 
 function loadSport() {
@@ -623,6 +704,12 @@ const PUBLIC_API = {
     hostProcessGuess,
     onGuessSubmit,
     maybeLoadData,
+    loadDataManifest,
+    onEndGameClick,
+    toggleEndVote,
+    listenToEndVotes,
+    checkEndVotes,
+    clearEndVotes,
     loadSport,
     normalize,
     levenshtein,
@@ -640,3 +727,5 @@ Object.entries(PUBLIC_API).forEach(([name, fn]) => {
         console.warn(`PUBLIC_API: ${name} is not a function`);
     }
 });
+
+loadDataManifest();

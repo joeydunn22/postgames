@@ -1,0 +1,8 @@
+{
+  "_readme": "Every sport/category/year the trivia game has data for. Buttons with no matching entry are greyed out. Add a line here whenever you add a new processed file.",
+  "available": [
+    { "sport": "mlb", "category": "batting",  "year": 2025 },
+    { "sport": "mlb", "category": "pitching", "year": 2025 },
+    { "sport": "nfl", "year": 2025 }
+  ]
+}

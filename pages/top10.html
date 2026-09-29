@@ -24,7 +24,7 @@
   <div class="pg-page">
     <h1>Top 10 Trivia</h1>
     <p>Test your sports knowledge by trying to name the top 10 leaders in various stats for MLB, NBA, and NFL. Select a sport and season to get started!</p>
-    <p>Testing: Version 117</p>
+    <p>Testing: Version 118</p>
   </div>
 
   <!-- Create Room Buttons -->
@@ -119,15 +119,24 @@
     <div class="players-container"></div>
 
     <div id="top10List" class="top10-list"></div>
+
+    <div class="end-game-area">
+      <button id="endGameBtn" class="btn end-game-btn" type="button">End Game</button>
+      <div id="endVoteStatus" class="end-vote-status hidden"></div>
+    </div>
   </section>
 
   <div id="resultsSection" class="hidden">
     <h2 style="color:#00ff88;">Results</h2>
     <div id="resultsWinner" style="font-size:22px; margin-bottom:20px;"></div>
     <div id="resultsPlayers" class="players-container"></div>
-  </div>
 
-  <button id="actionButton" class="btn">Reveal Answers</button>
+    <h3 class="results-answers-title">The Top 10</h3>
+    <div id="resultsAnswers" class="top10-list results-answers"></div>
+
+    <button id="newGameBtn" class="btn" type="button">New Game</button>
+    <div id="newGameWaiting" class="end-vote-status hidden">Waiting for the host to start a new game...</div>
+  </div>
 
 
   <!-- Firebase -->

@@ -205,7 +205,64 @@ function renderList() {
     });
 }
 
-function renderResults() {
+// Sport / category / year buttons: highlight the current pick, grey out
+// options with no data, and lock them unless we're choosing a game
+function renderSelectionButtons(isHost) {
+    const canChoose = isHost && game.state === window.GAME_STATES.SETUP;
+
+    document.querySelectorAll("#sport-buttons .pg-button").forEach(btn => {
+        const sport = btn.dataset.sport;
+        btn.classList.toggle("active", game.sport === sport);
+        btn.disabled = !canChoose || !hasData({ sport });
+    });
+
+    document.getElementById("mlb-category-buttons")
+        ?.classList.toggle("hidden", game.sport !== "mlb");
+    document.querySelectorAll("#mlb-category-buttons .pg-button").forEach(btn => {
+        const category = btn.dataset.category;
+        btn.classList.toggle("active", game.category === category);
+        btn.disabled = !canChoose || !hasData({ sport: game.sport, category });
+    });
+
+    document.querySelectorAll("#year-buttons .pg-button").forEach(btn => {
+        const year = btn.dataset.year;
+        btn.classList.toggle("active", String(game.year) === year);
+        btn.disabled = !canChoose ||
+            !hasData({ sport: game.sport, category: game.category, year });
+    });
+}
+
+function renderEndGameButton() {
+    if (!ui.endGameBtn) return;
+
+    if (!roomActive) {
+        ui.endGameBtn.textContent = "End Game";
+        ui.endGameBtn.classList.remove("voted");
+        ui.endVoteStatus?.classList.add("hidden");
+        return;
+    }
+
+    const playerIds = Object.keys(game.playerNames || {});
+    const votedCount = playerIds.filter(uid => endVotes[uid]).length;
+    const iVoted = !!endVotes[myPlayerId];
+
+    ui.endGameBtn.textContent = iVoted
+        ? `Cancel My Vote (${votedCount}/${playerIds.length})`
+        : `Vote to End Game (${votedCount}/${playerIds.length})`;
+    ui.endGameBtn.classList.toggle("voted", iVoted);
+
+    if (ui.endVoteStatus) {
+        const waitingOn = game.players
+            .filter(p => p.id && !endVotes[p.id])
+            .map(p => p.name);
+        ui.endVoteStatus.textContent = votedCount > 0 && waitingOn.length > 0
+            ? `Waiting on: ${waitingOn.join(", ")}`
+            : "";
+        ui.endVoteStatus.classList.toggle("hidden", !ui.endVoteStatus.textContent);
+    }
+}
+
+function renderResults(isHost) {
     if (!ui.resultsSection) return;
 
     ui.resultsSection.classList.remove("hidden");
@@ -214,7 +271,8 @@ function renderResults() {
     const scores = [...game.players].sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
     const winner = scores[0];
 
-    ui.resultsWinner.textContent = `🏆 ${winner?.name || "Player"} wins with ${winner?.score ?? 0} points!`;
+    const winnerScore = winner?.score ?? 0;
+    ui.resultsWinner.textContent = `🏆 ${winner?.name || "Player"} wins with ${winnerScore} ${winnerScore === 1 ? "point" : "points"}!`;
 
     const container = ui.resultsPlayers;
     container.innerHTML = "";
@@ -223,8 +281,29 @@ function renderResults() {
         const col = document.createElement("div");
         col.className = "player-column";
         renderPlayerColumn(col, player, idx, false);
+        col.classList.remove("current-player");
         container.appendChild(col);
     });
+
+    // Full answer key: guessed answers normal, missed ones dimmed
+    const stat = game.data[game.stat];
+    if (ui.resultsAnswers) {
+        ui.resultsAnswers.innerHTML = !stat ? "" : `
+            <ol>
+                ${stat.players.map(item => {
+            const guessed = (game.globalGuessed || []).includes(item.name);
+            const value = item.value == null
+                ? ""
+                : stat.isPercent ? (item.value * 100).toFixed(1) + "%" : item.value;
+            return `<li class="${guessed ? "guessed" : "missed"}"><strong>${item.name}</strong>${value === "" ? "" : ` - ${value}`}</li>`;
+        }).join("")}
+            </ol>
+        `;
+    }
+
+    // Only the host can start the next game in a room
+    if (ui.newGameBtn) ui.newGameBtn.style.display = isHost ? "inline-block" : "none";
+    ui.newGameWaiting?.classList.toggle("hidden", isHost);
 }
 
 /* ============================================================
@@ -257,6 +336,8 @@ function renderUIForState(state = {}) {
 
     const isHost = !roomActive || myPlayerId === hostId;
 
+    renderSelectionButtons(isHost);
+
     // Render based on phase
     if (phase === window.GAME_STATES.SETUP) {
         // Show stat selection area
@@ -274,7 +355,8 @@ function renderUIForState(state = {}) {
         // Only host can select stat - ALWAYS SHOW, but disable if conditions not met
         if (ui.statSelect) {
             const shouldEnable = isHost && game.sport && game.year &&
-                (game.sport !== "mlb" || game.category);
+                (game.sport !== "mlb" || game.category) &&
+                Object.keys(game.data).length > 0;
             ui.statSelect.disabled = !shouldEnable;
         }
     } else if (phase === window.GAME_STATES.PLAYING) {
@@ -287,7 +369,9 @@ function renderUIForState(state = {}) {
 
         if (ui.userGuess) ui.userGuess.disabled = !isYourTurn || game.roundComplete;
         if (ui.submitGuessBtn) ui.submitGuessBtn.disabled = !isYourTurn || game.isGuessLocked || game.roundComplete;
+        if (ui.endGameBtn) ui.endGameBtn.disabled = game.roundComplete;
         renderList();
+        renderEndGameButton();
     } else if (phase === window.GAME_STATES.RESULTS) {
         // Hide stat selection and gameplay areas
         if (ui.statSelectionArea) ui.statSelectionArea.classList.add("hidden");
@@ -295,7 +379,7 @@ function renderUIForState(state = {}) {
 
         // Show results
         if (ui.resultsSection) ui.resultsSection.classList.remove("hidden");
-        renderResults();
+        renderResults(isHost);
     }
 
     _prevPhase = phase;
@@ -310,30 +394,21 @@ function onAuthUIUpdate() {
     }
 }
 
+// Switching sport/category can leave a year picked that has no data for it
+function clearUnavailableYear() {
+    if (game.year && !hasData({ sport: game.sport, category: game.category, year: game.year })) {
+        game.year = null;
+    }
+}
+
 function initEventHandlers() {
     document.getElementById("sport-buttons")?.addEventListener("click", (e) => {
         if (e.target.dataset.sport) {
-            // Remove active class from all sport buttons
-            document.querySelectorAll("#sport-buttons .pg-button").forEach(btn => {
-                btn.classList.remove("active");
-            });
-            // Add active class to clicked button
-            e.target.classList.add("active");
-
             game.sport = e.target.dataset.sport;
             game.category = null;
             game.stat = null;
+            clearUnavailableYear();
             resetStatUI();
-
-            // Show MLB category buttons if MLB selected
-            const mlbCategoryWrapper = document.getElementById("mlb-category-wrapper");
-            const mlbCategoryButtons = document.getElementById("mlb-category-buttons");
-            if (game.sport === "mlb") {
-                mlbCategoryButtons.classList.remove("hidden");
-            } else {
-                mlbCategoryButtons.classList.add("hidden");
-            }
-
             maybeLoadData();
             renderUIForState(game);
         }
@@ -341,15 +416,9 @@ function initEventHandlers() {
 
     document.getElementById("mlb-category-buttons")?.addEventListener("click", (e) => {
         if (e.target.dataset.category) {
-            // Remove active class from all category buttons
-            document.querySelectorAll("#mlb-category-buttons .pg-button").forEach(btn => {
-                btn.classList.remove("active");
-            });
-            // Add active class to clicked button
-            e.target.classList.add("active");
-
             game.category = e.target.dataset.category;
             game.stat = null;
+            clearUnavailableYear();
             resetStatUI();
             maybeLoadData();
             renderUIForState(game);
@@ -358,13 +427,6 @@ function initEventHandlers() {
 
     document.getElementById("year-buttons")?.addEventListener("click", (e) => {
         if (e.target.dataset.year) {
-            // Remove active class from all year buttons
-            document.querySelectorAll("#year-buttons .pg-button").forEach(btn => {
-                btn.classList.remove("active");
-            });
-            // Add active class to clicked button
-            e.target.classList.add("active");
-
             game.year = e.target.dataset.year;
             game.stat = null;
             resetStatUI();
@@ -434,19 +496,16 @@ function initUI() {
     ui.resultsWinner = document.getElementById("resultsWinner");
     ui.resultsPlayers = document.getElementById("resultsPlayers");
     ui.statSection = document.getElementById("statSection");
+    ui.endGameBtn = document.getElementById("endGameBtn");
+    ui.endVoteStatus = document.getElementById("endVoteStatus");
+    ui.resultsAnswers = document.getElementById("resultsAnswers");
+    ui.newGameBtn = document.getElementById("newGameBtn");
+    ui.newGameWaiting = document.getElementById("newGameWaiting");
 }
 
 function initActionButtonHandlers() {
-    const actionBtn = document.getElementById("actionButton");
-    if (!actionBtn) return;
-
-    actionBtn.addEventListener("click", () => {
-        if (game.state === window.GAME_STATES.RESULTS) {
-            resetGame();
-        } else if (game.state === window.GAME_STATES.PLAYING) {
-            renderList();
-        }
-    });
+    ui.endGameBtn?.addEventListener("click", () => onEndGameClick());
+    ui.newGameBtn?.addEventListener("click", () => resetGame());
 }
 
 function initLocalPlayerButtons() {
@@ -487,6 +546,8 @@ const PUBLIC_RENDER_API = {
     renderPlayerNames,
     renderList,
     renderResults,
+    renderSelectionButtons,
+    renderEndGameButton,
     resetStatUI,
     populateStatDropdown,
     resetLocalPlayersToOne,
