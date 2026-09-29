@@ -32,6 +32,12 @@ function formatValue(value, isPercent) {
     return isPercent ? (value * 100).toFixed(1) + "%" : value;
 }
 
+// Reference sites use "2TM"/"3TM" for players traded mid-season
+function formatTeam(team) {
+    const multi = /^(\d)TM$/.exec(team);
+    return multi ? `${multi[1]} teams` : team;
+}
+
 function gameContextLabel() {
     const category = game.sport === "mlb" && game.category
         ? game.category[0].toUpperCase() + game.category.slice(1)
@@ -194,7 +200,7 @@ function renderPlayerNames() {
         container.appendChild(pill);
     });
 
-    if (!roomActive) {
+    if (!roomActive && game.players.length < MAX_PLAYERS) {
         const addBtn = document.createElement("button");
         addBtn.type = "button";
         addBtn.className = "pill-add";
@@ -263,14 +269,21 @@ function renderFeedback() {
         return;
     }
 
-    const who = game.players.length > 1 ? `${last.playerName}: ` : "";
+    // Who guessed (small label), then the guess itself on its own line
+    const who = game.players.length > 1
+        ? `<span class="feedback-who">${escapeHTML(last.playerName)}</span>`
+        : "";
+    let main, note = "";
     if (last.result === "correct") {
-        el.textContent = `✓ ${who}${last.answer}`;
+        main = `✓ ${escapeHTML(last.answer)}`;
     } else if (last.result === "repeat") {
-        el.textContent = `${who}${last.answer} is already on the board`;
+        main = escapeHTML(last.answer);
+        note = "already on the board";
     } else {
-        el.textContent = `✗ ${who}“${last.guess}” isn't on the list`;
+        main = `✗ “${escapeHTML(last.guess)}”`;
+        note = "not on the list";
     }
+    el.innerHTML = `${who}<span class="feedback-main">${main}${note ? ` <span class="feedback-note">${note}</span>` : ""}</span>`;
     el.classList.add(last.result);
 
     if (isFreshGuess()) {
@@ -313,8 +326,11 @@ function renderBoard(listEl, { final = false } = {}) {
         const by = guessed && showWho && guessedBy[item.name]
             ? `<span class="slot-by">${escapeHTML(guessedBy[item.name])}</span>`
             : "";
+        const team = item.team
+            ? `<span class="slot-team">${escapeHTML(formatTeam(item.team))}</span>`
+            : "";
         const main = revealed
-            ? `<span class="slot-name">${escapeHTML(item.name)}</span>${by}`
+            ? `<span class="slot-line"><span class="slot-name">${escapeHTML(item.name)}</span>${team}</span>${by}`
             : `<span class="slot-blank"></span>`;
         const value = revealed ? escapeHTML(formatValue(item.value, stat.isPercent)) : "";
 

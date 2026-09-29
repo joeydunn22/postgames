@@ -117,6 +117,12 @@ async function joinRoom(roomCode) {
         return;
     }
 
+    const roomPlayers = snapshot.val().players || {};
+    if (Object.keys(roomPlayers).length >= MAX_PLAYERS && !roomPlayers[currentUser.uid]) {
+        alert(`That room is full (${MAX_PLAYERS} players max).`);
+        return;
+    }
+
     // Join as player
     await set(ref(db, `rooms/${roomCode}/players/${currentUser.uid}`), currentUser.displayName || "Player");
     const joinCodeInput = document.getElementById("joinCodeInput");
@@ -560,6 +566,7 @@ async function maybeLoadData() {
                 return {
                     name,
                     rank: player.rank,
+                    team: player.team,
                     value: isPercent ? player.value / 100 : player.value
                 };
             });

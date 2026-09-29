@@ -10,6 +10,9 @@ const GAME_STATES = {
 
 window.GAME_STATES = GAME_STATES;
 
+// Applies to both pass-the-phone games and rooms
+window.MAX_PLAYERS = 4;
+
 window.currentUser = null;
 window.myPlayerId = null;
 window.currentRoomCode = null;

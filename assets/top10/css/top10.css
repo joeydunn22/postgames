@@ -339,18 +339,40 @@
     80% { transform: translateX(3px); }
 }
 
-/* Result of the last guess */
+/* Result of the last guess: who guessed (small), then the guess (big) */
 .feedback {
-    min-height: 24px;
-    margin-top: -12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 52px;
+    margin-top: -8px;
     padding-left: 24px;
-    font-weight: 600;
     color: var(--muted);
 }
 
-.feedback.correct { color: var(--good); }
-.feedback.wrong { color: var(--bad); }
-.feedback.repeat { color: var(--accent); }
+.feedback-who {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.feedback-main {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.feedback-note {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.feedback.correct .feedback-main { color: var(--good); }
+.feedback.wrong .feedback-main { color: var(--bad); }
+.feedback.repeat .feedback-main { color: var(--accent); }
 
 .feedback.fresh {
     animation: rise 0.35s var(--ease);
@@ -413,6 +435,22 @@
     min-width: 0;
 }
 
+.slot-line {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    min-width: 0;
+}
+
+.slot-team {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
 .slot-name {
     font-size: 18px;
     font-weight: 600;
@@ -462,6 +500,7 @@
 
 /* Results screen: answers nobody got */
 .slot.missed .slot-rank,
+.slot.missed .slot-team,
 .slot.missed .slot-name,
 .slot.missed .slot-value {
     color: var(--faint);
