@@ -36,9 +36,9 @@ More seasons and sports add more replay value than any feature. Don't scrape Spo
 
 Small gameplay additions that make a night of play more fun.
 
-- [ ] Turn timer (host setting: off / 30s / 60s)
+- [x] Turn timer (host setting: off / 45s / 60s / 90s; running out counts as a miss)
+- [x] Random board: any sport, or random within the picked sport
 - [ ] "Pass" option on your turn
-- [ ] Random board button
 - [ ] Hints (reveal a team or first letter, maybe at a point cost)
 - [ ] Era/difficulty filter now that there are many seasons
 - [ ] Other game modes beyond "name the top 10" (e.g. guess the stat from the list, team-based boards)
@@ -94,7 +94,7 @@ Dark "late night at the bar" look: near-black background, a single amber accent 
 
 `pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Three **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. As classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — no imports/exports, and no two files may declare the same top-level name. Fetch paths are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
 
-1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `players: [{id, name, score}]`, `currentPlayerIndex`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `availableYears()`, `newLocalPlayer()`.
+1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `timerSeconds`, `players: [{id, name, score}]`, `currentPlayerIndex`, `turnEndsAt`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `availableYears()`, `serverNow()`, `randomItem()`, `newLocalPlayer()`. `TIMER_OPTIONS` lists the timer choices.
 2. `top10-render.js` — the only file that touches the DOM. `render()` redraws from state after any change, showing one of the setup / playing / results sections. Event handlers call logic actions (`selectSport`, `submitGuess`, `voteToEndGame`, …) and never change state themselves. Startup runs on `DOMContentLoaded` because rendering uses helpers from the logic file. Anything interpolated into `innerHTML` must go through `escapeHTML()` — names and guesses come from other players.
 3. `top10-logic.js` — actions and rules: sign-in, rooms and their Firebase listeners, setup actions, game flow (`startGame` / `endGame` / `newGame`), end-game voting, guessing, data loading, and guess matching. Never touches the DOM: change state, then call `render()`.
 
@@ -108,7 +108,9 @@ Firebase layout per room: `rooms/{CODE}/host`, `players/{uid}` (display name), `
 - Listeners are stored in `_roomUnsubscribers` and switched off on leaving. If the host leaves, the first remaining member claims `host`. The last player out deletes the room.
 - **Ending a game:** solo, End Game ends immediately; in a room each player toggles `endVotes/{uid}` and the host ends it once everyone has voted. Clearing the board auto-ends after a short delay. Only the host sees "New Game".
 - **Session ("Tonight") leaderboard:** `recordGameResult()` runs once per game in `endGame` and adds points/games per player id to `session.players`; a win goes only to an outright top scorer (ties and one-player games award none). In a room the host writes it to `rooms/{CODE}/session`; off-room it lives in memory. Ids are Firebase uids in rooms and `local-N` on one device, so renames don't split a record. Leaving a room resets to a fresh local game and session.
-- `game.lastGuess` (`{ playerName, guess, answer, result: correct|wrong|repeat, at }`) is synced so everyone sees feedback; the renderer animates only guesses newer than the last one it drew.
+- **Random board:** `pickRandomBoard(sport?)` (host) picks a sport evenly (so MLB's extra files don't dominate), then any manifest entry for it, waits for `loadStats()`, then a random stat. It only fills the picks; the host still presses Start.
+- **Turn timer:** `timerSeconds` (0 = off) is a host setup choice. `startTurnClock()` sets `turnEndsAt` in *server* time (`serverNow()` = local clock + Firebase's `.info/serverTimeOffset`) whenever a turn starts, so all phones count down together. Only the host runs `checkTurnClock()` (every 250 ms): at the deadline it records a `timeout` guess and calls `nextTurn()`. The renderer redraws just the countdown every 250 ms (`renderTurnClock()`).
+- `game.lastGuess` (`{ playerName, guess, answer, result: correct|wrong|repeat|timeout, at }`) is synced so everyone sees feedback; the renderer animates only guesses newer than the last one it drew.
 
 Guess matching (`findAnswerMatch`) ignores accents and punctuation, accepts full name, first name alone or last name alone (ignoring Jr./III), and allows about one typo per five letters. A guess that fits more than one answer equally well is a miss.
 

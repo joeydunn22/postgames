@@ -23,6 +23,11 @@ onAuthStateChanged(auth, user => {
     render();
 });
 
+// How far this phone's clock is from Firebase's (see serverNow)
+onValue(ref(db, ".info/serverTimeOffset"), snapshot => {
+    serverTimeOffset = snapshot.val() || 0;
+});
+
 
 /* ============================================================
    2. ROOMS
@@ -281,6 +286,38 @@ function selectStat(stat) {
     render();
 }
 
+function selectTimer(seconds) {
+    if (!canEditSetup() || !TIMER_OPTIONS.includes(seconds)) return;
+    game.timerSeconds = seconds;
+    syncGameState();
+    render();
+}
+
+// Pick a random board: any sport, or only `sport`. Sports are equally
+// likely (MLB has more files but shouldn't come up more), then any
+// season/category, then any stat once that file has loaded.
+async function pickRandomBoard(sport = null) {
+    if (!canEditSetup()) return;
+    const sports = sport ? [sport] : [...new Set(dataManifest.map(e => e.sport))];
+    if (sports.length === 0) return;
+
+    const pickedSport = randomItem(sports);
+    const entry = randomItem(dataManifest.filter(e => e.sport === pickedSport));
+    if (!entry) return;
+
+    Object.assign(game, { sport: entry.sport, category: entry.category ?? null, year: entry.year, stat: null });
+    syncGameState();
+    render();
+
+    await loadStats();
+    const stillPicked = game.sport === entry.sport && game.year === entry.year;
+    if (!stillPicked || game.dataStatus !== "ready" || !canEditSetup()) return;
+
+    game.stat = randomItem(Object.keys(game.data));
+    syncGameState();
+    render();
+}
+
 function addLocalPlayer() {
     if (inRoom() || game.players.length >= MAX_PLAYERS) return;
     game.players.push(newLocalPlayer());
@@ -325,6 +362,7 @@ function startGame() {
         lastGuess: null
     });
     game.players = game.players.map(p => ({ ...p, score: 0 }));
+    startTurnClock();
     clearEndVotes();
     syncGameState();
     render();
@@ -335,6 +373,7 @@ function endGame() {
 
     clearTimeout(_autoEndTimer);
     game.state = GAME_STATES.RESULTS;
+    game.turnEndsAt = null;
     clearEndVotes();
     recordGameResult();
     syncGameState();
@@ -349,6 +388,7 @@ function newGame() {
         state: GAME_STATES.SETUP,
         stat: null,
         currentPlayerIndex: 0,
+        turnEndsAt: null,
         guessed: [],
         roundComplete: false,
         lastGuess: null
@@ -456,16 +496,47 @@ function applyGuess(rawGuess) {
 
     if (game.roundComplete) {
         // Everything's been found: no vote needed, show results after a beat
+        game.turnEndsAt = null;
         _autoEndTimer = setTimeout(endGame, 2500);
     } else {
-        game.currentPlayerIndex = (game.currentPlayerIndex + 1) % game.players.length;
+        nextTurn();
     }
     render();
 }
 
+function nextTurn() {
+    game.currentPlayerIndex = (game.currentPlayerIndex + 1) % game.players.length;
+    startTurnClock();
+}
+
 
 /* ============================================================
-   8. DATA
+   8. TURN TIMER
+   With a timer on, each turn gets game.timerSeconds. The deadline is
+   synced as server time so every phone counts down together. Only
+   the host (or the one device) checks it: running out counts as a
+   miss and passes the turn.
+   ============================================================ */
+function startTurnClock() {
+    game.turnEndsAt = game.timerSeconds ? serverNow() + game.timerSeconds * 1000 : null;
+}
+
+function checkTurnClock() {
+    if (!isHost() || game.state !== GAME_STATES.PLAYING || game.roundComplete) return;
+    if (!game.turnEndsAt || serverNow() < game.turnEndsAt) return;
+
+    const player = game.players[game.currentPlayerIndex];
+    game.lastGuess = { playerName: player?.name || "", guess: "", answer: null, result: "timeout", at: Date.now() };
+    nextTurn();
+    syncGameState();
+    render();
+}
+
+setInterval(checkTurnClock, 250);
+
+
+/* ============================================================
+   9. DATA
    data/manifest.json lists every available sport/category/year and
    its file (paths here are relative to pages/top10.html).
    ============================================================ */
@@ -519,7 +590,7 @@ async function loadStats() {
 
 
 /* ============================================================
-   9. MATCHING A GUESS TO AN ANSWER
+   10. MATCHING A GUESS TO AN ANSWER
    Accepts the full name, first name alone or last name alone,
    ignoring accents, punctuation and small typos. A guess that fits
    more than one answer equally well counts as a miss.

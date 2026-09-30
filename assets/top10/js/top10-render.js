@@ -67,10 +67,16 @@ function replayAnimation(el, className) {
    2. SETUP SCREEN
    ============================================================ */
 
-// Sport / category / season chips: highlight the current pick, grey
+// Random, sport / category / season, timer: highlight the current pick, grey
 // out options with no data, and lock them unless you're choosing
 function renderPickers() {
     const locked = !canEditSetup();
+
+    // Random: any sport, plus one for the picked sport
+    ui.randomAnyBtn.disabled = locked || dataManifest.length === 0;
+    ui.randomSportBtn.classList.toggle("hidden", !game.sport);
+    ui.randomSportBtn.textContent = `Random ${SPORT_LABELS[game.sport] || ""}`;
+    ui.randomSportBtn.disabled = locked || !hasData({ sport: game.sport });
 
     for (const btn of ui.sportChips) {
         const available = hasData({ sport: btn.dataset.sport });
@@ -87,6 +93,11 @@ function renderPickers() {
 
     renderYearPicker(locked);
     renderStatPicker(locked);
+
+    for (const btn of ui.timerChips) {
+        btn.classList.toggle("active", game.timerSeconds === Number(btn.dataset.timer));
+        btn.disabled = locked;
+    }
 }
 
 // Seasons with data for the picked sport (and category), newest first
@@ -243,7 +254,8 @@ function renderFeedback() {
     const [main, note] = {
         correct: [`✓ ${escapeHTML(last.answer)}`, ""],
         repeat: [escapeHTML(last.answer), "already on the board"],
-        wrong: [`✗ “${escapeHTML(last.guess)}”`, "not on the list"]
+        wrong: [`✗ “${escapeHTML(last.guess)}”`, "not on the list"],
+        timeout: ["Time's up", ""]
     }[last.result];
 
     ui.feedback.innerHTML = `${who}<span class="feedback-main">${main}` +
@@ -300,6 +312,25 @@ function renderBoard(listEl, { final = false } = {}) {
     listEl.innerHTML = slots.join("");
 }
 
+// Countdown for timed turns. Also runs on its own every 250ms
+// (see startup), since time passes without any state changing.
+function renderTurnClock() {
+    const timed = game.state === GAME_STATES.PLAYING && !!game.turnEndsAt && !game.roundComplete;
+    ui.turnClock.classList.toggle("hidden", !timed);
+    ui.turnBar.classList.toggle("hidden", !timed);
+    if (!timed) return;
+
+    const total = game.timerSeconds * 1000;
+    const left = Math.max(0, Math.min(total, game.turnEndsAt - serverNow()));
+    const seconds = Math.ceil(left / 1000);
+    const low = seconds <= 10;
+
+    ui.turnClock.textContent = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+    ui.turnClock.classList.toggle("low", low);
+    ui.turnBar.classList.toggle("low", low);
+    ui.turnBarFill.style.transform = `scaleX(${total ? left / total : 0})`;
+}
+
 function renderEndGameButton() {
     ui.endGameBtn.disabled = game.roundComplete;
 
@@ -333,6 +364,7 @@ function renderPlaying() {
 
     renderScoreboard();
     renderTurn();
+    renderTurnClock();
     renderFeedback();
     renderBoard(ui.board);
     renderEndGameButton();
@@ -472,6 +504,9 @@ function findElements() {
         yearSelect: byId("yearSelect"),
         statSelect: byId("statSelect"),
         statHint: byId("statHint"),
+        randomAnyBtn: byId("randomAnyBtn"),
+        randomSportBtn: byId("randomSportBtn"),
+        timerChips: chips("timerChips"),
         playerPills: byId("playerPills"),
         sessionSetup: byId("sessionSetup"),
         startGameBtn: byId("startGameBtn"),
@@ -483,6 +518,9 @@ function findElements() {
         playStat: byId("playStat"),
         scoreboard: byId("scoreboard"),
         turn: byId("turn"),
+        turnClock: byId("turnClock"),
+        turnBar: byId("turnBar"),
+        turnBarFill: byId("turnBarFill"),
         guessForm: byId("guessForm"),
         guessInput: byId("guessInput"),
         guessBtn: byId("guessBtn"),
@@ -516,6 +554,9 @@ function wireEvents() {
     ui.categoryChips.forEach(btn => btn.addEventListener("click", () => selectCategory(btn.dataset.category)));
     ui.yearSelect.addEventListener("change", () => selectYear(ui.yearSelect.value));
     ui.statSelect.addEventListener("change", () => selectStat(ui.statSelect.value));
+    ui.randomAnyBtn.addEventListener("click", () => pickRandomBoard());
+    ui.randomSportBtn.addEventListener("click", () => pickRandomBoard(game.sport));
+    ui.timerChips.forEach(btn => btn.addEventListener("click", () => selectTimer(Number(btn.dataset.timer))));
 
     ui.startGameBtn.addEventListener("click", startGame);
     ui.guessForm.addEventListener("submit", e => {
@@ -534,4 +575,5 @@ document.addEventListener("DOMContentLoaded", () => {
     game.players = [newLocalPlayer("Player 1")];
     _uiReady = true;
     render();
+    setInterval(renderTurnClock, 250);
 });

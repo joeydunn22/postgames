@@ -28,12 +28,17 @@ const SYNCED_DEFAULTS = {
     category: null,       // MLB only: "batting" | "pitching"
     year: null,
     stat: null,           // stat label, e.g. "Home Runs"
+    timerSeconds: 0,      // seconds per turn, 0 = no timer
     players: [],          // [{ id, name, score }] in turn order
     currentPlayerIndex: 0,
+    turnEndsAt: null,     // server time (ms) the current turn runs out, when timed
     guessed: [],          // [{ answer, by }] correct answers and who got them
     roundComplete: false, // every answer found
     lastGuess: null       // { playerName, guess, answer, result, at }, shown to everyone
 };
+
+// Turn timer choices offered to the host (seconds, 0 = off)
+const TIMER_OPTIONS = [0, 45, 60, 90];
 
 const game = {
     ...structuredClone(SYNCED_DEFAULTS),
@@ -103,6 +108,17 @@ function availableYears({ sport, category } = {}) {
         .filter(entry => entry.sport === sport && (!category || entry.category === category))
         .map(entry => entry.year);
     return [...new Set(years)].sort((a, b) => b - a);
+}
+
+// Phones' clocks disagree by a few seconds, so turn timers use Firebase's
+// server time: our clock plus the offset Firebase reports
+let serverTimeOffset = 0;
+function serverNow() {
+    return Date.now() + serverTimeOffset;
+}
+
+function randomItem(list) {
+    return list[Math.floor(Math.random() * list.length)];
 }
 
 // One-device players get a stable id so the session leaderboard

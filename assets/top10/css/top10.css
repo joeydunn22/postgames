@@ -116,6 +116,17 @@
     display: none;
 }
 
+/* Random picks: amber outline so they read as actions, not choices */
+.chip-random {
+    color: var(--accent);
+    border-color: rgba(255, 176, 32, 0.45);
+}
+
+.chip-random:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
 @media (max-width: 480px) {
     .pick-row {
         grid-template-columns: 1fr;
@@ -296,13 +307,61 @@
     color: var(--accent);
 }
 
+/* Whose turn, with the countdown on the right when a timer is on */
+.turn-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: -12px;
+}
+
+.turn-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+}
+
 .turn {
     font-family: var(--font-display);
     font-size: 28px;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    margin-bottom: -12px;
+}
+
+.turn-clock {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.turn-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: var(--line);
+    overflow: hidden;
+}
+
+.turn-bar-fill {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    transform-origin: left;
+    transition: transform 0.25s linear;
+}
+
+/* Last 10 seconds */
+.turn-clock.low {
+    color: var(--bad);
+}
+
+.turn-bar.low .turn-bar-fill {
+    background: var(--bad);
 }
 
 .turn .waiting {
@@ -371,7 +430,8 @@
 }
 
 .feedback.correct .feedback-main { color: var(--good); }
-.feedback.wrong .feedback-main { color: var(--bad); }
+.feedback.wrong .feedback-main,
+.feedback.timeout .feedback-main { color: var(--bad); }
 .feedback.repeat .feedback-main { color: var(--accent); }
 
 .feedback.fresh {

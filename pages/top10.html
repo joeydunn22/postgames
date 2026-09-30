@@ -60,6 +60,14 @@
       <!-- Game options -->
       <div class="picker">
         <div class="pick-row">
+          <span class="pick-label">Random</span>
+          <div class="chips">
+            <button id="randomAnyBtn" class="chip chip-random" type="button">Any sport</button>
+            <button id="randomSportBtn" class="chip chip-random hidden" type="button"></button>
+          </div>
+        </div>
+
+        <div class="pick-row">
           <span class="pick-label">Sport</span>
           <div id="sportChips" class="chips">
             <button class="chip" type="button" data-sport="mlb">MLB</button>
@@ -94,6 +102,19 @@
         </div>
 
         <div class="pick-row">
+          <span class="pick-label">Timer</span>
+          <div class="pick-field">
+            <div id="timerChips" class="chips">
+              <button class="chip" type="button" data-timer="0">Off</button>
+              <button class="chip" type="button" data-timer="45">45s</button>
+              <button class="chip" type="button" data-timer="60">60s</button>
+              <button class="chip" type="button" data-timer="90">90s</button>
+            </div>
+            <p class="hint">Per turn. Run out and it counts as a miss.</p>
+          </div>
+        </div>
+
+        <div class="pick-row">
           <span class="pick-label">Players</span>
           <div id="playerPills" class="player-pills"></div>
         </div>
@@ -116,7 +137,13 @@
 
       <div id="scoreboard" class="scoreboard"></div>
 
-      <p id="turn" class="turn"></p>
+      <div class="turn-block">
+        <div class="turn-row">
+          <p id="turn" class="turn"></p>
+          <span id="turnClock" class="turn-clock hidden" aria-live="off"></span>
+        </div>
+        <div id="turnBar" class="turn-bar hidden"><span id="turnBarFill" class="turn-bar-fill"></span></div>
+      </div>
 
       <form id="guessForm" class="guess-form" autocomplete="off">
         <input id="guessInput" class="input guess-input" type="text" placeholder="Name a player"
@@ -155,7 +182,7 @@
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 125</p>
+    <p class="version">Version 126</p>
   </main>
 
 
