@@ -39,9 +39,16 @@ function formatTeam(team) {
     return multi ? `${multi[1]} teams` : team;
 }
 
+// NBA seasons span two years and are stored by the year they end:
+// 2025 is shown as "2024-25"
+function formatSeason(sport, year) {
+    if (!year) return "";
+    return sport === "nba" ? `${year - 1}-${String(year).slice(-2)}` : String(year);
+}
+
 function gameContextLabel() {
     const category = game.category && game.category[0].toUpperCase() + game.category.slice(1);
-    return [SPORT_LABELS[game.sport], category, game.year].filter(Boolean).join(" · ");
+    return [SPORT_LABELS[game.sport], category, formatSeason(game.sport, game.year)].filter(Boolean).join(" · ");
 }
 
 function isFreshGuess() {
@@ -85,12 +92,12 @@ function renderPickers() {
 // Seasons with data for the picked sport (and category), newest first
 function renderYearPicker(locked) {
     const years = availableYears({ sport: game.sport, category: game.category });
-    const optionsKey = years.join("|");
+    const optionsKey = `${game.sport}:${years.join("|")}`;
 
     if (optionsKey !== _yearOptionsKey) {
         _yearOptionsKey = optionsKey;
         ui.yearSelect.innerHTML = `<option value="">Pick a season</option>` +
-            years.map(year => `<option>${year}</option>`).join("");
+            years.map(year => `<option value="${year}">${formatSeason(game.sport, year)}</option>`).join("");
     }
 
     ui.yearSelect.value = game.year ? String(game.year) : "";

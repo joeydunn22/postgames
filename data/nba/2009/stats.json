@@ -1,0 +1,1314 @@
+[
+  {
+    "label": "Points per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "30.2"
+      },
+      {
+        "rank": 2,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "28.4"
+      },
+      {
+        "rank": 3,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "26.8"
+      },
+      {
+        "rank": 4,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "25.9"
+      },
+      {
+        "rank": 5,
+        "name": "Danny Granger",
+        "team": "IND",
+        "value": "25.8"
+      },
+      {
+        "rank": 6,
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "25.3"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "22.8"
+      },
+      {
+        "rank": 7,
+        "name": "Carmelo Anthony",
+        "team": "DEN",
+        "value": "22.8"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "22.7"
+      },
+      {
+        "rank": 10,
+        "name": "Brandon Roy",
+        "team": "POR",
+        "value": "22.6"
+      }
+    ]
+  },
+  {
+    "label": "Rebounds per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "13.8"
+      },
+      {
+        "rank": 2,
+        "name": "Troy Murphy",
+        "team": "IND",
+        "value": "11.8"
+      },
+      {
+        "rank": 3,
+        "name": "David Lee",
+        "team": "NYK",
+        "value": "11.7"
+      },
+      {
+        "rank": 4,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "10.7"
+      },
+      {
+        "rank": 5,
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "10.1"
+      },
+      {
+        "rank": 6,
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "10.0"
+      },
+      {
+        "rank": 7,
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "9.9"
+      },
+      {
+        "rank": 8,
+        "name": "Pau Gasol",
+        "team": "LAL",
+        "value": "9.6"
+      },
+      {
+        "rank": 9,
+        "name": "Kevin Love",
+        "team": "MIN",
+        "value": "9.1"
+      },
+      {
+        "rank": 10,
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "8.9"
+      }
+    ]
+  },
+  {
+    "label": "Assists per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "11.0"
+      },
+      {
+        "rank": 2,
+        "name": "Deron Williams",
+        "team": "UTA",
+        "value": "10.7"
+      },
+      {
+        "rank": 3,
+        "name": "Steve Nash",
+        "team": "PHX",
+        "value": "9.7"
+      },
+      {
+        "rank": 4,
+        "name": "Jose Calderon",
+        "team": "TOR",
+        "value": "8.9"
+      },
+      {
+        "rank": 5,
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "8.7"
+      },
+      {
+        "rank": 6,
+        "name": "Rajon Rondo",
+        "team": "BOS",
+        "value": "8.2"
+      },
+      {
+        "rank": 7,
+        "name": "Baron Davis",
+        "team": "LAC",
+        "value": "7.7"
+      },
+      {
+        "rank": 8,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "7.5"
+      },
+      {
+        "rank": 9,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "7.2"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Duhon",
+        "team": "NYK",
+        "value": "7.2"
+      }
+    ]
+  },
+  {
+    "label": "Steals per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "2.8"
+      },
+      {
+        "rank": 2,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "2.2"
+      },
+      {
+        "rank": 3,
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "2.0"
+      },
+      {
+        "rank": 3,
+        "name": "Mario Chalmers",
+        "team": "MIA",
+        "value": "2.0"
+      },
+      {
+        "rank": 5,
+        "name": "Rajon Rondo",
+        "team": "BOS",
+        "value": "1.9"
+      },
+      {
+        "rank": 6,
+        "name": "Gerald Wallace",
+        "team": "CHA",
+        "value": "1.7"
+      },
+      {
+        "rank": 6,
+        "name": "Ronnie Brewer",
+        "team": "UTA",
+        "value": "1.7"
+      },
+      {
+        "rank": 6,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "1.7"
+      },
+      {
+        "rank": 6,
+        "name": "Trevor Ariza",
+        "team": "LAL",
+        "value": "1.7"
+      },
+      {
+        "rank": 10,
+        "name": "Andre Iguodala",
+        "team": "PHI",
+        "value": "1.6"
+      }
+    ]
+  },
+  {
+    "label": "Blocks per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "2.9"
+      },
+      {
+        "rank": 2,
+        "name": "Chris Andersen",
+        "team": "DEN",
+        "value": "2.5"
+      },
+      {
+        "rank": 3,
+        "name": "Marcus Camby",
+        "team": "LAC",
+        "value": "2.1"
+      },
+      {
+        "rank": 3,
+        "name": "Ronny Turiaf",
+        "team": "GSW",
+        "value": "2.1"
+      },
+      {
+        "rank": 5,
+        "name": "Jermaine O'Neal",
+        "team": "MIA",
+        "value": "2.0"
+      },
+      {
+        "rank": 5,
+        "name": "Kendrick Perkins",
+        "team": "BOS",
+        "value": "2.0"
+      },
+      {
+        "rank": 7,
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "1.9"
+      },
+      {
+        "rank": 7,
+        "name": "Tyrus Thomas",
+        "team": "CHI",
+        "value": "1.9"
+      },
+      {
+        "rank": 9,
+        "name": "Brook Lopez",
+        "team": "NJN",
+        "value": "1.8"
+      },
+      {
+        "rank": 9,
+        "name": "Samuel Dalembert",
+        "team": "PHI",
+        "value": "1.8"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rashard Lewis",
+        "team": "ORL",
+        "value": "2.8"
+      },
+      {
+        "rank": 2,
+        "name": "Danny Granger",
+        "team": "IND",
+        "value": "2.7"
+      },
+      {
+        "rank": 3,
+        "name": "Ray Allen",
+        "team": "BOS",
+        "value": "2.5"
+      },
+      {
+        "rank": 4,
+        "name": "Al Harrington",
+        "team": "NYK",
+        "value": "2.3"
+      },
+      {
+        "rank": 4,
+        "name": "Mo Williams",
+        "team": "CLE",
+        "value": "2.3"
+      },
+      {
+        "rank": 4,
+        "name": "Jason Terry",
+        "team": "DAL",
+        "value": "2.3"
+      },
+      {
+        "rank": 7,
+        "name": "JR Smith",
+        "team": "DEN",
+        "value": "2.2"
+      },
+      {
+        "rank": 7,
+        "name": "Troy Murphy",
+        "team": "IND",
+        "value": "2.2"
+      },
+      {
+        "rank": 9,
+        "name": "Mike Bibby",
+        "team": "ATL",
+        "value": "2.1"
+      },
+      {
+        "rank": 9,
+        "name": "Ben Gordon",
+        "team": "CHI",
+        "value": "2.1"
+      },
+      {
+        "rank": 9,
+        "name": "Chauncey Billups",
+        "team": "DEN",
+        "value": "2.1"
+      }
+    ]
+  },
+  {
+    "label": "Minutes per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Andre Iguodala",
+        "team": "PHI",
+        "value": "39.9"
+      },
+      {
+        "rank": 2,
+        "name": "Stephen Jackson",
+        "team": "GSW",
+        "value": "39.6"
+      },
+      {
+        "rank": 3,
+        "name": "Joe Johnson",
+        "team": "ATL",
+        "value": "39.5"
+      },
+      {
+        "rank": 4,
+        "name": "David West",
+        "team": "NOH",
+        "value": "39.2"
+      },
+      {
+        "rank": 5,
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "39.0"
+      },
+      {
+        "rank": 6,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "38.6"
+      },
+      {
+        "rank": 6,
+        "name": "Caron Butler",
+        "team": "WAS",
+        "value": "38.6"
+      },
+      {
+        "rank": 8,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "38.5"
+      },
+      {
+        "rank": 9,
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "38.2"
+      },
+      {
+        "rank": 10,
+        "name": "Jamal Crawford",
+        "team": "GSW",
+        "value": "38.1"
+      }
+    ]
+  },
+  {
+    "label": "Field Goal %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Shaquille O'Neal",
+        "team": "PHX",
+        "value": "60.9%"
+      },
+      {
+        "rank": 2,
+        "name": "Nene",
+        "team": "DEN",
+        "value": "60.4%"
+      },
+      {
+        "rank": 3,
+        "name": "Andris Biedrins",
+        "team": "GSW",
+        "value": "57.8%"
+      },
+      {
+        "rank": 4,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "57.2%"
+      },
+      {
+        "rank": 5,
+        "name": "Pau Gasol",
+        "team": "LAL",
+        "value": "56.7%"
+      },
+      {
+        "rank": 6,
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "56.1%"
+      },
+      {
+        "rank": 7,
+        "name": "David Lee",
+        "team": "NYK",
+        "value": "54.9%"
+      },
+      {
+        "rank": 8,
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "54.8%"
+      },
+      {
+        "rank": 9,
+        "name": "Amar'e Stoudemire",
+        "team": "PHX",
+        "value": "53.9%"
+      },
+      {
+        "rank": 10,
+        "name": "Paul Millsap",
+        "team": "UTA",
+        "value": "53.4%"
+      }
+    ]
+  },
+  {
+    "label": "3-Point %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Anthony Morrow",
+        "team": "GSW",
+        "value": "46.7%"
+      },
+      {
+        "rank": 2,
+        "name": "Jameer Nelson",
+        "team": "ORL",
+        "value": "45.3%"
+      },
+      {
+        "rank": 3,
+        "name": "Troy Murphy",
+        "team": "IND",
+        "value": "45.0%"
+      },
+      {
+        "rank": 4,
+        "name": "Kelenna Azubuike",
+        "team": "GSW",
+        "value": "44.8%"
+      },
+      {
+        "rank": 5,
+        "name": "Bobby Simmons",
+        "team": "NJN",
+        "value": "44.7%"
+      },
+      {
+        "rank": 6,
+        "name": "Mehmet Okur",
+        "team": "UTA",
+        "value": "44.6%"
+      },
+      {
+        "rank": 7,
+        "name": "Eddie House",
+        "team": "BOS",
+        "value": "44.4%"
+      },
+      {
+        "rank": 8,
+        "name": "Matt Bonner",
+        "team": "SAS",
+        "value": "44.0%"
+      },
+      {
+        "rank": 9,
+        "name": "D.J. Augustin",
+        "team": "CHA",
+        "value": "43.9%"
+      },
+      {
+        "rank": 9,
+        "name": "Steve Nash",
+        "team": "PHX",
+        "value": "43.9%"
+      }
+    ]
+  },
+  {
+    "label": "Free Throw %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jose Calderon",
+        "team": "TOR",
+        "value": "98.1%"
+      },
+      {
+        "rank": 2,
+        "name": "Ray Allen",
+        "team": "BOS",
+        "value": "95.2%"
+      },
+      {
+        "rank": 3,
+        "name": "Steve Nash",
+        "team": "PHX",
+        "value": "93.3%"
+      },
+      {
+        "rank": 4,
+        "name": "Chauncey Billups",
+        "team": "DEN",
+        "value": "91.3%"
+      },
+      {
+        "rank": 5,
+        "name": "Mo Williams",
+        "team": "CLE",
+        "value": "91.2%"
+      },
+      {
+        "rank": 6,
+        "name": "D.J. Augustin",
+        "team": "CHA",
+        "value": "89.3%"
+      },
+      {
+        "rank": 7,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "89.0%"
+      },
+      {
+        "rank": 8,
+        "name": "David West",
+        "team": "NOH",
+        "value": "88.4%"
+      },
+      {
+        "rank": 8,
+        "name": "Manu Ginobili",
+        "team": "SAS",
+        "value": "88.4%"
+      },
+      {
+        "rank": 10,
+        "name": "Leandro Barbosa",
+        "team": "PHX",
+        "value": "88.1%"
+      }
+    ]
+  },
+  {
+    "label": "Total Points",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "2386"
+      },
+      {
+        "rank": 2,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "2304"
+      },
+      {
+        "rank": 3,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "2201"
+      },
+      {
+        "rank": 4,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "2094"
+      },
+      {
+        "rank": 5,
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "1871"
+      },
+      {
+        "rank": 6,
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "1801"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "1781"
+      },
+      {
+        "rank": 8,
+        "name": "Brandon Roy",
+        "team": "POR",
+        "value": "1765"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "1746"
+      },
+      {
+        "rank": 10,
+        "name": "Danny Granger",
+        "team": "IND",
+        "value": "1728"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "1093"
+      },
+      {
+        "rank": 2,
+        "name": "David Lee",
+        "team": "NYK",
+        "value": "951"
+      },
+      {
+        "rank": 3,
+        "name": "Troy Murphy",
+        "team": "IND",
+        "value": "861"
+      },
+      {
+        "rank": 4,
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "827"
+      },
+      {
+        "rank": 5,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "800"
+      },
+      {
+        "rank": 6,
+        "name": "Pau Gasol",
+        "team": "LAL",
+        "value": "780"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "771"
+      },
+      {
+        "rank": 8,
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "761"
+      },
+      {
+        "rank": 9,
+        "name": "Kevin Love",
+        "team": "MIN",
+        "value": "734"
+      },
+      {
+        "rank": 10,
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "721"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "861"
+      },
+      {
+        "rank": 2,
+        "name": "Deron Williams",
+        "team": "UTA",
+        "value": "725"
+      },
+      {
+        "rank": 3,
+        "name": "Steve Nash",
+        "team": "PHX",
+        "value": "717"
+      },
+      {
+        "rank": 4,
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "702"
+      },
+      {
+        "rank": 5,
+        "name": "Rajon Rondo",
+        "team": "BOS",
+        "value": "659"
+      },
+      {
+        "rank": 6,
+        "name": "Jose Calderon",
+        "team": "TOR",
+        "value": "607"
+      },
+      {
+        "rank": 7,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "589"
+      },
+      {
+        "rank": 8,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "587"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Duhon",
+        "team": "NYK",
+        "value": "566"
+      },
+      {
+        "rank": 10,
+        "name": "Raymond Felton",
+        "team": "CHA",
+        "value": "553"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "216"
+      },
+      {
+        "rank": 2,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "173"
+      },
+      {
+        "rank": 3,
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "160"
+      },
+      {
+        "rank": 3,
+        "name": "Mario Chalmers",
+        "team": "MIA",
+        "value": "160"
+      },
+      {
+        "rank": 5,
+        "name": "Rajon Rondo",
+        "team": "BOS",
+        "value": "149"
+      },
+      {
+        "rank": 6,
+        "name": "Ronnie Brewer",
+        "team": "UTA",
+        "value": "138"
+      },
+      {
+        "rank": 7,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "137"
+      },
+      {
+        "rank": 7,
+        "name": "Trevor Ariza",
+        "team": "LAL",
+        "value": "137"
+      },
+      {
+        "rank": 9,
+        "name": "Andre Iguodala",
+        "team": "PHI",
+        "value": "131"
+      },
+      {
+        "rank": 10,
+        "name": "Raymond Felton",
+        "team": "CHA",
+        "value": "126"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "231"
+      },
+      {
+        "rank": 2,
+        "name": "Chris Andersen",
+        "team": "DEN",
+        "value": "175"
+      },
+      {
+        "rank": 3,
+        "name": "Ronny Turiaf",
+        "team": "GSW",
+        "value": "168"
+      },
+      {
+        "rank": 4,
+        "name": "Brook Lopez",
+        "team": "NJN",
+        "value": "151"
+      },
+      {
+        "rank": 4,
+        "name": "Tyrus Thomas",
+        "team": "CHI",
+        "value": "151"
+      },
+      {
+        "rank": 6,
+        "name": "Kendrick Perkins",
+        "team": "BOS",
+        "value": "150"
+      },
+      {
+        "rank": 6,
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "150"
+      },
+      {
+        "rank": 8,
+        "name": "Samuel Dalembert",
+        "team": "PHI",
+        "value": "146"
+      },
+      {
+        "rank": 9,
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "136"
+      },
+      {
+        "rank": 9,
+        "name": "Jermaine O'Neal",
+        "team": "MIA",
+        "value": "136"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rashard Lewis",
+        "team": "ORL",
+        "value": "220"
+      },
+      {
+        "rank": 2,
+        "name": "Ray Allen",
+        "team": "BOS",
+        "value": "199"
+      },
+      {
+        "rank": 3,
+        "name": "Mo Williams",
+        "team": "CLE",
+        "value": "183"
+      },
+      {
+        "rank": 4,
+        "name": "Danny Granger",
+        "team": "IND",
+        "value": "182"
+      },
+      {
+        "rank": 5,
+        "name": "JR Smith",
+        "team": "DEN",
+        "value": "180"
+      },
+      {
+        "rank": 6,
+        "name": "Ben Gordon",
+        "team": "CHI",
+        "value": "173"
+      },
+      {
+        "rank": 7,
+        "name": "Al Harrington",
+        "team": "NYK",
+        "value": "171"
+      },
+      {
+        "rank": 8,
+        "name": "Jason Terry",
+        "team": "DAL",
+        "value": "167"
+      },
+      {
+        "rank": 8,
+        "name": "Mike Bibby",
+        "team": "ATL",
+        "value": "167"
+      },
+      {
+        "rank": 10,
+        "name": "Roger Mason Jr.",
+        "team": "SAS",
+        "value": "166"
+      }
+    ]
+  },
+  {
+    "label": "Free Throws Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "594"
+      },
+      {
+        "rank": 2,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "590"
+      },
+      {
+        "rank": 3,
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "504"
+      },
+      {
+        "rank": 3,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "504"
+      },
+      {
+        "rank": 5,
+        "name": "Devin Harris",
+        "team": "NJN",
+        "value": "496"
+      },
+      {
+        "rank": 6,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "485"
+      },
+      {
+        "rank": 7,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "483"
+      },
+      {
+        "rank": 8,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "459"
+      },
+      {
+        "rank": 9,
+        "name": "Kevin Martin",
+        "team": "SAC",
+        "value": "457"
+      },
+      {
+        "rank": 10,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "455"
+      }
+    ]
+  },
+  {
+    "label": "Field Goals Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "854"
+      },
+      {
+        "rank": 2,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "800"
+      },
+      {
+        "rank": 3,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "789"
+      },
+      {
+        "rank": 4,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "774"
+      },
+      {
+        "rank": 5,
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "674"
+      },
+      {
+        "rank": 6,
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "661"
+      },
+      {
+        "rank": 7,
+        "name": "Tony Parker",
+        "team": "SAS",
+        "value": "639"
+      },
+      {
+        "rank": 8,
+        "name": "Brandon Roy",
+        "team": "POR",
+        "value": "633"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "631"
+      },
+      {
+        "rank": 10,
+        "name": "Joe Johnson",
+        "team": "ATL",
+        "value": "620"
+      }
+    ]
+  },
+  {
+    "label": "Offensive Rebounds",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "336"
+      },
+      {
+        "rank": 2,
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "275"
+      },
+      {
+        "rank": 3,
+        "name": "Kevin Love",
+        "team": "MIN",
+        "value": "274"
+      },
+      {
+        "rank": 4,
+        "name": "Pau Gasol",
+        "team": "LAL",
+        "value": "262"
+      },
+      {
+        "rank": 5,
+        "name": "David Lee",
+        "team": "NYK",
+        "value": "256"
+      },
+      {
+        "rank": 6,
+        "name": "Paul Millsap",
+        "team": "UTA",
+        "value": "251"
+      },
+      {
+        "rank": 7,
+        "name": "Joakim Noah",
+        "team": "CHI",
+        "value": "244"
+      },
+      {
+        "rank": 8,
+        "name": "Jason Thompson",
+        "team": "SAC",
+        "value": "234"
+      },
+      {
+        "rank": 8,
+        "name": "LaMarcus Aldridge",
+        "team": "POR",
+        "value": "234"
+      },
+      {
+        "rank": 10,
+        "name": "Brook Lopez",
+        "team": "NJN",
+        "value": "225"
+      }
+    ]
+  },
+  {
+    "label": "Turnovers",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Russell Westbrook",
+        "team": "OKC",
+        "value": "274"
+      },
+      {
+        "rank": 2,
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "272"
+      },
+      {
+        "rank": 3,
+        "name": "Steve Nash",
+        "team": "PHX",
+        "value": "248"
+      },
+      {
+        "rank": 4,
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "241"
+      },
+      {
+        "rank": 5,
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "240"
+      },
+      {
+        "rank": 6,
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "234"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "231"
+      },
+      {
+        "rank": 8,
+        "name": "Stephen Jackson",
+        "team": "GSW",
+        "value": "229"
+      },
+      {
+        "rank": 9,
+        "name": "Deron Williams",
+        "team": "UTA",
+        "value": "228"
+      },
+      {
+        "rank": 9,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "228"
+      },
+      {
+        "rank": 9,
+        "name": "Raymond Felton",
+        "team": "CHA",
+        "value": "228"
+      }
+    ]
+  }
+]

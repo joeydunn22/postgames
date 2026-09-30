@@ -5,6 +5,8 @@ Usage (run from the repo root):
     python scripts/build_trivia_data.py mlb 2025
     python scripts/build_trivia_data.py mlb 1990-2026
     python scripts/build_trivia_data.py nfl 1999-2025
+    python scripts/build_trivia_data.py nba 1980-2026   (NBA years are the
+                                                         season's end: 2026 = 2025-26)
 
 Sources:
     MLB  the MLB Stats API (statsapi.mlb.com): league leaders per stat,
@@ -12,6 +14,9 @@ Sources:
          players. One request per season for batting, one for pitching.
     NFL  nflverse (github.com/nflverse): one CSV of every player's
          regular-season totals per season. We rank each stat ourselves.
+    NBA  stats.nba.com league leaders (the site behind NBA.com's stats
+         pages): one request per stat per season, already ranked and
+         limited to qualified players.
 
 Output:  data/{sport}/{year}/{category or "stats"}.json
          and a matching entry in data/manifest.json, so the game offers it.
@@ -315,10 +320,93 @@ def build_nfl(year):
 
 
 # ------------------------------------------------------------
+# NBA: stats.nba.com league leaders
+# ------------------------------------------------------------
+
+NBA_API = ("https://stats.nba.com/stats/leagueleaders?LeagueID=00&Scope=S"
+           "&SeasonType=Regular%20Season&ActiveFlag=&PerMode={mode}&Season={season}&StatCategory={stat}")
+# stats.nba.com only answers requests that look like they come from nba.com
+NBA_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "Referer": "https://www.nba.com/",
+    "Origin": "https://www.nba.com",
+    "Accept": "application/json",
+}
+
+# (label, stat category, PerGame or Totals, display format). The API applies
+# the NBA's own minimums (games played, made shots) to per-game and % stats.
+# Percentages only work in Totals mode.
+NBA_STATS = [
+    ("Points per Game", "PTS", "PerGame", one_decimal),
+    ("Rebounds per Game", "REB", "PerGame", one_decimal),
+    ("Assists per Game", "AST", "PerGame", one_decimal),
+    ("Steals per Game", "STL", "PerGame", one_decimal),
+    ("Blocks per Game", "BLK", "PerGame", one_decimal),
+    ("3-Pointers Made per Game", "FG3M", "PerGame", one_decimal),
+    ("Minutes per Game", "MIN", "PerGame", one_decimal),
+    ("Field Goal %", "FG_PCT", "Totals", lambda x: percent(x * 100)),
+    ("3-Point %", "FG3_PCT", "Totals", lambda x: percent(x * 100)),
+    ("Free Throw %", "FT_PCT", "Totals", lambda x: percent(x * 100)),
+    ("Total Points", "PTS", "Totals", whole),
+    ("Total Rebounds", "REB", "Totals", whole),
+    ("Total Assists", "AST", "Totals", whole),
+    ("Total Steals", "STL", "Totals", whole),
+    ("Total Blocks", "BLK", "Totals", whole),
+    ("3-Pointers Made", "FG3M", "Totals", whole),
+    ("Free Throws Made", "FTM", "Totals", whole),
+    ("Field Goals Made", "FGM", "Totals", whole),
+    ("Offensive Rebounds", "OREB", "Totals", whole),
+    ("Turnovers", "TOV", "Totals", whole),
+]
+
+# stats.nba.com's codes for some teams in older seasons, as fans know them
+NBA_TEAM_FIXES = {"UTH": "UTA", "GOS": "GSW", "PHL": "PHI", "SAN": "SAS"}
+
+
+def nba_season(year):
+    """We key NBA seasons by the year they end: 2025 is the 2024-25 season."""
+    return f"{year - 1}-{str(year)[-2:]}"
+
+
+def build_nba(year):
+    print(f"NBA {nba_season(year)}")
+    stats = []
+    for label, category, mode, fmt in NBA_STATS:
+        url = NBA_API.format(mode=mode, season=nba_season(year), stat=category)
+        try:
+            request = urllib.request.Request(url, headers=NBA_HEADERS)
+            with urllib.request.urlopen(request, timeout=60) as response:
+                result = json.loads(response.read().decode("utf-8"))["resultSet"]
+        except Exception as error:
+            print(f"  ! skipped {label}: {error}")
+            continue
+        finally:
+            time.sleep(0.6)  # stats.nba.com blocks rapid-fire requests
+
+        column = {name: i for i, name in enumerate(result["headers"])}
+        # Already in leaderboard order; rank by the value players will see
+        rows = []
+        for i, row in enumerate(result["rowSet"][:100]):
+            value = row[column[category]]
+            if not value:
+                continue
+            shown = fmt(value)
+            rank = rows[-1]["rank"] if rows and rows[-1]["value"] == shown else i + 1
+            team = row[column["TEAM"]]
+            rows.append({"rank": rank, "name": row[column["PLAYER"]],
+                         "team": NBA_TEAM_FIXES.get(team, team), "value": shown})
+        stat = make_stat(label, rows)
+        if stat:
+            stats.append(stat)
+
+    write_game_file("nba", None, year, stats)
+
+
+# ------------------------------------------------------------
 # Command line
 # ------------------------------------------------------------
 
-BUILDERS = {"mlb": build_mlb, "nfl": build_nfl}
+BUILDERS = {"mlb": build_mlb, "nba": build_nba, "nfl": build_nfl}
 
 
 def parse_years(text):

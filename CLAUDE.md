@@ -25,11 +25,12 @@ More seasons and sports add more replay value than any feature. Don't scrape Spo
 - [x] MLB from the MLB Stats API (`statsapi.mlb.com`), full names (retired the hand-copy path and first-name lookup)
 - [x] NFL from nflverse (open stats CSVs on GitHub)
 - [x] Backfill: MLB 1990–2026, NFL 1999–2025
+- [x] NBA from stats.nba.com, 1979-80 through 2025-26
 - [ ] NFL 2026 once the season ends (or a "so far" board mid-season)
 - [ ] Bring back advanced stats the free sources lack (MLB WAR, NFL QBR/Approximate Value), if an open source exists
-- [ ] Add more sports (NBA, NHL) if good free sources exist
+- [ ] Add more leagues (NHL next, then others) if good free sources exist
 - [ ] Career and all-time leaderboards (e.g. "top 10 career home runs")
-- [ ] Commercial-use check: MLB's terms allow personal, non-commercial use; revisit before Postgames makes money. nflverse data is free to use with credit
+- [ ] Commercial-use check: MLB's and NBA.com's terms allow personal, non-commercial use; revisit before Postgames makes money. nflverse data is free to use with credit
 
 ### 2. Trivia enhancements — NOW
 
@@ -113,7 +114,7 @@ Guess matching (`findAnswerMatch`) ignores accents and punctuation, accepts full
 
 ## Data pipeline
 
-`data/manifest.json` lists every playable sport/category/year and its file; the game offers only what's listed (sport chips grey out, the Season dropdown lists available years newest first) and loads files through it. Game files are `data/{sport}/{year}/{category or "stats"}.json`: an array of `{ label, players: [{ rank, name, team, value }], more_tied? }`. `value` is display text (".331", "68.5%"); `team` is `2TM`/`3TM` for MLB players traded mid-season; `more_tied` counts a tie at the bottom left off the board. Current data: MLB 1990–2026 (batting, pitching), NFL 1999–2025.
+`data/manifest.json` lists every playable sport/category/year and its file; the game offers only what's listed (sport chips grey out, the Season dropdown lists available years newest first) and loads files through it. Game files are `data/{sport}/{year}/{category or "stats"}.json`: an array of `{ label, players: [{ rank, name, team, value }], more_tied? }`. `value` is display text (".331", "68.5%"); `team` is `2TM`/`3TM` for MLB players traded mid-season; `more_tied` counts a tie at the bottom left off the board. Current data: MLB 1990–2026 (batting, pitching), NFL 1999–2025, NBA 1979-80 to 2025-26. NBA seasons are keyed by the year they end (`2025` = 2024-25); the page shows them as "2024-25" via `formatSeason()` in the renderer.
 
 `scripts/build_trivia_data.py` fetches and builds everything (standard library only, no API keys). Run from the repo root with a year or range:
 
@@ -121,9 +122,12 @@ Guess matching (`findAnswerMatch`) ignores accents and punctuation, accepts full
 python scripts/build_trivia_data.py mlb 2026
 python scripts/build_trivia_data.py mlb 1990-2026
 python scripts/build_trivia_data.py nfl 1999-2025
+python scripts/build_trivia_data.py nba 1980-2026
 ```
 
 - **MLB** uses the Stats API's league leaders (one request per season per category). The API ranks, marks ties and applies rate-stat qualifiers itself. Stats and their labels are in `MLB_STATS`.
 - **NFL** downloads nflverse's regular-season player totals (one CSV per season) and ranks each stat in `nfl_stats()`. Rate stats use Pro Football Reference's per-team-game qualifiers. nflverse uses today's team codes for every season, and `NFL_MOVES` maps them back (e.g. 2003 Rams → STL). Its tackle counts come from play-by-play and can differ slightly from official totals.
+- **NBA** uses stats.nba.com's league leaders (the site behind NBA.com's stats pages), one request per stat per season, with browser-like headers because it rejects anything else. It applies the NBA's own qualifiers. Percentages only work in `Totals` mode, and a few categories (e.g. `GP`) aren't supported. Stats are in `NBA_STATS`, and `NBA_TEAM_FIXES` maps its odd old team codes (UTH → UTA). A full backfill takes about 20 minutes because of the polite delay between requests.
+- MLB and NBA sources work from a home connection but may block cloud/datacenter IPs, so run the script locally.
 - `top_ten()` keeps everyone ranked 10th or better. A tie at the bottom that would push a board past 15 is dropped into `more_tied`. A board with fewer than 5 players, or where everyone is tied, is skipped for that season.
-- To add a stat, add a line to `MLB_STATS` or `nfl_stats()` and rerun the seasons.
+- To add a stat, add a line to `MLB_STATS`, `NBA_STATS` or `nfl_stats()` and rerun the seasons.

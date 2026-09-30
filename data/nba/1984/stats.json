@@ -1,0 +1,1291 @@
+[
+  {
+    "label": "Points per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "30.6"
+      },
+      {
+        "rank": 2,
+        "name": "Mark Aguirre",
+        "team": "DAL",
+        "value": "29.5"
+      },
+      {
+        "rank": 3,
+        "name": "Kiki Vandeweghe",
+        "team": "DEN",
+        "value": "29.4"
+      },
+      {
+        "rank": 4,
+        "name": "Alex English",
+        "team": "DEN",
+        "value": "26.4"
+      },
+      {
+        "rank": 5,
+        "name": "Bernard King",
+        "team": "NYK",
+        "value": "26.3"
+      },
+      {
+        "rank": 6,
+        "name": "George Gervin",
+        "team": "SAS",
+        "value": "25.9"
+      },
+      {
+        "rank": 7,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "24.2"
+      },
+      {
+        "rank": 8,
+        "name": "Mike Mitchell",
+        "team": "SAS",
+        "value": "23.3"
+      },
+      {
+        "rank": 9,
+        "name": "Terry Cummings",
+        "team": "SDC",
+        "value": "22.9"
+      },
+      {
+        "rank": 10,
+        "name": "Purvis Short",
+        "team": "GSW",
+        "value": "22.8"
+      }
+    ]
+  },
+  {
+    "label": "Rebounds per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Moses Malone",
+        "team": "PHI",
+        "value": "13.4"
+      },
+      {
+        "rank": 2,
+        "name": "Buck Williams",
+        "team": "NJN",
+        "value": "12.3"
+      },
+      {
+        "rank": 2,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "12.3"
+      },
+      {
+        "rank": 4,
+        "name": "Bill Laimbeer",
+        "team": "DET",
+        "value": "12.2"
+      },
+      {
+        "rank": 5,
+        "name": "Ralph Sampson",
+        "team": "HOU",
+        "value": "11.1"
+      },
+      {
+        "rank": 5,
+        "name": "Jack Sikma",
+        "team": "SEA",
+        "value": "11.1"
+      },
+      {
+        "rank": 7,
+        "name": "Robert Parish",
+        "team": "BOS",
+        "value": "10.7"
+      },
+      {
+        "rank": 8,
+        "name": "Cliff T. Robinson",
+        "team": "CLE",
+        "value": "10.3"
+      },
+      {
+        "rank": 9,
+        "name": "David Greenwood",
+        "team": "CHI",
+        "value": "10.1"
+      },
+      {
+        "rank": 9,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "10.1"
+      }
+    ]
+  },
+  {
+    "label": "Assists per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "13.1"
+      },
+      {
+        "rank": 2,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "11.1"
+      },
+      {
+        "rank": 2,
+        "name": "Norm Nixon",
+        "team": "SDC",
+        "value": "11.1"
+      },
+      {
+        "rank": 4,
+        "name": "John Lucas",
+        "team": "SAS",
+        "value": "10.7"
+      },
+      {
+        "rank": 5,
+        "name": "Johnny Moore",
+        "team": "SAS",
+        "value": "9.6"
+      },
+      {
+        "rank": 6,
+        "name": "Rickey Green",
+        "team": "UTA",
+        "value": "9.2"
+      },
+      {
+        "rank": 7,
+        "name": "Gus Williams",
+        "team": "SEA",
+        "value": "8.4"
+      },
+      {
+        "rank": 8,
+        "name": "Ennis Whatley",
+        "team": "CHI",
+        "value": "8.3"
+      },
+      {
+        "rank": 9,
+        "name": "Larry Drew",
+        "team": "KCK",
+        "value": "7.6"
+      },
+      {
+        "rank": 10,
+        "name": "Brad Davis",
+        "team": "DAL",
+        "value": "6.9"
+      },
+      {
+        "rank": 10,
+        "name": "Frank Johnson",
+        "team": "WAS",
+        "value": "6.9"
+      }
+    ]
+  },
+  {
+    "label": "Steals per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rickey Green",
+        "team": "UTA",
+        "value": "2.7"
+      },
+      {
+        "rank": 2,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "2.5"
+      },
+      {
+        "rank": 3,
+        "name": "Gus Williams",
+        "team": "SEA",
+        "value": "2.4"
+      },
+      {
+        "rank": 4,
+        "name": "Maurice Cheeks",
+        "team": "PHI",
+        "value": "2.3"
+      },
+      {
+        "rank": 5,
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "2.2"
+      },
+      {
+        "rank": 5,
+        "name": "T.R. Dunn",
+        "team": "DEN",
+        "value": "2.2"
+      },
+      {
+        "rank": 7,
+        "name": "Ray Williams",
+        "team": "NYK",
+        "value": "2.1"
+      },
+      {
+        "rank": 8,
+        "name": "Darwin Cook",
+        "team": "NJN",
+        "value": "2.0"
+      },
+      {
+        "rank": 8,
+        "name": "Lester Conner",
+        "team": "GSW",
+        "value": "2.0"
+      },
+      {
+        "rank": 10,
+        "name": "Julius Erving",
+        "team": "PHI",
+        "value": "1.8"
+      },
+      {
+        "rank": 10,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "1.8"
+      },
+      {
+        "rank": 10,
+        "name": "Butch Carter",
+        "team": "IND",
+        "value": "1.8"
+      }
+    ]
+  },
+  {
+    "label": "Blocks per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mark Eaton",
+        "team": "UTA",
+        "value": "4.3"
+      },
+      {
+        "rank": 2,
+        "name": "Tree Rollins",
+        "team": "ATL",
+        "value": "3.6"
+      },
+      {
+        "rank": 3,
+        "name": "Ralph Sampson",
+        "team": "HOU",
+        "value": "2.4"
+      },
+      {
+        "rank": 4,
+        "name": "Larry Nance",
+        "team": "PHX",
+        "value": "2.1"
+      },
+      {
+        "rank": 4,
+        "name": "Artis Gilmore",
+        "team": "SAS",
+        "value": "2.1"
+      },
+      {
+        "rank": 6,
+        "name": "LaSalle Thompson",
+        "team": "KCK",
+        "value": "1.8"
+      },
+      {
+        "rank": 6,
+        "name": "Roy Hinson",
+        "team": "CLE",
+        "value": "1.8"
+      },
+      {
+        "rank": 6,
+        "name": "Julius Erving",
+        "team": "PHI",
+        "value": "1.8"
+      },
+      {
+        "rank": 6,
+        "name": "Kareem Abdul-Jabbar",
+        "team": "LAL",
+        "value": "1.8"
+      },
+      {
+        "rank": 6,
+        "name": "Joe Barry Carroll",
+        "team": "GSW",
+        "value": "1.8"
+      },
+      {
+        "rank": 6,
+        "name": "Kurt Nimphius",
+        "team": "DAL",
+        "value": "1.8"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Darrell Griffith",
+        "team": "UTA",
+        "value": "1.1"
+      },
+      {
+        "rank": 2,
+        "name": "Michael Cooper",
+        "team": "LAL",
+        "value": "0.5"
+      },
+      {
+        "rank": 3,
+        "name": "Mike Evans",
+        "team": "DEN",
+        "value": "0.4"
+      },
+      {
+        "rank": 3,
+        "name": "Ricky Sobers",
+        "team": "WAS",
+        "value": "0.4"
+      },
+      {
+        "rank": 5,
+        "name": "Ray Williams",
+        "team": "NYK",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Jeff Malone",
+        "team": "WAS",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "World Free",
+        "team": "CLE",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Kyle Macy",
+        "team": "PHX",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Purvis Short",
+        "team": "GSW",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Rod Foster",
+        "team": "PHX",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Gerald Henderson",
+        "team": "BOS",
+        "value": "0.3"
+      },
+      {
+        "rank": 5,
+        "name": "Walter Davis",
+        "team": "PHX",
+        "value": "0.3"
+      }
+    ]
+  },
+  {
+    "label": "Minutes per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "41.1"
+      },
+      {
+        "rank": 2,
+        "name": "Sidney Moncrief",
+        "team": "MIL",
+        "value": "38.9"
+      },
+      {
+        "rank": 3,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "38.3"
+      },
+      {
+        "rank": 3,
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "38.3"
+      },
+      {
+        "rank": 5,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "37.8"
+      },
+      {
+        "rank": 6,
+        "name": "Rolando Blackman",
+        "team": "DAL",
+        "value": "37.3"
+      },
+      {
+        "rank": 6,
+        "name": "Purvis Short",
+        "team": "GSW",
+        "value": "37.3"
+      },
+      {
+        "rank": 8,
+        "name": "Norm Nixon",
+        "team": "SDC",
+        "value": "37.2"
+      },
+      {
+        "rank": 9,
+        "name": "Buck Williams",
+        "team": "NJN",
+        "value": "37.1"
+      },
+      {
+        "rank": 10,
+        "name": "Joe Barry Carroll",
+        "team": "GSW",
+        "value": "37.0"
+      }
+    ]
+  },
+  {
+    "label": "Field Goal %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Artis Gilmore",
+        "team": "SAS",
+        "value": "63.1%"
+      },
+      {
+        "rank": 2,
+        "name": "James Donaldson",
+        "team": "SDC",
+        "value": "59.6%"
+      },
+      {
+        "rank": 3,
+        "name": "Mike McGee",
+        "team": "LAL",
+        "value": "59.4%"
+      },
+      {
+        "rank": 4,
+        "name": "Darryl Dawkins",
+        "team": "NJN",
+        "value": "59.3%"
+      },
+      {
+        "rank": 5,
+        "name": "Calvin Natt",
+        "team": "POR",
+        "value": "58.3%"
+      },
+      {
+        "rank": 6,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "57.9%"
+      },
+      {
+        "rank": 7,
+        "name": "Kareem Abdul-Jabbar",
+        "team": "LAL",
+        "value": "57.8%"
+      },
+      {
+        "rank": 8,
+        "name": "Larry Nance",
+        "team": "PHX",
+        "value": "57.6%"
+      },
+      {
+        "rank": 9,
+        "name": "Bob Lanier",
+        "team": "MIL",
+        "value": "57.2%"
+      },
+      {
+        "rank": 9,
+        "name": "Bernard King",
+        "team": "NYK",
+        "value": "57.2%"
+      }
+    ]
+  },
+  {
+    "label": "Free Throw %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "88.8%"
+      },
+      {
+        "rank": 2,
+        "name": "John Long",
+        "team": "DET",
+        "value": "88.4%"
+      },
+      {
+        "rank": 3,
+        "name": "Bill Laimbeer",
+        "team": "DET",
+        "value": "86.6%"
+      },
+      {
+        "rank": 4,
+        "name": "Walter Davis",
+        "team": "PHX",
+        "value": "86.3%"
+      },
+      {
+        "rank": 5,
+        "name": "Ricky Pierce",
+        "team": "SDC",
+        "value": "86.1%"
+      },
+      {
+        "rank": 6,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "85.9%"
+      },
+      {
+        "rank": 6,
+        "name": "Billy Knight",
+        "team": "KCK",
+        "value": "85.9%"
+      },
+      {
+        "rank": 8,
+        "name": "Jack Sikma",
+        "team": "SEA",
+        "value": "85.6%"
+      },
+      {
+        "rank": 9,
+        "name": "Kiki Vandeweghe",
+        "team": "DEN",
+        "value": "85.2%"
+      },
+      {
+        "rank": 9,
+        "name": "Dennis Johnson",
+        "team": "BOS",
+        "value": "85.2%"
+      }
+    ]
+  },
+  {
+    "label": "Total Points",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "2418"
+      },
+      {
+        "rank": 2,
+        "name": "Mark Aguirre",
+        "team": "DAL",
+        "value": "2330"
+      },
+      {
+        "rank": 3,
+        "name": "Kiki Vandeweghe",
+        "team": "DEN",
+        "value": "2295"
+      },
+      {
+        "rank": 4,
+        "name": "Alex English",
+        "team": "DEN",
+        "value": "2167"
+      },
+      {
+        "rank": 5,
+        "name": "Bernard King",
+        "team": "NYK",
+        "value": "2027"
+      },
+      {
+        "rank": 6,
+        "name": "George Gervin",
+        "team": "SAS",
+        "value": "1967"
+      },
+      {
+        "rank": 7,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "1908"
+      },
+      {
+        "rank": 8,
+        "name": "Terry Cummings",
+        "team": "SDC",
+        "value": "1854"
+      },
+      {
+        "rank": 9,
+        "name": "Mike Mitchell",
+        "team": "SAS",
+        "value": "1839"
+      },
+      {
+        "rank": 10,
+        "name": "Rolando Blackman",
+        "team": "DAL",
+        "value": "1815"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Bill Laimbeer",
+        "team": "DET",
+        "value": "1003"
+      },
+      {
+        "rank": 2,
+        "name": "Buck Williams",
+        "team": "NJN",
+        "value": "1000"
+      },
+      {
+        "rank": 3,
+        "name": "Moses Malone",
+        "team": "PHI",
+        "value": "950"
+      },
+      {
+        "rank": 4,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "922"
+      },
+      {
+        "rank": 5,
+        "name": "Ralph Sampson",
+        "team": "HOU",
+        "value": "913"
+      },
+      {
+        "rank": 6,
+        "name": "Jack Sikma",
+        "team": "SEA",
+        "value": "911"
+      },
+      {
+        "rank": 7,
+        "name": "Robert Parish",
+        "team": "BOS",
+        "value": "857"
+      },
+      {
+        "rank": 8,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "796"
+      },
+      {
+        "rank": 9,
+        "name": "David Greenwood",
+        "team": "CHI",
+        "value": "786"
+      },
+      {
+        "rank": 10,
+        "name": "Terry Cummings",
+        "team": "SDC",
+        "value": "777"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "914"
+      },
+      {
+        "rank": 1,
+        "name": "Norm Nixon",
+        "team": "SDC",
+        "value": "914"
+      },
+      {
+        "rank": 3,
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "875"
+      },
+      {
+        "rank": 4,
+        "name": "Rickey Green",
+        "team": "UTA",
+        "value": "748"
+      },
+      {
+        "rank": 5,
+        "name": "Gus Williams",
+        "team": "SEA",
+        "value": "675"
+      },
+      {
+        "rank": 6,
+        "name": "John Lucas",
+        "team": "SAS",
+        "value": "673"
+      },
+      {
+        "rank": 7,
+        "name": "Ennis Whatley",
+        "team": "CHI",
+        "value": "662"
+      },
+      {
+        "rank": 8,
+        "name": "Frank Johnson",
+        "team": "WAS",
+        "value": "567"
+      },
+      {
+        "rank": 9,
+        "name": "Johnny Moore",
+        "team": "SAS",
+        "value": "566"
+      },
+      {
+        "rank": 10,
+        "name": "Brad Davis",
+        "team": "DAL",
+        "value": "561"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rickey Green",
+        "team": "UTA",
+        "value": "215"
+      },
+      {
+        "rank": 2,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "204"
+      },
+      {
+        "rank": 3,
+        "name": "Gus Williams",
+        "team": "SEA",
+        "value": "189"
+      },
+      {
+        "rank": 4,
+        "name": "T.R. Dunn",
+        "team": "DEN",
+        "value": "173"
+      },
+      {
+        "rank": 5,
+        "name": "Maurice Cheeks",
+        "team": "PHI",
+        "value": "171"
+      },
+      {
+        "rank": 6,
+        "name": "Darwin Cook",
+        "team": "NJN",
+        "value": "164"
+      },
+      {
+        "rank": 7,
+        "name": "Lester Conner",
+        "team": "GSW",
+        "value": "162"
+      },
+      {
+        "rank": 7,
+        "name": "Ray Williams",
+        "team": "NYK",
+        "value": "162"
+      },
+      {
+        "rank": 9,
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "150"
+      },
+      {
+        "rank": 10,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "144"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mark Eaton",
+        "team": "UTA",
+        "value": "351"
+      },
+      {
+        "rank": 2,
+        "name": "Tree Rollins",
+        "team": "ATL",
+        "value": "277"
+      },
+      {
+        "rank": 3,
+        "name": "Ralph Sampson",
+        "team": "HOU",
+        "value": "197"
+      },
+      {
+        "rank": 4,
+        "name": "Larry Nance",
+        "team": "PHX",
+        "value": "174"
+      },
+      {
+        "rank": 5,
+        "name": "LaSalle Thompson",
+        "team": "KCK",
+        "value": "145"
+      },
+      {
+        "rank": 5,
+        "name": "Roy Hinson",
+        "team": "CLE",
+        "value": "145"
+      },
+      {
+        "rank": 7,
+        "name": "Kurt Nimphius",
+        "team": "DAL",
+        "value": "144"
+      },
+      {
+        "rank": 8,
+        "name": "Kareem Abdul-Jabbar",
+        "team": "LAL",
+        "value": "143"
+      },
+      {
+        "rank": 9,
+        "name": "Joe Barry Carroll",
+        "team": "GSW",
+        "value": "142"
+      },
+      {
+        "rank": 10,
+        "name": "Alton Lister",
+        "team": "MIL",
+        "value": "140"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Darrell Griffith",
+        "team": "UTA",
+        "value": "91"
+      },
+      {
+        "rank": 2,
+        "name": "Michael Cooper",
+        "team": "LAL",
+        "value": "38"
+      },
+      {
+        "rank": 3,
+        "name": "Mike Evans",
+        "team": "DEN",
+        "value": "32"
+      },
+      {
+        "rank": 4,
+        "name": "Ricky Sobers",
+        "team": "WAS",
+        "value": "29"
+      },
+      {
+        "rank": 5,
+        "name": "Johnny Moore",
+        "team": "SAS",
+        "value": "28"
+      },
+      {
+        "rank": 6,
+        "name": "Ray Williams",
+        "team": "NYK",
+        "value": "25"
+      },
+      {
+        "rank": 7,
+        "name": "Jeff Malone",
+        "team": "WAS",
+        "value": "24"
+      },
+      {
+        "rank": 8,
+        "name": "Kyle Macy",
+        "team": "PHX",
+        "value": "23"
+      },
+      {
+        "rank": 9,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "22"
+      },
+      {
+        "rank": 9,
+        "name": "Purvis Short",
+        "team": "GSW",
+        "value": "22"
+      },
+      {
+        "rank": 9,
+        "name": "Rod Foster",
+        "team": "PHX",
+        "value": "22"
+      },
+      {
+        "rank": 9,
+        "name": "World Free",
+        "team": "CLE",
+        "value": "22"
+      }
+    ]
+  },
+  {
+    "label": "Free Throws Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "813"
+      },
+      {
+        "rank": 2,
+        "name": "Moses Malone",
+        "team": "PHI",
+        "value": "545"
+      },
+      {
+        "rank": 3,
+        "name": "Sidney Moncrief",
+        "team": "MIL",
+        "value": "529"
+      },
+      {
+        "rank": 4,
+        "name": "Kiki Vandeweghe",
+        "team": "DEN",
+        "value": "494"
+      },
+      {
+        "rank": 5,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "466"
+      },
+      {
+        "rank": 6,
+        "name": "Mark Aguirre",
+        "team": "DAL",
+        "value": "465"
+      },
+      {
+        "rank": 7,
+        "name": "Bernard King",
+        "team": "NYK",
+        "value": "437"
+      },
+      {
+        "rank": 8,
+        "name": "George Gervin",
+        "team": "SAS",
+        "value": "427"
+      },
+      {
+        "rank": 9,
+        "name": "Kelly Tripucka",
+        "team": "DET",
+        "value": "426"
+      },
+      {
+        "rank": 10,
+        "name": "Jack Sikma",
+        "team": "SEA",
+        "value": "411"
+      }
+    ]
+  },
+  {
+    "label": "Field Goals Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mark Aguirre",
+        "team": "DAL",
+        "value": "925"
+      },
+      {
+        "rank": 2,
+        "name": "Alex English",
+        "team": "DEN",
+        "value": "907"
+      },
+      {
+        "rank": 3,
+        "name": "Kiki Vandeweghe",
+        "team": "DEN",
+        "value": "895"
+      },
+      {
+        "rank": 4,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "802"
+      },
+      {
+        "rank": 5,
+        "name": "Bernard King",
+        "team": "NYK",
+        "value": "795"
+      },
+      {
+        "rank": 6,
+        "name": "Mike Mitchell",
+        "team": "SAS",
+        "value": "779"
+      },
+      {
+        "rank": 7,
+        "name": "George Gervin",
+        "team": "SAS",
+        "value": "765"
+      },
+      {
+        "rank": 8,
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "758"
+      },
+      {
+        "rank": 9,
+        "name": "Eddie Johnson",
+        "team": "KCK",
+        "value": "753"
+      },
+      {
+        "rank": 10,
+        "name": "Terry Cummings",
+        "team": "SDC",
+        "value": "737"
+      }
+    ]
+  },
+  {
+    "label": "Offensive Rebounds",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Buck Williams",
+        "team": "NJN",
+        "value": "355"
+      },
+      {
+        "rank": 2,
+        "name": "Moses Malone",
+        "team": "PHI",
+        "value": "352"
+      },
+      {
+        "rank": 3,
+        "name": "Bill Laimbeer",
+        "team": "DET",
+        "value": "329"
+      },
+      {
+        "rank": 4,
+        "name": "Terry Cummings",
+        "team": "SDC",
+        "value": "323"
+      },
+      {
+        "rank": 5,
+        "name": "Ralph Sampson",
+        "team": "HOU",
+        "value": "293"
+      },
+      {
+        "rank": 6,
+        "name": "Larry Smith",
+        "team": "GSW",
+        "value": "282"
+      },
+      {
+        "rank": 7,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "265"
+      },
+      {
+        "rank": 8,
+        "name": "LaSalle Thompson",
+        "team": "KCK",
+        "value": "260"
+      },
+      {
+        "rank": 9,
+        "name": "Dominique Wilkins",
+        "team": "ATL",
+        "value": "254"
+      },
+      {
+        "rank": 10,
+        "name": "Robert Parish",
+        "team": "BOS",
+        "value": "243"
+      }
+    ]
+  },
+  {
+    "label": "Turnovers",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jeff Ruland",
+        "team": "WAS",
+        "value": "342"
+      },
+      {
+        "rank": 2,
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "307"
+      },
+      {
+        "rank": 3,
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "306"
+      },
+      {
+        "rank": 4,
+        "name": "Andrew Toney",
+        "team": "PHI",
+        "value": "297"
+      },
+      {
+        "rank": 5,
+        "name": "Ralph Sampson",
+        "team": "HOU",
+        "value": "294"
+      },
+      {
+        "rank": 6,
+        "name": "Mark Aguirre",
+        "team": "DAL",
+        "value": "285"
+      },
+      {
+        "rank": 7,
+        "name": "Ennis Whatley",
+        "team": "CHI",
+        "value": "268"
+      },
+      {
+        "rank": 7,
+        "name": "Joe Barry Carroll",
+        "team": "GSW",
+        "value": "268"
+      },
+      {
+        "rank": 9,
+        "name": "Adrian Dantley",
+        "team": "UTA",
+        "value": "263"
+      },
+      {
+        "rank": 10,
+        "name": "Norm Nixon",
+        "team": "SDC",
+        "value": "257"
+      }
+    ]
+  }
+]

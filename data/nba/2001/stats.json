@@ -1,0 +1,1332 @@
+[
+  {
+    "label": "Points per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "31.1"
+      },
+      {
+        "rank": 2,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "29.8"
+      },
+      {
+        "rank": 3,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "28.7"
+      },
+      {
+        "rank": 4,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "28.5"
+      },
+      {
+        "rank": 5,
+        "name": "Vince Carter",
+        "team": "TOR",
+        "value": "27.6"
+      },
+      {
+        "rank": 6,
+        "name": "Chris Webber",
+        "team": "SAC",
+        "value": "27.1"
+      },
+      {
+        "rank": 7,
+        "name": "Tracy McGrady",
+        "team": "ORL",
+        "value": "26.8"
+      },
+      {
+        "rank": 8,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "25.3"
+      },
+      {
+        "rank": 9,
+        "name": "Antawn Jamison",
+        "team": "GSW",
+        "value": "24.9"
+      },
+      {
+        "rank": 10,
+        "name": "Stephon Marbury",
+        "team": "NJN",
+        "value": "23.9"
+      }
+    ]
+  },
+  {
+    "label": "Rebounds per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "13.5"
+      },
+      {
+        "rank": 2,
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "13.2"
+      },
+      {
+        "rank": 3,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "12.7"
+      },
+      {
+        "rank": 4,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "12.2"
+      },
+      {
+        "rank": 5,
+        "name": "Antonio McDyess",
+        "team": "DEN",
+        "value": "12.1"
+      },
+      {
+        "rank": 6,
+        "name": "Kevin Garnett",
+        "team": "MIN",
+        "value": "11.4"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Webber",
+        "team": "SAC",
+        "value": "11.1"
+      },
+      {
+        "rank": 8,
+        "name": "Shawn Marion",
+        "team": "PHX",
+        "value": "10.7"
+      },
+      {
+        "rank": 9,
+        "name": "Antonio Davis",
+        "team": "TOR",
+        "value": "10.1"
+      },
+      {
+        "rank": 9,
+        "name": "Elton Brand",
+        "team": "CHI",
+        "value": "10.1"
+      }
+    ]
+  },
+  {
+    "label": "Assists per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jason Kidd",
+        "team": "PHX",
+        "value": "9.8"
+      },
+      {
+        "rank": 2,
+        "name": "John Stockton",
+        "team": "UTA",
+        "value": "8.7"
+      },
+      {
+        "rank": 3,
+        "name": "Nick Van Exel",
+        "team": "DEN",
+        "value": "8.5"
+      },
+      {
+        "rank": 4,
+        "name": "Mike Bibby",
+        "team": "VAN",
+        "value": "8.4"
+      },
+      {
+        "rank": 5,
+        "name": "Gary Payton",
+        "team": "SEA",
+        "value": "8.1"
+      },
+      {
+        "rank": 6,
+        "name": "Andre Miller",
+        "team": "CLE",
+        "value": "8.0"
+      },
+      {
+        "rank": 6,
+        "name": "Mark Jackson",
+        "team": "NYK",
+        "value": "8.0"
+      },
+      {
+        "rank": 8,
+        "name": "Sam Cassell",
+        "team": "MIL",
+        "value": "7.6"
+      },
+      {
+        "rank": 8,
+        "name": "Stephon Marbury",
+        "team": "NJN",
+        "value": "7.6"
+      },
+      {
+        "rank": 10,
+        "name": "Terrell Brandon",
+        "team": "MIN",
+        "value": "7.5"
+      }
+    ]
+  },
+  {
+    "label": "Steals per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "2.5"
+      },
+      {
+        "rank": 2,
+        "name": "Mookie Blaylock",
+        "team": "GSW",
+        "value": "2.4"
+      },
+      {
+        "rank": 3,
+        "name": "Doug Christie",
+        "team": "SAC",
+        "value": "2.3"
+      },
+      {
+        "rank": 4,
+        "name": "Jason Kidd",
+        "team": "PHX",
+        "value": "2.2"
+      },
+      {
+        "rank": 5,
+        "name": "Baron Davis",
+        "team": "CHH",
+        "value": "2.1"
+      },
+      {
+        "rank": 5,
+        "name": "Terrell Brandon",
+        "team": "MIN",
+        "value": "2.1"
+      },
+      {
+        "rank": 7,
+        "name": "Metta World Peace",
+        "team": "CHI",
+        "value": "2.0"
+      },
+      {
+        "rank": 8,
+        "name": "Darrell Armstrong",
+        "team": "ORL",
+        "value": "1.8"
+      },
+      {
+        "rank": 8,
+        "name": "Steve Francis",
+        "team": "HOU",
+        "value": "1.8"
+      },
+      {
+        "rank": 10,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "1.7"
+      },
+      {
+        "rank": 10,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "1.7"
+      },
+      {
+        "rank": 10,
+        "name": "Shawn Marion",
+        "team": "PHX",
+        "value": "1.7"
+      }
+    ]
+  },
+  {
+    "label": "Blocks per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Theo Ratliff",
+        "team": "PHI",
+        "value": "3.7"
+      },
+      {
+        "rank": 2,
+        "name": "Jermaine O'Neal",
+        "team": "IND",
+        "value": "2.8"
+      },
+      {
+        "rank": 2,
+        "name": "Shawn Bradley",
+        "team": "DAL",
+        "value": "2.8"
+      },
+      {
+        "rank": 2,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "2.8"
+      },
+      {
+        "rank": 5,
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "2.7"
+      },
+      {
+        "rank": 5,
+        "name": "Adonal Foyle",
+        "team": "GSW",
+        "value": "2.7"
+      },
+      {
+        "rank": 7,
+        "name": "Raef LaFrentz",
+        "team": "DEN",
+        "value": "2.6"
+      },
+      {
+        "rank": 8,
+        "name": "David Robinson",
+        "team": "SAS",
+        "value": "2.5"
+      },
+      {
+        "rank": 9,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "2.3"
+      },
+      {
+        "rank": 9,
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "2.3"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "2.7"
+      },
+      {
+        "rank": 2,
+        "name": "Ray Allen",
+        "team": "MIL",
+        "value": "2.5"
+      },
+      {
+        "rank": 2,
+        "name": "Tim Hardaway",
+        "team": "MIA",
+        "value": "2.5"
+      },
+      {
+        "rank": 4,
+        "name": "Vince Carter",
+        "team": "TOR",
+        "value": "2.2"
+      },
+      {
+        "rank": 5,
+        "name": "Reggie Miller",
+        "team": "IND",
+        "value": "2.1"
+      },
+      {
+        "rank": 5,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "2.1"
+      },
+      {
+        "rank": 7,
+        "name": "Peja Stojakovic",
+        "team": "SAC",
+        "value": "1.9"
+      },
+      {
+        "rank": 7,
+        "name": "Darrell Armstrong",
+        "team": "ORL",
+        "value": "1.9"
+      },
+      {
+        "rank": 7,
+        "name": "Nick Van Exel",
+        "team": "DEN",
+        "value": "1.9"
+      },
+      {
+        "rank": 7,
+        "name": "Lindsey Hunter",
+        "team": "MIL",
+        "value": "1.9"
+      }
+    ]
+  },
+  {
+    "label": "Minutes per Game",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Michael Finley",
+        "team": "DAL",
+        "value": "42.0"
+      },
+      {
+        "rank": 1,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "42.0"
+      },
+      {
+        "rank": 3,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "41.9"
+      },
+      {
+        "rank": 4,
+        "name": "Ron Mercer",
+        "team": "CHI",
+        "value": "41.6"
+      },
+      {
+        "rank": 5,
+        "name": "Antawn Jamison",
+        "team": "GSW",
+        "value": "41.4"
+      },
+      {
+        "rank": 6,
+        "name": "Gary Payton",
+        "team": "SEA",
+        "value": "41.1"
+      },
+      {
+        "rank": 7,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "40.9"
+      },
+      {
+        "rank": 7,
+        "name": "Jalen Rose",
+        "team": "IND",
+        "value": "40.9"
+      },
+      {
+        "rank": 9,
+        "name": "Anthony Mason",
+        "team": "MIA",
+        "value": "40.7"
+      },
+      {
+        "rank": 10,
+        "name": "Chris Webber",
+        "team": "SAC",
+        "value": "40.5"
+      }
+    ]
+  },
+  {
+    "label": "Field Goal %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "57.2%"
+      },
+      {
+        "rank": 2,
+        "name": "Bonzi Wells",
+        "team": "POR",
+        "value": "53.3%"
+      },
+      {
+        "rank": 3,
+        "name": "Marcus Camby",
+        "team": "NYK",
+        "value": "52.4%"
+      },
+      {
+        "rank": 4,
+        "name": "Kurt Thomas",
+        "team": "NYK",
+        "value": "51.1%"
+      },
+      {
+        "rank": 5,
+        "name": "Wally Szczerbiak",
+        "team": "MIN",
+        "value": "51.0%"
+      },
+      {
+        "rank": 6,
+        "name": "Darius Miles",
+        "team": "LAC",
+        "value": "50.5%"
+      },
+      {
+        "rank": 7,
+        "name": "John Stockton",
+        "team": "UTA",
+        "value": "50.4%"
+      },
+      {
+        "rank": 8,
+        "name": "Donyell Marshall",
+        "team": "UTA",
+        "value": "50.3%"
+      },
+      {
+        "rank": 9,
+        "name": "Corliss Williamson",
+        "team": "DET",
+        "value": "50.2%"
+      },
+      {
+        "rank": 10,
+        "name": "Clar. Weatherspoon",
+        "team": "CLE",
+        "value": "50.1%"
+      },
+      {
+        "rank": 10,
+        "name": "Rasheed Wallace",
+        "team": "POR",
+        "value": "50.1%"
+      }
+    ]
+  },
+  {
+    "label": "3-Point %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Brent Barry",
+        "team": "SEA",
+        "value": "47.6%"
+      },
+      {
+        "rank": 2,
+        "name": "John Stockton",
+        "team": "UTA",
+        "value": "46.2%"
+      },
+      {
+        "rank": 3,
+        "name": "Shammond Williams",
+        "team": "SEA",
+        "value": "45.9%"
+      },
+      {
+        "rank": 4,
+        "name": "Hubert Davis",
+        "team": "WAS",
+        "value": "45.6%"
+      },
+      {
+        "rank": 5,
+        "name": "Danny Ferry",
+        "team": "SAS",
+        "value": "44.9%"
+      },
+      {
+        "rank": 6,
+        "name": "Toni Kukoc",
+        "team": "ATL",
+        "value": "44.6%"
+      },
+      {
+        "rank": 7,
+        "name": "Pat Garrity",
+        "team": "ORL",
+        "value": "43.3%"
+      },
+      {
+        "rank": 7,
+        "name": "Ray Allen",
+        "team": "MIL",
+        "value": "43.3%"
+      },
+      {
+        "rank": 9,
+        "name": "Rashard Lewis",
+        "team": "SEA",
+        "value": "43.2%"
+      },
+      {
+        "rank": 10,
+        "name": "Dell Curry",
+        "team": "TOR",
+        "value": "42.8%"
+      }
+    ]
+  },
+  {
+    "label": "Free Throw %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Reggie Miller",
+        "team": "IND",
+        "value": "92.8%"
+      },
+      {
+        "rank": 2,
+        "name": "Allan Houston",
+        "team": "NYK",
+        "value": "90.9%"
+      },
+      {
+        "rank": 3,
+        "name": "Doug Christie",
+        "team": "SAC",
+        "value": "89.7%"
+      },
+      {
+        "rank": 4,
+        "name": "Steve Nash",
+        "team": "DAL",
+        "value": "89.5%"
+      },
+      {
+        "rank": 5,
+        "name": "Mitch Richmond",
+        "team": "WAS",
+        "value": "89.4%"
+      },
+      {
+        "rank": 6,
+        "name": "Steven Smith",
+        "team": "POR",
+        "value": "89.0%"
+      },
+      {
+        "rank": 7,
+        "name": "Ray Allen",
+        "team": "MIL",
+        "value": "88.8%"
+      },
+      {
+        "rank": 8,
+        "name": "Darrell Armstrong",
+        "team": "ORL",
+        "value": "88.4%"
+      },
+      {
+        "rank": 9,
+        "name": "Eric Piatkowski",
+        "team": "LAC",
+        "value": "87.3%"
+      },
+      {
+        "rank": 10,
+        "name": "Terrell Brandon",
+        "team": "MIN",
+        "value": "87.1%"
+      }
+    ]
+  },
+  {
+    "label": "Total Points",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "2380"
+      },
+      {
+        "rank": 2,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "2207"
+      },
+      {
+        "rank": 3,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "2125"
+      },
+      {
+        "rank": 4,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "2071"
+      },
+      {
+        "rank": 5,
+        "name": "Vince Carter",
+        "team": "TOR",
+        "value": "2070"
+      },
+      {
+        "rank": 6,
+        "name": "Tracy McGrady",
+        "team": "ORL",
+        "value": "2065"
+      },
+      {
+        "rank": 7,
+        "name": "Antawn Jamison",
+        "team": "GSW",
+        "value": "2044"
+      },
+      {
+        "rank": 8,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "1938"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Webber",
+        "team": "SAC",
+        "value": "1898"
+      },
+      {
+        "rank": 10,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "1892"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "1052"
+      },
+      {
+        "rank": 2,
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "1015"
+      },
+      {
+        "rank": 3,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "997"
+      },
+      {
+        "rank": 4,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "940"
+      },
+      {
+        "rank": 5,
+        "name": "Kevin Garnett",
+        "team": "MIN",
+        "value": "921"
+      },
+      {
+        "rank": 6,
+        "name": "Shawn Marion",
+        "team": "PHX",
+        "value": "848"
+      },
+      {
+        "rank": 7,
+        "name": "Antonio McDyess",
+        "team": "DEN",
+        "value": "845"
+      },
+      {
+        "rank": 8,
+        "name": "Clar. Weatherspoon",
+        "team": "CLE",
+        "value": "796"
+      },
+      {
+        "rank": 9,
+        "name": "Jermaine O'Neal",
+        "team": "IND",
+        "value": "794"
+      },
+      {
+        "rank": 10,
+        "name": "Antonio Davis",
+        "team": "TOR",
+        "value": "787"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jason Kidd",
+        "team": "PHX",
+        "value": "753"
+      },
+      {
+        "rank": 2,
+        "name": "John Stockton",
+        "team": "UTA",
+        "value": "713"
+      },
+      {
+        "rank": 3,
+        "name": "Mike Bibby",
+        "team": "VAN",
+        "value": "685"
+      },
+      {
+        "rank": 4,
+        "name": "Mark Jackson",
+        "team": "NYK",
+        "value": "661"
+      },
+      {
+        "rank": 5,
+        "name": "Andre Miller",
+        "team": "CLE",
+        "value": "657"
+      },
+      {
+        "rank": 6,
+        "name": "Gary Payton",
+        "team": "SEA",
+        "value": "642"
+      },
+      {
+        "rank": 7,
+        "name": "Nick Van Exel",
+        "team": "DEN",
+        "value": "600"
+      },
+      {
+        "rank": 8,
+        "name": "Baron Davis",
+        "team": "CHH",
+        "value": "598"
+      },
+      {
+        "rank": 9,
+        "name": "Terrell Brandon",
+        "team": "MIN",
+        "value": "583"
+      },
+      {
+        "rank": 10,
+        "name": "Sam Cassell",
+        "team": "MIL",
+        "value": "580"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Doug Christie",
+        "team": "SAC",
+        "value": "183"
+      },
+      {
+        "rank": 2,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "178"
+      },
+      {
+        "rank": 3,
+        "name": "Baron Davis",
+        "team": "CHH",
+        "value": "170"
+      },
+      {
+        "rank": 4,
+        "name": "Jason Kidd",
+        "team": "PHX",
+        "value": "166"
+      },
+      {
+        "rank": 5,
+        "name": "Mookie Blaylock",
+        "team": "GSW",
+        "value": "163"
+      },
+      {
+        "rank": 6,
+        "name": "Terrell Brandon",
+        "team": "MIN",
+        "value": "161"
+      },
+      {
+        "rank": 7,
+        "name": "Metta World Peace",
+        "team": "CHI",
+        "value": "152"
+      },
+      {
+        "rank": 8,
+        "name": "Steve Francis",
+        "team": "HOU",
+        "value": "141"
+      },
+      {
+        "rank": 9,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "138"
+      },
+      {
+        "rank": 9,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "138"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jermaine O'Neal",
+        "team": "IND",
+        "value": "228"
+      },
+      {
+        "rank": 1,
+        "name": "Shawn Bradley",
+        "team": "DAL",
+        "value": "228"
+      },
+      {
+        "rank": 3,
+        "name": "Raef LaFrentz",
+        "team": "DEN",
+        "value": "206"
+      },
+      {
+        "rank": 4,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "204"
+      },
+      {
+        "rank": 5,
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "203"
+      },
+      {
+        "rank": 6,
+        "name": "David Robinson",
+        "team": "SAS",
+        "value": "197"
+      },
+      {
+        "rank": 7,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "192"
+      },
+      {
+        "rank": 8,
+        "name": "Theo Ratliff",
+        "team": "PHI",
+        "value": "187"
+      },
+      {
+        "rank": 9,
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "186"
+      },
+      {
+        "rank": 10,
+        "name": "Adonal Foyle",
+        "team": "GSW",
+        "value": "156"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "221"
+      },
+      {
+        "rank": 2,
+        "name": "Ray Allen",
+        "team": "MIL",
+        "value": "202"
+      },
+      {
+        "rank": 3,
+        "name": "Tim Hardaway",
+        "team": "MIA",
+        "value": "189"
+      },
+      {
+        "rank": 4,
+        "name": "Reggie Miller",
+        "team": "IND",
+        "value": "170"
+      },
+      {
+        "rank": 5,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "166"
+      },
+      {
+        "rank": 6,
+        "name": "Vince Carter",
+        "team": "TOR",
+        "value": "162"
+      },
+      {
+        "rank": 7,
+        "name": "Lindsey Hunter",
+        "team": "MIL",
+        "value": "152"
+      },
+      {
+        "rank": 8,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "151"
+      },
+      {
+        "rank": 9,
+        "name": "Mike Miller",
+        "team": "ORL",
+        "value": "148"
+      },
+      {
+        "rank": 10,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "147"
+      },
+      {
+        "rank": 10,
+        "name": "Voshon Lenard",
+        "team": "DEN",
+        "value": "147"
+      }
+    ]
+  },
+  {
+    "label": "Free Throws Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "666"
+      },
+      {
+        "rank": 2,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "585"
+      },
+      {
+        "rank": 3,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "550"
+      },
+      {
+        "rank": 4,
+        "name": "Karl Malone",
+        "team": "UTA",
+        "value": "536"
+      },
+      {
+        "rank": 5,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "499"
+      },
+      {
+        "rank": 6,
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "475"
+      },
+      {
+        "rank": 7,
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "451"
+      },
+      {
+        "rank": 8,
+        "name": "Shareef Abdur-Rahim",
+        "team": "VAN",
+        "value": "443"
+      },
+      {
+        "rank": 9,
+        "name": "Tracy McGrady",
+        "team": "ORL",
+        "value": "430"
+      },
+      {
+        "rank": 10,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "409"
+      }
+    ]
+  },
+  {
+    "label": "Field Goals Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "813"
+      },
+      {
+        "rank": 2,
+        "name": "Antawn Jamison",
+        "team": "GSW",
+        "value": "800"
+      },
+      {
+        "rank": 3,
+        "name": "Tracy McGrady",
+        "team": "ORL",
+        "value": "788"
+      },
+      {
+        "rank": 4,
+        "name": "Chris Webber",
+        "team": "SAC",
+        "value": "786"
+      },
+      {
+        "rank": 5,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "774"
+      },
+      {
+        "rank": 6,
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "762"
+      },
+      {
+        "rank": 6,
+        "name": "Vince Carter",
+        "team": "TOR",
+        "value": "762"
+      },
+      {
+        "rank": 8,
+        "name": "Gary Payton",
+        "team": "SEA",
+        "value": "725"
+      },
+      {
+        "rank": 9,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "711"
+      },
+      {
+        "rank": 9,
+        "name": "Michael Finley",
+        "team": "DAL",
+        "value": "711"
+      }
+    ]
+  },
+  {
+    "label": "Offensive Rebounds",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "307"
+      },
+      {
+        "rank": 2,
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "303"
+      },
+      {
+        "rank": 3,
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "291"
+      },
+      {
+        "rank": 4,
+        "name": "Elton Brand",
+        "team": "CHI",
+        "value": "285"
+      },
+      {
+        "rank": 5,
+        "name": "Antawn Jamison",
+        "team": "GSW",
+        "value": "280"
+      },
+      {
+        "rank": 6,
+        "name": "Antonio Davis",
+        "team": "TOR",
+        "value": "274"
+      },
+      {
+        "rank": 7,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "259"
+      },
+      {
+        "rank": 8,
+        "name": "P.J. Brown",
+        "team": "CHH",
+        "value": "257"
+      },
+      {
+        "rank": 9,
+        "name": "Jermaine O'Neal",
+        "team": "IND",
+        "value": "249"
+      },
+      {
+        "rank": 10,
+        "name": "Antonio McDyess",
+        "team": "DEN",
+        "value": "240"
+      }
+    ]
+  },
+  {
+    "label": "Turnovers",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jerry Stackhouse",
+        "team": "DET",
+        "value": "326"
+      },
+      {
+        "rank": 2,
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "301"
+      },
+      {
+        "rank": 3,
+        "name": "Jason Kidd",
+        "team": "PHX",
+        "value": "286"
+      },
+      {
+        "rank": 4,
+        "name": "Andre Miller",
+        "team": "CLE",
+        "value": "265"
+      },
+      {
+        "rank": 4,
+        "name": "Steve Francis",
+        "team": "HOU",
+        "value": "265"
+      },
+      {
+        "rank": 6,
+        "name": "Lamar Odom",
+        "team": "LAC",
+        "value": "264"
+      },
+      {
+        "rank": 7,
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "262"
+      },
+      {
+        "rank": 8,
+        "name": "Mike Bibby",
+        "team": "VAN",
+        "value": "248"
+      },
+      {
+        "rank": 9,
+        "name": "Karl Malone",
+        "team": "UTA",
+        "value": "244"
+      },
+      {
+        "rank": 10,
+        "name": "Juwan Howard",
+        "team": "DAL",
+        "value": "242"
+      },
+      {
+        "rank": 10,
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "242"
+      }
+    ]
+  }
+]
