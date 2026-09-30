@@ -98,6 +98,13 @@ function hasData({ sport, category, year } = {}) {
         (!year || String(entry.year) === String(year)));
 }
 
+function availableYears({ sport, category } = {}) {
+    const years = dataManifest
+        .filter(entry => entry.sport === sport && (!category || entry.category === category))
+        .map(entry => entry.year);
+    return [...new Set(years)].sort((a, b) => b - a);
+}
+
 // One-device players get a stable id so the session leaderboard
 // follows them through renames
 let _nextLocalId = 1;

@@ -10,23 +10,28 @@ Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no pack
 
 Postgames is a website (eventually an app) for people, mostly guys, coming home from the bar and looking for something to do. The planned features are sports trivia, a movie selector and a snack finder. **Current focus is sports trivia**; leave the other pages alone unless asked.
 
-Trivia data is currently copied by hand from Baseball/Football Reference leaderboards and built with `scripts/build_trivia_data.py`. The long-term goal is to pull it from an API automatically so each season doesn't need manual parsing. That is the first item on the Roadmap below.
+"Name the top 10" is the core feel the owner likes, but the format isn't fixed: other game modes and setups are welcome. Make the call on what's best; the owner will ask for changes.
+
+Trivia data is fetched automatically from free, open sources by `scripts/build_trivia_data.py` (see Data pipeline).
 
 ## Roadmap
 
 The future-state plan, in priority order. It sets direction only: each item is still built one step at a time, when we get to it. Tick items off (`[x]`) as they ship, add ideas as they come up, and reorder if priorities change.
 
-### 1. Data sourcing — NOW
+### 1. Data sourcing — MOSTLY DONE
 
-The game has only three boards (MLB 2025 batting and pitching, NFL 2025), so a group runs out of content in one night. More seasons and sports add more replay value than any feature. Don't scrape Sports Reference (its terms forbid automated scraping and it rate-limits). Use free, open sources instead, and have the Python script write the **same** JSON files the game already reads, so the site stays static and the game code doesn't change.
+More seasons and sports add more replay value than any feature. Don't scrape Sports Reference (its terms forbid automated scraping and it rate-limits). Use free, open sources, and write static JSON files the game reads, so the site stays static.
 
-- [ ] MLB from the MLB Stats API (`statsapi.mlb.com`): full player names, which retires the first-name lookup and `first_names.json`
-- [ ] NFL from nflverse (open stats CSVs on GitHub)
-- [ ] Backfill past seasons (e.g. 2000–2025) once fetching is automatic
+- [x] MLB from the MLB Stats API (`statsapi.mlb.com`), full names (retired the hand-copy path and first-name lookup)
+- [x] NFL from nflverse (open stats CSVs on GitHub)
+- [x] Backfill: MLB 1990–2026, NFL 1999–2025
+- [ ] NFL 2026 once the season ends (or a "so far" board mid-season)
+- [ ] Bring back advanced stats the free sources lack (MLB WAR, NFL QBR/Approximate Value), if an open source exists
 - [ ] Add more sports (NBA, NHL) if good free sources exist
-- [ ] Keep the hand-copy path working until the new sources cover everything it does
+- [ ] Career and all-time leaderboards (e.g. "top 10 career home runs")
+- [ ] Commercial-use check: MLB's terms allow personal, non-commercial use; revisit before Postgames makes money. nflverse data is free to use with credit
 
-### 2. Trivia enhancements — NEXT
+### 2. Trivia enhancements — NOW
 
 Small gameplay additions that make a night of play more fun.
 
@@ -34,10 +39,11 @@ Small gameplay additions that make a night of play more fun.
 - [ ] "Pass" option on your turn
 - [ ] Random board button
 - [ ] Hints (reveal a team or first letter, maybe at a point cost)
-- [ ] Era/difficulty filter once there are many seasons
+- [ ] Era/difficulty filter now that there are many seasons
+- [ ] Other game modes beyond "name the top 10" (e.g. guess the stat from the list, team-based boards)
 - [ ] Looser guess matching where it's still too strict (nicknames, common misspellings)
 
-### 3. Larger game enhancements — LATER
+### 3. Larger game enhancements — NEXT
 
 - [ ] Proper solo mode with personal bests saved on the device (localStorage, no accounts)
 - [ ] Real login: upgrade Firebase anonymous auth to Google sign-in (keeps existing uids), once there's something worth saving across devices
@@ -55,7 +61,7 @@ Movies and snacks wait until trivia is what people actually open. Each needs its
 ## Working with the owner
 
 - **Take the lead.** The owner is not an experienced coder. Make the technical calls yourself and give a clear recommendation rather than a menu of options; the owner will almost always go with it. Ask them only about design choices (look, feel, gameplay).
-- **Go step by step; don't build the future state early.** This project is a learning experience the owner enjoys taking incrementally. Don't introduce the API, an app wrapper, frameworks or build tooling ahead of time — solve the current step well and leave those for later.
+- **Go step by step; don't build the future state early.** This project is a learning experience the owner enjoys taking incrementally. Don't introduce accounts, an app wrapper, frameworks or build tooling ahead of time — solve the current step well and leave those for later.
 - **Keep the Roadmap current.** When a change ships a Roadmap item or brings up a new idea, update the Roadmap in the same commit.
 - **Commit and push by default.** After finishing a change, commit it (following the versioning convention below) and push to `origin main` without asking, unless the owner says not to for that change.
 - **Reorganize freely.** Move or restructure code and files whenever it makes things clearer. When you do, briefly explain where things now live and why, since that helps the owner learn the codebase.
@@ -87,7 +93,7 @@ Dark "late night at the bar" look: near-black background, a single amber accent 
 
 `pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Three **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. As classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — no imports/exports, and no two files may declare the same top-level name. Fetch paths are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
 
-1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `players: [{id, name, score}]`, `currentPlayerIndex`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `newLocalPlayer()`.
+1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `players: [{id, name, score}]`, `currentPlayerIndex`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `availableYears()`, `newLocalPlayer()`.
 2. `top10-render.js` — the only file that touches the DOM. `render()` redraws from state after any change, showing one of the setup / playing / results sections. Event handlers call logic actions (`selectSport`, `submitGuess`, `voteToEndGame`, …) and never change state themselves. Startup runs on `DOMContentLoaded` because rendering uses helpers from the logic file. Anything interpolated into `innerHTML` must go through `escapeHTML()` — names and guesses come from other players.
 3. `top10-logic.js` — actions and rules: sign-in, rooms and their Firebase listeners, setup actions, game flow (`startGame` / `endGame` / `newGame`), end-game voting, guessing, data loading, and guess matching. Never touches the DOM: change state, then call `render()`.
 
@@ -107,14 +113,17 @@ Guess matching (`findAnswerMatch`) ignores accents and punctuation, accepts full
 
 ## Data pipeline
 
-`data/manifest.json` lists every playable sport/category/year and its file; the game greys out anything not listed and loads files through it. Game files are `data/{sport}/{year}/{category or "stats"}.json`: an array of `{ label, players: [{ rank, name, team, value }], more_tied? }`. `value` is the display text exactly as the source prints it (".331", "68.5%"); `more_tied` counts tied-for-10th players the source didn't list. Only MLB 2025 (batting, pitching) and NFL 2025 exist so far.
+`data/manifest.json` lists every playable sport/category/year and its file; the game offers only what's listed (sport chips grey out, the Season dropdown lists available years newest first) and loads files through it. Game files are `data/{sport}/{year}/{category or "stats"}.json`: an array of `{ label, players: [{ rank, name, team, value }], more_tied? }`. `value` is display text (".331", "68.5%"); `team` is `2TM`/`3TM` for MLB players traded mid-season; `more_tied` counts a tie at the bottom left off the board. Current data: MLB 1990–2026 (batting, pitching), NFL 1999–2025.
 
-To add or rebuild data, save the Reference leaderboard page as text to `data/{sport}/{year}/raw/{year}-{category or sport}.txt`, then run from the repo root:
+`scripts/build_trivia_data.py` fetches and builds everything (standard library only, no API keys). Run from the repo root with a year or range:
 
 ```
-python scripts/build_trivia_data.py mlb batting 2025
-python scripts/build_trivia_data.py mlb pitching 2025
-python scripts/build_trivia_data.py nfl 2025
+python scripts/build_trivia_data.py mlb 2026
+python scripts/build_trivia_data.py mlb 1990-2026
+python scripts/build_trivia_data.py nfl 1999-2025
 ```
 
-It keeps every row ranked 10 or better (ties included, in source order — never re-sort by value, some stats are lower-is-better), applies `LABEL_FIXES`, writes the game file and updates the manifest. MLB leaderboards only give last names: first names come from `data/mlb/{year}/raw/mlbplayers{year}.txt`, with ambiguous ones asked interactively and every answer remembered in `data/mlb/first_names.json` (keyed `Last|TEAM`; edit it to fix a name).
+- **MLB** uses the Stats API's league leaders (one request per season per category). The API ranks, marks ties and applies rate-stat qualifiers itself. Stats and their labels are in `MLB_STATS`.
+- **NFL** downloads nflverse's regular-season player totals (one CSV per season) and ranks each stat in `nfl_stats()`. Rate stats use Pro Football Reference's per-team-game qualifiers. nflverse uses today's team codes for every season, and `NFL_MOVES` maps them back (e.g. 2003 Rams → STL). Its tackle counts come from play-by-play and can differ slightly from official totals.
+- `top_ten()` keeps everyone ranked 10th or better. A tie at the bottom that would push a board past 15 is dropped into `more_tied`. A board with fewer than 5 players, or where everyone is tied, is skipped for that season.
+- To add a stat, add a line to `MLB_STATS` or `nfl_stats()` and rerun the seasons.

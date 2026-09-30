@@ -1,0 +1,1534 @@
+[
+  {
+    "label": "Home Runs",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Khris Davis",
+        "team": "OAK",
+        "value": "48"
+      },
+      {
+        "rank": 2,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "43"
+      },
+      {
+        "rank": 3,
+        "name": "Joey Gallo",
+        "team": "TEX",
+        "value": "40"
+      },
+      {
+        "rank": 4,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "39"
+      },
+      {
+        "rank": 4,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": "39"
+      },
+      {
+        "rank": 6,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": "38"
+      },
+      {
+        "rank": 6,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "38"
+      },
+      {
+        "rank": 6,
+        "name": "Giancarlo Stanton",
+        "team": "NYY",
+        "value": "38"
+      },
+      {
+        "rank": 9,
+        "name": "Nelson Cruz",
+        "team": "SEA",
+        "value": "37"
+      },
+      {
+        "rank": 9,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "37"
+      },
+      {
+        "rank": 9,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": "37"
+      }
+    ]
+  },
+  {
+    "label": "Batting Average",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": ".346"
+      },
+      {
+        "rank": 2,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": ".330"
+      },
+      {
+        "rank": 3,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": ".326"
+      },
+      {
+        "rank": 4,
+        "name": "Jose Altuve",
+        "team": "HOU",
+        "value": ".316"
+      },
+      {
+        "rank": 5,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": ".312"
+      },
+      {
+        "rank": 6,
+        "name": "Scooter Gennett",
+        "team": "CIN",
+        "value": ".310"
+      },
+      {
+        "rank": 7,
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": ".309"
+      },
+      {
+        "rank": 8,
+        "name": "Michael Brantley",
+        "team": "CLE",
+        "value": ".309"
+      },
+      {
+        "rank": 9,
+        "name": "Anthony Rendon",
+        "team": "WSH",
+        "value": ".308"
+      },
+      {
+        "rank": 10,
+        "name": "Lorenzo Cain",
+        "team": "MIL",
+        "value": ".308"
+      }
+    ]
+  },
+  {
+    "label": "Runs Batted In",
+    "players": [
+      {
+        "rank": 1,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "130"
+      },
+      {
+        "rank": 2,
+        "name": "Khris Davis",
+        "team": "OAK",
+        "value": "123"
+      },
+      {
+        "rank": 3,
+        "name": "Javier Báez",
+        "team": "CHC",
+        "value": "111"
+      },
+      {
+        "rank": 4,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": "110"
+      },
+      {
+        "rank": 4,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": "110"
+      },
+      {
+        "rank": 6,
+        "name": "Jesús Aguilar",
+        "team": "MIL",
+        "value": "108"
+      },
+      {
+        "rank": 6,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": "108"
+      },
+      {
+        "rank": 8,
+        "name": "Edwin Encarnación",
+        "team": "CLE",
+        "value": "107"
+      },
+      {
+        "rank": 8,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "107"
+      },
+      {
+        "rank": 10,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "105"
+      }
+    ]
+  },
+  {
+    "label": "Hits",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Whit Merrifield",
+        "team": "KC",
+        "value": "192"
+      },
+      {
+        "rank": 2,
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": "191"
+      },
+      {
+        "rank": 3,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "188"
+      },
+      {
+        "rank": 3,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "188"
+      },
+      {
+        "rank": 5,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": "187"
+      },
+      {
+        "rank": 6,
+        "name": "Nick Castellanos",
+        "team": "DET",
+        "value": "185"
+      },
+      {
+        "rank": 6,
+        "name": "Nick Markakis",
+        "team": "ATL",
+        "value": "185"
+      },
+      {
+        "rank": 8,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "183"
+      },
+      {
+        "rank": 9,
+        "name": "Charlie Blackmon",
+        "team": "COL",
+        "value": "182"
+      },
+      {
+        "rank": 9,
+        "name": "José Peraza",
+        "team": "CIN",
+        "value": "182"
+      }
+    ]
+  },
+  {
+    "label": "Runs Scored",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": "129"
+      },
+      {
+        "rank": 1,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "129"
+      },
+      {
+        "rank": 3,
+        "name": "Charlie Blackmon",
+        "team": "COL",
+        "value": "119"
+      },
+      {
+        "rank": 4,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": "118"
+      },
+      {
+        "rank": 5,
+        "name": "Matt Carpenter",
+        "team": "STL",
+        "value": "111"
+      },
+      {
+        "rank": 5,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "111"
+      },
+      {
+        "rank": 7,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "110"
+      },
+      {
+        "rank": 8,
+        "name": "Ozzie Albies",
+        "team": "ATL",
+        "value": "105"
+      },
+      {
+        "rank": 8,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "105"
+      },
+      {
+        "rank": 10,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": "104"
+      }
+    ]
+  },
+  {
+    "label": "Stolen Bases",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Whit Merrifield",
+        "team": "KC",
+        "value": "45"
+      },
+      {
+        "rank": 2,
+        "name": "Trea Turner",
+        "team": "WSH",
+        "value": "43"
+      },
+      {
+        "rank": 3,
+        "name": "Mallex Smith",
+        "team": "TB",
+        "value": "40"
+      },
+      {
+        "rank": 4,
+        "name": "Jonathan Villar",
+        "team": "2TM",
+        "value": "35"
+      },
+      {
+        "rank": 5,
+        "name": "Billy Hamilton",
+        "team": "CIN",
+        "value": "34"
+      },
+      {
+        "rank": 5,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "34"
+      },
+      {
+        "rank": 7,
+        "name": "Starling Marte",
+        "team": "PIT",
+        "value": "33"
+      },
+      {
+        "rank": 8,
+        "name": "Adalberto Mondesi",
+        "team": "KC",
+        "value": "32"
+      },
+      {
+        "rank": 9,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": "30"
+      },
+      {
+        "rank": 9,
+        "name": "Lorenzo Cain",
+        "team": "MIL",
+        "value": "30"
+      },
+      {
+        "rank": 9,
+        "name": "Dee Strange-Gordon",
+        "team": "SEA",
+        "value": "30"
+      }
+    ]
+  },
+  {
+    "label": "Doubles",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "51"
+      },
+      {
+        "rank": 2,
+        "name": "Eduardo Escobar",
+        "team": "2TM",
+        "value": "48"
+      },
+      {
+        "rank": 3,
+        "name": "Miguel Andujar",
+        "team": "NYY",
+        "value": "47"
+      },
+      {
+        "rank": 3,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": "47"
+      },
+      {
+        "rank": 5,
+        "name": "Nick Castellanos",
+        "team": "DET",
+        "value": "46"
+      },
+      {
+        "rank": 6,
+        "name": "Xander Bogaerts",
+        "team": "BOS",
+        "value": "45"
+      },
+      {
+        "rank": 7,
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": "44"
+      },
+      {
+        "rank": 7,
+        "name": "Anthony Rendon",
+        "team": "WSH",
+        "value": "44"
+      },
+      {
+        "rank": 9,
+        "name": "Nick Markakis",
+        "team": "ATL",
+        "value": "43"
+      },
+      {
+        "rank": 9,
+        "name": "Whit Merrifield",
+        "team": "KC",
+        "value": "43"
+      }
+    ]
+  },
+  {
+    "label": "Triples",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Ketel Marte",
+        "team": "AZ",
+        "value": "12"
+      },
+      {
+        "rank": 2,
+        "name": "Mallex Smith",
+        "team": "TB",
+        "value": "10"
+      },
+      {
+        "rank": 2,
+        "name": "Yolmer Sánchez",
+        "team": "CWS",
+        "value": "10"
+      },
+      {
+        "rank": 4,
+        "name": "Javier Báez",
+        "team": "CHC",
+        "value": "9"
+      },
+      {
+        "rank": 4,
+        "name": "Billy Hamilton",
+        "team": "CIN",
+        "value": "9"
+      },
+      {
+        "rank": 4,
+        "name": "Kevin Kiermaier",
+        "team": "TB",
+        "value": "9"
+      },
+      {
+        "rank": 7,
+        "name": "Ian Desmond",
+        "team": "COL",
+        "value": "8"
+      },
+      {
+        "rank": 7,
+        "name": "Manuel Margot",
+        "team": "SD",
+        "value": "8"
+      },
+      {
+        "rank": 7,
+        "name": "Brandon Nimmo",
+        "team": "NYM",
+        "value": "8"
+      },
+      {
+        "rank": 7,
+        "name": "Amed Rosario",
+        "team": "NYM",
+        "value": "8"
+      },
+      {
+        "rank": 7,
+        "name": "Dee Strange-Gordon",
+        "team": "SEA",
+        "value": "8"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Taylor",
+        "team": "LAD",
+        "value": "8"
+      }
+    ]
+  },
+  {
+    "label": "Walks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Bryce Harper",
+        "team": "WSH",
+        "value": "130"
+      },
+      {
+        "rank": 2,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": "122"
+      },
+      {
+        "rank": 3,
+        "name": "Carlos Santana",
+        "team": "PHI",
+        "value": "110"
+      },
+      {
+        "rank": 4,
+        "name": "Joey Votto",
+        "team": "CIN",
+        "value": "108"
+      },
+      {
+        "rank": 5,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "106"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Carpenter",
+        "team": "STL",
+        "value": "102"
+      },
+      {
+        "rank": 7,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "96"
+      },
+      {
+        "rank": 8,
+        "name": "César Hernández",
+        "team": "PHI",
+        "value": "95"
+      },
+      {
+        "rank": 8,
+        "name": "Andrew McCutchen",
+        "team": "2TM",
+        "value": "95"
+      },
+      {
+        "rank": 10,
+        "name": "Shin-Soo Choo",
+        "team": "TEX",
+        "value": "92"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Yoán Moncada",
+        "team": "CWS",
+        "value": "217"
+      },
+      {
+        "rank": 2,
+        "name": "Giancarlo Stanton",
+        "team": "NYY",
+        "value": "211"
+      },
+      {
+        "rank": 3,
+        "name": "Joey Gallo",
+        "team": "TEX",
+        "value": "207"
+      },
+      {
+        "rank": 4,
+        "name": "Chris Davis",
+        "team": "BAL",
+        "value": "192"
+      },
+      {
+        "rank": 5,
+        "name": "Chris Taylor",
+        "team": "LAD",
+        "value": "178"
+      },
+      {
+        "rank": 6,
+        "name": "Justin Upton",
+        "team": "LAA",
+        "value": "176"
+      },
+      {
+        "rank": 7,
+        "name": "Khris Davis",
+        "team": "OAK",
+        "value": "175"
+      },
+      {
+        "rank": 8,
+        "name": "Paul Goldschmidt",
+        "team": "AZ",
+        "value": "173"
+      },
+      {
+        "rank": 9,
+        "name": "Bryce Harper",
+        "team": "WSH",
+        "value": "169"
+      },
+      {
+        "rank": 10,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": "168"
+      }
+    ]
+  },
+  {
+    "label": "On-Base %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": ".460"
+      },
+      {
+        "rank": 2,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": ".438"
+      },
+      {
+        "rank": 3,
+        "name": "Joey Votto",
+        "team": "CIN",
+        "value": ".417"
+      },
+      {
+        "rank": 4,
+        "name": "Brandon Nimmo",
+        "team": "NYM",
+        "value": ".404"
+      },
+      {
+        "rank": 5,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": ".402"
+      },
+      {
+        "rank": 6,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": ".402"
+      },
+      {
+        "rank": 7,
+        "name": "Lorenzo Cain",
+        "team": "MIL",
+        "value": ".395"
+      },
+      {
+        "rank": 8,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": ".394"
+      },
+      {
+        "rank": 9,
+        "name": "Bryce Harper",
+        "team": "WSH",
+        "value": ".393"
+      },
+      {
+        "rank": 10,
+        "name": "Paul Goldschmidt",
+        "team": "AZ",
+        "value": ".389"
+      }
+    ]
+  },
+  {
+    "label": "Slugging %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": ".640"
+      },
+      {
+        "rank": 2,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": ".629"
+      },
+      {
+        "rank": 3,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": ".628"
+      },
+      {
+        "rank": 4,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": ".598"
+      },
+      {
+        "rank": 5,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": ".567"
+      },
+      {
+        "rank": 6,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": ".561"
+      },
+      {
+        "rank": 7,
+        "name": "Javier Báez",
+        "team": "CHC",
+        "value": ".554"
+      },
+      {
+        "rank": 8,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": ".552"
+      },
+      {
+        "rank": 9,
+        "name": "Khris Davis",
+        "team": "OAK",
+        "value": ".549"
+      },
+      {
+        "rank": 10,
+        "name": "Jesús Aguilar",
+        "team": "MIL",
+        "value": ".539"
+      }
+    ]
+  },
+  {
+    "label": "OPS (On-Base + Slugging)",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": "1.088"
+      },
+      {
+        "rank": 2,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": "1.078"
+      },
+      {
+        "rank": 3,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "1.031"
+      },
+      {
+        "rank": 4,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": "1.000"
+      },
+      {
+        "rank": 5,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": ".939"
+      },
+      {
+        "rank": 6,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": ".935"
+      },
+      {
+        "rank": 7,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": ".926"
+      },
+      {
+        "rank": 8,
+        "name": "Paul Goldschmidt",
+        "team": "AZ",
+        "value": ".922"
+      },
+      {
+        "rank": 9,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": ".915"
+      },
+      {
+        "rank": 10,
+        "name": "Anthony Rendon",
+        "team": "WSH",
+        "value": ".909"
+      }
+    ]
+  },
+  {
+    "label": "Total Bases",
+    "players": [
+      {
+        "rank": 1,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "358"
+      },
+      {
+        "rank": 2,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "343"
+      },
+      {
+        "rank": 2,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": "343"
+      },
+      {
+        "rank": 4,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "340"
+      },
+      {
+        "rank": 5,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": "339"
+      },
+      {
+        "rank": 6,
+        "name": "Javier Báez",
+        "team": "CHC",
+        "value": "336"
+      },
+      {
+        "rank": 7,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": "333"
+      },
+      {
+        "rank": 8,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": "331"
+      },
+      {
+        "rank": 9,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "319"
+      },
+      {
+        "rank": 10,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "316"
+      },
+      {
+        "rank": 10,
+        "name": "Khris Davis",
+        "team": "OAK",
+        "value": "316"
+      },
+      {
+        "rank": 10,
+        "name": "Paul Goldschmidt",
+        "team": "AZ",
+        "value": "316"
+      }
+    ]
+  },
+  {
+    "label": "Extra-Base Hits",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Trevor Story",
+        "team": "COL",
+        "value": "85"
+      },
+      {
+        "rank": 2,
+        "name": "Mookie Betts",
+        "team": "BOS",
+        "value": "84"
+      },
+      {
+        "rank": 3,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "83"
+      },
+      {
+        "rank": 3,
+        "name": "Javier Báez",
+        "team": "CHC",
+        "value": "83"
+      },
+      {
+        "rank": 5,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "82"
+      },
+      {
+        "rank": 5,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "82"
+      },
+      {
+        "rank": 7,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "81"
+      },
+      {
+        "rank": 8,
+        "name": "Nolan Arenado",
+        "team": "COL",
+        "value": "78"
+      },
+      {
+        "rank": 8,
+        "name": "Matt Carpenter",
+        "team": "STL",
+        "value": "78"
+      },
+      {
+        "rank": 10,
+        "name": "Khris Davis",
+        "team": "OAK",
+        "value": "77"
+      },
+      {
+        "rank": 10,
+        "name": "Christian Yelich",
+        "team": "MIL",
+        "value": "77"
+      }
+    ]
+  },
+  {
+    "label": "Hit By Pitch",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Brandon Nimmo",
+        "team": "NYM",
+        "value": "22"
+      },
+      {
+        "rank": 2,
+        "name": "Derek Dietrich",
+        "team": "MIA",
+        "value": "21"
+      },
+      {
+        "rank": 2,
+        "name": "Carlos Gómez",
+        "team": "TB",
+        "value": "21"
+      },
+      {
+        "rank": 4,
+        "name": "Anthony Rizzo",
+        "team": "CHC",
+        "value": "20"
+      },
+      {
+        "rank": 5,
+        "name": "Robinson Chirinos",
+        "team": "TEX",
+        "value": "19"
+      },
+      {
+        "rank": 6,
+        "name": "Jon Jay",
+        "team": "2TM",
+        "value": "18"
+      },
+      {
+        "rank": 7,
+        "name": "Kris Bryant",
+        "team": "CHC",
+        "value": "17"
+      },
+      {
+        "rank": 7,
+        "name": "C.J. Cron",
+        "team": "TB",
+        "value": "17"
+      },
+      {
+        "rank": 9,
+        "name": "Brian Anderson",
+        "team": "MIA",
+        "value": "16"
+      },
+      {
+        "rank": 10,
+        "name": "Francisco Cervelli",
+        "team": "PIT",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "label": "Intentional Walks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": "25"
+      },
+      {
+        "rank": 2,
+        "name": "Kyle Schwarber",
+        "team": "CHC",
+        "value": "20"
+      },
+      {
+        "rank": 3,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "18"
+      },
+      {
+        "rank": 4,
+        "name": "Matt Carpenter",
+        "team": "STL",
+        "value": "17"
+      },
+      {
+        "rank": 5,
+        "name": "Bryce Harper",
+        "team": "WSH",
+        "value": "16"
+      },
+      {
+        "rank": 6,
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "15"
+      },
+      {
+        "rank": 6,
+        "name": "Anthony Rizzo",
+        "team": "CHC",
+        "value": "15"
+      },
+      {
+        "rank": 6,
+        "name": "Dansby Swanson",
+        "team": "ATL",
+        "value": "15"
+      },
+      {
+        "rank": 9,
+        "name": "Brandon Crawford",
+        "team": "SF",
+        "value": "13"
+      },
+      {
+        "rank": 10,
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": "12"
+      }
+    ]
+  },
+  {
+    "label": "Caught Stealing",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Ender Inciarte",
+        "team": "ATL",
+        "value": "14"
+      },
+      {
+        "rank": 1,
+        "name": "Starling Marte",
+        "team": "PIT",
+        "value": "14"
+      },
+      {
+        "rank": 3,
+        "name": "Rougned Odor",
+        "team": "TEX",
+        "value": "12"
+      },
+      {
+        "rank": 3,
+        "name": "Mallex Smith",
+        "team": "TB",
+        "value": "12"
+      },
+      {
+        "rank": 3,
+        "name": "Dee Strange-Gordon",
+        "team": "SEA",
+        "value": "12"
+      },
+      {
+        "rank": 6,
+        "name": "Amed Rosario",
+        "team": "NYM",
+        "value": "11"
+      },
+      {
+        "rank": 6,
+        "name": "Jean Segura",
+        "team": "SEA",
+        "value": "11"
+      },
+      {
+        "rank": 8,
+        "name": "Billy Hamilton",
+        "team": "CIN",
+        "value": "10"
+      },
+      {
+        "rank": 8,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "10"
+      },
+      {
+        "rank": 8,
+        "name": "Manuel Margot",
+        "team": "SD",
+        "value": "10"
+      },
+      {
+        "rank": 8,
+        "name": "Whit Merrifield",
+        "team": "KC",
+        "value": "10"
+      }
+    ]
+  },
+  {
+    "label": "Grounded Into Double Plays",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "26"
+      },
+      {
+        "rank": 2,
+        "name": "Miguel Rojas",
+        "team": "MIA",
+        "value": "23"
+      },
+      {
+        "rank": 3,
+        "name": "Yuli Gurriel",
+        "team": "HOU",
+        "value": "22"
+      },
+      {
+        "rank": 4,
+        "name": "Ryon Healy",
+        "team": "SEA",
+        "value": "21"
+      },
+      {
+        "rank": 4,
+        "name": "Adam Jones",
+        "team": "BAL",
+        "value": "21"
+      },
+      {
+        "rank": 4,
+        "name": "Stephen Piscotty",
+        "team": "OAK",
+        "value": "21"
+      },
+      {
+        "rank": 4,
+        "name": "Yangervis Solarte",
+        "team": "TOR",
+        "value": "21"
+      },
+      {
+        "rank": 8,
+        "name": "Wilson Ramos",
+        "team": "2TM",
+        "value": "20"
+      },
+      {
+        "rank": 8,
+        "name": "Eugenio Suárez",
+        "team": "CIN",
+        "value": "20"
+      },
+      {
+        "rank": 10,
+        "name": "Jesús Aguilar",
+        "team": "MIL",
+        "value": "19"
+      },
+      {
+        "rank": 10,
+        "name": "J.D. Martinez",
+        "team": "BOS",
+        "value": "19"
+      },
+      {
+        "rank": 10,
+        "name": "Victor Martinez",
+        "team": "DET",
+        "value": "19"
+      },
+      {
+        "rank": 10,
+        "name": "Salvador Perez",
+        "team": "KC",
+        "value": "19"
+      }
+    ]
+  },
+  {
+    "label": "Sacrifice Flies",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Carlos Correa",
+        "team": "HOU",
+        "value": "11"
+      },
+      {
+        "rank": 2,
+        "name": "Jesús Aguilar",
+        "team": "MIL",
+        "value": "10"
+      },
+      {
+        "rank": 2,
+        "name": "Giancarlo Stanton",
+        "team": "NYY",
+        "value": "10"
+      },
+      {
+        "rank": 2,
+        "name": "Joey Wendle",
+        "team": "TB",
+        "value": "10"
+      },
+      {
+        "rank": 5,
+        "name": "Wilmer Flores",
+        "team": "NYM",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Didi Gregorius",
+        "team": "NYY",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Bryce Harper",
+        "team": "WSH",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Nick Markakis",
+        "team": "ATL",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Anthony Rizzo",
+        "team": "CHC",
+        "value": "9"
+      },
+      {
+        "rank": 10,
+        "name": "Adrian Beltré",
+        "team": "TEX",
+        "value": "8"
+      },
+      {
+        "rank": 10,
+        "name": "Eduardo Escobar",
+        "team": "2TM",
+        "value": "8"
+      },
+      {
+        "rank": 10,
+        "name": "Todd Frazier",
+        "team": "NYM",
+        "value": "8"
+      },
+      {
+        "rank": 10,
+        "name": "Evan Gattis",
+        "team": "HOU",
+        "value": "8"
+      },
+      {
+        "rank": 10,
+        "name": "Anthony Rendon",
+        "team": "WSH",
+        "value": "8"
+      },
+      {
+        "rank": 10,
+        "name": "Carlos Santana",
+        "team": "PHI",
+        "value": "8"
+      }
+    ]
+  },
+  {
+    "label": "Plate Appearances",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Francisco Lindor",
+        "team": "CLE",
+        "value": "745"
+      },
+      {
+        "rank": 2,
+        "name": "Trea Turner",
+        "team": "WSH",
+        "value": "740"
+      },
+      {
+        "rank": 3,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "709"
+      },
+      {
+        "rank": 4,
+        "name": "César Hernández",
+        "team": "PHI",
+        "value": "708"
+      },
+      {
+        "rank": 5,
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": "707"
+      },
+      {
+        "rank": 5,
+        "name": "Whit Merrifield",
+        "team": "KC",
+        "value": "707"
+      },
+      {
+        "rank": 7,
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "705"
+      },
+      {
+        "rank": 7,
+        "name": "Nick Markakis",
+        "team": "ATL",
+        "value": "705"
+      },
+      {
+        "rank": 7,
+        "name": "Giancarlo Stanton",
+        "team": "NYY",
+        "value": "705"
+      },
+      {
+        "rank": 10,
+        "name": "Marcus Semien",
+        "team": "OAK",
+        "value": "703"
+      }
+    ]
+  },
+  {
+    "label": "Games Played",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Cody Bellinger",
+        "team": "LAD",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Freddy Galvis",
+        "team": "SD",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Manny Machado",
+        "team": "2TM",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Nick Markakis",
+        "team": "ATL",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Matt Olson",
+        "team": "OAK",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Trea Turner",
+        "team": "WSH",
+        "value": "162"
+      },
+      {
+        "rank": 8,
+        "name": "César Hernández",
+        "team": "PHI",
+        "value": "161"
+      },
+      {
+        "rank": 8,
+        "name": "Carlos Santana",
+        "team": "PHI",
+        "value": "161"
+      },
+      {
+        "rank": 10,
+        "name": "Javier Báez",
+        "team": "CHC",
+        "value": "160"
+      },
+      {
+        "rank": 10,
+        "name": "Ian Desmond",
+        "team": "COL",
+        "value": "160"
+      }
+    ]
+  }
+]

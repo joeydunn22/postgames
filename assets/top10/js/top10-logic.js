@@ -259,7 +259,7 @@ function selectCategory(category) {
 
 function selectYear(year) {
     if (!canEditSetup()) return;
-    game.year = year;
+    game.year = year || null;
     onSelectionChanged();
 }
 

@@ -1,0 +1,1469 @@
+[
+  {
+    "label": "Home Runs",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "51"
+      },
+      {
+        "rank": 2,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": "40"
+      },
+      {
+        "rank": 3,
+        "name": "Mark McGwire",
+        "team": "OAK",
+        "value": "39"
+      },
+      {
+        "rank": 4,
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": "37"
+      },
+      {
+        "rank": 4,
+        "name": "Darryl Strawberry",
+        "team": "NYM",
+        "value": "37"
+      },
+      {
+        "rank": 6,
+        "name": "Fred McGriff",
+        "team": "TOR",
+        "value": "35"
+      },
+      {
+        "rank": 6,
+        "name": "Kevin Mitchell",
+        "team": "SF",
+        "value": "35"
+      },
+      {
+        "rank": 8,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "33"
+      },
+      {
+        "rank": 8,
+        "name": "Matt Williams",
+        "team": "SF",
+        "value": "33"
+      },
+      {
+        "rank": 10,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "32"
+      },
+      {
+        "rank": 10,
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": "32"
+      }
+    ]
+  },
+  {
+    "label": "Batting Average",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": ".330"
+      },
+      {
+        "rank": 2,
+        "name": "George Brett",
+        "team": "KC",
+        "value": ".329"
+      },
+      {
+        "rank": 3,
+        "name": "Dave Magadan",
+        "team": "NYM",
+        "value": ".328"
+      },
+      {
+        "rank": 4,
+        "name": "Lenny Dykstra",
+        "team": "PHI",
+        "value": ".325"
+      },
+      {
+        "rank": 5,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": ".325"
+      },
+      {
+        "rank": 6,
+        "name": "Willie McGee",
+        "team": "2TM",
+        "value": ".324"
+      },
+      {
+        "rank": 7,
+        "name": "Rafael Palmeiro",
+        "team": "TEX",
+        "value": ".319"
+      },
+      {
+        "rank": 8,
+        "name": "Andre Dawson",
+        "team": "CHC",
+        "value": ".310"
+      },
+      {
+        "rank": 9,
+        "name": "Bip Roberts",
+        "team": "SD",
+        "value": ".309"
+      },
+      {
+        "rank": 10,
+        "name": "Mark Grace",
+        "team": "CHC",
+        "value": ".309"
+      }
+    ]
+  },
+  {
+    "label": "Runs Batted In",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "132"
+      },
+      {
+        "rank": 2,
+        "name": "Matt Williams",
+        "team": "SF",
+        "value": "122"
+      },
+      {
+        "rank": 3,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "120"
+      },
+      {
+        "rank": 4,
+        "name": "Kelly Gruber",
+        "team": "TOR",
+        "value": "118"
+      },
+      {
+        "rank": 5,
+        "name": "Joe Carter",
+        "team": "SD",
+        "value": "115"
+      },
+      {
+        "rank": 6,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "114"
+      },
+      {
+        "rank": 7,
+        "name": "Mark McGwire",
+        "team": "OAK",
+        "value": "108"
+      },
+      {
+        "rank": 7,
+        "name": "Darryl Strawberry",
+        "team": "NYM",
+        "value": "108"
+      },
+      {
+        "rank": 9,
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": "101"
+      },
+      {
+        "rank": 10,
+        "name": "Andre Dawson",
+        "team": "CHC",
+        "value": "100"
+      },
+      {
+        "rank": 10,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": "100"
+      }
+    ]
+  },
+  {
+    "label": "Hits",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Willie McGee",
+        "team": "2TM",
+        "value": "199"
+      },
+      {
+        "rank": 2,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "192"
+      },
+      {
+        "rank": 2,
+        "name": "Lenny Dykstra",
+        "team": "PHI",
+        "value": "192"
+      },
+      {
+        "rank": 4,
+        "name": "Rafael Palmeiro",
+        "team": "TEX",
+        "value": "191"
+      },
+      {
+        "rank": 5,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": "188"
+      },
+      {
+        "rank": 6,
+        "name": "Wade Boggs",
+        "team": "BOS",
+        "value": "187"
+      },
+      {
+        "rank": 7,
+        "name": "Barry Larkin",
+        "team": "CIN",
+        "value": "185"
+      },
+      {
+        "rank": 7,
+        "name": "Tim Wallach",
+        "team": "MON",
+        "value": "185"
+      },
+      {
+        "rank": 9,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": "184"
+      },
+      {
+        "rank": 10,
+        "name": "Roberto Kelly",
+        "team": "NYY",
+        "value": "183"
+      }
+    ]
+  },
+  {
+    "label": "Runs Scored",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "119"
+      },
+      {
+        "rank": 2,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": "116"
+      },
+      {
+        "rank": 3,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "112"
+      },
+      {
+        "rank": 4,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "108"
+      },
+      {
+        "rank": 5,
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": "107"
+      },
+      {
+        "rank": 6,
+        "name": "Lenny Dykstra",
+        "team": "PHI",
+        "value": "106"
+      },
+      {
+        "rank": 7,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "104"
+      },
+      {
+        "rank": 7,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "104"
+      },
+      {
+        "rank": 7,
+        "name": "Bip Roberts",
+        "team": "SD",
+        "value": "104"
+      },
+      {
+        "rank": 10,
+        "name": "Harold Reynolds",
+        "team": "SEA",
+        "value": "100"
+      }
+    ]
+  },
+  {
+    "label": "Stolen Bases",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Vince Coleman",
+        "team": "STL",
+        "value": "77"
+      },
+      {
+        "rank": 2,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "65"
+      },
+      {
+        "rank": 3,
+        "name": "Eric Yelding",
+        "team": "HOU",
+        "value": "64"
+      },
+      {
+        "rank": 4,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "52"
+      },
+      {
+        "rank": 5,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "51"
+      },
+      {
+        "rank": 6,
+        "name": "Otis Nixon",
+        "team": "MON",
+        "value": "50"
+      },
+      {
+        "rank": 7,
+        "name": "Tim Raines Sr.",
+        "team": "MON",
+        "value": "49"
+      },
+      {
+        "rank": 8,
+        "name": "Bip Roberts",
+        "team": "SD",
+        "value": "46"
+      },
+      {
+        "rank": 9,
+        "name": "Steve Sax",
+        "team": "NYY",
+        "value": "43"
+      },
+      {
+        "rank": 10,
+        "name": "Delino DeShields",
+        "team": "MON",
+        "value": "42"
+      },
+      {
+        "rank": 10,
+        "name": "Roberto Kelly",
+        "team": "NYY",
+        "value": "42"
+      }
+    ]
+  },
+  {
+    "label": "Doubles",
+    "players": [
+      {
+        "rank": 1,
+        "name": "George Brett",
+        "team": "KC",
+        "value": "45"
+      },
+      {
+        "rank": 1,
+        "name": "Jody Reed",
+        "team": "BOS",
+        "value": "45"
+      },
+      {
+        "rank": 3,
+        "name": "Wade Boggs",
+        "team": "BOS",
+        "value": "44"
+      },
+      {
+        "rank": 3,
+        "name": "Ivan Calderon",
+        "team": "CWS",
+        "value": "44"
+      },
+      {
+        "rank": 5,
+        "name": "Brian Harper",
+        "team": "MIN",
+        "value": "42"
+      },
+      {
+        "rank": 6,
+        "name": "Gregg Jefferies",
+        "team": "NYM",
+        "value": "40"
+      },
+      {
+        "rank": 6,
+        "name": "Kirby Puckett",
+        "team": "MIN",
+        "value": "40"
+      },
+      {
+        "rank": 8,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "39"
+      },
+      {
+        "rank": 9,
+        "name": "Chris Sabo",
+        "team": "CIN",
+        "value": "38"
+      },
+      {
+        "rank": 10,
+        "name": "Howard Johnson",
+        "team": "NYM",
+        "value": "37"
+      },
+      {
+        "rank": 10,
+        "name": "Ruben Sierra",
+        "team": "TEX",
+        "value": "37"
+      },
+      {
+        "rank": 10,
+        "name": "Alan Trammell",
+        "team": "DET",
+        "value": "37"
+      },
+      {
+        "rank": 10,
+        "name": "Tim Wallach",
+        "team": "MON",
+        "value": "37"
+      }
+    ]
+  },
+  {
+    "label": "Triples",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Tony Fernández",
+        "team": "TOR",
+        "value": "17"
+      },
+      {
+        "rank": 2,
+        "name": "Mariano Duncan",
+        "team": "CIN",
+        "value": "11"
+      },
+      {
+        "rank": 3,
+        "name": "Tony Gwynn",
+        "team": "SD",
+        "value": "10"
+      },
+      {
+        "rank": 3,
+        "name": "Sammy Sosa",
+        "team": "CWS",
+        "value": "10"
+      },
+      {
+        "rank": 5,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Vince Coleman",
+        "team": "STL",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Lance Johnson",
+        "team": "CWS",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Nelson Liriano",
+        "team": "2TM",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Luis Polonia",
+        "team": "2TM",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Lonnie Smith",
+        "team": "ATL",
+        "value": "9"
+      }
+    ]
+  },
+  {
+    "label": "Walks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mark McGwire",
+        "team": "OAK",
+        "value": "110"
+      },
+      {
+        "rank": 2,
+        "name": "Mickey Tettleton",
+        "team": "BAL",
+        "value": "106"
+      },
+      {
+        "rank": 3,
+        "name": "Jack Clark",
+        "team": "SD",
+        "value": "104"
+      },
+      {
+        "rank": 4,
+        "name": "Tony Phillips",
+        "team": "DET",
+        "value": "99"
+      },
+      {
+        "rank": 5,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "97"
+      },
+      {
+        "rank": 6,
+        "name": "Fred McGriff",
+        "team": "TOR",
+        "value": "94"
+      },
+      {
+        "rank": 7,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "93"
+      },
+      {
+        "rank": 8,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "90"
+      },
+      {
+        "rank": 8,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "90"
+      },
+      {
+        "rank": 10,
+        "name": "Lenny Dykstra",
+        "team": "PHI",
+        "value": "89"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "182"
+      },
+      {
+        "rank": 2,
+        "name": "Andres Galarraga",
+        "team": "MON",
+        "value": "169"
+      },
+      {
+        "rank": 3,
+        "name": "Mickey Tettleton",
+        "team": "BAL",
+        "value": "160"
+      },
+      {
+        "rank": 4,
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": "158"
+      },
+      {
+        "rank": 5,
+        "name": "Jesse Barfield",
+        "team": "NYY",
+        "value": "150"
+      },
+      {
+        "rank": 5,
+        "name": "Sammy Sosa",
+        "team": "CWS",
+        "value": "150"
+      },
+      {
+        "rank": 7,
+        "name": "Roberto Kelly",
+        "team": "NYY",
+        "value": "148"
+      },
+      {
+        "rank": 8,
+        "name": "Rob Deer",
+        "team": "MIL",
+        "value": "147"
+      },
+      {
+        "rank": 9,
+        "name": "Pete Incaviglia",
+        "team": "TEX",
+        "value": "146"
+      },
+      {
+        "rank": 10,
+        "name": "Matt Williams",
+        "team": "SF",
+        "value": "138"
+      }
+    ]
+  },
+  {
+    "label": "On-Base %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": ".439"
+      },
+      {
+        "rank": 2,
+        "name": "Lenny Dykstra",
+        "team": "PHI",
+        "value": ".418"
+      },
+      {
+        "rank": 3,
+        "name": "Dave Magadan",
+        "team": "NYM",
+        "value": ".417"
+      },
+      {
+        "rank": 4,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": ".414"
+      },
+      {
+        "rank": 5,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": ".406"
+      },
+      {
+        "rank": 6,
+        "name": "Fred McGriff",
+        "team": "TOR",
+        "value": ".400"
+      },
+      {
+        "rank": 7,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": ".397"
+      },
+      {
+        "rank": 8,
+        "name": "Edgar Martinez",
+        "team": "SEA",
+        "value": ".397"
+      },
+      {
+        "rank": 9,
+        "name": "Kal Daniels",
+        "team": "LA",
+        "value": ".389"
+      },
+      {
+        "rank": 10,
+        "name": "George Brett",
+        "team": "KC",
+        "value": ".387"
+      }
+    ]
+  },
+  {
+    "label": "Slugging %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": ".592"
+      },
+      {
+        "rank": 2,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": ".577"
+      },
+      {
+        "rank": 3,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": ".565"
+      },
+      {
+        "rank": 4,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": ".559"
+      },
+      {
+        "rank": 5,
+        "name": "Kevin Mitchell",
+        "team": "SF",
+        "value": ".544"
+      },
+      {
+        "rank": 6,
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": ".543"
+      },
+      {
+        "rank": 7,
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": ".539"
+      },
+      {
+        "rank": 8,
+        "name": "David Justice",
+        "team": "ATL",
+        "value": ".535"
+      },
+      {
+        "rank": 9,
+        "name": "Andre Dawson",
+        "team": "CHC",
+        "value": ".535"
+      },
+      {
+        "rank": 10,
+        "name": "Kal Daniels",
+        "team": "LA",
+        "value": ".531"
+      }
+    ]
+  },
+  {
+    "label": "OPS (On-Base + Slugging)",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "1.016"
+      },
+      {
+        "rank": 2,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": ".971"
+      },
+      {
+        "rank": 3,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": ".969"
+      },
+      {
+        "rank": 4,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": ".934"
+      },
+      {
+        "rank": 5,
+        "name": "Fred McGriff",
+        "team": "TOR",
+        "value": ".930"
+      },
+      {
+        "rank": 6,
+        "name": "Kal Daniels",
+        "team": "LA",
+        "value": ".920"
+      },
+      {
+        "rank": 7,
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": ".914"
+      },
+      {
+        "rank": 8,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": ".913"
+      },
+      {
+        "rank": 9,
+        "name": "David Justice",
+        "team": "ATL",
+        "value": ".908"
+      },
+      {
+        "rank": 10,
+        "name": "Kevin Mitchell",
+        "team": "SF",
+        "value": ".904"
+      }
+    ]
+  },
+  {
+    "label": "Total Bases",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": "344"
+      },
+      {
+        "rank": 2,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "339"
+      },
+      {
+        "rank": 3,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "324"
+      },
+      {
+        "rank": 4,
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": "310"
+      },
+      {
+        "rank": 5,
+        "name": "Kelly Gruber",
+        "team": "TOR",
+        "value": "303"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Williams",
+        "team": "SF",
+        "value": "301"
+      },
+      {
+        "rank": 7,
+        "name": "Fred McGriff",
+        "team": "TOR",
+        "value": "295"
+      },
+      {
+        "rank": 7,
+        "name": "Tim Wallach",
+        "team": "MON",
+        "value": "295"
+      },
+      {
+        "rank": 9,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "293"
+      },
+      {
+        "rank": 10,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": "290"
+      }
+    ]
+  },
+  {
+    "label": "Extra-Base Hits",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "78"
+      },
+      {
+        "rank": 2,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "77"
+      },
+      {
+        "rank": 3,
+        "name": "Kelly Gruber",
+        "team": "TOR",
+        "value": "73"
+      },
+      {
+        "rank": 3,
+        "name": "Ryne Sandberg",
+        "team": "CHC",
+        "value": "73"
+      },
+      {
+        "rank": 5,
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": "69"
+      },
+      {
+        "rank": 6,
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "68"
+      },
+      {
+        "rank": 7,
+        "name": "George Brett",
+        "team": "KC",
+        "value": "66"
+      },
+      {
+        "rank": 8,
+        "name": "Chris Sabo",
+        "team": "CIN",
+        "value": "65"
+      },
+      {
+        "rank": 9,
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "64"
+      },
+      {
+        "rank": 10,
+        "name": "Howard Johnson",
+        "team": "NYM",
+        "value": "63"
+      },
+      {
+        "rank": 10,
+        "name": "Tim Wallach",
+        "team": "MON",
+        "value": "63"
+      }
+    ]
+  },
+  {
+    "label": "Intentional Walks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Andre Dawson",
+        "team": "CHC",
+        "value": "21"
+      },
+      {
+        "rank": 1,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": "21"
+      },
+      {
+        "rank": 3,
+        "name": "Tony Gwynn",
+        "team": "SD",
+        "value": "20"
+      },
+      {
+        "rank": 4,
+        "name": "Wade Boggs",
+        "team": "BOS",
+        "value": "19"
+      },
+      {
+        "rank": 4,
+        "name": "José Lind",
+        "team": "PIT",
+        "value": "19"
+      },
+      {
+        "rank": 6,
+        "name": "Joe Carter",
+        "team": "SD",
+        "value": "18"
+      },
+      {
+        "rank": 6,
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "18"
+      },
+      {
+        "rank": 8,
+        "name": "Glenn Davis",
+        "team": "HOU",
+        "value": "17"
+      },
+      {
+        "rank": 9,
+        "name": "Von Hayes",
+        "team": "PHI",
+        "value": "16"
+      },
+      {
+        "rank": 9,
+        "name": "John Kruk",
+        "team": "PHI",
+        "value": "16"
+      }
+    ]
+  },
+  {
+    "label": "Caught Stealing",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Eric Yelding",
+        "team": "HOU",
+        "value": "25"
+      },
+      {
+        "rank": 2,
+        "name": "Delino DeShields",
+        "team": "MON",
+        "value": "22"
+      },
+      {
+        "rank": 2,
+        "name": "Lance Johnson",
+        "team": "CWS",
+        "value": "22"
+      },
+      {
+        "rank": 4,
+        "name": "Juan Samuel",
+        "team": "LA",
+        "value": "20"
+      },
+      {
+        "rank": 5,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "19"
+      },
+      {
+        "rank": 6,
+        "name": "Vince Coleman",
+        "team": "STL",
+        "value": "17"
+      },
+      {
+        "rank": 6,
+        "name": "Ozzie Guillen",
+        "team": "CWS",
+        "value": "17"
+      },
+      {
+        "rank": 6,
+        "name": "Roberto Kelly",
+        "team": "NYY",
+        "value": "17"
+      },
+      {
+        "rank": 9,
+        "name": "Ivan Calderon",
+        "team": "CWS",
+        "value": "16"
+      },
+      {
+        "rank": 9,
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": "16"
+      },
+      {
+        "rank": 9,
+        "name": "Tim Raines Sr.",
+        "team": "MON",
+        "value": "16"
+      },
+      {
+        "rank": 9,
+        "name": "Harold Reynolds",
+        "team": "SEA",
+        "value": "16"
+      },
+      {
+        "rank": 9,
+        "name": "Sammy Sosa",
+        "team": "CWS",
+        "value": "16"
+      }
+    ]
+  },
+  {
+    "label": "Grounded Into Double Plays",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Ivan Calderon",
+        "team": "CWS",
+        "value": "26"
+      },
+      {
+        "rank": 2,
+        "name": "Rafael Palmeiro",
+        "team": "TEX",
+        "value": "24"
+      },
+      {
+        "rank": 3,
+        "name": "Tony Peña Sr.",
+        "team": "BOS",
+        "value": "23"
+      },
+      {
+        "rank": 4,
+        "name": "Gary Gaetti",
+        "team": "MIN",
+        "value": "22"
+      },
+      {
+        "rank": 4,
+        "name": "Dale Murphy",
+        "team": "2TM",
+        "value": "22"
+      },
+      {
+        "rank": 6,
+        "name": "Brian Harper",
+        "team": "MIN",
+        "value": "20"
+      },
+      {
+        "rank": 6,
+        "name": "Brook Jacoby",
+        "team": "CLE",
+        "value": "20"
+      },
+      {
+        "rank": 6,
+        "name": "Jeffrey Leonard",
+        "team": "SEA",
+        "value": "20"
+      },
+      {
+        "rank": 6,
+        "name": "José Lind",
+        "team": "PIT",
+        "value": "20"
+      },
+      {
+        "rank": 10,
+        "name": "Mike Greenwell",
+        "team": "BOS",
+        "value": "19"
+      },
+      {
+        "rank": 10,
+        "name": "Eddie Murray",
+        "team": "LA",
+        "value": "19"
+      },
+      {
+        "rank": 10,
+        "name": "Carlos Quintana",
+        "team": "BOS",
+        "value": "19"
+      }
+    ]
+  },
+  {
+    "label": "Sacrifice Flies",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "15"
+      },
+      {
+        "rank": 2,
+        "name": "Dave Parker",
+        "team": "MIL",
+        "value": "14"
+      },
+      {
+        "rank": 3,
+        "name": "Will Clark",
+        "team": "SF",
+        "value": "13"
+      },
+      {
+        "rank": 3,
+        "name": "Kelly Gruber",
+        "team": "TOR",
+        "value": "13"
+      },
+      {
+        "rank": 5,
+        "name": "George Bell",
+        "team": "TOR",
+        "value": "11"
+      },
+      {
+        "rank": 5,
+        "name": "Hubie Brooks",
+        "team": "LA",
+        "value": "11"
+      },
+      {
+        "rank": 5,
+        "name": "Jerry Browne",
+        "team": "CLE",
+        "value": "11"
+      },
+      {
+        "rank": 5,
+        "name": "Pedro Guerrero",
+        "team": "STL",
+        "value": "11"
+      },
+      {
+        "rank": 9,
+        "name": "Von Hayes",
+        "team": "PHI",
+        "value": "10"
+      },
+      {
+        "rank": 9,
+        "name": "Dave Magadan",
+        "team": "NYM",
+        "value": "10"
+      },
+      {
+        "rank": 9,
+        "name": "Ozzie Smith",
+        "team": "STL",
+        "value": "10"
+      }
+    ]
+  },
+  {
+    "label": "Plate Appearances",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Harold Reynolds",
+        "team": "SEA",
+        "value": "737"
+      },
+      {
+        "rank": 2,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "732"
+      },
+      {
+        "rank": 3,
+        "name": "Tony Fernández",
+        "team": "TOR",
+        "value": "721"
+      },
+      {
+        "rank": 4,
+        "name": "Wade Boggs",
+        "team": "BOS",
+        "value": "713"
+      },
+      {
+        "rank": 5,
+        "name": "Joe Carter",
+        "team": "SD",
+        "value": "697"
+      },
+      {
+        "rank": 5,
+        "name": "Kevin Seitzer",
+        "team": "KC",
+        "value": "697"
+      },
+      {
+        "rank": 7,
+        "name": "Jay Bell",
+        "team": "PIT",
+        "value": "696"
+      },
+      {
+        "rank": 8,
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "695"
+      },
+      {
+        "rank": 9,
+        "name": "Lenny Dykstra",
+        "team": "PHI",
+        "value": "691"
+      },
+      {
+        "rank": 9,
+        "name": "Jody Reed",
+        "team": "BOS",
+        "value": "691"
+      }
+    ]
+  },
+  {
+    "label": "Games Played",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Joe Carter",
+        "team": "SD",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "name": "Roberto Kelly",
+        "team": "NYY",
+        "value": "162"
+      },
+      {
+        "rank": 3,
+        "name": "Tony Fernández",
+        "team": "TOR",
+        "value": "161"
+      },
+      {
+        "rank": 3,
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "161"
+      },
+      {
+        "rank": 3,
+        "name": "Tim Wallach",
+        "team": "MON",
+        "value": "161"
+      },
+      {
+        "rank": 6,
+        "name": "Bobby Bonilla",
+        "team": "PIT",
+        "value": "160"
+      },
+      {
+        "rank": 6,
+        "name": "Brett Butler",
+        "team": "SF",
+        "value": "160"
+      },
+      {
+        "rank": 6,
+        "name": "Ozzie Guillen",
+        "team": "CWS",
+        "value": "160"
+      },
+      {
+        "rank": 6,
+        "name": "Harold Reynolds",
+        "team": "SEA",
+        "value": "160"
+      },
+      {
+        "rank": 10,
+        "name": "Jay Bell",
+        "team": "PIT",
+        "value": "159"
+      },
+      {
+        "rank": 10,
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "159"
+      },
+      {
+        "rank": 10,
+        "name": "Mike Greenwell",
+        "team": "BOS",
+        "value": "159"
+      },
+      {
+        "rank": 10,
+        "name": "Ruben Sierra",
+        "team": "TEX",
+        "value": "159"
+      },
+      {
+        "rank": 10,
+        "name": "Matt Williams",
+        "team": "SF",
+        "value": "159"
+      }
+    ]
+  }
+]

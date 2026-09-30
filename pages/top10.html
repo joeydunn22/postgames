@@ -77,12 +77,10 @@
         </div>
 
         <div class="pick-row">
-          <span class="pick-label">Season</span>
-          <div id="yearChips" class="chips">
-            <button class="chip" type="button" data-year="2024">2024</button>
-            <button class="chip" type="button" data-year="2025">2025</button>
-            <button class="chip" type="button" data-year="2026">2026</button>
-          </div>
+          <label class="pick-label" for="yearSelect">Season</label>
+          <select id="yearSelect" class="select" disabled>
+            <option value="">Pick a season</option>
+          </select>
         </div>
 
         <div class="pick-row">
@@ -157,7 +155,7 @@
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 123</p>
+    <p class="version">Version 124</p>
   </main>
 
 

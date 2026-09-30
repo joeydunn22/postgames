@@ -8,6 +8,7 @@
 let _uiReady = false;
 let _lastSeenGuessAt = 0;      // so only brand-new guesses animate
 let _wasMyTurn = false;        // so the guess box gets focus when your turn starts
+let _yearOptionsKey = null;    // which season list the dropdown currently holds
 let _statOptionsKey = null;    // which stat list the dropdown currently holds
 let _playerPillsKey = null;    // which players the pills currently show
 
@@ -32,7 +33,7 @@ function escapeHTML(value) {
     })[ch]);
 }
 
-// Reference sites use "2TM"/"3TM" for players traded mid-season
+// The data uses "2TM"/"3TM" for players traded mid-season
 function formatTeam(team) {
     const multi = /^(\d)TM$/.exec(team);
     return multi ? `${multi[1]} teams` : team;
@@ -77,14 +78,23 @@ function renderPickers() {
         btn.disabled = locked || !hasData({ sport: game.sport, category: btn.dataset.category });
     }
 
-    for (const btn of ui.yearChips) {
-        const available = hasData({ sport: game.sport, category: game.category, year: btn.dataset.year });
-        btn.classList.toggle("active", String(game.year) === btn.dataset.year);
-        btn.disabled = locked || !available;
-        btn.title = available ? "" : "No data yet";
+    renderYearPicker(locked);
+    renderStatPicker(locked);
+}
+
+// Seasons with data for the picked sport (and category), newest first
+function renderYearPicker(locked) {
+    const years = availableYears({ sport: game.sport, category: game.category });
+    const optionsKey = years.join("|");
+
+    if (optionsKey !== _yearOptionsKey) {
+        _yearOptionsKey = optionsKey;
+        ui.yearSelect.innerHTML = `<option value="">Pick a season</option>` +
+            years.map(year => `<option>${year}</option>`).join("");
     }
 
-    renderStatPicker(locked);
+    ui.yearSelect.value = game.year ? String(game.year) : "";
+    ui.yearSelect.disabled = locked || years.length === 0;
 }
 
 function renderStatPicker(locked) {
@@ -452,7 +462,7 @@ function findElements() {
         sportChips: chips("sportChips"),
         categoryRow: byId("categoryRow"),
         categoryChips: chips("categoryChips"),
-        yearChips: chips("yearChips"),
+        yearSelect: byId("yearSelect"),
         statSelect: byId("statSelect"),
         statHint: byId("statHint"),
         playerPills: byId("playerPills"),
@@ -497,7 +507,7 @@ function wireEvents() {
 
     ui.sportChips.forEach(btn => btn.addEventListener("click", () => selectSport(btn.dataset.sport)));
     ui.categoryChips.forEach(btn => btn.addEventListener("click", () => selectCategory(btn.dataset.category)));
-    ui.yearChips.forEach(btn => btn.addEventListener("click", () => selectYear(btn.dataset.year)));
+    ui.yearSelect.addEventListener("change", () => selectYear(ui.yearSelect.value));
     ui.statSelect.addEventListener("change", () => selectStat(ui.statSelect.value));
 
     ui.startGameBtn.addEventListener("click", startGame);

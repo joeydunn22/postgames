@@ -3,6 +3,18 @@
   "available": [
     {
       "sport": "mlb",
+      "year": 2026,
+      "file": "mlb/2026/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2026,
+      "file": "mlb/2026/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
       "year": 2025,
       "file": "mlb/2025/batting.json",
       "category": "batting"
@@ -14,9 +26,559 @@
       "category": "pitching"
     },
     {
+      "sport": "mlb",
+      "year": 2024,
+      "file": "mlb/2024/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2024,
+      "file": "mlb/2024/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2023,
+      "file": "mlb/2023/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2023,
+      "file": "mlb/2023/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2022,
+      "file": "mlb/2022/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2022,
+      "file": "mlb/2022/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2021,
+      "file": "mlb/2021/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2021,
+      "file": "mlb/2021/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2020,
+      "file": "mlb/2020/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2020,
+      "file": "mlb/2020/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2019,
+      "file": "mlb/2019/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2019,
+      "file": "mlb/2019/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2018,
+      "file": "mlb/2018/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2018,
+      "file": "mlb/2018/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2017,
+      "file": "mlb/2017/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2017,
+      "file": "mlb/2017/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2016,
+      "file": "mlb/2016/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2016,
+      "file": "mlb/2016/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2015,
+      "file": "mlb/2015/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2015,
+      "file": "mlb/2015/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2014,
+      "file": "mlb/2014/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2014,
+      "file": "mlb/2014/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2013,
+      "file": "mlb/2013/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2013,
+      "file": "mlb/2013/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2012,
+      "file": "mlb/2012/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2012,
+      "file": "mlb/2012/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2011,
+      "file": "mlb/2011/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2011,
+      "file": "mlb/2011/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2010,
+      "file": "mlb/2010/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2010,
+      "file": "mlb/2010/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2009,
+      "file": "mlb/2009/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2009,
+      "file": "mlb/2009/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2008,
+      "file": "mlb/2008/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2008,
+      "file": "mlb/2008/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2007,
+      "file": "mlb/2007/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2007,
+      "file": "mlb/2007/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2006,
+      "file": "mlb/2006/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2006,
+      "file": "mlb/2006/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2005,
+      "file": "mlb/2005/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2005,
+      "file": "mlb/2005/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2004,
+      "file": "mlb/2004/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2004,
+      "file": "mlb/2004/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2003,
+      "file": "mlb/2003/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2003,
+      "file": "mlb/2003/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2002,
+      "file": "mlb/2002/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2002,
+      "file": "mlb/2002/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2001,
+      "file": "mlb/2001/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2001,
+      "file": "mlb/2001/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 2000,
+      "file": "mlb/2000/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 2000,
+      "file": "mlb/2000/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1999,
+      "file": "mlb/1999/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1999,
+      "file": "mlb/1999/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1998,
+      "file": "mlb/1998/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1998,
+      "file": "mlb/1998/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1997,
+      "file": "mlb/1997/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1997,
+      "file": "mlb/1997/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1996,
+      "file": "mlb/1996/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1996,
+      "file": "mlb/1996/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1995,
+      "file": "mlb/1995/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1995,
+      "file": "mlb/1995/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1994,
+      "file": "mlb/1994/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1994,
+      "file": "mlb/1994/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1993,
+      "file": "mlb/1993/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1993,
+      "file": "mlb/1993/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1992,
+      "file": "mlb/1992/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1992,
+      "file": "mlb/1992/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1991,
+      "file": "mlb/1991/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1991,
+      "file": "mlb/1991/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
+      "year": 1990,
+      "file": "mlb/1990/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": 1990,
+      "file": "mlb/1990/pitching.json",
+      "category": "pitching"
+    },
+    {
       "sport": "nfl",
       "year": 2025,
       "file": "nfl/2025/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2024,
+      "file": "nfl/2024/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2023,
+      "file": "nfl/2023/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2022,
+      "file": "nfl/2022/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2021,
+      "file": "nfl/2021/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2020,
+      "file": "nfl/2020/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2019,
+      "file": "nfl/2019/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2018,
+      "file": "nfl/2018/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2017,
+      "file": "nfl/2017/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2016,
+      "file": "nfl/2016/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2015,
+      "file": "nfl/2015/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2014,
+      "file": "nfl/2014/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2013,
+      "file": "nfl/2013/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2012,
+      "file": "nfl/2012/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2011,
+      "file": "nfl/2011/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2010,
+      "file": "nfl/2010/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2009,
+      "file": "nfl/2009/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2008,
+      "file": "nfl/2008/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2007,
+      "file": "nfl/2007/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2006,
+      "file": "nfl/2006/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2005,
+      "file": "nfl/2005/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2004,
+      "file": "nfl/2004/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2003,
+      "file": "nfl/2003/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2002,
+      "file": "nfl/2002/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2001,
+      "file": "nfl/2001/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 2000,
+      "file": "nfl/2000/stats.json"
+    },
+    {
+      "sport": "nfl",
+      "year": 1999,
+      "file": "nfl/1999/stats.json"
     }
   ]
 }

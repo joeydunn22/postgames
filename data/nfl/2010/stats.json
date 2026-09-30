@@ -1,0 +1,2197 @@
+[
+  {
+    "label": "Passing Yards",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "4710"
+      },
+      {
+        "rank": 2,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "4700"
+      },
+      {
+        "rank": 3,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "4620"
+      },
+      {
+        "rank": 4,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "4370"
+      },
+      {
+        "rank": 5,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "4002"
+      },
+      {
+        "rank": 6,
+        "name": "Carson Palmer",
+        "team": "CIN",
+        "value": "3970"
+      },
+      {
+        "rank": 7,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "3922"
+      },
+      {
+        "rank": 8,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "3900"
+      },
+      {
+        "rank": 9,
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "3705"
+      },
+      {
+        "rank": 10,
+        "name": "Kyle Orton",
+        "team": "DEN",
+        "value": "3652"
+      }
+    ]
+  },
+  {
+    "label": "Passing TDs",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "36"
+      },
+      {
+        "rank": 2,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "33"
+      },
+      {
+        "rank": 2,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "33"
+      },
+      {
+        "rank": 4,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "31"
+      },
+      {
+        "rank": 5,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "30"
+      },
+      {
+        "rank": 6,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "28"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "28"
+      },
+      {
+        "rank": 8,
+        "name": "Matt Cassel",
+        "team": "KC",
+        "value": "27"
+      },
+      {
+        "rank": 9,
+        "name": "Carson Palmer",
+        "team": "CIN",
+        "value": "26"
+      },
+      {
+        "rank": 10,
+        "name": "Joe Flacco",
+        "team": "BAL",
+        "value": "25"
+      },
+      {
+        "rank": 10,
+        "name": "Josh Freeman",
+        "team": "TB",
+        "value": "25"
+      }
+    ]
+  },
+  {
+    "label": "Interceptions Thrown",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "25"
+      },
+      {
+        "rank": 2,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "22"
+      },
+      {
+        "rank": 3,
+        "name": "Carson Palmer",
+        "team": "CIN",
+        "value": "20"
+      },
+      {
+        "rank": 4,
+        "name": "Brett Favre",
+        "team": "MIN",
+        "value": "19"
+      },
+      {
+        "rank": 5,
+        "name": "Chad Henne",
+        "team": "MIA",
+        "value": "18"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Hasselbeck",
+        "team": "SEA",
+        "value": "17"
+      },
+      {
+        "rank": 6,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "17"
+      },
+      {
+        "rank": 8,
+        "name": "Jay Cutler",
+        "team": "CHI",
+        "value": "16"
+      },
+      {
+        "rank": 9,
+        "name": "Donovan McNabb",
+        "team": "WAS",
+        "value": "15"
+      },
+      {
+        "rank": 9,
+        "name": "David Garrard",
+        "team": "JAX",
+        "value": "15"
+      },
+      {
+        "rank": 9,
+        "name": "Ryan Fitzpatrick",
+        "team": "BUF",
+        "value": "15"
+      },
+      {
+        "rank": 9,
+        "name": "Sam Bradford",
+        "team": "STL",
+        "value": "15"
+      }
+    ]
+  },
+  {
+    "label": "Completions",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "450"
+      },
+      {
+        "rank": 2,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "448"
+      },
+      {
+        "rank": 3,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "365"
+      },
+      {
+        "rank": 4,
+        "name": "Carson Palmer",
+        "team": "CIN",
+        "value": "362"
+      },
+      {
+        "rank": 5,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "357"
+      },
+      {
+        "rank": 5,
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "357"
+      },
+      {
+        "rank": 7,
+        "name": "Sam Bradford",
+        "team": "STL",
+        "value": "354"
+      },
+      {
+        "rank": 8,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "339"
+      },
+      {
+        "rank": 9,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "324"
+      },
+      {
+        "rank": 10,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "312"
+      }
+    ]
+  },
+  {
+    "label": "Pass Attempts",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "679"
+      },
+      {
+        "rank": 2,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "658"
+      },
+      {
+        "rank": 3,
+        "name": "Sam Bradford",
+        "team": "STL",
+        "value": "590"
+      },
+      {
+        "rank": 4,
+        "name": "Carson Palmer",
+        "team": "CIN",
+        "value": "586"
+      },
+      {
+        "rank": 5,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "574"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "571"
+      },
+      {
+        "rank": 7,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "541"
+      },
+      {
+        "rank": 8,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "539"
+      },
+      {
+        "rank": 9,
+        "name": "Mark Sanchez",
+        "team": "NYJ",
+        "value": "507"
+      },
+      {
+        "rank": 10,
+        "name": "Kyle Orton",
+        "team": "DEN",
+        "value": "498"
+      }
+    ]
+  },
+  {
+    "label": "Completion %",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "68.1%"
+      },
+      {
+        "rank": 2,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "66.3%"
+      },
+      {
+        "rank": 3,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "66.0%"
+      },
+      {
+        "rank": 4,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "65.9%"
+      },
+      {
+        "rank": 5,
+        "name": "Jon Kitna",
+        "team": "DAL",
+        "value": "65.7%"
+      },
+      {
+        "rank": 5,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "65.7%"
+      },
+      {
+        "rank": 7,
+        "name": "David Garrard",
+        "team": "JAX",
+        "value": "64.5%"
+      },
+      {
+        "rank": 8,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "63.6%"
+      },
+      {
+        "rank": 9,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "62.9%"
+      },
+      {
+        "rank": 10,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "62.6%"
+      },
+      {
+        "rank": 10,
+        "name": "Joe Flacco",
+        "team": "BAL",
+        "value": "62.6%"
+      }
+    ]
+  },
+  {
+    "label": "Yards per Pass Attempt",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "8.7"
+      },
+      {
+        "rank": 2,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "8.3"
+      },
+      {
+        "rank": 3,
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "8.2"
+      },
+      {
+        "rank": 4,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "8.1"
+      },
+      {
+        "rank": 5,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "7.9"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "7.6"
+      },
+      {
+        "rank": 6,
+        "name": "Jay Cutler",
+        "team": "CHI",
+        "value": "7.6"
+      },
+      {
+        "rank": 8,
+        "name": "David Garrard",
+        "team": "JAX",
+        "value": "7.5"
+      },
+      {
+        "rank": 9,
+        "name": "Jon Kitna",
+        "team": "DAL",
+        "value": "7.4"
+      },
+      {
+        "rank": 9,
+        "name": "Eli Manning",
+        "team": "NYG",
+        "value": "7.4"
+      },
+      {
+        "rank": 9,
+        "name": "Joe Flacco",
+        "team": "BAL",
+        "value": "7.4"
+      }
+    ]
+  },
+  {
+    "label": "Passer Rating",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "111.0"
+      },
+      {
+        "rank": 2,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "101.8"
+      },
+      {
+        "rank": 3,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "101.2"
+      },
+      {
+        "rank": 4,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "100.2"
+      },
+      {
+        "rank": 5,
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "97.0"
+      },
+      {
+        "rank": 6,
+        "name": "Josh Freeman",
+        "team": "TB",
+        "value": "95.9"
+      },
+      {
+        "rank": 7,
+        "name": "Joe Flacco",
+        "team": "BAL",
+        "value": "93.6"
+      },
+      {
+        "rank": 8,
+        "name": "Matt Cassel",
+        "team": "KC",
+        "value": "93.0"
+      },
+      {
+        "rank": 9,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "92.0"
+      },
+      {
+        "rank": 10,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "91.9"
+      }
+    ]
+  },
+  {
+    "label": "Times Sacked",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jay Cutler",
+        "team": "CHI",
+        "value": "52"
+      },
+      {
+        "rank": 2,
+        "name": "Joe Flacco",
+        "team": "BAL",
+        "value": "40"
+      },
+      {
+        "rank": 3,
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "38"
+      },
+      {
+        "rank": 4,
+        "name": "Donovan McNabb",
+        "team": "WAS",
+        "value": "37"
+      },
+      {
+        "rank": 5,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "35"
+      },
+      {
+        "rank": 6,
+        "name": "Kyle Orton",
+        "team": "DEN",
+        "value": "34"
+      },
+      {
+        "rank": 6,
+        "name": "Sam Bradford",
+        "team": "STL",
+        "value": "34"
+      },
+      {
+        "rank": 8,
+        "name": "Jason Campbell",
+        "team": "OAK",
+        "value": "33"
+      },
+      {
+        "rank": 8,
+        "name": "Jimmy Clausen",
+        "team": "CAR",
+        "value": "33"
+      },
+      {
+        "rank": 10,
+        "name": "David Garrard",
+        "team": "JAX",
+        "value": "32"
+      },
+      {
+        "rank": 10,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "32"
+      },
+      {
+        "rank": 10,
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "32"
+      }
+    ]
+  },
+  {
+    "label": "Rushing Yards",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "1614"
+      },
+      {
+        "rank": 2,
+        "name": "Jamaal Charles",
+        "team": "KC",
+        "value": "1467"
+      },
+      {
+        "rank": 3,
+        "name": "Michael Turner",
+        "team": "ATL",
+        "value": "1371"
+      },
+      {
+        "rank": 4,
+        "name": "Chris Johnson",
+        "team": "TEN",
+        "value": "1364"
+      },
+      {
+        "rank": 5,
+        "name": "Maurice Jones-Drew",
+        "team": "JAX",
+        "value": "1324"
+      },
+      {
+        "rank": 6,
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "1298"
+      },
+      {
+        "rank": 7,
+        "name": "Rashard Mendenhall",
+        "team": "PIT",
+        "value": "1273"
+      },
+      {
+        "rank": 8,
+        "name": "Steven Jackson",
+        "team": "STL",
+        "value": "1241"
+      },
+      {
+        "rank": 9,
+        "name": "Ahmad Bradshaw",
+        "team": "NYG",
+        "value": "1235"
+      },
+      {
+        "rank": 10,
+        "name": "Ray Rice",
+        "team": "BAL",
+        "value": "1220"
+      }
+    ]
+  },
+  {
+    "label": "Rushing TDs",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "16"
+      },
+      {
+        "rank": 2,
+        "name": "BenJarvus Green-Ellis",
+        "team": "NE",
+        "value": "13"
+      },
+      {
+        "rank": 2,
+        "name": "Rashard Mendenhall",
+        "team": "PIT",
+        "value": "13"
+      },
+      {
+        "rank": 4,
+        "name": "Michael Turner",
+        "team": "ATL",
+        "value": "12"
+      },
+      {
+        "rank": 4,
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "12"
+      },
+      {
+        "rank": 6,
+        "name": "Mike Tolbert",
+        "team": "SD",
+        "value": "11"
+      },
+      {
+        "rank": 6,
+        "name": "Chris Johnson",
+        "team": "TEN",
+        "value": "11"
+      },
+      {
+        "rank": 6,
+        "name": "Peyton Hillis",
+        "team": "CLE",
+        "value": "11"
+      },
+      {
+        "rank": 9,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "9"
+      },
+      {
+        "rank": 9,
+        "name": "Brandon Jacobs",
+        "team": "NYG",
+        "value": "9"
+      }
+    ]
+  },
+  {
+    "label": "Carries",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Michael Turner",
+        "team": "ATL",
+        "value": "334"
+      },
+      {
+        "rank": 2,
+        "name": "Steven Jackson",
+        "team": "STL",
+        "value": "330"
+      },
+      {
+        "rank": 3,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "326"
+      },
+      {
+        "rank": 4,
+        "name": "Rashard Mendenhall",
+        "team": "PIT",
+        "value": "324"
+      },
+      {
+        "rank": 5,
+        "name": "Cedric Benson",
+        "team": "CIN",
+        "value": "321"
+      },
+      {
+        "rank": 6,
+        "name": "Chris Johnson",
+        "team": "TEN",
+        "value": "316"
+      },
+      {
+        "rank": 7,
+        "name": "Ray Rice",
+        "team": "BAL",
+        "value": "307"
+      },
+      {
+        "rank": 8,
+        "name": "Maurice Jones-Drew",
+        "team": "JAX",
+        "value": "299"
+      },
+      {
+        "rank": 9,
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "283"
+      },
+      {
+        "rank": 10,
+        "name": "Ahmad Bradshaw",
+        "team": "NYG",
+        "value": "276"
+      }
+    ]
+  },
+  {
+    "label": "Yards per Carry",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jamaal Charles",
+        "team": "KC",
+        "value": "6.4"
+      },
+      {
+        "rank": 2,
+        "name": "Brandon Jacobs",
+        "team": "NYG",
+        "value": "5.6"
+      },
+      {
+        "rank": 3,
+        "name": "Chris Ivory",
+        "team": "NO",
+        "value": "5.2"
+      },
+      {
+        "rank": 3,
+        "name": "LeSean McCoy",
+        "team": "PHI",
+        "value": "5.2"
+      },
+      {
+        "rank": 3,
+        "name": "Darren McFadden",
+        "team": "OAK",
+        "value": "5.2"
+      },
+      {
+        "rank": 6,
+        "name": "LeGarrette Blount",
+        "team": "TB",
+        "value": "5.0"
+      },
+      {
+        "rank": 6,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "5.0"
+      },
+      {
+        "rank": 8,
+        "name": "Tim Hightower",
+        "team": "ARI",
+        "value": "4.8"
+      },
+      {
+        "rank": 9,
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "4.6"
+      },
+      {
+        "rank": 10,
+        "name": "Ryan Torain",
+        "team": "WAS",
+        "value": "4.5"
+      },
+      {
+        "rank": 10,
+        "name": "Matt Forte",
+        "team": "CHI",
+        "value": "4.5"
+      },
+      {
+        "rank": 10,
+        "name": "Ahmad Bradshaw",
+        "team": "NYG",
+        "value": "4.5"
+      }
+    ]
+  },
+  {
+    "label": "Receptions",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Roddy White",
+        "team": "ATL",
+        "value": "115"
+      },
+      {
+        "rank": 2,
+        "name": "Reggie Wayne",
+        "team": "IND",
+        "value": "111"
+      },
+      {
+        "rank": 3,
+        "name": "Jason Witten",
+        "team": "DAL",
+        "value": "94"
+      },
+      {
+        "rank": 4,
+        "name": "Santana Moss",
+        "team": "WAS",
+        "value": "93"
+      },
+      {
+        "rank": 5,
+        "name": "Larry Fitzgerald",
+        "team": "ARI",
+        "value": "90"
+      },
+      {
+        "rank": 6,
+        "name": "Andre Johnson",
+        "team": "HOU",
+        "value": "86"
+      },
+      {
+        "rank": 6,
+        "name": "Wes Welker",
+        "team": "NE",
+        "value": "86"
+      },
+      {
+        "rank": 6,
+        "name": "Brandon Marshall",
+        "team": "MIA",
+        "value": "86"
+      },
+      {
+        "rank": 9,
+        "name": "Danny Amendola",
+        "team": "STL",
+        "value": "85"
+      },
+      {
+        "rank": 10,
+        "name": "Marques Colston",
+        "team": "NO",
+        "value": "84"
+      }
+    ]
+  },
+  {
+    "label": "Receiving Yards",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Brandon Lloyd",
+        "team": "DEN",
+        "value": "1448"
+      },
+      {
+        "rank": 2,
+        "name": "Roddy White",
+        "team": "ATL",
+        "value": "1389"
+      },
+      {
+        "rank": 3,
+        "name": "Reggie Wayne",
+        "team": "IND",
+        "value": "1355"
+      },
+      {
+        "rank": 4,
+        "name": "Greg Jennings",
+        "team": "GB",
+        "value": "1265"
+      },
+      {
+        "rank": 5,
+        "name": "Mike Wallace",
+        "team": "PIT",
+        "value": "1257"
+      },
+      {
+        "rank": 6,
+        "name": "Andre Johnson",
+        "team": "HOU",
+        "value": "1216"
+      },
+      {
+        "rank": 7,
+        "name": "Dwayne Bowe",
+        "team": "KC",
+        "value": "1162"
+      },
+      {
+        "rank": 8,
+        "name": "Larry Fitzgerald",
+        "team": "ARI",
+        "value": "1137"
+      },
+      {
+        "rank": 9,
+        "name": "Calvin Johnson",
+        "team": "DET",
+        "value": "1120"
+      },
+      {
+        "rank": 10,
+        "name": "Santana Moss",
+        "team": "WAS",
+        "value": "1115"
+      }
+    ]
+  },
+  {
+    "label": "Receiving TDs",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dwayne Bowe",
+        "team": "KC",
+        "value": "15"
+      },
+      {
+        "rank": 2,
+        "name": "Greg Jennings",
+        "team": "GB",
+        "value": "12"
+      },
+      {
+        "rank": 2,
+        "name": "Calvin Johnson",
+        "team": "DET",
+        "value": "12"
+      },
+      {
+        "rank": 4,
+        "name": "Brandon Lloyd",
+        "team": "DEN",
+        "value": "11"
+      },
+      {
+        "rank": 4,
+        "name": "Hakeem Nicks",
+        "team": "NYG",
+        "value": "11"
+      },
+      {
+        "rank": 4,
+        "name": "Mike Williams",
+        "team": "TB",
+        "value": "11"
+      },
+      {
+        "rank": 7,
+        "name": "Antonio Gates",
+        "team": "SD",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "name": "Roddy White",
+        "team": "ATL",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "name": "Marcedes Lewis",
+        "team": "JAX",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "name": "Steve Johnson",
+        "team": "BUF",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "name": "Mike Wallace",
+        "team": "PIT",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "name": "Jeremy Maclin",
+        "team": "PHI",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "name": "Rob Gronkowski",
+        "team": "NE",
+        "value": "10"
+      }
+    ]
+  },
+  {
+    "label": "Targets",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Roddy White",
+        "team": "ATL",
+        "value": "179"
+      },
+      {
+        "rank": 2,
+        "name": "Reggie Wayne",
+        "team": "IND",
+        "value": "175"
+      },
+      {
+        "rank": 3,
+        "name": "Larry Fitzgerald",
+        "team": "ARI",
+        "value": "173"
+      },
+      {
+        "rank": 4,
+        "name": "Brandon Lloyd",
+        "team": "DEN",
+        "value": "153"
+      },
+      {
+        "rank": 5,
+        "name": "Brandon Marshall",
+        "team": "MIA",
+        "value": "146"
+      },
+      {
+        "rank": 6,
+        "name": "Santana Moss",
+        "team": "WAS",
+        "value": "145"
+      },
+      {
+        "rank": 7,
+        "name": "Steve Johnson",
+        "team": "BUF",
+        "value": "142"
+      },
+      {
+        "rank": 8,
+        "name": "Terrell Owens",
+        "team": "CIN",
+        "value": "139"
+      },
+      {
+        "rank": 9,
+        "name": "Andre Johnson",
+        "team": "HOU",
+        "value": "138"
+      },
+      {
+        "rank": 10,
+        "name": "Calvin Johnson",
+        "team": "DET",
+        "value": "137"
+      }
+    ]
+  },
+  {
+    "label": "Yards per Reception",
+    "players": [
+      {
+        "rank": 1,
+        "name": "DeSean Jackson",
+        "team": "PHI",
+        "value": "22.5"
+      },
+      {
+        "rank": 2,
+        "name": "Mike Wallace",
+        "team": "PIT",
+        "value": "20.9"
+      },
+      {
+        "rank": 3,
+        "name": "Anthony Armstrong",
+        "team": "WAS",
+        "value": "19.8"
+      },
+      {
+        "rank": 4,
+        "name": "Malcom Floyd",
+        "team": "SD",
+        "value": "19.4"
+      },
+      {
+        "rank": 5,
+        "name": "Johnny Knox",
+        "team": "CHI",
+        "value": "18.8"
+      },
+      {
+        "rank": 5,
+        "name": "Brandon Lloyd",
+        "team": "DEN",
+        "value": "18.8"
+      },
+      {
+        "rank": 7,
+        "name": "Kenny Britt",
+        "team": "TEN",
+        "value": "18.5"
+      },
+      {
+        "rank": 8,
+        "name": "Braylon Edwards",
+        "team": "NYJ",
+        "value": "17.1"
+      },
+      {
+        "rank": 9,
+        "name": "Greg Jennings",
+        "team": "GB",
+        "value": "16.6"
+      },
+      {
+        "rank": 10,
+        "name": "Ben Obomanu",
+        "team": "SEA",
+        "value": "16.5"
+      }
+    ]
+  },
+  {
+    "label": "Yards from Scrimmage",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "2218"
+      },
+      {
+        "rank": 2,
+        "name": "Jamaal Charles",
+        "team": "KC",
+        "value": "1935"
+      },
+      {
+        "rank": 3,
+        "name": "Ray Rice",
+        "team": "BAL",
+        "value": "1776"
+      },
+      {
+        "rank": 4,
+        "name": "LeSean McCoy",
+        "team": "PHI",
+        "value": "1672"
+      },
+      {
+        "rank": 5,
+        "name": "Darren McFadden",
+        "team": "OAK",
+        "value": "1664"
+      },
+      {
+        "rank": 6,
+        "name": "Peyton Hillis",
+        "team": "CLE",
+        "value": "1654"
+      },
+      {
+        "rank": 7,
+        "name": "Maurice Jones-Drew",
+        "team": "JAX",
+        "value": "1641"
+      },
+      {
+        "rank": 8,
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "1639"
+      },
+      {
+        "rank": 9,
+        "name": "Steven Jackson",
+        "team": "STL",
+        "value": "1624"
+      },
+      {
+        "rank": 10,
+        "name": "Matt Forte",
+        "team": "CHI",
+        "value": "1616"
+      }
+    ]
+  },
+  {
+    "label": "Rushing + Receiving TDs",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "18"
+      },
+      {
+        "rank": 2,
+        "name": "Dwayne Bowe",
+        "team": "KC",
+        "value": "15"
+      },
+      {
+        "rank": 3,
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "13"
+      },
+      {
+        "rank": 3,
+        "name": "BenJarvus Green-Ellis",
+        "team": "NE",
+        "value": "13"
+      },
+      {
+        "rank": 3,
+        "name": "Rashard Mendenhall",
+        "team": "PIT",
+        "value": "13"
+      },
+      {
+        "rank": 3,
+        "name": "Peyton Hillis",
+        "team": "CLE",
+        "value": "13"
+      },
+      {
+        "rank": 7,
+        "name": "Michael Turner",
+        "team": "ATL",
+        "value": "12"
+      },
+      {
+        "rank": 7,
+        "name": "Greg Jennings",
+        "team": "GB",
+        "value": "12"
+      },
+      {
+        "rank": 7,
+        "name": "Calvin Johnson",
+        "team": "DET",
+        "value": "12"
+      },
+      {
+        "rank": 7,
+        "name": "Chris Johnson",
+        "team": "TEN",
+        "value": "12"
+      }
+    ]
+  },
+  {
+    "label": "Fantasy Points (PPR)",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Arian Foster",
+        "team": "HOU",
+        "value": "391.8"
+      },
+      {
+        "rank": 2,
+        "name": "Roddy White",
+        "team": "ATL",
+        "value": "316.2"
+      },
+      {
+        "rank": 3,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "310.3"
+      },
+      {
+        "rank": 4,
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "304.5"
+      },
+      {
+        "rank": 5,
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "299.0"
+      },
+      {
+        "rank": 6,
+        "name": "LeSean McCoy",
+        "team": "PHI",
+        "value": "297.2"
+      },
+      {
+        "rank": 7,
+        "name": "Peyton Hillis",
+        "team": "CLE",
+        "value": "294.9"
+      },
+      {
+        "rank": 8,
+        "name": "Brandon Lloyd",
+        "team": "DEN",
+        "value": "286.0"
+      },
+      {
+        "rank": 9,
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "285.8"
+      },
+      {
+        "rank": 10,
+        "name": "Jamaal Charles",
+        "team": "KC",
+        "value": "282.5"
+      }
+    ]
+  },
+  {
+    "label": "Fumbles",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Mike Vick",
+        "team": "PHI",
+        "value": "11"
+      },
+      {
+        "rank": 1,
+        "name": "David Garrard",
+        "team": "JAX",
+        "value": "11"
+      },
+      {
+        "rank": 3,
+        "name": "Donovan McNabb",
+        "team": "WAS",
+        "value": "10"
+      },
+      {
+        "rank": 3,
+        "name": "Jay Cutler",
+        "team": "CHI",
+        "value": "10"
+      },
+      {
+        "rank": 5,
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Matt Schaub",
+        "team": "HOU",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Jason Campbell",
+        "team": "OAK",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Joe Flacco",
+        "team": "BAL",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Mark Sanchez",
+        "team": "NYJ",
+        "value": "9"
+      },
+      {
+        "rank": 5,
+        "name": "Jimmy Clausen",
+        "team": "CAR",
+        "value": "9"
+      }
+    ]
+  },
+  {
+    "label": "Sacks",
+    "players": [
+      {
+        "rank": 1,
+        "name": "DeMarcus Ware",
+        "team": "DAL",
+        "value": "15.5"
+      },
+      {
+        "rank": 2,
+        "name": "Tamba Hali",
+        "team": "KC",
+        "value": "14.5"
+      },
+      {
+        "rank": 3,
+        "name": "Cameron Wake",
+        "team": "MIA",
+        "value": "14.0"
+      },
+      {
+        "rank": 4,
+        "name": "John Abraham",
+        "team": "ATL",
+        "value": "13.0"
+      },
+      {
+        "rank": 5,
+        "name": "Jason Babin",
+        "team": "TEN",
+        "value": "12.5"
+      },
+      {
+        "rank": 5,
+        "name": "Clay Matthews",
+        "team": "GB",
+        "value": "12.5"
+      },
+      {
+        "rank": 7,
+        "name": "Osi Umenyiora",
+        "team": "NYG",
+        "value": "11.5"
+      },
+      {
+        "rank": 7,
+        "name": "Justin Tuck",
+        "team": "NYG",
+        "value": "11.5"
+      },
+      {
+        "rank": 7,
+        "name": "Charles Johnson",
+        "team": "CAR",
+        "value": "11.5"
+      },
+      {
+        "rank": 10,
+        "name": "Chris Clemons",
+        "team": "SEA",
+        "value": "11.0"
+      },
+      {
+        "rank": 10,
+        "name": "Robert Mathis",
+        "team": "IND",
+        "value": "11.0"
+      },
+      {
+        "rank": 10,
+        "name": "Terrell Suggs",
+        "team": "BAL",
+        "value": "11.0"
+      },
+      {
+        "rank": 10,
+        "name": "Shaun Phillips",
+        "team": "SD",
+        "value": "11.0"
+      },
+      {
+        "rank": 10,
+        "name": "Jared Allen",
+        "team": "MIN",
+        "value": "11.0"
+      }
+    ]
+  },
+  {
+    "label": "Combined Tackles",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Jerod Mayo",
+        "team": "NE",
+        "value": "132"
+      },
+      {
+        "rank": 2,
+        "name": "Stephen Tulloch",
+        "team": "TEN",
+        "value": "125"
+      },
+      {
+        "rank": 3,
+        "name": "Chad Greenway",
+        "team": "MIN",
+        "value": "123"
+      },
+      {
+        "rank": 4,
+        "name": "Patrick Willis",
+        "team": "SF",
+        "value": "119"
+      },
+      {
+        "rank": 5,
+        "name": "Brian Urlacher",
+        "team": "CHI",
+        "value": "118"
+      },
+      {
+        "rank": 6,
+        "name": "London Fletcher",
+        "team": "WAS",
+        "value": "116"
+      },
+      {
+        "rank": 7,
+        "name": "Paris Lenon",
+        "team": "ARI",
+        "value": "114"
+      },
+      {
+        "rank": 7,
+        "name": "Paul Posluszny",
+        "team": "BUF",
+        "value": "114"
+      },
+      {
+        "rank": 9,
+        "name": "James Anderson",
+        "team": "CAR",
+        "value": "113"
+      },
+      {
+        "rank": 10,
+        "name": "Dhani Jones",
+        "team": "CIN",
+        "value": "110"
+      }
+    ]
+  },
+  {
+    "label": "Solo Tackles",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Patrick Willis",
+        "team": "SF",
+        "value": "92"
+      },
+      {
+        "rank": 2,
+        "name": "Brian Urlacher",
+        "team": "CHI",
+        "value": "90"
+      },
+      {
+        "rank": 3,
+        "name": "Chad Greenway",
+        "team": "MIN",
+        "value": "88"
+      },
+      {
+        "rank": 4,
+        "name": "Paris Lenon",
+        "team": "ARI",
+        "value": "84"
+      },
+      {
+        "rank": 4,
+        "name": "James Anderson",
+        "team": "CAR",
+        "value": "84"
+      },
+      {
+        "rank": 4,
+        "name": "James Laurinaitis",
+        "team": "STL",
+        "value": "84"
+      },
+      {
+        "rank": 7,
+        "name": "D.J. Williams",
+        "team": "DEN",
+        "value": "83"
+      },
+      {
+        "rank": 8,
+        "name": "Craig Dahl",
+        "team": "STL",
+        "value": "80"
+      },
+      {
+        "rank": 9,
+        "name": "T.J. Ward",
+        "team": "CLE",
+        "value": "78"
+      },
+      {
+        "rank": 10,
+        "name": "Stephen Tulloch",
+        "team": "TEN",
+        "value": "76"
+      }
+    ]
+  },
+  {
+    "label": "Interceptions",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Ed Reed",
+        "team": "BAL",
+        "value": "8"
+      },
+      {
+        "rank": 2,
+        "name": "Asante Samuel",
+        "team": "PHI",
+        "value": "7"
+      },
+      {
+        "rank": 2,
+        "name": "Troy Polamalu",
+        "team": "PIT",
+        "value": "7"
+      },
+      {
+        "rank": 2,
+        "name": "Devin McCourty",
+        "team": "NE",
+        "value": "7"
+      },
+      {
+        "rank": 5,
+        "name": "DeAngelo Hall",
+        "team": "WAS",
+        "value": "6"
+      },
+      {
+        "rank": 5,
+        "name": "Tramon Williams",
+        "team": "GB",
+        "value": "6"
+      },
+      {
+        "rank": 5,
+        "name": "Jason Allen",
+        "team": "HOU",
+        "value": "6"
+      },
+      {
+        "rank": 5,
+        "name": "Aqib Talib",
+        "team": "TB",
+        "value": "6"
+      },
+      {
+        "rank": 5,
+        "name": "Joe Haden",
+        "team": "CLE",
+        "value": "6"
+      }
+    ],
+    "more_tied": 10
+  },
+  {
+    "label": "Passes Defended",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Brandon Carr",
+        "team": "KC",
+        "value": "25"
+      },
+      {
+        "rank": 2,
+        "name": "Brent Grimes",
+        "team": "ATL",
+        "value": "23"
+      },
+      {
+        "rank": 3,
+        "name": "Terrell Thomas",
+        "team": "NYG",
+        "value": "21"
+      },
+      {
+        "rank": 4,
+        "name": "Tramon Williams",
+        "team": "GB",
+        "value": "20"
+      },
+      {
+        "rank": 5,
+        "name": "Phillip Buchanon",
+        "team": "WAS",
+        "value": "18"
+      },
+      {
+        "rank": 5,
+        "name": "Joe Haden",
+        "team": "CLE",
+        "value": "18"
+      },
+      {
+        "rank": 7,
+        "name": "Antonio Cromartie",
+        "team": "NYJ",
+        "value": "17"
+      },
+      {
+        "rank": 7,
+        "name": "Dominique Rodgers-Cromartie",
+        "team": "ARI",
+        "value": "17"
+      },
+      {
+        "rank": 7,
+        "name": "Antoine Cason",
+        "team": "SD",
+        "value": "17"
+      },
+      {
+        "rank": 7,
+        "name": "Devin McCourty",
+        "team": "NE",
+        "value": "17"
+      }
+    ]
+  },
+  {
+    "label": "Forced Fumbles",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Osi Umenyiora",
+        "team": "NYG",
+        "value": "10"
+      },
+      {
+        "rank": 2,
+        "name": "James Harrison",
+        "team": "PIT",
+        "value": "6"
+      },
+      {
+        "rank": 2,
+        "name": "Roman Harper",
+        "team": "NO",
+        "value": "6"
+      },
+      {
+        "rank": 4,
+        "name": "Charles Woodson",
+        "team": "GB",
+        "value": "5"
+      },
+      {
+        "rank": 4,
+        "name": "James Hall",
+        "team": "STL",
+        "value": "5"
+      },
+      {
+        "rank": 4,
+        "name": "Dwight Freeney",
+        "team": "IND",
+        "value": "5"
+      },
+      {
+        "rank": 4,
+        "name": "Justin Tuck",
+        "team": "NYG",
+        "value": "5"
+      },
+      {
+        "rank": 4,
+        "name": "Drew Coleman",
+        "team": "NYJ",
+        "value": "5"
+      },
+      {
+        "rank": 9,
+        "name": "Tamba Hali",
+        "team": "KC",
+        "value": "4"
+      },
+      {
+        "rank": 9,
+        "name": "Bernard Pollard",
+        "team": "HOU",
+        "value": "4"
+      },
+      {
+        "rank": 9,
+        "name": "Terrell Thomas",
+        "team": "NYG",
+        "value": "4"
+      }
+    ]
+  },
+  {
+    "label": "Field Goals Made",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Sebastian Janikowski",
+        "team": "OAK",
+        "value": "33"
+      },
+      {
+        "rank": 1,
+        "name": "Josh Brown",
+        "team": "STL",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "name": "David Akers",
+        "team": "PHI",
+        "value": "32"
+      },
+      {
+        "rank": 4,
+        "name": "Nick Folk",
+        "team": "NYJ",
+        "value": "30"
+      },
+      {
+        "rank": 4,
+        "name": "Dan Carpenter",
+        "team": "MIA",
+        "value": "30"
+      },
+      {
+        "rank": 6,
+        "name": "Matt Bryant",
+        "team": "ATL",
+        "value": "28"
+      },
+      {
+        "rank": 7,
+        "name": "Neil Rackers",
+        "team": "HOU",
+        "value": "27"
+      },
+      {
+        "rank": 8,
+        "name": "Adam Vinatieri",
+        "team": "IND",
+        "value": "26"
+      },
+      {
+        "rank": 8,
+        "name": "Billy Cundiff",
+        "team": "BAL",
+        "value": "26"
+      },
+      {
+        "rank": 10,
+        "name": "John Kasay",
+        "team": "CAR",
+        "value": "25"
+      },
+      {
+        "rank": 10,
+        "name": "Olindo Mare",
+        "team": "SEA",
+        "value": "25"
+      },
+      {
+        "rank": 10,
+        "name": "Robbie Gould",
+        "team": "CHI",
+        "value": "25"
+      }
+    ]
+  },
+  {
+    "label": "Longest Field Goal",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Dan Carpenter",
+        "team": "MIA",
+        "value": "60"
+      },
+      {
+        "rank": 2,
+        "name": "Sebastian Janikowski",
+        "team": "OAK",
+        "value": "59"
+      },
+      {
+        "rank": 2,
+        "name": "Josh Scobee",
+        "team": "JAX",
+        "value": "59"
+      },
+      {
+        "rank": 2,
+        "name": "Matt Prater",
+        "team": "DEN",
+        "value": "59"
+      },
+      {
+        "rank": 5,
+        "name": "Neil Rackers",
+        "team": "HOU",
+        "value": "57"
+      },
+      {
+        "rank": 6,
+        "name": "Nick Folk",
+        "team": "NYJ",
+        "value": "56"
+      },
+      {
+        "rank": 6,
+        "name": "Mason Crosby",
+        "team": "GB",
+        "value": "56"
+      },
+      {
+        "rank": 8,
+        "name": "John Kasay",
+        "team": "CAR",
+        "value": "55"
+      },
+      {
+        "rank": 8,
+        "name": "Jay Feely",
+        "team": "ARI",
+        "value": "55"
+      },
+      {
+        "rank": 8,
+        "name": "Rob Bironas",
+        "team": "TEN",
+        "value": "55"
+      },
+      {
+        "rank": 8,
+        "name": "Dave Rayner",
+        "team": "DET",
+        "value": "55"
+      }
+    ]
+  },
+  {
+    "label": "Kick Return Yards",
+    "players": [
+      {
+        "rank": 1,
+        "name": "LaRod Stephens-Howling",
+        "team": "ARI",
+        "value": "1548"
+      },
+      {
+        "rank": 2,
+        "name": "Marc Mariani",
+        "team": "TEN",
+        "value": "1530"
+      },
+      {
+        "rank": 3,
+        "name": "Leon Washington",
+        "team": "SEA",
+        "value": "1461"
+      },
+      {
+        "rank": 4,
+        "name": "Stefan Logan",
+        "team": "DET",
+        "value": "1448"
+      },
+      {
+        "rank": 5,
+        "name": "Brad Smith",
+        "team": "NYJ",
+        "value": "1432"
+      },
+      {
+        "rank": 6,
+        "name": "Jacoby Ford",
+        "team": "OAK",
+        "value": "1280"
+      },
+      {
+        "rank": 7,
+        "name": "Bernard Scott",
+        "team": "CIN",
+        "value": "1274"
+      },
+      {
+        "rank": 8,
+        "name": "Darren Sproles",
+        "team": "SD",
+        "value": "1257"
+      },
+      {
+        "rank": 9,
+        "name": "Deji Karim",
+        "team": "JAX",
+        "value": "1248"
+      },
+      {
+        "rank": 10,
+        "name": "Brandon Banks",
+        "team": "WAS",
+        "value": "1155"
+      }
+    ]
+  },
+  {
+    "label": "Punt Return Yards",
+    "players": [
+      {
+        "rank": 1,
+        "name": "Devin Hester",
+        "team": "CHI",
+        "value": "564"
+      },
+      {
+        "rank": 2,
+        "name": "Danny Amendola",
+        "team": "STL",
+        "value": "452"
+      },
+      {
+        "rank": 3,
+        "name": "Brandon Banks",
+        "team": "WAS",
+        "value": "378"
+      },
+      {
+        "rank": 4,
+        "name": "Stefan Logan",
+        "team": "DET",
+        "value": "362"
+      },
+      {
+        "rank": 5,
+        "name": "Greg Camarillo",
+        "team": "MIN",
+        "value": "359"
+      },
+      {
+        "rank": 6,
+        "name": "Mike Thomas",
+        "team": "JAX",
+        "value": "358"
+      },
+      {
+        "rank": 7,
+        "name": "Marc Mariani",
+        "team": "TEN",
+        "value": "329"
+      },
+      {
+        "rank": 8,
+        "name": "Captain Munnerlyn",
+        "team": "CAR",
+        "value": "327"
+      },
+      {
+        "rank": 9,
+        "name": "Tramon Williams",
+        "team": "GB",
+        "value": "326"
+      },
+      {
+        "rank": 10,
+        "name": "Javier Arenas",
+        "team": "KC",
+        "value": "322"
+      }
+    ]
+  }
+]

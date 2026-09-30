@@ -1,174 +1,93 @@
 """
-Build Top 10 trivia data from Baseball/Football Reference leaderboard text.
+Build Top 10 trivia data from free, open stat sources.
 
 Usage (run from the repo root):
-    python scripts/build_trivia_data.py mlb batting 2025
-    python scripts/build_trivia_data.py mlb pitching 2025
-    python scripts/build_trivia_data.py nfl 2025
+    python scripts/build_trivia_data.py mlb 2025
+    python scripts/build_trivia_data.py mlb 1990-2026
+    python scripts/build_trivia_data.py nfl 1999-2025
 
-Input:   data/{sport}/{year}/raw/{year}-{category or sport}.txt
-         (the leaderboards page copied as text: a stat name line, then
-         rows like "1.  Judge • NYY  9.7")
+Sources:
+    MLB  the MLB Stats API (statsapi.mlb.com): league leaders per stat,
+         already ranked, ties marked and rate stats limited to qualified
+         players. One request per season for batting, one for pitching.
+    NFL  nflverse (github.com/nflverse): one CSV of every player's
+         regular-season totals per season. We rank each stat ourselves.
+
 Output:  data/{sport}/{year}/{category or "stats"}.json
          and a matching entry in data/manifest.json, so the game offers it.
 
-MLB leaderboards only show last names. First names come from
-data/mlb/{year}/raw/mlbplayers{year}.txt (one "First Last" per line).
-Every choice is remembered in data/mlb/first_names.json, keyed by
-"Last|TEAM", so you're only asked about a player once. Edit that
-file to fix a wrong first name.
+Each game file is a list of { label, players: [{ rank, name, team, value }],
+more_tied? }. `value` is display text. Ties at 10th are kept, unless the
+tie is so big it would swamp the board (see top_ten).
 """
 
+import csv
+import io
 import json
-import re
 import sys
-import unicodedata
+import time
+import urllib.request
 from pathlib import Path
 
 DATA = Path("data")
 MANIFEST = DATA / "manifest.json"
-FIRST_NAMES = DATA / "mlb" / "first_names.json"
 
 TOP_N = 10
-
-# Source stat names that read badly in the game
-LABEL_FIXES = {
-    "Wins Above Replacement--all": "Wins Above Replacement",
-}
-
-# "1.  Judge • NYY  9.7", "T-4  Skenes • PIT  7.7", or an unranked tie row
-ROW = re.compile(
-    r"^(?:(?:T-?|t-?)?(\d+)[Tt]?\.?[\t ]+)?"  # optional rank
-    r"(.+?)\s*•\s*([A-Z0-9]{2,3})[\t ]+"      # name • TEAM
-    r"([0-9.]+%?)(?:\s*\*+)?$"                # value as printed, then an optional ** footnote
-)
-MORE_TIED = re.compile(r"^(\d+) more tied at", re.IGNORECASE)
-SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+MAX_BOARD = 15   # more answers than this and the tie at the bottom is left out
+MIN_BOARD = 5    # fewer answers than this and the stat is skipped for that season
 
 
 # ------------------------------------------------------------
-# Parsing the leaderboard text
+# Shared helpers
 # ------------------------------------------------------------
 
-def read_blocks(path):
-    """Split the file into (stat label, lines) blocks."""
-    blocks = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.lower().startswith("view all players"):
-            continue
-        is_header = "•" not in line and not MORE_TIED.match(line)
-        if is_header:
-            blocks.append((line, []))
-        elif blocks:
-            blocks[-1][1].append(line)
-    return blocks
+def fetch(url):
+    request = urllib.request.Request(url, headers={"User-Agent": "postgames-trivia-builder"})
+    with urllib.request.urlopen(request, timeout=60) as response:
+        return response.read().decode("utf-8")
 
 
-def parse_block(lines):
-    """Rows ranked in the top 10 (ties included), plus how many tied rows the source left out."""
-    rows = []
-    rank = None
+def top_ten(rows):
+    """
+    rows: [{rank, name, team, value}] in leaderboard order, ranks with ties.
+    Keeps everyone ranked 10th or better. If a big tie at the bottom
+    would push the board past MAX_BOARD, that tie is left out and counted
+    in more_tied instead. Returns (players, more_tied), or None when too
+    few players are left to make a board.
+    """
+    board = [r for r in rows if r["rank"] <= TOP_N]
     more_tied = 0
-
-    for line in lines:
-        tied = MORE_TIED.match(line)
-        if tied:
-            more_tied = int(tied.group(1))
-            continue
-
-        match = ROW.match(line)
-        if not match:
-            print(f"  ! couldn't read row: {line!r}")
-            continue
-
-        rank_text, name, team, value = match.groups()
-        rank = int(rank_text) if rank_text else rank  # unranked rows tie the row above
-        if rank is not None and rank <= TOP_N:
-            rows.append({"rank": rank, "name": name.rstrip("*").strip(), "team": team, "value": value})
-
-    return rows, more_tied
+    if len(board) > MAX_BOARD:
+        last_rank = board[-1]["rank"]
+        more_tied = sum(1 for r in board if r["rank"] == last_rank)
+        board = [r for r in board if r["rank"] != last_rank]
+    if len(board) < MIN_BOARD or len({r["value"] for r in board}) == 1:
+        return None  # too few answers, or everyone tied (nothing to rank)
+    return board, more_tied
 
 
-# ------------------------------------------------------------
-# MLB first names
-# ------------------------------------------------------------
-
-def normalize(text):
-    """Lowercase, no accents or punctuation: "Rodríguez Jr." -> "rodriguez jr"."""
-    text = unicodedata.normalize("NFD", text.lower())
-    text = "".join(c for c in text if unicodedata.category(c) != "Mn")
-    text = re.sub(r"[^a-z0-9 ]", "", text)
-    return re.sub(r"\s+", " ", text).strip()
-
-
-def load_roster(path):
-    """Map every plausible form of each last name to its (first, last) players."""
-    lookup = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        parts = line.split()
-        if len(parts) < 2:
-            continue
-        first = parts[0]
-        # Skip a middle initial: "Luis F. Castillo" -> "Castillo"
-        has_initial = len(parts) > 2 and re.fullmatch(r"[A-Za-z]\.", parts[1])
-        last = " ".join(parts[2:] if has_initial else parts[1:])
-
-        words = normalize(last).split()
-        keys = {" ".join(words), words[-1], " ".join(words[-2:])}
-        if words[-1] in SUFFIXES and len(words) > 1:
-            keys |= {" ".join(words[:-1]), words[-2]}
-        for key in keys:
-            lookup.setdefault(key, []).append((first, last))
-    return lookup
+def make_stat(label, rows):
+    result = top_ten(rows)
+    if not result:
+        return None
+    players, more_tied = result
+    stat = {"label": label, "players": players}
+    if more_tied:
+        stat["more_tied"] = more_tied
+    return stat
 
 
-def roster_candidates(last, lookup):
-    """Roster players whose last name matches exactly or contains it as a word."""
-    key = normalize(last)
-    found = list(lookup.get(key, []))
-    for roster_key, players in lookup.items():
-        if key in roster_key.split():
-            found.extend(players)
-    return list(dict.fromkeys(found))  # dedupe, keep order
+def write_game_file(sport, category, year, stats):
+    output = DATA / sport / str(year) / f"{category or 'stats'}.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
+    entry = {"sport": sport, "year": year, "file": output.relative_to(DATA).as_posix()}
+    if category:
+        entry["category"] = category
+    update_manifest(entry)
+    print(f"  {output}: {len(stats)} stats")
 
-def choose_first_name(last, team, context, candidates):
-    """Ask on the command line when the roster doesn't settle it."""
-    if not candidates:
-        print(f"\nNo roster match for {last} ({team}) in {context}")
-        return input("First name: ").strip()
-
-    print(f"\nWhich {last} ({team}) in {context}?")
-    for i, (first, full_last) in enumerate(candidates, start=1):
-        print(f"  {i}. {first} {full_last}")
-    while True:
-        choice = input("Number: ").strip()
-        if choice.isdigit() and 1 <= int(choice) <= len(candidates):
-            return candidates[int(choice) - 1][0]
-        print("Pick one of the numbers above.")
-
-
-def add_first_names(stats, year):
-    known = json.loads(FIRST_NAMES.read_text(encoding="utf-8")) if FIRST_NAMES.exists() else {}
-    lookup = load_roster(DATA / "mlb" / str(year) / "raw" / f"mlbplayers{year}.txt")
-
-    for stat in stats:
-        for player in stat["players"]:
-            last, team = player["name"], player["team"]
-            key = f"{last}|{team}"
-            if key not in known:
-                candidates = roster_candidates(last, lookup)
-                known[key] = (candidates[0][0] if len(candidates) == 1
-                              else choose_first_name(last, team, stat["label"], candidates))
-                FIRST_NAMES.write_text(json.dumps(known, ensure_ascii=False, indent=2, sort_keys=True),
-                                       encoding="utf-8")  # save as we go
-            player["name"] = f"{known[key]} {last}"
-
-
-# ------------------------------------------------------------
-# Output
-# ------------------------------------------------------------
 
 def update_manifest(entry):
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -177,40 +96,246 @@ def update_manifest(entry):
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def build(sport, category, year):
-    source = DATA / sport / str(year) / "raw" / f"{year}-{category or sport}.txt"
-    output = DATA / sport / str(year) / f"{category or 'stats'}.json"
-    print(f"Reading {source}")
+# ------------------------------------------------------------
+# MLB: the MLB Stats API
+# ------------------------------------------------------------
+
+MLB_API = "https://statsapi.mlb.com/api/v1"
+
+# API leader category -> label shown in the game, in dropdown order
+MLB_STATS = {
+    "batting": {
+        "homeRuns": "Home Runs",
+        "battingAverage": "Batting Average",
+        "runsBattedIn": "Runs Batted In",
+        "hits": "Hits",
+        "runs": "Runs Scored",
+        "stolenBases": "Stolen Bases",
+        "doubles": "Doubles",
+        "triples": "Triples",
+        "walks": "Walks",
+        "strikeouts": "Strikeouts",
+        "onBasePercentage": "On-Base %",
+        "sluggingPercentage": "Slugging %",
+        "onBasePlusSlugging": "OPS (On-Base + Slugging)",
+        "totalBases": "Total Bases",
+        "extraBaseHits": "Extra-Base Hits",
+        "hitByPitches": "Hit By Pitch",
+        "intentionalWalks": "Intentional Walks",
+        "caughtStealing": "Caught Stealing",
+        "groundIntoDoublePlays": "Grounded Into Double Plays",
+        "sacrificeFlies": "Sacrifice Flies",
+        "totalPlateAppearances": "Plate Appearances",
+        "gamesPlayed": "Games Played",
+    },
+    "pitching": {
+        "strikeouts": "Strikeouts",
+        "earnedRunAverage": "ERA",
+        "wins": "Wins",
+        "saves": "Saves",
+        "walksAndHitsPerInningPitched": "WHIP",
+        "inningsPitched": "Innings Pitched",
+        "strikeoutsPer9Inn": "Strikeouts per 9 Innings",
+        "strikeoutWalkRatio": "Strikeout-to-Walk Ratio",
+        "winPercentage": "Win %",
+        "losses": "Losses",
+        "completeGames": "Complete Games",
+        "shutouts": "Shutouts",
+        "holds": "Holds",
+        "blownSaves": "Blown Saves",
+        "gamesStarted": "Games Started",
+        "gamesPlayed": "Games Pitched",
+        "gamesFinished": "Games Finished",
+        "walksPer9Inn": "Walks per 9 Innings",
+        "hitsPer9Inn": "Hits per 9 Innings",
+        "walks": "Walks Allowed",
+        "homeRuns": "Home Runs Allowed",
+        "earnedRun": "Earned Runs Allowed",
+        "hitBatsman": "Hit Batters",
+        "wildPitch": "Wild Pitches",
+    },
+}
+MLB_GROUPS = {"batting": "hitting", "pitching": "pitching"}
+
+
+def mlb_team_abbreviations(year):
+    teams = json.loads(fetch(f"{MLB_API}/teams?sportId=1&season={year}"))["teams"]
+    return {t["id"]: t["abbreviation"] for t in teams}
+
+
+def build_mlb(year):
+    print(f"MLB {year}")
+    teams = mlb_team_abbreviations(year)
+
+    for category, labels in MLB_STATS.items():
+        url = (f"{MLB_API}/stats/leaders?sportId=1&season={year}&limit=100"
+               f"&statGroup={MLB_GROUPS[category]}&leaderCategories={','.join(labels)}")
+        leaders = {c["leaderCategory"]: c.get("leaders", [])
+                   for c in json.loads(fetch(url))["leagueLeaders"]}
+
+        stats = []
+        for key, label in labels.items():
+            rows = []
+            for leader in leaders.get(key, []):
+                value = leader["value"]
+                if not value or float(value) == 0:
+                    continue  # e.g. holds before they were tracked
+                num_teams = leader.get("numTeams", 1)
+                team = f"{num_teams}TM" if num_teams > 1 else teams.get(leader["team"]["id"], "")
+                rows.append({"rank": leader["rank"], "name": leader["person"]["fullName"],
+                             "team": team, "value": value})
+            stat = make_stat(label, rows)
+            if stat:
+                stats.append(stat)
+
+        write_game_file("mlb", category, year, stats)
+        time.sleep(0.5)  # be polite to the API
+
+
+# ------------------------------------------------------------
+# NFL: nflverse season totals
+# ------------------------------------------------------------
+
+NFLVERSE = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_{year}.csv"
+
+
+def num(row, column):
+    try:
+        return float(row.get(column) or 0)
+    except ValueError:
+        return 0.0
+
+
+def passer_rating(r):
+    att = num(r, "attempts")
+    parts = [
+        (num(r, "completions") / att - 0.3) * 5,
+        (num(r, "passing_yards") / att - 3) * 0.25,
+        num(r, "passing_tds") / att * 20,
+        2.375 - num(r, "passing_interceptions") / att * 25,
+    ]
+    return sum(min(max(p, 0), 2.375) for p in parts) / 6 * 100
+
+
+def whole(x):
+    return str(round(x))
+
+
+def one_decimal(x):
+    return f"{x:.1f}"
+
+
+def percent(x):
+    return f"{x:.1f}%"
+
+
+# (label, value of a player row, display format, qualifier or None)
+# Qualifiers follow Pro Football Reference: per team game, 14 pass
+# attempts, 6.25 carries, 1.875 catches.
+def nfl_stats(team_games):
+    passer = lambda r: num(r, "attempts") >= 14 * team_games
+    rusher = lambda r: num(r, "carries") >= 6.25 * team_games
+    receiver = lambda r: num(r, "receptions") >= 1.875 * team_games
+    return [
+        ("Passing Yards", lambda r: num(r, "passing_yards"), whole, None),
+        ("Passing TDs", lambda r: num(r, "passing_tds"), whole, None),
+        ("Interceptions Thrown", lambda r: num(r, "passing_interceptions"), whole, None),
+        ("Completions", lambda r: num(r, "completions"), whole, None),
+        ("Pass Attempts", lambda r: num(r, "attempts"), whole, None),
+        ("Completion %", lambda r: num(r, "completions") / num(r, "attempts") * 100, percent, passer),
+        ("Yards per Pass Attempt", lambda r: num(r, "passing_yards") / num(r, "attempts"), one_decimal, passer),
+        ("Passer Rating", passer_rating, one_decimal, passer),
+        ("Times Sacked", lambda r: num(r, "sacks_suffered"), whole, None),
+        ("Rushing Yards", lambda r: num(r, "rushing_yards"), whole, None),
+        ("Rushing TDs", lambda r: num(r, "rushing_tds"), whole, None),
+        ("Carries", lambda r: num(r, "carries"), whole, None),
+        ("Yards per Carry", lambda r: num(r, "rushing_yards") / num(r, "carries"), one_decimal, rusher),
+        ("Receptions", lambda r: num(r, "receptions"), whole, None),
+        ("Receiving Yards", lambda r: num(r, "receiving_yards"), whole, None),
+        ("Receiving TDs", lambda r: num(r, "receiving_tds"), whole, None),
+        ("Targets", lambda r: num(r, "targets"), whole, None),
+        ("Yards per Reception", lambda r: num(r, "receiving_yards") / num(r, "receptions"), one_decimal, receiver),
+        ("Yards from Scrimmage", lambda r: num(r, "rushing_yards") + num(r, "receiving_yards"), whole, None),
+        ("Rushing + Receiving TDs", lambda r: num(r, "rushing_tds") + num(r, "receiving_tds"), whole, None),
+        ("Fantasy Points (PPR)", lambda r: num(r, "fantasy_points_ppr"), one_decimal, None),
+        ("Fumbles", lambda r: num(r, "fumbles_total"), whole, None),
+        ("Sacks", lambda r: num(r, "def_sacks"), one_decimal, None),
+        ("Combined Tackles", lambda r: num(r, "def_tackles_solo") + num(r, "def_tackle_assists"), whole, None),
+        ("Solo Tackles", lambda r: num(r, "def_tackles_solo"), whole, None),
+        ("Tackles for Loss", lambda r: num(r, "def_tackles_for_loss"), whole, None),
+        ("Interceptions", lambda r: num(r, "def_interceptions"), whole, None),
+        ("Passes Defended", lambda r: num(r, "def_pass_defended"), whole, None),
+        ("Forced Fumbles", lambda r: num(r, "def_fumbles_forced"), whole, None),
+        ("Field Goals Made", lambda r: num(r, "fg_made"), whole, None),
+        ("Longest Field Goal", lambda r: num(r, "fg_long"), whole, None),
+        ("Kick Return Yards", lambda r: num(r, "kickoff_return_yards"), whole, None),
+        ("Punt Return Yards", lambda r: num(r, "punt_return_yards"), whole, None),
+    ]
+
+
+# nflverse uses today's team codes for every season; show where teams were then.
+# (code, first season in the new city, code before that)
+NFL_MOVES = [("LA", 2016, "STL"), ("LAC", 2017, "SD"), ("LV", 2020, "OAK")]
+
+
+def nfl_team(code, year):
+    for new, since, old in NFL_MOVES:
+        if code == new and year < since:
+            return old
+    return code
+
+
+def rank_rows(players, value_of, fmt, year):
+    """Sort high to low and rank; players whose shown values match share a rank."""
+    scored = sorted(((value_of(r), r) for r in players), key=lambda pair: -pair[0])
+    rows = []
+    for i, (value, r) in enumerate(scored):
+        if value <= 0 or i >= 100:
+            break
+        shown = fmt(value)
+        rank = rows[-1]["rank"] if rows and rows[-1]["value"] == shown else i + 1
+        rows.append({"rank": rank, "name": r["player_display_name"],
+                     "team": nfl_team(r["recent_team"], year), "value": shown})
+    return rows
+
+
+def build_nfl(year):
+    print(f"NFL {year}")
+    players = list(csv.DictReader(io.StringIO(fetch(NFLVERSE.format(year=year)))))
+    team_games = 17 if year >= 2021 else 16
 
     stats = []
-    for label, lines in read_blocks(source):
-        rows, more_tied = parse_block(lines)
-        if not rows:
-            print(f"  ! skipped {label!r}: no rows")
-            continue
-        stat = {"label": LABEL_FIXES.get(label, label), "players": rows}
-        if more_tied:
-            stat["more_tied"] = more_tied  # source didn't list everyone tied for 10th
-        stats.append(stat)
+    for label, value_of, fmt, qualifies in nfl_stats(team_games):
+        pool = [r for r in players if qualifies is None or qualifies(r)]
+        stat = make_stat(label, rank_rows(pool, value_of, fmt, year))
+        if stat:
+            stats.append(stat)
 
-    if sport == "mlb":
-        add_first_names(stats, year)
+    write_game_file("nfl", None, year, stats)
 
-    output.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    entry = {"sport": sport, "year": year, "file": output.relative_to(DATA).as_posix()}
-    if category:
-        entry["category"] = category
-    update_manifest(entry)
-    print(f"Wrote {len(stats)} stats to {output} and updated {MANIFEST}")
+
+# ------------------------------------------------------------
+# Command line
+# ------------------------------------------------------------
+
+BUILDERS = {"mlb": build_mlb, "nfl": build_nfl}
+
+
+def parse_years(text):
+    first, _, last = text.partition("-")
+    if not first.isdigit() or (last and not last.isdigit()):
+        sys.exit(__doc__)
+    return range(int(first), int(last or first) + 1)
 
 
 def main(args):
-    if len(args) == 3 and args[0] == "mlb" and args[1] in ("batting", "pitching") and args[2].isdigit():
-        build("mlb", args[1], int(args[2]))
-    elif len(args) == 2 and args[0] in ("nfl", "nba") and args[1].isdigit():
-        build(args[0], None, int(args[1]))
-    else:
+    if len(args) != 2 or args[0] not in BUILDERS:
         sys.exit(__doc__)
+    for year in parse_years(args[1]):
+        try:
+            BUILDERS[args[0]](year)
+        except Exception as error:  # keep going: one bad season shouldn't stop a backfill
+            print(f"  ! {args[0]} {year} failed: {error}")
 
 
 if __name__ == "__main__":
