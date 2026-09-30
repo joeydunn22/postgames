@@ -10,12 +10,53 @@ Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no pack
 
 Postgames is a website (eventually an app) for people, mostly guys, coming home from the bar and looking for something to do. The planned features are sports trivia, a movie selector and a snack finder. **Current focus is sports trivia**; leave the other pages alone unless asked.
 
-Trivia data is currently copied by hand from Baseball/Football Reference leaderboards and built with `scripts/build_trivia_data.py`. The long-term goal is to pull it from an API automatically so each season doesn't need manual parsing, but that is future work.
+Trivia data is currently copied by hand from Baseball/Football Reference leaderboards and built with `scripts/build_trivia_data.py`. The long-term goal is to pull it from an API automatically so each season doesn't need manual parsing. That is the first item on the Roadmap below.
+
+## Roadmap
+
+The future-state plan, in priority order. It sets direction only: each item is still built one step at a time, when we get to it. Tick items off (`[x]`) as they ship, add ideas as they come up, and reorder if priorities change.
+
+### 1. Data sourcing — NOW
+
+The game has only three boards (MLB 2025 batting and pitching, NFL 2025), so a group runs out of content in one night. More seasons and sports add more replay value than any feature. Don't scrape Sports Reference (its terms forbid automated scraping and it rate-limits). Use free, open sources instead, and have the Python script write the **same** JSON files the game already reads, so the site stays static and the game code doesn't change.
+
+- [ ] MLB from the MLB Stats API (`statsapi.mlb.com`): full player names, which retires the first-name lookup and `first_names.json`
+- [ ] NFL from nflverse (open stats CSVs on GitHub)
+- [ ] Backfill past seasons (e.g. 2000–2025) once fetching is automatic
+- [ ] Add more sports (NBA, NHL) if good free sources exist
+- [ ] Keep the hand-copy path working until the new sources cover everything it does
+
+### 2. Trivia enhancements — NEXT
+
+Small gameplay additions that make a night of play more fun.
+
+- [ ] Turn timer (host setting: off / 30s / 60s)
+- [ ] "Pass" option on your turn
+- [ ] Random board button
+- [ ] Hints (reveal a team or first letter, maybe at a point cost)
+- [ ] Era/difficulty filter once there are many seasons
+- [ ] Looser guess matching where it's still too strict (nicknames, common misspellings)
+
+### 3. Larger game enhancements — LATER
+
+- [ ] Proper solo mode with personal bests saved on the device (localStorage, no accounts)
+- [ ] Real login: upgrade Firebase anonymous auth to Google sign-in (keeps existing uids), once there's something worth saving across devices
+- [ ] Lifetime stats and records, friends/groups
+
+### 4. Other pages — SOMEDAY
+
+Movies and snacks wait until trivia is what people actually open. Each needs its own data source (e.g. TMDB for movies, a maps/places API for snacks), so each is a project about as big as trivia.
+
+- [ ] Movie selector
+- [ ] Snack finder
+- [ ] Debates
+- [ ] Eventually an app wrapper around the site
 
 ## Working with the owner
 
 - **Take the lead.** The owner is not an experienced coder. Make the technical calls yourself and give a clear recommendation rather than a menu of options; the owner will almost always go with it. Ask them only about design choices (look, feel, gameplay).
 - **Go step by step; don't build the future state early.** This project is a learning experience the owner enjoys taking incrementally. Don't introduce the API, an app wrapper, frameworks or build tooling ahead of time — solve the current step well and leave those for later.
+- **Keep the Roadmap current.** When a change ships a Roadmap item or brings up a new idea, update the Roadmap in the same commit.
 - **Commit and push by default.** After finishing a change, commit it (following the versioning convention below) and push to `origin main` without asking, unless the owner says not to for that change.
 - **Reorganize freely.** Move or restructure code and files whenever it makes things clearer. When you do, briefly explain where things now live and why, since that helps the owner learn the codebase.
 
