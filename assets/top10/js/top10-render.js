@@ -67,13 +67,18 @@ function replayAnimation(el, className) {
    2. SETUP SCREEN
    ============================================================ */
 
-// Random, sport / category / season, timer: highlight the current pick, grey
-// out options with no data, and lock them unless you're choosing
+// Era, random, sport / category / season, timer: highlight the current pick,
+// grey out options with no data in the era, and lock them unless you're choosing
 function renderPickers() {
     const locked = !canEditSetup();
 
+    for (const btn of ui.eraChips) {
+        btn.classList.toggle("active", game.era === btn.dataset.era);
+        btn.disabled = locked;
+    }
+
     // Random: any sport, plus one for the picked sport
-    ui.randomAnyBtn.disabled = locked || dataManifest.length === 0;
+    ui.randomAnyBtn.disabled = locked || !hasData();
     ui.randomSportBtn.classList.toggle("hidden", !game.sport);
     ui.randomSportBtn.textContent = `Random ${SPORT_LABELS[game.sport] || ""}`;
     ui.randomSportBtn.disabled = locked || !hasData({ sport: game.sport });
@@ -82,7 +87,7 @@ function renderPickers() {
         const available = hasData({ sport: btn.dataset.sport });
         btn.classList.toggle("active", game.sport === btn.dataset.sport);
         btn.disabled = locked || !available;
-        btn.title = available ? "" : "No data yet";
+        btn.title = available ? "" : "No seasons in this era";
     }
 
     ui.categoryRow.classList.toggle("hidden", game.sport !== "mlb");
@@ -100,14 +105,15 @@ function renderPickers() {
     }
 }
 
-// Seasons with data for the picked sport (and category), newest first
+// Seasons in the era with data for the picked sport (and category), newest first
 function renderYearPicker(locked) {
     const years = availableYears({ sport: game.sport, category: game.category });
     const optionsKey = `${game.sport}:${years.join("|")}`;
 
     if (optionsKey !== _yearOptionsKey) {
         _yearOptionsKey = optionsKey;
-        ui.yearSelect.innerHTML = `<option value="">Pick a season</option>` +
+        const prompt = game.sport && years.length === 0 ? "No seasons in this era" : "Pick a season";
+        ui.yearSelect.innerHTML = `<option value="">${prompt}</option>` +
             years.map(year => `<option value="${year}">${formatSeason(game.sport, year)}</option>`).join("");
     }
 
@@ -498,6 +504,7 @@ function findElements() {
         leaveRoomBtn: byId("leaveRoomBtn"),
         joinForm: byId("joinForm"),
         joinCodeInput: byId("joinCodeInput"),
+        eraChips: chips("eraChips"),
         sportChips: chips("sportChips"),
         categoryRow: byId("categoryRow"),
         categoryChips: chips("categoryChips"),
@@ -550,6 +557,7 @@ function wireEvents() {
         joinRoom(ui.joinCodeInput.value);
     });
 
+    ui.eraChips.forEach(btn => btn.addEventListener("click", () => selectEra(btn.dataset.era)));
     ui.sportChips.forEach(btn => btn.addEventListener("click", () => selectSport(btn.dataset.sport)));
     ui.categoryChips.forEach(btn => btn.addEventListener("click", () => selectCategory(btn.dataset.category)));
     ui.yearSelect.addEventListener("change", () => selectYear(ui.yearSelect.value));

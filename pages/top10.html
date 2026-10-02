@@ -67,6 +67,18 @@
       <!-- Game options -->
       <div class="picker">
         <div class="pick-row">
+          <span class="pick-label">Era</span>
+          <div id="eraChips" class="chips">
+            <button class="chip" type="button" data-era="all">All</button>
+            <button class="chip" type="button" data-era="last5">Last 5</button>
+            <button class="chip" type="button" data-era="last10">Last 10</button>
+            <button class="chip" type="button" data-era="2010s">2010s</button>
+            <button class="chip" type="button" data-era="2000s">2000s</button>
+            <button class="chip" type="button" data-era="pre2000">Pre-2000</button>
+          </div>
+        </div>
+
+        <div class="pick-row">
           <span class="pick-label">Random</span>
           <div class="chips">
             <button id="randomAnyBtn" class="chip chip-random" type="button">Any sport</button>
@@ -189,7 +201,7 @@
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 127</p>
+    <p class="version">Version 128</p>
   </main>
 
 

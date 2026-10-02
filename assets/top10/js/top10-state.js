@@ -28,6 +28,7 @@ const SYNCED_DEFAULTS = {
     category: null,       // MLB only: "batting" | "pitching"
     year: null,
     stat: null,           // stat label, e.g. "Home Runs"
+    era: "all",           // which seasons are on offer, a key of ERAS
     timerSeconds: 0,      // seconds per turn, 0 = no timer
     players: [],          // [{ id, name, score }] in turn order
     currentPlayerIndex: 0,
@@ -35,6 +36,18 @@ const SYNCED_DEFAULTS = {
     guessed: [],          // [{ answer, by }] correct answers and who got them
     roundComplete: false, // every answer found
     lastGuess: null       // { playerName, guess, answer, result, at }, shown to everyone
+};
+
+// Era choices offered to the host. Each test gets the season's start
+// year (NBA 2025 = the 2024-25 season, so 2024) and the newest start
+// year that sport has data for.
+const ERAS = {
+    all: () => true,
+    last5: (start, newest) => start > newest - 5,
+    last10: (start, newest) => start > newest - 10,
+    "2010s": start => start >= 2010 && start < 2020,
+    "2000s": start => start >= 2000 && start < 2010,
+    pre2000: start => start < 2000
 };
 
 // Turn timer choices offered to the host (seconds, 0 = off)
@@ -95,16 +108,30 @@ const ui = {};
 // Entries from data/manifest.json: which sport/category/year combos have data
 let dataManifest = [];
 
-// True if any data exists matching the given sport/category/year (omitted = any)
+function seasonStartYear(sport, year) {
+    return sport === "nba" ? Number(year) - 1 : Number(year);
+}
+
+// Manifest entries inside the picked era
+function playableEntries(era = game.era) {
+    const test = ERAS[era] || ERAS.all;
+    const newest = {};
+    for (const entry of dataManifest) {
+        newest[entry.sport] = Math.max(newest[entry.sport] ?? -Infinity, seasonStartYear(entry.sport, entry.year));
+    }
+    return dataManifest.filter(entry => test(seasonStartYear(entry.sport, entry.year), newest[entry.sport]));
+}
+
+// True if the picked era has data matching the given sport/category/year (omitted = any)
 function hasData({ sport, category, year } = {}) {
-    return dataManifest.some(entry =>
+    return playableEntries().some(entry =>
         (!sport || entry.sport === sport) &&
         (!category || entry.category === category) &&
         (!year || String(entry.year) === String(year)));
 }
 
 function availableYears({ sport, category } = {}) {
-    const years = dataManifest
+    const years = playableEntries()
         .filter(entry => entry.sport === sport && (!category || entry.category === category))
         .map(entry => entry.year);
     return [...new Set(years)].sort((a, b) => b - a);

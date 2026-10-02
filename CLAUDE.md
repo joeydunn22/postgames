@@ -40,9 +40,11 @@ Small gameplay additions that make a night of play more fun.
 - [x] Random board: any sport, or random within the picked sport
 - [ ] "Pass" option on your turn
 - [ ] Hints (reveal a team or first letter, maybe at a point cost)
-- [ ] Era/difficulty filter now that there are many seasons
+- [x] Era filter (host setting: All / Last 5 / Last 10 / 2010s / 2000s / Pre-2000)
+- [ ] Difficulty filter (e.g. by how famous the players are), if a good signal exists
 - [ ] Other game modes beyond "name the top 10" (e.g. guess the stat from the list, team-based boards)
-- [ ] Looser guess matching where it's still too strict (nicknames, common misspellings)
+- [x] Looser guess matching: multi-word surnames (St. Brown), middle initials, short first names (Matt/Matthew), nicknames
+- [ ] Keep growing `PLAYER_NICKNAMES` as misses come up in real games
 
 ### 3. Larger game enhancements — NEXT
 
@@ -103,7 +105,7 @@ There is deliberately **no service worker** (the owner chose no offline mode), s
 
 `pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Three **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. As classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — no imports/exports, and no two files may declare the same top-level name. Fetch paths are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
 
-1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `timerSeconds`, `players: [{id, name, score}]`, `currentPlayerIndex`, `turnEndsAt`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `availableYears()`, `serverNow()`, `randomItem()`, `newLocalPlayer()`. `TIMER_OPTIONS` lists the timer choices.
+1. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `era`, `timerSeconds`, `players: [{id, name, score}]`, `currentPlayerIndex`, `turnEndsAt`, `guessed: [{answer, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`dataStatus` are local. Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `hasData()`, `availableYears()`, `serverNow()`, `randomItem()`, `newLocalPlayer()`. `TIMER_OPTIONS` lists the timer choices; `ERAS` holds the era tests, and `playableEntries()` is the manifest filtered to the picked era (`hasData()` and `availableYears()` go through it).
 2. `top10-render.js` — the only file that touches the DOM. `render()` redraws from state after any change, showing one of the setup / playing / results sections. Event handlers call logic actions (`selectSport`, `submitGuess`, `voteToEndGame`, …) and never change state themselves. Startup runs on `DOMContentLoaded` because rendering uses helpers from the logic file. Anything interpolated into `innerHTML` must go through `escapeHTML()` — names and guesses come from other players.
 3. `top10-logic.js` — actions and rules: sign-in, rooms and their Firebase listeners, setup actions, game flow (`startGame` / `endGame` / `newGame`), end-game voting, guessing, data loading, and guess matching. Never touches the DOM: change state, then call `render()`.
 
@@ -117,11 +119,12 @@ Firebase layout per room: `rooms/{CODE}/host`, `players/{uid}` (display name), `
 - Listeners are stored in `_roomUnsubscribers` and switched off on leaving. If the host leaves, the first remaining member claims `host`. The last player out deletes the room.
 - **Ending a game:** solo, End Game ends immediately; in a room each player toggles `endVotes/{uid}` and the host ends it once everyone has voted. Clearing the board auto-ends after a short delay. Only the host sees "New Game".
 - **Session ("Tonight") leaderboard:** `recordGameResult()` runs once per game in `endGame` and adds points/games per player id to `session.players`; a win goes only to an outright top scorer (ties and one-player games award none). In a room the host writes it to `rooms/{CODE}/session`; off-room it lives in memory. Ids are Firebase uids in rooms and `local-N` on one device, so renames don't split a record. Leaving a room resets to a fresh local game and session.
-- **Random board:** `pickRandomBoard(sport?)` (host) picks a sport evenly (so MLB's extra files don't dominate), then any manifest entry for it, waits for `loadStats()`, then a random stat. It only fills the picks; the host still presses Start.
+- **Era:** `era` (a key of `ERAS`) is a host setup choice that limits the sport chips, Season list and Random to seasons in that era. "Last 5/10" count back from each sport's newest season; decades use the season's start year (NBA 2000 = 1999-00, so it's Pre-2000). Changing era drops a picked season that falls outside it.
+- **Random board:** `pickRandomBoard(sport?)` (host) picks, within the era, a sport evenly (so MLB's extra files don't dominate), then any manifest entry for it, waits for `loadStats()`, then a random stat. It only fills the picks; the host still presses Start.
 - **Turn timer:** `timerSeconds` (0 = off) is a host setup choice. `startTurnClock()` sets `turnEndsAt` in *server* time (`serverNow()` = local clock + Firebase's `.info/serverTimeOffset`) whenever a turn starts, so all phones count down together. Only the host runs `checkTurnClock()` (every 250 ms): at the deadline it records a `timeout` guess and calls `nextTurn()`. The renderer redraws just the countdown every 250 ms (`renderTurnClock()`).
 - `game.lastGuess` (`{ playerName, guess, answer, result: correct|wrong|repeat|timeout, at }`) is synced so everyone sees feedback; the renderer animates only guesses newer than the last one it drew.
 
-Guess matching (`findAnswerMatch`) ignores accents and punctuation, accepts full name, first name alone or last name alone (ignoring Jr./III), and allows about one typo per five letters. A guess that fits more than one answer equally well is a miss.
+Guess matching (`findAnswerMatch`) ignores accents, punctuation, Jr./III and middle initials, and allows about one typo per five letters. It accepts, in order: the full name; the first name, surname or a nickname alone (surnames can be several words, so "St. Brown" and "De La Cruz" work; nicknames come from `PLAYER_NICKNAMES`, keyed by the exact data name, and must be exact); a first name + surname where the first name is a short form or same-letter variant (`matchFirstAndSurname`, with `FIRST_NAME_GROUPS` for Bill/William-style pairs); then typo matches. A guess that fits more than one answer equally well is a miss ("Brown" when A.J. Brown and Amon-Ra St. Brown are both on the board).
 
 ## Data pipeline
 
@@ -137,7 +140,7 @@ python scripts/build_trivia_data.py nba 1980-2026
 ```
 
 - **MLB** uses the Stats API's league leaders (one request per season per category). The API ranks, marks ties and applies rate-stat qualifiers itself. Stats and their labels are in `MLB_STATS`.
-- **NFL** downloads nflverse's regular-season player totals (one CSV per season) and ranks each stat in `nfl_stats()`. Rate stats use Pro Football Reference's per-team-game qualifiers. nflverse uses today's team codes for every season, and `NFL_MOVES` maps them back (e.g. 2003 Rams → STL). Its tackle counts come from play-by-play and can differ slightly from official totals.
+- **NFL** downloads nflverse's regular-season player totals (one CSV per season) and ranks each stat in `nfl_stats()`. Rate stats use Pro Football Reference's per-team-game qualifiers. nflverse uses today's team codes for every season, and `NFL_MOVES` maps them back (e.g. 2003 Rams → STL). Its tackle counts come from play-by-play and can differ slightly from official totals. Rows with no player name are team totals for uncredited plays and are skipped.
 - **NBA** uses stats.nba.com's league leaders (the site behind NBA.com's stats pages), one request per stat per season, with browser-like headers because it rejects anything else. It applies the NBA's own qualifiers. Percentages only work in `Totals` mode, and a few categories (e.g. `GP`) aren't supported. Stats are in `NBA_STATS`, and `NBA_TEAM_FIXES` maps its odd old team codes (UTH → UTA). A full backfill takes about 20 minutes because of the polite delay between requests.
 - MLB and NBA sources work from a home connection but may block cloud/datacenter IPs, so run the script locally.
 - `top_ten()` keeps everyone ranked 10th or better. A tie at the bottom that would push a board past 15 is dropped into `more_tied`. A board with fewer than 5 players, or where everyone is tied, is skipped for that season.

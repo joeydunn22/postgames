@@ -306,7 +306,9 @@ def rank_rows(players, value_of, fmt, year):
 
 def build_nfl(year):
     print(f"NFL {year}")
-    players = list(csv.DictReader(io.StringIO(fetch(NFLVERSE.format(year=year)))))
+    # Rows with no name are team totals for plays not credited to a player
+    players = [r for r in csv.DictReader(io.StringIO(fetch(NFLVERSE.format(year=year))))
+               if r["player_display_name"].strip()]
     team_games = 17 if year >= 2021 else 16
 
     stats = []

@@ -279,6 +279,18 @@ function onSelectionChanged() {
     render();
 }
 
+// Seasons outside the new era drop off; a season still inside it stays picked
+function selectEra(era) {
+    if (!canEditSetup() || !ERAS[era]) return;
+    game.era = era;
+    if (game.year && !hasData({ sport: game.sport, category: game.category, year: game.year })) {
+        onSelectionChanged();
+        return;
+    }
+    syncGameState();
+    render();
+}
+
 function selectStat(stat) {
     if (!canEditSetup()) return;
     game.stat = stat || null;
@@ -293,16 +305,17 @@ function selectTimer(seconds) {
     render();
 }
 
-// Pick a random board: any sport, or only `sport`. Sports are equally
-// likely (MLB has more files but shouldn't come up more), then any
-// season/category, then any stat once that file has loaded.
+// Pick a random board in the picked era: any sport, or only `sport`.
+// Sports are equally likely (MLB has more files but shouldn't come up
+// more), then any season/category, then any stat once that file has loaded.
 async function pickRandomBoard(sport = null) {
     if (!canEditSetup()) return;
-    const sports = sport ? [sport] : [...new Set(dataManifest.map(e => e.sport))];
+    const entries = playableEntries();
+    const sports = sport ? [sport] : [...new Set(entries.map(e => e.sport))];
     if (sports.length === 0) return;
 
     const pickedSport = randomItem(sports);
-    const entry = randomItem(dataManifest.filter(e => e.sport === pickedSport));
+    const entry = randomItem(entries.filter(e => e.sport === pickedSport));
     if (!entry) return;
 
     Object.assign(game, { sport: entry.sport, category: entry.category ?? null, year: entry.year, stat: null });
@@ -591,48 +604,201 @@ async function loadStats() {
 
 /* ============================================================
    10. MATCHING A GUESS TO AN ANSWER
-   Accepts the full name, first name alone or last name alone,
-   ignoring accents, punctuation and small typos. A guess that fits
-   more than one answer equally well counts as a miss.
+   Accepts, ignoring accents, punctuation, Jr./III, middle initials
+   and small typos:
+   - the full name, the first name alone or the surname alone
+     (surnames can be several words: "St. Brown", "De La Cruz")
+   - a full name with a short first name ("Matt Stafford", "Steph Curry")
+   - a well-known nickname from PLAYER_NICKNAMES
+   A guess that fits more than one answer equally well counts as a miss.
    ============================================================ */
 const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv"]);
 
+// Short first names that don't start with the same letter as the full one
+// (same-letter ones like Mike/Michael already match)
+const FIRST_NAME_GROUPS = [
+    ["bill", "billy", "will", "willie", "william"],
+    ["bob", "bobby", "rob", "robbie", "robert"],
+    ["dick", "rick", "ricky", "richard"],
+    ["ted", "teddy", "ed", "eddie", "edward"],
+    ["jack", "john", "johnny"],
+    ["tony", "anthony"],
+    ["chuck", "charles", "charlie"],
+    ["hank", "henry"]
+];
+
+// Nicknames people actually say, keyed by the name exactly as the data has it.
+// Matched exactly (no typo allowance), since many are only a few letters.
+const PLAYER_NICKNAMES = {
+    // MLB
+    "Alex Rodriguez": ["A-Rod"],
+    "Ivan Rodriguez": ["Pudge", "I-Rod"],
+    "David Ortiz": ["Big Papi", "Papi"],
+    "Randy Johnson": ["Big Unit", "The Big Unit"],
+    "Roger Clemens": ["Rocket", "The Rocket"],
+    "Frank Thomas": ["Big Hurt", "The Big Hurt"],
+    "Mark McGwire": ["Big Mac"],
+    "Ken Griffey Jr.": ["Junior", "The Kid"],
+    "Pete Alonso": ["Polar Bear"],
+    "Pablo Sandoval": ["Kung Fu Panda", "Panda"],
+    "Max Scherzer": ["Mad Max"],
+    "Vladimir Guerrero Jr.": ["Vladdy", "Vlad Jr"],
+    "Giancarlo Stanton": ["Mike Stanton"],
+    // NBA
+    "Shaquille O'Neal": ["Shaq"],
+    "Kevin Durant": ["KD"],
+    "Kevin Garnett": ["KG", "Big Ticket", "The Big Ticket"],
+    "Chris Paul": ["CP3"],
+    "Anthony Davis": ["AD", "The Brow"],
+    "Shai Gilgeous-Alexander": ["SGA"],
+    "Michael Jordan": ["MJ"],
+    "LeBron James": ["Bron", "King James", "LBJ"],
+    "Giannis Antetokounmpo": ["Greek Freak", "The Greek Freak"],
+    "Nikola Jokić": ["Joker", "The Joker"],
+    "Stephen Curry": ["Steph", "Chef Curry"],
+    "Russell Westbrook": ["Russ"],
+    "Hakeem Olajuwon": ["Dream", "The Dream", "Akeem Olajuwon"],
+    "Karl Malone": ["Mailman", "The Mailman"],
+    "Charles Barkley": ["Chuck", "Sir Charles"],
+    "Julius Erving": ["Dr J", "Doctor J"],
+    "Allen Iverson": ["AI", "The Answer"],
+    "Tracy McGrady": ["T-Mac"],
+    "Paul Pierce": ["The Truth"],
+    "Dennis Rodman": ["The Worm", "Worm"],
+    "Kobe Bryant": ["Mamba", "Black Mamba"],
+    "Dwyane Wade": ["D-Wade", "Flash"],
+    "Damian Lillard": ["Dame", "Dame Time"],
+    "James Harden": ["The Beard", "Beard"],
+    "Victor Wembanyama": ["Wemby"],
+    "Chris Webber": ["C-Webb"],
+    "Vince Carter": ["Vinsanity"],
+    "Anthony Edwards": ["Ant", "Ant Man"],
+    "Karl-Anthony Towns": ["KAT"],
+    "Anfernee Hardaway": ["Penny", "Penny Hardaway"],
+    "Metta World Peace": ["Ron Artest", "Artest"],
+    "Jimmy Butler III": ["Jimmy Buckets"],
+    "Kawhi Leonard": ["The Claw"],
+    // NFL
+    "Christian McCaffrey": ["CMC"],
+    "Odell Beckham Jr.": ["OBJ"],
+    "Calvin Johnson": ["Megatron"],
+    "Rob Gronkowski": ["Gronk"],
+    "Marshawn Lynch": ["Beast Mode"],
+    "Adrian Peterson": ["AP", "All Day"],
+    "LaDainian Tomlinson": ["LT"],
+    "Chad Johnson": ["Ochocinco", "Chad Ochocinco"],
+    "Terrell Owens": ["TO"],
+    "Antonio Brown": ["AB"],
+    "Tyreek Hill": ["Cheetah"],
+    "Jerome Bettis": ["The Bus", "Bus"],
+    "Ben Roethlisberger": ["Big Ben"],
+    "Derrick Henry": ["King Henry"],
+    "Marquise Brown": ["Hollywood", "Hollywood Brown"],
+    "Amon-Ra St. Brown": ["Sun God"],
+    "Tom Brady": ["TB12"],
+    "Maurice Jones-Drew": ["MJD"]
+};
+
 function normalize(text) {
     return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+// Typos allowed when matching against `target`: ~1 wrong letter per 5, at least 1
+function closeEnough(guess, target) {
+    return levenshtein(guess, target) <= Math.max(1, Math.floor(target.length * 0.2));
+}
+
+// Every way an answer can be named. "Amon-Ra St. Brown" gives first
+// "amonra" and surnames "stbrown" and "brown".
+function nameForms(name) {
+    const words = name.split(/\s+/).map(normalize).filter(Boolean);
+    // Drop Jr./III and middle initials (but never the first name: "J.J.", "A.J.")
+    const core = words.filter((word, idx) => idx === 0 || (!NAME_SUFFIXES.has(word) && word.length > 1));
+    const rest = core.slice(1);
+    const fulls = [...new Set([normalize(name), core.join("")])];
+    const first = core[0];
+    const surnames = rest.length > 0 ? [...new Set([rest.join(""), rest.at(-1)])] : [];
+    return {
+        name,
+        fulls,
+        first,
+        surnames,
+        aliases: [...new Set([...fulls, first, ...surnames])],
+        nicknames: (PLAYER_NICKNAMES[name] || []).map(normalize)
+    };
+}
+
+// How well a guessed first name fits: 0 same or a short form, 1 a typo,
+// 2 only the same first letter (or an initial), Infinity no fit
+function firstNameFit(guessed, first) {
+    if (guessed === first) return 0;
+    if (guessed.length >= 2 && (first.startsWith(guessed) || guessed.startsWith(first))) return 0;
+    if (FIRST_NAME_GROUPS.some(group => group.includes(guessed) && group.includes(first))) return 0;
+    if (closeEnough(guessed, first)) return 1;
+    if (guessed[0] === first[0]) return 2;
+    return Infinity;
 }
 
 function findAnswerMatch(rawGuess, answers) {
     const guess = normalize(rawGuess);
     if (!guess) return null;
 
-    const candidates = answers.map(({ name }) => {
-        const parts = name.split(/\s+/).map(normalize).filter(Boolean);
-        const lastName = [...parts].reverse().find(part => !NAME_SUFFIXES.has(part));
-        return { name, full: normalize(name), aliases: [...new Set([normalize(name), parts[0], lastName])] };
-    });
+    const candidates = answers.map(({ name }) => nameForms(name));
+    const onlyOne = list => list.length === 1 ? list[0].name : null;
 
-    const exactFull = candidates.find(c => c.full === guess);
+    const exactFull = candidates.find(c => c.fulls.includes(guess));
     if (exactFull) return exactFull.name;
 
-    const exactAlias = candidates.filter(c => c.aliases.includes(guess));
-    if (exactAlias.length > 0) return exactAlias.length === 1 ? exactAlias[0].name : null;
+    const exact = candidates.filter(c => c.aliases.includes(guess) || c.nicknames.includes(guess));
+    if (exact.length > 0) return onlyOne(exact);
 
-    // Typos: allow ~1 wrong letter per 5, at least 1
+    const byParts = matchFirstAndSurname(rawGuess, candidates);
+    if (byParts) return byParts;
+
+    // Typos in the full name, first name or surname
     let bestDistance = Infinity;
     let best = [];
     for (const candidate of candidates) {
         for (const alias of candidate.aliases) {
+            if (!closeEnough(guess, alias)) continue;
             const distance = levenshtein(guess, alias);
-            const allowed = Math.max(1, Math.floor(alias.length * 0.2));
-            if (distance > allowed || distance > bestDistance) continue;
+            if (distance > bestDistance) continue;
             if (distance < bestDistance) {
                 bestDistance = distance;
                 best = [];
             }
-            if (!best.includes(candidate.name)) best.push(candidate.name);
+            if (!best.includes(candidate)) best.push(candidate);
         }
     }
-    return best.length === 1 ? best[0] : null;
+    return onlyOne(best);
+}
+
+// A guess of two or more words read as first name + surname, so
+// "Matt Stafford", "Steph Curry" and "Amon-Ra Brown" work. The surname
+// must match (typos allowed); the best-fitting first name wins.
+function matchFirstAndSurname(rawGuess, candidates) {
+    const words = rawGuess.trim().split(/\s+/).map(normalize).filter(Boolean);
+    if (words.length < 2) return null;
+
+    const [guessedFirst, ...rest] = words;
+    const guessedSurnames = [rest.join(""), rest.at(-1)];
+
+    let bestFit = Infinity;
+    let best = [];
+    for (const candidate of candidates) {
+        const surnameFits = candidate.surnames.some(surname =>
+            guessedSurnames.some(guessed => closeEnough(guessed, surname)));
+        if (!surnameFits) continue;
+
+        const fit = firstNameFit(guessedFirst, candidate.first);
+        if (fit === Infinity || fit > bestFit) continue;
+        if (fit < bestFit) {
+            bestFit = fit;
+            best = [];
+        }
+        best.push(candidate);
+    }
+    return best.length === 1 ? best[0].name : null;
 }
 
 // Number of single-letter edits to turn a into b
