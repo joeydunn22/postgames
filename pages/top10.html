@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
-  <link rel="stylesheet" href="../assets/global/global.css?v=131">
-  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=131">
+  <link rel="stylesheet" href="../assets/global/global.css?v=132">
+  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=132">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
@@ -200,11 +200,16 @@
       <h2 class="section-label">The full list</h2>
       <ol id="resultsBoard" class="board"></ol>
 
+      <div id="misses" class="misses hidden">
+        <h2 class="section-label">Misses</h2>
+        <ol id="missesList" class="misses-list"></ol>
+      </div>
+
       <button id="newGameBtn" class="btn btn-primary btn-block" type="button">New Game</button>
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 131</p>
+    <p class="version">Version 132</p>
   </main>
 
 
@@ -246,10 +251,10 @@
 
   <!-- Top 10 game: plain deferred scripts. They run in this order after the
        Firebase module above and share top-level names with each other. -->
-  <script defer src="../assets/top10/js/top10-state.js?v=131"></script>
-  <script defer src="../assets/top10/js/top10-teams.js?v=131"></script>
-  <script defer src="../assets/top10/js/top10-render.js?v=131"></script>
-  <script defer src="../assets/top10/js/top10-logic.js?v=131"></script>
+  <script defer src="../assets/top10/js/top10-state.js?v=132"></script>
+  <script defer src="../assets/top10/js/top10-teams.js?v=132"></script>
+  <script defer src="../assets/top10/js/top10-render.js?v=132"></script>
+  <script defer src="../assets/top10/js/top10-logic.js?v=132"></script>
 
 </body>
 </html>

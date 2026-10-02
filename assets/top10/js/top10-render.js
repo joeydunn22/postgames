@@ -275,7 +275,6 @@ function renderFeedback() {
         : "";
     const [main, note] = {
         correct: [`✓ ${escapeHTML(last.answer)}`, ""],
-        repeat: [escapeHTML(last.answer), "already on the board"],
         wrong: [`✗ “${escapeHTML(last.guess)}”`, "not on the list"],
         timeout: ["Time's up", ""]
     }[last.result];
@@ -354,7 +353,11 @@ function renderTurnClock() {
 }
 
 // Players matching what's typed: tap one to guess them. Players already
-// on the board are shown but can't be picked.
+// found (green, with who found them) or already missed by whoever's turn
+// it is (red) are shown with that label in place of their team, and
+// can't be picked.
+const GUESS_STATUS_LABELS = { correct: "✓ On the board", wrong: "✗ You missed" };
+
 function renderGuessResults() {
     const canGuess = game.state === GAME_STATES.PLAYING && isMyTurn() && !game.roundComplete;
     const found = canGuess ? searchRoster(ui.guessInput.value) : null;
@@ -369,14 +372,19 @@ function renderGuessResults() {
 
     if (_highlight >= found.players.length) _highlight = found.players.length - 1;
 
+    const nameOf = id => game.players.find(p => p.id === id)?.name;
     const rows = found.players.map((player, idx) => {
-        const meta = teamTag(player.team) + (player.pos ? `<span class="guess-option-pos">${escapeHTML(player.pos)}</span>` : "");
+        let meta = teamTag(player.team) + (player.pos ? `<span class="guess-option-pos">${escapeHTML(player.pos)}</span>` : "");
+        if (player.status) {
+            const by = game.players.length > 1 && nameOf(player.by) ? ` · ${escapeHTML(nameOf(player.by))}` : "";
+            meta = `<span class="guess-status">${GUESS_STATUS_LABELS[player.status]}${by}</span>`;
+        }
         return `
             <li role="option" aria-selected="${idx === _highlight}">
-                <button class="guess-option ${idx === _highlight ? "active" : ""}" type="button"
-                    data-id="${escapeHTML(player.id)}" ${player.found ? "disabled" : ""}>
+                <button class="guess-option ${player.status || ""} ${idx === _highlight ? "active" : ""}" type="button"
+                    data-id="${escapeHTML(player.id)}" ${player.status ? "disabled" : ""}>
                     <span class="guess-option-name">${escapeHTML(player.name)}</span>
-                    <span class="guess-option-meta">${player.found ? "on the board" : meta}</span>
+                    <span class="guess-option-meta">${meta}</span>
                 </button>
             </li>`;
     });
@@ -521,9 +529,32 @@ function renderResults() {
 
     renderSessionBoard(ui.sessionResults, { justPlayed: true });
     renderBoard(ui.resultsBoard, { final: true });
+    renderMisses();
 
     ui.newGameBtn.classList.toggle("hidden", !isHost());
     ui.newGameWaiting.classList.toggle("hidden", isHost());
+}
+
+
+// Everyone's wrong guesses this game, one row per player guessed, with who
+// guessed them (when 2+ played). Most-guessed first, then in guess order.
+function renderMisses() {
+    const nameOf = id => game.players.find(p => p.id === id)?.name;
+    const byPlayer = new Map();
+    for (const miss of game.misses) {
+        if (!byPlayer.has(miss.id)) byPlayer.set(miss.id, { name: miss.name, by: [] });
+        byPlayer.get(miss.id).by.push(nameOf(miss.by));
+    }
+    const rows = [...byPlayer.values()].sort((a, b) => b.by.length - a.by.length);
+
+    ui.misses.classList.toggle("hidden", rows.length === 0);
+    ui.missesList.innerHTML = rows.map(row => {
+        const names = row.by.filter(Boolean);
+        const by = game.players.length > 1 && names.length
+            ? `<span class="miss-by">${names.map(escapeHTML).join(" · ")}</span>`
+            : "";
+        return `<li class="miss"><span class="miss-name">${escapeHTML(row.name)}</span>${by}</li>`;
+    }).join("");
 }
 
 
@@ -606,6 +637,8 @@ function findElements() {
         standings: byId("standings"),
         sessionResults: byId("sessionResults"),
         resultsBoard: byId("resultsBoard"),
+        misses: byId("misses"),
+        missesList: byId("missesList"),
         newGameBtn: byId("newGameBtn"),
         newGameWaiting: byId("newGameWaiting")
     });

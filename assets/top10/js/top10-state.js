@@ -34,8 +34,9 @@ const SYNCED_DEFAULTS = {
     currentPlayerIndex: 0,
     turnEndsAt: null,     // server time (ms) the current turn runs out, when timed
     guessed: [],          // [{ id, by }] board players found (by player id) and who got them
+    misses: [],           // [{ id, name, by }] wrong guesses, in order, and who made them
     roundComplete: false, // every answer found
-    lastGuess: null       // { playerName, id, guess, answer, result, at }, shown to everyone
+    lastGuess: null       // { playerName, id, guess, answer, result: correct|wrong|timeout, at }, shown to everyone
 };
 
 // Era choices offered to the host. Each test gets the season's start

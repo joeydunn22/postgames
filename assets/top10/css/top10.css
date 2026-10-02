@@ -433,17 +433,34 @@
     font-weight: 600;
 }
 
-.guess-option:disabled .team-tag {
-    opacity: 0.4;
-}
-
+/* Already guessed this game: tinted, labelled, can't be picked */
 .guess-option:disabled {
     cursor: default;
-    background: none;
 }
 
 .guess-option:disabled .guess-option-name {
-    color: var(--faint);
+    color: var(--muted);
+}
+
+.guess-option.correct {
+    background: var(--good-soft);
+}
+
+.guess-option.wrong {
+    background: var(--bad-soft);
+}
+
+.guess-status {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.guess-option.correct .guess-status {
+    color: var(--good);
+}
+
+.guess-option.wrong .guess-status {
+    color: var(--bad);
 }
 
 .guess-more,
@@ -726,6 +743,39 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
+}
+
+/* Results: wrong guesses this game */
+.misses {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.misses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.miss {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.miss-name {
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--bad);
+}
+
+.miss-by {
+    color: var(--faint);
+    font-size: 13px;
 }
 
 

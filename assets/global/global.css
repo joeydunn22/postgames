@@ -19,6 +19,7 @@
     --good: #3ddc97;
     --good-soft: rgba(61, 220, 151, 0.12);
     --bad: #ff6b5b;
+    --bad-soft: rgba(255, 107, 91, 0.12);
 
     /* Type */
     --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;

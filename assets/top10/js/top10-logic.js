@@ -371,6 +371,7 @@ function startGame() {
         state: GAME_STATES.PLAYING,
         currentPlayerIndex: 0,
         guessed: [],
+        misses: [],
         roundComplete: false,
         lastGuess: null
     });
@@ -403,6 +404,7 @@ function newGame() {
         currentPlayerIndex: 0,
         turnEndsAt: null,
         guessed: [],
+        misses: [],
         roundComplete: false,
         lastGuess: null
     });
@@ -476,9 +478,25 @@ function isMyTurn() {
     return game.players[game.currentPlayerIndex]?.id === currentUser?.uid;
 }
 
-// A guess is a player picked from the season's roster, sent as their id
+// How a player has already been guessed this game, from `guesserId`'s side:
+// "correct" once anyone has found them (they're on the board), "wrong" if
+// this guesser already missed with them, else null. Other people's misses
+// don't count: everyone can try a player someone else got wrong.
+function guessStatus(playerId, guesserId) {
+    if (game.guessed.some(g => g.id === playerId)) return "correct";
+    if (game.misses.some(m => m.id === playerId && m.by === guesserId)) return "wrong";
+    return null;
+}
+
+function currentGuesserId() {
+    return game.players[game.currentPlayerIndex]?.id ?? null;
+}
+
+// A guess is a player picked from the season's roster, sent as their id.
+// A player can't be picked once found, or again by someone who missed with them.
 function submitGuess(playerId) {
-    if (!rosterPlayer(playerId) || game.state !== GAME_STATES.PLAYING || !isMyTurn()) return;
+    if (!rosterPlayer(playerId) || guessStatus(playerId, currentGuesserId()) ||
+        game.state !== GAME_STATES.PLAYING || !isMyTurn()) return;
 
     if (isHost()) {
         applyGuess(playerId);
@@ -494,11 +512,11 @@ function applyGuess(playerId) {
     const stat = game.data[game.stat];
     const guesser = game.players[game.currentPlayerIndex];
     const picked = rosterPlayer(playerId);
-    if (!stat || !guesser || !picked || game.roundComplete) return;
+    // A repeat can only come from a phone that hadn't caught up yet: ignore it, turn and all
+    if (!stat || !guesser || !picked || guessStatus(playerId, guesser.id) || game.roundComplete) return;
 
     const onBoard = stat.players.find(p => p.id === playerId);
-    const alreadyGuessed = game.guessed.some(g => g.id === playerId);
-    const result = !onBoard ? "wrong" : alreadyGuessed ? "repeat" : "correct";
+    const result = onBoard ? "correct" : "wrong";
 
     game.lastGuess = {
         playerName: guesser.name,
@@ -512,6 +530,8 @@ function applyGuess(playerId) {
     if (result === "correct") {
         guesser.score += 1;
         game.guessed.push({ id: playerId, by: guesser.id });
+    } else {
+        game.misses.push({ id: playerId, name: picked.name, by: guesser.id });
         game.roundComplete = game.guessed.length === stat.players.length;
     }
 
@@ -647,6 +667,8 @@ function rosterPlayer(id) {
 
 // Up to GUESS_RESULTS players matching what's typed, in the roster's
 // (surname) order, and how many more matched. null below the letter minimum.
+// Each has a `status` for whoever's turn it is (see guessStatus) and, when
+// found, `by`: who found them.
 function searchRoster(query) {
     const typed = query.split(/\s+/).map(normalize).filter(Boolean);
     if (typed.join("").length < GUESS_MIN_LETTERS) return null;
@@ -658,7 +680,8 @@ function searchRoster(query) {
     return {
         players: matches.slice(0, GUESS_RESULTS).map(player => ({
             ...player,
-            found: game.guessed.some(g => g.id === player.id)
+            status: guessStatus(player.id, currentGuesserId()),
+            by: game.guessed.find(g => g.id === player.id)?.by ?? null
         })),
         more: Math.max(0, matches.length - GUESS_RESULTS)
     };
