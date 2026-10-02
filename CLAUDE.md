@@ -85,7 +85,7 @@ Then open `http://localhost:8000/pages/top10.html`. Multiplayer requires two bro
 
 ## Versioning convention
 
-Commits are titled `vNNN | <summary>`, and each commit bumps the `Version NNN` footer line in `pages/top10.html` to match. Keep these in sync when committing.
+Commits are titled `vNNN | <summary>`, and each commit bumps the `Version NNN` footer line in `pages/top10.html` to match, **and** the `?v=NNN` stamp on every local CSS/JS link in every page (`index.html` and `pages/*.html`). The stamp makes phones load a new version's files together instead of mixing new and cached ones (GitHub Pages lets browsers cache files for 10 minutes). Keep all of these in sync when committing. Data JSON is fetched with `cache: "no-cache"` instead, so it needs no stamp.
 
 ## Visual design
 

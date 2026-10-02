@@ -558,6 +558,9 @@ setInterval(checkTurnClock, 250);
 
 /* ============================================================
    9. DATA
+   Fetched with cache "no-cache": the phone always checks the file is
+   current (a quick "not modified" when it is), so new code never runs
+   on stale data.
    data/manifest.json lists every available sport/category/year and
    its file (paths here are relative to pages/top10.html). Next to each
    season's stat files is players.json: everyone who played that season,
@@ -565,7 +568,7 @@ setInterval(checkTurnClock, 250);
    ============================================================ */
 async function loadDataManifest() {
     try {
-        const response = await fetch("../data/manifest.json");
+        const response = await fetch("../data/manifest.json", { cache: "no-cache" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         dataManifest = (await response.json()).available;
     } catch (error) {
@@ -597,7 +600,7 @@ async function loadStats() {
     render();
 
     const fetchJSON = async path => {
-        const response = await fetch(`../data/${path}`);
+        const response = await fetch(`../data/${path}`, { cache: "no-cache" });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
     };
