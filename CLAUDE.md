@@ -57,7 +57,10 @@ Movies and snacks wait until trivia is what people actually open. Each needs its
 - [ ] Movie selector
 - [ ] Snack finder
 - [ ] Debates
-- [ ] Eventually an app wrapper around the site
+- [x] Installable as a Progressive Web App (home-screen icon, full screen; no offline)
+- [ ] Swap the placeholder "P" app icons for the owner's real icon
+- [ ] Maybe a small "Add to Home Screen" hint, mainly for iPhone where there's no install prompt
+- [ ] Eventually an app wrapper around the site (App Store / Play Store)
 
 ## Working with the owner
 
@@ -88,7 +91,13 @@ Dark "late night at the bar" look: near-black background, a single amber accent 
 - `assets/global/global.css` — design tokens (`:root` variables) and shared components: `.site-header`/`.brand`/`.site-nav`, `.btn` / `.btn-primary` / `.link-btn`, `.chip`, `.input` / `.select`, `.display` / `.eyebrow` / `.lede` / `.hint`. Reuse these rather than restyling per page.
 - `assets/home/home.css` — home page and the "coming soon" placeholder pages.
 - `assets/top10/css/top10.css` — trivia only.
-- Every page loads the two Google Fonts in its `<head>`; copy that block when adding a page.
+- Every page loads the two Google Fonts in its `<head>`, followed by the favicon and the app (PWA) tags; copy that whole block when adding a page, fixing the `../` prefixes.
+
+## Installable app (PWA)
+
+The site installs to a phone's home screen as a Progressive Web App. `manifest.webmanifest` (repo root) gives the app name, colors, icons and start page (the home page), and opens it full screen (`standalone`), so there is no browser back button: every page must keep a way home (the POSTGAMES logo). Icons are in `assets/icons/` (`icon-192.png`, `icon-512.png`, `apple-touch-icon.png` at 180px); the current ones are placeholders, and replacing them is just overwriting those files at the same sizes. Each page's `<head>` links the manifest and has iPhone-specific meta tags.
+
+There is deliberately **no service worker** (the owner chose no offline mode), so nothing is cached beyond normal browser caching and players always get the latest version after a push. Installing needs HTTPS, which GitHub Pages provides; on iPhone the home-screen app has its own storage, so it signs in as a new anonymous Firebase user.
 
 ## Top 10 Trivia architecture
 
