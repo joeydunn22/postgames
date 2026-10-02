@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no package manager, no tests) with Firebase Realtime Database for multiplayer. Remote: `github.com/joeydunn22/postgames`. The only real feature is **Top 10 Trivia** (`pages/top10.html`); `debates.html`, `movies.html`, `snacks.html` are "coming soon" placeholders.
+Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no package manager, no tests) with Firebase Realtime Database for multiplayer. Remote: `github.com/joeydunn22/postgames`; the live site is GitHub Pages at `joeydunn22.github.io/postgames`. The local copy lives at `C:/Users/josep/Claude Code/Postgames`, deliberately outside OneDrive (a OneDrive move once left a partial copy, and syncing fights with git). The only real feature is **Top 10 Trivia** (`pages/top10.html`); `debates.html`, `movies.html`, `snacks.html` are "coming soon" placeholders.
 
 ## Vision
 
@@ -46,8 +46,12 @@ Small gameplay additions that make a night of play more fun.
 - [x] Guess by picking a player from a search of everyone who played that season (replaced free-text matching, typos and nicknames)
 - [ ] Revisit tap-to-guess if accidental taps turn out to be a problem in real games
 - [ ] NBA positions in the guess list, if an open source answers scripts (stats.nba.com's position endpoints time out)
+- [x] Track every guess: misses blocked per player, found players blocked for all, end-of-game misses list with who guessed them
+- [ ] Owner is testing whether players already on the board should stay blocked for everyone (currently yes); revisit after real games
 
 ### 3. Larger game enhancements — NEXT
+
+**Next session starts here: solo mode.** The owner asked to first *understand how accounts and data storage would work* before anything is built. Open with a plain-language walkthrough (saved on the device only vs. a real sign-in; what each means for players, for the owner, and for moving between phones), give a recommendation, ask the owner's design questions, then build once they give the green light.
 
 - [ ] Proper solo mode with personal bests saved on the device (localStorage, no accounts)
 - [ ] Real login: upgrade Firebase anonymous auth to Google sign-in (keeps existing uids), once there's something worth saving across devices
@@ -71,6 +75,10 @@ Movies and snacks wait until trivia is what people actually open. Each needs its
 - **Go step by step; don't build the future state early.** This project is a learning experience the owner enjoys taking incrementally. Don't introduce accounts, an app wrapper, frameworks or build tooling ahead of time — solve the current step well and leave those for later.
 - **Keep the Roadmap current.** When a change ships a Roadmap item or brings up a new idea, update the Roadmap in the same commit.
 - **Commit and push by default.** After finishing a change, commit it (following the versioning convention below) and push to `origin main` without asking, unless the owner says not to for that change.
+- **Explain before building bigger features.** For anything new in concept (the PWA, the guess dropdown, accounts), the owner wants a plain-language walkthrough first: what it is, the options with concrete examples, edge cases and your recommendation. Then build once they say "green light". Small follow-ups can go straight in.
+- **Fairness matters a lot to the owner.** Guessing must never leak answers (the guess list searches the whole season, not the board), and rules should feel even-handed between players.
+- **Check your work visually when it's about looks.** There's no browser tool, but headless Chrome can screenshot a preview page: `chrome.exe --headless=new --screenshot=out.png --window-size=600,1000 file:///.../preview.html`, then view the PNG (headless Chrome won't go narrower than about 500px). Logic can be tested by loading the real game scripts in Node with the Firebase globals stubbed (`vm.runInContext`).
+- **The owner tests on their phone through the installed app.** After a push, remind them to swipe the app closed and reopen it; the footer shows the version.
 - **Reorganize freely.** Move or restructure code and files whenever it makes things clearer. When you do, briefly explain where things now live and why, since that helps the owner learn the codebase.
 
 ## Running locally
@@ -100,7 +108,7 @@ Dark "late night at the bar" look: near-black background, a single amber accent 
 
 The site installs to a phone's home screen as a Progressive Web App. `manifest.webmanifest` (repo root) gives the app name, colors, icons and start page (the home page), and opens it full screen (`standalone`), so there is no browser back button: every page must keep a way home (the POSTGAMES logo). Icons are in `assets/icons/` (`icon-192.png`, `icon-512.png`, `apple-touch-icon.png` at 180px); the current ones are placeholders, and replacing them is just overwriting those files at the same sizes. Each page's `<head>` links the manifest and has iPhone-specific meta tags.
 
-There is deliberately **no service worker** (the owner chose no offline mode), so nothing is cached beyond normal browser caching and players always get the latest version after a push. Installing needs HTTPS, which GitHub Pages provides; on iPhone the home-screen app has its own storage, so it signs in as a new anonymous Firebase user.
+There is deliberately **no service worker** (the owner chose no offline mode), so nothing is cached beyond normal browser caching, and players get the latest version after a push once they reopen the app (the installed app resumes the open page rather than reloading; swiping it closed and reopening is the fix). The `?v=NNN` stamps (see Versioning convention) keep a new version's files from mixing with cached old ones. Installing needs HTTPS, which GitHub Pages provides; on iPhone the home-screen app has its own storage, so it signs in as a new anonymous Firebase user.
 
 ## Top 10 Trivia architecture
 
@@ -124,7 +132,7 @@ Firebase layout per room: `rooms/{CODE}/host`, `players/{uid}` (display name), `
 - **Era:** `era` (a key of `ERAS`) is a host setup choice that limits the sport chips, Season list and Random to seasons in that era. "Last 5/10" count back from each sport's newest season; decades use the season's start year (NBA 2000 = 1999-00, so it's Pre-2000). Changing era drops a picked season that falls outside it.
 - **Random board:** `pickRandomBoard(sport?)` (host) picks, within the era, a sport evenly (so MLB's extra files don't dominate), then any manifest entry for it, waits for `loadStats()`, then a random stat. It only fills the picks; the host still presses Start.
 - **Turn timer:** `timerSeconds` (0 = off) is a host setup choice. `startTurnClock()` sets `turnEndsAt` in *server* time (`serverNow()` = local clock + Firebase's `.info/serverTimeOffset`) whenever a turn starts, so all phones count down together. Only the host runs `checkTurnClock()` (every 250 ms): at the deadline it records a `timeout` guess and calls `nextTurn()`. The renderer redraws just the countdown every 250 ms (`renderTurnClock()`).
-- `game.lastGuess` (`{ playerName, id, guess, answer, result: correct|wrong|repeat|timeout, at }`; `guess` is the picked player's name, `answer` the board name or null) is synced so everyone sees feedback; the renderer animates only guesses newer than the last one it drew.
+- `game.lastGuess` (`{ playerName, id, guess, answer, result: correct|wrong|timeout, at }`; `guess` is the picked player's name, `answer` the board name or null) is synced so everyone sees feedback; the renderer animates only guesses newer than the last one it drew.
 
 **Guessing is picking, not typing.** Players type into the guess box and pick from a list; free text can't be submitted, so there's no name matching, typo tolerance or nicknames. `searchRoster()` searches `game.roster`, everyone who played that season (never just the board, so the list gives nothing away). Nothing shows under `GUESS_MIN_LETTERS` (3) letters. Every typed word must start a word of the name, ignoring accents and punctuation ("aj bro" → A.J. Brown, "amon" → Amon-Ra St. Brown). At most `GUESS_RESULTS` (5) show, in surname order, with "… N more" when more match. Each row shows the team as a colored tag (`teamTag()`, also used on the board) and position (NBA: team only), and players you can't pick are greyed out (see below). Tapping a row guesses immediately (`pickGuess` → `submitGuess(id)`); on a keyboard, arrow keys + Enter work, and Enter alone picks a lone result. Guesses are matched to the board by player id, so same-named players (two Josh Allens) never get mixed up.
 
@@ -143,7 +151,7 @@ python scripts/build_trivia_data.py nfl 1999-2025
 python scripts/build_trivia_data.py nba 1980-2026
 ```
 
-- **MLB** uses the Stats API's league leaders (one request per season per category). The API ranks, marks ties and applies rate-stat qualifiers itself. Stats and their labels are in `MLB_STATS`.
+- **MLB** uses the Stats API's league leaders (one request per season per category, plus three for the season's player list). The API ranks, marks ties and applies rate-stat qualifiers itself. Stats and their labels are in `MLB_STATS`.
 - **NFL** downloads nflverse's regular-season player totals (one CSV per season) and ranks each stat in `nfl_stats()`. Rate stats use Pro Football Reference's per-team-game qualifiers. nflverse uses today's team codes for every season, and `NFL_MOVES` maps them back (e.g. 2003 Rams → STL). Its tackle counts come from play-by-play and can differ slightly from official totals. Rows with no player name are team totals for uncredited plays and are skipped.
 - **NBA** uses stats.nba.com's league leaders (the site behind NBA.com's stats pages), one request per stat per season, with browser-like headers because it rejects anything else. It applies the NBA's own qualifiers. Percentages only work in `Totals` mode, and a few categories (e.g. `GP`) aren't supported. Stats are in `NBA_STATS`, and `NBA_TEAM_FIXES` maps its odd old team codes (UTH → UTA). A full backfill takes about 20 minutes because of the polite delay between requests.
 - MLB and NBA sources work from a home connection but may block cloud/datacenter IPs, so run the script locally.
