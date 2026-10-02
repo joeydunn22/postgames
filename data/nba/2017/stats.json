@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -76,6 +77,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -151,6 +153,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -226,6 +229,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -301,6 +305,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -376,6 +381,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -458,6 +464,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -533,6 +540,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -608,6 +616,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -690,6 +699,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -764,382 +774,84 @@
     ]
   },
   {
-    "label": "Total Points",
+    "label": "Field Goals Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
         "id": "201566",
         "name": "Russell Westbrook",
         "team": "OKC",
-        "value": "2558"
+        "value": "824"
       },
       {
         "rank": 2,
-        "id": "201935",
-        "name": "James Harden",
-        "team": "HOU",
-        "value": "2356"
-      },
-      {
-        "rank": 3,
-        "id": "202738",
-        "name": "Isaiah Thomas",
-        "team": "BOS",
-        "value": "2199"
-      },
-      {
-        "rank": 4,
-        "id": "203076",
-        "name": "Anthony Davis",
-        "team": "NOP",
-        "value": "2099"
-      },
-      {
-        "rank": 5,
         "id": "1626157",
         "name": "Karl-Anthony Towns",
         "team": "MIN",
-        "value": "2061"
+        "value": "802"
       },
       {
-        "rank": 6,
-        "id": "203081",
-        "name": "Damian Lillard",
-        "team": "POR",
-        "value": "2024"
+        "rank": 3,
+        "id": "203076",
+        "name": "Anthony Davis",
+        "team": "NOP",
+        "value": "770"
       },
       {
-        "rank": 7,
+        "rank": 4,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "736"
+      },
+      {
+        "rank": 5,
         "id": "201942",
         "name": "DeMar DeRozan",
         "team": "TOR",
-        "value": "2020"
-      },
-      {
-        "rank": 8,
-        "id": "201939",
-        "name": "Stephen Curry",
-        "team": "GSW",
-        "value": "1999"
-      },
-      {
-        "rank": 9,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "1954"
-      },
-      {
-        "rank": 10,
-        "id": "202326",
-        "name": "DeMarcus Cousins",
-        "team": "NOP",
-        "value": "1942"
-      }
-    ]
-  },
-  {
-    "label": "Total Rebounds",
-    "players": [
-      {
-        "rank": 1,
-        "id": "203083",
-        "name": "Andre Drummond",
-        "team": "DET",
-        "value": "1115"
-      },
-      {
-        "rank": 2,
-        "id": "201599",
-        "name": "DeAndre Jordan",
-        "team": "LAC",
-        "value": "1114"
-      },
-      {
-        "rank": 3,
-        "id": "202355",
-        "name": "Hassan Whiteside",
-        "team": "MIA",
-        "value": "1088"
-      },
-      {
-        "rank": 4,
-        "id": "203497",
-        "name": "Rudy Gobert",
-        "team": "UTA",
-        "value": "1035"
-      },
-      {
-        "rank": 5,
-        "id": "1626157",
-        "name": "Karl-Anthony Towns",
-        "team": "MIN",
-        "value": "1007"
+        "value": "721"
       },
       {
         "rank": 6,
-        "id": "2730",
-        "name": "Dwight Howard",
-        "team": "ATL",
-        "value": "940"
+        "id": "203952",
+        "name": "Andrew Wiggins",
+        "team": "MIN",
+        "value": "709"
       },
       {
         "rank": 7,
-        "id": "203076",
-        "name": "Anthony Davis",
-        "team": "NOP",
-        "value": "884"
+        "id": "203468",
+        "name": "CJ McCollum",
+        "team": "POR",
+        "value": "692"
       },
       {
         "rank": 8,
-        "id": "201566",
-        "name": "Russell Westbrook",
-        "team": "OKC",
-        "value": "864"
-      },
-      {
-        "rank": 9,
-        "id": "101162",
-        "name": "Marcin Gortat",
-        "team": "WAS",
-        "value": "849"
-      },
-      {
-        "rank": 10,
-        "id": "202326",
-        "name": "DeMarcus Cousins",
-        "team": "NOP",
-        "value": "794"
-      }
-    ]
-  },
-  {
-    "label": "Total Assists",
-    "players": [
-      {
-        "rank": 1,
-        "id": "201935",
-        "name": "James Harden",
-        "team": "HOU",
-        "value": "907"
-      },
-      {
-        "rank": 2,
-        "id": "201566",
-        "name": "Russell Westbrook",
-        "team": "OKC",
-        "value": "840"
-      },
-      {
-        "rank": 3,
-        "id": "202322",
-        "name": "John Wall",
-        "team": "WAS",
-        "value": "831"
-      },
-      {
-        "rank": 4,
-        "id": "201937",
-        "name": "Ricky Rubio",
-        "team": "MIN",
+        "id": "202738",
+        "name": "Isaiah Thomas",
+        "team": "BOS",
         "value": "682"
       },
       {
-        "rank": 5,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "646"
-      },
-      {
-        "rank": 6,
-        "id": "201952",
-        "name": "Jeff Teague",
-        "team": "IND",
-        "value": "639"
-      },
-      {
-        "rank": 7,
-        "id": "101108",
-        "name": "Chris Paul",
-        "team": "LAC",
-        "value": "563"
-      },
-      {
-        "rank": 8,
-        "id": "204456",
-        "name": "T.J. McConnell",
-        "team": "PHI",
-        "value": "534"
-      },
-      {
         "rank": 9,
-        "id": "203110",
-        "name": "Draymond Green",
-        "team": "GSW",
-        "value": "533"
-      },
-      {
-        "rank": 10,
-        "id": "203901",
-        "name": "Elfrid Payton",
-        "team": "ORL",
-        "value": "529"
-      }
-    ]
-  },
-  {
-    "label": "Total Steals",
-    "players": [
-      {
-        "rank": 1,
-        "id": "202322",
-        "name": "John Wall",
-        "team": "WAS",
-        "value": "157"
-      },
-      {
-        "rank": 2,
-        "id": "203110",
-        "name": "Draymond Green",
-        "team": "GSW",
-        "value": "154"
-      },
-      {
-        "rank": 3,
-        "id": "2772",
-        "name": "Trevor Ariza",
-        "team": "HOU",
-        "value": "147"
-      },
-      {
-        "rank": 4,
-        "id": "202710",
-        "name": "Jimmy Butler III",
-        "team": "CHI",
-        "value": "143"
-      },
-      {
-        "rank": 5,
         "id": "201939",
         "name": "Stephen Curry",
         "team": "GSW",
-        "value": "142"
-      },
-      {
-        "rank": 6,
-        "id": "204456",
-        "name": "T.J. McConnell",
-        "team": "PHI",
-        "value": "134"
-      },
-      {
-        "rank": 7,
-        "id": "202695",
-        "name": "Kawhi Leonard",
-        "team": "SAS",
-        "value": "133"
-      },
-      {
-        "rank": 8,
-        "id": "201566",
-        "name": "Russell Westbrook",
-        "team": "OKC",
-        "value": "132"
-      },
-      {
-        "rank": 9,
-        "id": "203507",
-        "name": "Giannis Antetokounmpo",
-        "team": "MIL",
-        "value": "131"
+        "value": "675"
       },
       {
         "rank": 10,
-        "id": "201937",
-        "name": "Ricky Rubio",
-        "team": "MIN",
-        "value": "128"
-      }
-    ]
-  },
-  {
-    "label": "Total Blocks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "203497",
-        "name": "Rudy Gobert",
-        "team": "UTA",
-        "value": "214"
-      },
-      {
-        "rank": 2,
-        "id": "1626167",
-        "name": "Myles Turner",
-        "team": "IND",
-        "value": "172"
-      },
-      {
-        "rank": 3,
-        "id": "203076",
-        "name": "Anthony Davis",
-        "team": "NOP",
-        "value": "167"
-      },
-      {
-        "rank": 4,
-        "id": "202355",
-        "name": "Hassan Whiteside",
-        "team": "MIA",
-        "value": "161"
-      },
-      {
-        "rank": 5,
-        "id": "203507",
-        "name": "Giannis Antetokounmpo",
-        "team": "MIL",
-        "value": "151"
-      },
-      {
-        "rank": 6,
-        "id": "201599",
-        "name": "DeAndre Jordan",
-        "team": "LAC",
-        "value": "134"
-      },
-      {
-        "rank": 7,
-        "id": "204001",
-        "name": "Kristaps Porziņģis",
-        "team": "NYK",
-        "value": "129"
-      },
-      {
-        "rank": 8,
-        "id": "201572",
-        "name": "Brook Lopez",
-        "team": "BKN",
-        "value": "124"
-      },
-      {
-        "rank": 8,
-        "id": "201586",
-        "name": "Serge Ibaka",
-        "team": "TOR",
-        "value": "124"
-      },
-      {
-        "rank": 10,
-        "id": "201577",
-        "name": "Robin Lopez",
-        "team": "CHI",
-        "value": "117"
+        "id": "201935",
+        "name": "James Harden",
+        "team": "HOU",
+        "value": "674"
       }
     ]
   },
   {
     "label": "3-Pointers Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1215,6 +927,7 @@
   },
   {
     "label": "Free Throws Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1289,82 +1002,388 @@
     ]
   },
   {
-    "label": "Field Goals Made",
+    "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
         "id": "201566",
         "name": "Russell Westbrook",
         "team": "OKC",
-        "value": "824"
+        "value": "2558"
       },
       {
         "rank": 2,
+        "id": "201935",
+        "name": "James Harden",
+        "team": "HOU",
+        "value": "2356"
+      },
+      {
+        "rank": 3,
+        "id": "202738",
+        "name": "Isaiah Thomas",
+        "team": "BOS",
+        "value": "2199"
+      },
+      {
+        "rank": 4,
+        "id": "203076",
+        "name": "Anthony Davis",
+        "team": "NOP",
+        "value": "2099"
+      },
+      {
+        "rank": 5,
         "id": "1626157",
         "name": "Karl-Anthony Towns",
         "team": "MIN",
-        "value": "802"
+        "value": "2061"
+      },
+      {
+        "rank": 6,
+        "id": "203081",
+        "name": "Damian Lillard",
+        "team": "POR",
+        "value": "2024"
+      },
+      {
+        "rank": 7,
+        "id": "201942",
+        "name": "DeMar DeRozan",
+        "team": "TOR",
+        "value": "2020"
+      },
+      {
+        "rank": 8,
+        "id": "201939",
+        "name": "Stephen Curry",
+        "team": "GSW",
+        "value": "1999"
+      },
+      {
+        "rank": 9,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "1954"
+      },
+      {
+        "rank": 10,
+        "id": "202326",
+        "name": "DeMarcus Cousins",
+        "team": "NOP",
+        "value": "1942"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "203083",
+        "name": "Andre Drummond",
+        "team": "DET",
+        "value": "1115"
+      },
+      {
+        "rank": 2,
+        "id": "201599",
+        "name": "DeAndre Jordan",
+        "team": "LAC",
+        "value": "1114"
+      },
+      {
+        "rank": 3,
+        "id": "202355",
+        "name": "Hassan Whiteside",
+        "team": "MIA",
+        "value": "1088"
+      },
+      {
+        "rank": 4,
+        "id": "203497",
+        "name": "Rudy Gobert",
+        "team": "UTA",
+        "value": "1035"
+      },
+      {
+        "rank": 5,
+        "id": "1626157",
+        "name": "Karl-Anthony Towns",
+        "team": "MIN",
+        "value": "1007"
+      },
+      {
+        "rank": 6,
+        "id": "2730",
+        "name": "Dwight Howard",
+        "team": "ATL",
+        "value": "940"
+      },
+      {
+        "rank": 7,
+        "id": "203076",
+        "name": "Anthony Davis",
+        "team": "NOP",
+        "value": "884"
+      },
+      {
+        "rank": 8,
+        "id": "201566",
+        "name": "Russell Westbrook",
+        "team": "OKC",
+        "value": "864"
+      },
+      {
+        "rank": 9,
+        "id": "101162",
+        "name": "Marcin Gortat",
+        "team": "WAS",
+        "value": "849"
+      },
+      {
+        "rank": 10,
+        "id": "202326",
+        "name": "DeMarcus Cousins",
+        "team": "NOP",
+        "value": "794"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "201935",
+        "name": "James Harden",
+        "team": "HOU",
+        "value": "907"
+      },
+      {
+        "rank": 2,
+        "id": "201566",
+        "name": "Russell Westbrook",
+        "team": "OKC",
+        "value": "840"
+      },
+      {
+        "rank": 3,
+        "id": "202322",
+        "name": "John Wall",
+        "team": "WAS",
+        "value": "831"
+      },
+      {
+        "rank": 4,
+        "id": "201937",
+        "name": "Ricky Rubio",
+        "team": "MIN",
+        "value": "682"
+      },
+      {
+        "rank": 5,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "646"
+      },
+      {
+        "rank": 6,
+        "id": "201952",
+        "name": "Jeff Teague",
+        "team": "IND",
+        "value": "639"
+      },
+      {
+        "rank": 7,
+        "id": "101108",
+        "name": "Chris Paul",
+        "team": "LAC",
+        "value": "563"
+      },
+      {
+        "rank": 8,
+        "id": "204456",
+        "name": "T.J. McConnell",
+        "team": "PHI",
+        "value": "534"
+      },
+      {
+        "rank": 9,
+        "id": "203110",
+        "name": "Draymond Green",
+        "team": "GSW",
+        "value": "533"
+      },
+      {
+        "rank": 10,
+        "id": "203901",
+        "name": "Elfrid Payton",
+        "team": "ORL",
+        "value": "529"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "202322",
+        "name": "John Wall",
+        "team": "WAS",
+        "value": "157"
+      },
+      {
+        "rank": 2,
+        "id": "203110",
+        "name": "Draymond Green",
+        "team": "GSW",
+        "value": "154"
+      },
+      {
+        "rank": 3,
+        "id": "2772",
+        "name": "Trevor Ariza",
+        "team": "HOU",
+        "value": "147"
+      },
+      {
+        "rank": 4,
+        "id": "202710",
+        "name": "Jimmy Butler III",
+        "team": "CHI",
+        "value": "143"
+      },
+      {
+        "rank": 5,
+        "id": "201939",
+        "name": "Stephen Curry",
+        "team": "GSW",
+        "value": "142"
+      },
+      {
+        "rank": 6,
+        "id": "204456",
+        "name": "T.J. McConnell",
+        "team": "PHI",
+        "value": "134"
+      },
+      {
+        "rank": 7,
+        "id": "202695",
+        "name": "Kawhi Leonard",
+        "team": "SAS",
+        "value": "133"
+      },
+      {
+        "rank": 8,
+        "id": "201566",
+        "name": "Russell Westbrook",
+        "team": "OKC",
+        "value": "132"
+      },
+      {
+        "rank": 9,
+        "id": "203507",
+        "name": "Giannis Antetokounmpo",
+        "team": "MIL",
+        "value": "131"
+      },
+      {
+        "rank": 10,
+        "id": "201937",
+        "name": "Ricky Rubio",
+        "team": "MIN",
+        "value": "128"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "203497",
+        "name": "Rudy Gobert",
+        "team": "UTA",
+        "value": "214"
+      },
+      {
+        "rank": 2,
+        "id": "1626167",
+        "name": "Myles Turner",
+        "team": "IND",
+        "value": "172"
       },
       {
         "rank": 3,
         "id": "203076",
         "name": "Anthony Davis",
         "team": "NOP",
-        "value": "770"
+        "value": "167"
       },
       {
         "rank": 4,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "736"
+        "id": "202355",
+        "name": "Hassan Whiteside",
+        "team": "MIA",
+        "value": "161"
       },
       {
         "rank": 5,
-        "id": "201942",
-        "name": "DeMar DeRozan",
-        "team": "TOR",
-        "value": "721"
+        "id": "203507",
+        "name": "Giannis Antetokounmpo",
+        "team": "MIL",
+        "value": "151"
       },
       {
         "rank": 6,
-        "id": "203952",
-        "name": "Andrew Wiggins",
-        "team": "MIN",
-        "value": "709"
+        "id": "201599",
+        "name": "DeAndre Jordan",
+        "team": "LAC",
+        "value": "134"
       },
       {
         "rank": 7,
-        "id": "203468",
-        "name": "CJ McCollum",
-        "team": "POR",
-        "value": "692"
+        "id": "204001",
+        "name": "Kristaps Porziņģis",
+        "team": "NYK",
+        "value": "129"
       },
       {
         "rank": 8,
-        "id": "202738",
-        "name": "Isaiah Thomas",
-        "team": "BOS",
-        "value": "682"
+        "id": "201572",
+        "name": "Brook Lopez",
+        "team": "BKN",
+        "value": "124"
       },
       {
-        "rank": 9,
-        "id": "201939",
-        "name": "Stephen Curry",
-        "team": "GSW",
-        "value": "675"
+        "rank": 8,
+        "id": "201586",
+        "name": "Serge Ibaka",
+        "team": "TOR",
+        "value": "124"
       },
       {
         "rank": 10,
-        "id": "201935",
-        "name": "James Harden",
-        "team": "HOU",
-        "value": "674"
+        "id": "201577",
+        "name": "Robin Lopez",
+        "team": "CHI",
+        "value": "117"
       }
     ]
   },
   {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1440,6 +1459,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

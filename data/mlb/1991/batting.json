@@ -1,95 +1,7 @@
 [
   {
-    "label": "Home Runs",
-    "players": [
-      {
-        "rank": 1,
-        "id": "111962",
-        "name": "José Canseco",
-        "team": "OAK",
-        "value": "44"
-      },
-      {
-        "rank": 1,
-        "id": "114106",
-        "name": "Cecil Fielder",
-        "team": "DET",
-        "value": "44"
-      },
-      {
-        "rank": 3,
-        "id": "116593",
-        "name": "Howard Johnson",
-        "team": "NYM",
-        "value": "38"
-      },
-      {
-        "rank": 4,
-        "id": "121222",
-        "name": "Cal Ripken Jr.",
-        "team": "BAL",
-        "value": "34"
-      },
-      {
-        "rank": 4,
-        "id": "124326",
-        "name": "Matt Williams",
-        "team": "SF",
-        "value": "34"
-      },
-      {
-        "rank": 6,
-        "id": "112064",
-        "name": "Joe Carter",
-        "team": "TOR",
-        "value": "33"
-      },
-      {
-        "rank": 7,
-        "id": "114567",
-        "name": "Ron Gant",
-        "team": "ATL",
-        "value": "32"
-      },
-      {
-        "rank": 7,
-        "id": "123245",
-        "name": "Frank Thomas",
-        "team": "CWS",
-        "value": "32"
-      },
-      {
-        "rank": 9,
-        "id": "113151",
-        "name": "Andre Dawson",
-        "team": "CHC",
-        "value": "31"
-      },
-      {
-        "rank": 9,
-        "id": "118730",
-        "name": "Fred McGriff",
-        "team": "SD",
-        "value": "31"
-      },
-      {
-        "rank": 9,
-        "id": "123096",
-        "name": "Danny Tartabull",
-        "team": "KC",
-        "value": "31"
-      },
-      {
-        "rank": 9,
-        "id": "123211",
-        "name": "Mickey Tettleton",
-        "team": "DET",
-        "value": "31"
-      }
-    ]
-  },
-  {
     "label": "Batting Average",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -164,82 +76,8 @@
     ]
   },
   {
-    "label": "Runs Batted In",
-    "players": [
-      {
-        "rank": 1,
-        "id": "114106",
-        "name": "Cecil Fielder",
-        "team": "DET",
-        "value": "133"
-      },
-      {
-        "rank": 2,
-        "id": "111962",
-        "name": "José Canseco",
-        "team": "OAK",
-        "value": "122"
-      },
-      {
-        "rank": 3,
-        "id": "116593",
-        "name": "Howard Johnson",
-        "team": "NYM",
-        "value": "117"
-      },
-      {
-        "rank": 4,
-        "id": "111188",
-        "name": "Barry Bonds",
-        "team": "PIT",
-        "value": "116"
-      },
-      {
-        "rank": 4,
-        "id": "112345",
-        "name": "Will Clark",
-        "team": "SF",
-        "value": "116"
-      },
-      {
-        "rank": 4,
-        "id": "122218",
-        "name": "Ruben Sierra",
-        "team": "TEX",
-        "value": "116"
-      },
-      {
-        "rank": 7,
-        "id": "121222",
-        "name": "Cal Ripken Jr.",
-        "team": "BAL",
-        "value": "114"
-      },
-      {
-        "rank": 8,
-        "id": "123245",
-        "name": "Frank Thomas",
-        "team": "CWS",
-        "value": "109"
-      },
-      {
-        "rank": 9,
-        "id": "112064",
-        "name": "Joe Carter",
-        "team": "TOR",
-        "value": "108"
-      },
-      {
-        "rank": 10,
-        "id": "118730",
-        "name": "Fred McGriff",
-        "team": "SD",
-        "value": "106"
-      }
-    ]
-  },
-  {
     "label": "Hits",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -315,6 +153,7 @@
   },
   {
     "label": "Runs Scored",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -396,82 +235,84 @@
     ]
   },
   {
-    "label": "Stolen Bases",
+    "label": "Runs Batted In",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
-        "id": "115174",
-        "name": "Marquis Grissom",
-        "team": "MON",
-        "value": "76"
+        "id": "114106",
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "133"
       },
       {
         "rank": 2,
-        "id": "119812",
-        "name": "Otis Nixon",
-        "team": "ATL",
-        "value": "72"
+        "id": "111962",
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": "122"
       },
       {
         "rank": 3,
-        "id": "115749",
-        "name": "Rickey Henderson",
-        "team": "OAK",
-        "value": "58"
+        "id": "116593",
+        "name": "Howard Johnson",
+        "team": "NYM",
+        "value": "117"
       },
       {
         "rank": 4,
-        "id": "113291",
-        "name": "Delino DeShields",
-        "team": "MON",
-        "value": "56"
-      },
-      {
-        "rank": 5,
-        "id": "110183",
-        "name": "Roberto Alomar",
-        "team": "TOR",
-        "value": "53"
-      },
-      {
-        "rank": 6,
-        "id": "120891",
-        "name": "Tim Raines Sr.",
-        "team": "CWS",
-        "value": "51"
-      },
-      {
-        "rank": 7,
-        "id": "120658",
-        "name": "Luis Polonia",
-        "team": "CAL",
-        "value": "48"
-      },
-      {
-        "rank": 8,
-        "id": "117484",
-        "name": "Ray Lankford",
-        "team": "STL",
-        "value": "44"
-      },
-      {
-        "rank": 9,
         "id": "111188",
         "name": "Barry Bonds",
         "team": "PIT",
-        "value": "43"
+        "value": "116"
+      },
+      {
+        "rank": 4,
+        "id": "112345",
+        "name": "Will Clark",
+        "team": "SF",
+        "value": "116"
+      },
+      {
+        "rank": 4,
+        "id": "122218",
+        "name": "Ruben Sierra",
+        "team": "TEX",
+        "value": "116"
+      },
+      {
+        "rank": 7,
+        "id": "121222",
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "114"
+      },
+      {
+        "rank": 8,
+        "id": "123245",
+        "name": "Frank Thomas",
+        "team": "CWS",
+        "value": "109"
+      },
+      {
+        "rank": 9,
+        "id": "112064",
+        "name": "Joe Carter",
+        "team": "TOR",
+        "value": "108"
       },
       {
         "rank": 10,
-        "id": "112980",
-        "name": "Milt Cuyler",
-        "team": "DET",
-        "value": "41"
+        "id": "118730",
+        "name": "Fred McGriff",
+        "team": "SD",
+        "value": "106"
       }
     ]
   },
   {
     "label": "Doubles",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -561,6 +402,7 @@
   },
   {
     "label": "Triples",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -649,232 +491,98 @@
     ]
   },
   {
-    "label": "Walks",
+    "label": "Home Runs",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
-        "id": "123245",
-        "name": "Frank Thomas",
-        "team": "CWS",
-        "value": "138"
-      },
-      {
-        "rank": 2,
-        "id": "111812",
-        "name": "Brett Butler",
-        "team": "LA",
-        "value": "108"
-      },
-      {
-        "rank": 3,
-        "id": "111188",
-        "name": "Barry Bonds",
-        "team": "PIT",
-        "value": "107"
-      },
-      {
-        "rank": 4,
-        "id": "118730",
-        "name": "Fred McGriff",
-        "team": "SD",
-        "value": "105"
-      },
-      {
-        "rank": 5,
-        "id": "123211",
-        "name": "Mickey Tettleton",
-        "team": "DET",
-        "value": "101"
-      },
-      {
-        "rank": 6,
-        "id": "115749",
-        "name": "Rickey Henderson",
-        "team": "OAK",
-        "value": "98"
-      },
-      {
-        "rank": 7,
-        "id": "112326",
-        "name": "Jack Clark",
-        "team": "BOS",
-        "value": "96"
-      },
-      {
-        "rank": 8,
-        "id": "113099",
-        "name": "Chili Davis",
-        "team": "MIN",
-        "value": "95"
-      },
-      {
-        "rank": 8,
-        "id": "113291",
-        "name": "Delino DeShields",
-        "team": "MON",
-        "value": "95"
-      },
-      {
-        "rank": 10,
-        "id": "118743",
-        "name": "Mark McGwire",
-        "team": "OAK",
-        "value": "93"
-      }
-    ]
-  },
-  {
-    "label": "Strikeouts",
-    "players": [
-      {
-        "rank": 1,
-        "id": "113197",
-        "name": "Rob Deer",
-        "team": "DET",
-        "value": "175"
-      },
-      {
-        "rank": 2,
         "id": "111962",
         "name": "José Canseco",
         "team": "OAK",
-        "value": "152"
+        "value": "44"
       },
       {
-        "rank": 3,
-        "id": "113291",
-        "name": "Delino DeShields",
-        "team": "MON",
-        "value": "151"
-      },
-      {
-        "rank": 3,
+        "rank": 1,
         "id": "114106",
         "name": "Cecil Fielder",
         "team": "DET",
-        "value": "151"
-      },
-      {
-        "rank": 5,
-        "id": "114465",
-        "name": "Travis Fryman",
-        "team": "DET",
-        "value": "149"
-      },
-      {
-        "rank": 6,
-        "id": "118730",
-        "name": "Fred McGriff",
-        "team": "SD",
-        "value": "135"
-      },
-      {
-        "rank": 6,
-        "id": "124164",
-        "name": "Devon White",
-        "team": "TOR",
-        "value": "135"
-      },
-      {
-        "rank": 8,
-        "id": "112326",
-        "name": "Jack Clark",
-        "team": "BOS",
-        "value": "133"
-      },
-      {
-        "rank": 8,
-        "id": "121651",
-        "name": "Juan Samuel",
-        "team": "LA",
-        "value": "133"
-      },
-      {
-        "rank": 10,
-        "id": "123211",
-        "name": "Mickey Tettleton",
-        "team": "DET",
-        "value": "131"
-      }
-    ]
-  },
-  {
-    "label": "On-Base %",
-    "players": [
-      {
-        "rank": 1,
-        "id": "123245",
-        "name": "Frank Thomas",
-        "team": "CWS",
-        "value": ".453"
-      },
-      {
-        "rank": 2,
-        "id": "120927",
-        "name": "Willie Randolph",
-        "team": "MIL",
-        "value": ".424"
+        "value": "44"
       },
       {
         "rank": 3,
-        "id": "111153",
-        "name": "Wade Boggs",
-        "team": "BOS",
-        "value": ".421"
+        "id": "116593",
+        "name": "Howard Johnson",
+        "team": "NYM",
+        "value": "38"
       },
       {
         "rank": 4,
-        "id": "111188",
-        "name": "Barry Bonds",
-        "team": "PIT",
-        "value": ".410"
+        "id": "121222",
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "34"
       },
       {
-        "rank": 5,
-        "id": "212297",
-        "name": "Julio Franco",
-        "team": "TEX",
-        "value": ".408"
+        "rank": 4,
+        "id": "124326",
+        "name": "Matt Williams",
+        "team": "SF",
+        "value": "34"
       },
       {
         "rank": 6,
-        "id": "118365",
-        "name": "Edgar Martinez",
-        "team": "SEA",
-        "value": ".405"
+        "id": "112064",
+        "name": "Joe Carter",
+        "team": "TOR",
+        "value": "33"
       },
       {
         "rank": 7,
-        "id": "111812",
-        "name": "Brett Butler",
-        "team": "LA",
-        "value": ".401"
+        "id": "114567",
+        "name": "Ron Gant",
+        "team": "ATL",
+        "value": "32"
       },
       {
-        "rank": 8,
-        "id": "115749",
-        "name": "Rickey Henderson",
-        "team": "OAK",
-        "value": ".400"
+        "rank": 7,
+        "id": "123245",
+        "name": "Frank Thomas",
+        "team": "CWS",
+        "value": "32"
       },
       {
         "rank": 9,
-        "id": "119236",
-        "name": "Paul Molitor",
-        "team": "MIL",
-        "value": ".399"
+        "id": "113151",
+        "name": "Andre Dawson",
+        "team": "CHC",
+        "value": "31"
       },
       {
-        "rank": 10,
-        "id": "115135",
-        "name": "Ken Griffey Jr.",
-        "team": "SEA",
-        "value": ".399"
+        "rank": 9,
+        "id": "118730",
+        "name": "Fred McGriff",
+        "team": "SD",
+        "value": "31"
+      },
+      {
+        "rank": 9,
+        "id": "123096",
+        "name": "Danny Tartabull",
+        "team": "KC",
+        "value": "31"
+      },
+      {
+        "rank": 9,
+        "id": "123211",
+        "name": "Mickey Tettleton",
+        "team": "DET",
+        "value": "31"
       }
     ]
   },
   {
     "label": "Slugging %",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -950,6 +658,7 @@
   },
   {
     "label": "OPS (On-Base + Slugging)",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -1025,6 +734,7 @@
   },
   {
     "label": "Total Bases",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -1100,6 +810,7 @@
   },
   {
     "label": "Extra-Base Hits",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -1181,76 +892,160 @@
     ]
   },
   {
-    "label": "Hit By Pitch",
+    "label": "On-Base %",
+    "group": "On Base",
     "players": [
       {
         "rank": 1,
-        "id": "110432",
-        "name": "Jeff Bagwell",
-        "team": "HOU",
-        "value": "13"
+        "id": "123245",
+        "name": "Frank Thomas",
+        "team": "CWS",
+        "value": ".453"
       },
       {
         "rank": 2,
-        "id": "112064",
-        "name": "Joe Carter",
-        "team": "TOR",
-        "value": "10"
+        "id": "120927",
+        "name": "Willie Randolph",
+        "team": "MIL",
+        "value": ".424"
       },
       {
         "rank": 3,
-        "id": "111962",
-        "name": "José Canseco",
-        "team": "OAK",
-        "value": "9"
+        "id": "111153",
+        "name": "Wade Boggs",
+        "team": "BOS",
+        "value": ".421"
       },
       {
-        "rank": 3,
-        "id": "122430",
-        "name": "Lonnie Smith",
-        "team": "ATL",
-        "value": "9"
+        "rank": 4,
+        "id": "111188",
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": ".410"
       },
       {
-        "rank": 3,
-        "id": "123621",
-        "name": "Dave Valle",
-        "team": "SEA",
-        "value": "9"
-      },
-      {
-        "rank": 6,
-        "id": "113516",
-        "name": "Brian Downing",
+        "rank": 5,
+        "id": "212297",
+        "name": "Julio Franco",
         "team": "TEX",
-        "value": "8"
-      },
-      {
-        "rank": 6,
-        "id": "114508",
-        "name": "Gary Gaetti",
-        "team": "CAL",
-        "value": "8"
-      },
-      {
-        "rank": 6,
-        "id": "114935",
-        "name": "Luis Gonzalez",
-        "team": "HOU",
-        "value": "8"
+        "value": ".408"
       },
       {
         "rank": 6,
         "id": "118365",
         "name": "Edgar Martinez",
         "team": "SEA",
-        "value": "8"
+        "value": ".405"
+      },
+      {
+        "rank": 7,
+        "id": "111812",
+        "name": "Brett Butler",
+        "team": "LA",
+        "value": ".401"
+      },
+      {
+        "rank": 8,
+        "id": "115749",
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": ".400"
+      },
+      {
+        "rank": 9,
+        "id": "119236",
+        "name": "Paul Molitor",
+        "team": "MIL",
+        "value": ".399"
+      },
+      {
+        "rank": 10,
+        "id": "115135",
+        "name": "Ken Griffey Jr.",
+        "team": "SEA",
+        "value": ".399"
       }
-    ],
-    "more_tied": 8
+    ]
+  },
+  {
+    "label": "Walks",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "123245",
+        "name": "Frank Thomas",
+        "team": "CWS",
+        "value": "138"
+      },
+      {
+        "rank": 2,
+        "id": "111812",
+        "name": "Brett Butler",
+        "team": "LA",
+        "value": "108"
+      },
+      {
+        "rank": 3,
+        "id": "111188",
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "107"
+      },
+      {
+        "rank": 4,
+        "id": "118730",
+        "name": "Fred McGriff",
+        "team": "SD",
+        "value": "105"
+      },
+      {
+        "rank": 5,
+        "id": "123211",
+        "name": "Mickey Tettleton",
+        "team": "DET",
+        "value": "101"
+      },
+      {
+        "rank": 6,
+        "id": "115749",
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "98"
+      },
+      {
+        "rank": 7,
+        "id": "112326",
+        "name": "Jack Clark",
+        "team": "BOS",
+        "value": "96"
+      },
+      {
+        "rank": 8,
+        "id": "113099",
+        "name": "Chili Davis",
+        "team": "MIN",
+        "value": "95"
+      },
+      {
+        "rank": 8,
+        "id": "113291",
+        "name": "Delino DeShields",
+        "team": "MON",
+        "value": "95"
+      },
+      {
+        "rank": 10,
+        "id": "118743",
+        "name": "Mark McGwire",
+        "team": "OAK",
+        "value": "93"
+      }
+    ]
   },
   {
     "label": "Intentional Walks",
+    "group": "On Base",
     "players": [
       {
         "rank": 1,
@@ -1325,7 +1120,230 @@
     ]
   },
   {
+    "label": "Hit By Pitch",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "110432",
+        "name": "Jeff Bagwell",
+        "team": "HOU",
+        "value": "13"
+      },
+      {
+        "rank": 2,
+        "id": "112064",
+        "name": "Joe Carter",
+        "team": "TOR",
+        "value": "10"
+      },
+      {
+        "rank": 3,
+        "id": "111962",
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "122430",
+        "name": "Lonnie Smith",
+        "team": "ATL",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "123621",
+        "name": "Dave Valle",
+        "team": "SEA",
+        "value": "9"
+      },
+      {
+        "rank": 6,
+        "id": "113516",
+        "name": "Brian Downing",
+        "team": "TEX",
+        "value": "8"
+      },
+      {
+        "rank": 6,
+        "id": "114508",
+        "name": "Gary Gaetti",
+        "team": "CAL",
+        "value": "8"
+      },
+      {
+        "rank": 6,
+        "id": "114935",
+        "name": "Luis Gonzalez",
+        "team": "HOU",
+        "value": "8"
+      },
+      {
+        "rank": 6,
+        "id": "118365",
+        "name": "Edgar Martinez",
+        "team": "SEA",
+        "value": "8"
+      }
+    ],
+    "more_tied": 8
+  },
+  {
+    "label": "Strikeouts",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "113197",
+        "name": "Rob Deer",
+        "team": "DET",
+        "value": "175"
+      },
+      {
+        "rank": 2,
+        "id": "111962",
+        "name": "José Canseco",
+        "team": "OAK",
+        "value": "152"
+      },
+      {
+        "rank": 3,
+        "id": "113291",
+        "name": "Delino DeShields",
+        "team": "MON",
+        "value": "151"
+      },
+      {
+        "rank": 3,
+        "id": "114106",
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "151"
+      },
+      {
+        "rank": 5,
+        "id": "114465",
+        "name": "Travis Fryman",
+        "team": "DET",
+        "value": "149"
+      },
+      {
+        "rank": 6,
+        "id": "118730",
+        "name": "Fred McGriff",
+        "team": "SD",
+        "value": "135"
+      },
+      {
+        "rank": 6,
+        "id": "124164",
+        "name": "Devon White",
+        "team": "TOR",
+        "value": "135"
+      },
+      {
+        "rank": 8,
+        "id": "112326",
+        "name": "Jack Clark",
+        "team": "BOS",
+        "value": "133"
+      },
+      {
+        "rank": 8,
+        "id": "121651",
+        "name": "Juan Samuel",
+        "team": "LA",
+        "value": "133"
+      },
+      {
+        "rank": 10,
+        "id": "123211",
+        "name": "Mickey Tettleton",
+        "team": "DET",
+        "value": "131"
+      }
+    ]
+  },
+  {
+    "label": "Stolen Bases",
+    "group": "Speed",
+    "players": [
+      {
+        "rank": 1,
+        "id": "115174",
+        "name": "Marquis Grissom",
+        "team": "MON",
+        "value": "76"
+      },
+      {
+        "rank": 2,
+        "id": "119812",
+        "name": "Otis Nixon",
+        "team": "ATL",
+        "value": "72"
+      },
+      {
+        "rank": 3,
+        "id": "115749",
+        "name": "Rickey Henderson",
+        "team": "OAK",
+        "value": "58"
+      },
+      {
+        "rank": 4,
+        "id": "113291",
+        "name": "Delino DeShields",
+        "team": "MON",
+        "value": "56"
+      },
+      {
+        "rank": 5,
+        "id": "110183",
+        "name": "Roberto Alomar",
+        "team": "TOR",
+        "value": "53"
+      },
+      {
+        "rank": 6,
+        "id": "120891",
+        "name": "Tim Raines Sr.",
+        "team": "CWS",
+        "value": "51"
+      },
+      {
+        "rank": 7,
+        "id": "120658",
+        "name": "Luis Polonia",
+        "team": "CAL",
+        "value": "48"
+      },
+      {
+        "rank": 8,
+        "id": "117484",
+        "name": "Ray Lankford",
+        "team": "STL",
+        "value": "44"
+      },
+      {
+        "rank": 9,
+        "id": "111188",
+        "name": "Barry Bonds",
+        "team": "PIT",
+        "value": "43"
+      },
+      {
+        "rank": 10,
+        "id": "112980",
+        "name": "Milt Cuyler",
+        "team": "DET",
+        "value": "41"
+      }
+    ]
+  },
+  {
     "label": "Caught Stealing",
+    "group": "Speed",
     "players": [
       {
         "rank": 1,
@@ -1407,7 +1425,174 @@
     ]
   },
   {
+    "label": "Games Played",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "112064",
+        "name": "Joe Carter",
+        "team": "TOR",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "id": "114106",
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "id": "121222",
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "162"
+      },
+      {
+        "rank": 4,
+        "id": "110183",
+        "name": "Roberto Alomar",
+        "team": "TOR",
+        "value": "161"
+      },
+      {
+        "rank": 4,
+        "id": "111812",
+        "name": "Brett Butler",
+        "team": "LA",
+        "value": "161"
+      },
+      {
+        "rank": 4,
+        "id": "121108",
+        "name": "Harold Reynolds",
+        "team": "SEA",
+        "value": "161"
+      },
+      {
+        "rank": 4,
+        "id": "122218",
+        "name": "Ruben Sierra",
+        "team": "TEX",
+        "value": "161"
+      },
+      {
+        "rank": 8,
+        "id": "115007",
+        "name": "Mark Grace",
+        "team": "CHC",
+        "value": "160"
+      },
+      {
+        "rank": 9,
+        "id": "114135",
+        "name": "Steve Finley",
+        "team": "HOU",
+        "value": "159"
+      },
+      {
+        "rank": 9,
+        "id": "114545",
+        "name": "Mike Gallego",
+        "team": "OAK",
+        "value": "159"
+      },
+      {
+        "rank": 9,
+        "id": "116603",
+        "name": "Lance Johnson",
+        "team": "CWS",
+        "value": "159"
+      },
+      {
+        "rank": 9,
+        "id": "120191",
+        "name": "Rafael Palmeiro",
+        "team": "TEX",
+        "value": "159"
+      }
+    ]
+  },
+  {
+    "label": "Plate Appearances",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "119236",
+        "name": "Paul Molitor",
+        "team": "MIL",
+        "value": "752"
+      },
+      {
+        "rank": 2,
+        "id": "111812",
+        "name": "Brett Butler",
+        "team": "LA",
+        "value": "730"
+      },
+      {
+        "rank": 3,
+        "id": "121108",
+        "name": "Harold Reynolds",
+        "team": "SEA",
+        "value": "728"
+      },
+      {
+        "rank": 4,
+        "id": "122218",
+        "name": "Ruben Sierra",
+        "team": "TEX",
+        "value": "726"
+      },
+      {
+        "rank": 5,
+        "id": "110183",
+        "name": "Roberto Alomar",
+        "team": "TOR",
+        "value": "719"
+      },
+      {
+        "rank": 6,
+        "id": "121222",
+        "name": "Cal Ripken Jr.",
+        "team": "BAL",
+        "value": "717"
+      },
+      {
+        "rank": 7,
+        "id": "124164",
+        "name": "Devon White",
+        "team": "TOR",
+        "value": "715"
+      },
+      {
+        "rank": 8,
+        "id": "120191",
+        "name": "Rafael Palmeiro",
+        "team": "TEX",
+        "value": "714"
+      },
+      {
+        "rank": 9,
+        "id": "114106",
+        "name": "Cecil Fielder",
+        "team": "DET",
+        "value": "712"
+      },
+      {
+        "rank": 10,
+        "id": "120891",
+        "name": "Tim Raines Sr.",
+        "team": "CWS",
+        "value": "709"
+      }
+    ]
+  },
+  {
     "label": "Grounded Into Double Plays",
+    "group": "Playing Time & Other",
     "players": [
       {
         "rank": 1,
@@ -1504,6 +1689,7 @@
   },
   {
     "label": "Sacrifice Flies",
+    "group": "Playing Time & Other",
     "players": [
       {
         "rank": 1,
@@ -1563,169 +1749,5 @@
       }
     ],
     "more_tied": 12
-  },
-  {
-    "label": "Plate Appearances",
-    "players": [
-      {
-        "rank": 1,
-        "id": "119236",
-        "name": "Paul Molitor",
-        "team": "MIL",
-        "value": "752"
-      },
-      {
-        "rank": 2,
-        "id": "111812",
-        "name": "Brett Butler",
-        "team": "LA",
-        "value": "730"
-      },
-      {
-        "rank": 3,
-        "id": "121108",
-        "name": "Harold Reynolds",
-        "team": "SEA",
-        "value": "728"
-      },
-      {
-        "rank": 4,
-        "id": "122218",
-        "name": "Ruben Sierra",
-        "team": "TEX",
-        "value": "726"
-      },
-      {
-        "rank": 5,
-        "id": "110183",
-        "name": "Roberto Alomar",
-        "team": "TOR",
-        "value": "719"
-      },
-      {
-        "rank": 6,
-        "id": "121222",
-        "name": "Cal Ripken Jr.",
-        "team": "BAL",
-        "value": "717"
-      },
-      {
-        "rank": 7,
-        "id": "124164",
-        "name": "Devon White",
-        "team": "TOR",
-        "value": "715"
-      },
-      {
-        "rank": 8,
-        "id": "120191",
-        "name": "Rafael Palmeiro",
-        "team": "TEX",
-        "value": "714"
-      },
-      {
-        "rank": 9,
-        "id": "114106",
-        "name": "Cecil Fielder",
-        "team": "DET",
-        "value": "712"
-      },
-      {
-        "rank": 10,
-        "id": "120891",
-        "name": "Tim Raines Sr.",
-        "team": "CWS",
-        "value": "709"
-      }
-    ]
-  },
-  {
-    "label": "Games Played",
-    "players": [
-      {
-        "rank": 1,
-        "id": "112064",
-        "name": "Joe Carter",
-        "team": "TOR",
-        "value": "162"
-      },
-      {
-        "rank": 1,
-        "id": "114106",
-        "name": "Cecil Fielder",
-        "team": "DET",
-        "value": "162"
-      },
-      {
-        "rank": 1,
-        "id": "121222",
-        "name": "Cal Ripken Jr.",
-        "team": "BAL",
-        "value": "162"
-      },
-      {
-        "rank": 4,
-        "id": "110183",
-        "name": "Roberto Alomar",
-        "team": "TOR",
-        "value": "161"
-      },
-      {
-        "rank": 4,
-        "id": "111812",
-        "name": "Brett Butler",
-        "team": "LA",
-        "value": "161"
-      },
-      {
-        "rank": 4,
-        "id": "121108",
-        "name": "Harold Reynolds",
-        "team": "SEA",
-        "value": "161"
-      },
-      {
-        "rank": 4,
-        "id": "122218",
-        "name": "Ruben Sierra",
-        "team": "TEX",
-        "value": "161"
-      },
-      {
-        "rank": 8,
-        "id": "115007",
-        "name": "Mark Grace",
-        "team": "CHC",
-        "value": "160"
-      },
-      {
-        "rank": 9,
-        "id": "114135",
-        "name": "Steve Finley",
-        "team": "HOU",
-        "value": "159"
-      },
-      {
-        "rank": 9,
-        "id": "114545",
-        "name": "Mike Gallego",
-        "team": "OAK",
-        "value": "159"
-      },
-      {
-        "rank": 9,
-        "id": "116603",
-        "name": "Lance Johnson",
-        "team": "CWS",
-        "value": "159"
-      },
-      {
-        "rank": 9,
-        "id": "120191",
-        "name": "Rafael Palmeiro",
-        "team": "TEX",
-        "value": "159"
-      }
-    ]
   }
 ]

@@ -1,6 +1,7 @@
 [
   {
     "label": "Passing Yards",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -76,6 +77,7 @@
   },
   {
     "label": "Passing TDs",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -158,6 +160,7 @@
   },
   {
     "label": "Interceptions Thrown",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -233,6 +236,7 @@
   },
   {
     "label": "Completions",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -308,6 +312,7 @@
   },
   {
     "label": "Pass Attempts",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -383,6 +388,7 @@
   },
   {
     "label": "Completion %",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -458,6 +464,7 @@
   },
   {
     "label": "Yards per Pass Attempt",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -533,6 +540,7 @@
   },
   {
     "label": "Passer Rating",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -608,6 +616,7 @@
   },
   {
     "label": "Times Sacked",
+    "group": "Passing",
     "players": [
       {
         "rank": 1,
@@ -683,6 +692,7 @@
   },
   {
     "label": "Rushing Yards",
+    "group": "Rushing",
     "players": [
       {
         "rank": 1,
@@ -758,6 +768,7 @@
   },
   {
     "label": "Rushing TDs",
+    "group": "Rushing",
     "players": [
       {
         "rank": 1,
@@ -847,6 +858,7 @@
   },
   {
     "label": "Carries",
+    "group": "Rushing",
     "players": [
       {
         "rank": 1,
@@ -922,6 +934,7 @@
   },
   {
     "label": "Yards per Carry",
+    "group": "Rushing",
     "players": [
       {
         "rank": 1,
@@ -1004,6 +1017,7 @@
   },
   {
     "label": "Receptions",
+    "group": "Receiving",
     "players": [
       {
         "rank": 1,
@@ -1079,6 +1093,7 @@
   },
   {
     "label": "Receiving Yards",
+    "group": "Receiving",
     "players": [
       {
         "rank": 1,
@@ -1154,6 +1169,7 @@
   },
   {
     "label": "Receiving TDs",
+    "group": "Receiving",
     "players": [
       {
         "rank": 1,
@@ -1236,6 +1252,7 @@
   },
   {
     "label": "Targets",
+    "group": "Receiving",
     "players": [
       {
         "rank": 1,
@@ -1311,6 +1328,7 @@
   },
   {
     "label": "Yards per Reception",
+    "group": "Receiving",
     "players": [
       {
         "rank": 1,
@@ -1393,6 +1411,7 @@
   },
   {
     "label": "Yards from Scrimmage",
+    "group": "All-Purpose",
     "players": [
       {
         "rank": 1,
@@ -1468,6 +1487,7 @@
   },
   {
     "label": "Rushing + Receiving TDs",
+    "group": "All-Purpose",
     "players": [
       {
         "rank": 1,
@@ -1543,6 +1563,7 @@
   },
   {
     "label": "Fantasy Points (PPR)",
+    "group": "All-Purpose",
     "players": [
       {
         "rank": 1,
@@ -1618,6 +1639,7 @@
   },
   {
     "label": "Fumbles",
+    "group": "All-Purpose",
     "players": [
       {
         "rank": 1,
@@ -1693,6 +1715,7 @@
   },
   {
     "label": "Sacks",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -1768,6 +1791,7 @@
   },
   {
     "label": "Combined Tackles",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -1843,6 +1867,7 @@
   },
   {
     "label": "Solo Tackles",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -1953,6 +1978,7 @@
   },
   {
     "label": "Tackles for Loss",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -2042,6 +2068,7 @@
   },
   {
     "label": "Interceptions",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -2131,6 +2158,7 @@
   },
   {
     "label": "Passes Defended",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -2200,6 +2228,7 @@
   },
   {
     "label": "Forced Fumbles",
+    "group": "Defense",
     "players": [
       {
         "rank": 1,
@@ -2275,6 +2304,7 @@
   },
   {
     "label": "Field Goals Made",
+    "group": "Kicking & Returns",
     "players": [
       {
         "rank": 1,
@@ -2357,6 +2387,7 @@
   },
   {
     "label": "Longest Field Goal",
+    "group": "Kicking & Returns",
     "players": [
       {
         "rank": 1,
@@ -2446,6 +2477,7 @@
   },
   {
     "label": "Kick Return Yards",
+    "group": "Kicking & Returns",
     "players": [
       {
         "rank": 1,
@@ -2521,6 +2553,7 @@
   },
   {
     "label": "Punt Return Yards",
+    "group": "Kicking & Returns",
     "players": [
       {
         "rank": 1,

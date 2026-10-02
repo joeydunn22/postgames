@@ -24,8 +24,9 @@ Output:  data/{sport}/{year}/{category or "stats"}.json
          and a matching entry in data/manifest.json, so the game offers it.
          data/{sport}/{year}/players.json, everyone who played that season.
 
-Each game file is a list of { label, players: [{ rank, id, name, team, value }],
-more_tied? }. `value` is display text. Ties at 10th are kept, unless the
+Each game file is a list of { label, group, players: [{ rank, id, name, team, value }],
+more_tied? }, in STAT_GROUPS order; `group` heads the stat's section in the
+game's Stat dropdown. `value` is display text. Ties at 10th are kept, unless the
 tie is so big it would swamp the board (see top_ten).
 
 The player list is [{ id, name, team, pos }]: what players search when
@@ -90,7 +91,61 @@ def make_stat(label, rows):
     return stat
 
 
+# Sections of the game's Stat dropdown, in order: (sport, category) -> [(group, [labels])].
+# Every stat label must be listed here; files are written in this order.
+STAT_GROUPS = {
+    ("mlb", "batting"): [
+        ("Hitting", ["Batting Average", "Hits", "Runs Scored", "Runs Batted In", "Doubles", "Triples"]),
+        ("Power", ["Home Runs", "Slugging %", "OPS (On-Base + Slugging)", "Total Bases", "Extra-Base Hits"]),
+        ("On Base", ["On-Base %", "Walks", "Intentional Walks", "Hit By Pitch", "Strikeouts"]),
+        ("Speed", ["Stolen Bases", "Caught Stealing"]),
+        ("Playing Time & Other", ["Games Played", "Plate Appearances", "Grounded Into Double Plays", "Sacrifice Flies"]),
+    ],
+    ("mlb", "pitching"): [
+        ("Results", ["Wins", "Losses", "Win %", "Saves", "Holds", "Blown Saves"]),
+        ("Run Prevention", ["ERA", "WHIP", "Hits per 9 Innings", "Earned Runs Allowed", "Home Runs Allowed"]),
+        ("Strikeouts & Control", ["Strikeouts", "Strikeouts per 9 Innings", "Strikeout-to-Walk Ratio",
+                                  "Walks per 9 Innings", "Walks Allowed", "Hit Batters", "Wild Pitches"]),
+        ("Workload", ["Innings Pitched", "Games Started", "Games Pitched", "Games Finished",
+                      "Complete Games", "Shutouts"]),
+    ],
+    ("nfl", None): [
+        ("Passing", ["Passing Yards", "Passing TDs", "Interceptions Thrown", "Completions", "Pass Attempts",
+                     "Completion %", "Yards per Pass Attempt", "Passer Rating", "Times Sacked"]),
+        ("Rushing", ["Rushing Yards", "Rushing TDs", "Carries", "Yards per Carry"]),
+        ("Receiving", ["Receptions", "Receiving Yards", "Receiving TDs", "Targets", "Yards per Reception"]),
+        ("All-Purpose", ["Yards from Scrimmage", "Rushing + Receiving TDs", "Fantasy Points (PPR)", "Fumbles"]),
+        ("Defense", ["Sacks", "Combined Tackles", "Solo Tackles", "Tackles for Loss", "Interceptions",
+                     "Passes Defended", "Forced Fumbles"]),
+        ("Kicking & Returns", ["Field Goals Made", "Longest Field Goal", "Kick Return Yards", "Punt Return Yards"]),
+    ],
+    ("nba", None): [
+        ("Per Game", ["Points per Game", "Rebounds per Game", "Assists per Game", "Steals per Game",
+                      "Blocks per Game", "3-Pointers Made per Game", "Minutes per Game"]),
+        ("Shooting", ["Field Goal %", "3-Point %", "Free Throw %", "Field Goals Made", "3-Pointers Made",
+                      "Free Throws Made"]),
+        ("Season Totals", ["Total Points", "Total Rebounds", "Total Assists", "Total Steals", "Total Blocks",
+                           "Offensive Rebounds", "Turnovers"]),
+    ],
+}
+
+
+def group_stats(sport, category, stats):
+    """Give each stat its dropdown section and put them in STAT_GROUPS order."""
+    order = {}
+    for group, labels in STAT_GROUPS[(sport, category)]:
+        for label in labels:
+            order[label] = (len(order), group)
+    for stat in stats:
+        if stat["label"] not in order:
+            print(f"  ! {stat['label']} has no group in STAT_GROUPS; filed under Other")
+    grouped = [{"label": stat["label"], "group": order.get(stat["label"], (0, "Other"))[1],
+                **{k: v for k, v in stat.items() if k != "label"}} for stat in stats]
+    return sorted(grouped, key=lambda stat: order.get(stat["label"], (len(order), ""))[0])
+
+
 def write_game_file(sport, category, year, stats):
+    stats = group_stats(sport, category, stats)
     output = DATA / sport / str(year) / f"{category or 'stats'}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -83,6 +84,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -158,6 +160,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -233,6 +236,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -336,6 +340,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -432,6 +437,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -514,6 +520,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -596,6 +603,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -671,6 +679,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -746,6 +755,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -834,389 +844,84 @@
     ]
   },
   {
-    "label": "Total Points",
+    "label": "Field Goals Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
-        "id": "1629029",
-        "name": "Luka Dončić",
-        "team": "LAL",
-        "value": "2143"
+        "id": "1627759",
+        "name": "Jaylen Brown",
+        "team": "BOS",
+        "value": "736"
       },
       {
         "rank": 2,
         "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
-        "value": "2117"
+        "value": "731"
       },
       {
         "rank": 3,
-        "id": "1627759",
-        "name": "Jaylen Brown",
-        "team": "BOS",
-        "value": "2038"
-      },
-      {
-        "rank": 4,
         "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
-        "value": "2026"
-      },
-      {
-        "rank": 5,
-        "id": "1630178",
-        "name": "Tyrese Maxey",
-        "team": "PHI",
-        "value": "1980"
-      },
-      {
-        "rank": 6,
-        "id": "1628378",
-        "name": "Donovan Mitchell",
-        "team": "CLE",
-        "value": "1952"
-      },
-      {
-        "rank": 7,
-        "id": "1628973",
-        "name": "Jalen Brunson",
-        "team": "NYK",
-        "value": "1927"
-      },
-      {
-        "rank": 8,
-        "id": "1627750",
-        "name": "Jamal Murray",
-        "team": "DEN",
-        "value": "1905"
-      },
-      {
-        "rank": 9,
-        "id": "202695",
-        "name": "Kawhi Leonard",
-        "team": "LAC",
-        "value": "1813"
-      },
-      {
-        "rank": 10,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "1799"
-      }
-    ]
-  },
-  {
-    "label": "Total Rebounds",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1642270",
-        "name": "Donovan Clingan",
-        "team": "POR",
-        "value": "892"
-      },
-      {
-        "rank": 2,
-        "id": "1626157",
-        "name": "Karl-Anthony Towns",
-        "team": "NYK",
-        "value": "889"
-      },
-      {
-        "rank": 3,
-        "id": "203497",
-        "name": "Rudy Gobert",
-        "team": "MIN",
-        "value": "872"
+        "value": "716"
       },
       {
         "rank": 4,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "836"
-      },
-      {
-        "rank": 5,
-        "id": "1630552",
-        "name": "Jalen Johnson",
-        "team": "ATL",
-        "value": "740"
-      },
-      {
-        "rank": 6,
-        "id": "1631105",
-        "name": "Jalen Duren",
-        "team": "DET",
-        "value": "737"
-      },
-      {
-        "rank": 7,
-        "id": "1641705",
-        "name": "Victor Wembanyama",
-        "team": "SAS",
-        "value": "736"
-      },
-      {
-        "rank": 8,
-        "id": "1628389",
-        "name": "Bam Adebayo",
-        "team": "MIA",
-        "value": "732"
-      },
-      {
-        "rank": 9,
-        "id": "1642276",
-        "name": "Kel'el Ware",
-        "team": "MIA",
+        "id": "1630178",
+        "name": "Tyrese Maxey",
+        "team": "PHI",
         "value": "694"
       },
       {
-        "rank": 10,
-        "id": "1630578",
-        "name": "Alperen Sengun",
-        "team": "HOU",
-        "value": "640"
-      }
-    ]
-  },
-  {
-    "label": "Total Assists",
-    "players": [
-      {
-        "rank": 1,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "697"
-      },
-      {
-        "rank": 2,
-        "id": "1630595",
-        "name": "Cade Cunningham",
-        "team": "DET",
-        "value": "634"
-      },
-      {
-        "rank": 3,
-        "id": "1630552",
-        "name": "Jalen Johnson",
-        "team": "ATL",
-        "value": "566"
-      },
-      {
-        "rank": 4,
-        "id": "201935",
-        "name": "James Harden",
-        "team": "CLE",
-        "value": "557"
-      },
-      {
         "rank": 5,
-        "id": "1627750",
-        "name": "Jamal Murray",
-        "team": "DEN",
-        "value": "535"
-      },
-      {
-        "rank": 6,
         "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
-        "value": "530"
+        "value": "693"
       },
       {
-        "rank": 7,
-        "id": "1630163",
-        "name": "LaMelo Ball",
-        "team": "CHA",
-        "value": "514"
-      },
-      {
-        "rank": 8,
+        "rank": 6,
         "id": "1628973",
         "name": "Jalen Brunson",
         "team": "NYK",
-        "value": "503"
+        "value": "689"
+      },
+      {
+        "rank": 7,
+        "id": "1628378",
+        "name": "Donovan Mitchell",
+        "team": "CLE",
+        "value": "678"
+      },
+      {
+        "rank": 8,
+        "id": "1627750",
+        "name": "Jamal Murray",
+        "team": "DEN",
+        "value": "657"
       },
       {
         "rank": 9,
-        "id": "1642264",
-        "name": "Stephon Castle",
-        "team": "SAS",
-        "value": "502"
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "644"
       },
       {
         "rank": 10,
-        "id": "1630581",
-        "name": "Josh Giddey",
-        "team": "CHI",
-        "value": "494"
-      }
-    ]
-  },
-  {
-    "label": "Total Steals",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1641717",
-        "name": "Cason Wallace",
-        "team": "OKC",
-        "value": "150"
-      },
-      {
-        "rank": 2,
-        "id": "1630700",
-        "name": "Dyson Daniels",
-        "team": "ATL",
-        "value": "149"
-      },
-      {
-        "rank": 3,
-        "id": "1641709",
-        "name": "Ausar Thompson",
-        "team": "DET",
-        "value": "146"
-      },
-      {
-        "rank": 4,
-        "id": "1627739",
-        "name": "Kris Dunn",
-        "team": "LAC",
-        "value": "131"
-      },
-      {
-        "rank": 5,
-        "id": "1630178",
-        "name": "Tyrese Maxey",
-        "team": "PHI",
-        "value": "130"
-      },
-      {
-        "rank": 6,
         "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
-        "value": "122"
-      },
-      {
-        "rank": 6,
-        "id": "1642263",
-        "name": "Reed Sheppard",
-        "team": "HOU",
-        "value": "122"
-      },
-      {
-        "rank": 8,
-        "id": "1641708",
-        "name": "Amen Thompson",
-        "team": "HOU",
-        "value": "119"
-      },
-      {
-        "rank": 9,
-        "id": "1630567",
-        "name": "Scottie Barnes",
-        "team": "TOR",
-        "value": "114"
-      },
-      {
-        "rank": 10,
-        "id": "1631157",
-        "name": "Ryan Rollins",
-        "team": "MIL",
-        "value": "110"
-      }
-    ]
-  },
-  {
-    "label": "Total Blocks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1641705",
-        "name": "Victor Wembanyama",
-        "team": "SAS",
-        "value": "197"
-      },
-      {
-        "rank": 2,
-        "id": "1630643",
-        "name": "Jay Huff",
-        "team": "IND",
-        "value": "153"
-      },
-      {
-        "rank": 3,
-        "id": "1631096",
-        "name": "Chet Holmgren",
-        "team": "OKC",
-        "value": "131"
-      },
-      {
-        "rank": 4,
-        "id": "1642270",
-        "name": "Donovan Clingan",
-        "team": "POR",
-        "value": "130"
-      },
-      {
-        "rank": 5,
-        "id": "203497",
-        "name": "Rudy Gobert",
-        "team": "MIN",
-        "value": "124"
-      },
-      {
-        "rank": 6,
-        "id": "1641824",
-        "name": "Matas Buzelis",
-        "team": "CHI",
-        "value": "116"
-      },
-      {
-        "rank": 6,
-        "id": "1630567",
-        "name": "Scottie Barnes",
-        "team": "TOR",
-        "value": "116"
-      },
-      {
-        "rank": 8,
-        "id": "1626167",
-        "name": "Myles Turner",
-        "team": "MIL",
-        "value": "115"
-      },
-      {
-        "rank": 9,
-        "id": "1630596",
-        "name": "Evan Mobley",
-        "team": "CLE",
-        "value": "113"
-      },
-      {
-        "rank": 10,
-        "id": "1641750",
-        "name": "Ryan Kalkbrenner",
-        "team": "CHA",
-        "value": "101"
-      },
-      {
-        "rank": 10,
-        "id": "1642274",
-        "name": "Yves Missi",
-        "team": "NOP",
-        "value": "101"
+        "value": "635"
       }
     ]
   },
   {
     "label": "3-Pointers Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1299,6 +1004,7 @@
   },
   {
     "label": "Free Throws Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1373,82 +1079,395 @@
     ]
   },
   {
-    "label": "Field Goals Made",
+    "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
-        "id": "1627759",
-        "name": "Jaylen Brown",
-        "team": "BOS",
-        "value": "736"
+        "id": "1629029",
+        "name": "Luka Dončić",
+        "team": "LAL",
+        "value": "2143"
       },
       {
         "rank": 2,
         "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
-        "value": "731"
+        "value": "2117"
       },
       {
         "rank": 3,
-        "id": "201142",
-        "name": "Kevin Durant",
-        "team": "HOU",
-        "value": "716"
+        "id": "1627759",
+        "name": "Jaylen Brown",
+        "team": "BOS",
+        "value": "2038"
       },
       {
         "rank": 4,
-        "id": "1630178",
-        "name": "Tyrese Maxey",
-        "team": "PHI",
-        "value": "694"
+        "id": "201142",
+        "name": "Kevin Durant",
+        "team": "HOU",
+        "value": "2026"
       },
       {
         "rank": 5,
-        "id": "1629029",
-        "name": "Luka Dončić",
-        "team": "LAL",
-        "value": "693"
+        "id": "1630178",
+        "name": "Tyrese Maxey",
+        "team": "PHI",
+        "value": "1980"
       },
       {
         "rank": 6,
-        "id": "1628973",
-        "name": "Jalen Brunson",
-        "team": "NYK",
-        "value": "689"
-      },
-      {
-        "rank": 7,
         "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
-        "value": "678"
+        "value": "1952"
+      },
+      {
+        "rank": 7,
+        "id": "1628973",
+        "name": "Jalen Brunson",
+        "team": "NYK",
+        "value": "1927"
       },
       {
         "rank": 8,
         "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
-        "value": "657"
+        "value": "1905"
       },
       {
         "rank": 9,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "644"
-      },
-      {
-        "rank": 10,
         "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
-        "value": "635"
+        "value": "1813"
+      },
+      {
+        "rank": 10,
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "1799"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1642270",
+        "name": "Donovan Clingan",
+        "team": "POR",
+        "value": "892"
+      },
+      {
+        "rank": 2,
+        "id": "1626157",
+        "name": "Karl-Anthony Towns",
+        "team": "NYK",
+        "value": "889"
+      },
+      {
+        "rank": 3,
+        "id": "203497",
+        "name": "Rudy Gobert",
+        "team": "MIN",
+        "value": "872"
+      },
+      {
+        "rank": 4,
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "836"
+      },
+      {
+        "rank": 5,
+        "id": "1630552",
+        "name": "Jalen Johnson",
+        "team": "ATL",
+        "value": "740"
+      },
+      {
+        "rank": 6,
+        "id": "1631105",
+        "name": "Jalen Duren",
+        "team": "DET",
+        "value": "737"
+      },
+      {
+        "rank": 7,
+        "id": "1641705",
+        "name": "Victor Wembanyama",
+        "team": "SAS",
+        "value": "736"
+      },
+      {
+        "rank": 8,
+        "id": "1628389",
+        "name": "Bam Adebayo",
+        "team": "MIA",
+        "value": "732"
+      },
+      {
+        "rank": 9,
+        "id": "1642276",
+        "name": "Kel'el Ware",
+        "team": "MIA",
+        "value": "694"
+      },
+      {
+        "rank": 10,
+        "id": "1630578",
+        "name": "Alperen Sengun",
+        "team": "HOU",
+        "value": "640"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "697"
+      },
+      {
+        "rank": 2,
+        "id": "1630595",
+        "name": "Cade Cunningham",
+        "team": "DET",
+        "value": "634"
+      },
+      {
+        "rank": 3,
+        "id": "1630552",
+        "name": "Jalen Johnson",
+        "team": "ATL",
+        "value": "566"
+      },
+      {
+        "rank": 4,
+        "id": "201935",
+        "name": "James Harden",
+        "team": "CLE",
+        "value": "557"
+      },
+      {
+        "rank": 5,
+        "id": "1627750",
+        "name": "Jamal Murray",
+        "team": "DEN",
+        "value": "535"
+      },
+      {
+        "rank": 6,
+        "id": "1629029",
+        "name": "Luka Dončić",
+        "team": "LAL",
+        "value": "530"
+      },
+      {
+        "rank": 7,
+        "id": "1630163",
+        "name": "LaMelo Ball",
+        "team": "CHA",
+        "value": "514"
+      },
+      {
+        "rank": 8,
+        "id": "1628973",
+        "name": "Jalen Brunson",
+        "team": "NYK",
+        "value": "503"
+      },
+      {
+        "rank": 9,
+        "id": "1642264",
+        "name": "Stephon Castle",
+        "team": "SAS",
+        "value": "502"
+      },
+      {
+        "rank": 10,
+        "id": "1630581",
+        "name": "Josh Giddey",
+        "team": "CHI",
+        "value": "494"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1641717",
+        "name": "Cason Wallace",
+        "team": "OKC",
+        "value": "150"
+      },
+      {
+        "rank": 2,
+        "id": "1630700",
+        "name": "Dyson Daniels",
+        "team": "ATL",
+        "value": "149"
+      },
+      {
+        "rank": 3,
+        "id": "1641709",
+        "name": "Ausar Thompson",
+        "team": "DET",
+        "value": "146"
+      },
+      {
+        "rank": 4,
+        "id": "1627739",
+        "name": "Kris Dunn",
+        "team": "LAC",
+        "value": "131"
+      },
+      {
+        "rank": 5,
+        "id": "1630178",
+        "name": "Tyrese Maxey",
+        "team": "PHI",
+        "value": "130"
+      },
+      {
+        "rank": 6,
+        "id": "202695",
+        "name": "Kawhi Leonard",
+        "team": "LAC",
+        "value": "122"
+      },
+      {
+        "rank": 6,
+        "id": "1642263",
+        "name": "Reed Sheppard",
+        "team": "HOU",
+        "value": "122"
+      },
+      {
+        "rank": 8,
+        "id": "1641708",
+        "name": "Amen Thompson",
+        "team": "HOU",
+        "value": "119"
+      },
+      {
+        "rank": 9,
+        "id": "1630567",
+        "name": "Scottie Barnes",
+        "team": "TOR",
+        "value": "114"
+      },
+      {
+        "rank": 10,
+        "id": "1631157",
+        "name": "Ryan Rollins",
+        "team": "MIL",
+        "value": "110"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1641705",
+        "name": "Victor Wembanyama",
+        "team": "SAS",
+        "value": "197"
+      },
+      {
+        "rank": 2,
+        "id": "1630643",
+        "name": "Jay Huff",
+        "team": "IND",
+        "value": "153"
+      },
+      {
+        "rank": 3,
+        "id": "1631096",
+        "name": "Chet Holmgren",
+        "team": "OKC",
+        "value": "131"
+      },
+      {
+        "rank": 4,
+        "id": "1642270",
+        "name": "Donovan Clingan",
+        "team": "POR",
+        "value": "130"
+      },
+      {
+        "rank": 5,
+        "id": "203497",
+        "name": "Rudy Gobert",
+        "team": "MIN",
+        "value": "124"
+      },
+      {
+        "rank": 6,
+        "id": "1641824",
+        "name": "Matas Buzelis",
+        "team": "CHI",
+        "value": "116"
+      },
+      {
+        "rank": 6,
+        "id": "1630567",
+        "name": "Scottie Barnes",
+        "team": "TOR",
+        "value": "116"
+      },
+      {
+        "rank": 8,
+        "id": "1626167",
+        "name": "Myles Turner",
+        "team": "MIL",
+        "value": "115"
+      },
+      {
+        "rank": 9,
+        "id": "1630596",
+        "name": "Evan Mobley",
+        "team": "CLE",
+        "value": "113"
+      },
+      {
+        "rank": 10,
+        "id": "1641750",
+        "name": "Ryan Kalkbrenner",
+        "team": "CHA",
+        "value": "101"
+      },
+      {
+        "rank": 10,
+        "id": "1642274",
+        "name": "Yves Missi",
+        "team": "NOP",
+        "value": "101"
       }
     ]
   },
   {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1524,6 +1543,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

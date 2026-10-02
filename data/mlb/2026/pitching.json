@@ -1,156 +1,7 @@
 [
   {
-    "label": "Strikeouts",
-    "players": [
-      {
-        "rank": 1,
-        "id": "694819",
-        "name": "Jacob Misiorowski",
-        "team": "MIL",
-        "value": "252"
-      },
-      {
-        "rank": 2,
-        "id": "668909",
-        "name": "Gavin Williams",
-        "team": "CLE",
-        "value": "248"
-      },
-      {
-        "rank": 3,
-        "id": "656302",
-        "name": "Dylan Cease",
-        "team": "TOR",
-        "value": "239"
-      },
-      {
-        "rank": 3,
-        "id": "693645",
-        "name": "Cam Schlittler",
-        "team": "NYY",
-        "value": "239"
-      },
-      {
-        "rank": 5,
-        "id": "650911",
-        "name": "Cristopher Sánchez",
-        "team": "PHI",
-        "value": "231"
-      },
-      {
-        "rank": 6,
-        "id": "666200",
-        "name": "Jesús Luzardo",
-        "team": "PHI",
-        "value": "221"
-      },
-      {
-        "rank": 7,
-        "id": "672282",
-        "name": "Reid Detmers",
-        "team": "LAA",
-        "value": "211"
-      },
-      {
-        "rank": 8,
-        "id": "671737",
-        "name": "Taj Bradley",
-        "team": "MIN",
-        "value": "205"
-      },
-      {
-        "rank": 8,
-        "id": "669302",
-        "name": "Logan Gilbert",
-        "team": "SEA",
-        "value": "205"
-      },
-      {
-        "rank": 10,
-        "id": "594798",
-        "name": "Jacob deGrom",
-        "team": "TEX",
-        "value": "201"
-      }
-    ]
-  },
-  {
-    "label": "ERA",
-    "players": [
-      {
-        "rank": 1,
-        "id": "694819",
-        "name": "Jacob Misiorowski",
-        "team": "MIL",
-        "value": "1.80"
-      },
-      {
-        "rank": 2,
-        "id": "693645",
-        "name": "Cam Schlittler",
-        "team": "NYY",
-        "value": "1.95"
-      },
-      {
-        "rank": 3,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "ATL",
-        "value": "2.16"
-      },
-      {
-        "rank": 4,
-        "id": "656302",
-        "name": "Dylan Cease",
-        "team": "TOR",
-        "value": "2.40"
-      },
-      {
-        "rank": 5,
-        "id": "808967",
-        "name": "Yoshinobu Yamamoto",
-        "team": "LAD",
-        "value": "2.53"
-      },
-      {
-        "rank": 6,
-        "id": "800048",
-        "name": "Parker Messick",
-        "team": "CLE",
-        "value": "2.56"
-      },
-      {
-        "rank": 7,
-        "id": "656876",
-        "name": "Drew Rasmussen",
-        "team": "TB",
-        "value": "2.67"
-      },
-      {
-        "rank": 8,
-        "id": "543243",
-        "name": "Sonny Gray",
-        "team": "BOS",
-        "value": "2.72"
-      },
-      {
-        "rank": 9,
-        "id": "666200",
-        "name": "Jesús Luzardo",
-        "team": "PHI",
-        "value": "2.86"
-      },
-      {
-        "rank": 10,
-        "id": "593958",
-        "name": "Eduardo Rodriguez",
-        "team": "AZ",
-        "value": "2.89"
-      }
-    ]
-  },
-  {
     "label": "Wins",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -260,396 +111,84 @@
     ]
   },
   {
-    "label": "Saves",
+    "label": "Losses",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
-        "id": "641329",
-        "name": "Bryan Baker",
-        "team": "TB",
-        "value": "41"
+        "id": "669358",
+        "name": "Shane Baz",
+        "team": "BAL",
+        "value": "15"
       },
       {
         "rank": 1,
-        "id": "671922",
-        "name": "Cade Smith",
-        "team": "CLE",
-        "value": "41"
-      },
-      {
-        "rank": 3,
-        "id": "695243",
-        "name": "Mason Miller",
-        "team": "SD",
-        "value": "38"
-      },
-      {
-        "rank": 3,
-        "id": "676617",
-        "name": "Riley O'Brien",
-        "team": "STL",
-        "value": "38"
-      },
-      {
-        "rank": 5,
-        "id": "670280",
-        "name": "David Bednar",
-        "team": "NYY",
-        "value": "35"
-      },
-      {
-        "rank": 5,
-        "id": "547973",
-        "name": "Aroldis Chapman",
-        "team": "BOS",
-        "value": "35"
-      },
-      {
-        "rank": 5,
-        "id": "686973",
-        "name": "Louis Varland",
-        "team": "TOR",
-        "value": "35"
-      },
-      {
-        "rank": 8,
-        "id": "628452",
-        "name": "Raisel Iglesias",
-        "team": "ATL",
-        "value": "34"
-      },
-      {
-        "rank": 9,
-        "id": "661395",
-        "name": "Jhoan Duran",
-        "team": "PHI",
-        "value": "33"
-      },
-      {
-        "rank": 10,
-        "id": "656641",
-        "name": "Jacob Latz",
-        "team": "TEX",
-        "value": "30"
-      },
-      {
-        "rank": 10,
-        "id": "656730",
-        "name": "Trevor Megill",
-        "team": "MIL",
-        "value": "30"
-      }
-    ]
-  },
-  {
-    "label": "WHIP",
-    "players": [
-      {
-        "rank": 1,
-        "id": "694819",
-        "name": "Jacob Misiorowski",
-        "team": "MIL",
-        "value": "0.80"
-      },
-      {
-        "rank": 2,
-        "id": "808967",
-        "name": "Yoshinobu Yamamoto",
-        "team": "LAD",
-        "value": "0.87"
-      },
-      {
-        "rank": 3,
-        "id": "656876",
-        "name": "Drew Rasmussen",
-        "team": "TB",
-        "value": "0.91"
-      },
-      {
-        "rank": 4,
-        "id": "693645",
-        "name": "Cam Schlittler",
-        "team": "NYY",
-        "value": "0.92"
-      },
-      {
-        "rank": 5,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "ATL",
-        "value": "0.98"
-      },
-      {
-        "rank": 6,
-        "id": "672282",
-        "name": "Reid Detmers",
-        "team": "LAA",
-        "value": "1.04"
-      },
-      {
-        "rank": 7,
-        "id": "554430",
-        "name": "Zack Wheeler",
-        "team": "PHI",
-        "value": "1.05"
-      },
-      {
-        "rank": 8,
-        "id": "800048",
-        "name": "Parker Messick",
-        "team": "CLE",
-        "value": "1.06"
-      },
-      {
-        "rank": 9,
-        "id": "666200",
-        "name": "Jesús Luzardo",
-        "team": "PHI",
-        "value": "1.07"
-      },
-      {
-        "rank": 10,
-        "id": "669302",
-        "name": "Logan Gilbert",
-        "team": "SEA",
-        "value": "1.09"
-      }
-    ]
-  },
-  {
-    "label": "Innings Pitched",
-    "players": [
-      {
-        "rank": 1,
-        "id": "645261",
-        "name": "Sandy Alcantara",
-        "team": "MIA",
-        "value": "214.0"
-      },
-      {
-        "rank": 2,
-        "id": "650911",
-        "name": "Cristopher Sánchez",
-        "team": "PHI",
-        "value": "207.0"
-      },
-      {
-        "rank": 3,
-        "id": "608379",
-        "name": "Michael Wacha",
-        "team": "KC",
-        "value": "200.2"
-      },
-      {
-        "rank": 4,
-        "id": "693645",
-        "name": "Cam Schlittler",
-        "team": "NYY",
-        "value": "193.2"
-      },
-      {
-        "rank": 5,
-        "id": "593958",
-        "name": "Eduardo Rodriguez",
-        "team": "AZ",
-        "value": "189.2"
-      },
-      {
-        "rank": 6,
         "id": "676440",
         "name": "Tanner Bibee",
         "team": "CLE",
-        "value": "188.0"
+        "value": "15"
       },
-      {
-        "rank": 7,
-        "id": "800048",
-        "name": "Parker Messick",
-        "team": "CLE",
-        "value": "186.1"
-      },
-      {
-        "rank": 8,
-        "id": "669302",
-        "name": "Logan Gilbert",
-        "team": "SEA",
-        "value": "186.0"
-      },
-      {
-        "rank": 9,
-        "id": "672282",
-        "name": "Reid Detmers",
-        "team": "LAA",
-        "value": "185.0"
-      },
-      {
-        "rank": 9,
-        "id": "650633",
-        "name": "Michael King",
-        "team": "SD",
-        "value": "185.0"
-      },
-      {
-        "rank": 9,
-        "id": "808967",
-        "name": "Yoshinobu Yamamoto",
-        "team": "LAD",
-        "value": "185.0"
-      }
-    ]
-  },
-  {
-    "label": "Strikeouts per 9 Innings",
-    "players": [
       {
         "rank": 1,
-        "id": "694819",
-        "name": "Jacob Misiorowski",
-        "team": "MIL",
-        "value": "12.98"
-      },
-      {
-        "rank": 2,
-        "id": "656302",
-        "name": "Dylan Cease",
-        "team": "TOR",
-        "value": "12.73"
-      },
-      {
-        "rank": 3,
-        "id": "668909",
-        "name": "Gavin Williams",
-        "team": "CLE",
-        "value": "12.11"
+        "id": "663903",
+        "name": "Brady Singer",
+        "team": "CIN",
+        "value": "15"
       },
       {
         "rank": 4,
-        "id": "594798",
-        "name": "Jacob deGrom",
-        "team": "TEX",
-        "value": "11.12"
-      },
-      {
-        "rank": 5,
-        "id": "693645",
-        "name": "Cam Schlittler",
-        "team": "NYY",
-        "value": "11.11"
-      },
-      {
-        "rank": 6,
-        "id": "666200",
-        "name": "Jesús Luzardo",
-        "team": "PHI",
-        "value": "11.07"
-      },
-      {
-        "rank": 7,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "ATL",
-        "value": "11.07"
-      },
-      {
-        "rank": 8,
-        "id": "554430",
-        "name": "Zack Wheeler",
-        "team": "PHI",
-        "value": "10.72"
-      },
-      {
-        "rank": 9,
-        "id": "676917",
-        "name": "Cade Cavalli",
-        "team": "WSH",
-        "value": "10.61"
-      },
-      {
-        "rank": 10,
-        "id": "671737",
-        "name": "Taj Bradley",
-        "team": "MIN",
-        "value": "10.35"
-      }
-    ]
-  },
-  {
-    "label": "Strikeout-to-Walk Ratio",
-    "players": [
-      {
-        "rank": 1,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "ATL",
-        "value": "6.45"
-      },
-      {
-        "rank": 2,
-        "id": "694819",
-        "name": "Jacob Misiorowski",
-        "team": "MIL",
-        "value": "5.73"
-      },
-      {
-        "rank": 3,
-        "id": "656876",
-        "name": "Drew Rasmussen",
-        "team": "TB",
-        "value": "5.44"
+        "id": "680694",
+        "name": "Kyle Bradish",
+        "team": "BAL",
+        "value": "14"
       },
       {
         "rank": 4,
-        "id": "650911",
-        "name": "Cristopher Sánchez",
-        "team": "PHI",
-        "value": "5.13"
+        "id": "518876",
+        "name": "Merrill Kelly",
+        "team": "AZ",
+        "value": "14"
       },
       {
-        "rank": 5,
-        "id": "677952",
-        "name": "Braxton Ashcraft",
-        "team": "PIT",
-        "value": "4.94"
+        "rank": 4,
+        "id": "669461",
+        "name": "Matthew Liberatore",
+        "team": "STL",
+        "value": "14"
       },
       {
-        "rank": 6,
-        "id": "693645",
-        "name": "Cam Schlittler",
-        "team": "NYY",
-        "value": "4.88"
+        "rank": 4,
+        "id": "694738",
+        "name": "Landen Roupp",
+        "team": "SF",
+        "value": "14"
       },
       {
-        "rank": 7,
-        "id": "684007",
-        "name": "Shota Imanaga",
-        "team": "CHC",
-        "value": "4.70"
-      },
-      {
-        "rank": 8,
-        "id": "693433",
-        "name": "Bryan Woo",
-        "team": "SEA",
-        "value": "4.49"
+        "rank": 4,
+        "id": "605488",
+        "name": "Jeffrey Springs",
+        "team": "ATH",
+        "value": "14"
       },
       {
         "rank": 9,
-        "id": "672282",
-        "name": "Reid Detmers",
-        "team": "LAA",
-        "value": "4.40"
+        "id": "547179",
+        "name": "Michael Lorenzen",
+        "team": "2TM",
+        "value": "13"
       },
       {
-        "rank": 10,
-        "id": "594798",
-        "name": "Jacob deGrom",
-        "team": "TEX",
-        "value": "4.37"
+        "rank": 9,
+        "id": "678022",
+        "name": "Jack Perkins",
+        "team": "ATH",
+        "value": "13"
       }
     ]
   },
   {
     "label": "Win %",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -731,82 +270,91 @@
     ]
   },
   {
-    "label": "Losses",
+    "label": "Saves",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
-        "id": "669358",
-        "name": "Shane Baz",
-        "team": "BAL",
-        "value": "15"
+        "id": "641329",
+        "name": "Bryan Baker",
+        "team": "TB",
+        "value": "41"
       },
       {
         "rank": 1,
-        "id": "676440",
-        "name": "Tanner Bibee",
+        "id": "671922",
+        "name": "Cade Smith",
         "team": "CLE",
-        "value": "15"
+        "value": "41"
       },
       {
-        "rank": 1,
-        "id": "663903",
-        "name": "Brady Singer",
-        "team": "CIN",
-        "value": "15"
+        "rank": 3,
+        "id": "695243",
+        "name": "Mason Miller",
+        "team": "SD",
+        "value": "38"
       },
       {
-        "rank": 4,
-        "id": "680694",
-        "name": "Kyle Bradish",
-        "team": "BAL",
-        "value": "14"
-      },
-      {
-        "rank": 4,
-        "id": "518876",
-        "name": "Merrill Kelly",
-        "team": "AZ",
-        "value": "14"
-      },
-      {
-        "rank": 4,
-        "id": "669461",
-        "name": "Matthew Liberatore",
+        "rank": 3,
+        "id": "676617",
+        "name": "Riley O'Brien",
         "team": "STL",
-        "value": "14"
+        "value": "38"
       },
       {
-        "rank": 4,
-        "id": "694738",
-        "name": "Landen Roupp",
-        "team": "SF",
-        "value": "14"
+        "rank": 5,
+        "id": "670280",
+        "name": "David Bednar",
+        "team": "NYY",
+        "value": "35"
       },
       {
-        "rank": 4,
-        "id": "605488",
-        "name": "Jeffrey Springs",
-        "team": "ATH",
-        "value": "14"
+        "rank": 5,
+        "id": "547973",
+        "name": "Aroldis Chapman",
+        "team": "BOS",
+        "value": "35"
+      },
+      {
+        "rank": 5,
+        "id": "686973",
+        "name": "Louis Varland",
+        "team": "TOR",
+        "value": "35"
+      },
+      {
+        "rank": 8,
+        "id": "628452",
+        "name": "Raisel Iglesias",
+        "team": "ATL",
+        "value": "34"
       },
       {
         "rank": 9,
-        "id": "547179",
-        "name": "Michael Lorenzen",
-        "team": "2TM",
-        "value": "13"
+        "id": "661395",
+        "name": "Jhoan Duran",
+        "team": "PHI",
+        "value": "33"
       },
       {
-        "rank": 9,
-        "id": "678022",
-        "name": "Jack Perkins",
-        "team": "ATH",
-        "value": "13"
+        "rank": 10,
+        "id": "656641",
+        "name": "Jacob Latz",
+        "team": "TEX",
+        "value": "30"
+      },
+      {
+        "rank": 10,
+        "id": "656730",
+        "name": "Trevor Megill",
+        "team": "MIL",
+        "value": "30"
       }
     ]
   },
   {
     "label": "Holds",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -882,6 +430,7 @@
   },
   {
     "label": "Blown Saves",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -950,294 +499,160 @@
     "more_tied": 13
   },
   {
-    "label": "Games Started",
+    "label": "ERA",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
-        "id": "669022",
-        "name": "MacKenzie Gore",
-        "team": "TEX",
-        "value": "34"
-      },
-      {
-        "rank": 2,
-        "id": "645261",
-        "name": "Sandy Alcantara",
-        "team": "MIA",
-        "value": "33"
-      },
-      {
-        "rank": 2,
-        "id": "676440",
-        "name": "Tanner Bibee",
-        "team": "CLE",
-        "value": "33"
-      },
-      {
-        "rank": 2,
-        "id": "605400",
-        "name": "Aaron Nola",
-        "team": "PHI",
-        "value": "33"
+        "id": "694819",
+        "name": "Jacob Misiorowski",
+        "team": "MIL",
+        "value": "1.80"
       },
       {
         "rank": 2,
         "id": "693645",
         "name": "Cam Schlittler",
         "team": "NYY",
-        "value": "33"
-      },
-      {
-        "rank": 2,
-        "id": "650911",
-        "name": "Cristopher Sánchez",
-        "team": "PHI",
-        "value": "33"
-      }
-    ],
-    "more_tied": 16
-  },
-  {
-    "label": "Games Pitched",
-    "players": [
-      {
-        "rank": 1,
-        "id": "689254",
-        "name": "Mason Fluharty",
-        "team": "TOR",
-        "value": "83"
-      },
-      {
-        "rank": 2,
-        "id": "687396",
-        "name": "Brent Headrick",
-        "team": "NYY",
-        "value": "81"
-      },
-      {
-        "rank": 3,
-        "id": "656271",
-        "name": "Brock Burke",
-        "team": "CIN",
-        "value": "77"
-      },
-      {
-        "rank": 4,
-        "id": "670970",
-        "name": "Adrian Morejon",
-        "team": "SD",
-        "value": "76"
-      },
-      {
-        "rank": 5,
-        "id": "641302",
-        "name": "Tyler Alexander",
-        "team": "TEX",
-        "value": "75"
-      },
-      {
-        "rank": 5,
-        "id": "676879",
-        "name": "Aaron Ashby",
-        "team": "MIL",
-        "value": "75"
-      },
-      {
-        "rank": 5,
-        "id": "680755",
-        "name": "Braydon Fisher",
-        "team": "TOR",
-        "value": "75"
-      },
-      {
-        "rank": 5,
-        "id": "670329",
-        "name": "Rico Garcia",
-        "team": "BAL",
-        "value": "75"
-      },
-      {
-        "rank": 9,
-        "id": "657514",
-        "name": "Brennan Bernardino",
-        "team": "COL",
-        "value": "74"
-      },
-      {
-        "rank": 9,
-        "id": "656464",
-        "name": "Kevin Ginkel",
-        "team": "AZ",
-        "value": "74"
-      },
-      {
-        "rank": 9,
-        "id": "663687",
-        "name": "Hogan Harris",
-        "team": "ATH",
-        "value": "74"
-      },
-      {
-        "rank": 9,
-        "id": "643511",
-        "name": "Tyler Rogers",
-        "team": "TOR",
-        "value": "74"
-      }
-    ]
-  },
-  {
-    "label": "Games Finished",
-    "players": [
-      {
-        "rank": 1,
-        "id": "671922",
-        "name": "Cade Smith",
-        "team": "CLE",
-        "value": "60"
-      },
-      {
-        "rank": 2,
-        "id": "695243",
-        "name": "Mason Miller",
-        "team": "SD",
-        "value": "57"
-      },
-      {
-        "rank": 3,
-        "id": "670280",
-        "name": "David Bednar",
-        "team": "NYY",
-        "value": "56"
-      },
-      {
-        "rank": 4,
-        "id": "661395",
-        "name": "Jhoan Duran",
-        "team": "PHI",
-        "value": "55"
-      },
-      {
-        "rank": 5,
-        "id": "676617",
-        "name": "Riley O'Brien",
-        "team": "STL",
-        "value": "54"
-      },
-      {
-        "rank": 6,
-        "id": "686973",
-        "name": "Louis Varland",
-        "team": "TOR",
-        "value": "53"
-      },
-      {
-        "rank": 7,
-        "id": "641329",
-        "name": "Bryan Baker",
-        "team": "TB",
-        "value": "52"
-      },
-      {
-        "rank": 8,
-        "id": "628452",
-        "name": "Raisel Iglesias",
-        "team": "ATL",
-        "value": "49"
-      },
-      {
-        "rank": 9,
-        "id": "662253",
-        "name": "Andrés Muñoz",
-        "team": "SEA",
-        "value": "48"
-      },
-      {
-        "rank": 10,
-        "id": "547973",
-        "name": "Aroldis Chapman",
-        "team": "BOS",
-        "value": "44"
-      }
-    ]
-  },
-  {
-    "label": "Walks per 9 Innings",
-    "players": [
-      {
-        "rank": 1,
-        "id": "607259",
-        "name": "Nick Martinez",
-        "team": "TB",
-        "value": "1.30"
-      },
-      {
-        "rank": 2,
-        "id": "656876",
-        "name": "Drew Rasmussen",
-        "team": "TB",
-        "value": "1.67"
+        "value": "1.95"
       },
       {
         "rank": 3,
         "id": "519242",
         "name": "Chris Sale",
         "team": "ATL",
-        "value": "1.72"
+        "value": "2.16"
       },
       {
         "rank": 4,
-        "id": "677952",
-        "name": "Braxton Ashcraft",
-        "team": "PIT",
-        "value": "1.91"
+        "id": "656302",
+        "name": "Dylan Cease",
+        "team": "TOR",
+        "value": "2.40"
       },
       {
         "rank": 5,
-        "id": "684007",
-        "name": "Shota Imanaga",
-        "team": "CHC",
-        "value": "1.91"
-      },
-      {
-        "rank": 6,
-        "id": "650911",
-        "name": "Cristopher Sánchez",
-        "team": "PHI",
-        "value": "1.96"
-      },
-      {
-        "rank": 7,
-        "id": "693433",
-        "name": "Bryan Woo",
-        "team": "SEA",
-        "value": "2.03"
-      },
-      {
-        "rank": 8,
         "id": "808967",
         "name": "Yoshinobu Yamamoto",
         "team": "LAD",
-        "value": "2.04"
+        "value": "2.53"
+      },
+      {
+        "rank": 6,
+        "id": "800048",
+        "name": "Parker Messick",
+        "team": "CLE",
+        "value": "2.56"
+      },
+      {
+        "rank": 7,
+        "id": "656876",
+        "name": "Drew Rasmussen",
+        "team": "TB",
+        "value": "2.67"
+      },
+      {
+        "rank": 8,
+        "id": "543243",
+        "name": "Sonny Gray",
+        "team": "BOS",
+        "value": "2.72"
       },
       {
         "rank": 9,
-        "id": "669432",
-        "name": "Trevor Rogers",
-        "team": "BAL",
-        "value": "2.07"
+        "id": "666200",
+        "name": "Jesús Luzardo",
+        "team": "PHI",
+        "value": "2.86"
       },
       {
         "rank": 10,
+        "id": "593958",
+        "name": "Eduardo Rodriguez",
+        "team": "AZ",
+        "value": "2.89"
+      }
+    ]
+  },
+  {
+    "label": "WHIP",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
         "id": "694819",
         "name": "Jacob Misiorowski",
         "team": "MIL",
-        "value": "2.27"
+        "value": "0.80"
+      },
+      {
+        "rank": 2,
+        "id": "808967",
+        "name": "Yoshinobu Yamamoto",
+        "team": "LAD",
+        "value": "0.87"
+      },
+      {
+        "rank": 3,
+        "id": "656876",
+        "name": "Drew Rasmussen",
+        "team": "TB",
+        "value": "0.91"
+      },
+      {
+        "rank": 4,
+        "id": "693645",
+        "name": "Cam Schlittler",
+        "team": "NYY",
+        "value": "0.92"
+      },
+      {
+        "rank": 5,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "ATL",
+        "value": "0.98"
+      },
+      {
+        "rank": 6,
+        "id": "672282",
+        "name": "Reid Detmers",
+        "team": "LAA",
+        "value": "1.04"
+      },
+      {
+        "rank": 7,
+        "id": "554430",
+        "name": "Zack Wheeler",
+        "team": "PHI",
+        "value": "1.05"
+      },
+      {
+        "rank": 8,
+        "id": "800048",
+        "name": "Parker Messick",
+        "team": "CLE",
+        "value": "1.06"
+      },
+      {
+        "rank": 9,
+        "id": "666200",
+        "name": "Jesús Luzardo",
+        "team": "PHI",
+        "value": "1.07"
+      },
+      {
+        "rank": 10,
+        "id": "669302",
+        "name": "Logan Gilbert",
+        "team": "SEA",
+        "value": "1.09"
       }
     ]
   },
   {
     "label": "Hits per 9 Innings",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
@@ -1312,7 +727,464 @@
     ]
   },
   {
+    "label": "Earned Runs Allowed",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
+        "id": "547179",
+        "name": "Michael Lorenzen",
+        "team": "2TM",
+        "value": "102"
+      },
+      {
+        "rank": 1,
+        "id": "663903",
+        "name": "Brady Singer",
+        "team": "CIN",
+        "value": "102"
+      },
+      {
+        "rank": 3,
+        "id": "607536",
+        "name": "Kyle Freeland",
+        "team": "COL",
+        "value": "100"
+      },
+      {
+        "rank": 4,
+        "id": "607625",
+        "name": "Seth Lugo",
+        "team": "KC",
+        "value": "99"
+      },
+      {
+        "rank": 5,
+        "id": "605488",
+        "name": "Jeffrey Springs",
+        "team": "ATH",
+        "value": "98"
+      },
+      {
+        "rank": 6,
+        "id": "645261",
+        "name": "Sandy Alcantara",
+        "team": "MIA",
+        "value": "92"
+      },
+      {
+        "rank": 6,
+        "id": "608372",
+        "name": "Tomoyuki Sugano",
+        "team": "COL",
+        "value": "92"
+      },
+      {
+        "rank": 8,
+        "id": "676440",
+        "name": "Tanner Bibee",
+        "team": "CLE",
+        "value": "91"
+      },
+      {
+        "rank": 8,
+        "id": "605400",
+        "name": "Aaron Nola",
+        "team": "PHI",
+        "value": "91"
+      },
+      {
+        "rank": 10,
+        "id": "669461",
+        "name": "Matthew Liberatore",
+        "team": "STL",
+        "value": "90"
+      }
+    ]
+  },
+  {
+    "label": "Home Runs Allowed",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
+        "id": "605400",
+        "name": "Aaron Nola",
+        "team": "PHI",
+        "value": "37"
+      },
+      {
+        "rank": 2,
+        "id": "684007",
+        "name": "Shota Imanaga",
+        "team": "CHC",
+        "value": "35"
+      },
+      {
+        "rank": 2,
+        "id": "605488",
+        "name": "Jeffrey Springs",
+        "team": "ATH",
+        "value": "35"
+      },
+      {
+        "rank": 4,
+        "id": "608372",
+        "name": "Tomoyuki Sugano",
+        "team": "COL",
+        "value": "33"
+      },
+      {
+        "rank": 5,
+        "id": "663903",
+        "name": "Brady Singer",
+        "team": "CIN",
+        "value": "32"
+      },
+      {
+        "rank": 6,
+        "id": "641793",
+        "name": "Zack Littell",
+        "team": "2TM",
+        "value": "30"
+      },
+      {
+        "rank": 6,
+        "id": "608379",
+        "name": "Michael Wacha",
+        "team": "KC",
+        "value": "30"
+      },
+      {
+        "rank": 8,
+        "id": "676440",
+        "name": "Tanner Bibee",
+        "team": "CLE",
+        "value": "29"
+      },
+      {
+        "rank": 8,
+        "id": "607536",
+        "name": "Kyle Freeland",
+        "team": "COL",
+        "value": "29"
+      },
+      {
+        "rank": 8,
+        "id": "669302",
+        "name": "Logan Gilbert",
+        "team": "SEA",
+        "value": "29"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "694819",
+        "name": "Jacob Misiorowski",
+        "team": "MIL",
+        "value": "252"
+      },
+      {
+        "rank": 2,
+        "id": "668909",
+        "name": "Gavin Williams",
+        "team": "CLE",
+        "value": "248"
+      },
+      {
+        "rank": 3,
+        "id": "656302",
+        "name": "Dylan Cease",
+        "team": "TOR",
+        "value": "239"
+      },
+      {
+        "rank": 3,
+        "id": "693645",
+        "name": "Cam Schlittler",
+        "team": "NYY",
+        "value": "239"
+      },
+      {
+        "rank": 5,
+        "id": "650911",
+        "name": "Cristopher Sánchez",
+        "team": "PHI",
+        "value": "231"
+      },
+      {
+        "rank": 6,
+        "id": "666200",
+        "name": "Jesús Luzardo",
+        "team": "PHI",
+        "value": "221"
+      },
+      {
+        "rank": 7,
+        "id": "672282",
+        "name": "Reid Detmers",
+        "team": "LAA",
+        "value": "211"
+      },
+      {
+        "rank": 8,
+        "id": "671737",
+        "name": "Taj Bradley",
+        "team": "MIN",
+        "value": "205"
+      },
+      {
+        "rank": 8,
+        "id": "669302",
+        "name": "Logan Gilbert",
+        "team": "SEA",
+        "value": "205"
+      },
+      {
+        "rank": 10,
+        "id": "594798",
+        "name": "Jacob deGrom",
+        "team": "TEX",
+        "value": "201"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts per 9 Innings",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "694819",
+        "name": "Jacob Misiorowski",
+        "team": "MIL",
+        "value": "12.98"
+      },
+      {
+        "rank": 2,
+        "id": "656302",
+        "name": "Dylan Cease",
+        "team": "TOR",
+        "value": "12.73"
+      },
+      {
+        "rank": 3,
+        "id": "668909",
+        "name": "Gavin Williams",
+        "team": "CLE",
+        "value": "12.11"
+      },
+      {
+        "rank": 4,
+        "id": "594798",
+        "name": "Jacob deGrom",
+        "team": "TEX",
+        "value": "11.12"
+      },
+      {
+        "rank": 5,
+        "id": "693645",
+        "name": "Cam Schlittler",
+        "team": "NYY",
+        "value": "11.11"
+      },
+      {
+        "rank": 6,
+        "id": "666200",
+        "name": "Jesús Luzardo",
+        "team": "PHI",
+        "value": "11.07"
+      },
+      {
+        "rank": 7,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "ATL",
+        "value": "11.07"
+      },
+      {
+        "rank": 8,
+        "id": "554430",
+        "name": "Zack Wheeler",
+        "team": "PHI",
+        "value": "10.72"
+      },
+      {
+        "rank": 9,
+        "id": "676917",
+        "name": "Cade Cavalli",
+        "team": "WSH",
+        "value": "10.61"
+      },
+      {
+        "rank": 10,
+        "id": "671737",
+        "name": "Taj Bradley",
+        "team": "MIN",
+        "value": "10.35"
+      }
+    ]
+  },
+  {
+    "label": "Strikeout-to-Walk Ratio",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "ATL",
+        "value": "6.45"
+      },
+      {
+        "rank": 2,
+        "id": "694819",
+        "name": "Jacob Misiorowski",
+        "team": "MIL",
+        "value": "5.73"
+      },
+      {
+        "rank": 3,
+        "id": "656876",
+        "name": "Drew Rasmussen",
+        "team": "TB",
+        "value": "5.44"
+      },
+      {
+        "rank": 4,
+        "id": "650911",
+        "name": "Cristopher Sánchez",
+        "team": "PHI",
+        "value": "5.13"
+      },
+      {
+        "rank": 5,
+        "id": "677952",
+        "name": "Braxton Ashcraft",
+        "team": "PIT",
+        "value": "4.94"
+      },
+      {
+        "rank": 6,
+        "id": "693645",
+        "name": "Cam Schlittler",
+        "team": "NYY",
+        "value": "4.88"
+      },
+      {
+        "rank": 7,
+        "id": "684007",
+        "name": "Shota Imanaga",
+        "team": "CHC",
+        "value": "4.70"
+      },
+      {
+        "rank": 8,
+        "id": "693433",
+        "name": "Bryan Woo",
+        "team": "SEA",
+        "value": "4.49"
+      },
+      {
+        "rank": 9,
+        "id": "672282",
+        "name": "Reid Detmers",
+        "team": "LAA",
+        "value": "4.40"
+      },
+      {
+        "rank": 10,
+        "id": "594798",
+        "name": "Jacob deGrom",
+        "team": "TEX",
+        "value": "4.37"
+      }
+    ]
+  },
+  {
+    "label": "Walks per 9 Innings",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "607259",
+        "name": "Nick Martinez",
+        "team": "TB",
+        "value": "1.30"
+      },
+      {
+        "rank": 2,
+        "id": "656876",
+        "name": "Drew Rasmussen",
+        "team": "TB",
+        "value": "1.67"
+      },
+      {
+        "rank": 3,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "ATL",
+        "value": "1.72"
+      },
+      {
+        "rank": 4,
+        "id": "677952",
+        "name": "Braxton Ashcraft",
+        "team": "PIT",
+        "value": "1.91"
+      },
+      {
+        "rank": 5,
+        "id": "684007",
+        "name": "Shota Imanaga",
+        "team": "CHC",
+        "value": "1.91"
+      },
+      {
+        "rank": 6,
+        "id": "650911",
+        "name": "Cristopher Sánchez",
+        "team": "PHI",
+        "value": "1.96"
+      },
+      {
+        "rank": 7,
+        "id": "693433",
+        "name": "Bryan Woo",
+        "team": "SEA",
+        "value": "2.03"
+      },
+      {
+        "rank": 8,
+        "id": "808967",
+        "name": "Yoshinobu Yamamoto",
+        "team": "LAD",
+        "value": "2.04"
+      },
+      {
+        "rank": 9,
+        "id": "669432",
+        "name": "Trevor Rogers",
+        "team": "BAL",
+        "value": "2.07"
+      },
+      {
+        "rank": 10,
+        "id": "694819",
+        "name": "Jacob Misiorowski",
+        "team": "MIL",
+        "value": "2.27"
+      }
+    ]
+  },
+  {
     "label": "Walks Allowed",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1408,157 +1280,8 @@
     ]
   },
   {
-    "label": "Home Runs Allowed",
-    "players": [
-      {
-        "rank": 1,
-        "id": "605400",
-        "name": "Aaron Nola",
-        "team": "PHI",
-        "value": "37"
-      },
-      {
-        "rank": 2,
-        "id": "684007",
-        "name": "Shota Imanaga",
-        "team": "CHC",
-        "value": "35"
-      },
-      {
-        "rank": 2,
-        "id": "605488",
-        "name": "Jeffrey Springs",
-        "team": "ATH",
-        "value": "35"
-      },
-      {
-        "rank": 4,
-        "id": "608372",
-        "name": "Tomoyuki Sugano",
-        "team": "COL",
-        "value": "33"
-      },
-      {
-        "rank": 5,
-        "id": "663903",
-        "name": "Brady Singer",
-        "team": "CIN",
-        "value": "32"
-      },
-      {
-        "rank": 6,
-        "id": "641793",
-        "name": "Zack Littell",
-        "team": "2TM",
-        "value": "30"
-      },
-      {
-        "rank": 6,
-        "id": "608379",
-        "name": "Michael Wacha",
-        "team": "KC",
-        "value": "30"
-      },
-      {
-        "rank": 8,
-        "id": "676440",
-        "name": "Tanner Bibee",
-        "team": "CLE",
-        "value": "29"
-      },
-      {
-        "rank": 8,
-        "id": "607536",
-        "name": "Kyle Freeland",
-        "team": "COL",
-        "value": "29"
-      },
-      {
-        "rank": 8,
-        "id": "669302",
-        "name": "Logan Gilbert",
-        "team": "SEA",
-        "value": "29"
-      }
-    ]
-  },
-  {
-    "label": "Earned Runs Allowed",
-    "players": [
-      {
-        "rank": 1,
-        "id": "547179",
-        "name": "Michael Lorenzen",
-        "team": "2TM",
-        "value": "102"
-      },
-      {
-        "rank": 1,
-        "id": "663903",
-        "name": "Brady Singer",
-        "team": "CIN",
-        "value": "102"
-      },
-      {
-        "rank": 3,
-        "id": "607536",
-        "name": "Kyle Freeland",
-        "team": "COL",
-        "value": "100"
-      },
-      {
-        "rank": 4,
-        "id": "607625",
-        "name": "Seth Lugo",
-        "team": "KC",
-        "value": "99"
-      },
-      {
-        "rank": 5,
-        "id": "605488",
-        "name": "Jeffrey Springs",
-        "team": "ATH",
-        "value": "98"
-      },
-      {
-        "rank": 6,
-        "id": "645261",
-        "name": "Sandy Alcantara",
-        "team": "MIA",
-        "value": "92"
-      },
-      {
-        "rank": 6,
-        "id": "608372",
-        "name": "Tomoyuki Sugano",
-        "team": "COL",
-        "value": "92"
-      },
-      {
-        "rank": 8,
-        "id": "676440",
-        "name": "Tanner Bibee",
-        "team": "CLE",
-        "value": "91"
-      },
-      {
-        "rank": 8,
-        "id": "605400",
-        "name": "Aaron Nola",
-        "team": "PHI",
-        "value": "91"
-      },
-      {
-        "rank": 10,
-        "id": "669461",
-        "name": "Matthew Liberatore",
-        "team": "STL",
-        "value": "90"
-      }
-    ]
-  },
-  {
     "label": "Hit Batters",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1634,6 +1357,7 @@
   },
   {
     "label": "Wild Pitches",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1725,6 +1449,304 @@
         "name": "Gregory Soto",
         "team": "PIT",
         "value": "8"
+      }
+    ]
+  },
+  {
+    "label": "Innings Pitched",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "645261",
+        "name": "Sandy Alcantara",
+        "team": "MIA",
+        "value": "214.0"
+      },
+      {
+        "rank": 2,
+        "id": "650911",
+        "name": "Cristopher Sánchez",
+        "team": "PHI",
+        "value": "207.0"
+      },
+      {
+        "rank": 3,
+        "id": "608379",
+        "name": "Michael Wacha",
+        "team": "KC",
+        "value": "200.2"
+      },
+      {
+        "rank": 4,
+        "id": "693645",
+        "name": "Cam Schlittler",
+        "team": "NYY",
+        "value": "193.2"
+      },
+      {
+        "rank": 5,
+        "id": "593958",
+        "name": "Eduardo Rodriguez",
+        "team": "AZ",
+        "value": "189.2"
+      },
+      {
+        "rank": 6,
+        "id": "676440",
+        "name": "Tanner Bibee",
+        "team": "CLE",
+        "value": "188.0"
+      },
+      {
+        "rank": 7,
+        "id": "800048",
+        "name": "Parker Messick",
+        "team": "CLE",
+        "value": "186.1"
+      },
+      {
+        "rank": 8,
+        "id": "669302",
+        "name": "Logan Gilbert",
+        "team": "SEA",
+        "value": "186.0"
+      },
+      {
+        "rank": 9,
+        "id": "672282",
+        "name": "Reid Detmers",
+        "team": "LAA",
+        "value": "185.0"
+      },
+      {
+        "rank": 9,
+        "id": "650633",
+        "name": "Michael King",
+        "team": "SD",
+        "value": "185.0"
+      },
+      {
+        "rank": 9,
+        "id": "808967",
+        "name": "Yoshinobu Yamamoto",
+        "team": "LAD",
+        "value": "185.0"
+      }
+    ]
+  },
+  {
+    "label": "Games Started",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "669022",
+        "name": "MacKenzie Gore",
+        "team": "TEX",
+        "value": "34"
+      },
+      {
+        "rank": 2,
+        "id": "645261",
+        "name": "Sandy Alcantara",
+        "team": "MIA",
+        "value": "33"
+      },
+      {
+        "rank": 2,
+        "id": "676440",
+        "name": "Tanner Bibee",
+        "team": "CLE",
+        "value": "33"
+      },
+      {
+        "rank": 2,
+        "id": "605400",
+        "name": "Aaron Nola",
+        "team": "PHI",
+        "value": "33"
+      },
+      {
+        "rank": 2,
+        "id": "693645",
+        "name": "Cam Schlittler",
+        "team": "NYY",
+        "value": "33"
+      },
+      {
+        "rank": 2,
+        "id": "650911",
+        "name": "Cristopher Sánchez",
+        "team": "PHI",
+        "value": "33"
+      }
+    ],
+    "more_tied": 16
+  },
+  {
+    "label": "Games Pitched",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "689254",
+        "name": "Mason Fluharty",
+        "team": "TOR",
+        "value": "83"
+      },
+      {
+        "rank": 2,
+        "id": "687396",
+        "name": "Brent Headrick",
+        "team": "NYY",
+        "value": "81"
+      },
+      {
+        "rank": 3,
+        "id": "656271",
+        "name": "Brock Burke",
+        "team": "CIN",
+        "value": "77"
+      },
+      {
+        "rank": 4,
+        "id": "670970",
+        "name": "Adrian Morejon",
+        "team": "SD",
+        "value": "76"
+      },
+      {
+        "rank": 5,
+        "id": "641302",
+        "name": "Tyler Alexander",
+        "team": "TEX",
+        "value": "75"
+      },
+      {
+        "rank": 5,
+        "id": "676879",
+        "name": "Aaron Ashby",
+        "team": "MIL",
+        "value": "75"
+      },
+      {
+        "rank": 5,
+        "id": "680755",
+        "name": "Braydon Fisher",
+        "team": "TOR",
+        "value": "75"
+      },
+      {
+        "rank": 5,
+        "id": "670329",
+        "name": "Rico Garcia",
+        "team": "BAL",
+        "value": "75"
+      },
+      {
+        "rank": 9,
+        "id": "657514",
+        "name": "Brennan Bernardino",
+        "team": "COL",
+        "value": "74"
+      },
+      {
+        "rank": 9,
+        "id": "656464",
+        "name": "Kevin Ginkel",
+        "team": "AZ",
+        "value": "74"
+      },
+      {
+        "rank": 9,
+        "id": "663687",
+        "name": "Hogan Harris",
+        "team": "ATH",
+        "value": "74"
+      },
+      {
+        "rank": 9,
+        "id": "643511",
+        "name": "Tyler Rogers",
+        "team": "TOR",
+        "value": "74"
+      }
+    ]
+  },
+  {
+    "label": "Games Finished",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "671922",
+        "name": "Cade Smith",
+        "team": "CLE",
+        "value": "60"
+      },
+      {
+        "rank": 2,
+        "id": "695243",
+        "name": "Mason Miller",
+        "team": "SD",
+        "value": "57"
+      },
+      {
+        "rank": 3,
+        "id": "670280",
+        "name": "David Bednar",
+        "team": "NYY",
+        "value": "56"
+      },
+      {
+        "rank": 4,
+        "id": "661395",
+        "name": "Jhoan Duran",
+        "team": "PHI",
+        "value": "55"
+      },
+      {
+        "rank": 5,
+        "id": "676617",
+        "name": "Riley O'Brien",
+        "team": "STL",
+        "value": "54"
+      },
+      {
+        "rank": 6,
+        "id": "686973",
+        "name": "Louis Varland",
+        "team": "TOR",
+        "value": "53"
+      },
+      {
+        "rank": 7,
+        "id": "641329",
+        "name": "Bryan Baker",
+        "team": "TB",
+        "value": "52"
+      },
+      {
+        "rank": 8,
+        "id": "628452",
+        "name": "Raisel Iglesias",
+        "team": "ATL",
+        "value": "49"
+      },
+      {
+        "rank": 9,
+        "id": "662253",
+        "name": "Andrés Muñoz",
+        "team": "SEA",
+        "value": "48"
+      },
+      {
+        "rank": 10,
+        "id": "547973",
+        "name": "Aroldis Chapman",
+        "team": "BOS",
+        "value": "44"
       }
     ]
   }

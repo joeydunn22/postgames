@@ -1,81 +1,7 @@
 [
   {
-    "label": "Home Runs",
-    "players": [
-      {
-        "rank": 1,
-        "id": "408234",
-        "name": "Miguel Cabrera",
-        "team": "DET",
-        "value": "44"
-      },
-      {
-        "rank": 2,
-        "id": "434158",
-        "name": "Curtis Granderson",
-        "team": "NYY",
-        "value": "43"
-      },
-      {
-        "rank": 2,
-        "id": "285078",
-        "name": "Josh Hamilton",
-        "team": "TEX",
-        "value": "43"
-      },
-      {
-        "rank": 4,
-        "id": "429665",
-        "name": "Edwin Encarnación",
-        "team": "TOR",
-        "value": "42"
-      },
-      {
-        "rank": 5,
-        "id": "460075",
-        "name": "Ryan Braun",
-        "team": "MIL",
-        "value": "41"
-      },
-      {
-        "rank": 5,
-        "id": "276055",
-        "name": "Adam Dunn",
-        "team": "CWS",
-        "value": "41"
-      },
-      {
-        "rank": 7,
-        "id": "519317",
-        "name": "Giancarlo Stanton",
-        "team": "MIA",
-        "value": "37"
-      },
-      {
-        "rank": 8,
-        "id": "134181",
-        "name": "Adrian Beltré",
-        "team": "TEX",
-        "value": "36"
-      },
-      {
-        "rank": 9,
-        "id": "425545",
-        "name": "Josh Willingham",
-        "team": "MIN",
-        "value": "35"
-      },
-      {
-        "rank": 10,
-        "id": "457803",
-        "name": "Jay Bruce",
-        "team": "CIN",
-        "value": "34"
-      }
-    ]
-  },
-  {
     "label": "Batting Average",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -150,82 +76,8 @@
     ]
   },
   {
-    "label": "Runs Batted In",
-    "players": [
-      {
-        "rank": 1,
-        "id": "408234",
-        "name": "Miguel Cabrera",
-        "team": "DET",
-        "value": "139"
-      },
-      {
-        "rank": 2,
-        "id": "285078",
-        "name": "Josh Hamilton",
-        "team": "TEX",
-        "value": "128"
-      },
-      {
-        "rank": 3,
-        "id": "452104",
-        "name": "Chase Headley",
-        "team": "SD",
-        "value": "115"
-      },
-      {
-        "rank": 4,
-        "id": "460075",
-        "name": "Ryan Braun",
-        "team": "MIL",
-        "value": "112"
-      },
-      {
-        "rank": 5,
-        "id": "429665",
-        "name": "Edwin Encarnación",
-        "team": "TOR",
-        "value": "110"
-      },
-      {
-        "rank": 5,
-        "id": "425545",
-        "name": "Josh Willingham",
-        "team": "MIN",
-        "value": "110"
-      },
-      {
-        "rank": 7,
-        "id": "425902",
-        "name": "Prince Fielder",
-        "team": "DET",
-        "value": "108"
-      },
-      {
-        "rank": 7,
-        "id": "408236",
-        "name": "Adrián González",
-        "team": "2TM",
-        "value": "108"
-      },
-      {
-        "rank": 7,
-        "id": "150093",
-        "name": "Alfonso Soriano",
-        "team": "CHC",
-        "value": "108"
-      },
-      {
-        "rank": 10,
-        "id": "456714",
-        "name": "Billy Butler",
-        "team": "KC",
-        "value": "107"
-      }
-    ]
-  },
-  {
     "label": "Hits",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -301,6 +153,7 @@
   },
   {
     "label": "Runs Scored",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -375,82 +228,84 @@
     ]
   },
   {
-    "label": "Stolen Bases",
+    "label": "Runs Batted In",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
-        "id": "545361",
-        "name": "Mike Trout",
-        "team": "LAA",
-        "value": "49"
+        "id": "408234",
+        "name": "Miguel Cabrera",
+        "team": "DET",
+        "value": "139"
       },
       {
         "rank": 2,
-        "id": "434658",
-        "name": "Rajai Davis",
-        "team": "TOR",
-        "value": "46"
+        "id": "285078",
+        "name": "Josh Hamilton",
+        "team": "TEX",
+        "value": "128"
       },
       {
         "rank": 3,
-        "id": "465784",
-        "name": "Everth Cabrera",
+        "id": "452104",
+        "name": "Chase Headley",
         "team": "SD",
-        "value": "44"
+        "value": "115"
       },
       {
         "rank": 4,
-        "id": "456422",
-        "name": "Michael Bourn",
-        "team": "ATL",
-        "value": "42"
-      },
-      {
-        "rank": 5,
-        "id": "519184",
-        "name": "Ben Revere",
-        "team": "MIN",
-        "value": "40"
-      },
-      {
-        "rank": 5,
-        "id": "408314",
-        "name": "José Reyes",
-        "team": "MIA",
-        "value": "40"
-      },
-      {
-        "rank": 7,
-        "id": "424825",
-        "name": "Coco Crisp",
-        "team": "OAK",
-        "value": "39"
-      },
-      {
-        "rank": 7,
-        "id": "425664",
-        "name": "Shane Victorino",
-        "team": "2TM",
-        "value": "39"
-      },
-      {
-        "rank": 9,
-        "id": "460576",
-        "name": "Carlos Gómez",
+        "id": "460075",
+        "name": "Ryan Braun",
         "team": "MIL",
-        "value": "37"
+        "value": "112"
       },
       {
-        "rank": 9,
-        "id": "334393",
-        "name": "Juan Pierre",
-        "team": "PHI",
-        "value": "37"
+        "rank": 5,
+        "id": "429665",
+        "name": "Edwin Encarnación",
+        "team": "TOR",
+        "value": "110"
+      },
+      {
+        "rank": 5,
+        "id": "425545",
+        "name": "Josh Willingham",
+        "team": "MIN",
+        "value": "110"
+      },
+      {
+        "rank": 7,
+        "id": "425902",
+        "name": "Prince Fielder",
+        "team": "DET",
+        "value": "108"
+      },
+      {
+        "rank": 7,
+        "id": "408236",
+        "name": "Adrián González",
+        "team": "2TM",
+        "value": "108"
+      },
+      {
+        "rank": 7,
+        "id": "150093",
+        "name": "Alfonso Soriano",
+        "team": "CHC",
+        "value": "108"
+      },
+      {
+        "rank": 10,
+        "id": "456714",
+        "name": "Billy Butler",
+        "team": "KC",
+        "value": "107"
       }
     ]
   },
   {
     "label": "Doubles",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -526,6 +381,7 @@
   },
   {
     "label": "Triples",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -600,232 +456,84 @@
     ]
   },
   {
-    "label": "Walks",
+    "label": "Home Runs",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
-        "id": "276055",
-        "name": "Adam Dunn",
-        "team": "CWS",
-        "value": "105"
-      },
-      {
-        "rank": 2,
-        "id": "450314",
-        "name": "Ben Zobrist",
-        "team": "TB",
-        "value": "97"
-      },
-      {
-        "rank": 3,
-        "id": "462564",
-        "name": "Dan Uggla",
-        "team": "ATL",
-        "value": "94"
-      },
-      {
-        "rank": 3,
-        "id": "458015",
-        "name": "Joey Votto",
-        "team": "CIN",
-        "value": "94"
-      },
-      {
-        "rank": 5,
-        "id": "467793",
-        "name": "Carlos Santana",
-        "team": "CLE",
-        "value": "91"
-      },
-      {
-        "rank": 6,
-        "id": "408045",
-        "name": "Joe Mauer",
-        "team": "MIN",
-        "value": "90"
-      },
-      {
-        "rank": 7,
-        "id": "150289",
-        "name": "Carlos Pena",
-        "team": "TB",
-        "value": "87"
-      },
-      {
-        "rank": 8,
-        "id": "452104",
-        "name": "Chase Headley",
-        "team": "SD",
-        "value": "86"
-      },
-      {
-        "rank": 9,
-        "id": "425902",
-        "name": "Prince Fielder",
+        "id": "408234",
+        "name": "Miguel Cabrera",
         "team": "DET",
-        "value": "85"
-      },
-      {
-        "rank": 10,
-        "id": "429665",
-        "name": "Edwin Encarnación",
-        "team": "TOR",
-        "value": "84"
-      }
-    ]
-  },
-  {
-    "label": "Strikeouts",
-    "players": [
-      {
-        "rank": 1,
-        "id": "276055",
-        "name": "Adam Dunn",
-        "team": "CWS",
-        "value": "222"
+        "value": "44"
       },
       {
         "rank": 2,
         "id": "434158",
         "name": "Curtis Granderson",
         "team": "NYY",
-        "value": "195"
-      },
-      {
-        "rank": 3,
-        "id": "457787",
-        "name": "Danny Espinosa",
-        "team": "WSH",
-        "value": "189"
-      },
-      {
-        "rank": 4,
-        "id": "150289",
-        "name": "Carlos Pena",
-        "team": "TB",
-        "value": "182"
-      },
-      {
-        "rank": 5,
-        "id": "476883",
-        "name": "Pedro Álvarez",
-        "team": "PIT",
-        "value": "180"
-      },
-      {
-        "rank": 6,
-        "id": "448801",
-        "name": "Chris Davis",
-        "team": "BAL",
-        "value": "169"
-      },
-      {
-        "rank": 6,
-        "id": "425834",
-        "name": "B.J. Upton",
-        "team": "TB",
-        "value": "169"
-      },
-      {
-        "rank": 6,
-        "id": "430001",
-        "name": "Rickie Weeks Jr.",
-        "team": "MIL",
-        "value": "169"
-      },
-      {
-        "rank": 9,
-        "id": "462564",
-        "name": "Dan Uggla",
-        "team": "ATL",
-        "value": "168"
-      },
-      {
-        "rank": 10,
-        "id": "453211",
-        "name": "Drew Stubbs",
-        "team": "CIN",
-        "value": "166"
-      }
-    ]
-  },
-  {
-    "label": "On-Base %",
-    "players": [
-      {
-        "rank": 1,
-        "id": "458015",
-        "name": "Joey Votto",
-        "team": "CIN",
-        "value": ".474"
+        "value": "43"
       },
       {
         "rank": 2,
-        "id": "408045",
-        "name": "Joe Mauer",
-        "team": "MIN",
-        "value": ".416"
-      },
-      {
-        "rank": 3,
-        "id": "425902",
-        "name": "Prince Fielder",
-        "team": "DET",
-        "value": ".412"
+        "id": "285078",
+        "name": "Josh Hamilton",
+        "team": "TEX",
+        "value": "43"
       },
       {
         "rank": 4,
-        "id": "457763",
-        "name": "Buster Posey",
-        "team": "SF",
-        "value": ".408"
+        "id": "429665",
+        "name": "Edwin Encarnación",
+        "team": "TOR",
+        "value": "42"
       },
       {
         "rank": 5,
-        "id": "457705",
-        "name": "Andrew McCutchen",
-        "team": "PIT",
-        "value": ".400"
-      },
-      {
-        "rank": 6,
-        "id": "545361",
-        "name": "Mike Trout",
-        "team": "LAA",
-        "value": ".399"
-      },
-      {
-        "rank": 7,
-        "id": "408234",
-        "name": "Miguel Cabrera",
-        "team": "DET",
-        "value": ".393"
-      },
-      {
-        "rank": 8,
         "id": "460075",
         "name": "Ryan Braun",
         "team": "MIL",
-        "value": ".391"
+        "value": "41"
+      },
+      {
+        "rank": 5,
+        "id": "276055",
+        "name": "Adam Dunn",
+        "team": "CWS",
+        "value": "41"
+      },
+      {
+        "rank": 7,
+        "id": "519317",
+        "name": "Giancarlo Stanton",
+        "team": "MIA",
+        "value": "37"
+      },
+      {
+        "rank": 8,
+        "id": "134181",
+        "name": "Adrian Beltré",
+        "team": "TEX",
+        "value": "36"
       },
       {
         "rank": 9,
-        "id": "431151",
-        "name": "David Wright",
-        "team": "NYM",
-        "value": ".391"
+        "id": "425545",
+        "name": "Josh Willingham",
+        "team": "MIN",
+        "value": "35"
       },
       {
         "rank": 10,
-        "id": "471083",
-        "name": "Miguel Montero",
-        "team": "AZ",
-        "value": ".391"
+        "id": "457803",
+        "name": "Jay Bruce",
+        "team": "CIN",
+        "value": "34"
       }
     ]
   },
   {
     "label": "Slugging %",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -901,6 +609,7 @@
   },
   {
     "label": "OPS (On-Base + Slugging)",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -976,6 +685,7 @@
   },
   {
     "label": "Total Bases",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -1058,6 +768,7 @@
   },
   {
     "label": "Extra-Base Hits",
+    "group": "Power",
     "players": [
       {
         "rank": 1,
@@ -1132,7 +843,243 @@
     ]
   },
   {
+    "label": "On-Base %",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "458015",
+        "name": "Joey Votto",
+        "team": "CIN",
+        "value": ".474"
+      },
+      {
+        "rank": 2,
+        "id": "408045",
+        "name": "Joe Mauer",
+        "team": "MIN",
+        "value": ".416"
+      },
+      {
+        "rank": 3,
+        "id": "425902",
+        "name": "Prince Fielder",
+        "team": "DET",
+        "value": ".412"
+      },
+      {
+        "rank": 4,
+        "id": "457763",
+        "name": "Buster Posey",
+        "team": "SF",
+        "value": ".408"
+      },
+      {
+        "rank": 5,
+        "id": "457705",
+        "name": "Andrew McCutchen",
+        "team": "PIT",
+        "value": ".400"
+      },
+      {
+        "rank": 6,
+        "id": "545361",
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": ".399"
+      },
+      {
+        "rank": 7,
+        "id": "408234",
+        "name": "Miguel Cabrera",
+        "team": "DET",
+        "value": ".393"
+      },
+      {
+        "rank": 8,
+        "id": "460075",
+        "name": "Ryan Braun",
+        "team": "MIL",
+        "value": ".391"
+      },
+      {
+        "rank": 9,
+        "id": "431151",
+        "name": "David Wright",
+        "team": "NYM",
+        "value": ".391"
+      },
+      {
+        "rank": 10,
+        "id": "471083",
+        "name": "Miguel Montero",
+        "team": "AZ",
+        "value": ".391"
+      }
+    ]
+  },
+  {
+    "label": "Walks",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "276055",
+        "name": "Adam Dunn",
+        "team": "CWS",
+        "value": "105"
+      },
+      {
+        "rank": 2,
+        "id": "450314",
+        "name": "Ben Zobrist",
+        "team": "TB",
+        "value": "97"
+      },
+      {
+        "rank": 3,
+        "id": "462564",
+        "name": "Dan Uggla",
+        "team": "ATL",
+        "value": "94"
+      },
+      {
+        "rank": 3,
+        "id": "458015",
+        "name": "Joey Votto",
+        "team": "CIN",
+        "value": "94"
+      },
+      {
+        "rank": 5,
+        "id": "467793",
+        "name": "Carlos Santana",
+        "team": "CLE",
+        "value": "91"
+      },
+      {
+        "rank": 6,
+        "id": "408045",
+        "name": "Joe Mauer",
+        "team": "MIN",
+        "value": "90"
+      },
+      {
+        "rank": 7,
+        "id": "150289",
+        "name": "Carlos Pena",
+        "team": "TB",
+        "value": "87"
+      },
+      {
+        "rank": 8,
+        "id": "452104",
+        "name": "Chase Headley",
+        "team": "SD",
+        "value": "86"
+      },
+      {
+        "rank": 9,
+        "id": "425902",
+        "name": "Prince Fielder",
+        "team": "DET",
+        "value": "85"
+      },
+      {
+        "rank": 10,
+        "id": "429665",
+        "name": "Edwin Encarnación",
+        "team": "TOR",
+        "value": "84"
+      }
+    ]
+  },
+  {
+    "label": "Intentional Walks",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "425902",
+        "name": "Prince Fielder",
+        "team": "DET",
+        "value": "18"
+      },
+      {
+        "rank": 1,
+        "id": "458015",
+        "name": "Joey Votto",
+        "team": "CIN",
+        "value": "18"
+      },
+      {
+        "rank": 3,
+        "id": "408234",
+        "name": "Miguel Cabrera",
+        "team": "DET",
+        "value": "17"
+      },
+      {
+        "rank": 4,
+        "id": "405395",
+        "name": "Albert Pujols",
+        "team": "LAA",
+        "value": "16"
+      },
+      {
+        "rank": 4,
+        "id": "431151",
+        "name": "David Wright",
+        "team": "NYM",
+        "value": "16"
+      },
+      {
+        "rank": 6,
+        "id": "136860",
+        "name": "Carlos Beltrán",
+        "team": "STL",
+        "value": "15"
+      },
+      {
+        "rank": 6,
+        "id": "460075",
+        "name": "Ryan Braun",
+        "team": "MIL",
+        "value": "15"
+      },
+      {
+        "rank": 8,
+        "id": "285078",
+        "name": "Josh Hamilton",
+        "team": "TEX",
+        "value": "13"
+      },
+      {
+        "rank": 8,
+        "id": "452672",
+        "name": "Ryan Hanigan",
+        "team": "CIN",
+        "value": "13"
+      },
+      {
+        "rank": 8,
+        "id": "457705",
+        "name": "Andrew McCutchen",
+        "team": "PIT",
+        "value": "13"
+      },
+      {
+        "rank": 8,
+        "id": "120074",
+        "name": "David Ortiz",
+        "team": "BOS",
+        "value": "13"
+      }
+    ]
+  },
+  {
     "label": "Hit By Pitch",
+    "group": "On Base",
     "players": [
       {
         "rank": 1,
@@ -1221,89 +1168,160 @@
     ]
   },
   {
-    "label": "Intentional Walks",
+    "label": "Strikeouts",
+    "group": "On Base",
     "players": [
       {
         "rank": 1,
-        "id": "425902",
-        "name": "Prince Fielder",
-        "team": "DET",
-        "value": "18"
+        "id": "276055",
+        "name": "Adam Dunn",
+        "team": "CWS",
+        "value": "222"
       },
       {
-        "rank": 1,
-        "id": "458015",
-        "name": "Joey Votto",
-        "team": "CIN",
-        "value": "18"
+        "rank": 2,
+        "id": "434158",
+        "name": "Curtis Granderson",
+        "team": "NYY",
+        "value": "195"
       },
       {
         "rank": 3,
-        "id": "408234",
-        "name": "Miguel Cabrera",
-        "team": "DET",
-        "value": "17"
+        "id": "457787",
+        "name": "Danny Espinosa",
+        "team": "WSH",
+        "value": "189"
       },
       {
         "rank": 4,
-        "id": "405395",
-        "name": "Albert Pujols",
-        "team": "LAA",
-        "value": "16"
+        "id": "150289",
+        "name": "Carlos Pena",
+        "team": "TB",
+        "value": "182"
       },
       {
-        "rank": 4,
-        "id": "431151",
-        "name": "David Wright",
-        "team": "NYM",
-        "value": "16"
-      },
-      {
-        "rank": 6,
-        "id": "136860",
-        "name": "Carlos Beltrán",
-        "team": "STL",
-        "value": "15"
-      },
-      {
-        "rank": 6,
-        "id": "460075",
-        "name": "Ryan Braun",
-        "team": "MIL",
-        "value": "15"
-      },
-      {
-        "rank": 8,
-        "id": "285078",
-        "name": "Josh Hamilton",
-        "team": "TEX",
-        "value": "13"
-      },
-      {
-        "rank": 8,
-        "id": "452672",
-        "name": "Ryan Hanigan",
-        "team": "CIN",
-        "value": "13"
-      },
-      {
-        "rank": 8,
-        "id": "457705",
-        "name": "Andrew McCutchen",
+        "rank": 5,
+        "id": "476883",
+        "name": "Pedro Álvarez",
         "team": "PIT",
-        "value": "13"
+        "value": "180"
       },
       {
-        "rank": 8,
-        "id": "120074",
-        "name": "David Ortiz",
-        "team": "BOS",
-        "value": "13"
+        "rank": 6,
+        "id": "448801",
+        "name": "Chris Davis",
+        "team": "BAL",
+        "value": "169"
+      },
+      {
+        "rank": 6,
+        "id": "425834",
+        "name": "B.J. Upton",
+        "team": "TB",
+        "value": "169"
+      },
+      {
+        "rank": 6,
+        "id": "430001",
+        "name": "Rickie Weeks Jr.",
+        "team": "MIL",
+        "value": "169"
+      },
+      {
+        "rank": 9,
+        "id": "462564",
+        "name": "Dan Uggla",
+        "team": "ATL",
+        "value": "168"
+      },
+      {
+        "rank": 10,
+        "id": "453211",
+        "name": "Drew Stubbs",
+        "team": "CIN",
+        "value": "166"
+      }
+    ]
+  },
+  {
+    "label": "Stolen Bases",
+    "group": "Speed",
+    "players": [
+      {
+        "rank": 1,
+        "id": "545361",
+        "name": "Mike Trout",
+        "team": "LAA",
+        "value": "49"
+      },
+      {
+        "rank": 2,
+        "id": "434658",
+        "name": "Rajai Davis",
+        "team": "TOR",
+        "value": "46"
+      },
+      {
+        "rank": 3,
+        "id": "465784",
+        "name": "Everth Cabrera",
+        "team": "SD",
+        "value": "44"
+      },
+      {
+        "rank": 4,
+        "id": "456422",
+        "name": "Michael Bourn",
+        "team": "ATL",
+        "value": "42"
+      },
+      {
+        "rank": 5,
+        "id": "519184",
+        "name": "Ben Revere",
+        "team": "MIN",
+        "value": "40"
+      },
+      {
+        "rank": 5,
+        "id": "408314",
+        "name": "José Reyes",
+        "team": "MIA",
+        "value": "40"
+      },
+      {
+        "rank": 7,
+        "id": "424825",
+        "name": "Coco Crisp",
+        "team": "OAK",
+        "value": "39"
+      },
+      {
+        "rank": 7,
+        "id": "425664",
+        "name": "Shane Victorino",
+        "team": "2TM",
+        "value": "39"
+      },
+      {
+        "rank": 9,
+        "id": "460576",
+        "name": "Carlos Gómez",
+        "team": "MIL",
+        "value": "37"
+      },
+      {
+        "rank": 9,
+        "id": "334393",
+        "name": "Juan Pierre",
+        "team": "PHI",
+        "value": "37"
       }
     ]
   },
   {
     "label": "Caught Stealing",
+    "group": "Speed",
     "players": [
       {
         "rank": 1,
@@ -1392,246 +1410,8 @@
     ]
   },
   {
-    "label": "Grounded Into Double Plays",
-    "players": [
-      {
-        "rank": 1,
-        "id": "408234",
-        "name": "Miguel Cabrera",
-        "team": "DET",
-        "value": "28"
-      },
-      {
-        "rank": 2,
-        "id": "435062",
-        "name": "Howie Kendrick",
-        "team": "LAA",
-        "value": "26"
-      },
-      {
-        "rank": 2,
-        "id": "276545",
-        "name": "Michael Young",
-        "team": "TEX",
-        "value": "26"
-      },
-      {
-        "rank": 4,
-        "id": "116539",
-        "name": "Derek Jeter",
-        "team": "NYY",
-        "value": "24"
-      },
-      {
-        "rank": 5,
-        "id": "408045",
-        "name": "Joe Mauer",
-        "team": "MIN",
-        "value": "23"
-      },
-      {
-        "rank": 6,
-        "id": "429664",
-        "name": "Robinson Canó",
-        "team": "NYY",
-        "value": "22"
-      },
-      {
-        "rank": 7,
-        "id": "488862",
-        "name": "Yunel Escobar",
-        "team": "TOR",
-        "value": "21"
-      },
-      {
-        "rank": 7,
-        "id": "429666",
-        "name": "J.J. Hardy",
-        "team": "BAL",
-        "value": "21"
-      },
-      {
-        "rank": 7,
-        "id": "425766",
-        "name": "James Loney",
-        "team": "2TM",
-        "value": "21"
-      },
-      {
-        "rank": 7,
-        "id": "467793",
-        "name": "Carlos Santana",
-        "team": "CLE",
-        "value": "21"
-      }
-    ]
-  },
-  {
-    "label": "Sacrifice Flies",
-    "players": [
-      {
-        "rank": 1,
-        "id": "407893",
-        "name": "Mark Teixeira",
-        "team": "NYY",
-        "value": "12"
-      },
-      {
-        "rank": 2,
-        "id": "408047",
-        "name": "Justin Morneau",
-        "team": "MIN",
-        "value": "10"
-      },
-      {
-        "rank": 3,
-        "id": "134181",
-        "name": "Adrian Beltré",
-        "team": "TEX",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "ATL",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "502671",
-        "name": "Paul Goldschmidt",
-        "team": "AZ",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "285078",
-        "name": "Josh Hamilton",
-        "team": "TEX",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "425560",
-        "name": "Adam LaRoche",
-        "team": "WSH",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "457763",
-        "name": "Buster Posey",
-        "team": "SF",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "445988",
-        "name": "Martín Prado",
-        "team": "ATL",
-        "value": "9"
-      },
-      {
-        "rank": 3,
-        "id": "340192",
-        "name": "Marco Scutaro",
-        "team": "2TM",
-        "value": "9"
-      }
-    ]
-  },
-  {
-    "label": "Plate Appearances",
-    "players": [
-      {
-        "rank": 1,
-        "id": "116539",
-        "name": "Derek Jeter",
-        "team": "NYY",
-        "value": "740"
-      },
-      {
-        "rank": 2,
-        "id": "435079",
-        "name": "Ian Kinsler",
-        "team": "TEX",
-        "value": "731"
-      },
-      {
-        "rank": 3,
-        "id": "460086",
-        "name": "Alex Gordon",
-        "team": "KC",
-        "value": "721"
-      },
-      {
-        "rank": 4,
-        "id": "408314",
-        "name": "José Reyes",
-        "team": "MIA",
-        "value": "716"
-      },
-      {
-        "rank": 5,
-        "id": "429666",
-        "name": "J.J. Hardy",
-        "team": "BAL",
-        "value": "713"
-      },
-      {
-        "rank": 6,
-        "id": "462101",
-        "name": "Elvis Andrus",
-        "team": "TEX",
-        "value": "711"
-      },
-      {
-        "rank": 7,
-        "id": "456422",
-        "name": "Michael Bourn",
-        "team": "ATL",
-        "value": "703"
-      },
-      {
-        "rank": 8,
-        "id": "452104",
-        "name": "Chase Headley",
-        "team": "SD",
-        "value": "699"
-      },
-      {
-        "rank": 8,
-        "id": "276519",
-        "name": "Jimmy Rollins",
-        "team": "PHI",
-        "value": "699"
-      },
-      {
-        "rank": 10,
-        "id": "408234",
-        "name": "Miguel Cabrera",
-        "team": "DET",
-        "value": "697"
-      },
-      {
-        "rank": 10,
-        "id": "429664",
-        "name": "Robinson Canó",
-        "team": "NYY",
-        "value": "697"
-      },
-      {
-        "rank": 10,
-        "id": "430945",
-        "name": "Adam Jones",
-        "team": "BAL",
-        "value": "697"
-      }
-    ]
-  },
-  {
     "label": "Games Played",
+    "group": "Playing Time & Other",
     "players": [
       {
         "rank": 1,
@@ -1730,6 +1510,248 @@
         "name": "José Reyes",
         "team": "MIA",
         "value": "160"
+      }
+    ]
+  },
+  {
+    "label": "Plate Appearances",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "116539",
+        "name": "Derek Jeter",
+        "team": "NYY",
+        "value": "740"
+      },
+      {
+        "rank": 2,
+        "id": "435079",
+        "name": "Ian Kinsler",
+        "team": "TEX",
+        "value": "731"
+      },
+      {
+        "rank": 3,
+        "id": "460086",
+        "name": "Alex Gordon",
+        "team": "KC",
+        "value": "721"
+      },
+      {
+        "rank": 4,
+        "id": "408314",
+        "name": "José Reyes",
+        "team": "MIA",
+        "value": "716"
+      },
+      {
+        "rank": 5,
+        "id": "429666",
+        "name": "J.J. Hardy",
+        "team": "BAL",
+        "value": "713"
+      },
+      {
+        "rank": 6,
+        "id": "462101",
+        "name": "Elvis Andrus",
+        "team": "TEX",
+        "value": "711"
+      },
+      {
+        "rank": 7,
+        "id": "456422",
+        "name": "Michael Bourn",
+        "team": "ATL",
+        "value": "703"
+      },
+      {
+        "rank": 8,
+        "id": "452104",
+        "name": "Chase Headley",
+        "team": "SD",
+        "value": "699"
+      },
+      {
+        "rank": 8,
+        "id": "276519",
+        "name": "Jimmy Rollins",
+        "team": "PHI",
+        "value": "699"
+      },
+      {
+        "rank": 10,
+        "id": "408234",
+        "name": "Miguel Cabrera",
+        "team": "DET",
+        "value": "697"
+      },
+      {
+        "rank": 10,
+        "id": "429664",
+        "name": "Robinson Canó",
+        "team": "NYY",
+        "value": "697"
+      },
+      {
+        "rank": 10,
+        "id": "430945",
+        "name": "Adam Jones",
+        "team": "BAL",
+        "value": "697"
+      }
+    ]
+  },
+  {
+    "label": "Grounded Into Double Plays",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "408234",
+        "name": "Miguel Cabrera",
+        "team": "DET",
+        "value": "28"
+      },
+      {
+        "rank": 2,
+        "id": "435062",
+        "name": "Howie Kendrick",
+        "team": "LAA",
+        "value": "26"
+      },
+      {
+        "rank": 2,
+        "id": "276545",
+        "name": "Michael Young",
+        "team": "TEX",
+        "value": "26"
+      },
+      {
+        "rank": 4,
+        "id": "116539",
+        "name": "Derek Jeter",
+        "team": "NYY",
+        "value": "24"
+      },
+      {
+        "rank": 5,
+        "id": "408045",
+        "name": "Joe Mauer",
+        "team": "MIN",
+        "value": "23"
+      },
+      {
+        "rank": 6,
+        "id": "429664",
+        "name": "Robinson Canó",
+        "team": "NYY",
+        "value": "22"
+      },
+      {
+        "rank": 7,
+        "id": "488862",
+        "name": "Yunel Escobar",
+        "team": "TOR",
+        "value": "21"
+      },
+      {
+        "rank": 7,
+        "id": "429666",
+        "name": "J.J. Hardy",
+        "team": "BAL",
+        "value": "21"
+      },
+      {
+        "rank": 7,
+        "id": "425766",
+        "name": "James Loney",
+        "team": "2TM",
+        "value": "21"
+      },
+      {
+        "rank": 7,
+        "id": "467793",
+        "name": "Carlos Santana",
+        "team": "CLE",
+        "value": "21"
+      }
+    ]
+  },
+  {
+    "label": "Sacrifice Flies",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "407893",
+        "name": "Mark Teixeira",
+        "team": "NYY",
+        "value": "12"
+      },
+      {
+        "rank": 2,
+        "id": "408047",
+        "name": "Justin Morneau",
+        "team": "MIN",
+        "value": "10"
+      },
+      {
+        "rank": 3,
+        "id": "134181",
+        "name": "Adrian Beltré",
+        "team": "TEX",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "ATL",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "502671",
+        "name": "Paul Goldschmidt",
+        "team": "AZ",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "285078",
+        "name": "Josh Hamilton",
+        "team": "TEX",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "425560",
+        "name": "Adam LaRoche",
+        "team": "WSH",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "457763",
+        "name": "Buster Posey",
+        "team": "SF",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "445988",
+        "name": "Martín Prado",
+        "team": "ATL",
+        "value": "9"
+      },
+      {
+        "rank": 3,
+        "id": "340192",
+        "name": "Marco Scutaro",
+        "team": "2TM",
+        "value": "9"
       }
     ]
   }

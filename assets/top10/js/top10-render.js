@@ -40,6 +40,14 @@ function formatTeam(team) {
     return multi ? `${multi[1]} teams` : team;
 }
 
+// A team code as a small tag in the team's color (see top10-teams.js)
+function teamTag(team, extraClass = "") {
+    if (!team) return "";
+    const color = teamColor(game.sport, team);
+    const style = color ? ` style="--team: ${color}"` : "";
+    return `<span class="team-tag ${color ? "has-color" : ""} ${extraClass}"${style}>${escapeHTML(formatTeam(team))}</span>`;
+}
+
 // NBA seasons span two years and are stored by the year they end:
 // 2025 is shown as "2024-25"
 function formatSeason(sport, year) {
@@ -122,14 +130,21 @@ function renderYearPicker(locked) {
     ui.yearSelect.disabled = locked || years.length === 0;
 }
 
+// Stats in sections (Passing, Rushing, …), in the file's order
 function renderStatPicker(locked) {
-    const labels = Object.keys(game.data);
-    const optionsKey = labels.join("|");
+    const stats = Object.values(game.data);
+    const optionsKey = stats.map(stat => stat.label).join("|");
 
     if (optionsKey !== _statOptionsKey) {
         _statOptionsKey = optionsKey;
+        const groups = new Map();
+        for (const stat of stats) {
+            const group = stat.group || "Stats";
+            if (!groups.has(group)) groups.set(group, []);
+            groups.get(group).push(`<option>${escapeHTML(stat.label)}</option>`);
+        }
         ui.statSelect.innerHTML = `<option value="">Pick a stat</option>` +
-            labels.map(label => `<option>${escapeHTML(label)}</option>`).join("");
+            [...groups].map(([group, options]) => `<optgroup label="${escapeHTML(group)}">${options.join("")}</optgroup>`).join("");
     }
 
     ui.statSelect.value = game.stat || "";
@@ -301,7 +316,7 @@ function renderBoard(listEl, { final = false } = {}) {
             : "";
         const main = revealed
             ? `<span class="slot-line"><span class="slot-name">${escapeHTML(item.name)}</span>` +
-              `<span class="slot-team">${escapeHTML(formatTeam(item.team))}</span></span>${by}`
+              `${teamTag(item.team, "slot-team")}</span>${by}`
             : `<span class="slot-blank"></span>`;
 
         return `
@@ -355,13 +370,13 @@ function renderGuessResults() {
     if (_highlight >= found.players.length) _highlight = found.players.length - 1;
 
     const rows = found.players.map((player, idx) => {
-        const meta = [formatTeam(player.team), player.pos].filter(Boolean).join(" · ");
+        const meta = teamTag(player.team) + (player.pos ? `<span class="guess-option-pos">${escapeHTML(player.pos)}</span>` : "");
         return `
             <li role="option" aria-selected="${idx === _highlight}">
                 <button class="guess-option ${idx === _highlight ? "active" : ""}" type="button"
                     data-id="${escapeHTML(player.id)}" ${player.found ? "disabled" : ""}>
                     <span class="guess-option-name">${escapeHTML(player.name)}</span>
-                    <span class="guess-option-meta">${player.found ? "on the board" : escapeHTML(meta)}</span>
+                    <span class="guess-option-meta">${player.found ? "on the board" : meta}</span>
                 </button>
             </li>`;
     });

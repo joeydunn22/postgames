@@ -1,88 +1,7 @@
 [
   {
-    "label": "Home Runs",
-    "players": [
-      {
-        "rank": 1,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": "54"
-      },
-      {
-        "rank": 2,
-        "id": "656941",
-        "name": "Kyle Schwarber",
-        "team": "PHI",
-        "value": "47"
-      },
-      {
-        "rank": 3,
-        "id": "624413",
-        "name": "Pete Alonso",
-        "team": "NYM",
-        "value": "46"
-      },
-      {
-        "rank": 4,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": "44"
-      },
-      {
-        "rank": 5,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": "41"
-      },
-      {
-        "rank": 6,
-        "id": "542303",
-        "name": "Marcell Ozuna",
-        "team": "ATL",
-        "value": "40"
-      },
-      {
-        "rank": 7,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": "39"
-      },
-      {
-        "rank": 7,
-        "id": "666969",
-        "name": "Adolis García",
-        "team": "TEX",
-        "value": "39"
-      },
-      {
-        "rank": 9,
-        "id": "673357",
-        "name": "Luis Robert Jr.",
-        "team": "CWS",
-        "value": "38"
-      },
-      {
-        "rank": 10,
-        "id": "592450",
-        "name": "Aaron Judge",
-        "team": "NYY",
-        "value": "37"
-      },
-      {
-        "rank": 10,
-        "id": "663586",
-        "name": "Austin Riley",
-        "team": "ATL",
-        "value": "37"
-      }
-    ]
-  },
-  {
     "label": "Batting Average",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -157,82 +76,8 @@
     ]
   },
   {
-    "label": "Runs Batted In",
-    "players": [
-      {
-        "rank": 1,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": "139"
-      },
-      {
-        "rank": 2,
-        "id": "624413",
-        "name": "Pete Alonso",
-        "team": "NYM",
-        "value": "118"
-      },
-      {
-        "rank": 3,
-        "id": "663656",
-        "name": "Kyle Tucker",
-        "team": "HOU",
-        "value": "112"
-      },
-      {
-        "rank": 4,
-        "id": "645277",
-        "name": "Ozzie Albies",
-        "team": "ATL",
-        "value": "109"
-      },
-      {
-        "rank": 4,
-        "id": "665742",
-        "name": "Juan Soto",
-        "team": "SD",
-        "value": "109"
-      },
-      {
-        "rank": 6,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": "107"
-      },
-      {
-        "rank": 6,
-        "id": "666969",
-        "name": "Adolis García",
-        "team": "TEX",
-        "value": "107"
-      },
-      {
-        "rank": 8,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": "106"
-      },
-      {
-        "rank": 8,
-        "id": "592206",
-        "name": "Nick Castellanos",
-        "team": "PHI",
-        "value": "106"
-      },
-      {
-        "rank": 10,
-        "id": "571970",
-        "name": "Max Muncy",
-        "team": "LAD",
-        "value": "105"
-      }
-    ]
-  },
-  {
     "label": "Hits",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -308,6 +153,7 @@
   },
   {
     "label": "Runs Scored",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -382,82 +228,84 @@
     ]
   },
   {
-    "label": "Stolen Bases",
+    "label": "Runs Batted In",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
+        "id": "621566",
+        "name": "Matt Olson",
         "team": "ATL",
-        "value": "73"
+        "value": "139"
       },
       {
         "rank": 2,
-        "id": "665923",
-        "name": "Esteury Ruiz",
-        "team": "OAK",
-        "value": "67"
+        "id": "624413",
+        "name": "Pete Alonso",
+        "team": "NYM",
+        "value": "118"
       },
       {
         "rank": 3,
-        "id": "682998",
-        "name": "Corbin Carroll",
-        "team": "AZ",
-        "value": "54"
+        "id": "663656",
+        "name": "Kyle Tucker",
+        "team": "HOU",
+        "value": "112"
       },
       {
         "rank": 4,
-        "id": "677951",
-        "name": "Bobby Witt Jr.",
-        "team": "KC",
-        "value": "49"
+        "id": "645277",
+        "name": "Ozzie Albies",
+        "team": "ATL",
+        "value": "109"
       },
       {
-        "rank": 5,
-        "id": "682928",
-        "name": "CJ Abrams",
-        "team": "WSH",
-        "value": "47"
+        "rank": 4,
+        "id": "665742",
+        "name": "Juan Soto",
+        "team": "SD",
+        "value": "109"
       },
       {
         "rank": 6,
-        "id": "663538",
-        "name": "Nico Hoerner",
-        "team": "CHC",
-        "value": "43"
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": "107"
       },
       {
-        "rank": 7,
-        "id": "673490",
-        "name": "Ha-Seong Kim",
-        "team": "SD",
-        "value": "38"
+        "rank": 6,
+        "id": "666969",
+        "name": "Adolis García",
+        "team": "TEX",
+        "value": "107"
       },
       {
         "rank": 8,
-        "id": "677594",
-        "name": "Julio Rodríguez",
-        "team": "SEA",
-        "value": "37"
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": "106"
       },
       {
-        "rank": 9,
-        "id": "682829",
-        "name": "Elly De La Cruz",
-        "team": "CIN",
-        "value": "35"
+        "rank": 8,
+        "id": "592206",
+        "name": "Nick Castellanos",
+        "team": "PHI",
+        "value": "106"
       },
       {
         "rank": 10,
-        "id": "650489",
-        "name": "Willi Castro",
-        "team": "MIN",
-        "value": "33"
+        "id": "571970",
+        "name": "Max Muncy",
+        "team": "LAD",
+        "value": "105"
       }
     ]
   },
   {
     "label": "Doubles",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -568,6 +416,7 @@
   },
   {
     "label": "Triples",
+    "group": "Hitting",
     "players": [
       {
         "rank": 1,
@@ -656,7 +505,485 @@
     ]
   },
   {
+    "label": "Home Runs",
+    "group": "Power",
+    "players": [
+      {
+        "rank": 1,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": "54"
+      },
+      {
+        "rank": 2,
+        "id": "656941",
+        "name": "Kyle Schwarber",
+        "team": "PHI",
+        "value": "47"
+      },
+      {
+        "rank": 3,
+        "id": "624413",
+        "name": "Pete Alonso",
+        "team": "NYM",
+        "value": "46"
+      },
+      {
+        "rank": 4,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": "44"
+      },
+      {
+        "rank": 5,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": "41"
+      },
+      {
+        "rank": 6,
+        "id": "542303",
+        "name": "Marcell Ozuna",
+        "team": "ATL",
+        "value": "40"
+      },
+      {
+        "rank": 7,
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": "39"
+      },
+      {
+        "rank": 7,
+        "id": "666969",
+        "name": "Adolis García",
+        "team": "TEX",
+        "value": "39"
+      },
+      {
+        "rank": 9,
+        "id": "673357",
+        "name": "Luis Robert Jr.",
+        "team": "CWS",
+        "value": "38"
+      },
+      {
+        "rank": 10,
+        "id": "592450",
+        "name": "Aaron Judge",
+        "team": "NYY",
+        "value": "37"
+      },
+      {
+        "rank": 10,
+        "id": "663586",
+        "name": "Austin Riley",
+        "team": "ATL",
+        "value": "37"
+      }
+    ]
+  },
+  {
+    "label": "Slugging %",
+    "group": "Power",
+    "players": [
+      {
+        "rank": 1,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": ".654"
+      },
+      {
+        "rank": 2,
+        "id": "608369",
+        "name": "Corey Seager",
+        "team": "TEX",
+        "value": ".623"
+      },
+      {
+        "rank": 3,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": ".604"
+      },
+      {
+        "rank": 4,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": ".596"
+      },
+      {
+        "rank": 5,
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": ".579"
+      },
+      {
+        "rank": 6,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": ".567"
+      },
+      {
+        "rank": 7,
+        "id": "542303",
+        "name": "Marcell Ozuna",
+        "team": "ATL",
+        "value": ".558"
+      },
+      {
+        "rank": 8,
+        "id": "673357",
+        "name": "Luis Robert Jr.",
+        "team": "CWS",
+        "value": ".542"
+      },
+      {
+        "rank": 9,
+        "id": "641355",
+        "name": "Cody Bellinger",
+        "team": "CHC",
+        "value": ".525"
+      },
+      {
+        "rank": 10,
+        "id": "650490",
+        "name": "Yandy Díaz",
+        "team": "TB",
+        "value": ".522"
+      }
+    ]
+  },
+  {
+    "label": "OPS (On-Base + Slugging)",
+    "group": "Power",
+    "players": [
+      {
+        "rank": 1,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": "1.066"
+      },
+      {
+        "rank": 2,
+        "id": "608369",
+        "name": "Corey Seager",
+        "team": "TEX",
+        "value": "1.013"
+      },
+      {
+        "rank": 3,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": "1.012"
+      },
+      {
+        "rank": 4,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": ".993"
+      },
+      {
+        "rank": 5,
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": ".987"
+      },
+      {
+        "rank": 6,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": ".977"
+      },
+      {
+        "rank": 7,
+        "id": "650490",
+        "name": "Yandy Díaz",
+        "team": "TB",
+        "value": ".932"
+      },
+      {
+        "rank": 8,
+        "id": "665742",
+        "name": "Juan Soto",
+        "team": "SD",
+        "value": ".929"
+      },
+      {
+        "rank": 9,
+        "id": "542303",
+        "name": "Marcell Ozuna",
+        "team": "ATL",
+        "value": ".904"
+      },
+      {
+        "rank": 10,
+        "id": "547180",
+        "name": "Bryce Harper",
+        "team": "PHI",
+        "value": ".900"
+      }
+    ]
+  },
+  {
+    "label": "Total Bases",
+    "group": "Power",
+    "players": [
+      {
+        "rank": 1,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": "383"
+      },
+      {
+        "rank": 2,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": "367"
+      },
+      {
+        "rank": 3,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": "361"
+      },
+      {
+        "rank": 4,
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": "338"
+      },
+      {
+        "rank": 5,
+        "id": "663586",
+        "name": "Austin Riley",
+        "team": "ATL",
+        "value": "328"
+      },
+      {
+        "rank": 6,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": "325"
+      },
+      {
+        "rank": 7,
+        "id": "543760",
+        "name": "Marcus Semien",
+        "team": "TEX",
+        "value": "320"
+      },
+      {
+        "rank": 8,
+        "id": "677594",
+        "name": "Julio Rodríguez",
+        "team": "SEA",
+        "value": "317"
+      },
+      {
+        "rank": 8,
+        "id": "677951",
+        "name": "Bobby Witt Jr.",
+        "team": "KC",
+        "value": "317"
+      },
+      {
+        "rank": 10,
+        "id": "645277",
+        "name": "Ozzie Albies",
+        "team": "ATL",
+        "value": "306"
+      }
+    ]
+  },
+  {
+    "label": "Extra-Base Hits",
+    "group": "Power",
+    "players": [
+      {
+        "rank": 1,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": "90"
+      },
+      {
+        "rank": 2,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": "84"
+      },
+      {
+        "rank": 3,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": "80"
+      },
+      {
+        "rank": 3,
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": "80"
+      },
+      {
+        "rank": 5,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": "78"
+      },
+      {
+        "rank": 6,
+        "id": "673357",
+        "name": "Luis Robert Jr.",
+        "team": "CWS",
+        "value": "75"
+      },
+      {
+        "rank": 6,
+        "id": "608369",
+        "name": "Corey Seager",
+        "team": "TEX",
+        "value": "75"
+      },
+      {
+        "rank": 8,
+        "id": "543760",
+        "name": "Marcus Semien",
+        "team": "TEX",
+        "value": "73"
+      },
+      {
+        "rank": 9,
+        "id": "663586",
+        "name": "Austin Riley",
+        "team": "ATL",
+        "value": "72"
+      },
+      {
+        "rank": 10,
+        "id": "677594",
+        "name": "Julio Rodríguez",
+        "team": "SEA",
+        "value": "71"
+      },
+      {
+        "rank": 10,
+        "id": "663656",
+        "name": "Kyle Tucker",
+        "team": "HOU",
+        "value": "71"
+      },
+      {
+        "rank": 10,
+        "id": "572233",
+        "name": "Christian Walker",
+        "team": "AZ",
+        "value": "71"
+      }
+    ]
+  },
+  {
+    "label": "On-Base %",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": ".416"
+      },
+      {
+        "rank": 2,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": ".412"
+      },
+      {
+        "rank": 3,
+        "id": "665742",
+        "name": "Juan Soto",
+        "team": "SD",
+        "value": ".410"
+      },
+      {
+        "rank": 4,
+        "id": "650490",
+        "name": "Yandy Díaz",
+        "team": "TB",
+        "value": ".410"
+      },
+      {
+        "rank": 5,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": ".410"
+      },
+      {
+        "rank": 6,
+        "id": "605141",
+        "name": "Mookie Betts",
+        "team": "LAD",
+        "value": ".408"
+      },
+      {
+        "rank": 7,
+        "id": "547180",
+        "name": "Bryce Harper",
+        "team": "PHI",
+        "value": ".401"
+      },
+      {
+        "rank": 8,
+        "id": "650333",
+        "name": "Luis Arraez",
+        "team": "MIA",
+        "value": ".393"
+      },
+      {
+        "rank": 9,
+        "id": "608369",
+        "name": "Corey Seager",
+        "team": "TEX",
+        "value": ".390"
+      },
+      {
+        "rank": 10,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": ".389"
+      }
+    ]
+  },
+  {
     "label": "Walks",
+    "group": "On Base",
     "players": [
       {
         "rank": 1,
@@ -731,7 +1058,160 @@
     ]
   },
   {
+    "label": "Intentional Walks",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "608070",
+        "name": "José Ramírez",
+        "team": "CLE",
+        "value": "22"
+      },
+      {
+        "rank": 2,
+        "id": "660271",
+        "name": "Shohei Ohtani",
+        "team": "LAA",
+        "value": "21"
+      },
+      {
+        "rank": 3,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": "12"
+      },
+      {
+        "rank": 4,
+        "id": "665742",
+        "name": "Juan Soto",
+        "team": "SD",
+        "value": "11"
+      },
+      {
+        "rank": 5,
+        "id": "650333",
+        "name": "Luis Arraez",
+        "team": "MIA",
+        "value": "10"
+      },
+      {
+        "rank": 5,
+        "id": "646240",
+        "name": "Rafael Devers",
+        "team": "BOS",
+        "value": "10"
+      },
+      {
+        "rank": 7,
+        "id": "592450",
+        "name": "Aaron Judge",
+        "team": "NYY",
+        "value": "9"
+      },
+      {
+        "rank": 7,
+        "id": "647304",
+        "name": "Josh Naylor",
+        "team": "CLE",
+        "value": "9"
+      },
+      {
+        "rank": 7,
+        "id": "608369",
+        "name": "Corey Seager",
+        "team": "TEX",
+        "value": "9"
+      },
+      {
+        "rank": 7,
+        "id": "663656",
+        "name": "Kyle Tucker",
+        "team": "HOU",
+        "value": "9"
+      }
+    ]
+  },
+  {
+    "label": "Hit By Pitch",
+    "group": "On Base",
+    "players": [
+      {
+        "rank": 1,
+        "id": "664034",
+        "name": "Ty France",
+        "team": "SEA",
+        "value": "34"
+      },
+      {
+        "rank": 2,
+        "id": "624413",
+        "name": "Pete Alonso",
+        "team": "NYM",
+        "value": "21"
+      },
+      {
+        "rank": 3,
+        "id": "665926",
+        "name": "Andrés Giménez",
+        "team": "CLE",
+        "value": "20"
+      },
+      {
+        "rank": 3,
+        "id": "670623",
+        "name": "Isaac Paredes",
+        "team": "TB",
+        "value": "20"
+      },
+      {
+        "rank": 5,
+        "id": "668227",
+        "name": "Randy Arozarena",
+        "team": "TB",
+        "value": "18"
+      },
+      {
+        "rank": 5,
+        "id": "643446",
+        "name": "Jeff McNeil",
+        "team": "NYM",
+        "value": "18"
+      },
+      {
+        "rank": 5,
+        "id": "669221",
+        "name": "Sean Murphy",
+        "team": "ATL",
+        "value": "18"
+      },
+      {
+        "rank": 5,
+        "id": "670042",
+        "name": "Luke Raley",
+        "team": "TB",
+        "value": "18"
+      },
+      {
+        "rank": 9,
+        "id": "676609",
+        "name": "José Caballero",
+        "team": "SEA",
+        "value": "17"
+      },
+      {
+        "rank": 9,
+        "id": "592192",
+        "name": "Mark Canha",
+        "team": "2TM",
+        "value": "17"
+      }
+    ]
+  },
+  {
     "label": "Strikeouts",
+    "group": "On Base",
     "players": [
       {
         "rank": 1,
@@ -827,546 +1307,84 @@
     ]
   },
   {
-    "label": "On-Base %",
+    "label": "Stolen Bases",
+    "group": "Speed",
     "players": [
       {
         "rank": 1,
         "id": "660670",
         "name": "Ronald Acuña Jr.",
         "team": "ATL",
-        "value": ".416"
-      },
-      {
-        "rank": 2,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": ".412"
-      },
-      {
-        "rank": 3,
-        "id": "665742",
-        "name": "Juan Soto",
-        "team": "SD",
-        "value": ".410"
-      },
-      {
-        "rank": 4,
-        "id": "650490",
-        "name": "Yandy Díaz",
-        "team": "TB",
-        "value": ".410"
-      },
-      {
-        "rank": 5,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": ".410"
-      },
-      {
-        "rank": 6,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": ".408"
-      },
-      {
-        "rank": 7,
-        "id": "547180",
-        "name": "Bryce Harper",
-        "team": "PHI",
-        "value": ".401"
-      },
-      {
-        "rank": 8,
-        "id": "650333",
-        "name": "Luis Arraez",
-        "team": "MIA",
-        "value": ".393"
-      },
-      {
-        "rank": 9,
-        "id": "608369",
-        "name": "Corey Seager",
-        "team": "TEX",
-        "value": ".390"
-      },
-      {
-        "rank": 10,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": ".389"
-      }
-    ]
-  },
-  {
-    "label": "Slugging %",
-    "players": [
-      {
-        "rank": 1,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": ".654"
-      },
-      {
-        "rank": 2,
-        "id": "608369",
-        "name": "Corey Seager",
-        "team": "TEX",
-        "value": ".623"
-      },
-      {
-        "rank": 3,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": ".604"
-      },
-      {
-        "rank": 4,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": ".596"
-      },
-      {
-        "rank": 5,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": ".579"
-      },
-      {
-        "rank": 6,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": ".567"
-      },
-      {
-        "rank": 7,
-        "id": "542303",
-        "name": "Marcell Ozuna",
-        "team": "ATL",
-        "value": ".558"
-      },
-      {
-        "rank": 8,
-        "id": "673357",
-        "name": "Luis Robert Jr.",
-        "team": "CWS",
-        "value": ".542"
-      },
-      {
-        "rank": 9,
-        "id": "641355",
-        "name": "Cody Bellinger",
-        "team": "CHC",
-        "value": ".525"
-      },
-      {
-        "rank": 10,
-        "id": "650490",
-        "name": "Yandy Díaz",
-        "team": "TB",
-        "value": ".522"
-      }
-    ]
-  },
-  {
-    "label": "OPS (On-Base + Slugging)",
-    "players": [
-      {
-        "rank": 1,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": "1.066"
-      },
-      {
-        "rank": 2,
-        "id": "608369",
-        "name": "Corey Seager",
-        "team": "TEX",
-        "value": "1.013"
-      },
-      {
-        "rank": 3,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": "1.012"
-      },
-      {
-        "rank": 4,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": ".993"
-      },
-      {
-        "rank": 5,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": ".987"
-      },
-      {
-        "rank": 6,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": ".977"
-      },
-      {
-        "rank": 7,
-        "id": "650490",
-        "name": "Yandy Díaz",
-        "team": "TB",
-        "value": ".932"
-      },
-      {
-        "rank": 8,
-        "id": "665742",
-        "name": "Juan Soto",
-        "team": "SD",
-        "value": ".929"
-      },
-      {
-        "rank": 9,
-        "id": "542303",
-        "name": "Marcell Ozuna",
-        "team": "ATL",
-        "value": ".904"
-      },
-      {
-        "rank": 10,
-        "id": "547180",
-        "name": "Bryce Harper",
-        "team": "PHI",
-        "value": ".900"
-      }
-    ]
-  },
-  {
-    "label": "Total Bases",
-    "players": [
-      {
-        "rank": 1,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": "383"
-      },
-      {
-        "rank": 2,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": "367"
-      },
-      {
-        "rank": 3,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": "361"
-      },
-      {
-        "rank": 4,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": "338"
-      },
-      {
-        "rank": 5,
-        "id": "663586",
-        "name": "Austin Riley",
-        "team": "ATL",
-        "value": "328"
-      },
-      {
-        "rank": 6,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": "325"
-      },
-      {
-        "rank": 7,
-        "id": "543760",
-        "name": "Marcus Semien",
-        "team": "TEX",
-        "value": "320"
-      },
-      {
-        "rank": 8,
-        "id": "677594",
-        "name": "Julio Rodríguez",
-        "team": "SEA",
-        "value": "317"
-      },
-      {
-        "rank": 8,
-        "id": "677951",
-        "name": "Bobby Witt Jr.",
-        "team": "KC",
-        "value": "317"
-      },
-      {
-        "rank": 10,
-        "id": "645277",
-        "name": "Ozzie Albies",
-        "team": "ATL",
-        "value": "306"
-      }
-    ]
-  },
-  {
-    "label": "Extra-Base Hits",
-    "players": [
-      {
-        "rank": 1,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": "90"
-      },
-      {
-        "rank": 2,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": "84"
-      },
-      {
-        "rank": 3,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": "80"
-      },
-      {
-        "rank": 3,
-        "id": "605141",
-        "name": "Mookie Betts",
-        "team": "LAD",
-        "value": "80"
-      },
-      {
-        "rank": 5,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": "78"
-      },
-      {
-        "rank": 6,
-        "id": "673357",
-        "name": "Luis Robert Jr.",
-        "team": "CWS",
-        "value": "75"
-      },
-      {
-        "rank": 6,
-        "id": "608369",
-        "name": "Corey Seager",
-        "team": "TEX",
-        "value": "75"
-      },
-      {
-        "rank": 8,
-        "id": "543760",
-        "name": "Marcus Semien",
-        "team": "TEX",
         "value": "73"
       },
       {
-        "rank": 9,
-        "id": "663586",
-        "name": "Austin Riley",
-        "team": "ATL",
-        "value": "72"
+        "rank": 2,
+        "id": "665923",
+        "name": "Esteury Ruiz",
+        "team": "OAK",
+        "value": "67"
       },
       {
-        "rank": 10,
-        "id": "677594",
-        "name": "Julio Rodríguez",
-        "team": "SEA",
-        "value": "71"
-      },
-      {
-        "rank": 10,
-        "id": "663656",
-        "name": "Kyle Tucker",
-        "team": "HOU",
-        "value": "71"
-      },
-      {
-        "rank": 10,
-        "id": "572233",
-        "name": "Christian Walker",
+        "rank": 3,
+        "id": "682998",
+        "name": "Corbin Carroll",
         "team": "AZ",
-        "value": "71"
-      }
-    ]
-  },
-  {
-    "label": "Hit By Pitch",
-    "players": [
-      {
-        "rank": 1,
-        "id": "664034",
-        "name": "Ty France",
-        "team": "SEA",
-        "value": "34"
-      },
-      {
-        "rank": 2,
-        "id": "624413",
-        "name": "Pete Alonso",
-        "team": "NYM",
-        "value": "21"
-      },
-      {
-        "rank": 3,
-        "id": "665926",
-        "name": "Andrés Giménez",
-        "team": "CLE",
-        "value": "20"
-      },
-      {
-        "rank": 3,
-        "id": "670623",
-        "name": "Isaac Paredes",
-        "team": "TB",
-        "value": "20"
-      },
-      {
-        "rank": 5,
-        "id": "668227",
-        "name": "Randy Arozarena",
-        "team": "TB",
-        "value": "18"
-      },
-      {
-        "rank": 5,
-        "id": "643446",
-        "name": "Jeff McNeil",
-        "team": "NYM",
-        "value": "18"
-      },
-      {
-        "rank": 5,
-        "id": "669221",
-        "name": "Sean Murphy",
-        "team": "ATL",
-        "value": "18"
-      },
-      {
-        "rank": 5,
-        "id": "670042",
-        "name": "Luke Raley",
-        "team": "TB",
-        "value": "18"
-      },
-      {
-        "rank": 9,
-        "id": "676609",
-        "name": "José Caballero",
-        "team": "SEA",
-        "value": "17"
-      },
-      {
-        "rank": 9,
-        "id": "592192",
-        "name": "Mark Canha",
-        "team": "2TM",
-        "value": "17"
-      }
-    ]
-  },
-  {
-    "label": "Intentional Walks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "608070",
-        "name": "José Ramírez",
-        "team": "CLE",
-        "value": "22"
-      },
-      {
-        "rank": 2,
-        "id": "660271",
-        "name": "Shohei Ohtani",
-        "team": "LAA",
-        "value": "21"
-      },
-      {
-        "rank": 3,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": "12"
+        "value": "54"
       },
       {
         "rank": 4,
-        "id": "665742",
-        "name": "Juan Soto",
+        "id": "677951",
+        "name": "Bobby Witt Jr.",
+        "team": "KC",
+        "value": "49"
+      },
+      {
+        "rank": 5,
+        "id": "682928",
+        "name": "CJ Abrams",
+        "team": "WSH",
+        "value": "47"
+      },
+      {
+        "rank": 6,
+        "id": "663538",
+        "name": "Nico Hoerner",
+        "team": "CHC",
+        "value": "43"
+      },
+      {
+        "rank": 7,
+        "id": "673490",
+        "name": "Ha-Seong Kim",
         "team": "SD",
-        "value": "11"
+        "value": "38"
       },
       {
-        "rank": 5,
-        "id": "650333",
-        "name": "Luis Arraez",
-        "team": "MIA",
-        "value": "10"
+        "rank": 8,
+        "id": "677594",
+        "name": "Julio Rodríguez",
+        "team": "SEA",
+        "value": "37"
       },
       {
-        "rank": 5,
-        "id": "646240",
-        "name": "Rafael Devers",
-        "team": "BOS",
-        "value": "10"
+        "rank": 9,
+        "id": "682829",
+        "name": "Elly De La Cruz",
+        "team": "CIN",
+        "value": "35"
       },
       {
-        "rank": 7,
-        "id": "592450",
-        "name": "Aaron Judge",
-        "team": "NYY",
-        "value": "9"
-      },
-      {
-        "rank": 7,
-        "id": "647304",
-        "name": "Josh Naylor",
-        "team": "CLE",
-        "value": "9"
-      },
-      {
-        "rank": 7,
-        "id": "608369",
-        "name": "Corey Seager",
-        "team": "TEX",
-        "value": "9"
-      },
-      {
-        "rank": 7,
-        "id": "663656",
-        "name": "Kyle Tucker",
-        "team": "HOU",
-        "value": "9"
+        "rank": 10,
+        "id": "650489",
+        "name": "Willi Castro",
+        "team": "MIN",
+        "value": "33"
       }
     ]
   },
   {
     "label": "Caught Stealing",
+    "group": "Speed",
     "players": [
       {
         "rank": 1,
@@ -1441,7 +1459,160 @@
     ]
   },
   {
+    "label": "Games Played",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "id": "543760",
+        "name": "Marcus Semien",
+        "team": "TEX",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "id": "665742",
+        "name": "Juan Soto",
+        "team": "SD",
+        "value": "162"
+      },
+      {
+        "rank": 1,
+        "id": "553993",
+        "name": "Eugenio Suárez",
+        "team": "SEA",
+        "value": "162"
+      },
+      {
+        "rank": 5,
+        "id": "608324",
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "161"
+      },
+      {
+        "rank": 5,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": "161"
+      },
+      {
+        "rank": 5,
+        "id": "663993",
+        "name": "Nathaniel Lowe",
+        "team": "TEX",
+        "value": "161"
+      },
+      {
+        "rank": 8,
+        "id": "606192",
+        "name": "Teoscar Hernández",
+        "team": "SEA",
+        "value": "160"
+      },
+      {
+        "rank": 8,
+        "id": "596019",
+        "name": "Francisco Lindor",
+        "team": "NYM",
+        "value": "160"
+      },
+      {
+        "rank": 8,
+        "id": "656941",
+        "name": "Kyle Schwarber",
+        "team": "PHI",
+        "value": "160"
+      }
+    ]
+  },
+  {
+    "label": "Plate Appearances",
+    "group": "Playing Time & Other",
+    "players": [
+      {
+        "rank": 1,
+        "id": "543760",
+        "name": "Marcus Semien",
+        "team": "TEX",
+        "value": "753"
+      },
+      {
+        "rank": 2,
+        "id": "660670",
+        "name": "Ronald Acuña Jr.",
+        "team": "ATL",
+        "value": "735"
+      },
+      {
+        "rank": 3,
+        "id": "518692",
+        "name": "Freddie Freeman",
+        "team": "LAD",
+        "value": "730"
+      },
+      {
+        "rank": 4,
+        "id": "608324",
+        "name": "Alex Bregman",
+        "team": "HOU",
+        "value": "724"
+      },
+      {
+        "rank": 4,
+        "id": "663993",
+        "name": "Nathaniel Lowe",
+        "team": "TEX",
+        "value": "724"
+      },
+      {
+        "rank": 6,
+        "id": "621566",
+        "name": "Matt Olson",
+        "team": "ATL",
+        "value": "720"
+      },
+      {
+        "rank": 6,
+        "id": "656941",
+        "name": "Kyle Schwarber",
+        "team": "PHI",
+        "value": "720"
+      },
+      {
+        "rank": 8,
+        "id": "680757",
+        "name": "Steven Kwan",
+        "team": "CLE",
+        "value": "718"
+      },
+      {
+        "rank": 9,
+        "id": "663586",
+        "name": "Austin Riley",
+        "team": "ATL",
+        "value": "715"
+      },
+      {
+        "rank": 10,
+        "id": "677594",
+        "name": "Julio Rodríguez",
+        "team": "SEA",
+        "value": "714"
+      }
+    ]
+  },
+  {
     "label": "Grounded Into Double Plays",
+    "group": "Playing Time & Other",
     "players": [
       {
         "rank": 1,
@@ -1517,6 +1688,7 @@
   },
   {
     "label": "Sacrifice Flies",
+    "group": "Playing Time & Other",
     "players": [
       {
         "rank": 1,
@@ -1622,156 +1794,6 @@
         "name": "Bobby Witt Jr.",
         "team": "KC",
         "value": "8"
-      }
-    ]
-  },
-  {
-    "label": "Plate Appearances",
-    "players": [
-      {
-        "rank": 1,
-        "id": "543760",
-        "name": "Marcus Semien",
-        "team": "TEX",
-        "value": "753"
-      },
-      {
-        "rank": 2,
-        "id": "660670",
-        "name": "Ronald Acuña Jr.",
-        "team": "ATL",
-        "value": "735"
-      },
-      {
-        "rank": 3,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": "730"
-      },
-      {
-        "rank": 4,
-        "id": "608324",
-        "name": "Alex Bregman",
-        "team": "HOU",
-        "value": "724"
-      },
-      {
-        "rank": 4,
-        "id": "663993",
-        "name": "Nathaniel Lowe",
-        "team": "TEX",
-        "value": "724"
-      },
-      {
-        "rank": 6,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": "720"
-      },
-      {
-        "rank": 6,
-        "id": "656941",
-        "name": "Kyle Schwarber",
-        "team": "PHI",
-        "value": "720"
-      },
-      {
-        "rank": 8,
-        "id": "680757",
-        "name": "Steven Kwan",
-        "team": "CLE",
-        "value": "718"
-      },
-      {
-        "rank": 9,
-        "id": "663586",
-        "name": "Austin Riley",
-        "team": "ATL",
-        "value": "715"
-      },
-      {
-        "rank": 10,
-        "id": "677594",
-        "name": "Julio Rodríguez",
-        "team": "SEA",
-        "value": "714"
-      }
-    ]
-  },
-  {
-    "label": "Games Played",
-    "players": [
-      {
-        "rank": 1,
-        "id": "621566",
-        "name": "Matt Olson",
-        "team": "ATL",
-        "value": "162"
-      },
-      {
-        "rank": 1,
-        "id": "543760",
-        "name": "Marcus Semien",
-        "team": "TEX",
-        "value": "162"
-      },
-      {
-        "rank": 1,
-        "id": "665742",
-        "name": "Juan Soto",
-        "team": "SD",
-        "value": "162"
-      },
-      {
-        "rank": 1,
-        "id": "553993",
-        "name": "Eugenio Suárez",
-        "team": "SEA",
-        "value": "162"
-      },
-      {
-        "rank": 5,
-        "id": "608324",
-        "name": "Alex Bregman",
-        "team": "HOU",
-        "value": "161"
-      },
-      {
-        "rank": 5,
-        "id": "518692",
-        "name": "Freddie Freeman",
-        "team": "LAD",
-        "value": "161"
-      },
-      {
-        "rank": 5,
-        "id": "663993",
-        "name": "Nathaniel Lowe",
-        "team": "TEX",
-        "value": "161"
-      },
-      {
-        "rank": 8,
-        "id": "606192",
-        "name": "Teoscar Hernández",
-        "team": "SEA",
-        "value": "160"
-      },
-      {
-        "rank": 8,
-        "id": "596019",
-        "name": "Francisco Lindor",
-        "team": "NYM",
-        "value": "160"
-      },
-      {
-        "rank": 8,
-        "id": "656941",
-        "name": "Kyle Schwarber",
-        "team": "PHI",
-        "value": "160"
       }
     ]
   }

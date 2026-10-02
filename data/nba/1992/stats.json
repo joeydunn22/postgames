@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -76,6 +77,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -151,6 +153,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -226,6 +229,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -315,6 +319,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -390,6 +395,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -465,6 +471,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -540,6 +547,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -622,6 +630,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -697,6 +706,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -771,7 +781,236 @@
     ]
   },
   {
+    "label": "Field Goals Made",
+    "group": "Shooting",
+    "players": [
+      {
+        "rank": 1,
+        "id": "893",
+        "name": "Michael Jordan",
+        "team": "CHI",
+        "value": "943"
+      },
+      {
+        "rank": 2,
+        "id": "904",
+        "name": "Chris Mullin",
+        "team": "GSW",
+        "value": "830"
+      },
+      {
+        "rank": 3,
+        "id": "252",
+        "name": "Karl Malone",
+        "team": "UTA",
+        "value": "798"
+      },
+      {
+        "rank": 4,
+        "id": "121",
+        "name": "Patrick Ewing",
+        "team": "NYK",
+        "value": "796"
+      },
+      {
+        "rank": 5,
+        "id": "896",
+        "name": "Tim Hardaway",
+        "team": "GSW",
+        "value": "734"
+      },
+      {
+        "rank": 6,
+        "id": "77384",
+        "name": "Reggie Lewis",
+        "team": "BOS",
+        "value": "703"
+      },
+      {
+        "rank": 7,
+        "id": "17",
+        "name": "Clyde Drexler",
+        "team": "POR",
+        "value": "694"
+      },
+      {
+        "rank": 8,
+        "id": "117",
+        "name": "Jeff Malone",
+        "team": "UTA",
+        "value": "691"
+      },
+      {
+        "rank": 9,
+        "id": "937",
+        "name": "Scottie Pippen",
+        "team": "CHI",
+        "value": "687"
+      },
+      {
+        "rank": 10,
+        "id": "782",
+        "name": "Mitch Richmond",
+        "team": "SAC",
+        "value": "685"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made",
+    "group": "Shooting",
+    "players": [
+      {
+        "rank": 1,
+        "id": "137",
+        "name": "Vernon Maxwell",
+        "team": "HOU",
+        "value": "162"
+      },
+      {
+        "rank": 2,
+        "id": "779",
+        "name": "Glen Rice",
+        "team": "MIA",
+        "value": "155"
+      },
+      {
+        "rank": 3,
+        "id": "107",
+        "name": "Dale Ellis",
+        "team": "MIL",
+        "value": "138"
+      },
+      {
+        "rank": 4,
+        "id": "456",
+        "name": "Chuck Person",
+        "team": "IND",
+        "value": "132"
+      },
+      {
+        "rank": 5,
+        "id": "397",
+        "name": "Reggie Miller",
+        "team": "IND",
+        "value": "129"
+      },
+      {
+        "rank": 6,
+        "id": "345",
+        "name": "Terry Porter",
+        "team": "POR",
+        "value": "128"
+      },
+      {
+        "rank": 7,
+        "id": "896",
+        "name": "Tim Hardaway",
+        "team": "GSW",
+        "value": "127"
+      },
+      {
+        "rank": 8,
+        "id": "149",
+        "name": "Michael Adams",
+        "team": "WAS",
+        "value": "125"
+      },
+      {
+        "rank": 9,
+        "id": "77845",
+        "name": "Drazen Petrovic",
+        "team": "NJN",
+        "value": "123"
+      },
+      {
+        "rank": 10,
+        "id": "17",
+        "name": "Clyde Drexler",
+        "team": "POR",
+        "value": "114"
+      }
+    ]
+  },
+  {
+    "label": "Free Throws Made",
+    "group": "Shooting",
+    "players": [
+      {
+        "rank": 1,
+        "id": "252",
+        "name": "Karl Malone",
+        "team": "UTA",
+        "value": "673"
+      },
+      {
+        "rank": 2,
+        "id": "893",
+        "name": "Michael Jordan",
+        "team": "CHI",
+        "value": "491"
+      },
+      {
+        "rank": 3,
+        "id": "787",
+        "name": "Charles Barkley",
+        "team": "PHI",
+        "value": "454"
+      },
+      {
+        "rank": 4,
+        "id": "134",
+        "name": "Kevin Johnson",
+        "team": "PHX",
+        "value": "448"
+      },
+      {
+        "rank": 5,
+        "id": "397",
+        "name": "Reggie Miller",
+        "team": "IND",
+        "value": "442"
+      },
+      {
+        "rank": 6,
+        "id": "894",
+        "name": "Ricky Pierce",
+        "team": "SEA",
+        "value": "417"
+      },
+      {
+        "rank": 7,
+        "id": "921",
+        "name": "Brad Daugherty",
+        "team": "CLE",
+        "value": "414"
+      },
+      {
+        "rank": 8,
+        "id": "247",
+        "name": "Joe Dumars",
+        "team": "DET",
+        "value": "412"
+      },
+      {
+        "rank": 9,
+        "id": "765",
+        "name": "Hersey Hawkins",
+        "team": "PHI",
+        "value": "403"
+      },
+      {
+        "rank": 10,
+        "id": "17",
+        "name": "Clyde Drexler",
+        "team": "POR",
+        "value": "401"
+      }
+    ]
+  },
+  {
     "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -847,6 +1086,7 @@
   },
   {
     "label": "Total Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -922,6 +1162,7 @@
   },
   {
     "label": "Total Assists",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -997,6 +1238,7 @@
   },
   {
     "label": "Total Steals",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1079,6 +1321,7 @@
   },
   {
     "label": "Total Blocks",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1153,232 +1396,8 @@
     ]
   },
   {
-    "label": "3-Pointers Made",
-    "players": [
-      {
-        "rank": 1,
-        "id": "137",
-        "name": "Vernon Maxwell",
-        "team": "HOU",
-        "value": "162"
-      },
-      {
-        "rank": 2,
-        "id": "779",
-        "name": "Glen Rice",
-        "team": "MIA",
-        "value": "155"
-      },
-      {
-        "rank": 3,
-        "id": "107",
-        "name": "Dale Ellis",
-        "team": "MIL",
-        "value": "138"
-      },
-      {
-        "rank": 4,
-        "id": "456",
-        "name": "Chuck Person",
-        "team": "IND",
-        "value": "132"
-      },
-      {
-        "rank": 5,
-        "id": "397",
-        "name": "Reggie Miller",
-        "team": "IND",
-        "value": "129"
-      },
-      {
-        "rank": 6,
-        "id": "345",
-        "name": "Terry Porter",
-        "team": "POR",
-        "value": "128"
-      },
-      {
-        "rank": 7,
-        "id": "896",
-        "name": "Tim Hardaway",
-        "team": "GSW",
-        "value": "127"
-      },
-      {
-        "rank": 8,
-        "id": "149",
-        "name": "Michael Adams",
-        "team": "WAS",
-        "value": "125"
-      },
-      {
-        "rank": 9,
-        "id": "77845",
-        "name": "Drazen Petrovic",
-        "team": "NJN",
-        "value": "123"
-      },
-      {
-        "rank": 10,
-        "id": "17",
-        "name": "Clyde Drexler",
-        "team": "POR",
-        "value": "114"
-      }
-    ]
-  },
-  {
-    "label": "Free Throws Made",
-    "players": [
-      {
-        "rank": 1,
-        "id": "252",
-        "name": "Karl Malone",
-        "team": "UTA",
-        "value": "673"
-      },
-      {
-        "rank": 2,
-        "id": "893",
-        "name": "Michael Jordan",
-        "team": "CHI",
-        "value": "491"
-      },
-      {
-        "rank": 3,
-        "id": "787",
-        "name": "Charles Barkley",
-        "team": "PHI",
-        "value": "454"
-      },
-      {
-        "rank": 4,
-        "id": "134",
-        "name": "Kevin Johnson",
-        "team": "PHX",
-        "value": "448"
-      },
-      {
-        "rank": 5,
-        "id": "397",
-        "name": "Reggie Miller",
-        "team": "IND",
-        "value": "442"
-      },
-      {
-        "rank": 6,
-        "id": "894",
-        "name": "Ricky Pierce",
-        "team": "SEA",
-        "value": "417"
-      },
-      {
-        "rank": 7,
-        "id": "921",
-        "name": "Brad Daugherty",
-        "team": "CLE",
-        "value": "414"
-      },
-      {
-        "rank": 8,
-        "id": "247",
-        "name": "Joe Dumars",
-        "team": "DET",
-        "value": "412"
-      },
-      {
-        "rank": 9,
-        "id": "765",
-        "name": "Hersey Hawkins",
-        "team": "PHI",
-        "value": "403"
-      },
-      {
-        "rank": 10,
-        "id": "17",
-        "name": "Clyde Drexler",
-        "team": "POR",
-        "value": "401"
-      }
-    ]
-  },
-  {
-    "label": "Field Goals Made",
-    "players": [
-      {
-        "rank": 1,
-        "id": "893",
-        "name": "Michael Jordan",
-        "team": "CHI",
-        "value": "943"
-      },
-      {
-        "rank": 2,
-        "id": "904",
-        "name": "Chris Mullin",
-        "team": "GSW",
-        "value": "830"
-      },
-      {
-        "rank": 3,
-        "id": "252",
-        "name": "Karl Malone",
-        "team": "UTA",
-        "value": "798"
-      },
-      {
-        "rank": 4,
-        "id": "121",
-        "name": "Patrick Ewing",
-        "team": "NYK",
-        "value": "796"
-      },
-      {
-        "rank": 5,
-        "id": "896",
-        "name": "Tim Hardaway",
-        "team": "GSW",
-        "value": "734"
-      },
-      {
-        "rank": 6,
-        "id": "77384",
-        "name": "Reggie Lewis",
-        "team": "BOS",
-        "value": "703"
-      },
-      {
-        "rank": 7,
-        "id": "17",
-        "name": "Clyde Drexler",
-        "team": "POR",
-        "value": "694"
-      },
-      {
-        "rank": 8,
-        "id": "117",
-        "name": "Jeff Malone",
-        "team": "UTA",
-        "value": "691"
-      },
-      {
-        "rank": 9,
-        "id": "937",
-        "name": "Scottie Pippen",
-        "team": "CHI",
-        "value": "687"
-      },
-      {
-        "rank": 10,
-        "id": "782",
-        "name": "Mitch Richmond",
-        "team": "SAC",
-        "value": "685"
-      }
-    ]
-  },
-  {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1454,6 +1473,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

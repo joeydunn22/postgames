@@ -1,156 +1,7 @@
 [
   {
-    "label": "Strikeouts",
-    "players": [
-      {
-        "rank": 1,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "319"
-      },
-      {
-        "rank": 2,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "305"
-      },
-      {
-        "rank": 3,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "292"
-      },
-      {
-        "rank": 4,
-        "id": "116615",
-        "name": "Randy Johnson",
-        "team": "SEA",
-        "value": "291"
-      },
-      {
-        "rank": 5,
-        "id": "122477",
-        "name": "John Smoltz",
-        "team": "ATL",
-        "value": "241"
-      },
-      {
-        "rank": 6,
-        "id": "119827",
-        "name": "Hideo Nomo",
-        "team": "LA",
-        "value": "233"
-      },
-      {
-        "rank": 7,
-        "id": "112552",
-        "name": "David Cone",
-        "team": "NYY",
-        "value": "222"
-      },
-      {
-        "rank": 8,
-        "id": "119608",
-        "name": "Mike Mussina",
-        "team": "BAL",
-        "value": "218"
-      },
-      {
-        "rank": 9,
-        "id": "111554",
-        "name": "Kevin Brown",
-        "team": "FLA",
-        "value": "205"
-      },
-      {
-        "rank": 9,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": "205"
-      }
-    ]
-  },
-  {
-    "label": "ERA",
-    "players": [
-      {
-        "rank": 1,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "1.90"
-      },
-      {
-        "rank": 2,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "2.05"
-      },
-      {
-        "rank": 3,
-        "id": "118120",
-        "name": "Greg Maddux",
-        "team": "ATL",
-        "value": "2.20"
-      },
-      {
-        "rank": 4,
-        "id": "116615",
-        "name": "Randy Johnson",
-        "team": "SEA",
-        "value": "2.28"
-      },
-      {
-        "rank": 5,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": "2.57"
-      },
-      {
-        "rank": 6,
-        "id": "123595",
-        "name": "Ismael Valdez",
-        "team": "LA",
-        "value": "2.65"
-      },
-      {
-        "rank": 7,
-        "id": "111554",
-        "name": "Kevin Brown",
-        "team": "FLA",
-        "value": "2.69"
-      },
-      {
-        "rank": 8,
-        "id": "112552",
-        "name": "David Cone",
-        "team": "NYY",
-        "value": "2.82"
-      },
-      {
-        "rank": 9,
-        "id": "120485",
-        "name": "Andy Pettitte",
-        "team": "NYY",
-        "value": "2.88"
-      },
-      {
-        "rank": 10,
-        "id": "120999",
-        "name": "Rick Reed",
-        "team": "NYM",
-        "value": "2.89"
-      }
-    ]
-  },
-  {
     "label": "Wins",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -239,457 +90,8 @@
     ]
   },
   {
-    "label": "Saves",
-    "players": [
-      {
-        "rank": 1,
-        "id": "119626",
-        "name": "Randy Myers",
-        "team": "BAL",
-        "value": "45"
-      },
-      {
-        "rank": 2,
-        "id": "121250",
-        "name": "Mariano Rivera",
-        "team": "NYY",
-        "value": "43"
-      },
-      {
-        "rank": 3,
-        "id": "122079",
-        "name": "Jeff Shaw",
-        "team": "CIN",
-        "value": "42"
-      },
-      {
-        "rank": 4,
-        "id": "110763",
-        "name": "Rod Beck",
-        "team": "SF",
-        "value": "37"
-      },
-      {
-        "rank": 4,
-        "id": "116034",
-        "name": "Trevor Hoffman",
-        "team": "SD",
-        "value": "37"
-      },
-      {
-        "rank": 6,
-        "id": "113726",
-        "name": "Dennis Eckersley",
-        "team": "STL",
-        "value": "36"
-      },
-      {
-        "rank": 6,
-        "id": "114374",
-        "name": "John Franco",
-        "team": "NYM",
-        "value": "36"
-      },
-      {
-        "rank": 6,
-        "id": "116682",
-        "name": "Doug Jones",
-        "team": "MIL",
-        "value": "36"
-      },
-      {
-        "rank": 9,
-        "id": "119718",
-        "name": "Robb Nen",
-        "team": "FLA",
-        "value": "35"
-      },
-      {
-        "rank": 9,
-        "id": "124581",
-        "name": "Todd Worrell",
-        "team": "LA",
-        "value": "35"
-      }
-    ]
-  },
-  {
-    "label": "WHIP",
-    "players": [
-      {
-        "rank": 1,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "0.93"
-      },
-      {
-        "rank": 2,
-        "id": "118120",
-        "name": "Greg Maddux",
-        "team": "ATL",
-        "value": "0.95"
-      },
-      {
-        "rank": 3,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "1.03"
-      },
-      {
-        "rank": 4,
-        "id": "120999",
-        "name": "Rick Reed",
-        "team": "NYM",
-        "value": "1.04"
-      },
-      {
-        "rank": 5,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "1.05"
-      },
-      {
-        "rank": 6,
-        "id": "116615",
-        "name": "Randy Johnson",
-        "team": "SEA",
-        "value": "1.05"
-      },
-      {
-        "rank": 7,
-        "id": "119673",
-        "name": "Denny Neagle",
-        "team": "ATL",
-        "value": "1.08"
-      },
-      {
-        "rank": 8,
-        "id": "123595",
-        "name": "Ismael Valdez",
-        "team": "LA",
-        "value": "1.11"
-      },
-      {
-        "rank": 9,
-        "id": "119608",
-        "name": "Mike Mussina",
-        "team": "BAL",
-        "value": "1.12"
-      },
-      {
-        "rank": 10,
-        "id": "123294",
-        "name": "Justin Thompson",
-        "team": "DET",
-        "value": "1.14"
-      }
-    ]
-  },
-  {
-    "label": "Innings Pitched",
-    "players": [
-      {
-        "rank": 1,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "264.0"
-      },
-      {
-        "rank": 1,
-        "id": "115797",
-        "name": "Pat Hentgen",
-        "team": "TOR",
-        "value": "264.0"
-      },
-      {
-        "rank": 3,
-        "id": "122477",
-        "name": "John Smoltz",
-        "team": "ATL",
-        "value": "256.0"
-      },
-      {
-        "rank": 4,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": "255.2"
-      },
-      {
-        "rank": 5,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "254.1"
-      },
-      {
-        "rank": 6,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "241.1"
-      },
-      {
-        "rank": 7,
-        "id": "120485",
-        "name": "Andy Pettitte",
-        "team": "NYY",
-        "value": "240.1"
-      },
-      {
-        "rank": 8,
-        "id": "114849",
-        "name": "Tom Glavine",
-        "team": "ATL",
-        "value": "240.0"
-      },
-      {
-        "rank": 9,
-        "id": "120878",
-        "name": "Brad Radke",
-        "team": "MIN",
-        "value": "239.2"
-      },
-      {
-        "rank": 10,
-        "id": "111554",
-        "name": "Kevin Brown",
-        "team": "FLA",
-        "value": "237.1"
-      }
-    ]
-  },
-  {
-    "label": "Strikeouts per 9 Innings",
-    "players": [
-      {
-        "rank": 1,
-        "id": "116615",
-        "name": "Randy Johnson",
-        "team": "SEA",
-        "value": "12.30"
-      },
-      {
-        "rank": 2,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "11.37"
-      },
-      {
-        "rank": 3,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "11.29"
-      },
-      {
-        "rank": 4,
-        "id": "112552",
-        "name": "David Cone",
-        "team": "NYY",
-        "value": "10.25"
-      },
-      {
-        "rank": 5,
-        "id": "119827",
-        "name": "Hideo Nomo",
-        "team": "LA",
-        "value": "10.11"
-      },
-      {
-        "rank": 6,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "9.95"
-      },
-      {
-        "rank": 7,
-        "id": "110854",
-        "name": "Andy Benes",
-        "team": "STL",
-        "value": "8.90"
-      },
-      {
-        "rank": 8,
-        "id": "119608",
-        "name": "Mike Mussina",
-        "team": "BAL",
-        "value": "8.73"
-      },
-      {
-        "rank": 9,
-        "id": "114133",
-        "name": "Chuck Finley",
-        "team": "ANA",
-        "value": "8.51"
-      },
-      {
-        "rank": 10,
-        "id": "122477",
-        "name": "John Smoltz",
-        "team": "ATL",
-        "value": "8.47"
-      }
-    ]
-  },
-  {
-    "label": "Strikeout-to-Walk Ratio",
-    "players": [
-      {
-        "rank": 1,
-        "id": "118120",
-        "name": "Greg Maddux",
-        "team": "ATL",
-        "value": "8.85"
-      },
-      {
-        "rank": 2,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "5.50"
-      },
-      {
-        "rank": 3,
-        "id": "111734",
-        "name": "John Burkett",
-        "team": "TEX",
-        "value": "4.63"
-      },
-      {
-        "rank": 4,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "4.55"
-      },
-      {
-        "rank": 5,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "4.29"
-      },
-      {
-        "rank": 6,
-        "id": "119608",
-        "name": "Mike Mussina",
-        "team": "BAL",
-        "value": "4.04"
-      },
-      {
-        "rank": 7,
-        "id": "122477",
-        "name": "John Smoltz",
-        "team": "ATL",
-        "value": "3.83"
-      },
-      {
-        "rank": 8,
-        "id": "116615",
-        "name": "Randy Johnson",
-        "team": "SEA",
-        "value": "3.78"
-      },
-      {
-        "rank": 9,
-        "id": "120999",
-        "name": "Rick Reed",
-        "team": "NYM",
-        "value": "3.65"
-      },
-      {
-        "rank": 10,
-        "id": "120878",
-        "name": "Brad Radke",
-        "team": "MIN",
-        "value": "3.63"
-      }
-    ]
-  },
-  {
-    "label": "Win %",
-    "players": [
-      {
-        "rank": 1,
-        "id": "116615",
-        "name": "Randy Johnson",
-        "team": "SEA",
-        "value": ".833"
-      },
-      {
-        "rank": 2,
-        "id": "118120",
-        "name": "Greg Maddux",
-        "team": "ATL",
-        "value": ".826"
-      },
-      {
-        "rank": 3,
-        "id": "119673",
-        "name": "Denny Neagle",
-        "team": "ATL",
-        "value": ".800"
-      },
-      {
-        "rank": 4,
-        "id": "113915",
-        "name": "Shawn Estes",
-        "team": "SF",
-        "value": ".792"
-      },
-      {
-        "rank": 5,
-        "id": "119469",
-        "name": "Jamie Moyer",
-        "team": "SEA",
-        "value": ".773"
-      },
-      {
-        "rank": 6,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": ".750"
-      },
-      {
-        "rank": 7,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": ".731"
-      },
-      {
-        "rank": 8,
-        "id": "120485",
-        "name": "Andy Pettitte",
-        "team": "NYY",
-        "value": ".720"
-      },
-      {
-        "rank": 9,
-        "id": "115861",
-        "name": "Orel Hershiser",
-        "team": "CLE",
-        "value": ".700"
-      },
-      {
-        "rank": 10,
-        "id": "113884",
-        "name": "Scott Erickson",
-        "team": "BAL",
-        "value": ".696"
-      }
-    ]
-  },
-  {
     "label": "Losses",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -764,363 +166,312 @@
     ]
   },
   {
-    "label": "Complete Games",
+    "label": "Win %",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "13"
+        "id": "116615",
+        "name": "Randy Johnson",
+        "team": "SEA",
+        "value": ".833"
       },
       {
         "rank": 2,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "9"
-      },
-      {
-        "rank": 2,
-        "id": "115797",
-        "name": "Pat Hentgen",
-        "team": "TOR",
-        "value": "9"
-      },
-      {
-        "rank": 4,
-        "id": "120405",
-        "name": "Carlos Perez",
-        "team": "MON",
-        "value": "8"
-      },
-      {
-        "rank": 5,
-        "id": "115399",
-        "name": "Mike Hampton",
-        "team": "HOU",
-        "value": "7"
-      },
-      {
-        "rank": 5,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "7"
-      },
-      {
-        "rank": 5,
-        "id": "122477",
-        "name": "John Smoltz",
-        "team": "ATL",
-        "value": "7"
-      },
-      {
-        "rank": 8,
-        "id": "111554",
-        "name": "Kevin Brown",
-        "team": "FLA",
-        "value": "6"
-      },
-      {
-        "rank": 8,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": "6"
-      }
-    ],
-    "more_tied": 7
-  },
-  {
-    "label": "Shutouts",
-    "players": [
-      {
-        "rank": 1,
-        "id": "120405",
-        "name": "Carlos Perez",
-        "team": "MON",
-        "value": "5"
-      },
-      {
-        "rank": 2,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": "4"
-      },
-      {
-        "rank": 2,
-        "id": "118377",
-        "name": "Pedro Martínez",
-        "team": "MON",
-        "value": "4"
-      },
-      {
-        "rank": 2,
-        "id": "119673",
-        "name": "Denny Neagle",
-        "team": "ATL",
-        "value": "4"
-      },
-      {
-        "rank": 5,
-        "id": "112388",
-        "name": "Roger Clemens",
-        "team": "TOR",
-        "value": "3"
-      },
-      {
-        "rank": 5,
-        "id": "115797",
-        "name": "Pat Hentgen",
-        "team": "TOR",
-        "value": "3"
-      }
-    ],
-    "more_tied": 16
-  },
-  {
-    "label": "Games Pitched",
-    "players": [
-      {
-        "rank": 1,
-        "id": "123118",
-        "name": "Julian Tavarez",
-        "team": "SF",
-        "value": "89"
-      },
-      {
-        "rank": 2,
-        "id": "119624",
-        "name": "Mike Myers",
-        "team": "DET",
-        "value": "88"
-      },
-      {
-        "rank": 3,
-        "id": "110811",
-        "name": "Stan Belinda",
-        "team": "CIN",
-        "value": "84"
-      },
-      {
-        "rank": 4,
-        "id": "115183",
-        "name": "Buddy Groom",
-        "team": "OAK",
-        "value": "78"
-      },
-      {
-        "rank": 4,
-        "id": "122079",
-        "name": "Jeff Shaw",
-        "team": "CIN",
-        "value": "78"
-      },
-      {
-        "rank": 6,
-        "id": "119704",
-        "name": "Jeff Nelson",
-        "team": "NYY",
-        "value": "77"
-      },
-      {
-        "rank": 6,
-        "id": "120824",
-        "name": "Paul Quantrill",
-        "team": "TOR",
-        "value": "77"
-      },
-      {
-        "rank": 6,
-        "id": "121404",
-        "name": "Mel Rojas",
-        "team": "2TM",
-        "value": "77"
-      },
-      {
-        "rank": 9,
-        "id": "120297",
-        "name": "Bob Patterson",
-        "team": "CHC",
-        "value": "76"
-      },
-      {
-        "rank": 9,
-        "id": "122329",
-        "name": "Heathcliff Slocumb",
-        "team": "2TM",
-        "value": "76"
-      },
-      {
-        "rank": 9,
-        "id": "122609",
-        "name": "Jerry Spradlin",
-        "team": "PHI",
-        "value": "76"
-      }
-    ]
-  },
-  {
-    "label": "Games Finished",
-    "players": [
-      {
-        "rank": 1,
-        "id": "116682",
-        "name": "Doug Jones",
-        "team": "MIL",
-        "value": "73"
-      },
-      {
-        "rank": 2,
-        "id": "110763",
-        "name": "Rod Beck",
-        "team": "SF",
-        "value": "66"
-      },
-      {
-        "rank": 3,
-        "id": "119718",
-        "name": "Robb Nen",
-        "team": "FLA",
-        "value": "65"
-      },
-      {
-        "rank": 4,
-        "id": "122079",
-        "name": "Jeff Shaw",
-        "team": "CIN",
-        "value": "62"
-      },
-      {
-        "rank": 5,
-        "id": "111262",
-        "name": "Ricky Bottalico",
-        "team": "PHI",
-        "value": "61"
-      },
-      {
-        "rank": 5,
-        "id": "122329",
-        "name": "Heathcliff Slocumb",
-        "team": "2TM",
-        "value": "61"
-      },
-      {
-        "rank": 7,
-        "id": "116034",
-        "name": "Trevor Hoffman",
-        "team": "SD",
-        "value": "59"
-      },
-      {
-        "rank": 8,
-        "id": "117874",
-        "name": "Rich Loiselle",
-        "team": "PIT",
-        "value": "58"
-      },
-      {
-        "rank": 8,
-        "id": "124123",
-        "name": "John Wetteland",
-        "team": "TEX",
-        "value": "58"
-      },
-      {
-        "rank": 10,
-        "id": "110090",
-        "name": "Rick Aguilera",
-        "team": "MIN",
-        "value": "57"
-      },
-      {
-        "rank": 10,
-        "id": "119626",
-        "name": "Randy Myers",
-        "team": "BAL",
-        "value": "57"
-      }
-    ]
-  },
-  {
-    "label": "Walks per 9 Innings",
-    "players": [
-      {
-        "rank": 1,
         "id": "118120",
         "name": "Greg Maddux",
         "team": "ATL",
-        "value": "0.77"
-      },
-      {
-        "rank": 2,
-        "id": "120999",
-        "name": "Rick Reed",
-        "team": "NYM",
-        "value": "1.34"
+        "value": ".826"
       },
       {
         "rank": 3,
-        "id": "111734",
-        "name": "John Burkett",
-        "team": "TEX",
-        "value": "1.43"
+        "id": "119673",
+        "name": "Denny Neagle",
+        "team": "ATL",
+        "value": ".800"
       },
       {
         "rank": 4,
-        "id": "123213",
-        "name": "Bob Tewksbury",
-        "team": "MIN",
-        "value": "1.65"
+        "id": "113915",
+        "name": "Shawn Estes",
+        "team": "SF",
+        "value": ".792"
       },
       {
         "rank": 5,
-        "id": "120878",
-        "name": "Brad Radke",
-        "team": "MIN",
-        "value": "1.80"
+        "id": "119469",
+        "name": "Jamie Moyer",
+        "team": "SEA",
+        "value": ".773"
       },
       {
         "rank": 6,
-        "id": "124071",
-        "name": "David Wells",
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": ".750"
+      },
+      {
+        "rank": 7,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": ".731"
+      },
+      {
+        "rank": 8,
+        "id": "120485",
+        "name": "Andy Pettitte",
         "team": "NYY",
-        "value": "1.86"
+        "value": ".720"
+      },
+      {
+        "rank": 9,
+        "id": "115861",
+        "name": "Orel Hershiser",
+        "team": "CLE",
+        "value": ".700"
+      },
+      {
+        "rank": 10,
+        "id": "113884",
+        "name": "Scott Erickson",
+        "team": "BAL",
+        "value": ".696"
+      }
+    ]
+  },
+  {
+    "label": "Saves",
+    "group": "Results",
+    "players": [
+      {
+        "rank": 1,
+        "id": "119626",
+        "name": "Randy Myers",
+        "team": "BAL",
+        "value": "45"
+      },
+      {
+        "rank": 2,
+        "id": "121250",
+        "name": "Mariano Rivera",
+        "team": "NYY",
+        "value": "43"
+      },
+      {
+        "rank": 3,
+        "id": "122079",
+        "name": "Jeff Shaw",
+        "team": "CIN",
+        "value": "42"
+      },
+      {
+        "rank": 4,
+        "id": "110763",
+        "name": "Rod Beck",
+        "team": "SF",
+        "value": "37"
+      },
+      {
+        "rank": 4,
+        "id": "116034",
+        "name": "Trevor Hoffman",
+        "team": "SD",
+        "value": "37"
+      },
+      {
+        "rank": 6,
+        "id": "113726",
+        "name": "Dennis Eckersley",
+        "team": "STL",
+        "value": "36"
+      },
+      {
+        "rank": 6,
+        "id": "114374",
+        "name": "John Franco",
+        "team": "NYM",
+        "value": "36"
+      },
+      {
+        "rank": 6,
+        "id": "116682",
+        "name": "Doug Jones",
+        "team": "MIL",
+        "value": "36"
+      },
+      {
+        "rank": 9,
+        "id": "119718",
+        "name": "Robb Nen",
+        "team": "FLA",
+        "value": "35"
+      },
+      {
+        "rank": 9,
+        "id": "124581",
+        "name": "Todd Worrell",
+        "team": "LA",
+        "value": "35"
+      }
+    ]
+  },
+  {
+    "label": "ERA",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "1.90"
+      },
+      {
+        "rank": 2,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "2.05"
+      },
+      {
+        "rank": 3,
+        "id": "118120",
+        "name": "Greg Maddux",
+        "team": "ATL",
+        "value": "2.20"
+      },
+      {
+        "rank": 4,
+        "id": "116615",
+        "name": "Randy Johnson",
+        "team": "SEA",
+        "value": "2.28"
+      },
+      {
+        "rank": 5,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": "2.57"
+      },
+      {
+        "rank": 6,
+        "id": "123595",
+        "name": "Ismael Valdez",
+        "team": "LA",
+        "value": "2.65"
+      },
+      {
+        "rank": 7,
+        "id": "111554",
+        "name": "Kevin Brown",
+        "team": "FLA",
+        "value": "2.69"
+      },
+      {
+        "rank": 8,
+        "id": "112552",
+        "name": "David Cone",
+        "team": "NYY",
+        "value": "2.82"
+      },
+      {
+        "rank": 9,
+        "id": "120485",
+        "name": "Andy Pettitte",
+        "team": "NYY",
+        "value": "2.88"
+      },
+      {
+        "rank": 10,
+        "id": "120999",
+        "name": "Rick Reed",
+        "team": "NYM",
+        "value": "2.89"
+      }
+    ]
+  },
+  {
+    "label": "WHIP",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "0.93"
+      },
+      {
+        "rank": 2,
+        "id": "118120",
+        "name": "Greg Maddux",
+        "team": "ATL",
+        "value": "0.95"
+      },
+      {
+        "rank": 3,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "1.03"
+      },
+      {
+        "rank": 4,
+        "id": "120999",
+        "name": "Rick Reed",
+        "team": "NYM",
+        "value": "1.04"
+      },
+      {
+        "rank": 5,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "1.05"
+      },
+      {
+        "rank": 6,
+        "id": "116615",
+        "name": "Randy Johnson",
+        "team": "SEA",
+        "value": "1.05"
       },
       {
         "rank": 7,
         "id": "119673",
         "name": "Denny Neagle",
         "team": "ATL",
-        "value": "1.89"
+        "value": "1.08"
       },
       {
         "rank": 8,
-        "id": "119469",
-        "name": "Jamie Moyer",
-        "team": "SEA",
-        "value": "2.05"
+        "id": "123595",
+        "name": "Ismael Valdez",
+        "team": "LA",
+        "value": "1.11"
       },
       {
         "rank": 9,
-        "id": "121811",
-        "name": "Curt Schilling",
-        "team": "PHI",
-        "value": "2.05"
+        "id": "119608",
+        "name": "Mike Mussina",
+        "team": "BAL",
+        "value": "1.12"
       },
       {
         "rank": 10,
-        "id": "120405",
-        "name": "Carlos Perez",
-        "team": "MON",
-        "value": "2.09"
+        "id": "123294",
+        "name": "Justin Thompson",
+        "team": "DET",
+        "value": "1.14"
       }
     ]
   },
   {
     "label": "Hits per 9 Innings",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
@@ -1195,164 +546,8 @@
     ]
   },
   {
-    "label": "Walks Allowed",
-    "players": [
-      {
-        "rank": 1,
-        "id": "113915",
-        "name": "Shawn Estes",
-        "team": "SF",
-        "value": "100"
-      },
-      {
-        "rank": 2,
-        "id": "115941",
-        "name": "Ken Hill",
-        "team": "2TM",
-        "value": "95"
-      },
-      {
-        "rank": 3,
-        "id": "117046",
-        "name": "Darryl Kile",
-        "team": "HOU",
-        "value": "94"
-      },
-      {
-        "rank": 4,
-        "id": "119827",
-        "name": "Hideo Nomo",
-        "team": "LA",
-        "value": "92"
-      },
-      {
-        "rank": 5,
-        "id": "110209",
-        "name": "Wilson Alvarez",
-        "team": "2TM",
-        "value": "91"
-      },
-      {
-        "rank": 5,
-        "id": "117652",
-        "name": "Al Leiter",
-        "team": "FLA",
-        "value": "91"
-      },
-      {
-        "rank": 7,
-        "id": "113793",
-        "name": "Cal Eldred",
-        "team": "MIL",
-        "value": "89"
-      },
-      {
-        "rank": 8,
-        "id": "123801",
-        "name": "Tim Wakefield",
-        "team": "BOS",
-        "value": "87"
-      },
-      {
-        "rank": 9,
-        "id": "112552",
-        "name": "David Cone",
-        "team": "NYY",
-        "value": "86"
-      },
-      {
-        "rank": 10,
-        "id": "114032",
-        "name": "Jeff Fassero",
-        "team": "SEA",
-        "value": "84"
-      }
-    ]
-  },
-  {
-    "label": "Home Runs Allowed",
-    "players": [
-      {
-        "rank": 1,
-        "id": "123982",
-        "name": "Allen Watson",
-        "team": "ANA",
-        "value": "37"
-      },
-      {
-        "rank": 2,
-        "id": "124492",
-        "name": "Bobby Witt",
-        "team": "TEX",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "113344",
-        "name": "Jason Dickson",
-        "team": "ANA",
-        "value": "32"
-      },
-      {
-        "rank": 3,
-        "id": "122618",
-        "name": "Dennis Springer",
-        "team": "ANA",
-        "value": "32"
-      },
-      {
-        "rank": 3,
-        "id": "123431",
-        "name": "Steve Trachsel",
-        "team": "CHC",
-        "value": "32"
-      },
-      {
-        "rank": 6,
-        "id": "110809",
-        "name": "Tim Belcher",
-        "team": "KC",
-        "value": "31"
-      },
-      {
-        "rank": 6,
-        "id": "113793",
-        "name": "Cal Eldred",
-        "team": "MIL",
-        "value": "31"
-      },
-      {
-        "rank": 6,
-        "id": "115797",
-        "name": "Pat Hentgen",
-        "team": "TOR",
-        "value": "31"
-      },
-      {
-        "rank": 6,
-        "id": "124315",
-        "name": "Woody Williams",
-        "team": "TOR",
-        "value": "31"
-      },
-      {
-        "rank": 10,
-        "id": "113538",
-        "name": "Doug Drabek",
-        "team": "CWS",
-        "value": "30"
-      },
-      {
-        "rank": 10,
-        "id": "121676",
-        "name": "Scott Sanders",
-        "team": "2TM",
-        "value": "30"
-      }
-    ]
-  },
-  {
     "label": "Earned Runs Allowed",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
@@ -1441,7 +636,471 @@
     ]
   },
   {
+    "label": "Home Runs Allowed",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
+        "id": "123982",
+        "name": "Allen Watson",
+        "team": "ANA",
+        "value": "37"
+      },
+      {
+        "rank": 2,
+        "id": "124492",
+        "name": "Bobby Witt",
+        "team": "TEX",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "113344",
+        "name": "Jason Dickson",
+        "team": "ANA",
+        "value": "32"
+      },
+      {
+        "rank": 3,
+        "id": "122618",
+        "name": "Dennis Springer",
+        "team": "ANA",
+        "value": "32"
+      },
+      {
+        "rank": 3,
+        "id": "123431",
+        "name": "Steve Trachsel",
+        "team": "CHC",
+        "value": "32"
+      },
+      {
+        "rank": 6,
+        "id": "110809",
+        "name": "Tim Belcher",
+        "team": "KC",
+        "value": "31"
+      },
+      {
+        "rank": 6,
+        "id": "113793",
+        "name": "Cal Eldred",
+        "team": "MIL",
+        "value": "31"
+      },
+      {
+        "rank": 6,
+        "id": "115797",
+        "name": "Pat Hentgen",
+        "team": "TOR",
+        "value": "31"
+      },
+      {
+        "rank": 6,
+        "id": "124315",
+        "name": "Woody Williams",
+        "team": "TOR",
+        "value": "31"
+      },
+      {
+        "rank": 10,
+        "id": "113538",
+        "name": "Doug Drabek",
+        "team": "CWS",
+        "value": "30"
+      },
+      {
+        "rank": 10,
+        "id": "121676",
+        "name": "Scott Sanders",
+        "team": "2TM",
+        "value": "30"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "319"
+      },
+      {
+        "rank": 2,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "305"
+      },
+      {
+        "rank": 3,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "292"
+      },
+      {
+        "rank": 4,
+        "id": "116615",
+        "name": "Randy Johnson",
+        "team": "SEA",
+        "value": "291"
+      },
+      {
+        "rank": 5,
+        "id": "122477",
+        "name": "John Smoltz",
+        "team": "ATL",
+        "value": "241"
+      },
+      {
+        "rank": 6,
+        "id": "119827",
+        "name": "Hideo Nomo",
+        "team": "LA",
+        "value": "233"
+      },
+      {
+        "rank": 7,
+        "id": "112552",
+        "name": "David Cone",
+        "team": "NYY",
+        "value": "222"
+      },
+      {
+        "rank": 8,
+        "id": "119608",
+        "name": "Mike Mussina",
+        "team": "BAL",
+        "value": "218"
+      },
+      {
+        "rank": 9,
+        "id": "111554",
+        "name": "Kevin Brown",
+        "team": "FLA",
+        "value": "205"
+      },
+      {
+        "rank": 9,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": "205"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts per 9 Innings",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "116615",
+        "name": "Randy Johnson",
+        "team": "SEA",
+        "value": "12.30"
+      },
+      {
+        "rank": 2,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "11.37"
+      },
+      {
+        "rank": 3,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "11.29"
+      },
+      {
+        "rank": 4,
+        "id": "112552",
+        "name": "David Cone",
+        "team": "NYY",
+        "value": "10.25"
+      },
+      {
+        "rank": 5,
+        "id": "119827",
+        "name": "Hideo Nomo",
+        "team": "LA",
+        "value": "10.11"
+      },
+      {
+        "rank": 6,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "9.95"
+      },
+      {
+        "rank": 7,
+        "id": "110854",
+        "name": "Andy Benes",
+        "team": "STL",
+        "value": "8.90"
+      },
+      {
+        "rank": 8,
+        "id": "119608",
+        "name": "Mike Mussina",
+        "team": "BAL",
+        "value": "8.73"
+      },
+      {
+        "rank": 9,
+        "id": "114133",
+        "name": "Chuck Finley",
+        "team": "ANA",
+        "value": "8.51"
+      },
+      {
+        "rank": 10,
+        "id": "122477",
+        "name": "John Smoltz",
+        "team": "ATL",
+        "value": "8.47"
+      }
+    ]
+  },
+  {
+    "label": "Strikeout-to-Walk Ratio",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "118120",
+        "name": "Greg Maddux",
+        "team": "ATL",
+        "value": "8.85"
+      },
+      {
+        "rank": 2,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "5.50"
+      },
+      {
+        "rank": 3,
+        "id": "111734",
+        "name": "John Burkett",
+        "team": "TEX",
+        "value": "4.63"
+      },
+      {
+        "rank": 4,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "4.55"
+      },
+      {
+        "rank": 5,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "4.29"
+      },
+      {
+        "rank": 6,
+        "id": "119608",
+        "name": "Mike Mussina",
+        "team": "BAL",
+        "value": "4.04"
+      },
+      {
+        "rank": 7,
+        "id": "122477",
+        "name": "John Smoltz",
+        "team": "ATL",
+        "value": "3.83"
+      },
+      {
+        "rank": 8,
+        "id": "116615",
+        "name": "Randy Johnson",
+        "team": "SEA",
+        "value": "3.78"
+      },
+      {
+        "rank": 9,
+        "id": "120999",
+        "name": "Rick Reed",
+        "team": "NYM",
+        "value": "3.65"
+      },
+      {
+        "rank": 10,
+        "id": "120878",
+        "name": "Brad Radke",
+        "team": "MIN",
+        "value": "3.63"
+      }
+    ]
+  },
+  {
+    "label": "Walks per 9 Innings",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "118120",
+        "name": "Greg Maddux",
+        "team": "ATL",
+        "value": "0.77"
+      },
+      {
+        "rank": 2,
+        "id": "120999",
+        "name": "Rick Reed",
+        "team": "NYM",
+        "value": "1.34"
+      },
+      {
+        "rank": 3,
+        "id": "111734",
+        "name": "John Burkett",
+        "team": "TEX",
+        "value": "1.43"
+      },
+      {
+        "rank": 4,
+        "id": "123213",
+        "name": "Bob Tewksbury",
+        "team": "MIN",
+        "value": "1.65"
+      },
+      {
+        "rank": 5,
+        "id": "120878",
+        "name": "Brad Radke",
+        "team": "MIN",
+        "value": "1.80"
+      },
+      {
+        "rank": 6,
+        "id": "124071",
+        "name": "David Wells",
+        "team": "NYY",
+        "value": "1.86"
+      },
+      {
+        "rank": 7,
+        "id": "119673",
+        "name": "Denny Neagle",
+        "team": "ATL",
+        "value": "1.89"
+      },
+      {
+        "rank": 8,
+        "id": "119469",
+        "name": "Jamie Moyer",
+        "team": "SEA",
+        "value": "2.05"
+      },
+      {
+        "rank": 9,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "2.05"
+      },
+      {
+        "rank": 10,
+        "id": "120405",
+        "name": "Carlos Perez",
+        "team": "MON",
+        "value": "2.09"
+      }
+    ]
+  },
+  {
+    "label": "Walks Allowed",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "113915",
+        "name": "Shawn Estes",
+        "team": "SF",
+        "value": "100"
+      },
+      {
+        "rank": 2,
+        "id": "115941",
+        "name": "Ken Hill",
+        "team": "2TM",
+        "value": "95"
+      },
+      {
+        "rank": 3,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": "94"
+      },
+      {
+        "rank": 4,
+        "id": "119827",
+        "name": "Hideo Nomo",
+        "team": "LA",
+        "value": "92"
+      },
+      {
+        "rank": 5,
+        "id": "110209",
+        "name": "Wilson Alvarez",
+        "team": "2TM",
+        "value": "91"
+      },
+      {
+        "rank": 5,
+        "id": "117652",
+        "name": "Al Leiter",
+        "team": "FLA",
+        "value": "91"
+      },
+      {
+        "rank": 7,
+        "id": "113793",
+        "name": "Cal Eldred",
+        "team": "MIL",
+        "value": "89"
+      },
+      {
+        "rank": 8,
+        "id": "123801",
+        "name": "Tim Wakefield",
+        "team": "BOS",
+        "value": "87"
+      },
+      {
+        "rank": 9,
+        "id": "112552",
+        "name": "David Cone",
+        "team": "NYY",
+        "value": "86"
+      },
+      {
+        "rank": 10,
+        "id": "114032",
+        "name": "Jeff Fassero",
+        "team": "SEA",
+        "value": "84"
+      }
+    ]
+  },
+  {
     "label": "Hit Batters",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1524,6 +1183,7 @@
   },
   {
     "label": "Wild Pitches",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1610,5 +1270,366 @@
         "value": "11"
       }
     ]
+  },
+  {
+    "label": "Innings Pitched",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "264.0"
+      },
+      {
+        "rank": 1,
+        "id": "115797",
+        "name": "Pat Hentgen",
+        "team": "TOR",
+        "value": "264.0"
+      },
+      {
+        "rank": 3,
+        "id": "122477",
+        "name": "John Smoltz",
+        "team": "ATL",
+        "value": "256.0"
+      },
+      {
+        "rank": 4,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": "255.2"
+      },
+      {
+        "rank": 5,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "254.1"
+      },
+      {
+        "rank": 6,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "241.1"
+      },
+      {
+        "rank": 7,
+        "id": "120485",
+        "name": "Andy Pettitte",
+        "team": "NYY",
+        "value": "240.1"
+      },
+      {
+        "rank": 8,
+        "id": "114849",
+        "name": "Tom Glavine",
+        "team": "ATL",
+        "value": "240.0"
+      },
+      {
+        "rank": 9,
+        "id": "120878",
+        "name": "Brad Radke",
+        "team": "MIN",
+        "value": "239.2"
+      },
+      {
+        "rank": 10,
+        "id": "111554",
+        "name": "Kevin Brown",
+        "team": "FLA",
+        "value": "237.1"
+      }
+    ]
+  },
+  {
+    "label": "Games Pitched",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "123118",
+        "name": "Julian Tavarez",
+        "team": "SF",
+        "value": "89"
+      },
+      {
+        "rank": 2,
+        "id": "119624",
+        "name": "Mike Myers",
+        "team": "DET",
+        "value": "88"
+      },
+      {
+        "rank": 3,
+        "id": "110811",
+        "name": "Stan Belinda",
+        "team": "CIN",
+        "value": "84"
+      },
+      {
+        "rank": 4,
+        "id": "115183",
+        "name": "Buddy Groom",
+        "team": "OAK",
+        "value": "78"
+      },
+      {
+        "rank": 4,
+        "id": "122079",
+        "name": "Jeff Shaw",
+        "team": "CIN",
+        "value": "78"
+      },
+      {
+        "rank": 6,
+        "id": "119704",
+        "name": "Jeff Nelson",
+        "team": "NYY",
+        "value": "77"
+      },
+      {
+        "rank": 6,
+        "id": "120824",
+        "name": "Paul Quantrill",
+        "team": "TOR",
+        "value": "77"
+      },
+      {
+        "rank": 6,
+        "id": "121404",
+        "name": "Mel Rojas",
+        "team": "2TM",
+        "value": "77"
+      },
+      {
+        "rank": 9,
+        "id": "120297",
+        "name": "Bob Patterson",
+        "team": "CHC",
+        "value": "76"
+      },
+      {
+        "rank": 9,
+        "id": "122329",
+        "name": "Heathcliff Slocumb",
+        "team": "2TM",
+        "value": "76"
+      },
+      {
+        "rank": 9,
+        "id": "122609",
+        "name": "Jerry Spradlin",
+        "team": "PHI",
+        "value": "76"
+      }
+    ]
+  },
+  {
+    "label": "Games Finished",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "116682",
+        "name": "Doug Jones",
+        "team": "MIL",
+        "value": "73"
+      },
+      {
+        "rank": 2,
+        "id": "110763",
+        "name": "Rod Beck",
+        "team": "SF",
+        "value": "66"
+      },
+      {
+        "rank": 3,
+        "id": "119718",
+        "name": "Robb Nen",
+        "team": "FLA",
+        "value": "65"
+      },
+      {
+        "rank": 4,
+        "id": "122079",
+        "name": "Jeff Shaw",
+        "team": "CIN",
+        "value": "62"
+      },
+      {
+        "rank": 5,
+        "id": "111262",
+        "name": "Ricky Bottalico",
+        "team": "PHI",
+        "value": "61"
+      },
+      {
+        "rank": 5,
+        "id": "122329",
+        "name": "Heathcliff Slocumb",
+        "team": "2TM",
+        "value": "61"
+      },
+      {
+        "rank": 7,
+        "id": "116034",
+        "name": "Trevor Hoffman",
+        "team": "SD",
+        "value": "59"
+      },
+      {
+        "rank": 8,
+        "id": "117874",
+        "name": "Rich Loiselle",
+        "team": "PIT",
+        "value": "58"
+      },
+      {
+        "rank": 8,
+        "id": "124123",
+        "name": "John Wetteland",
+        "team": "TEX",
+        "value": "58"
+      },
+      {
+        "rank": 10,
+        "id": "110090",
+        "name": "Rick Aguilera",
+        "team": "MIN",
+        "value": "57"
+      },
+      {
+        "rank": 10,
+        "id": "119626",
+        "name": "Randy Myers",
+        "team": "BAL",
+        "value": "57"
+      }
+    ]
+  },
+  {
+    "label": "Complete Games",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "13"
+      },
+      {
+        "rank": 2,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "9"
+      },
+      {
+        "rank": 2,
+        "id": "115797",
+        "name": "Pat Hentgen",
+        "team": "TOR",
+        "value": "9"
+      },
+      {
+        "rank": 4,
+        "id": "120405",
+        "name": "Carlos Perez",
+        "team": "MON",
+        "value": "8"
+      },
+      {
+        "rank": 5,
+        "id": "115399",
+        "name": "Mike Hampton",
+        "team": "HOU",
+        "value": "7"
+      },
+      {
+        "rank": 5,
+        "id": "121811",
+        "name": "Curt Schilling",
+        "team": "PHI",
+        "value": "7"
+      },
+      {
+        "rank": 5,
+        "id": "122477",
+        "name": "John Smoltz",
+        "team": "ATL",
+        "value": "7"
+      },
+      {
+        "rank": 8,
+        "id": "111554",
+        "name": "Kevin Brown",
+        "team": "FLA",
+        "value": "6"
+      },
+      {
+        "rank": 8,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": "6"
+      }
+    ],
+    "more_tied": 7
+  },
+  {
+    "label": "Shutouts",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "120405",
+        "name": "Carlos Perez",
+        "team": "MON",
+        "value": "5"
+      },
+      {
+        "rank": 2,
+        "id": "117046",
+        "name": "Darryl Kile",
+        "team": "HOU",
+        "value": "4"
+      },
+      {
+        "rank": 2,
+        "id": "118377",
+        "name": "Pedro Martínez",
+        "team": "MON",
+        "value": "4"
+      },
+      {
+        "rank": 2,
+        "id": "119673",
+        "name": "Denny Neagle",
+        "team": "ATL",
+        "value": "4"
+      },
+      {
+        "rank": 5,
+        "id": "112388",
+        "name": "Roger Clemens",
+        "team": "TOR",
+        "value": "3"
+      },
+      {
+        "rank": 5,
+        "id": "115797",
+        "name": "Pat Hentgen",
+        "team": "TOR",
+        "value": "3"
+      }
+    ],
+    "more_tied": 16
   }
 ]

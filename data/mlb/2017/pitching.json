@@ -1,156 +1,7 @@
 [
   {
-    "label": "Strikeouts",
-    "players": [
-      {
-        "rank": 1,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": "308"
-      },
-      {
-        "rank": 2,
-        "id": "453286",
-        "name": "Max Scherzer",
-        "team": "WSH",
-        "value": "268"
-      },
-      {
-        "rank": 3,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "265"
-      },
-      {
-        "rank": 4,
-        "id": "502042",
-        "name": "Chris Archer",
-        "team": "TB",
-        "value": "249"
-      },
-      {
-        "rank": 5,
-        "id": "594798",
-        "name": "Jacob deGrom",
-        "team": "NYM",
-        "value": "239"
-      },
-      {
-        "rank": 6,
-        "id": "622663",
-        "name": "Luis Severino",
-        "team": "NYY",
-        "value": "230"
-      },
-      {
-        "rank": 7,
-        "id": "471911",
-        "name": "Carlos Carrasco",
-        "team": "CLE",
-        "value": "226"
-      },
-      {
-        "rank": 8,
-        "id": "434378",
-        "name": "Justin Verlander",
-        "team": "2TM",
-        "value": "219"
-      },
-      {
-        "rank": 9,
-        "id": "592662",
-        "name": "Robbie Ray",
-        "team": "AZ",
-        "value": "218"
-      },
-      {
-        "rank": 10,
-        "id": "593372",
-        "name": "Carlos Martinez",
-        "team": "STL",
-        "value": "217"
-      }
-    ]
-  },
-  {
-    "label": "ERA",
-    "players": [
-      {
-        "rank": 1,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "2.25"
-      },
-      {
-        "rank": 2,
-        "id": "477132",
-        "name": "Clayton Kershaw",
-        "team": "LAD",
-        "value": "2.31"
-      },
-      {
-        "rank": 3,
-        "id": "453286",
-        "name": "Max Scherzer",
-        "team": "WSH",
-        "value": "2.51"
-      },
-      {
-        "rank": 4,
-        "id": "544931",
-        "name": "Stephen Strasburg",
-        "team": "WSH",
-        "value": "2.52"
-      },
-      {
-        "rank": 5,
-        "id": "592662",
-        "name": "Robbie Ray",
-        "team": "AZ",
-        "value": "2.89"
-      },
-      {
-        "rank": 6,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": "2.90"
-      },
-      {
-        "rank": 7,
-        "id": "461829",
-        "name": "Gio Gonzalez",
-        "team": "WSH",
-        "value": "2.96"
-      },
-      {
-        "rank": 8,
-        "id": "622663",
-        "name": "Luis Severino",
-        "team": "NYY",
-        "value": "2.98"
-      },
-      {
-        "rank": 9,
-        "id": "573186",
-        "name": "Marcus Stroman",
-        "team": "TOR",
-        "value": "3.09"
-      },
-      {
-        "rank": 10,
-        "id": "425844",
-        "name": "Zack Greinke",
-        "team": "AZ",
-        "value": "3.20"
-      }
-    ]
-  },
-  {
     "label": "Wins",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -239,457 +90,8 @@
     ]
   },
   {
-    "label": "Saves",
-    "players": [
-      {
-        "rank": 1,
-        "id": "517008",
-        "name": "Alex Colomé",
-        "team": "TB",
-        "value": "47"
-      },
-      {
-        "rank": 2,
-        "id": "518813",
-        "name": "Greg Holland",
-        "team": "COL",
-        "value": "41"
-      },
-      {
-        "rank": 2,
-        "id": "445276",
-        "name": "Kenley Jansen",
-        "team": "LAD",
-        "value": "41"
-      },
-      {
-        "rank": 4,
-        "id": "608349",
-        "name": "Corey Knebel",
-        "team": "MIL",
-        "value": "39"
-      },
-      {
-        "rank": 4,
-        "id": "532077",
-        "name": "Roberto Osuna",
-        "team": "TOR",
-        "value": "39"
-      },
-      {
-        "rank": 4,
-        "id": "407845",
-        "name": "Fernando Rodney",
-        "team": "AZ",
-        "value": "39"
-      },
-      {
-        "rank": 7,
-        "id": "518886",
-        "name": "Craig Kimbrel",
-        "team": "BOS",
-        "value": "35"
-      },
-      {
-        "rank": 8,
-        "id": "621242",
-        "name": "Edwin Díaz",
-        "team": "SEA",
-        "value": "34"
-      },
-      {
-        "rank": 8,
-        "id": "571704",
-        "name": "Ken Giles",
-        "team": "HOU",
-        "value": "34"
-      },
-      {
-        "rank": 10,
-        "id": "451584",
-        "name": "Wade Davis",
-        "team": "CHC",
-        "value": "32"
-      }
-    ]
-  },
-  {
-    "label": "WHIP",
-    "players": [
-      {
-        "rank": 1,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "0.87"
-      },
-      {
-        "rank": 2,
-        "id": "453286",
-        "name": "Max Scherzer",
-        "team": "WSH",
-        "value": "0.90"
-      },
-      {
-        "rank": 3,
-        "id": "477132",
-        "name": "Clayton Kershaw",
-        "team": "LAD",
-        "value": "0.95"
-      },
-      {
-        "rank": 4,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": "0.97"
-      },
-      {
-        "rank": 5,
-        "id": "544931",
-        "name": "Stephen Strasburg",
-        "team": "WSH",
-        "value": "1.02"
-      },
-      {
-        "rank": 6,
-        "id": "622663",
-        "name": "Luis Severino",
-        "team": "NYY",
-        "value": "1.04"
-      },
-      {
-        "rank": 7,
-        "id": "425844",
-        "name": "Zack Greinke",
-        "team": "AZ",
-        "value": "1.07"
-      },
-      {
-        "rank": 8,
-        "id": "471911",
-        "name": "Carlos Carrasco",
-        "team": "CLE",
-        "value": "1.10"
-      },
-      {
-        "rank": 9,
-        "id": "429722",
-        "name": "Ervin Santana",
-        "team": "MIN",
-        "value": "1.13"
-      },
-      {
-        "rank": 10,
-        "id": "502188",
-        "name": "Jeff Samardzija",
-        "team": "SF",
-        "value": "1.14"
-      }
-    ]
-  },
-  {
-    "label": "Innings Pitched",
-    "players": [
-      {
-        "rank": 1,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": "214.1"
-      },
-      {
-        "rank": 2,
-        "id": "429722",
-        "name": "Ervin Santana",
-        "team": "MIN",
-        "value": "211.1"
-      },
-      {
-        "rank": 3,
-        "id": "502188",
-        "name": "Jeff Samardzija",
-        "team": "SF",
-        "value": "207.2"
-      },
-      {
-        "rank": 4,
-        "id": "434378",
-        "name": "Justin Verlander",
-        "team": "2TM",
-        "value": "206.0"
-      },
-      {
-        "rank": 5,
-        "id": "593372",
-        "name": "Carlos Martinez",
-        "team": "STL",
-        "value": "205.0"
-      },
-      {
-        "rank": 6,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "203.2"
-      },
-      {
-        "rank": 7,
-        "id": "519144",
-        "name": "Rick Porcello",
-        "team": "BOS",
-        "value": "203.1"
-      },
-      {
-        "rank": 8,
-        "id": "543037",
-        "name": "Gerrit Cole",
-        "team": "PIT",
-        "value": "203.0"
-      },
-      {
-        "rank": 9,
-        "id": "425844",
-        "name": "Zack Greinke",
-        "team": "AZ",
-        "value": "202.1"
-      },
-      {
-        "rank": 10,
-        "id": "594798",
-        "name": "Jacob deGrom",
-        "team": "NYM",
-        "value": "201.1"
-      }
-    ]
-  },
-  {
-    "label": "Strikeouts per 9 Innings",
-    "players": [
-      {
-        "rank": 1,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": "12.93"
-      },
-      {
-        "rank": 2,
-        "id": "592662",
-        "name": "Robbie Ray",
-        "team": "AZ",
-        "value": "12.11"
-      },
-      {
-        "rank": 3,
-        "id": "453286",
-        "name": "Max Scherzer",
-        "team": "WSH",
-        "value": "12.02"
-      },
-      {
-        "rank": 4,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "11.71"
-      },
-      {
-        "rank": 5,
-        "id": "502042",
-        "name": "Chris Archer",
-        "team": "TB",
-        "value": "11.15"
-      },
-      {
-        "rank": 6,
-        "id": "622663",
-        "name": "Luis Severino",
-        "team": "NYY",
-        "value": "10.71"
-      },
-      {
-        "rank": 7,
-        "id": "594798",
-        "name": "Jacob deGrom",
-        "team": "NYM",
-        "value": "10.68"
-      },
-      {
-        "rank": 8,
-        "id": "544931",
-        "name": "Stephen Strasburg",
-        "team": "WSH",
-        "value": "10.47"
-      },
-      {
-        "rank": 9,
-        "id": "477132",
-        "name": "Clayton Kershaw",
-        "team": "LAD",
-        "value": "10.39"
-      },
-      {
-        "rank": 10,
-        "id": "519076",
-        "name": "Jimmy Nelson",
-        "team": "MIL",
-        "value": "10.21"
-      }
-    ]
-  },
-  {
-    "label": "Strikeout-to-Walk Ratio",
-    "players": [
-      {
-        "rank": 1,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "7.36"
-      },
-      {
-        "rank": 2,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": "7.16"
-      },
-      {
-        "rank": 3,
-        "id": "477132",
-        "name": "Clayton Kershaw",
-        "team": "LAD",
-        "value": "6.73"
-      },
-      {
-        "rank": 4,
-        "id": "502188",
-        "name": "Jeff Samardzija",
-        "team": "SF",
-        "value": "6.41"
-      },
-      {
-        "rank": 5,
-        "id": "471911",
-        "name": "Carlos Carrasco",
-        "team": "CLE",
-        "value": "4.91"
-      },
-      {
-        "rank": 6,
-        "id": "453286",
-        "name": "Max Scherzer",
-        "team": "WSH",
-        "value": "4.87"
-      },
-      {
-        "rank": 7,
-        "id": "425844",
-        "name": "Zack Greinke",
-        "team": "AZ",
-        "value": "4.78"
-      },
-      {
-        "rank": 8,
-        "id": "547888",
-        "name": "Masahiro Tanaka",
-        "team": "NYY",
-        "value": "4.73"
-      },
-      {
-        "rank": 9,
-        "id": "622663",
-        "name": "Luis Severino",
-        "team": "NYY",
-        "value": "4.51"
-      },
-      {
-        "rank": 10,
-        "id": "544931",
-        "name": "Stephen Strasburg",
-        "team": "WSH",
-        "value": "4.34"
-      }
-    ]
-  },
-  {
-    "label": "Win %",
-    "players": [
-      {
-        "rank": 1,
-        "id": "477132",
-        "name": "Clayton Kershaw",
-        "team": "LAD",
-        "value": ".818"
-      },
-      {
-        "rank": 1,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": ".818"
-      },
-      {
-        "rank": 3,
-        "id": "544931",
-        "name": "Stephen Strasburg",
-        "team": "WSH",
-        "value": ".789"
-      },
-      {
-        "rank": 4,
-        "id": "471911",
-        "name": "Carlos Carrasco",
-        "team": "CLE",
-        "value": ".750"
-      },
-      {
-        "rank": 4,
-        "id": "592662",
-        "name": "Robbie Ray",
-        "team": "AZ",
-        "value": ".750"
-      },
-      {
-        "rank": 6,
-        "id": "519141",
-        "name": "Drew Pomeranz",
-        "team": "BOS",
-        "value": ".739"
-      },
-      {
-        "rank": 7,
-        "id": "453286",
-        "name": "Max Scherzer",
-        "team": "WSH",
-        "value": ".727"
-      },
-      {
-        "rank": 8,
-        "id": "425844",
-        "name": "Zack Greinke",
-        "team": "AZ",
-        "value": ".708"
-      },
-      {
-        "rank": 9,
-        "id": "622663",
-        "name": "Luis Severino",
-        "team": "NYY",
-        "value": ".700"
-      },
-      {
-        "rank": 10,
-        "id": "519242",
-        "name": "Chris Sale",
-        "team": "BOS",
-        "value": ".680"
-      }
-    ]
-  },
-  {
     "label": "Losses",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -764,69 +166,160 @@
     ]
   },
   {
-    "label": "Complete Games",
+    "label": "Win %",
+    "group": "Results",
     "players": [
+      {
+        "rank": 1,
+        "id": "477132",
+        "name": "Clayton Kershaw",
+        "team": "LAD",
+        "value": ".818"
+      },
       {
         "rank": 1,
         "id": "446372",
         "name": "Corey Kluber",
         "team": "CLE",
-        "value": "5"
-      },
-      {
-        "rank": 1,
-        "id": "429722",
-        "name": "Ervin Santana",
-        "team": "MIN",
-        "value": "5"
+        "value": ".818"
       },
       {
         "rank": 3,
-        "id": "593372",
-        "name": "Carlos Martinez",
-        "team": "STL",
-        "value": "2"
+        "id": "544931",
+        "name": "Stephen Strasburg",
+        "team": "WSH",
+        "value": ".789"
       },
       {
-        "rank": 3,
-        "id": "467100",
-        "name": "Iván Nova",
-        "team": "PIT",
-        "value": "2"
+        "rank": 4,
+        "id": "471911",
+        "name": "Carlos Carrasco",
+        "team": "CLE",
+        "value": ".750"
       },
       {
-        "rank": 3,
-        "id": "519144",
-        "name": "Rick Porcello",
+        "rank": 4,
+        "id": "592662",
+        "name": "Robbie Ray",
+        "team": "AZ",
+        "value": ".750"
+      },
+      {
+        "rank": 6,
+        "id": "519141",
+        "name": "Drew Pomeranz",
         "team": "BOS",
-        "value": "2"
+        "value": ".739"
       },
       {
-        "rank": 3,
-        "id": "453385",
-        "name": "Clayton Richard",
-        "team": "SD",
-        "value": "2"
-      },
-      {
-        "rank": 3,
+        "rank": 7,
         "id": "453286",
         "name": "Max Scherzer",
         "team": "WSH",
-        "value": "2"
+        "value": ".727"
       },
       {
-        "rank": 3,
-        "id": "573186",
-        "name": "Marcus Stroman",
-        "team": "TOR",
-        "value": "2"
+        "rank": 8,
+        "id": "425844",
+        "name": "Zack Greinke",
+        "team": "AZ",
+        "value": ".708"
+      },
+      {
+        "rank": 9,
+        "id": "622663",
+        "name": "Luis Severino",
+        "team": "NYY",
+        "value": ".700"
+      },
+      {
+        "rank": 10,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": ".680"
       }
-    ],
-    "more_tied": 37
+    ]
+  },
+  {
+    "label": "Saves",
+    "group": "Results",
+    "players": [
+      {
+        "rank": 1,
+        "id": "517008",
+        "name": "Alex Colomé",
+        "team": "TB",
+        "value": "47"
+      },
+      {
+        "rank": 2,
+        "id": "518813",
+        "name": "Greg Holland",
+        "team": "COL",
+        "value": "41"
+      },
+      {
+        "rank": 2,
+        "id": "445276",
+        "name": "Kenley Jansen",
+        "team": "LAD",
+        "value": "41"
+      },
+      {
+        "rank": 4,
+        "id": "608349",
+        "name": "Corey Knebel",
+        "team": "MIL",
+        "value": "39"
+      },
+      {
+        "rank": 4,
+        "id": "532077",
+        "name": "Roberto Osuna",
+        "team": "TOR",
+        "value": "39"
+      },
+      {
+        "rank": 4,
+        "id": "407845",
+        "name": "Fernando Rodney",
+        "team": "AZ",
+        "value": "39"
+      },
+      {
+        "rank": 7,
+        "id": "518886",
+        "name": "Craig Kimbrel",
+        "team": "BOS",
+        "value": "35"
+      },
+      {
+        "rank": 8,
+        "id": "621242",
+        "name": "Edwin Díaz",
+        "team": "SEA",
+        "value": "34"
+      },
+      {
+        "rank": 8,
+        "id": "571704",
+        "name": "Ken Giles",
+        "team": "HOU",
+        "value": "34"
+      },
+      {
+        "rank": 10,
+        "id": "451584",
+        "name": "Wade Davis",
+        "team": "CHC",
+        "value": "32"
+      }
+    ]
   },
   {
     "label": "Holds",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -916,6 +409,7 @@
   },
   {
     "label": "Blown Saves",
+    "group": "Results",
     "players": [
       {
         "rank": 1,
@@ -977,356 +471,160 @@
     "more_tied": 15
   },
   {
-    "label": "Games Started",
+    "label": "ERA",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
-        "id": "502042",
-        "name": "Chris Archer",
-        "team": "TB",
-        "value": "34"
-      },
-      {
-        "rank": 1,
-        "id": "592332",
-        "name": "Kevin Gausman",
-        "team": "BAL",
-        "value": "34"
-      },
-      {
-        "rank": 3,
-        "id": "543037",
-        "name": "Gerrit Cole",
-        "team": "PIT",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "605200",
-        "name": "Zach Davies",
-        "team": "MIL",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "462136",
-        "name": "Marco Estrada",
-        "team": "TOR",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "458681",
-        "name": "Lance Lynn",
-        "team": "STL",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "445060",
-        "name": "Ricky Nolasco",
-        "team": "LAA",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "519144",
-        "name": "Rick Porcello",
-        "team": "BOS",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "429722",
-        "name": "Ervin Santana",
-        "team": "MIN",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "573185",
-        "name": "Dan Straily",
-        "team": "MIA",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "573186",
-        "name": "Marcus Stroman",
-        "team": "TOR",
-        "value": "33"
-      },
-      {
-        "rank": 3,
-        "id": "434378",
-        "name": "Justin Verlander",
-        "team": "2TM",
-        "value": "33"
-      }
-    ]
-  },
-  {
-    "label": "Games Pitched",
-    "players": [
-      {
-        "rank": 1,
-        "id": "493247",
-        "name": "Peter Moylan",
-        "team": "KC",
-        "value": "79"
-      },
-      {
-        "rank": 1,
-        "id": "543766",
-        "name": "Bryan Shaw",
+        "id": "446372",
+        "name": "Corey Kluber",
         "team": "CLE",
-        "value": "79"
-      },
-      {
-        "rank": 3,
-        "id": "543359",
-        "name": "Dan Jennings",
-        "team": "2TM",
-        "value": "77"
-      },
-      {
-        "rank": 3,
-        "id": "592665",
-        "name": "Addison Reed",
-        "team": "2TM",
-        "value": "77"
-      },
-      {
-        "rank": 5,
-        "id": "608349",
-        "name": "Corey Knebel",
-        "team": "MIL",
-        "value": "76"
-      },
-      {
-        "rank": 5,
-        "id": "504379",
-        "name": "Juan Nicasio",
-        "team": "3TM",
-        "value": "76"
-      },
-      {
-        "rank": 7,
-        "id": "460283",
-        "name": "Jerry Blevins",
-        "team": "NYM",
-        "value": "75"
-      },
-      {
-        "rank": 7,
-        "id": "621199",
-        "name": "Matt Bowman",
-        "team": "STL",
-        "value": "75"
-      },
-      {
-        "rank": 9,
-        "id": "593576",
-        "name": "Héctor Neris",
-        "team": "PHI",
-        "value": "74"
-      },
-      {
-        "rank": 10,
-        "id": "606930",
-        "name": "Jacob Barnes",
-        "team": "MIL",
-        "value": "73"
-      },
-      {
-        "rank": 10,
-        "id": "446399",
-        "name": "Brett Cecil",
-        "team": "STL",
-        "value": "73"
-      },
-      {
-        "rank": 10,
-        "id": "605218",
-        "name": "Carl Edwards Jr.",
-        "team": "CHC",
-        "value": "73"
-      },
-      {
-        "rank": 10,
-        "id": "572193",
-        "name": "Ryan Tepera",
-        "team": "TOR",
-        "value": "73"
-      },
-      {
-        "rank": 10,
-        "id": "553878",
-        "name": "Felipe Vázquez",
-        "team": "PIT",
-        "value": "73"
-      }
-    ]
-  },
-  {
-    "label": "Games Finished",
-    "players": [
-      {
-        "rank": 1,
-        "id": "518813",
-        "name": "Greg Holland",
-        "team": "COL",
-        "value": "58"
-      },
-      {
-        "rank": 1,
-        "id": "532077",
-        "name": "Roberto Osuna",
-        "team": "TOR",
-        "value": "58"
-      },
-      {
-        "rank": 3,
-        "id": "628452",
-        "name": "Raisel Iglesias",
-        "team": "CIN",
-        "value": "57"
-      },
-      {
-        "rank": 3,
-        "id": "445276",
-        "name": "Kenley Jansen",
-        "team": "LAD",
-        "value": "57"
-      },
-      {
-        "rank": 5,
-        "id": "451584",
-        "name": "Wade Davis",
-        "team": "CHC",
-        "value": "56"
-      },
-      {
-        "rank": 5,
-        "id": "593576",
-        "name": "Héctor Neris",
-        "team": "PHI",
-        "value": "56"
-      },
-      {
-        "rank": 7,
-        "id": "592102",
-        "name": "Cody Allen",
-        "team": "CLE",
-        "value": "55"
-      },
-      {
-        "rank": 7,
-        "id": "571704",
-        "name": "Ken Giles",
-        "team": "HOU",
-        "value": "55"
-      },
-      {
-        "rank": 7,
-        "id": "573109",
-        "name": "AJ Ramos",
-        "team": "2TM",
-        "value": "55"
-      },
-      {
-        "rank": 10,
-        "id": "517008",
-        "name": "Alex Colomé",
-        "team": "TB",
-        "value": "53"
-      },
-      {
-        "rank": 10,
-        "id": "407845",
-        "name": "Fernando Rodney",
-        "team": "AZ",
-        "value": "53"
-      }
-    ]
-  },
-  {
-    "label": "Walks per 9 Innings",
-    "players": [
-      {
-        "rank": 1,
-        "id": "502188",
-        "name": "Jeff Samardzija",
-        "team": "SF",
-        "value": "1.39"
+        "value": "2.25"
       },
       {
         "rank": 2,
         "id": "477132",
         "name": "Clayton Kershaw",
         "team": "LAD",
-        "value": "1.54"
+        "value": "2.31"
       },
       {
         "rank": 3,
-        "id": "446372",
-        "name": "Corey Kluber",
-        "team": "CLE",
-        "value": "1.59"
+        "id": "453286",
+        "name": "Max Scherzer",
+        "team": "WSH",
+        "value": "2.51"
       },
       {
         "rank": 4,
-        "id": "467100",
-        "name": "Iván Nova",
-        "team": "PIT",
-        "value": "1.73"
+        "id": "544931",
+        "name": "Stephen Strasburg",
+        "team": "WSH",
+        "value": "2.52"
       },
       {
         "rank": 5,
-        "id": "502190",
-        "name": "Mike Leake",
-        "team": "2TM",
-        "value": "1.79"
+        "id": "592662",
+        "name": "Robbie Ray",
+        "team": "AZ",
+        "value": "2.89"
       },
       {
         "rank": 6,
         "id": "519242",
         "name": "Chris Sale",
         "team": "BOS",
-        "value": "1.81"
+        "value": "2.90"
+      },
+      {
+        "rank": 7,
+        "id": "461829",
+        "name": "Gio Gonzalez",
+        "team": "WSH",
+        "value": "2.96"
+      },
+      {
+        "rank": 8,
+        "id": "622663",
+        "name": "Luis Severino",
+        "team": "NYY",
+        "value": "2.98"
+      },
+      {
+        "rank": 9,
+        "id": "573186",
+        "name": "Marcus Stroman",
+        "team": "TOR",
+        "value": "3.09"
+      },
+      {
+        "rank": 10,
+        "id": "425844",
+        "name": "Zack Greinke",
+        "team": "AZ",
+        "value": "3.20"
+      }
+    ]
+  },
+  {
+    "label": "WHIP",
+    "group": "Run Prevention",
+    "players": [
+      {
+        "rank": 1,
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "0.87"
+      },
+      {
+        "rank": 2,
+        "id": "453286",
+        "name": "Max Scherzer",
+        "team": "WSH",
+        "value": "0.90"
+      },
+      {
+        "rank": 3,
+        "id": "477132",
+        "name": "Clayton Kershaw",
+        "team": "LAD",
+        "value": "0.95"
+      },
+      {
+        "rank": 4,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": "0.97"
+      },
+      {
+        "rank": 5,
+        "id": "544931",
+        "name": "Stephen Strasburg",
+        "team": "WSH",
+        "value": "1.02"
+      },
+      {
+        "rank": 6,
+        "id": "622663",
+        "name": "Luis Severino",
+        "team": "NYY",
+        "value": "1.04"
       },
       {
         "rank": 7,
         "id": "425844",
         "name": "Zack Greinke",
         "team": "AZ",
-        "value": "2.00"
+        "value": "1.07"
       },
       {
         "rank": 8,
-        "id": "547888",
-        "name": "Masahiro Tanaka",
-        "team": "NYY",
-        "value": "2.07"
-      },
-      {
-        "rank": 9,
         "id": "471911",
         "name": "Carlos Carrasco",
         "team": "CLE",
-        "value": "2.07"
+        "value": "1.10"
+      },
+      {
+        "rank": 9,
+        "id": "429722",
+        "name": "Ervin Santana",
+        "team": "MIN",
+        "value": "1.13"
       },
       {
         "rank": 10,
-        "id": "519144",
-        "name": "Rick Porcello",
-        "team": "BOS",
-        "value": "2.12"
+        "id": "502188",
+        "name": "Jeff Samardzija",
+        "team": "SF",
+        "value": "1.14"
       }
     ]
   },
   {
     "label": "Hits per 9 Innings",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
@@ -1401,103 +699,98 @@
     ]
   },
   {
-    "label": "Walks Allowed",
+    "label": "Earned Runs Allowed",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
-        "id": "489119",
-        "name": "Wade Miley",
+        "id": "434622",
+        "name": "Ubaldo Jiménez",
         "team": "BAL",
-        "value": "93"
+        "value": "108"
       },
       {
-        "rank": 2,
-        "id": "461829",
-        "name": "Gio Gonzalez",
-        "team": "WSH",
-        "value": "79"
+        "rank": 1,
+        "id": "519455",
+        "name": "Jordan Zimmermann",
+        "team": "DET",
+        "value": "108"
       },
       {
         "rank": 3,
-        "id": "458681",
-        "name": "Lance Lynn",
-        "team": "STL",
-        "value": "78"
+        "id": "519043",
+        "name": "Matt Moore",
+        "team": "SF",
+        "value": "107"
       },
       {
         "rank": 4,
-        "id": "543022",
-        "name": "Tyler Chatwood",
-        "team": "COL",
-        "value": "77"
+        "id": "434628",
+        "name": "Jason Hammel",
+        "team": "KC",
+        "value": "106"
       },
       {
         "rank": 5,
-        "id": "502706",
-        "name": "Derek Holland",
-        "team": "CWS",
-        "value": "75"
+        "id": "519144",
+        "name": "Rick Porcello",
+        "team": "BOS",
+        "value": "105"
       },
       {
-        "rank": 6,
-        "id": "468504",
-        "name": "Jhoulys Chacín",
+        "rank": 5,
+        "id": "453385",
+        "name": "Clayton Richard",
         "team": "SD",
-        "value": "72"
+        "value": "105"
       },
       {
-        "rank": 6,
-        "id": "641771",
-        "name": "Chad Kuhl",
-        "team": "PIT",
-        "value": "72"
-      },
-      {
-        "rank": 6,
-        "id": "527054",
-        "name": "Julio Teheran",
-        "team": "ATL",
-        "value": "72"
-      },
-      {
-        "rank": 6,
-        "id": "434378",
-        "name": "Justin Verlander",
+        "rank": 7,
+        "id": "112526",
+        "name": "Bartolo Colon",
         "team": "2TM",
-        "value": "72"
+        "value": "103"
       },
       {
-        "rank": 10,
+        "rank": 7,
         "id": "462136",
         "name": "Marco Estrada",
         "team": "TOR",
-        "value": "71"
+        "value": "103"
+      },
+      {
+        "rank": 9,
+        "id": "502188",
+        "name": "Jeff Samardzija",
+        "team": "SF",
+        "value": "102"
       },
       {
         "rank": 10,
-        "id": "592332",
-        "name": "Kevin Gausman",
-        "team": "BAL",
-        "value": "71"
+        "id": "476451",
+        "name": "Jeremy Hellickson",
+        "team": "2TM",
+        "value": "99"
       },
       {
         "rank": 10,
-        "id": "593372",
-        "name": "Carlos Martinez",
-        "team": "STL",
-        "value": "71"
+        "id": "445060",
+        "name": "Ricky Nolasco",
+        "team": "LAA",
+        "value": "99"
       },
       {
         "rank": 10,
-        "id": "592662",
-        "name": "Robbie Ray",
-        "team": "AZ",
-        "value": "71"
+        "id": "527048",
+        "name": "Martín Pérez",
+        "team": "TEX",
+        "value": "99"
       }
     ]
   },
   {
     "label": "Home Runs Allowed",
+    "group": "Run Prevention",
     "players": [
       {
         "rank": 1,
@@ -1607,96 +900,409 @@
     ]
   },
   {
-    "label": "Earned Runs Allowed",
+    "label": "Strikeouts",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
-        "id": "434622",
-        "name": "Ubaldo Jiménez",
-        "team": "BAL",
-        "value": "108"
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": "308"
       },
       {
-        "rank": 1,
-        "id": "519455",
-        "name": "Jordan Zimmermann",
-        "team": "DET",
-        "value": "108"
+        "rank": 2,
+        "id": "453286",
+        "name": "Max Scherzer",
+        "team": "WSH",
+        "value": "268"
       },
       {
         "rank": 3,
-        "id": "519043",
-        "name": "Matt Moore",
-        "team": "SF",
-        "value": "107"
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "265"
       },
       {
         "rank": 4,
-        "id": "434628",
-        "name": "Jason Hammel",
-        "team": "KC",
-        "value": "106"
+        "id": "502042",
+        "name": "Chris Archer",
+        "team": "TB",
+        "value": "249"
       },
       {
         "rank": 5,
-        "id": "519144",
-        "name": "Rick Porcello",
-        "team": "BOS",
-        "value": "105"
+        "id": "594798",
+        "name": "Jacob deGrom",
+        "team": "NYM",
+        "value": "239"
       },
       {
-        "rank": 5,
-        "id": "453385",
-        "name": "Clayton Richard",
-        "team": "SD",
-        "value": "105"
+        "rank": 6,
+        "id": "622663",
+        "name": "Luis Severino",
+        "team": "NYY",
+        "value": "230"
       },
       {
         "rank": 7,
-        "id": "112526",
-        "name": "Bartolo Colon",
+        "id": "471911",
+        "name": "Carlos Carrasco",
+        "team": "CLE",
+        "value": "226"
+      },
+      {
+        "rank": 8,
+        "id": "434378",
+        "name": "Justin Verlander",
         "team": "2TM",
-        "value": "103"
-      },
-      {
-        "rank": 7,
-        "id": "462136",
-        "name": "Marco Estrada",
-        "team": "TOR",
-        "value": "103"
+        "value": "219"
       },
       {
         "rank": 9,
+        "id": "592662",
+        "name": "Robbie Ray",
+        "team": "AZ",
+        "value": "218"
+      },
+      {
+        "rank": 10,
+        "id": "593372",
+        "name": "Carlos Martinez",
+        "team": "STL",
+        "value": "217"
+      }
+    ]
+  },
+  {
+    "label": "Strikeouts per 9 Innings",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": "12.93"
+      },
+      {
+        "rank": 2,
+        "id": "592662",
+        "name": "Robbie Ray",
+        "team": "AZ",
+        "value": "12.11"
+      },
+      {
+        "rank": 3,
+        "id": "453286",
+        "name": "Max Scherzer",
+        "team": "WSH",
+        "value": "12.02"
+      },
+      {
+        "rank": 4,
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "11.71"
+      },
+      {
+        "rank": 5,
+        "id": "502042",
+        "name": "Chris Archer",
+        "team": "TB",
+        "value": "11.15"
+      },
+      {
+        "rank": 6,
+        "id": "622663",
+        "name": "Luis Severino",
+        "team": "NYY",
+        "value": "10.71"
+      },
+      {
+        "rank": 7,
+        "id": "594798",
+        "name": "Jacob deGrom",
+        "team": "NYM",
+        "value": "10.68"
+      },
+      {
+        "rank": 8,
+        "id": "544931",
+        "name": "Stephen Strasburg",
+        "team": "WSH",
+        "value": "10.47"
+      },
+      {
+        "rank": 9,
+        "id": "477132",
+        "name": "Clayton Kershaw",
+        "team": "LAD",
+        "value": "10.39"
+      },
+      {
+        "rank": 10,
+        "id": "519076",
+        "name": "Jimmy Nelson",
+        "team": "MIL",
+        "value": "10.21"
+      }
+    ]
+  },
+  {
+    "label": "Strikeout-to-Walk Ratio",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "7.36"
+      },
+      {
+        "rank": 2,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": "7.16"
+      },
+      {
+        "rank": 3,
+        "id": "477132",
+        "name": "Clayton Kershaw",
+        "team": "LAD",
+        "value": "6.73"
+      },
+      {
+        "rank": 4,
         "id": "502188",
         "name": "Jeff Samardzija",
         "team": "SF",
-        "value": "102"
+        "value": "6.41"
+      },
+      {
+        "rank": 5,
+        "id": "471911",
+        "name": "Carlos Carrasco",
+        "team": "CLE",
+        "value": "4.91"
+      },
+      {
+        "rank": 6,
+        "id": "453286",
+        "name": "Max Scherzer",
+        "team": "WSH",
+        "value": "4.87"
+      },
+      {
+        "rank": 7,
+        "id": "425844",
+        "name": "Zack Greinke",
+        "team": "AZ",
+        "value": "4.78"
+      },
+      {
+        "rank": 8,
+        "id": "547888",
+        "name": "Masahiro Tanaka",
+        "team": "NYY",
+        "value": "4.73"
+      },
+      {
+        "rank": 9,
+        "id": "622663",
+        "name": "Luis Severino",
+        "team": "NYY",
+        "value": "4.51"
       },
       {
         "rank": 10,
-        "id": "476451",
-        "name": "Jeremy Hellickson",
+        "id": "544931",
+        "name": "Stephen Strasburg",
+        "team": "WSH",
+        "value": "4.34"
+      }
+    ]
+  },
+  {
+    "label": "Walks per 9 Innings",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "502188",
+        "name": "Jeff Samardzija",
+        "team": "SF",
+        "value": "1.39"
+      },
+      {
+        "rank": 2,
+        "id": "477132",
+        "name": "Clayton Kershaw",
+        "team": "LAD",
+        "value": "1.54"
+      },
+      {
+        "rank": 3,
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "1.59"
+      },
+      {
+        "rank": 4,
+        "id": "467100",
+        "name": "Iván Nova",
+        "team": "PIT",
+        "value": "1.73"
+      },
+      {
+        "rank": 5,
+        "id": "502190",
+        "name": "Mike Leake",
         "team": "2TM",
-        "value": "99"
+        "value": "1.79"
+      },
+      {
+        "rank": 6,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": "1.81"
+      },
+      {
+        "rank": 7,
+        "id": "425844",
+        "name": "Zack Greinke",
+        "team": "AZ",
+        "value": "2.00"
+      },
+      {
+        "rank": 8,
+        "id": "547888",
+        "name": "Masahiro Tanaka",
+        "team": "NYY",
+        "value": "2.07"
+      },
+      {
+        "rank": 9,
+        "id": "471911",
+        "name": "Carlos Carrasco",
+        "team": "CLE",
+        "value": "2.07"
       },
       {
         "rank": 10,
-        "id": "445060",
-        "name": "Ricky Nolasco",
-        "team": "LAA",
-        "value": "99"
+        "id": "519144",
+        "name": "Rick Porcello",
+        "team": "BOS",
+        "value": "2.12"
+      }
+    ]
+  },
+  {
+    "label": "Walks Allowed",
+    "group": "Strikeouts & Control",
+    "players": [
+      {
+        "rank": 1,
+        "id": "489119",
+        "name": "Wade Miley",
+        "team": "BAL",
+        "value": "93"
+      },
+      {
+        "rank": 2,
+        "id": "461829",
+        "name": "Gio Gonzalez",
+        "team": "WSH",
+        "value": "79"
+      },
+      {
+        "rank": 3,
+        "id": "458681",
+        "name": "Lance Lynn",
+        "team": "STL",
+        "value": "78"
+      },
+      {
+        "rank": 4,
+        "id": "543022",
+        "name": "Tyler Chatwood",
+        "team": "COL",
+        "value": "77"
+      },
+      {
+        "rank": 5,
+        "id": "502706",
+        "name": "Derek Holland",
+        "team": "CWS",
+        "value": "75"
+      },
+      {
+        "rank": 6,
+        "id": "468504",
+        "name": "Jhoulys Chacín",
+        "team": "SD",
+        "value": "72"
+      },
+      {
+        "rank": 6,
+        "id": "641771",
+        "name": "Chad Kuhl",
+        "team": "PIT",
+        "value": "72"
+      },
+      {
+        "rank": 6,
+        "id": "527054",
+        "name": "Julio Teheran",
+        "team": "ATL",
+        "value": "72"
+      },
+      {
+        "rank": 6,
+        "id": "434378",
+        "name": "Justin Verlander",
+        "team": "2TM",
+        "value": "72"
       },
       {
         "rank": 10,
-        "id": "527048",
-        "name": "Martín Pérez",
-        "team": "TEX",
-        "value": "99"
+        "id": "462136",
+        "name": "Marco Estrada",
+        "team": "TOR",
+        "value": "71"
+      },
+      {
+        "rank": 10,
+        "id": "592332",
+        "name": "Kevin Gausman",
+        "team": "BAL",
+        "value": "71"
+      },
+      {
+        "rank": 10,
+        "id": "593372",
+        "name": "Carlos Martinez",
+        "team": "STL",
+        "value": "71"
+      },
+      {
+        "rank": 10,
+        "id": "592662",
+        "name": "Robbie Ray",
+        "team": "AZ",
+        "value": "71"
       }
     ]
   },
   {
     "label": "Hit Batters",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1772,6 +1378,7 @@
   },
   {
     "label": "Wild Pitches",
+    "group": "Strikeouts & Control",
     "players": [
       {
         "rank": 1,
@@ -1851,5 +1458,421 @@
         "value": "12"
       }
     ]
+  },
+  {
+    "label": "Innings Pitched",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "519242",
+        "name": "Chris Sale",
+        "team": "BOS",
+        "value": "214.1"
+      },
+      {
+        "rank": 2,
+        "id": "429722",
+        "name": "Ervin Santana",
+        "team": "MIN",
+        "value": "211.1"
+      },
+      {
+        "rank": 3,
+        "id": "502188",
+        "name": "Jeff Samardzija",
+        "team": "SF",
+        "value": "207.2"
+      },
+      {
+        "rank": 4,
+        "id": "434378",
+        "name": "Justin Verlander",
+        "team": "2TM",
+        "value": "206.0"
+      },
+      {
+        "rank": 5,
+        "id": "593372",
+        "name": "Carlos Martinez",
+        "team": "STL",
+        "value": "205.0"
+      },
+      {
+        "rank": 6,
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "203.2"
+      },
+      {
+        "rank": 7,
+        "id": "519144",
+        "name": "Rick Porcello",
+        "team": "BOS",
+        "value": "203.1"
+      },
+      {
+        "rank": 8,
+        "id": "543037",
+        "name": "Gerrit Cole",
+        "team": "PIT",
+        "value": "203.0"
+      },
+      {
+        "rank": 9,
+        "id": "425844",
+        "name": "Zack Greinke",
+        "team": "AZ",
+        "value": "202.1"
+      },
+      {
+        "rank": 10,
+        "id": "594798",
+        "name": "Jacob deGrom",
+        "team": "NYM",
+        "value": "201.1"
+      }
+    ]
+  },
+  {
+    "label": "Games Started",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "502042",
+        "name": "Chris Archer",
+        "team": "TB",
+        "value": "34"
+      },
+      {
+        "rank": 1,
+        "id": "592332",
+        "name": "Kevin Gausman",
+        "team": "BAL",
+        "value": "34"
+      },
+      {
+        "rank": 3,
+        "id": "543037",
+        "name": "Gerrit Cole",
+        "team": "PIT",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "605200",
+        "name": "Zach Davies",
+        "team": "MIL",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "462136",
+        "name": "Marco Estrada",
+        "team": "TOR",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "458681",
+        "name": "Lance Lynn",
+        "team": "STL",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "445060",
+        "name": "Ricky Nolasco",
+        "team": "LAA",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "519144",
+        "name": "Rick Porcello",
+        "team": "BOS",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "429722",
+        "name": "Ervin Santana",
+        "team": "MIN",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "573185",
+        "name": "Dan Straily",
+        "team": "MIA",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "573186",
+        "name": "Marcus Stroman",
+        "team": "TOR",
+        "value": "33"
+      },
+      {
+        "rank": 3,
+        "id": "434378",
+        "name": "Justin Verlander",
+        "team": "2TM",
+        "value": "33"
+      }
+    ]
+  },
+  {
+    "label": "Games Pitched",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "493247",
+        "name": "Peter Moylan",
+        "team": "KC",
+        "value": "79"
+      },
+      {
+        "rank": 1,
+        "id": "543766",
+        "name": "Bryan Shaw",
+        "team": "CLE",
+        "value": "79"
+      },
+      {
+        "rank": 3,
+        "id": "543359",
+        "name": "Dan Jennings",
+        "team": "2TM",
+        "value": "77"
+      },
+      {
+        "rank": 3,
+        "id": "592665",
+        "name": "Addison Reed",
+        "team": "2TM",
+        "value": "77"
+      },
+      {
+        "rank": 5,
+        "id": "608349",
+        "name": "Corey Knebel",
+        "team": "MIL",
+        "value": "76"
+      },
+      {
+        "rank": 5,
+        "id": "504379",
+        "name": "Juan Nicasio",
+        "team": "3TM",
+        "value": "76"
+      },
+      {
+        "rank": 7,
+        "id": "460283",
+        "name": "Jerry Blevins",
+        "team": "NYM",
+        "value": "75"
+      },
+      {
+        "rank": 7,
+        "id": "621199",
+        "name": "Matt Bowman",
+        "team": "STL",
+        "value": "75"
+      },
+      {
+        "rank": 9,
+        "id": "593576",
+        "name": "Héctor Neris",
+        "team": "PHI",
+        "value": "74"
+      },
+      {
+        "rank": 10,
+        "id": "606930",
+        "name": "Jacob Barnes",
+        "team": "MIL",
+        "value": "73"
+      },
+      {
+        "rank": 10,
+        "id": "446399",
+        "name": "Brett Cecil",
+        "team": "STL",
+        "value": "73"
+      },
+      {
+        "rank": 10,
+        "id": "605218",
+        "name": "Carl Edwards Jr.",
+        "team": "CHC",
+        "value": "73"
+      },
+      {
+        "rank": 10,
+        "id": "572193",
+        "name": "Ryan Tepera",
+        "team": "TOR",
+        "value": "73"
+      },
+      {
+        "rank": 10,
+        "id": "553878",
+        "name": "Felipe Vázquez",
+        "team": "PIT",
+        "value": "73"
+      }
+    ]
+  },
+  {
+    "label": "Games Finished",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "518813",
+        "name": "Greg Holland",
+        "team": "COL",
+        "value": "58"
+      },
+      {
+        "rank": 1,
+        "id": "532077",
+        "name": "Roberto Osuna",
+        "team": "TOR",
+        "value": "58"
+      },
+      {
+        "rank": 3,
+        "id": "628452",
+        "name": "Raisel Iglesias",
+        "team": "CIN",
+        "value": "57"
+      },
+      {
+        "rank": 3,
+        "id": "445276",
+        "name": "Kenley Jansen",
+        "team": "LAD",
+        "value": "57"
+      },
+      {
+        "rank": 5,
+        "id": "451584",
+        "name": "Wade Davis",
+        "team": "CHC",
+        "value": "56"
+      },
+      {
+        "rank": 5,
+        "id": "593576",
+        "name": "Héctor Neris",
+        "team": "PHI",
+        "value": "56"
+      },
+      {
+        "rank": 7,
+        "id": "592102",
+        "name": "Cody Allen",
+        "team": "CLE",
+        "value": "55"
+      },
+      {
+        "rank": 7,
+        "id": "571704",
+        "name": "Ken Giles",
+        "team": "HOU",
+        "value": "55"
+      },
+      {
+        "rank": 7,
+        "id": "573109",
+        "name": "AJ Ramos",
+        "team": "2TM",
+        "value": "55"
+      },
+      {
+        "rank": 10,
+        "id": "517008",
+        "name": "Alex Colomé",
+        "team": "TB",
+        "value": "53"
+      },
+      {
+        "rank": 10,
+        "id": "407845",
+        "name": "Fernando Rodney",
+        "team": "AZ",
+        "value": "53"
+      }
+    ]
+  },
+  {
+    "label": "Complete Games",
+    "group": "Workload",
+    "players": [
+      {
+        "rank": 1,
+        "id": "446372",
+        "name": "Corey Kluber",
+        "team": "CLE",
+        "value": "5"
+      },
+      {
+        "rank": 1,
+        "id": "429722",
+        "name": "Ervin Santana",
+        "team": "MIN",
+        "value": "5"
+      },
+      {
+        "rank": 3,
+        "id": "593372",
+        "name": "Carlos Martinez",
+        "team": "STL",
+        "value": "2"
+      },
+      {
+        "rank": 3,
+        "id": "467100",
+        "name": "Iván Nova",
+        "team": "PIT",
+        "value": "2"
+      },
+      {
+        "rank": 3,
+        "id": "519144",
+        "name": "Rick Porcello",
+        "team": "BOS",
+        "value": "2"
+      },
+      {
+        "rank": 3,
+        "id": "453385",
+        "name": "Clayton Richard",
+        "team": "SD",
+        "value": "2"
+      },
+      {
+        "rank": 3,
+        "id": "453286",
+        "name": "Max Scherzer",
+        "team": "WSH",
+        "value": "2"
+      },
+      {
+        "rank": 3,
+        "id": "573186",
+        "name": "Marcus Stroman",
+        "team": "TOR",
+        "value": "2"
+      }
+    ],
+    "more_tied": 37
   }
 ]

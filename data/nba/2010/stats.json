@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -76,6 +77,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -151,6 +153,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -226,6 +229,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -315,6 +319,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -397,6 +402,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -472,6 +478,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -554,6 +561,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -629,6 +637,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -704,6 +713,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -778,7 +788,236 @@
     ]
   },
   {
+    "label": "Field Goals Made",
+    "group": "Shooting",
+    "players": [
+      {
+        "rank": 1,
+        "id": "201142",
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "794"
+      },
+      {
+        "rank": 2,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "768"
+      },
+      {
+        "rank": 3,
+        "id": "1717",
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "720"
+      },
+      {
+        "rank": 4,
+        "id": "2548",
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "719"
+      },
+      {
+        "rank": 5,
+        "id": "977",
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "716"
+      },
+      {
+        "rank": 6,
+        "id": "2405",
+        "name": "Amar'e Stoudemire",
+        "team": "PHX",
+        "value": "704"
+      },
+      {
+        "rank": 7,
+        "id": "2546",
+        "name": "Carmelo Anthony",
+        "team": "DEN",
+        "value": "688"
+      },
+      {
+        "rank": 8,
+        "id": "101135",
+        "name": "David Lee",
+        "team": "NYK",
+        "value": "686"
+      },
+      {
+        "rank": 9,
+        "id": "201565",
+        "name": "Derrick Rose",
+        "team": "CHI",
+        "value": "672"
+      },
+      {
+        "rank": 10,
+        "id": "2216",
+        "name": "Zach Randolph",
+        "team": "MEM",
+        "value": "652"
+      }
+    ]
+  },
+  {
+    "label": "3-Pointers Made",
+    "group": "Shooting",
+    "players": [
+      {
+        "rank": 1,
+        "id": "201166",
+        "name": "Aaron Brooks",
+        "team": "HOU",
+        "value": "209"
+      },
+      {
+        "rank": 2,
+        "id": "201568",
+        "name": "Danilo Gallinari",
+        "team": "NYK",
+        "value": "186"
+      },
+      {
+        "rank": 3,
+        "id": "467",
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "176"
+      },
+      {
+        "rank": 4,
+        "id": "101112",
+        "name": "Channing Frye",
+        "team": "PHX",
+        "value": "172"
+      },
+      {
+        "rank": 5,
+        "id": "1740",
+        "name": "Rashard Lewis",
+        "team": "ORL",
+        "value": "168"
+      },
+      {
+        "rank": 6,
+        "id": "201939",
+        "name": "Stephen Curry",
+        "team": "GSW",
+        "value": "166"
+      },
+      {
+        "rank": 7,
+        "id": "2037",
+        "name": "Jamal Crawford",
+        "team": "ATL",
+        "value": "163"
+      },
+      {
+        "rank": 8,
+        "id": "2590",
+        "name": "Mo Williams",
+        "team": "CLE",
+        "value": "159"
+      },
+      {
+        "rank": 9,
+        "id": "101122",
+        "name": "Danny Granger",
+        "team": "IND",
+        "value": "158"
+      },
+      {
+        "rank": 9,
+        "id": "2747",
+        "name": "JR Smith",
+        "team": "DEN",
+        "value": "158"
+      }
+    ]
+  },
+  {
+    "label": "Free Throws Made",
+    "group": "Shooting",
+    "players": [
+      {
+        "rank": 1,
+        "id": "201142",
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "756"
+      },
+      {
+        "rank": 2,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "593"
+      },
+      {
+        "rank": 3,
+        "id": "1717",
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "536"
+      },
+      {
+        "rank": 4,
+        "id": "2548",
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "534"
+      },
+      {
+        "rank": 5,
+        "id": "2546",
+        "name": "Carmelo Anthony",
+        "team": "DEN",
+        "value": "508"
+      },
+      {
+        "rank": 6,
+        "id": "2405",
+        "name": "Amar'e Stoudemire",
+        "team": "PHX",
+        "value": "487"
+      },
+      {
+        "rank": 7,
+        "id": "2730",
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "483"
+      },
+      {
+        "rank": 8,
+        "id": "2547",
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "470"
+      },
+      {
+        "rank": 9,
+        "id": "1497",
+        "name": "Chauncey Billups",
+        "team": "DEN",
+        "value": "466"
+      },
+      {
+        "rank": 10,
+        "id": "1894",
+        "name": "Corey Maggette",
+        "team": "GSW",
+        "value": "460"
+      }
+    ]
+  },
+  {
     "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -854,6 +1093,7 @@
   },
   {
     "label": "Total Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -929,6 +1169,7 @@
   },
   {
     "label": "Total Assists",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1011,6 +1252,7 @@
   },
   {
     "label": "Total Steals",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1086,6 +1328,7 @@
   },
   {
     "label": "Total Blocks",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1160,232 +1403,8 @@
     ]
   },
   {
-    "label": "3-Pointers Made",
-    "players": [
-      {
-        "rank": 1,
-        "id": "201166",
-        "name": "Aaron Brooks",
-        "team": "HOU",
-        "value": "209"
-      },
-      {
-        "rank": 2,
-        "id": "201568",
-        "name": "Danilo Gallinari",
-        "team": "NYK",
-        "value": "186"
-      },
-      {
-        "rank": 3,
-        "id": "467",
-        "name": "Jason Kidd",
-        "team": "DAL",
-        "value": "176"
-      },
-      {
-        "rank": 4,
-        "id": "101112",
-        "name": "Channing Frye",
-        "team": "PHX",
-        "value": "172"
-      },
-      {
-        "rank": 5,
-        "id": "1740",
-        "name": "Rashard Lewis",
-        "team": "ORL",
-        "value": "168"
-      },
-      {
-        "rank": 6,
-        "id": "201939",
-        "name": "Stephen Curry",
-        "team": "GSW",
-        "value": "166"
-      },
-      {
-        "rank": 7,
-        "id": "2037",
-        "name": "Jamal Crawford",
-        "team": "ATL",
-        "value": "163"
-      },
-      {
-        "rank": 8,
-        "id": "2590",
-        "name": "Mo Williams",
-        "team": "CLE",
-        "value": "159"
-      },
-      {
-        "rank": 9,
-        "id": "101122",
-        "name": "Danny Granger",
-        "team": "IND",
-        "value": "158"
-      },
-      {
-        "rank": 9,
-        "id": "2747",
-        "name": "JR Smith",
-        "team": "DEN",
-        "value": "158"
-      }
-    ]
-  },
-  {
-    "label": "Free Throws Made",
-    "players": [
-      {
-        "rank": 1,
-        "id": "201142",
-        "name": "Kevin Durant",
-        "team": "OKC",
-        "value": "756"
-      },
-      {
-        "rank": 2,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "593"
-      },
-      {
-        "rank": 3,
-        "id": "1717",
-        "name": "Dirk Nowitzki",
-        "team": "DAL",
-        "value": "536"
-      },
-      {
-        "rank": 4,
-        "id": "2548",
-        "name": "Dwyane Wade",
-        "team": "MIA",
-        "value": "534"
-      },
-      {
-        "rank": 5,
-        "id": "2546",
-        "name": "Carmelo Anthony",
-        "team": "DEN",
-        "value": "508"
-      },
-      {
-        "rank": 6,
-        "id": "2405",
-        "name": "Amar'e Stoudemire",
-        "team": "PHX",
-        "value": "487"
-      },
-      {
-        "rank": 7,
-        "id": "2730",
-        "name": "Dwight Howard",
-        "team": "ORL",
-        "value": "483"
-      },
-      {
-        "rank": 8,
-        "id": "2547",
-        "name": "Chris Bosh",
-        "team": "TOR",
-        "value": "470"
-      },
-      {
-        "rank": 9,
-        "id": "1497",
-        "name": "Chauncey Billups",
-        "team": "DEN",
-        "value": "466"
-      },
-      {
-        "rank": 10,
-        "id": "1894",
-        "name": "Corey Maggette",
-        "team": "GSW",
-        "value": "460"
-      }
-    ]
-  },
-  {
-    "label": "Field Goals Made",
-    "players": [
-      {
-        "rank": 1,
-        "id": "201142",
-        "name": "Kevin Durant",
-        "team": "OKC",
-        "value": "794"
-      },
-      {
-        "rank": 2,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "768"
-      },
-      {
-        "rank": 3,
-        "id": "1717",
-        "name": "Dirk Nowitzki",
-        "team": "DAL",
-        "value": "720"
-      },
-      {
-        "rank": 4,
-        "id": "2548",
-        "name": "Dwyane Wade",
-        "team": "MIA",
-        "value": "719"
-      },
-      {
-        "rank": 5,
-        "id": "977",
-        "name": "Kobe Bryant",
-        "team": "LAL",
-        "value": "716"
-      },
-      {
-        "rank": 6,
-        "id": "2405",
-        "name": "Amar'e Stoudemire",
-        "team": "PHX",
-        "value": "704"
-      },
-      {
-        "rank": 7,
-        "id": "2546",
-        "name": "Carmelo Anthony",
-        "team": "DEN",
-        "value": "688"
-      },
-      {
-        "rank": 8,
-        "id": "101135",
-        "name": "David Lee",
-        "team": "NYK",
-        "value": "686"
-      },
-      {
-        "rank": 9,
-        "id": "201565",
-        "name": "Derrick Rose",
-        "team": "CHI",
-        "value": "672"
-      },
-      {
-        "rank": 10,
-        "id": "2216",
-        "name": "Zach Randolph",
-        "team": "MEM",
-        "value": "652"
-      }
-    ]
-  },
-  {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1461,6 +1480,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

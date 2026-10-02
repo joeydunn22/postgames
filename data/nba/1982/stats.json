@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -83,6 +84,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -158,6 +160,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -240,6 +243,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -322,6 +326,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -425,6 +430,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -500,6 +506,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -575,6 +582,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -650,6 +658,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -724,382 +733,84 @@
     ]
   },
   {
-    "label": "Total Points",
+    "label": "Field Goals Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
         "id": "76804",
         "name": "George Gervin",
         "team": "SAS",
-        "value": "2551"
+        "value": "993"
       },
       {
         "rank": 2,
         "id": "77449",
         "name": "Moses Malone",
         "team": "HOU",
-        "value": "2520"
+        "value": "945"
       },
       {
         "rank": 3,
         "id": "76504",
         "name": "Adrian Dantley",
         "team": "UTA",
-        "value": "2457"
+        "value": "904"
       },
       {
         "rank": 4,
         "id": "76673",
         "name": "Alex English",
         "team": "DEN",
-        "value": "2082"
+        "value": "855"
       },
       {
         "rank": 5,
         "id": "76681",
         "name": "Julius Erving",
         "team": "PHI",
-        "value": "1974"
+        "value": "780"
       },
       {
         "rank": 6,
         "id": "78549",
         "name": "Gus Williams",
         "team": "SEA",
-        "value": "1875"
+        "value": "773"
       },
       {
         "rank": 7,
-        "id": "77097",
-        "name": "Dan Issel",
-        "team": "DEN",
-        "value": "1852"
+        "id": "76003",
+        "name": "Kareem Abdul-Jabbar",
+        "team": "LAL",
+        "value": "753"
       },
       {
         "rank": 8,
+        "id": "78532",
+        "name": "Jamaal Wilkes",
+        "team": "LAL",
+        "value": "744"
+      },
+      {
+        "rank": 9,
         "id": "77264",
         "name": "Bernard King",
         "team": "GSW",
-        "value": "1833"
-      },
-      {
-        "rank": 9,
-        "id": "76003",
-        "name": "Kareem Abdul-Jabbar",
-        "team": "LAL",
-        "value": "1818"
+        "value": "740"
       },
       {
         "rank": 10,
-        "id": "76753",
-        "name": "World Free",
-        "team": "GSW",
-        "value": "1789"
-      }
-    ]
-  },
-  {
-    "label": "Total Rebounds",
-    "players": [
-      {
-        "rank": 1,
-        "id": "77449",
-        "name": "Moses Malone",
-        "team": "HOU",
-        "value": "1188"
-      },
-      {
-        "rank": 2,
-        "id": "78149",
-        "name": "Jack Sikma",
-        "team": "SEA",
-        "value": "1038"
-      },
-      {
-        "rank": 3,
-        "id": "433",
-        "name": "Buck Williams",
-        "team": "NJN",
-        "value": "1005"
-      },
-      {
-        "rank": 4,
-        "id": "78331",
-        "name": "Mychal Thompson",
-        "team": "POR",
-        "value": "921"
-      },
-      {
-        "rank": 5,
-        "id": "77420",
-        "name": "Maurice Lucas",
-        "team": "NYK",
-        "value": "903"
-      },
-      {
-        "rank": 6,
-        "id": "305",
-        "name": "Robert Parish",
-        "team": "BOS",
-        "value": "866"
-      },
-      {
-        "rank": 7,
-        "id": "1449",
-        "name": "Larry Bird",
-        "team": "BOS",
-        "value": "837"
-      },
-      {
-        "rank": 8,
-        "id": "600014",
-        "name": "Artis Gilmore",
-        "team": "CHI",
-        "value": "835"
-      },
-      {
-        "rank": 9,
-        "id": "78195",
-        "name": "Larry Smith",
-        "team": "GSW",
-        "value": "813"
-      },
-      {
-        "rank": 10,
-        "id": "76881",
-        "name": "David Greenwood",
-        "team": "CHI",
-        "value": "786"
-      }
-    ]
-  },
-  {
-    "label": "Total Assists",
-    "players": [
-      {
-        "rank": 1,
-        "id": "77633",
-        "name": "Johnny Moore",
-        "team": "SAS",
-        "value": "762"
-      },
-      {
-        "rank": 2,
-        "id": "77142",
-        "name": "Magic Johnson",
-        "team": "LAL",
-        "value": "743"
-      },
-      {
-        "rank": 3,
-        "id": "76385",
-        "name": "Maurice Cheeks",
-        "team": "PHI",
-        "value": "667"
-      },
-      {
-        "rank": 4,
-        "id": "77721",
-        "name": "Norm Nixon",
-        "team": "LAL",
-        "value": "652"
-      },
-      {
-        "rank": 5,
-        "id": "76874",
-        "name": "Rickey Green",
-        "team": "UTA",
-        "value": "630"
-      },
-      {
-        "rank": 6,
-        "id": "77087",
-        "name": "Geoff Huston",
-        "team": "CLE",
-        "value": "590"
-      },
-      {
-        "rank": 7,
-        "id": "77952",
-        "name": "Micheal Ray Richardson",
-        "team": "NYK",
-        "value": "572"
-      },
-      {
-        "rank": 8,
-        "id": "78318",
-        "name": "Isiah Thomas",
-        "team": "DET",
-        "value": "565"
-      },
-      {
-        "rank": 9,
-        "id": "77911",
-        "name": "Kelvin Ransey",
-        "team": "POR",
-        "value": "555"
-      },
-      {
-        "rank": 10,
-        "id": "77419",
-        "name": "John Lucas",
-        "team": "WAS",
-        "value": "551"
-      }
-    ]
-  },
-  {
-    "label": "Total Steals",
-    "players": [
-      {
-        "rank": 1,
-        "id": "77952",
-        "name": "Micheal Ray Richardson",
-        "team": "NYK",
-        "value": "213"
-      },
-      {
-        "rank": 2,
-        "id": "76385",
-        "name": "Maurice Cheeks",
-        "team": "PHI",
-        "value": "209"
-      },
-      {
-        "rank": 3,
-        "id": "77142",
-        "name": "Magic Johnson",
-        "team": "LAL",
-        "value": "208"
-      },
-      {
-        "rank": 4,
-        "id": "78571",
-        "name": "Ray Williams",
-        "team": "NJN",
-        "value": "199"
-      },
-      {
-        "rank": 5,
-        "id": "76874",
-        "name": "Rickey Green",
-        "team": "UTA",
-        "value": "185"
-      },
-      {
-        "rank": 6,
-        "id": "76296",
-        "name": "Quinn Buckner",
-        "team": "MIL",
-        "value": "174"
-      },
-      {
-        "rank": 7,
-        "id": "78549",
-        "name": "Gus Williams",
-        "team": "SEA",
-        "value": "172"
-      },
-      {
-        "rank": 8,
-        "id": "76317",
-        "name": "Don Buse",
-        "team": "IND",
-        "value": "164"
-      },
-      {
-        "rank": 9,
-        "id": "77633",
-        "name": "Johnny Moore",
-        "team": "SAS",
-        "value": "163"
-      },
-      {
-        "rank": 10,
-        "id": "76681",
-        "name": "Julius Erving",
-        "team": "PHI",
-        "value": "161"
-      }
-    ]
-  },
-  {
-    "label": "Total Blocks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "77149",
-        "name": "George Johnson",
-        "team": "SAS",
-        "value": "234"
-      },
-      {
-        "rank": 2,
-        "id": "78014",
-        "name": "Tree Rollins",
-        "team": "ATL",
-        "value": "224"
-      },
-      {
-        "rank": 3,
-        "id": "600014",
-        "name": "Artis Gilmore",
-        "team": "CHI",
-        "value": "220"
-      },
-      {
-        "rank": 4,
-        "id": "76003",
-        "name": "Kareem Abdul-Jabbar",
-        "team": "LAL",
-        "value": "207"
-      },
-      {
-        "rank": 5,
-        "id": "305",
-        "name": "Robert Parish",
-        "team": "BOS",
-        "value": "192"
-      },
-      {
-        "rank": 6,
-        "id": "1450",
-        "name": "Kevin McHale",
-        "team": "BOS",
-        "value": "185"
-      },
-      {
-        "rank": 7,
-        "id": "1006",
-        "name": "Herb Williams",
-        "team": "IND",
-        "value": "178"
-      },
-      {
-        "rank": 8,
-        "id": "78390",
-        "name": "Terry Tyler",
-        "team": "DET",
-        "value": "160"
-      },
-      {
-        "rank": 9,
-        "id": "77175",
-        "name": "Caldwell Jones",
-        "team": "PHI",
-        "value": "146"
-      },
-      {
-        "rank": 10,
-        "id": "76681",
-        "name": "Julius Erving",
-        "team": "PHI",
-        "value": "141"
+        "id": "78418",
+        "name": "Jay Vincent",
+        "team": "DAL",
+        "value": "719"
       }
     ]
   },
   {
     "label": "3-Pointers Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1189,6 +900,7 @@
   },
   {
     "label": "Free Throws Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1263,82 +975,388 @@
     ]
   },
   {
-    "label": "Field Goals Made",
+    "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
         "id": "76804",
         "name": "George Gervin",
         "team": "SAS",
-        "value": "993"
+        "value": "2551"
       },
       {
         "rank": 2,
         "id": "77449",
         "name": "Moses Malone",
         "team": "HOU",
-        "value": "945"
+        "value": "2520"
       },
       {
         "rank": 3,
         "id": "76504",
         "name": "Adrian Dantley",
         "team": "UTA",
-        "value": "904"
+        "value": "2457"
       },
       {
         "rank": 4,
         "id": "76673",
         "name": "Alex English",
         "team": "DEN",
-        "value": "855"
+        "value": "2082"
       },
       {
         "rank": 5,
         "id": "76681",
         "name": "Julius Erving",
         "team": "PHI",
-        "value": "780"
+        "value": "1974"
       },
       {
         "rank": 6,
         "id": "78549",
         "name": "Gus Williams",
         "team": "SEA",
-        "value": "773"
+        "value": "1875"
       },
       {
         "rank": 7,
-        "id": "76003",
-        "name": "Kareem Abdul-Jabbar",
-        "team": "LAL",
-        "value": "753"
+        "id": "77097",
+        "name": "Dan Issel",
+        "team": "DEN",
+        "value": "1852"
       },
       {
         "rank": 8,
-        "id": "78532",
-        "name": "Jamaal Wilkes",
-        "team": "LAL",
-        "value": "744"
-      },
-      {
-        "rank": 9,
         "id": "77264",
         "name": "Bernard King",
         "team": "GSW",
-        "value": "740"
+        "value": "1833"
+      },
+      {
+        "rank": 9,
+        "id": "76003",
+        "name": "Kareem Abdul-Jabbar",
+        "team": "LAL",
+        "value": "1818"
       },
       {
         "rank": 10,
-        "id": "78418",
-        "name": "Jay Vincent",
-        "team": "DAL",
-        "value": "719"
+        "id": "76753",
+        "name": "World Free",
+        "team": "GSW",
+        "value": "1789"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "77449",
+        "name": "Moses Malone",
+        "team": "HOU",
+        "value": "1188"
+      },
+      {
+        "rank": 2,
+        "id": "78149",
+        "name": "Jack Sikma",
+        "team": "SEA",
+        "value": "1038"
+      },
+      {
+        "rank": 3,
+        "id": "433",
+        "name": "Buck Williams",
+        "team": "NJN",
+        "value": "1005"
+      },
+      {
+        "rank": 4,
+        "id": "78331",
+        "name": "Mychal Thompson",
+        "team": "POR",
+        "value": "921"
+      },
+      {
+        "rank": 5,
+        "id": "77420",
+        "name": "Maurice Lucas",
+        "team": "NYK",
+        "value": "903"
+      },
+      {
+        "rank": 6,
+        "id": "305",
+        "name": "Robert Parish",
+        "team": "BOS",
+        "value": "866"
+      },
+      {
+        "rank": 7,
+        "id": "1449",
+        "name": "Larry Bird",
+        "team": "BOS",
+        "value": "837"
+      },
+      {
+        "rank": 8,
+        "id": "600014",
+        "name": "Artis Gilmore",
+        "team": "CHI",
+        "value": "835"
+      },
+      {
+        "rank": 9,
+        "id": "78195",
+        "name": "Larry Smith",
+        "team": "GSW",
+        "value": "813"
+      },
+      {
+        "rank": 10,
+        "id": "76881",
+        "name": "David Greenwood",
+        "team": "CHI",
+        "value": "786"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "77633",
+        "name": "Johnny Moore",
+        "team": "SAS",
+        "value": "762"
+      },
+      {
+        "rank": 2,
+        "id": "77142",
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "743"
+      },
+      {
+        "rank": 3,
+        "id": "76385",
+        "name": "Maurice Cheeks",
+        "team": "PHI",
+        "value": "667"
+      },
+      {
+        "rank": 4,
+        "id": "77721",
+        "name": "Norm Nixon",
+        "team": "LAL",
+        "value": "652"
+      },
+      {
+        "rank": 5,
+        "id": "76874",
+        "name": "Rickey Green",
+        "team": "UTA",
+        "value": "630"
+      },
+      {
+        "rank": 6,
+        "id": "77087",
+        "name": "Geoff Huston",
+        "team": "CLE",
+        "value": "590"
+      },
+      {
+        "rank": 7,
+        "id": "77952",
+        "name": "Micheal Ray Richardson",
+        "team": "NYK",
+        "value": "572"
+      },
+      {
+        "rank": 8,
+        "id": "78318",
+        "name": "Isiah Thomas",
+        "team": "DET",
+        "value": "565"
+      },
+      {
+        "rank": 9,
+        "id": "77911",
+        "name": "Kelvin Ransey",
+        "team": "POR",
+        "value": "555"
+      },
+      {
+        "rank": 10,
+        "id": "77419",
+        "name": "John Lucas",
+        "team": "WAS",
+        "value": "551"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "77952",
+        "name": "Micheal Ray Richardson",
+        "team": "NYK",
+        "value": "213"
+      },
+      {
+        "rank": 2,
+        "id": "76385",
+        "name": "Maurice Cheeks",
+        "team": "PHI",
+        "value": "209"
+      },
+      {
+        "rank": 3,
+        "id": "77142",
+        "name": "Magic Johnson",
+        "team": "LAL",
+        "value": "208"
+      },
+      {
+        "rank": 4,
+        "id": "78571",
+        "name": "Ray Williams",
+        "team": "NJN",
+        "value": "199"
+      },
+      {
+        "rank": 5,
+        "id": "76874",
+        "name": "Rickey Green",
+        "team": "UTA",
+        "value": "185"
+      },
+      {
+        "rank": 6,
+        "id": "76296",
+        "name": "Quinn Buckner",
+        "team": "MIL",
+        "value": "174"
+      },
+      {
+        "rank": 7,
+        "id": "78549",
+        "name": "Gus Williams",
+        "team": "SEA",
+        "value": "172"
+      },
+      {
+        "rank": 8,
+        "id": "76317",
+        "name": "Don Buse",
+        "team": "IND",
+        "value": "164"
+      },
+      {
+        "rank": 9,
+        "id": "77633",
+        "name": "Johnny Moore",
+        "team": "SAS",
+        "value": "163"
+      },
+      {
+        "rank": 10,
+        "id": "76681",
+        "name": "Julius Erving",
+        "team": "PHI",
+        "value": "161"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "77149",
+        "name": "George Johnson",
+        "team": "SAS",
+        "value": "234"
+      },
+      {
+        "rank": 2,
+        "id": "78014",
+        "name": "Tree Rollins",
+        "team": "ATL",
+        "value": "224"
+      },
+      {
+        "rank": 3,
+        "id": "600014",
+        "name": "Artis Gilmore",
+        "team": "CHI",
+        "value": "220"
+      },
+      {
+        "rank": 4,
+        "id": "76003",
+        "name": "Kareem Abdul-Jabbar",
+        "team": "LAL",
+        "value": "207"
+      },
+      {
+        "rank": 5,
+        "id": "305",
+        "name": "Robert Parish",
+        "team": "BOS",
+        "value": "192"
+      },
+      {
+        "rank": 6,
+        "id": "1450",
+        "name": "Kevin McHale",
+        "team": "BOS",
+        "value": "185"
+      },
+      {
+        "rank": 7,
+        "id": "1006",
+        "name": "Herb Williams",
+        "team": "IND",
+        "value": "178"
+      },
+      {
+        "rank": 8,
+        "id": "78390",
+        "name": "Terry Tyler",
+        "team": "DET",
+        "value": "160"
+      },
+      {
+        "rank": 9,
+        "id": "77175",
+        "name": "Caldwell Jones",
+        "team": "PHI",
+        "value": "146"
+      },
+      {
+        "rank": 10,
+        "id": "76681",
+        "name": "Julius Erving",
+        "team": "PHI",
+        "value": "141"
       }
     ]
   },
   {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1414,6 +1432,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

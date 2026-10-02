@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -76,6 +77,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -151,6 +153,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -226,6 +229,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -301,6 +305,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -376,6 +381,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -458,6 +464,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -533,6 +540,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -608,6 +616,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -683,6 +692,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -757,382 +767,84 @@
     ]
   },
   {
-    "label": "Total Points",
+    "label": "Field Goals Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
         "id": "2548",
         "name": "Dwyane Wade",
         "team": "MIA",
-        "value": "2386"
+        "value": "854"
       },
       {
         "rank": 2,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "2304"
-      },
-      {
-        "rank": 3,
         "id": "977",
         "name": "Kobe Bryant",
         "team": "LAL",
-        "value": "2201"
+        "value": "800"
+      },
+      {
+        "rank": 3,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "789"
       },
       {
         "rank": 4,
         "id": "1717",
         "name": "Dirk Nowitzki",
         "team": "DAL",
-        "value": "2094"
+        "value": "774"
       },
       {
         "rank": 5,
-        "id": "201142",
-        "name": "Kevin Durant",
-        "team": "OKC",
-        "value": "1871"
-      },
-      {
-        "rank": 6,
         "id": "1712",
         "name": "Antawn Jamison",
         "team": "WAS",
-        "value": "1801"
+        "value": "674"
+      },
+      {
+        "rank": 6,
+        "id": "201142",
+        "name": "Kevin Durant",
+        "team": "OKC",
+        "value": "661"
       },
       {
         "rank": 7,
-        "id": "101108",
-        "name": "Chris Paul",
-        "team": "NOH",
-        "value": "1781"
+        "id": "2225",
+        "name": "Tony Parker",
+        "team": "SAS",
+        "value": "639"
       },
       {
         "rank": 8,
         "id": "200750",
         "name": "Brandon Roy",
         "team": "POR",
-        "value": "1765"
+        "value": "633"
       },
       {
         "rank": 9,
-        "id": "2547",
-        "name": "Chris Bosh",
-        "team": "TOR",
-        "value": "1746"
-      },
-      {
-        "rank": 10,
-        "id": "101122",
-        "name": "Danny Granger",
-        "team": "IND",
-        "value": "1728"
-      }
-    ]
-  },
-  {
-    "label": "Total Rebounds",
-    "players": [
-      {
-        "rank": 1,
-        "id": "2730",
-        "name": "Dwight Howard",
-        "team": "ORL",
-        "value": "1093"
-      },
-      {
-        "rank": 2,
-        "id": "101135",
-        "name": "David Lee",
-        "team": "NYK",
-        "value": "951"
-      },
-      {
-        "rank": 3,
-        "id": "2211",
-        "name": "Troy Murphy",
-        "team": "IND",
-        "value": "861"
-      },
-      {
-        "rank": 4,
-        "id": "2731",
-        "name": "Emeka Okafor",
-        "team": "CHA",
-        "value": "827"
-      },
-      {
-        "rank": 5,
-        "id": "1495",
-        "name": "Tim Duncan",
-        "team": "SAS",
-        "value": "800"
-      },
-      {
-        "rank": 6,
-        "id": "2200",
-        "name": "Pau Gasol",
-        "team": "LAL",
-        "value": "780"
-      },
-      {
-        "rank": 7,
-        "id": "2547",
-        "name": "Chris Bosh",
-        "team": "TOR",
-        "value": "771"
-      },
-      {
-        "rank": 8,
-        "id": "2397",
-        "name": "Yao Ming",
-        "team": "HOU",
-        "value": "761"
-      },
-      {
-        "rank": 9,
-        "id": "201567",
-        "name": "Kevin Love",
-        "team": "MIN",
-        "value": "734"
-      },
-      {
-        "rank": 10,
-        "id": "1712",
-        "name": "Antawn Jamison",
-        "team": "WAS",
-        "value": "721"
-      }
-    ]
-  },
-  {
-    "label": "Total Assists",
-    "players": [
-      {
-        "rank": 1,
         "id": "101108",
         "name": "Chris Paul",
         "team": "NOH",
-        "value": "861"
-      },
-      {
-        "rank": 2,
-        "id": "101114",
-        "name": "Deron Williams",
-        "team": "UTA",
-        "value": "725"
-      },
-      {
-        "rank": 3,
-        "id": "959",
-        "name": "Steve Nash",
-        "team": "PHX",
-        "value": "717"
-      },
-      {
-        "rank": 4,
-        "id": "467",
-        "name": "Jason Kidd",
-        "team": "DAL",
-        "value": "702"
-      },
-      {
-        "rank": 5,
-        "id": "200765",
-        "name": "Rajon Rondo",
-        "team": "BOS",
-        "value": "659"
-      },
-      {
-        "rank": 6,
-        "id": "101181",
-        "name": "Jose Calderon",
-        "team": "TOR",
-        "value": "607"
-      },
-      {
-        "rank": 7,
-        "id": "2548",
-        "name": "Dwyane Wade",
-        "team": "MIA",
-        "value": "589"
-      },
-      {
-        "rank": 8,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "587"
-      },
-      {
-        "rank": 9,
-        "id": "2768",
-        "name": "Chris Duhon",
-        "team": "NYK",
-        "value": "566"
+        "value": "631"
       },
       {
         "rank": 10,
-        "id": "101109",
-        "name": "Raymond Felton",
-        "team": "CHA",
-        "value": "553"
-      }
-    ]
-  },
-  {
-    "label": "Total Steals",
-    "players": [
-      {
-        "rank": 1,
-        "id": "101108",
-        "name": "Chris Paul",
-        "team": "NOH",
-        "value": "216"
-      },
-      {
-        "rank": 2,
-        "id": "2548",
-        "name": "Dwyane Wade",
-        "team": "MIA",
-        "value": "173"
-      },
-      {
-        "rank": 3,
-        "id": "467",
-        "name": "Jason Kidd",
-        "team": "DAL",
-        "value": "160"
-      },
-      {
-        "rank": 3,
-        "id": "201596",
-        "name": "Mario Chalmers",
-        "team": "MIA",
-        "value": "160"
-      },
-      {
-        "rank": 5,
-        "id": "200765",
-        "name": "Rajon Rondo",
-        "team": "BOS",
-        "value": "149"
-      },
-      {
-        "rank": 6,
-        "id": "200758",
-        "name": "Ronnie Brewer",
-        "team": "UTA",
-        "value": "138"
-      },
-      {
-        "rank": 7,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "CLE",
-        "value": "137"
-      },
-      {
-        "rank": 7,
-        "id": "2772",
-        "name": "Trevor Ariza",
-        "team": "LAL",
-        "value": "137"
-      },
-      {
-        "rank": 9,
-        "id": "2738",
-        "name": "Andre Iguodala",
-        "team": "PHI",
-        "value": "131"
-      },
-      {
-        "rank": 10,
-        "id": "101109",
-        "name": "Raymond Felton",
-        "team": "CHA",
-        "value": "126"
-      }
-    ]
-  },
-  {
-    "label": "Total Blocks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "2730",
-        "name": "Dwight Howard",
-        "team": "ORL",
-        "value": "231"
-      },
-      {
-        "rank": 2,
-        "id": "2365",
-        "name": "Chris Andersen",
-        "team": "DEN",
-        "value": "175"
-      },
-      {
-        "rank": 3,
-        "id": "101142",
-        "name": "Ronny Turiaf",
-        "team": "GSW",
-        "value": "168"
-      },
-      {
-        "rank": 4,
-        "id": "201572",
-        "name": "Brook Lopez",
-        "team": "NJN",
-        "value": "151"
-      },
-      {
-        "rank": 4,
-        "id": "200748",
-        "name": "Tyrus Thomas",
-        "team": "CHI",
-        "value": "151"
-      },
-      {
-        "rank": 6,
-        "id": "2570",
-        "name": "Kendrick Perkins",
-        "team": "BOS",
-        "value": "150"
-      },
-      {
-        "rank": 6,
-        "id": "2397",
-        "name": "Yao Ming",
-        "team": "HOU",
-        "value": "150"
-      },
-      {
-        "rank": 8,
-        "id": "2223",
-        "name": "Samuel Dalembert",
-        "team": "PHI",
-        "value": "146"
-      },
-      {
-        "rank": 9,
-        "id": "2731",
-        "name": "Emeka Okafor",
-        "team": "CHA",
-        "value": "136"
-      },
-      {
-        "rank": 9,
-        "id": "979",
-        "name": "Jermaine O'Neal",
-        "team": "MIA",
-        "value": "136"
+        "id": "2207",
+        "name": "Joe Johnson",
+        "team": "ATL",
+        "value": "620"
       }
     ]
   },
   {
     "label": "3-Pointers Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1208,6 +920,7 @@
   },
   {
     "label": "Free Throws Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1282,82 +995,388 @@
     ]
   },
   {
-    "label": "Field Goals Made",
+    "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
         "id": "2548",
         "name": "Dwyane Wade",
         "team": "MIA",
-        "value": "854"
+        "value": "2386"
       },
       {
         "rank": 2,
-        "id": "977",
-        "name": "Kobe Bryant",
-        "team": "LAL",
-        "value": "800"
-      },
-      {
-        "rank": 3,
         "id": "2544",
         "name": "LeBron James",
         "team": "CLE",
-        "value": "789"
+        "value": "2304"
+      },
+      {
+        "rank": 3,
+        "id": "977",
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "2201"
       },
       {
         "rank": 4,
         "id": "1717",
         "name": "Dirk Nowitzki",
         "team": "DAL",
-        "value": "774"
+        "value": "2094"
       },
       {
         "rank": 5,
-        "id": "1712",
-        "name": "Antawn Jamison",
-        "team": "WAS",
-        "value": "674"
-      },
-      {
-        "rank": 6,
         "id": "201142",
         "name": "Kevin Durant",
         "team": "OKC",
-        "value": "661"
+        "value": "1871"
+      },
+      {
+        "rank": 6,
+        "id": "1712",
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "1801"
       },
       {
         "rank": 7,
-        "id": "2225",
-        "name": "Tony Parker",
-        "team": "SAS",
-        "value": "639"
+        "id": "101108",
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "1781"
       },
       {
         "rank": 8,
         "id": "200750",
         "name": "Brandon Roy",
         "team": "POR",
-        "value": "633"
+        "value": "1765"
       },
       {
         "rank": 9,
-        "id": "101108",
-        "name": "Chris Paul",
-        "team": "NOH",
-        "value": "631"
+        "id": "2547",
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "1746"
       },
       {
         "rank": 10,
-        "id": "2207",
-        "name": "Joe Johnson",
-        "team": "ATL",
-        "value": "620"
+        "id": "101122",
+        "name": "Danny Granger",
+        "team": "IND",
+        "value": "1728"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "2730",
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "1093"
+      },
+      {
+        "rank": 2,
+        "id": "101135",
+        "name": "David Lee",
+        "team": "NYK",
+        "value": "951"
+      },
+      {
+        "rank": 3,
+        "id": "2211",
+        "name": "Troy Murphy",
+        "team": "IND",
+        "value": "861"
+      },
+      {
+        "rank": 4,
+        "id": "2731",
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "827"
+      },
+      {
+        "rank": 5,
+        "id": "1495",
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "800"
+      },
+      {
+        "rank": 6,
+        "id": "2200",
+        "name": "Pau Gasol",
+        "team": "LAL",
+        "value": "780"
+      },
+      {
+        "rank": 7,
+        "id": "2547",
+        "name": "Chris Bosh",
+        "team": "TOR",
+        "value": "771"
+      },
+      {
+        "rank": 8,
+        "id": "2397",
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "761"
+      },
+      {
+        "rank": 9,
+        "id": "201567",
+        "name": "Kevin Love",
+        "team": "MIN",
+        "value": "734"
+      },
+      {
+        "rank": 10,
+        "id": "1712",
+        "name": "Antawn Jamison",
+        "team": "WAS",
+        "value": "721"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "101108",
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "861"
+      },
+      {
+        "rank": 2,
+        "id": "101114",
+        "name": "Deron Williams",
+        "team": "UTA",
+        "value": "725"
+      },
+      {
+        "rank": 3,
+        "id": "959",
+        "name": "Steve Nash",
+        "team": "PHX",
+        "value": "717"
+      },
+      {
+        "rank": 4,
+        "id": "467",
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "702"
+      },
+      {
+        "rank": 5,
+        "id": "200765",
+        "name": "Rajon Rondo",
+        "team": "BOS",
+        "value": "659"
+      },
+      {
+        "rank": 6,
+        "id": "101181",
+        "name": "Jose Calderon",
+        "team": "TOR",
+        "value": "607"
+      },
+      {
+        "rank": 7,
+        "id": "2548",
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "589"
+      },
+      {
+        "rank": 8,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "587"
+      },
+      {
+        "rank": 9,
+        "id": "2768",
+        "name": "Chris Duhon",
+        "team": "NYK",
+        "value": "566"
+      },
+      {
+        "rank": 10,
+        "id": "101109",
+        "name": "Raymond Felton",
+        "team": "CHA",
+        "value": "553"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "101108",
+        "name": "Chris Paul",
+        "team": "NOH",
+        "value": "216"
+      },
+      {
+        "rank": 2,
+        "id": "2548",
+        "name": "Dwyane Wade",
+        "team": "MIA",
+        "value": "173"
+      },
+      {
+        "rank": 3,
+        "id": "467",
+        "name": "Jason Kidd",
+        "team": "DAL",
+        "value": "160"
+      },
+      {
+        "rank": 3,
+        "id": "201596",
+        "name": "Mario Chalmers",
+        "team": "MIA",
+        "value": "160"
+      },
+      {
+        "rank": 5,
+        "id": "200765",
+        "name": "Rajon Rondo",
+        "team": "BOS",
+        "value": "149"
+      },
+      {
+        "rank": 6,
+        "id": "200758",
+        "name": "Ronnie Brewer",
+        "team": "UTA",
+        "value": "138"
+      },
+      {
+        "rank": 7,
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "CLE",
+        "value": "137"
+      },
+      {
+        "rank": 7,
+        "id": "2772",
+        "name": "Trevor Ariza",
+        "team": "LAL",
+        "value": "137"
+      },
+      {
+        "rank": 9,
+        "id": "2738",
+        "name": "Andre Iguodala",
+        "team": "PHI",
+        "value": "131"
+      },
+      {
+        "rank": 10,
+        "id": "101109",
+        "name": "Raymond Felton",
+        "team": "CHA",
+        "value": "126"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "2730",
+        "name": "Dwight Howard",
+        "team": "ORL",
+        "value": "231"
+      },
+      {
+        "rank": 2,
+        "id": "2365",
+        "name": "Chris Andersen",
+        "team": "DEN",
+        "value": "175"
+      },
+      {
+        "rank": 3,
+        "id": "101142",
+        "name": "Ronny Turiaf",
+        "team": "GSW",
+        "value": "168"
+      },
+      {
+        "rank": 4,
+        "id": "201572",
+        "name": "Brook Lopez",
+        "team": "NJN",
+        "value": "151"
+      },
+      {
+        "rank": 4,
+        "id": "200748",
+        "name": "Tyrus Thomas",
+        "team": "CHI",
+        "value": "151"
+      },
+      {
+        "rank": 6,
+        "id": "2570",
+        "name": "Kendrick Perkins",
+        "team": "BOS",
+        "value": "150"
+      },
+      {
+        "rank": 6,
+        "id": "2397",
+        "name": "Yao Ming",
+        "team": "HOU",
+        "value": "150"
+      },
+      {
+        "rank": 8,
+        "id": "2223",
+        "name": "Samuel Dalembert",
+        "team": "PHI",
+        "value": "146"
+      },
+      {
+        "rank": 9,
+        "id": "2731",
+        "name": "Emeka Okafor",
+        "team": "CHA",
+        "value": "136"
+      },
+      {
+        "rank": 9,
+        "id": "979",
+        "name": "Jermaine O'Neal",
+        "team": "MIA",
+        "value": "136"
       }
     ]
   },
   {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1433,6 +1452,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

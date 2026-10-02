@@ -415,10 +415,26 @@
 }
 
 .guess-option-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-left: auto;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 15px;
     white-space: nowrap;
+}
+
+.guess-option-meta .team-tag {
+    font-size: 14px;
+}
+
+.guess-option-pos {
+    min-width: 2.2em;
+    font-weight: 600;
+}
+
+.guess-option:disabled .team-tag {
+    opacity: 0.4;
 }
 
 .guess-option:disabled {
@@ -555,10 +571,21 @@
 .slot-team {
     flex-shrink: 0;
     font-size: 12px;
+}
+
+/* Team code in the team's color (set as --team by teamTag) */
+.team-tag {
+    padding: 2px 7px;
+    border-radius: 6px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
+}
+
+.team-tag.has-color {
+    color: var(--team);
+    background: color-mix(in srgb, var(--team) 16%, transparent);
 }
 
 .slot-name {
@@ -620,6 +647,10 @@
 .slot.missed .slot-name,
 .slot.missed .slot-value {
     color: var(--faint);
+}
+
+.slot.missed .team-tag {
+    background: none;
 }
 
 

@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -83,6 +84,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -158,6 +160,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -233,6 +236,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -308,6 +312,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -390,6 +395,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -472,6 +478,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -547,6 +554,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -629,6 +637,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -704,6 +713,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -785,171 +795,22 @@
     ]
   },
   {
-    "label": "Total Points",
+    "label": "Field Goals Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
-        "id": "1718",
-        "name": "Paul Pierce",
-        "team": "BOS",
-        "value": "2144"
-      },
-      {
-        "rank": 2,
         "id": "1495",
         "name": "Tim Duncan",
         "team": "SAS",
-        "value": "2089"
+        "value": "764"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "id": "977",
         "name": "Kobe Bryant",
         "team": "LAL",
-        "value": "2019"
-      },
-      {
-        "rank": 4,
-        "id": "1503",
-        "name": "Tracy McGrady",
-        "team": "ORL",
-        "value": "1948"
-      },
-      {
-        "rank": 5,
-        "id": "947",
-        "name": "Allen Iverson",
-        "team": "PHI",
-        "value": "1883"
-      },
-      {
-        "rank": 6,
-        "id": "406",
-        "name": "Shaquille O'Neal",
-        "team": "LAL",
-        "value": "1822"
-      },
-      {
-        "rank": 7,
-        "id": "56",
-        "name": "Gary Payton",
-        "team": "SEA",
-        "value": "1815"
-      },
-      {
-        "rank": 8,
-        "id": "952",
-        "name": "Antoine Walker",
-        "team": "BOS",
-        "value": "1794"
-      },
-      {
-        "rank": 9,
-        "id": "252",
-        "name": "Karl Malone",
-        "team": "UTA",
-        "value": "1788"
-      },
-      {
-        "rank": 10,
-        "id": "1717",
-        "name": "Dirk Nowitzki",
-        "team": "DAL",
-        "value": "1779"
-      }
-    ]
-  },
-  {
-    "label": "Total Rebounds",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1495",
-        "name": "Tim Duncan",
-        "team": "SAS",
-        "value": "1042"
-      },
-      {
-        "rank": 2,
-        "id": "1112",
-        "name": "Ben Wallace",
-        "team": "DET",
-        "value": "1039"
-      },
-      {
-        "rank": 3,
-        "id": "708",
-        "name": "Kevin Garnett",
-        "team": "MIN",
-        "value": "981"
-      },
-      {
-        "rank": 4,
-        "id": "1882",
-        "name": "Elton Brand",
-        "team": "LAC",
-        "value": "925"
-      },
-      {
-        "rank": 5,
-        "id": "1504",
-        "name": "Danny Fortson",
-        "team": "GSW",
-        "value": "899"
-      },
-      {
-        "rank": 6,
-        "id": "87",
-        "name": "Dikembe Mutombo",
-        "team": "PHI",
-        "value": "863"
-      },
-      {
-        "rank": 7,
-        "id": "1890",
-        "name": "Shawn Marion",
-        "team": "PHX",
-        "value": "803"
-      },
-      {
-        "rank": 8,
-        "id": "136",
-        "name": "P.J. Brown",
-        "team": "CHH",
-        "value": "786"
-      },
-      {
-        "rank": 9,
-        "id": "979",
-        "name": "Jermaine O'Neal",
-        "team": "IND",
-        "value": "757"
-      },
-      {
-        "rank": 10,
-        "id": "1717",
-        "name": "Dirk Nowitzki",
-        "team": "DAL",
-        "value": "755"
-      }
-    ]
-  },
-  {
-    "label": "Total Assists",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1889",
-        "name": "Andre Miller",
-        "team": "CLE",
-        "value": "882"
-      },
-      {
-        "rank": 2,
-        "id": "467",
-        "name": "Jason Kidd",
-        "team": "NJN",
-        "value": "808"
+        "value": "749"
       },
       {
         "rank": 3,
@@ -960,207 +821,58 @@
       },
       {
         "rank": 4,
-        "id": "1884",
-        "name": "Baron Davis",
-        "team": "CHH",
-        "value": "698"
-      },
-      {
-        "rank": 5,
-        "id": "304",
-        "name": "John Stockton",
-        "team": "UTA",
-        "value": "674"
-      },
-      {
-        "rank": 6,
-        "id": "950",
-        "name": "Stephon Marbury",
-        "team": "PHX",
-        "value": "666"
-      },
-      {
-        "rank": 7,
-        "id": "2224",
-        "name": "Jamaal Tinsley",
-        "team": "IND",
-        "value": "647"
-      },
-      {
-        "rank": 8,
-        "id": "959",
-        "name": "Steve Nash",
-        "team": "DAL",
-        "value": "634"
-      },
-      {
-        "rank": 9,
-        "id": "349",
-        "name": "Mark Jackson",
-        "team": "NYK",
-        "value": "605"
-      },
-      {
-        "rank": 10,
-        "id": "1715",
-        "name": "Jason Williams",
-        "team": "MEM",
-        "value": "519"
-      }
-    ]
-  },
-  {
-    "label": "Total Steals",
-    "players": [
-      {
-        "rank": 1,
-        "id": "467",
-        "name": "Jason Kidd",
-        "team": "NJN",
-        "value": "175"
-      },
-      {
-        "rank": 2,
-        "id": "1884",
-        "name": "Baron Davis",
-        "team": "CHH",
-        "value": "172"
-      },
-      {
-        "rank": 3,
-        "id": "947",
-        "name": "Allen Iverson",
-        "team": "PHI",
-        "value": "168"
-      },
-      {
-        "rank": 4,
-        "id": "57",
-        "name": "Doug Christie",
-        "team": "SAC",
-        "value": "160"
-      },
-      {
-        "rank": 5,
-        "id": "353",
-        "name": "Darrell Armstrong",
+        "id": "1503",
+        "name": "Tracy McGrady",
         "team": "ORL",
-        "value": "157"
+        "value": "715"
+      },
+      {
+        "rank": 5,
+        "id": "406",
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "712"
       },
       {
         "rank": 6,
         "id": "1718",
         "name": "Paul Pierce",
         "team": "BOS",
-        "value": "154"
+        "value": "707"
       },
       {
         "rank": 7,
-        "id": "304",
-        "name": "John Stockton",
-        "team": "UTA",
-        "value": "152"
-      },
-      {
-        "rank": 7,
-        "id": "252",
-        "name": "Karl Malone",
-        "team": "UTA",
-        "value": "152"
-      },
-      {
-        "rank": 9,
-        "id": "1890",
-        "name": "Shawn Marion",
-        "team": "PHX",
-        "value": "149"
-      },
-      {
-        "rank": 10,
-        "id": "699",
-        "name": "Brent Barry",
-        "team": "SEA",
-        "value": "147"
-      }
-    ]
-  },
-  {
-    "label": "Total Blocks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1112",
-        "name": "Ben Wallace",
-        "team": "DET",
-        "value": "278"
-      },
-      {
-        "rank": 2,
-        "id": "1711",
-        "name": "Raef LaFrentz",
-        "team": "DAL",
-        "value": "213"
-      },
-      {
-        "rank": 3,
-        "id": "1495",
-        "name": "Tim Duncan",
-        "team": "SAS",
-        "value": "203"
-      },
-      {
-        "rank": 4,
-        "id": "87",
-        "name": "Dikembe Mutombo",
-        "team": "PHI",
-        "value": "190"
-      },
-      {
-        "rank": 5,
-        "id": "297",
-        "name": "Alonzo Mourning",
-        "team": "MIA",
-        "value": "186"
-      },
-      {
-        "rank": 6,
-        "id": "2200",
-        "name": "Pau Gasol",
-        "team": "MEM",
-        "value": "169"
-      },
-      {
-        "rank": 7,
-        "id": "1502",
-        "name": "Adonal Foyle",
-        "team": "GSW",
-        "value": "168"
+        "id": "952",
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "666"
       },
       {
         "rank": 8,
-        "id": "956",
-        "name": "Erick Dampier",
-        "team": "GSW",
-        "value": "167"
+        "id": "947",
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "665"
       },
       {
         "rank": 9,
-        "id": "979",
-        "name": "Jermaine O'Neal",
-        "team": "IND",
-        "value": "166"
+        "id": "147",
+        "name": "Jalen Rose",
+        "team": "CHI",
+        "value": "663"
       },
       {
         "rank": 10,
-        "id": "1882",
-        "name": "Elton Brand",
-        "team": "LAC",
-        "value": "163"
+        "id": "708",
+        "name": "Kevin Garnett",
+        "team": "MIN",
+        "value": "659"
       }
     ]
   },
   {
     "label": "3-Pointers Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1243,6 +955,7 @@
   },
   {
     "label": "Free Throws Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1317,21 +1030,174 @@
     ]
   },
   {
-    "label": "Field Goals Made",
+    "label": "Total Points",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1718",
+        "name": "Paul Pierce",
+        "team": "BOS",
+        "value": "2144"
+      },
+      {
+        "rank": 2,
+        "id": "1495",
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "2089"
+      },
+      {
+        "rank": 3,
+        "id": "977",
+        "name": "Kobe Bryant",
+        "team": "LAL",
+        "value": "2019"
+      },
+      {
+        "rank": 4,
+        "id": "1503",
+        "name": "Tracy McGrady",
+        "team": "ORL",
+        "value": "1948"
+      },
+      {
+        "rank": 5,
+        "id": "947",
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "1883"
+      },
+      {
+        "rank": 6,
+        "id": "406",
+        "name": "Shaquille O'Neal",
+        "team": "LAL",
+        "value": "1822"
+      },
+      {
+        "rank": 7,
+        "id": "56",
+        "name": "Gary Payton",
+        "team": "SEA",
+        "value": "1815"
+      },
+      {
+        "rank": 8,
+        "id": "952",
+        "name": "Antoine Walker",
+        "team": "BOS",
+        "value": "1794"
+      },
+      {
+        "rank": 9,
+        "id": "252",
+        "name": "Karl Malone",
+        "team": "UTA",
+        "value": "1788"
+      },
+      {
+        "rank": 10,
+        "id": "1717",
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "1779"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
         "id": "1495",
         "name": "Tim Duncan",
         "team": "SAS",
-        "value": "764"
+        "value": "1042"
       },
       {
         "rank": 2,
-        "id": "977",
-        "name": "Kobe Bryant",
-        "team": "LAL",
-        "value": "749"
+        "id": "1112",
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "1039"
+      },
+      {
+        "rank": 3,
+        "id": "708",
+        "name": "Kevin Garnett",
+        "team": "MIN",
+        "value": "981"
+      },
+      {
+        "rank": 4,
+        "id": "1882",
+        "name": "Elton Brand",
+        "team": "LAC",
+        "value": "925"
+      },
+      {
+        "rank": 5,
+        "id": "1504",
+        "name": "Danny Fortson",
+        "team": "GSW",
+        "value": "899"
+      },
+      {
+        "rank": 6,
+        "id": "87",
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "863"
+      },
+      {
+        "rank": 7,
+        "id": "1890",
+        "name": "Shawn Marion",
+        "team": "PHX",
+        "value": "803"
+      },
+      {
+        "rank": 8,
+        "id": "136",
+        "name": "P.J. Brown",
+        "team": "CHH",
+        "value": "786"
+      },
+      {
+        "rank": 9,
+        "id": "979",
+        "name": "Jermaine O'Neal",
+        "team": "IND",
+        "value": "757"
+      },
+      {
+        "rank": 10,
+        "id": "1717",
+        "name": "Dirk Nowitzki",
+        "team": "DAL",
+        "value": "755"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1889",
+        "name": "Andre Miller",
+        "team": "CLE",
+        "value": "882"
+      },
+      {
+        "rank": 2,
+        "id": "467",
+        "name": "Jason Kidd",
+        "team": "NJN",
+        "value": "808"
       },
       {
         "rank": 3,
@@ -1342,57 +1208,210 @@
       },
       {
         "rank": 4,
-        "id": "1503",
-        "name": "Tracy McGrady",
-        "team": "ORL",
-        "value": "715"
+        "id": "1884",
+        "name": "Baron Davis",
+        "team": "CHH",
+        "value": "698"
       },
       {
         "rank": 5,
-        "id": "406",
-        "name": "Shaquille O'Neal",
-        "team": "LAL",
-        "value": "712"
+        "id": "304",
+        "name": "John Stockton",
+        "team": "UTA",
+        "value": "674"
+      },
+      {
+        "rank": 6,
+        "id": "950",
+        "name": "Stephon Marbury",
+        "team": "PHX",
+        "value": "666"
+      },
+      {
+        "rank": 7,
+        "id": "2224",
+        "name": "Jamaal Tinsley",
+        "team": "IND",
+        "value": "647"
+      },
+      {
+        "rank": 8,
+        "id": "959",
+        "name": "Steve Nash",
+        "team": "DAL",
+        "value": "634"
+      },
+      {
+        "rank": 9,
+        "id": "349",
+        "name": "Mark Jackson",
+        "team": "NYK",
+        "value": "605"
+      },
+      {
+        "rank": 10,
+        "id": "1715",
+        "name": "Jason Williams",
+        "team": "MEM",
+        "value": "519"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "467",
+        "name": "Jason Kidd",
+        "team": "NJN",
+        "value": "175"
+      },
+      {
+        "rank": 2,
+        "id": "1884",
+        "name": "Baron Davis",
+        "team": "CHH",
+        "value": "172"
+      },
+      {
+        "rank": 3,
+        "id": "947",
+        "name": "Allen Iverson",
+        "team": "PHI",
+        "value": "168"
+      },
+      {
+        "rank": 4,
+        "id": "57",
+        "name": "Doug Christie",
+        "team": "SAC",
+        "value": "160"
+      },
+      {
+        "rank": 5,
+        "id": "353",
+        "name": "Darrell Armstrong",
+        "team": "ORL",
+        "value": "157"
       },
       {
         "rank": 6,
         "id": "1718",
         "name": "Paul Pierce",
         "team": "BOS",
-        "value": "707"
+        "value": "154"
       },
       {
         "rank": 7,
-        "id": "952",
-        "name": "Antoine Walker",
-        "team": "BOS",
-        "value": "666"
+        "id": "304",
+        "name": "John Stockton",
+        "team": "UTA",
+        "value": "152"
       },
       {
-        "rank": 8,
-        "id": "947",
-        "name": "Allen Iverson",
-        "team": "PHI",
-        "value": "665"
+        "rank": 7,
+        "id": "252",
+        "name": "Karl Malone",
+        "team": "UTA",
+        "value": "152"
       },
       {
         "rank": 9,
-        "id": "147",
-        "name": "Jalen Rose",
-        "team": "CHI",
-        "value": "663"
+        "id": "1890",
+        "name": "Shawn Marion",
+        "team": "PHX",
+        "value": "149"
       },
       {
         "rank": 10,
-        "id": "708",
-        "name": "Kevin Garnett",
-        "team": "MIN",
-        "value": "659"
+        "id": "699",
+        "name": "Brent Barry",
+        "team": "SEA",
+        "value": "147"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1112",
+        "name": "Ben Wallace",
+        "team": "DET",
+        "value": "278"
+      },
+      {
+        "rank": 2,
+        "id": "1711",
+        "name": "Raef LaFrentz",
+        "team": "DAL",
+        "value": "213"
+      },
+      {
+        "rank": 3,
+        "id": "1495",
+        "name": "Tim Duncan",
+        "team": "SAS",
+        "value": "203"
+      },
+      {
+        "rank": 4,
+        "id": "87",
+        "name": "Dikembe Mutombo",
+        "team": "PHI",
+        "value": "190"
+      },
+      {
+        "rank": 5,
+        "id": "297",
+        "name": "Alonzo Mourning",
+        "team": "MIA",
+        "value": "186"
+      },
+      {
+        "rank": 6,
+        "id": "2200",
+        "name": "Pau Gasol",
+        "team": "MEM",
+        "value": "169"
+      },
+      {
+        "rank": 7,
+        "id": "1502",
+        "name": "Adonal Foyle",
+        "team": "GSW",
+        "value": "168"
+      },
+      {
+        "rank": 8,
+        "id": "956",
+        "name": "Erick Dampier",
+        "team": "GSW",
+        "value": "167"
+      },
+      {
+        "rank": 9,
+        "id": "979",
+        "name": "Jermaine O'Neal",
+        "team": "IND",
+        "value": "166"
+      },
+      {
+        "rank": 10,
+        "id": "1882",
+        "name": "Elton Brand",
+        "team": "LAC",
+        "value": "163"
       }
     ]
   },
   {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1468,6 +1487,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,

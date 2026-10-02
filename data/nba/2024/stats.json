@@ -1,6 +1,7 @@
 [
   {
     "label": "Points per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -76,6 +77,7 @@
   },
   {
     "label": "Rebounds per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -158,6 +160,7 @@
   },
   {
     "label": "Assists per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -233,6 +236,7 @@
   },
   {
     "label": "Steals per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -329,6 +333,7 @@
   },
   {
     "label": "Blocks per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -404,6 +409,7 @@
   },
   {
     "label": "3-Pointers Made per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -500,6 +506,7 @@
   },
   {
     "label": "Minutes per Game",
+    "group": "Per Game",
     "players": [
       {
         "rank": 1,
@@ -589,6 +596,7 @@
   },
   {
     "label": "Field Goal %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -664,6 +672,7 @@
   },
   {
     "label": "3-Point %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -739,6 +748,7 @@
   },
   {
     "label": "Free Throw %",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -813,382 +823,84 @@
     ]
   },
   {
-    "label": "Total Points",
+    "label": "Field Goals Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
-        "id": "1629029",
-        "name": "Luka Dončić",
-        "team": "DAL",
-        "value": "2370"
-      },
-      {
-        "rank": 2,
-        "id": "1628983",
-        "name": "Shai Gilgeous-Alexander",
-        "team": "OKC",
-        "value": "2254"
-      },
-      {
-        "rank": 3,
         "id": "203507",
         "name": "Giannis Antetokounmpo",
         "team": "MIL",
-        "value": "2222"
-      },
-      {
-        "rank": 4,
-        "id": "1628973",
-        "name": "Jalen Brunson",
-        "team": "NYK",
-        "value": "2212"
-      },
-      {
-        "rank": 5,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "2085"
-      },
-      {
-        "rank": 6,
-        "id": "1630162",
-        "name": "Anthony Edwards",
-        "team": "MIN",
-        "value": "2049"
-      },
-      {
-        "rank": 7,
-        "id": "201142",
-        "name": "Kevin Durant",
-        "team": "PHX",
-        "value": "2032"
-      },
-      {
-        "rank": 8,
-        "id": "1628369",
-        "name": "Jayson Tatum",
-        "team": "BOS",
-        "value": "1987"
-      },
-      {
-        "rank": 9,
-        "id": "1628368",
-        "name": "De'Aaron Fox",
-        "team": "SAC",
-        "value": "1966"
-      },
-      {
-        "rank": 10,
-        "id": "201939",
-        "name": "Stephen Curry",
-        "team": "GSW",
-        "value": "1956"
-      }
-    ]
-  },
-  {
-    "label": "Total Rebounds",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1627734",
-        "name": "Domantas Sabonis",
-        "team": "SAC",
-        "value": "1120"
-      },
-      {
-        "rank": 2,
-        "id": "203497",
-        "name": "Rudy Gobert",
-        "team": "MIN",
-        "value": "982"
-      },
-      {
-        "rank": 3,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "976"
-      },
-      {
-        "rank": 4,
-        "id": "203076",
-        "name": "Anthony Davis",
-        "team": "LAL",
-        "value": "961"
-      },
-      {
-        "rank": 5,
-        "id": "203507",
-        "name": "Giannis Antetokounmpo",
-        "team": "MIL",
-        "value": "841"
-      },
-      {
-        "rank": 6,
-        "id": "203994",
-        "name": "Jusuf Nurkić",
-        "team": "PHX",
         "value": "837"
       },
       {
-        "rank": 7,
-        "id": "1628386",
-        "name": "Jarrett Allen",
-        "team": "CLE",
-        "value": "811"
-      },
-      {
-        "rank": 8,
-        "id": "202696",
-        "name": "Nikola Vučević",
-        "team": "CHI",
-        "value": "801"
-      },
-      {
-        "rank": 9,
-        "id": "203991",
-        "name": "Clint Capela",
-        "team": "ATL",
-        "value": "776"
-      },
-      {
-        "rank": 10,
-        "id": "1641705",
-        "name": "Victor Wembanyama",
-        "team": "SAS",
-        "value": "755"
-      }
-    ]
-  },
-  {
-    "label": "Total Assists",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1630169",
-        "name": "Tyrese Haliburton",
-        "team": "IND",
-        "value": "752"
-      },
-      {
         "rank": 2,
         "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
-        "value": "708"
+        "value": "822"
       },
       {
         "rank": 3,
         "id": "1629029",
         "name": "Luka Dončić",
         "team": "DAL",
-        "value": "686"
+        "value": "804"
       },
       {
         "rank": 4,
-        "id": "1627734",
-        "name": "Domantas Sabonis",
-        "team": "SAC",
-        "value": "673"
-      },
-      {
-        "rank": 5,
-        "id": "201935",
-        "name": "James Harden",
-        "team": "LAC",
-        "value": "614"
-      },
-      {
-        "rank": 6,
-        "id": "1627832",
-        "name": "Fred VanVleet",
-        "team": "HOU",
-        "value": "589"
-      },
-      {
-        "rank": 6,
-        "id": "2544",
-        "name": "LeBron James",
-        "team": "LAL",
-        "value": "589"
-      },
-      {
-        "rank": 8,
-        "id": "1629027",
-        "name": "Trae Young",
-        "team": "ATL",
-        "value": "583"
-      },
-      {
-        "rank": 9,
-        "id": "1628973",
-        "name": "Jalen Brunson",
-        "team": "NYK",
-        "value": "519"
-      },
-      {
-        "rank": 10,
-        "id": "203081",
-        "name": "Damian Lillard",
-        "team": "MIL",
-        "value": "508"
-      }
-    ]
-  },
-  {
-    "label": "Total Steals",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1628368",
-        "name": "De'Aaron Fox",
-        "team": "SAC",
-        "value": "150"
-      },
-      {
-        "rank": 1,
         "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
-        "value": "150"
-      },
-      {
-        "rank": 3,
-        "id": "1627936",
-        "name": "Alex Caruso",
-        "team": "CHI",
-        "value": "120"
-      },
-      {
-        "rank": 4,
-        "id": "1629680",
-        "name": "Matisse Thybulle",
-        "team": "POR",
-        "value": "113"
-      },
-      {
-        "rank": 4,
-        "id": "202331",
-        "name": "Paul George",
-        "team": "LAC",
-        "value": "113"
-      },
-      {
-        "rank": 6,
-        "id": "1627749",
-        "name": "Dejounte Murray",
-        "team": "ATL",
-        "value": "111"
-      },
-      {
-        "rank": 6,
-        "id": "202695",
-        "name": "Kawhi Leonard",
-        "team": "LAC",
-        "value": "111"
-      },
-      {
-        "rank": 8,
-        "id": "203999",
-        "name": "Nikola Jokić",
-        "team": "DEN",
-        "value": "108"
-      },
-      {
-        "rank": 9,
-        "id": "1628978",
-        "name": "Donte DiVincenzo",
-        "team": "NYK",
-        "value": "107"
-      },
-      {
-        "rank": 10,
-        "id": "1630591",
-        "name": "Jalen Suggs",
-        "team": "ORL",
-        "value": "106"
-      }
-    ]
-  },
-  {
-    "label": "Total Blocks",
-    "players": [
-      {
-        "rank": 1,
-        "id": "1641705",
-        "name": "Victor Wembanyama",
-        "team": "SAS",
-        "value": "254"
-      },
-      {
-        "rank": 2,
-        "id": "1631096",
-        "name": "Chet Holmgren",
-        "team": "OKC",
-        "value": "190"
-      },
-      {
-        "rank": 3,
-        "id": "201572",
-        "name": "Brook Lopez",
-        "team": "MIL",
-        "value": "189"
-      },
-      {
-        "rank": 4,
-        "id": "203076",
-        "name": "Anthony Davis",
-        "team": "LAL",
-        "value": "178"
+        "value": "796"
       },
       {
         "rank": 5,
-        "id": "203497",
-        "name": "Rudy Gobert",
-        "team": "MIN",
-        "value": "162"
+        "id": "1628973",
+        "name": "Jalen Brunson",
+        "team": "NYK",
+        "value": "790"
       },
       {
         "rank": 6,
-        "id": "1631117",
-        "name": "Walker Kessler",
-        "team": "UTA",
-        "value": "154"
+        "id": "201142",
+        "name": "Kevin Durant",
+        "team": "PHX",
+        "value": "751"
       },
       {
         "rank": 7,
-        "id": "1629655",
-        "name": "Daniel Gafford",
-        "team": "DAL",
-        "value": "153"
+        "id": "1628368",
+        "name": "De'Aaron Fox",
+        "team": "SAC",
+        "value": "720"
       },
       {
         "rank": 8,
-        "id": "1629651",
-        "name": "Nic Claxton",
-        "team": "BKN",
-        "value": "146"
+        "id": "1630162",
+        "name": "Anthony Edwards",
+        "team": "MIN",
+        "value": "718"
       },
       {
         "rank": 9,
-        "id": "1626167",
-        "name": "Myles Turner",
-        "team": "IND",
-        "value": "144"
+        "id": "203076",
+        "name": "Anthony Davis",
+        "team": "LAL",
+        "value": "713"
       },
       {
         "rank": 10,
-        "id": "204001",
-        "name": "Kristaps Porziņģis",
-        "team": "BOS",
-        "value": "111"
+        "id": "2544",
+        "name": "LeBron James",
+        "team": "LAL",
+        "value": "685"
       }
     ]
   },
   {
     "label": "3-Pointers Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1264,6 +976,7 @@
   },
   {
     "label": "Free Throws Made",
+    "group": "Shooting",
     "players": [
       {
         "rank": 1,
@@ -1345,82 +1058,388 @@
     ]
   },
   {
-    "label": "Field Goals Made",
+    "label": "Total Points",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
+        "id": "1629029",
+        "name": "Luka Dončić",
+        "team": "DAL",
+        "value": "2370"
+      },
+      {
+        "rank": 2,
+        "id": "1628983",
+        "name": "Shai Gilgeous-Alexander",
+        "team": "OKC",
+        "value": "2254"
+      },
+      {
+        "rank": 3,
         "id": "203507",
         "name": "Giannis Antetokounmpo",
         "team": "MIL",
+        "value": "2222"
+      },
+      {
+        "rank": 4,
+        "id": "1628973",
+        "name": "Jalen Brunson",
+        "team": "NYK",
+        "value": "2212"
+      },
+      {
+        "rank": 5,
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "2085"
+      },
+      {
+        "rank": 6,
+        "id": "1630162",
+        "name": "Anthony Edwards",
+        "team": "MIN",
+        "value": "2049"
+      },
+      {
+        "rank": 7,
+        "id": "201142",
+        "name": "Kevin Durant",
+        "team": "PHX",
+        "value": "2032"
+      },
+      {
+        "rank": 8,
+        "id": "1628369",
+        "name": "Jayson Tatum",
+        "team": "BOS",
+        "value": "1987"
+      },
+      {
+        "rank": 9,
+        "id": "1628368",
+        "name": "De'Aaron Fox",
+        "team": "SAC",
+        "value": "1966"
+      },
+      {
+        "rank": 10,
+        "id": "201939",
+        "name": "Stephen Curry",
+        "team": "GSW",
+        "value": "1956"
+      }
+    ]
+  },
+  {
+    "label": "Total Rebounds",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1627734",
+        "name": "Domantas Sabonis",
+        "team": "SAC",
+        "value": "1120"
+      },
+      {
+        "rank": 2,
+        "id": "203497",
+        "name": "Rudy Gobert",
+        "team": "MIN",
+        "value": "982"
+      },
+      {
+        "rank": 3,
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "976"
+      },
+      {
+        "rank": 4,
+        "id": "203076",
+        "name": "Anthony Davis",
+        "team": "LAL",
+        "value": "961"
+      },
+      {
+        "rank": 5,
+        "id": "203507",
+        "name": "Giannis Antetokounmpo",
+        "team": "MIL",
+        "value": "841"
+      },
+      {
+        "rank": 6,
+        "id": "203994",
+        "name": "Jusuf Nurkić",
+        "team": "PHX",
         "value": "837"
+      },
+      {
+        "rank": 7,
+        "id": "1628386",
+        "name": "Jarrett Allen",
+        "team": "CLE",
+        "value": "811"
+      },
+      {
+        "rank": 8,
+        "id": "202696",
+        "name": "Nikola Vučević",
+        "team": "CHI",
+        "value": "801"
+      },
+      {
+        "rank": 9,
+        "id": "203991",
+        "name": "Clint Capela",
+        "team": "ATL",
+        "value": "776"
+      },
+      {
+        "rank": 10,
+        "id": "1641705",
+        "name": "Victor Wembanyama",
+        "team": "SAS",
+        "value": "755"
+      }
+    ]
+  },
+  {
+    "label": "Total Assists",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1630169",
+        "name": "Tyrese Haliburton",
+        "team": "IND",
+        "value": "752"
       },
       {
         "rank": 2,
         "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
-        "value": "822"
+        "value": "708"
       },
       {
         "rank": 3,
         "id": "1629029",
         "name": "Luka Dončić",
         "team": "DAL",
-        "value": "804"
+        "value": "686"
       },
       {
         "rank": 4,
-        "id": "1628983",
-        "name": "Shai Gilgeous-Alexander",
-        "team": "OKC",
-        "value": "796"
+        "id": "1627734",
+        "name": "Domantas Sabonis",
+        "team": "SAC",
+        "value": "673"
       },
       {
         "rank": 5,
-        "id": "1628973",
-        "name": "Jalen Brunson",
-        "team": "NYK",
-        "value": "790"
+        "id": "201935",
+        "name": "James Harden",
+        "team": "LAC",
+        "value": "614"
       },
       {
         "rank": 6,
-        "id": "201142",
-        "name": "Kevin Durant",
-        "team": "PHX",
-        "value": "751"
+        "id": "1627832",
+        "name": "Fred VanVleet",
+        "team": "HOU",
+        "value": "589"
       },
       {
-        "rank": 7,
-        "id": "1628368",
-        "name": "De'Aaron Fox",
-        "team": "SAC",
-        "value": "720"
-      },
-      {
-        "rank": 8,
-        "id": "1630162",
-        "name": "Anthony Edwards",
-        "team": "MIN",
-        "value": "718"
-      },
-      {
-        "rank": 9,
-        "id": "203076",
-        "name": "Anthony Davis",
-        "team": "LAL",
-        "value": "713"
-      },
-      {
-        "rank": 10,
+        "rank": 6,
         "id": "2544",
         "name": "LeBron James",
         "team": "LAL",
-        "value": "685"
+        "value": "589"
+      },
+      {
+        "rank": 8,
+        "id": "1629027",
+        "name": "Trae Young",
+        "team": "ATL",
+        "value": "583"
+      },
+      {
+        "rank": 9,
+        "id": "1628973",
+        "name": "Jalen Brunson",
+        "team": "NYK",
+        "value": "519"
+      },
+      {
+        "rank": 10,
+        "id": "203081",
+        "name": "Damian Lillard",
+        "team": "MIL",
+        "value": "508"
+      }
+    ]
+  },
+  {
+    "label": "Total Steals",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1628368",
+        "name": "De'Aaron Fox",
+        "team": "SAC",
+        "value": "150"
+      },
+      {
+        "rank": 1,
+        "id": "1628983",
+        "name": "Shai Gilgeous-Alexander",
+        "team": "OKC",
+        "value": "150"
+      },
+      {
+        "rank": 3,
+        "id": "1627936",
+        "name": "Alex Caruso",
+        "team": "CHI",
+        "value": "120"
+      },
+      {
+        "rank": 4,
+        "id": "1629680",
+        "name": "Matisse Thybulle",
+        "team": "POR",
+        "value": "113"
+      },
+      {
+        "rank": 4,
+        "id": "202331",
+        "name": "Paul George",
+        "team": "LAC",
+        "value": "113"
+      },
+      {
+        "rank": 6,
+        "id": "1627749",
+        "name": "Dejounte Murray",
+        "team": "ATL",
+        "value": "111"
+      },
+      {
+        "rank": 6,
+        "id": "202695",
+        "name": "Kawhi Leonard",
+        "team": "LAC",
+        "value": "111"
+      },
+      {
+        "rank": 8,
+        "id": "203999",
+        "name": "Nikola Jokić",
+        "team": "DEN",
+        "value": "108"
+      },
+      {
+        "rank": 9,
+        "id": "1628978",
+        "name": "Donte DiVincenzo",
+        "team": "NYK",
+        "value": "107"
+      },
+      {
+        "rank": 10,
+        "id": "1630591",
+        "name": "Jalen Suggs",
+        "team": "ORL",
+        "value": "106"
+      }
+    ]
+  },
+  {
+    "label": "Total Blocks",
+    "group": "Season Totals",
+    "players": [
+      {
+        "rank": 1,
+        "id": "1641705",
+        "name": "Victor Wembanyama",
+        "team": "SAS",
+        "value": "254"
+      },
+      {
+        "rank": 2,
+        "id": "1631096",
+        "name": "Chet Holmgren",
+        "team": "OKC",
+        "value": "190"
+      },
+      {
+        "rank": 3,
+        "id": "201572",
+        "name": "Brook Lopez",
+        "team": "MIL",
+        "value": "189"
+      },
+      {
+        "rank": 4,
+        "id": "203076",
+        "name": "Anthony Davis",
+        "team": "LAL",
+        "value": "178"
+      },
+      {
+        "rank": 5,
+        "id": "203497",
+        "name": "Rudy Gobert",
+        "team": "MIN",
+        "value": "162"
+      },
+      {
+        "rank": 6,
+        "id": "1631117",
+        "name": "Walker Kessler",
+        "team": "UTA",
+        "value": "154"
+      },
+      {
+        "rank": 7,
+        "id": "1629655",
+        "name": "Daniel Gafford",
+        "team": "DAL",
+        "value": "153"
+      },
+      {
+        "rank": 8,
+        "id": "1629651",
+        "name": "Nic Claxton",
+        "team": "BKN",
+        "value": "146"
+      },
+      {
+        "rank": 9,
+        "id": "1626167",
+        "name": "Myles Turner",
+        "team": "IND",
+        "value": "144"
+      },
+      {
+        "rank": 10,
+        "id": "204001",
+        "name": "Kristaps Porziņģis",
+        "team": "BOS",
+        "value": "111"
       }
     ]
   },
   {
     "label": "Offensive Rebounds",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
@@ -1496,6 +1515,7 @@
   },
   {
     "label": "Turnovers",
+    "group": "Season Totals",
     "players": [
       {
         "rank": 1,
