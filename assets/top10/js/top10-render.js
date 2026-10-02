@@ -8,6 +8,7 @@
 let _uiReady = false;
 let _lastSeenGuessAt = 0;      // so only brand-new guesses animate
 let _wasMyTurn = false;        // so the guess box gets focus when your turn starts
+let _highlight = -1;           // guess result picked with the arrow keys, -1 = none
 let _yearOptionsKey = null;    // which season list the dropdown currently holds
 let _statOptionsKey = null;    // which stat list the dropdown currently holds
 let _playerPillsKey = null;    // which players the pills currently show
@@ -283,20 +284,20 @@ function renderBoard(listEl, { final = false } = {}) {
         return;
     }
 
-    const guessedBy = Object.fromEntries(game.guessed.map(g => [g.answer, g.by]));
+    const guessedBy = Object.fromEntries(game.guessed.map(g => [g.id, g.by]));
     const nameOf = id => game.players.find(p => p.id === id)?.name;
-    const freshAnswer = !final && isFreshGuess() && game.lastGuess.result === "correct"
-        ? game.lastGuess.answer
+    const freshId = !final && isFreshGuess() && game.lastGuess.result === "correct"
+        ? game.lastGuess.id
         : null;
 
     const slots = stat.players.map(item => {
-        const guessed = item.name in guessedBy;
+        const guessed = item.id in guessedBy;
         const revealed = guessed || final;
-        const classes = ["slot", revealed && "filled", final && !guessed && "missed", item.name === freshAnswer && "fresh"]
+        const classes = ["slot", revealed && "filled", final && !guessed && "missed", item.id === freshId && "fresh"]
             .filter(Boolean).join(" ");
 
         const by = guessed && game.players.length > 1
-            ? `<span class="slot-by">${escapeHTML(nameOf(guessedBy[item.name]))}</span>`
+            ? `<span class="slot-by">${escapeHTML(nameOf(guessedBy[item.id]))}</span>`
             : "";
         const main = revealed
             ? `<span class="slot-line"><span class="slot-name">${escapeHTML(item.name)}</span>` +
@@ -337,6 +338,51 @@ function renderTurnClock() {
     ui.turnBarFill.style.transform = `scaleX(${total ? left / total : 0})`;
 }
 
+// Players matching what's typed: tap one to guess them. Players already
+// on the board are shown but can't be picked.
+function renderGuessResults() {
+    const canGuess = game.state === GAME_STATES.PLAYING && isMyTurn() && !game.roundComplete;
+    const found = canGuess ? searchRoster(ui.guessInput.value) : null;
+
+    ui.guessResults.classList.toggle("hidden", !found);
+    ui.guessInput.setAttribute("aria-expanded", String(!!found));
+    if (!found) {
+        ui.guessResults.innerHTML = "";
+        _highlight = -1;
+        return;
+    }
+
+    if (_highlight >= found.players.length) _highlight = found.players.length - 1;
+
+    const rows = found.players.map((player, idx) => {
+        const meta = [formatTeam(player.team), player.pos].filter(Boolean).join(" · ");
+        return `
+            <li role="option" aria-selected="${idx === _highlight}">
+                <button class="guess-option ${idx === _highlight ? "active" : ""}" type="button"
+                    data-id="${escapeHTML(player.id)}" ${player.found ? "disabled" : ""}>
+                    <span class="guess-option-name">${escapeHTML(player.name)}</span>
+                    <span class="guess-option-meta">${player.found ? "on the board" : escapeHTML(meta)}</span>
+                </button>
+            </li>`;
+    });
+    if (found.players.length === 0) rows.push(`<li class="guess-none">No players match</li>`);
+    if (found.more > 0) rows.push(`<li class="guess-more">… ${found.more} more</li>`);
+    ui.guessResults.innerHTML = rows.join("");
+}
+
+// Results that can be guessed (not already on the board)
+function pickableResults() {
+    return [...ui.guessResults.querySelectorAll(".guess-option:not(:disabled)")];
+}
+
+function pickGuess(playerId) {
+    submitGuess(playerId);
+    ui.guessInput.value = "";
+    _highlight = -1;
+    renderGuessResults();
+    ui.guessInput.focus();
+}
+
 function renderEndGameButton() {
     ui.endGameBtn.disabled = game.roundComplete;
 
@@ -365,8 +411,9 @@ function renderPlaying() {
 
     const canGuess = isMyTurn() && !game.roundComplete;
     ui.guessInput.disabled = !canGuess;
-    ui.guessInput.placeholder = canGuess ? "Name a player" : "Not your turn";
-    ui.guessBtn.disabled = !canGuess;
+    ui.guessInput.placeholder = canGuess ? "Type a player's name" : "Not your turn";
+    if (!canGuess) ui.guessInput.value = "";
+    renderGuessResults();
 
     renderScoreboard();
     renderTurn();
@@ -530,7 +577,7 @@ function findElements() {
         turnBarFill: byId("turnBarFill"),
         guessForm: byId("guessForm"),
         guessInput: byId("guessInput"),
-        guessBtn: byId("guessBtn"),
+        guessResults: byId("guessResults"),
         feedback: byId("guessFeedback"),
         board: byId("board"),
         endGameBtn: byId("endGameBtn"),
@@ -567,11 +614,32 @@ function wireEvents() {
     ui.timerChips.forEach(btn => btn.addEventListener("click", () => selectTimer(Number(btn.dataset.timer))));
 
     ui.startGameBtn.addEventListener("click", startGame);
+    ui.guessInput.addEventListener("input", () => {
+        _highlight = -1;
+        renderGuessResults();
+    });
+    // Arrow keys move through the results; Enter guesses the highlighted
+    // one, or the only one when just one can be picked
+    ui.guessInput.addEventListener("keydown", e => {
+        if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+        e.preventDefault();
+        const count = ui.guessResults.querySelectorAll(".guess-option").length;
+        if (count === 0) return;
+        _highlight = e.key === "ArrowDown" ? (_highlight + 1) % count : (_highlight - 1 + count) % count;
+        renderGuessResults();
+    });
     ui.guessForm.addEventListener("submit", e => {
         e.preventDefault();
-        submitGuess(ui.guessInput.value);
-        ui.guessInput.value = "";
-        ui.guessInput.focus();
+        const highlighted = ui.guessResults.querySelectorAll(".guess-option")[_highlight];
+        const pickable = pickableResults();
+        const choice = highlighted && !highlighted.disabled ? highlighted : pickable.length === 1 ? pickable[0] : null;
+        if (choice) pickGuess(choice.dataset.id);
+    });
+    // Keep the keyboard up while tapping a result
+    ui.guessResults.addEventListener("pointerdown", e => e.preventDefault());
+    ui.guessResults.addEventListener("click", e => {
+        const option = e.target.closest(".guess-option");
+        if (option && !option.disabled) pickGuess(option.dataset.id);
     });
     ui.endGameBtn.addEventListener("click", voteToEndGame);
     ui.newGameBtn.addEventListener("click", newGame);

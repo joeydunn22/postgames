@@ -4,84 +4,98 @@
     "players": [
       {
         "rank": 1,
+        "id": "572228",
         "name": "Luke Voit",
         "team": "NYY",
         "value": "22"
       },
       {
         "rank": 2,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "19"
       },
       {
         "rank": 3,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "18"
       },
       {
         "rank": 4,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "17"
       },
       {
         "rank": 4,
+        "id": "665487",
         "name": "Fernando Tatis Jr.",
         "team": "SD",
         "value": "17"
       },
       {
         "rank": 4,
+        "id": "545361",
         "name": "Mike Trout",
         "team": "LAA",
         "value": "17"
       },
       {
         "rank": 7,
+        "id": "624413",
         "name": "Pete Alonso",
         "team": "NYM",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "605141",
         "name": "Mookie Betts",
         "team": "LAD",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "594777",
         "name": "Kole Calhoun",
         "team": "AZ",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "443558",
         "name": "Nelson Cruz",
         "team": "MIN",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "594807",
         "name": "Adam Duvall",
         "team": "ATL",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "606192",
         "name": "Teoscar Hernández",
         "team": "TOR",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "16"
       },
       {
         "rank": 7,
+        "id": "572041",
         "name": "AJ Pollock",
         "team": "LAD",
         "value": "16"
@@ -93,60 +107,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "518934",
         "name": "DJ LeMahieu",
         "team": "NYY",
         "value": ".364"
       },
       {
         "rank": 2,
+        "id": "665742",
         "name": "Juan Soto",
         "team": "WSH",
         "value": ".351"
       },
       {
         "rank": 3,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": ".341"
       },
       {
         "rank": 4,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": ".338"
       },
       {
         "rank": 5,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": ".335"
       },
       {
         "rank": 6,
+        "id": "456781",
         "name": "Donovan Solano",
         "team": "SF",
         "value": ".326"
       },
       {
         "rank": 7,
+        "id": "641313",
         "name": "Tim Anderson",
         "team": "CWS",
         "value": ".322"
       },
       {
         "rank": 8,
+        "id": "624424",
         "name": "Michael Conforto",
         "team": "NYM",
         "value": ".322"
       },
       {
         "rank": 9,
+        "id": "606132",
         "name": "Raimel Tapia",
         "team": "COL",
         "value": ".321"
       },
       {
         "rank": 10,
+        "id": "664058",
         "name": "David Fletcher",
         "team": "LAA",
         "value": ".319"
@@ -158,84 +182,98 @@
     "players": [
       {
         "rank": 1,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "56"
       },
       {
         "rank": 3,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "53"
       },
       {
         "rank": 4,
+        "id": "572228",
         "name": "Luke Voit",
         "team": "NYY",
         "value": "52"
       },
       {
         "rank": 5,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "47"
       },
       {
         "rank": 6,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "46"
       },
       {
         "rank": 6,
+        "id": "545361",
         "name": "Mike Trout",
         "team": "LAA",
         "value": "46"
       },
       {
         "rank": 8,
+        "id": "665487",
         "name": "Fernando Tatis Jr.",
         "team": "SD",
         "value": "45"
       },
       {
         "rank": 9,
+        "id": "646240",
         "name": "Rafael Devers",
         "team": "BOS",
         "value": "43"
       },
       {
         "rank": 10,
+        "id": "453568",
         "name": "Charlie Blackmon",
         "team": "COL",
         "value": "42"
       },
       {
         "rank": 10,
+        "id": "621566",
         "name": "Matt Olson",
         "team": "OAK",
         "value": "42"
       },
       {
         "rank": 10,
+        "id": "592696",
         "name": "Eddie Rosario",
         "team": "MIN",
         "value": "42"
       },
       {
         "rank": 10,
+        "id": "642086",
         "name": "Dominic Smith",
         "team": "NYM",
         "value": "42"
       },
       {
         "rank": 10,
+        "id": "663656",
         "name": "Kyle Tucker",
         "team": "HOU",
         "value": "42"
@@ -247,60 +285,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "78"
       },
       {
         "rank": 2,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "77"
       },
       {
         "rank": 3,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "76"
       },
       {
         "rank": 4,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "73"
       },
       {
         "rank": 5,
+        "id": "518934",
         "name": "DJ LeMahieu",
         "team": "NYY",
         "value": "71"
       },
       {
         "rank": 6,
+        "id": "593160",
         "name": "Whit Merrifield",
         "team": "KC",
         "value": "70"
       },
       {
         "rank": 7,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "68"
       },
       {
         "rank": 7,
+        "id": "596115",
         "name": "Trevor Story",
         "team": "COL",
         "value": "68"
       },
       {
         "rank": 9,
+        "id": "641313",
         "name": "Tim Anderson",
         "team": "CWS",
         "value": "67"
       },
       {
         "rank": 9,
+        "id": "453568",
         "name": "Charlie Blackmon",
         "team": "COL",
         "value": "67"
@@ -312,60 +360,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "51"
       },
       {
         "rank": 2,
+        "id": "665487",
         "name": "Fernando Tatis Jr.",
         "team": "SD",
         "value": "50"
       },
       {
         "rank": 3,
+        "id": "621020",
         "name": "Dansby Swanson",
         "team": "ATL",
         "value": "49"
       },
       {
         "rank": 4,
+        "id": "605141",
         "name": "Mookie Betts",
         "team": "LAD",
         "value": "47"
       },
       {
         "rank": 5,
+        "id": "660670",
         "name": "Ronald Acuña Jr.",
         "team": "ATL",
         "value": "46"
       },
       {
         "rank": 5,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "46"
       },
       {
         "rank": 7,
+        "id": "641313",
         "name": "Tim Anderson",
         "team": "CWS",
         "value": "45"
       },
       {
         "rank": 7,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "45"
       },
       {
         "rank": 9,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "44"
       },
       {
         "rank": 10,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "43"
@@ -377,78 +435,91 @@
     "players": [
       {
         "rank": 1,
+        "id": "609275",
         "name": "Adalberto Mondesi",
         "team": "KC",
         "value": "24"
       },
       {
         "rank": 2,
+        "id": "542340",
         "name": "Jonathan Villar",
         "team": "2TM",
         "value": "16"
       },
       {
         "rank": 3,
+        "id": "596115",
         "name": "Trevor Story",
         "team": "COL",
         "value": "15"
       },
       {
         "rank": 4,
+        "id": "622534",
         "name": "Manuel Margot",
         "team": "TB",
         "value": "12"
       },
       {
         "rank": 4,
+        "id": "593160",
         "name": "Whit Merrifield",
         "team": "KC",
         "value": "12"
       },
       {
         "rank": 4,
+        "id": "664238",
         "name": "Dylan Moore",
         "team": "SEA",
         "value": "12"
       },
       {
         "rank": 4,
+        "id": "596451",
         "name": "Roman Quinn",
         "team": "PHI",
         "value": "12"
       },
       {
         "rank": 4,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "12"
       },
       {
         "rank": 9,
+        "id": "665487",
         "name": "Fernando Tatis Jr.",
         "team": "SD",
         "value": "11"
       },
       {
         "rank": 10,
+        "id": "605141",
         "name": "Mookie Betts",
         "team": "LAD",
         "value": "10"
       },
       {
         "rank": 10,
+        "id": "663757",
         "name": "Trent Grisham",
         "team": "SD",
         "value": "10"
       },
       {
         "rank": 10,
+        "id": "516782",
         "name": "Starling Marte",
         "team": "2TM",
         "value": "10"
       },
       {
         "rank": 10,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "10"
@@ -460,66 +531,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "23"
       },
       {
         "rank": 2,
+        "id": "642086",
         "name": "Dominic Smith",
         "team": "NYM",
         "value": "21"
       },
       {
         "rank": 3,
+        "id": "514917",
         "name": "César Hernández",
         "team": "CLE",
         "value": "20"
       },
       {
         "rank": 4,
+        "id": "572233",
         "name": "Christian Walker",
         "team": "AZ",
         "value": "18"
       },
       {
         "rank": 5,
+        "id": "578428",
         "name": "Jose Iglesias",
         "team": "BAL",
         "value": "17"
       },
       {
         "rank": 6,
+        "id": "624415",
         "name": "Cavan Biggio",
         "team": "TOR",
         "value": "16"
       },
       {
         "rank": 6,
+        "id": "646240",
         "name": "Rafael Devers",
         "team": "BOS",
         "value": "16"
       },
       {
         "rank": 6,
+        "id": "596748",
         "name": "Maikel Franco",
         "team": "KC",
         "value": "16"
       },
       {
         "rank": 6,
+        "id": "502110",
         "name": "J.D. Martinez",
         "team": "BOS",
         "value": "16"
       },
       {
         "rank": 6,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "16"
       },
       {
         "rank": 6,
+        "id": "657077",
         "name": "Alex Verdugo",
         "team": "BOS",
         "value": "16"
@@ -531,66 +613,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "547180",
         "name": "Bryce Harper",
         "team": "PHI",
         "value": "49"
       },
       {
         "rank": 2,
+        "id": "467793",
         "name": "Carlos Santana",
         "team": "CLE",
         "value": "47"
       },
       {
         "rank": 3,
+        "id": "592885",
         "name": "Christian Yelich",
         "team": "MIL",
         "value": "46"
       },
       {
         "rank": 4,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "45"
       },
       {
         "rank": 5,
+        "id": "624415",
         "name": "Cavan Biggio",
         "team": "TOR",
         "value": "41"
       },
       {
         "rank": 5,
+        "id": "543305",
         "name": "Aaron Hicks",
         "team": "NYY",
         "value": "41"
       },
       {
         "rank": 5,
+        "id": "665742",
         "name": "Juan Soto",
         "team": "WSH",
         "value": "41"
       },
       {
         "rank": 8,
+        "id": "571970",
         "name": "Max Muncy",
         "team": "LAD",
         "value": "39"
       },
       {
         "rank": 9,
+        "id": "660670",
         "name": "Ronald Acuña Jr.",
         "team": "ATL",
         "value": "38"
       },
       {
         "rank": 9,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "38"
       },
       {
         "rank": 9,
+        "id": "543685",
         "name": "Anthony Rendon",
         "team": "LAA",
         "value": "38"
@@ -602,60 +695,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "593934",
         "name": "Miguel Sanó",
         "team": "MIN",
         "value": "90"
       },
       {
         "rank": 2,
+        "id": "669374",
         "name": "Keston Hiura",
         "team": "MIL",
         "value": "85"
       },
       {
         "rank": 3,
+        "id": "657108",
         "name": "Evan White",
         "team": "SEA",
         "value": "84"
       },
       {
         "rank": 4,
+        "id": "608336",
         "name": "Joey Gallo",
         "team": "TEX",
         "value": "79"
       },
       {
         "rank": 5,
+        "id": "621566",
         "name": "Matt Olson",
         "team": "OAK",
         "value": "77"
       },
       {
         "rank": 6,
+        "id": "592885",
         "name": "Christian Yelich",
         "team": "MIL",
         "value": "76"
       },
       {
         "rank": 7,
+        "id": "595879",
         "name": "Javier Báez",
         "team": "CHC",
         "value": "75"
       },
       {
         "rank": 8,
+        "id": "642715",
         "name": "Willy Adames",
         "team": "TB",
         "value": "74"
       },
       {
         "rank": 9,
+        "id": "673357",
         "name": "Luis Robert Jr.",
         "team": "CWS",
         "value": "73"
       },
       {
         "rank": 10,
+        "id": "660162",
         "name": "Yoán Moncada",
         "team": "CWS",
         "value": "72"
@@ -667,60 +770,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "665742",
         "name": "Juan Soto",
         "team": "WSH",
         "value": ".490"
       },
       {
         "rank": 2,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": ".462"
       },
       {
         "rank": 3,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": ".431"
       },
       {
         "rank": 4,
+        "id": "518934",
         "name": "DJ LeMahieu",
         "team": "NYY",
         "value": ".421"
       },
       {
         "rank": 5,
+        "id": "547180",
         "name": "Bryce Harper",
         "team": "PHI",
         "value": ".420"
       },
       {
         "rank": 6,
+        "id": "543685",
         "name": "Anthony Rendon",
         "team": "LAA",
         "value": ".418"
       },
       {
         "rank": 7,
+        "id": "502671",
         "name": "Paul Goldschmidt",
         "team": "STL",
         "value": ".417"
       },
       {
         "rank": 8,
+        "id": "624424",
         "name": "Michael Conforto",
         "team": "NYM",
         "value": ".412"
       },
       {
         "rank": 9,
+        "id": "660670",
         "name": "Ronald Acuña Jr.",
         "team": "ATL",
         "value": ".406"
       },
       {
         "rank": 10,
+        "id": "607043",
         "name": "Brandon Nimmo",
         "team": "NYM",
         "value": ".404"
@@ -732,60 +845,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "665742",
         "name": "Juan Soto",
         "team": "WSH",
         "value": ".695"
       },
       {
         "rank": 2,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": ".640"
       },
       {
         "rank": 3,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": ".636"
       },
       {
         "rank": 4,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": ".617"
       },
       {
         "rank": 5,
+        "id": "642086",
         "name": "Dominic Smith",
         "team": "NYM",
         "value": ".616"
       },
       {
         "rank": 6,
+        "id": "572228",
         "name": "Luke Voit",
         "team": "NYY",
         "value": ".610"
       },
       {
         "rank": 7,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": ".607"
       },
       {
         "rank": 8,
+        "id": "571976",
         "name": "Wil Myers",
         "team": "SD",
         "value": ".606"
       },
       {
         "rank": 9,
+        "id": "545361",
         "name": "Mike Trout",
         "team": "LAA",
         "value": ".603"
       },
       {
         "rank": 10,
+        "id": "443558",
         "name": "Nelson Cruz",
         "team": "MIN",
         "value": ".595"
@@ -797,60 +920,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "665742",
         "name": "Juan Soto",
         "team": "WSH",
         "value": "1.185"
       },
       {
         "rank": 2,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "1.102"
       },
       {
         "rank": 3,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "1.067"
       },
       {
         "rank": 4,
+        "id": "518934",
         "name": "DJ LeMahieu",
         "team": "NYY",
         "value": "1.011"
       },
       {
         "rank": 5,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": ".993"
       },
       {
         "rank": 5,
+        "id": "642086",
         "name": "Dominic Smith",
         "team": "NYM",
         "value": ".993"
       },
       {
         "rank": 5,
+        "id": "545361",
         "name": "Mike Trout",
         "team": "LAA",
         "value": ".993"
       },
       {
         "rank": 8,
+        "id": "443558",
         "name": "Nelson Cruz",
         "team": "MIN",
         "value": ".992"
       },
       {
         "rank": 9,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": ".987"
       },
       {
         "rank": 9,
+        "id": "660670",
         "name": "Ronald Acuña Jr.",
         "team": "ATL",
         "value": ".987"
@@ -862,60 +995,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "148"
       },
       {
         "rank": 2,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "145"
       },
       {
         "rank": 3,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "137"
       },
       {
         "rank": 3,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "137"
       },
       {
         "rank": 5,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "133"
       },
       {
         "rank": 6,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "130"
       },
       {
         "rank": 6,
+        "id": "572228",
         "name": "Luke Voit",
         "team": "NYY",
         "value": "130"
       },
       {
         "rank": 8,
+        "id": "665487",
         "name": "Fernando Tatis Jr.",
         "team": "SD",
         "value": "128"
       },
       {
         "rank": 9,
+        "id": "608369",
         "name": "Corey Seager",
         "team": "LAD",
         "value": "124"
       },
       {
         "rank": 10,
+        "id": "605141",
         "name": "Mookie Betts",
         "team": "LAD",
         "value": "123"
@@ -927,90 +1070,105 @@
     "players": [
       {
         "rank": 1,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "37"
       },
       {
         "rank": 2,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "34"
       },
       {
         "rank": 2,
+        "id": "608070",
         "name": "José Ramírez",
         "team": "CLE",
         "value": "34"
       },
       {
         "rank": 4,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "32"
       },
       {
         "rank": 4,
+        "id": "642086",
         "name": "Dominic Smith",
         "team": "NYM",
         "value": "32"
       },
       {
         "rank": 6,
+        "id": "571976",
         "name": "Wil Myers",
         "team": "SD",
         "value": "31"
       },
       {
         "rank": 6,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "31"
       },
       {
         "rank": 8,
+        "id": "665487",
         "name": "Fernando Tatis Jr.",
         "team": "SD",
         "value": "30"
       },
       {
         "rank": 9,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "29"
       },
       {
         "rank": 10,
+        "id": "646240",
         "name": "Rafael Devers",
         "team": "BOS",
         "value": "28"
       },
       {
         "rank": 10,
+        "id": "650391",
         "name": "Eloy Jiménez",
         "team": "CWS",
         "value": "28"
       },
       {
         "rank": 10,
+        "id": "608369",
         "name": "Corey Seager",
         "team": "LAD",
         "value": "28"
       },
       {
         "rank": 10,
+        "id": "596115",
         "name": "Trevor Story",
         "team": "COL",
         "value": "28"
       },
       {
         "rank": 10,
+        "id": "545361",
         "name": "Mike Trout",
         "team": "LAA",
         "value": "28"
       },
       {
         "rank": 10,
+        "id": "573262",
         "name": "Mike Yastrzemski",
         "team": "SF",
         "value": "28"
@@ -1022,78 +1180,91 @@
     "players": [
       {
         "rank": 1,
+        "id": "575929",
         "name": "Willson Contreras",
         "team": "CHC",
         "value": "14"
       },
       {
         "rank": 2,
+        "id": "657656",
         "name": "Ramón Laureano",
         "team": "OAK",
         "value": "12"
       },
       {
         "rank": 3,
+        "id": "669374",
         "name": "Keston Hiura",
         "team": "MIL",
         "value": "11"
       },
       {
         "rank": 4,
+        "id": "592192",
         "name": "Mark Canha",
         "team": "OAK",
         "value": "10"
       },
       {
         "rank": 4,
+        "id": "519203",
         "name": "Anthony Rizzo",
         "team": "CHC",
         "value": "10"
       },
       {
         "rank": 6,
+        "id": "516782",
         "name": "Starling Marte",
         "team": "2TM",
         "value": "9"
       },
       {
         "rank": 6,
+        "id": "645302",
         "name": "Victor Robles",
         "team": "WSH",
         "value": "9"
       },
       {
         "rank": 8,
+        "id": "664238",
         "name": "Dylan Moore",
         "team": "SEA",
         "value": "8"
       },
       {
         "rank": 9,
+        "id": "624424",
         "name": "Michael Conforto",
         "team": "NYM",
         "value": "7"
       },
       {
         "rank": 9,
+        "id": "605204",
         "name": "J.D. Davis",
         "team": "NYM",
         "value": "7"
       },
       {
         "rank": 9,
+        "id": "572122",
         "name": "Kyle Seager",
         "team": "SEA",
         "value": "7"
       },
       {
         "rank": 9,
+        "id": "647351",
         "name": "Abraham Toro",
         "team": "HOU",
         "value": "7"
       },
       {
         "rank": 9,
+        "id": "457708",
         "name": "Justin Upton",
         "team": "LAA",
         "value": "7"
@@ -1105,66 +1276,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "665742",
         "name": "Juan Soto",
         "team": "WSH",
         "value": "12"
       },
       {
         "rank": 2,
+        "id": "547180",
         "name": "Bryce Harper",
         "team": "PHI",
         "value": "8"
       },
       {
         "rank": 3,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "7"
       },
       {
         "rank": 4,
+        "id": "443558",
         "name": "Nelson Cruz",
         "team": "MIN",
         "value": "5"
       },
       {
         "rank": 5,
+        "id": "624413",
         "name": "Pete Alonso",
         "team": "NYM",
         "value": "4"
       },
       {
         "rank": 5,
+        "id": "605137",
         "name": "Josh Bell",
         "team": "PIT",
         "value": "4"
       },
       {
         "rank": 5,
+        "id": "453568",
         "name": "Charlie Blackmon",
         "team": "COL",
         "value": "4"
       },
       {
         "rank": 5,
+        "id": "500871",
         "name": "Eduardo Escobar",
         "team": "AZ",
         "value": "4"
       },
       {
         "rank": 5,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "4"
       },
       {
         "rank": 5,
+        "id": "519203",
         "name": "Anthony Rizzo",
         "team": "CHC",
         "value": "4"
       },
       {
         "rank": 5,
+        "id": "545361",
         "name": "Mike Trout",
         "team": "LAA",
         "value": "4"
@@ -1176,48 +1358,56 @@
     "players": [
       {
         "rank": 1,
+        "id": "609275",
         "name": "Adalberto Mondesi",
         "team": "KC",
         "value": "8"
       },
       {
         "rank": 2,
+        "id": "643396",
         "name": "Isiah Kiner-Falefa",
         "team": "TEX",
         "value": "5"
       },
       {
         "rank": 2,
+        "id": "670032",
         "name": "Nicky Lopez",
         "team": "KC",
         "value": "5"
       },
       {
         "rank": 2,
+        "id": "664238",
         "name": "Dylan Moore",
         "team": "SEA",
         "value": "5"
       },
       {
         "rank": 2,
+        "id": "542340",
         "name": "Jonathan Villar",
         "team": "2TM",
         "value": "5"
       },
       {
         "rank": 6,
+        "id": "669242",
         "name": "Tommy Edman",
         "team": "STL",
         "value": "4"
       },
       {
         "rank": 6,
+        "id": "622534",
         "name": "Manuel Margot",
         "team": "TB",
         "value": "4"
       },
       {
         "rank": 6,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "4"
@@ -1230,84 +1420,98 @@
     "players": [
       {
         "rank": 1,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "10"
       },
       {
         "rank": 1,
+        "id": "606115",
         "name": "Orlando Arcia",
         "team": "MIL",
         "value": "10"
       },
       {
         "rank": 1,
+        "id": "446334",
         "name": "Evan Longoria",
         "team": "SF",
         "value": "10"
       },
       {
         "rank": 1,
+        "id": "543685",
         "name": "Anthony Rendon",
         "team": "LAA",
         "value": "10"
       },
       {
         "rank": 5,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "9"
       },
       {
         "rank": 5,
+        "id": "592567",
         "name": "Colin Moran",
         "team": "PIT",
         "value": "9"
       },
       {
         "rank": 7,
+        "id": "595879",
         "name": "Javier Báez",
         "team": "CHC",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "443558",
         "name": "Nelson Cruz",
         "team": "MIN",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "605204",
         "name": "J.D. Davis",
         "team": "NYM",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "646240",
         "name": "Rafael Devers",
         "team": "BOS",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "596019",
         "name": "Francisco Lindor",
         "team": "CLE",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "570731",
         "name": "Jonathan Schoop",
         "team": "DET",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "608369",
         "name": "Corey Seager",
         "team": "LAD",
         "value": "8"
       },
       {
         "rank": 7,
+        "id": "518595",
         "name": "Travis d'Arnaud",
         "team": "ATL",
         "value": "8"
@@ -1319,30 +1523,35 @@
     "players": [
       {
         "rank": 1,
+        "id": "572122",
         "name": "Kyle Seager",
         "team": "SEA",
         "value": "6"
       },
       {
         "rank": 2,
+        "id": "453568",
         "name": "Charlie Blackmon",
         "team": "COL",
         "value": "5"
       },
       {
         "rank": 2,
+        "id": "592192",
         "name": "Mark Canha",
         "team": "OAK",
         "value": "5"
       },
       {
         "rank": 2,
+        "id": "493329",
         "name": "Yuli Gurriel",
         "team": "HOU",
         "value": "5"
       },
       {
         "rank": 2,
+        "id": "614177",
         "name": "Franmil Reyes",
         "team": "CLE",
         "value": "5"
@@ -1355,60 +1564,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "267"
       },
       {
         "rank": 2,
+        "id": "596019",
         "name": "Francisco Lindor",
         "team": "CLE",
         "value": "266"
       },
       {
         "rank": 3,
+        "id": "624415",
         "name": "Cavan Biggio",
         "team": "TOR",
         "value": "265"
       },
       {
         "rank": 3,
+        "id": "593160",
         "name": "Whit Merrifield",
         "team": "KC",
         "value": "265"
       },
       {
         "rank": 5,
+        "id": "621020",
         "name": "Dansby Swanson",
         "team": "ATL",
         "value": "264"
       },
       {
         "rank": 6,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "262"
       },
       {
         "rank": 6,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "262"
       },
       {
         "rank": 8,
+        "id": "514917",
         "name": "César Hernández",
         "team": "CLE",
         "value": "261"
       },
       {
         "rank": 9,
+        "id": "596115",
         "name": "Trevor Story",
         "team": "COL",
         "value": "259"
       },
       {
         "rank": 9,
+        "id": "607208",
         "name": "Trea Turner",
         "team": "WSH",
         "value": "259"
@@ -1420,90 +1639,105 @@
     "players": [
       {
         "rank": 1,
+        "id": "516782",
         "name": "Starling Marte",
         "team": "2TM",
         "value": "61"
       },
       {
         "rank": 2,
+        "id": "547989",
         "name": "José Abreu",
         "team": "CWS",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "592206",
         "name": "Nick Castellanos",
         "team": "CIN",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "596748",
         "name": "Maikel Franco",
         "team": "KC",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "518692",
         "name": "Freddie Freeman",
         "team": "ATL",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "544369",
         "name": "Didi Gregorius",
         "team": "PHI",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "665489",
         "name": "Vladimir Guerrero Jr.",
         "team": "TOR",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "596019",
         "name": "Francisco Lindor",
         "team": "CLE",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "592518",
         "name": "Manny Machado",
         "team": "SD",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "593160",
         "name": "Whit Merrifield",
         "team": "KC",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "621566",
         "name": "Matt Olson",
         "team": "OAK",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "542303",
         "name": "Marcell Ozuna",
         "team": "ATL",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "467793",
         "name": "Carlos Santana",
         "team": "CLE",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "572122",
         "name": "Kyle Seager",
         "team": "SEA",
         "value": "60"
       },
       {
         "rank": 2,
+        "id": "621020",
         "name": "Dansby Swanson",
         "team": "ATL",
         "value": "60"

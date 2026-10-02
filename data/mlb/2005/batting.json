@@ -4,60 +4,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "116662",
         "name": "Andruw Jones",
         "team": "ATL",
         "value": "51"
       },
       {
         "rank": 2,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "48"
       },
       {
         "rank": 3,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "47"
       },
       {
         "rank": 4,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "46"
       },
       {
         "rank": 5,
+        "id": "120903",
         "name": "Manny Ramirez",
         "team": "BOS",
         "value": "45"
       },
       {
         "rank": 6,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "43"
       },
       {
         "rank": 7,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "41"
       },
       {
         "rank": 8,
+        "id": "276055",
         "name": "Adam Dunn",
         "team": "CIN",
         "value": "40"
       },
       {
         "rank": 8,
+        "id": "117244",
         "name": "Paul Konerko",
         "team": "CWS",
         "value": "40"
       },
       {
         "rank": 10,
+        "id": "122027",
         "name": "Richie Sexson",
         "team": "SEA",
         "value": "39"
@@ -69,60 +79,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": ".335"
       },
       {
         "rank": 2,
+        "id": "135784",
         "name": "Placido Polanco",
         "team": "2TM",
         "value": ".331"
       },
       {
         "rank": 3,
+        "id": "276545",
         "name": "Michael Young",
         "team": "TEX",
         "value": ".331"
       },
       {
         "rank": 4,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": ".330"
       },
       {
         "rank": 5,
+        "id": "408234",
         "name": "Miguel Cabrera",
         "team": "FLA",
         "value": ".323"
       },
       {
         "rank": 6,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": ".321"
       },
       {
         "rank": 7,
+        "id": "115732",
         "name": "Todd Helton",
         "team": "COL",
         "value": ".320"
       },
       {
         "rank": 8,
+        "id": "115223",
         "name": "Vladimir Guerrero",
         "team": "LAA",
         "value": ".317"
       },
       {
         "rank": 9,
+        "id": "113028",
         "name": "Johnny Damon",
         "team": "BOS",
         "value": ".316"
       },
       {
         "rank": 10,
+        "id": "406878",
         "name": "Brian Roberts",
         "team": "BAL",
         "value": ".314"
@@ -134,60 +154,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "148"
       },
       {
         "rank": 2,
+        "id": "120903",
         "name": "Manny Ramirez",
         "team": "BOS",
         "value": "144"
       },
       {
         "rank": 2,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "144"
       },
       {
         "rank": 4,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "130"
       },
       {
         "rank": 5,
+        "id": "116662",
         "name": "Andruw Jones",
         "team": "ATL",
         "value": "128"
       },
       {
         "rank": 6,
+        "id": "122111",
         "name": "Gary Sheffield",
         "team": "NYY",
         "value": "123"
       },
       {
         "rank": 7,
+        "id": "122027",
         "name": "Richie Sexson",
         "team": "SEA",
         "value": "121"
       },
       {
         "rank": 8,
+        "id": "150100",
         "name": "Pat Burrell",
         "team": "PHI",
         "value": "117"
       },
       {
         "rank": 8,
+        "id": "408305",
         "name": "Jorge Cantu",
         "team": "TB",
         "value": "117"
       },
       {
         "rank": 8,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "117"
@@ -199,72 +229,84 @@
     "players": [
       {
         "rank": 1,
+        "id": "276545",
         "name": "Michael Young",
         "team": "TEX",
         "value": "221"
       },
       {
         "rank": 2,
+        "id": "400085",
         "name": "Ichiro Suzuki",
         "team": "SEA",
         "value": "206"
       },
       {
         "rank": 3,
+        "id": "116539",
         "name": "Derek Jeter",
         "team": "NYY",
         "value": "202"
       },
       {
         "rank": 4,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "199"
       },
       {
         "rank": 4,
+        "id": "123173",
         "name": "Miguel Tejada",
         "team": "BAL",
         "value": "199"
       },
       {
         "rank": 6,
+        "id": "408234",
         "name": "Miguel Cabrera",
         "team": "FLA",
         "value": "198"
       },
       {
         "rank": 7,
+        "id": "113028",
         "name": "Johnny Damon",
         "team": "BOS",
         "value": "197"
       },
       {
         "rank": 8,
+        "id": "276519",
         "name": "Jimmy Rollins",
         "team": "PHI",
         "value": "196"
       },
       {
         "rank": 9,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "195"
       },
       {
         "rank": 10,
+        "id": "408307",
         "name": "Carl Crawford",
         "team": "TB",
         "value": "194"
       },
       {
         "rank": 10,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "194"
       },
       {
         "rank": 10,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "194"
@@ -276,66 +318,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "129"
       },
       {
         "rank": 2,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "124"
       },
       {
         "rank": 3,
+        "id": "116539",
         "name": "Derek Jeter",
         "team": "NYY",
         "value": "122"
       },
       {
         "rank": 4,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "120"
       },
       {
         "rank": 5,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "119"
       },
       {
         "rank": 6,
+        "id": "113028",
         "name": "Johnny Damon",
         "team": "BOS",
         "value": "117"
       },
       {
         "rank": 7,
+        "id": "276519",
         "name": "Jimmy Rollins",
         "team": "PHI",
         "value": "115"
       },
       {
         "rank": 8,
+        "id": "276545",
         "name": "Michael Young",
         "team": "TEX",
         "value": "114"
       },
       {
         "rank": 9,
+        "id": "408210",
         "name": "Chone Figgins",
         "team": "LAA",
         "value": "113"
       },
       {
         "rank": 10,
+        "id": "120903",
         "name": "Manny Ramirez",
         "team": "BOS",
         "value": "112"
       },
       {
         "rank": 10,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "112"
@@ -347,60 +400,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "408210",
         "name": "Chone Figgins",
         "team": "LAA",
         "value": "62"
       },
       {
         "rank": 2,
+        "id": "408314",
         "name": "José Reyes",
         "team": "NYM",
         "value": "60"
       },
       {
         "rank": 3,
+        "id": "325392",
         "name": "Scott Podsednik",
         "team": "CWS",
         "value": "59"
       },
       {
         "rank": 4,
+        "id": "334393",
         "name": "Juan Pierre",
         "team": "FLA",
         "value": "57"
       },
       {
         "rank": 5,
+        "id": "408307",
         "name": "Carl Crawford",
         "team": "TB",
         "value": "46"
       },
       {
         "rank": 5,
+        "id": "279577",
         "name": "Rafael Furcal",
         "team": "ATL",
         "value": "46"
       },
       {
         "rank": 7,
+        "id": "276519",
         "name": "Jimmy Rollins",
         "team": "PHI",
         "value": "41"
       },
       {
         "rank": 8,
+        "id": "150061",
         "name": "Julio Lugo",
         "team": "TB",
         "value": "39"
       },
       {
         "rank": 9,
+        "id": "150472",
         "name": "Ryan Freel",
         "team": "CIN",
         "value": "36"
       },
       {
         "rank": 10,
+        "id": "430838",
         "name": "Willy Taveras",
         "team": "HOU",
         "value": "34"
@@ -412,66 +475,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "50"
       },
       {
         "rank": 1,
+        "id": "123173",
         "name": "Miguel Tejada",
         "team": "BAL",
         "value": "50"
       },
       {
         "rank": 3,
+        "id": "133160",
         "name": "Randy Winn",
         "team": "2TM",
         "value": "47"
       },
       {
         "rank": 4,
+        "id": "279578",
         "name": "Marcus Giles",
         "team": "ATL",
         "value": "45"
       },
       {
         "rank": 4,
+        "id": "115732",
         "name": "Todd Helton",
         "team": "COL",
         "value": "45"
       },
       {
         "rank": 4,
+        "id": "425686",
         "name": "Hideki Matsui",
         "team": "NYY",
         "value": "45"
       },
       {
         "rank": 4,
+        "id": "406878",
         "name": "Brian Roberts",
         "team": "BAL",
         "value": "45"
       },
       {
         "rank": 8,
+        "id": "424726",
         "name": "Jason Bay",
         "team": "PIT",
         "value": "44"
       },
       {
         "rank": 9,
+        "id": "408234",
         "name": "Miguel Cabrera",
         "team": "FLA",
         "value": "43"
       },
       {
         "rank": 9,
+        "id": "120922",
         "name": "Joe Randa",
         "team": "2TM",
         "value": "43"
       },
       {
         "rank": 9,
+        "id": "150093",
         "name": "Alfonso Soriano",
         "team": "TEX",
         "value": "43"
@@ -483,60 +557,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "408314",
         "name": "José Reyes",
         "team": "NYM",
         "value": "17"
       },
       {
         "rank": 2,
+        "id": "408307",
         "name": "Carl Crawford",
         "team": "TB",
         "value": "15"
       },
       {
         "rank": 3,
+        "id": "334393",
         "name": "Juan Pierre",
         "team": "FLA",
         "value": "13"
       },
       {
         "rank": 4,
+        "id": "400085",
         "name": "Ichiro Suzuki",
         "team": "SEA",
         "value": "12"
       },
       {
         "rank": 5,
+        "id": "279577",
         "name": "Rafael Furcal",
         "team": "ATL",
         "value": "11"
       },
       {
         "rank": 5,
+        "id": "276519",
         "name": "Jimmy Rollins",
         "team": "PHI",
         "value": "11"
       },
       {
         "rank": 5,
+        "id": "429713",
         "name": "Grady Sizemore",
         "team": "CLE",
         "value": "11"
       },
       {
         "rank": 8,
+        "id": "408210",
         "name": "Chone Figgins",
         "team": "LAA",
         "value": "10"
       },
       {
         "rank": 8,
+        "id": "150353",
         "name": "Dave Roberts",
         "team": "SD",
         "value": "10"
       },
       {
         "rank": 10,
+        "id": "276346",
         "name": "Brandon Inge",
         "team": "DET",
         "value": "9"
@@ -548,72 +632,84 @@
     "players": [
       {
         "rank": 1,
+        "id": "114789",
         "name": "Brian Giles",
         "team": "SD",
         "value": "119"
       },
       {
         "rank": 2,
+        "id": "110029",
         "name": "Bobby Abreu",
         "team": "PHI",
         "value": "117"
       },
       {
         "rank": 3,
+        "id": "276055",
         "name": "Adam Dunn",
         "team": "CIN",
         "value": "114"
       },
       {
         "rank": 4,
+        "id": "114739",
         "name": "Jason Giambi",
         "team": "NYY",
         "value": "108"
       },
       {
         "rank": 5,
+        "id": "115732",
         "name": "Todd Helton",
         "team": "COL",
         "value": "106"
       },
       {
         "rank": 6,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "102"
       },
       {
         "rank": 7,
+        "id": "150100",
         "name": "Pat Burrell",
         "team": "PHI",
         "value": "99"
       },
       {
         "rank": 8,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "97"
       },
       {
         "rank": 9,
+        "id": "424726",
         "name": "Jason Bay",
         "team": "PIT",
         "value": "95"
       },
       {
         "rank": 10,
+        "id": "204020",
         "name": "Lance Berkman",
         "team": "HOU",
         "value": "91"
       },
       {
         "rank": 10,
+        "id": "113744",
         "name": "Jim Edmonds",
         "team": "STL",
         "value": "91"
       },
       {
         "rank": 10,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "91"
@@ -625,60 +721,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "276055",
         "name": "Adam Dunn",
         "team": "CIN",
         "value": "168"
       },
       {
         "rank": 2,
+        "id": "122027",
         "name": "Richie Sexson",
         "team": "SEA",
         "value": "167"
       },
       {
         "rank": 3,
+        "id": "150100",
         "name": "Pat Burrell",
         "team": "PHI",
         "value": "160"
       },
       {
         "rank": 4,
+        "id": "133343",
         "name": "Preston Wilson",
         "team": "2TM",
         "value": "148"
       },
       {
         "rank": 5,
+        "id": "150415",
         "name": "Brad Wilkerson",
         "team": "WSH",
         "value": "147"
       },
       {
         "rank": 6,
+        "id": "136267",
         "name": "Troy Glaus",
         "team": "AZ",
         "value": "145"
       },
       {
         "rank": 7,
+        "id": "424726",
         "name": "Jason Bay",
         "team": "PIT",
         "value": "142"
       },
       {
         "rank": 8,
+        "id": "276346",
         "name": "Brandon Inge",
         "team": "DET",
         "value": "140"
       },
       {
         "rank": 9,
+        "id": "113744",
         "name": "Jim Edmonds",
         "team": "STL",
         "value": "139"
       },
       {
         "rank": 9,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "139"
@@ -690,60 +796,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "115732",
         "name": "Todd Helton",
         "team": "COL",
         "value": ".445"
       },
       {
         "rank": 2,
+        "id": "114739",
         "name": "Jason Giambi",
         "team": "NYY",
         "value": ".440"
       },
       {
         "rank": 3,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": ".430"
       },
       {
         "rank": 4,
+        "id": "114789",
         "name": "Brian Giles",
         "team": "SD",
         "value": ".423"
       },
       {
         "rank": 5,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": ".421"
       },
       {
         "rank": 6,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": ".418"
       },
       {
         "rank": 7,
+        "id": "204020",
         "name": "Lance Berkman",
         "team": "HOU",
         "value": ".411"
       },
       {
         "rank": 8,
+        "id": "400098",
         "name": "Travis Hafner",
         "team": "CLE",
         "value": ".408"
       },
       {
         "rank": 9,
+        "id": "276376",
         "name": "Nick Johnson",
         "team": "WSH",
         "value": ".408"
       },
       {
         "rank": 10,
+        "id": "110029",
         "name": "Bobby Abreu",
         "team": "PHI",
         "value": ".405"
@@ -755,60 +871,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": ".662"
       },
       {
         "rank": 2,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": ".610"
       },
       {
         "rank": 3,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": ".609"
       },
       {
         "rank": 4,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": ".604"
       },
       {
         "rank": 5,
+        "id": "400098",
         "name": "Travis Hafner",
         "team": "CLE",
         "value": ".595"
       },
       {
         "rank": 6,
+        "id": "120903",
         "name": "Manny Ramirez",
         "team": "BOS",
         "value": ".594"
       },
       {
         "rank": 7,
+        "id": "113232",
         "name": "Carlos Delgado",
         "team": "FLA",
         "value": ".582"
       },
       {
         "rank": 8,
+        "id": "115135",
         "name": "Ken Griffey Jr.",
         "team": "CIN",
         "value": ".576"
       },
       {
         "rank": 9,
+        "id": "116662",
         "name": "Andruw Jones",
         "team": "ATL",
         "value": ".575"
       },
       {
         "rank": 10,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": ".575"
@@ -820,60 +946,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "1.080"
       },
       {
         "rank": 2,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "1.039"
       },
       {
         "rank": 3,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "1.031"
       },
       {
         "rank": 4,
+        "id": "400098",
         "name": "Travis Hafner",
         "team": "CLE",
         "value": "1.003"
       },
       {
         "rank": 5,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "1.001"
       },
       {
         "rank": 6,
+        "id": "120903",
         "name": "Manny Ramirez",
         "team": "BOS",
         "value": ".982"
       },
       {
         "rank": 7,
+        "id": "113232",
         "name": "Carlos Delgado",
         "team": "FLA",
         "value": ".981"
       },
       {
         "rank": 8,
+        "id": "115732",
         "name": "Todd Helton",
         "team": "COL",
         "value": ".979"
       },
       {
         "rank": 9,
+        "id": "114739",
         "name": "Jason Giambi",
         "team": "NYY",
         "value": ".975"
       },
       {
         "rank": 10,
+        "id": "424726",
         "name": "Jason Bay",
         "team": "PIT",
         "value": ".961"
@@ -885,60 +1021,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "393"
       },
       {
         "rank": 2,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "370"
       },
       {
         "rank": 3,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "369"
       },
       {
         "rank": 4,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "363"
       },
       {
         "rank": 5,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "360"
       },
       {
         "rank": 6,
+        "id": "408234",
         "name": "Miguel Cabrera",
         "team": "FLA",
         "value": "344"
       },
       {
         "rank": 7,
+        "id": "276545",
         "name": "Michael Young",
         "team": "TEX",
         "value": "343"
       },
       {
         "rank": 8,
+        "id": "116662",
         "name": "Andruw Jones",
         "team": "ATL",
         "value": "337"
       },
       {
         "rank": 8,
+        "id": "123173",
         "name": "Miguel Tejada",
         "team": "BAL",
         "value": "337"
       },
       {
         "rank": 10,
+        "id": "424726",
         "name": "Jason Bay",
         "team": "PIT",
         "value": "335"
@@ -950,60 +1096,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "99"
       },
       {
         "rank": 2,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "88"
       },
       {
         "rank": 3,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "87"
       },
       {
         "rank": 4,
+        "id": "424726",
         "name": "Jason Bay",
         "team": "PIT",
         "value": "82"
       },
       {
         "rank": 5,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "81"
       },
       {
         "rank": 5,
+        "id": "150093",
         "name": "Alfonso Soriano",
         "team": "TEX",
         "value": "81"
       },
       {
         "rank": 5,
+        "id": "123173",
         "name": "Miguel Tejada",
         "team": "BAL",
         "value": "81"
       },
       {
         "rank": 8,
+        "id": "408234",
         "name": "Miguel Cabrera",
         "team": "FLA",
         "value": "78"
       },
       {
         "rank": 8,
+        "id": "116662",
         "name": "Andruw Jones",
         "team": "ATL",
         "value": "78"
       },
       {
         "rank": 8,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "78"
@@ -1015,72 +1171,84 @@
     "players": [
       {
         "rank": 1,
+        "id": "150167",
         "name": "Shea Hillenbrand",
         "team": "TOR",
         "value": "22"
       },
       {
         "rank": 2,
+        "id": "400023",
         "name": "Aaron Rowand",
         "team": "CWS",
         "value": "21"
       },
       {
         "rank": 3,
+        "id": "116974",
         "name": "Jason Kendall",
         "team": "OAK",
         "value": "20"
       },
       {
         "rank": 4,
+        "id": "114739",
         "name": "Jason Giambi",
         "team": "NYY",
         "value": "19"
       },
       {
         "rank": 4,
+        "id": "115229",
         "name": "Jose Guillen",
         "team": "WSH",
         "value": "19"
       },
       {
         "rank": 4,
+        "id": "132961",
         "name": "Geoff Jenkins",
         "team": "MIL",
         "value": "19"
       },
       {
         "rank": 7,
+        "id": "276054",
         "name": "Brady Clark",
         "team": "MIL",
         "value": "18"
       },
       {
         "rank": 8,
+        "id": "110987",
         "name": "Craig Biggio",
         "team": "HOU",
         "value": "17"
       },
       {
         "rank": 8,
+        "id": "113232",
         "name": "Carlos Delgado",
         "team": "FLA",
         "value": "17"
       },
       {
         "rank": 10,
+        "id": "217915",
         "name": "Lew Ford",
         "team": "MIN",
         "value": "16"
       },
       {
         "rank": 10,
+        "id": "407862",
         "name": "Reed Johnson",
         "team": "TOR",
         "value": "16"
       },
       {
         "rank": 10,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "16"
@@ -1092,72 +1260,84 @@
     "players": [
       {
         "rank": 1,
+        "id": "405395",
         "name": "Albert Pujols",
         "team": "STL",
         "value": "27"
       },
       {
         "rank": 2,
+        "id": "115223",
         "name": "Vladimir Guerrero",
         "team": "LAA",
         "value": "26"
       },
       {
         "rank": 3,
+        "id": "117601",
         "name": "Derrek Lee",
         "team": "CHC",
         "value": "23"
       },
       {
         "rank": 3,
+        "id": "400085",
         "name": "Ichiro Suzuki",
         "team": "SEA",
         "value": "23"
       },
       {
         "rank": 5,
+        "id": "115732",
         "name": "Todd Helton",
         "team": "COL",
         "value": "22"
       },
       {
         "rank": 6,
+        "id": "113232",
         "name": "Carlos Delgado",
         "team": "FLA",
         "value": "20"
       },
       {
         "rank": 7,
+        "id": "110029",
         "name": "Bobby Abreu",
         "team": "PHI",
         "value": "15"
       },
       {
         "rank": 8,
+        "id": "276055",
         "name": "Adam Dunn",
         "team": "CIN",
         "value": "14"
       },
       {
         "rank": 8,
+        "id": "117759",
         "name": "Mike Lieberthal",
         "team": "PHI",
         "value": "14"
       },
       {
         "rank": 10,
+        "id": "114260",
         "name": "Cliff Floyd",
         "team": "NYM",
         "value": "13"
       },
       {
         "rank": 10,
+        "id": "333492",
         "name": "Aubrey Huff",
         "team": "TB",
         "value": "13"
       },
       {
         "rank": 10,
+        "id": "116662",
         "name": "Andruw Jones",
         "team": "ATL",
         "value": "13"
@@ -1169,60 +1349,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "325392",
         "name": "Scott Podsednik",
         "team": "CWS",
         "value": "23"
       },
       {
         "rank": 2,
+        "id": "408210",
         "name": "Chone Figgins",
         "team": "LAA",
         "value": "17"
       },
       {
         "rank": 2,
+        "id": "334393",
         "name": "Juan Pierre",
         "team": "FLA",
         "value": "17"
       },
       {
         "rank": 4,
+        "id": "408314",
         "name": "José Reyes",
         "team": "NYM",
         "value": "15"
       },
       {
         "rank": 5,
+        "id": "276054",
         "name": "Brady Clark",
         "team": "MIL",
         "value": "13"
       },
       {
         "rank": 6,
+        "id": "150353",
         "name": "Dave Roberts",
         "team": "SD",
         "value": "12"
       },
       {
         "rank": 7,
+        "id": "150061",
         "name": "Julio Lugo",
         "team": "TB",
         "value": "11"
       },
       {
         "rank": 7,
+        "id": "430598",
         "name": "Jeremy Reed",
         "team": "SEA",
         "value": "11"
       },
       {
         "rank": 7,
+        "id": "430838",
         "name": "Willy Taveras",
         "team": "HOU",
         "value": "11"
       },
       {
         "rank": 7,
+        "id": "133160",
         "name": "Randy Winn",
         "team": "2TM",
         "value": "11"
@@ -1234,78 +1424,91 @@
     "players": [
       {
         "rank": 1,
+        "id": "112087",
         "name": "Sean Casey",
         "team": "CIN",
         "value": "27"
       },
       {
         "rank": 2,
+        "id": "116974",
         "name": "Jason Kendall",
         "team": "OAK",
         "value": "26"
       },
       {
         "rank": 2,
+        "id": "123173",
         "name": "Miguel Tejada",
         "team": "BAL",
         "value": "26"
       },
       {
         "rank": 4,
+        "id": "110816",
         "name": "David Bell",
         "team": "PHI",
         "value": "24"
       },
       {
         "rank": 4,
+        "id": "408305",
         "name": "Jorge Cantu",
         "team": "TB",
         "value": "24"
       },
       {
         "rank": 6,
+        "id": "115608",
         "name": "Scott Hatteberg",
         "team": "OAK",
         "value": "22"
       },
       {
         "rank": 6,
+        "id": "119482",
         "name": "Bill Mueller",
         "team": "BOS",
         "value": "22"
       },
       {
         "rank": 6,
+        "id": "120413",
         "name": "Neifi Perez",
         "team": "CHC",
         "value": "22"
       },
       {
         "rank": 9,
+        "id": "150167",
         "name": "Shea Hillenbrand",
         "team": "TOR",
         "value": "21"
       },
       {
         "rank": 10,
+        "id": "408234",
         "name": "Miguel Cabrera",
         "team": "FLA",
         "value": "20"
       },
       {
         "rank": 10,
+        "id": "150268",
         "name": "Pedro Feliz",
         "team": "SF",
         "value": "20"
       },
       {
         "rank": 10,
+        "id": "120903",
         "name": "Manny Ramirez",
         "team": "BOS",
         "value": "20"
       },
       {
         "rank": 10,
+        "id": "276545",
         "name": "Michael Young",
         "team": "TEX",
         "value": "20"
@@ -1317,54 +1520,63 @@
     "players": [
       {
         "rank": 1,
+        "id": "407155",
         "name": "Craig Monroe",
         "team": "DET",
         "value": "12"
       },
       {
         "rank": 2,
+        "id": "150324",
         "name": "Carlos Lee",
         "team": "MIL",
         "value": "11"
       },
       {
         "rank": 3,
+        "id": "113946",
         "name": "Carl Everett",
         "team": "CWS",
         "value": "10"
       },
       {
         "rank": 3,
+        "id": "346874",
         "name": "Juan Uribe",
         "team": "CWS",
         "value": "10"
       },
       {
         "rank": 5,
+        "id": "136767",
         "name": "Eric Chavez",
         "team": "OAK",
         "value": "9"
       },
       {
         "rank": 5,
+        "id": "113028",
         "name": "Johnny Damon",
         "team": "BOS",
         "value": "9"
       },
       {
         "rank": 5,
+        "id": "115229",
         "name": "Jose Guillen",
         "team": "WSH",
         "value": "9"
       },
       {
         "rank": 5,
+        "id": "136780",
         "name": "Mike Lowell",
         "team": "FLA",
         "value": "9"
       },
       {
         "rank": 5,
+        "id": "120074",
         "name": "David Ortiz",
         "team": "BOS",
         "value": "9"
@@ -1377,60 +1589,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "116539",
         "name": "Derek Jeter",
         "team": "NYY",
         "value": "752"
       },
       {
         "rank": 2,
+        "id": "400085",
         "name": "Ichiro Suzuki",
         "team": "SEA",
         "value": "739"
       },
       {
         "rank": 3,
+        "id": "408314",
         "name": "José Reyes",
         "team": "NYM",
         "value": "733"
       },
       {
         "rank": 4,
+        "id": "276519",
         "name": "Jimmy Rollins",
         "team": "PHI",
         "value": "732"
       },
       {
         "rank": 4,
+        "id": "276545",
         "name": "Michael Young",
         "team": "TEX",
         "value": "732"
       },
       {
         "rank": 6,
+        "id": "407893",
         "name": "Mark Teixeira",
         "team": "TEX",
         "value": "730"
       },
       {
         "rank": 7,
+        "id": "408210",
         "name": "Chone Figgins",
         "team": "LAA",
         "value": "720"
       },
       {
         "rank": 8,
+        "id": "110029",
         "name": "Bobby Abreu",
         "team": "PHI",
         "value": "719"
       },
       {
         "rank": 8,
+        "id": "334393",
         "name": "Juan Pierre",
         "team": "FLA",
         "value": "719"
       },
       {
         "rank": 10,
+        "id": "121347",
         "name": "Alex Rodriguez",
         "team": "NYY",
         "value": "715"

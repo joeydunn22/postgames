@@ -164,10 +164,13 @@
         <div id="turnBar" class="turn-bar hidden"><span id="turnBarFill" class="turn-bar-fill"></span></div>
       </div>
 
+      <!-- Type 3+ letters, then tap a player to guess them -->
       <form id="guessForm" class="guess-form" autocomplete="off">
-        <input id="guessInput" class="input guess-input" type="text" placeholder="Name a player"
-          autocapitalize="words" spellcheck="false" aria-label="Your guess">
-        <button id="guessBtn" class="btn btn-primary guess-btn" type="submit">Guess</button>
+        <input id="guessInput" class="input guess-input" type="text" placeholder="Type a player's name"
+          autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="go"
+          role="combobox" aria-autocomplete="list" aria-controls="guessResults" aria-expanded="false"
+          aria-label="Your guess">
+        <ul id="guessResults" class="guess-results hidden" role="listbox"></ul>
       </form>
 
       <p id="guessFeedback" class="feedback" role="status" aria-live="polite"></p>
@@ -201,7 +204,7 @@
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 128</p>
+    <p class="version">Version 129</p>
   </main>
 
 

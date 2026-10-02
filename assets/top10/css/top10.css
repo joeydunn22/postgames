@@ -368,10 +368,10 @@
     color: var(--muted);
 }
 
-/* Guess box */
+/* Guess box, with the players matching what's typed listed under it */
 .guess-form {
     display: flex;
-    gap: 8px;
+    flex-direction: column;
 }
 
 .guess-input {
@@ -382,9 +382,59 @@
     padding: 0 24px;
 }
 
-.guess-btn {
-    min-height: 60px;
-    padding: 0 28px;
+.guess-results {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.guess-option {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    min-height: 54px;
+    padding: 0 24px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.guess-option:hover,
+.guess-option.active {
+    background: var(--accent-soft);
+}
+
+.guess-option-name {
+    font-weight: 600;
+}
+
+.guess-option-meta {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.guess-option:disabled {
+    cursor: default;
+    background: none;
+}
+
+.guess-option:disabled .guess-option-name {
+    color: var(--faint);
+}
+
+.guess-more,
+.guess-none {
+    padding: 12px 24px 0;
+    color: var(--faint);
+    font-size: 14px;
 }
 
 .guess-form.shake {
@@ -653,8 +703,8 @@
    ========================================= */
 
 @media (max-width: 480px) {
-    .guess-btn {
-        padding: 0 20px;
+    .guess-option {
+        padding: 0 16px;
     }
 
     .slot {

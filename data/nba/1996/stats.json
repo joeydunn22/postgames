@@ -4,60 +4,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "893",
         "name": "Michael Jordan",
         "team": "CHI",
         "value": "30.4"
       },
       {
         "rank": 2,
+        "id": "165",
         "name": "Hakeem Olajuwon",
         "team": "HOU",
         "value": "26.9"
       },
       {
         "rank": 3,
+        "id": "406",
         "name": "Shaquille O'Neal",
         "team": "ORL",
         "value": "26.6"
       },
       {
         "rank": 4,
+        "id": "252",
         "name": "Karl Malone",
         "team": "UTA",
         "value": "25.7"
       },
       {
         "rank": 5,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "25.0"
       },
       {
         "rank": 6,
+        "id": "787",
         "name": "Charles Barkley",
         "team": "PHX",
         "value": "23.2"
       },
       {
         "rank": 6,
+        "id": "297",
         "name": "Alonzo Mourning",
         "team": "MIA",
         "value": "23.2"
       },
       {
         "rank": 8,
+        "id": "782",
         "name": "Mitch Richmond",
         "team": "SAC",
         "value": "23.1"
       },
       {
         "rank": 9,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "22.5"
       },
       {
         "rank": 10,
+        "id": "436",
         "name": "Juwan Howard",
         "team": "WAS",
         "value": "22.1"
@@ -69,60 +79,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "23",
         "name": "Dennis Rodman",
         "team": "CHI",
         "value": "14.9"
       },
       {
         "rank": 2,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "12.2"
       },
       {
         "rank": 3,
+        "id": "87",
         "name": "Dikembe Mutombo",
         "team": "DEN",
         "value": "11.8"
       },
       {
         "rank": 4,
+        "id": "787",
         "name": "Charles Barkley",
         "team": "PHX",
         "value": "11.6"
       },
       {
         "rank": 5,
+        "id": "431",
         "name": "Shawn Kemp",
         "team": "SEA",
         "value": "11.4"
       },
       {
         "rank": 6,
+        "id": "165",
         "name": "Hakeem Olajuwon",
         "team": "HOU",
         "value": "10.9"
       },
       {
         "rank": 7,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "10.6"
       },
       {
         "rank": 8,
+        "id": "297",
         "name": "Alonzo Mourning",
         "team": "MIA",
         "value": "10.4"
       },
       {
         "rank": 9,
+        "id": "919",
         "name": "Loy Vaught",
         "team": "LAC",
         "value": "10.1"
       },
       {
         "rank": 10,
+        "id": "420",
         "name": "Jayson Williams",
         "team": "NJN",
         "value": "10.0"
@@ -134,60 +154,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "304",
         "name": "John Stockton",
         "team": "UTA",
         "value": "11.2"
       },
       {
         "rank": 2,
+        "id": "467",
         "name": "Jason Kidd",
         "team": "DAL",
         "value": "9.7"
       },
       {
         "rank": 3,
+        "id": "422",
         "name": "Avery Johnson",
         "team": "SAS",
         "value": "9.6"
       },
       {
         "rank": 3,
+        "id": "393",
         "name": "Rod Strickland",
         "team": "POR",
         "value": "9.6"
       },
       {
         "rank": 5,
+        "id": "757",
         "name": "Damon Stoudamire",
         "team": "TOR",
         "value": "9.3"
       },
       {
         "rank": 6,
+        "id": "134",
         "name": "Kevin Johnson",
         "team": "PHX",
         "value": "9.2"
       },
       {
         "rank": 7,
+        "id": "72",
         "name": "Kenny Anderson",
         "team": "CHH",
         "value": "8.3"
       },
       {
         "rank": 8,
+        "id": "896",
         "name": "Tim Hardaway",
         "team": "MIA",
         "value": "8.0"
       },
       {
         "rank": 9,
+        "id": "349",
         "name": "Mark Jackson",
         "team": "IND",
         "value": "7.8"
       },
       {
         "rank": 10,
+        "id": "56",
         "name": "Gary Payton",
         "team": "SEA",
         "value": "7.5"
@@ -199,66 +229,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "56",
         "name": "Gary Payton",
         "team": "SEA",
         "value": "2.9"
       },
       {
         "rank": 2,
+        "id": "302",
         "name": "Mookie Blaylock",
         "team": "ATL",
         "value": "2.6"
       },
       {
         "rank": 3,
+        "id": "893",
         "name": "Michael Jordan",
         "team": "CHI",
         "value": "2.2"
       },
       {
         "rank": 3,
+        "id": "467",
         "name": "Jason Kidd",
         "team": "DAL",
         "value": "2.2"
       },
       {
         "rank": 3,
+        "id": "926",
         "name": "Alvin Robertson",
         "team": "TOR",
         "value": "2.2"
       },
       {
         "rank": 6,
+        "id": "358",
         "name": "Anfernee Hardaway",
         "team": "ORL",
         "value": "2.0"
       },
       {
         "rank": 7,
+        "id": "785",
         "name": "Eric Murdock",
         "team": "VAN",
         "value": "1.8"
       },
       {
         "rank": 7,
+        "id": "224",
         "name": "Eddie Jones",
         "team": "LAL",
         "value": "1.8"
       },
       {
         "rank": 7,
+        "id": "765",
         "name": "Hersey Hawkins",
         "team": "SEA",
         "value": "1.8"
       },
       {
         "rank": 7,
+        "id": "339",
         "name": "Tom Gugliotta",
         "team": "MIN",
         "value": "1.8"
       },
       {
         "rank": 7,
+        "id": "210",
         "name": "Terrell Brandon",
         "team": "CLE",
         "value": "1.8"
@@ -270,60 +311,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "87",
         "name": "Dikembe Mutombo",
         "team": "DEN",
         "value": "4.5"
       },
       {
         "rank": 2,
+        "id": "762",
         "name": "Shawn Bradley",
         "team": "NJN",
         "value": "3.6"
       },
       {
         "rank": 3,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "3.3"
       },
       {
         "rank": 4,
+        "id": "165",
         "name": "Hakeem Olajuwon",
         "team": "HOU",
         "value": "2.9"
       },
       {
         "rank": 5,
+        "id": "297",
         "name": "Alonzo Mourning",
         "team": "MIA",
         "value": "2.7"
       },
       {
         "rank": 6,
+        "id": "922",
         "name": "Elden Campbell",
         "team": "LAL",
         "value": "2.6"
       },
       {
         "rank": 7,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "2.4"
       },
       {
         "rank": 8,
+        "id": "49",
         "name": "Gheorghe Muresan",
         "team": "WAS",
         "value": "2.3"
       },
       {
         "rank": 9,
+        "id": "406",
         "name": "Shaquille O'Neal",
         "team": "ORL",
         "value": "2.1"
       },
       {
         "rank": 9,
+        "id": "29",
         "name": "Jim McIlvaine",
         "team": "WAS",
         "value": "2.1"
@@ -335,60 +386,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "192",
         "name": "Dennis Scott",
         "team": "ORL",
         "value": "3.3"
       },
       {
         "rank": 1,
+        "id": "45",
         "name": "George McCloud",
         "team": "DAL",
         "value": "3.3"
       },
       {
         "rank": 3,
+        "id": "302",
         "name": "Mookie Blaylock",
         "team": "ATL",
         "value": "2.9"
       },
       {
         "rank": 4,
+        "id": "782",
         "name": "Mitch Richmond",
         "team": "SAC",
         "value": "2.8"
       },
       {
         "rank": 5,
+        "id": "456",
         "name": "Chuck Person",
         "team": "SAS",
         "value": "2.4"
       },
       {
         "rank": 6,
+        "id": "275",
         "name": "Allan Houston",
         "team": "DET",
         "value": "2.3"
       },
       {
         "rank": 6,
+        "id": "361",
         "name": "Clifford Robinson",
         "team": "POR",
         "value": "2.3"
       },
       {
         "rank": 8,
+        "id": "397",
         "name": "Reggie Miller",
         "team": "IND",
         "value": "2.2"
       },
       {
         "rank": 8,
+        "id": "98",
         "name": "Nick Anderson",
         "team": "ORL",
         "value": "2.2"
       },
       {
         "rank": 8,
+        "id": "779",
         "name": "Glen Rice",
         "team": "CHH",
         "value": "2.2"
@@ -400,60 +461,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "193",
         "name": "Anthony Mason",
         "team": "NYK",
         "value": "42.2"
       },
       {
         "rank": 2,
+        "id": "757",
         "name": "Damon Stoudamire",
         "team": "TOR",
         "value": "40.9"
       },
       {
         "rank": 3,
+        "id": "255",
         "name": "Grant Hill",
         "team": "DET",
         "value": "40.8"
       },
       {
         "rank": 4,
+        "id": "436",
         "name": "Juwan Howard",
         "team": "WAS",
         "value": "40.7"
       },
       {
         "rank": 5,
+        "id": "452",
         "name": "Vin Baker",
         "team": "MIL",
         "value": "40.5"
       },
       {
         "rank": 6,
+        "id": "913",
         "name": "Larry Johnson",
         "team": "CHH",
         "value": "40.4"
       },
       {
         "rank": 7,
+        "id": "779",
         "name": "Glen Rice",
         "team": "CHH",
         "value": "39.8"
       },
       {
         "rank": 8,
+        "id": "221",
         "name": "Clar. Weatherspoon",
         "team": "PHI",
         "value": "39.7"
       },
       {
         "rank": 9,
+        "id": "299",
         "name": "Glenn Robinson",
         "team": "MIL",
         "value": "39.6"
       },
       {
         "rank": 10,
+        "id": "84",
         "name": "Latrell Sprewell",
         "team": "GSW",
         "value": "39.3"
@@ -465,60 +536,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "49",
         "name": "Gheorghe Muresan",
         "team": "WAS",
         "value": "58.4%"
       },
       {
         "rank": 2,
+        "id": "423",
         "name": "Chris Gatling",
         "team": "MIA",
         "value": "57.5%"
       },
       {
         "rank": 3,
+        "id": "406",
         "name": "Shaquille O'Neal",
         "team": "ORL",
         "value": "57.3%"
       },
       {
         "rank": 4,
+        "id": "193",
         "name": "Anthony Mason",
         "team": "NYK",
         "value": "56.3%"
       },
       {
         "rank": 5,
+        "id": "431",
         "name": "Shawn Kemp",
         "team": "SEA",
         "value": "56.1%"
       },
       {
         "rank": 6,
+        "id": "905",
         "name": "Dale Davis",
         "team": "IND",
         "value": "55.8%"
       },
       {
         "rank": 7,
+        "id": "717",
         "name": "Arvydas Sabonis",
         "team": "POR",
         "value": "54.5%"
       },
       {
         "rank": 8,
+        "id": "183",
         "name": "Bison Dele",
         "team": "LAC",
         "value": "54.3%"
       },
       {
         "rank": 9,
+        "id": "359",
         "name": "Chucky Brown",
         "team": "HOU",
         "value": "54.1%"
       },
       {
         "rank": 10,
+        "id": "304",
         "name": "John Stockton",
         "team": "UTA",
         "value": "53.8%"
@@ -530,60 +611,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "100",
         "name": "Tim Legler",
         "team": "WAS",
         "value": "52.2%"
       },
       {
         "rank": 2,
+        "id": "70",
         "name": "Steve Kerr",
         "team": "CHI",
         "value": "51.5%"
       },
       {
         "rank": 3,
+        "id": "93",
         "name": "Hubert Davis",
         "team": "NYK",
         "value": "47.6%"
       },
       {
         "rank": 4,
+        "id": "769",
         "name": "B.J. Armstrong",
         "team": "GSW",
         "value": "47.3%"
       },
       {
         "rank": 5,
+        "id": "204",
         "name": "Jeff Hornacek",
         "team": "UTA",
         "value": "46.6%"
       },
       {
         "rank": 6,
+        "id": "85",
         "name": "Brent Price",
         "team": "WAS",
         "value": "46.2%"
       },
       {
         "rank": 7,
+        "id": "184",
         "name": "Bobby Phills",
         "team": "CLE",
         "value": "44.1%"
       },
       {
         "rank": 8,
+        "id": "143",
         "name": "Terry Dehere",
         "team": "LAC",
         "value": "44.0%"
       },
       {
         "rank": 9,
+        "id": "782",
         "name": "Mitch Richmond",
         "team": "SAC",
         "value": "43.7%"
       },
       {
         "rank": 10,
+        "id": "349",
         "name": "Mark Jackson",
         "team": "IND",
         "value": "43.0%"
@@ -595,60 +686,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "51",
         "name": "Mahmoud Abdul-Rauf",
         "team": "DEN",
         "value": "93.0%"
       },
       {
         "rank": 2,
+        "id": "204",
         "name": "Jeff Hornacek",
         "team": "UTA",
         "value": "89.3%"
       },
       {
         "rank": 3,
+        "id": "210",
         "name": "Terrell Brandon",
         "team": "CLE",
         "value": "88.7%"
       },
       {
         "rank": 4,
+        "id": "344",
         "name": "Dana Barros",
         "team": "BOS",
         "value": "88.4%"
       },
       {
         "rank": 5,
+        "id": "85",
         "name": "Brent Price",
         "team": "WAS",
         "value": "87.4%"
       },
       {
         "rank": 5,
+        "id": "765",
         "name": "Hersey Hawkins",
         "team": "SEA",
         "value": "87.4%"
       },
       {
         "rank": 7,
+        "id": "782",
         "name": "Mitch Richmond",
         "team": "SAC",
         "value": "86.6%"
       },
       {
         "rank": 8,
+        "id": "397",
         "name": "Reggie Miller",
         "team": "IND",
         "value": "86.3%"
       },
       {
         "rank": 8,
+        "id": "100",
         "name": "Tim Legler",
         "team": "WAS",
         "value": "86.3%"
       },
       {
         "rank": 10,
+        "id": "892",
         "name": "Spud Webb",
         "team": "MIN",
         "value": "86.2%"
@@ -660,60 +761,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "893",
         "name": "Michael Jordan",
         "team": "CHI",
         "value": "2491"
       },
       {
         "rank": 2,
+        "id": "252",
         "name": "Karl Malone",
         "team": "UTA",
         "value": "2106"
       },
       {
         "rank": 3,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "2051"
       },
       {
         "rank": 4,
+        "id": "165",
         "name": "Hakeem Olajuwon",
         "team": "HOU",
         "value": "1936"
       },
       {
         "rank": 5,
+        "id": "782",
         "name": "Mitch Richmond",
         "team": "SAC",
         "value": "1872"
       },
       {
         "rank": 6,
+        "id": "436",
         "name": "Juwan Howard",
         "team": "WAS",
         "value": "1789"
       },
       {
         "rank": 7,
+        "id": "358",
         "name": "Anfernee Hardaway",
         "team": "ORL",
         "value": "1780"
       },
       {
         "rank": 8,
+        "id": "452",
         "name": "Vin Baker",
         "team": "MIL",
         "value": "1729"
       },
       {
         "rank": 9,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "1711"
       },
       {
         "rank": 10,
+        "id": "779",
         "name": "Glen Rice",
         "team": "CHH",
         "value": "1710"
@@ -725,60 +836,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "1000"
       },
       {
         "rank": 2,
+        "id": "23",
         "name": "Dennis Rodman",
         "team": "CHI",
         "value": "952"
       },
       {
         "rank": 3,
+        "id": "431",
         "name": "Shawn Kemp",
         "team": "SEA",
         "value": "904"
       },
       {
         "rank": 4,
+        "id": "87",
         "name": "Dikembe Mutombo",
         "team": "DEN",
         "value": "871"
       },
       {
         "rank": 5,
+        "id": "787",
         "name": "Charles Barkley",
         "team": "PHX",
         "value": "821"
       },
       {
         "rank": 6,
+        "id": "919",
         "name": "Loy Vaught",
         "team": "LAC",
         "value": "808"
       },
       {
         "rank": 6,
+        "id": "452",
         "name": "Vin Baker",
         "team": "MIL",
         "value": "808"
       },
       {
         "rank": 8,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "806"
       },
       {
         "rank": 9,
+        "id": "252",
         "name": "Karl Malone",
         "team": "UTA",
         "value": "804"
       },
       {
         "rank": 10,
+        "id": "420",
         "name": "Jayson Williams",
         "team": "NJN",
         "value": "803"
@@ -790,60 +911,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "304",
         "name": "John Stockton",
         "team": "UTA",
         "value": "916"
       },
       {
         "rank": 2,
+        "id": "422",
         "name": "Avery Johnson",
         "team": "SAS",
         "value": "789"
       },
       {
         "rank": 3,
+        "id": "467",
         "name": "Jason Kidd",
         "team": "DAL",
         "value": "783"
       },
       {
         "rank": 4,
+        "id": "757",
         "name": "Damon Stoudamire",
         "team": "TOR",
         "value": "653"
       },
       {
         "rank": 5,
+        "id": "393",
         "name": "Rod Strickland",
         "team": "POR",
         "value": "640"
       },
       {
         "rank": 5,
+        "id": "896",
         "name": "Tim Hardaway",
         "team": "MIA",
         "value": "640"
       },
       {
         "rank": 7,
+        "id": "349",
         "name": "Mark Jackson",
         "team": "IND",
         "value": "635"
       },
       {
         "rank": 8,
+        "id": "56",
         "name": "Gary Payton",
         "team": "SEA",
         "value": "608"
       },
       {
         "rank": 9,
+        "id": "358",
         "name": "Anfernee Hardaway",
         "team": "ORL",
         "value": "582"
       },
       {
         "rank": 10,
+        "id": "72",
         "name": "Kenny Anderson",
         "team": "CHH",
         "value": "575"
@@ -855,60 +986,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "56",
         "name": "Gary Payton",
         "team": "SEA",
         "value": "231"
       },
       {
         "rank": 2,
+        "id": "302",
         "name": "Mookie Blaylock",
         "team": "ATL",
         "value": "212"
       },
       {
         "rank": 3,
+        "id": "893",
         "name": "Michael Jordan",
         "team": "CHI",
         "value": "180"
       },
       {
         "rank": 4,
+        "id": "467",
         "name": "Jason Kidd",
         "team": "DAL",
         "value": "175"
       },
       {
         "rank": 5,
+        "id": "926",
         "name": "Alvin Robertson",
         "team": "TOR",
         "value": "166"
       },
       {
         "rank": 5,
+        "id": "358",
         "name": "Anfernee Hardaway",
         "team": "ORL",
         "value": "166"
       },
       {
         "rank": 7,
+        "id": "765",
         "name": "Hersey Hawkins",
         "team": "SEA",
         "value": "149"
       },
       {
         "rank": 8,
+        "id": "304",
         "name": "John Stockton",
         "team": "UTA",
         "value": "140"
       },
       {
         "rank": 9,
+        "id": "339",
         "name": "Tom Gugliotta",
         "team": "MIN",
         "value": "139"
       },
       {
         "rank": 10,
+        "id": "252",
         "name": "Karl Malone",
         "team": "UTA",
         "value": "138"
@@ -920,60 +1061,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "87",
         "name": "Dikembe Mutombo",
         "team": "DEN",
         "value": "332"
       },
       {
         "rank": 2,
+        "id": "762",
         "name": "Shawn Bradley",
         "team": "NJN",
         "value": "288"
       },
       {
         "rank": 3,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "271"
       },
       {
         "rank": 4,
+        "id": "922",
         "name": "Elden Campbell",
         "team": "LAL",
         "value": "212"
       },
       {
         "rank": 5,
+        "id": "165",
         "name": "Hakeem Olajuwon",
         "team": "HOU",
         "value": "207"
       },
       {
         "rank": 6,
+        "id": "297",
         "name": "Alonzo Mourning",
         "team": "MIA",
         "value": "189"
       },
       {
         "rank": 7,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "184"
       },
       {
         "rank": 8,
+        "id": "49",
         "name": "Gheorghe Muresan",
         "team": "WAS",
         "value": "172"
       },
       {
         "rank": 9,
+        "id": "29",
         "name": "Jim McIlvaine",
         "team": "WAS",
         "value": "166"
       },
       {
         "rank": 10,
+        "id": "932",
         "name": "Oliver Miller",
         "team": "TOR",
         "value": "143"
@@ -985,60 +1136,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "192",
         "name": "Dennis Scott",
         "team": "ORL",
         "value": "267"
       },
       {
         "rank": 2,
+        "id": "45",
         "name": "George McCloud",
         "team": "DAL",
         "value": "257"
       },
       {
         "rank": 3,
+        "id": "302",
         "name": "Mookie Blaylock",
         "team": "ATL",
         "value": "231"
       },
       {
         "rank": 4,
+        "id": "782",
         "name": "Mitch Richmond",
         "team": "SAC",
         "value": "225"
       },
       {
         "rank": 5,
+        "id": "275",
         "name": "Allan Houston",
         "team": "DET",
         "value": "191"
       },
       {
         "rank": 6,
+        "id": "456",
         "name": "Chuck Person",
         "team": "SAS",
         "value": "190"
       },
       {
         "rank": 7,
+        "id": "361",
         "name": "Clifford Robinson",
         "team": "POR",
         "value": "178"
       },
       {
         "rank": 8,
+        "id": "779",
         "name": "Glen Rice",
         "team": "CHH",
         "value": "171"
       },
       {
         "rank": 9,
+        "id": "98",
         "name": "Nick Anderson",
         "team": "ORL",
         "value": "168"
       },
       {
         "rank": 9,
+        "id": "397",
         "name": "Reggie Miller",
         "team": "IND",
         "value": "168"
@@ -1050,60 +1211,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "626"
       },
       {
         "rank": 2,
+        "id": "893",
         "name": "Michael Jordan",
         "team": "CHI",
         "value": "548"
       },
       {
         "rank": 3,
+        "id": "252",
         "name": "Karl Malone",
         "team": "UTA",
         "value": "512"
       },
       {
         "rank": 4,
+        "id": "431",
         "name": "Shawn Kemp",
         "team": "SEA",
         "value": "493"
       },
       {
         "rank": 5,
+        "id": "297",
         "name": "Alonzo Mourning",
         "team": "MIA",
         "value": "488"
       },
       {
         "rank": 6,
+        "id": "255",
         "name": "Grant Hill",
         "team": "DET",
         "value": "485"
       },
       {
         "rank": 7,
+        "id": "358",
         "name": "Anfernee Hardaway",
         "team": "ORL",
         "value": "445"
       },
       {
         "rank": 8,
+        "id": "787",
         "name": "Charles Barkley",
         "team": "PHX",
         "value": "440"
       },
       {
         "rank": 9,
+        "id": "397",
         "name": "Reggie Miller",
         "team": "IND",
         "value": "430"
       },
       {
         "rank": 10,
+        "id": "913",
         "name": "Larry Johnson",
         "team": "CHH",
         "value": "427"
@@ -1115,60 +1286,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "893",
         "name": "Michael Jordan",
         "team": "CHI",
         "value": "916"
       },
       {
         "rank": 2,
+        "id": "252",
         "name": "Karl Malone",
         "team": "UTA",
         "value": "789"
       },
       {
         "rank": 3,
+        "id": "165",
         "name": "Hakeem Olajuwon",
         "team": "HOU",
         "value": "768"
       },
       {
         "rank": 4,
+        "id": "436",
         "name": "Juwan Howard",
         "team": "WAS",
         "value": "733"
       },
       {
         "rank": 5,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "711"
       },
       {
         "rank": 6,
+        "id": "452",
         "name": "Vin Baker",
         "team": "MIL",
         "value": "699"
       },
       {
         "rank": 7,
+        "id": "121",
         "name": "Patrick Ewing",
         "team": "NYK",
         "value": "678"
       },
       {
         "rank": 8,
+        "id": "76",
         "name": "Cedric Ceballos",
         "team": "LAL",
         "value": "638"
       },
       {
         "rank": 9,
+        "id": "299",
         "name": "Glenn Robinson",
         "team": "MIL",
         "value": "627"
       },
       {
         "rank": 10,
+        "id": "358",
         "name": "Anfernee Hardaway",
         "team": "ORL",
         "value": "623"
@@ -1180,60 +1361,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "23",
         "name": "Dennis Rodman",
         "team": "CHI",
         "value": "356"
       },
       {
         "rank": 2,
+        "id": "420",
         "name": "Jayson Williams",
         "team": "NJN",
         "value": "342"
       },
       {
         "rank": 3,
+        "id": "764",
         "name": "David Robinson",
         "team": "SAS",
         "value": "319"
       },
       {
         "rank": 4,
+        "id": "693",
         "name": "Joe Smith",
         "team": "GSW",
         "value": "300"
       },
       {
         "rank": 5,
+        "id": "262",
         "name": "Michael Cage",
         "team": "CLE",
         "value": "288"
       },
       {
         "rank": 6,
+        "id": "431",
         "name": "Shawn Kemp",
         "team": "SEA",
         "value": "276"
       },
       {
         "rank": 7,
+        "id": "452",
         "name": "Vin Baker",
         "team": "MIL",
         "value": "263"
       },
       {
         "rank": 8,
+        "id": "461",
         "name": "Popeye Jones",
         "team": "DAL",
         "value": "260"
       },
       {
         "rank": 9,
+        "id": "178",
         "name": "Olden Polynice",
         "team": "SAC",
         "value": "257"
       },
       {
         "rank": 10,
+        "id": "905",
         "name": "Dale Davis",
         "team": "IND",
         "value": "252"
@@ -1245,60 +1436,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "467",
         "name": "Jason Kidd",
         "team": "DAL",
         "value": "328"
       },
       {
         "rank": 2,
+        "id": "431",
         "name": "Shawn Kemp",
         "team": "SEA",
         "value": "315"
       },
       {
         "rank": 3,
+        "id": "436",
         "name": "Juwan Howard",
         "team": "WAS",
         "value": "303"
       },
       {
         "rank": 4,
+        "id": "299",
         "name": "Glenn Robinson",
         "team": "MIL",
         "value": "282"
       },
       {
         "rank": 5,
+        "id": "757",
         "name": "Damon Stoudamire",
         "team": "TOR",
         "value": "267"
       },
       {
         "rank": 6,
+        "id": "255",
         "name": "Grant Hill",
         "team": "DET",
         "value": "263"
       },
       {
         "rank": 7,
+        "id": "297",
         "name": "Alonzo Mourning",
         "team": "MIA",
         "value": "262"
       },
       {
         "rank": 8,
+        "id": "56",
         "name": "Gary Payton",
         "team": "SEA",
         "value": "260"
       },
       {
         "rank": 9,
+        "id": "393",
         "name": "Rod Strickland",
         "team": "POR",
         "value": "255"
       },
       {
         "rank": 10,
+        "id": "711",
         "name": "Jerry Stackhouse",
         "team": "PHI",
         "value": "252"

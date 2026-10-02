@@ -33,9 +33,9 @@ const SYNCED_DEFAULTS = {
     players: [],          // [{ id, name, score }] in turn order
     currentPlayerIndex: 0,
     turnEndsAt: null,     // server time (ms) the current turn runs out, when timed
-    guessed: [],          // [{ answer, by }] correct answers and who got them
+    guessed: [],          // [{ id, by }] board players found (by player id) and who got them
     roundComplete: false, // every answer found
-    lastGuess: null       // { playerName, guess, answer, result, at }, shown to everyone
+    lastGuess: null       // { playerName, id, guess, answer, result, at }, shown to everyone
 };
 
 // Era choices offered to the host. Each test gets the season's start
@@ -57,9 +57,15 @@ const game = {
     ...structuredClone(SYNCED_DEFAULTS),
 
     // Local only
-    data: {},             // stat label -> { players: [{ name, rank, team, value }], isPercent }
+    data: {},             // stat label -> { players: [{ rank, id, name, team, value }], more_tied? }
+    roster: [],           // everyone who played that season, what guesses are picked from (see loadStats)
     dataStatus: "idle"    // idle | loading | ready | empty | error
 };
+
+// The local-only fields of `game`, empty
+function emptyGameData() {
+    return { data: {}, roster: [], dataStatus: "idle" };
+}
 
 
 /* ============================================================
@@ -104,6 +110,11 @@ function emptySession() {
 
 // DOM references, filled in by the renderer
 const ui = {};
+
+// Guess search: names show once this many letters are typed, at most
+// GUESS_RESULTS at a time
+const GUESS_MIN_LETTERS = 3;
+const GUESS_RESULTS = 5;
 
 // Entries from data/manifest.json: which sport/category/year combos have data
 let dataManifest = [];

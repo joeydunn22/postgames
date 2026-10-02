@@ -11,19 +11,27 @@ Usage (run from the repo root):
 Sources:
     MLB  the MLB Stats API (statsapi.mlb.com): league leaders per stat,
          already ranked, ties marked and rate stats limited to qualified
-         players. One request per season for batting, one for pitching.
+         players. One request per season for batting, one for pitching,
+         plus three for the season's player list.
     NFL  nflverse (github.com/nflverse): one CSV of every player's
-         regular-season totals per season. We rank each stat ourselves.
+         regular-season totals per season. We rank each stat ourselves,
+         and the same CSV gives the season's player list.
     NBA  stats.nba.com league leaders (the site behind NBA.com's stats
          pages): one request per stat per season, already ranked and
-         limited to qualified players.
+         limited to qualified players, plus one for the player list.
 
 Output:  data/{sport}/{year}/{category or "stats"}.json
          and a matching entry in data/manifest.json, so the game offers it.
+         data/{sport}/{year}/players.json, everyone who played that season.
 
-Each game file is a list of { label, players: [{ rank, name, team, value }],
+Each game file is a list of { label, players: [{ rank, id, name, team, value }],
 more_tied? }. `value` is display text. Ties at 10th are kept, unless the
 tie is so big it would swamp the board (see top_ten).
+
+The player list is [{ id, name, team, pos }]: what players search when
+guessing. It covers the whole league, not just the boards, so searching
+gives nothing away. `id` is the source's player id; guesses are matched
+by id, so two players with the same name never get mixed up.
 """
 
 import csv
@@ -92,6 +100,34 @@ def write_game_file(sport, category, year, stats):
         entry["category"] = category
     update_manifest(entry)
     print(f"  {output}: {len(stats)} stats")
+    return output
+
+
+def write_players_file(sport, year, players, game_files):
+    """
+    players: {id: {name, team, pos}} for everyone who played that season.
+    Every board answer must be pickable, so any board player missing from
+    the list is added (with a warning), and names follow the boards.
+    """
+    players = {str(pid): dict(p) for pid, p in players.items()}
+    for path in game_files:
+        for stat in json.loads(path.read_text(encoding="utf-8")):
+            for p in stat["players"]:
+                listed = players.get(p["id"])
+                if listed is None:
+                    print(f"  ! {p['name']} ({p['id']}) is on a board but not in the player list; adding")
+                    players[p["id"]] = {"name": p["name"], "team": p["team"], "pos": ""}
+                else:
+                    listed["name"] = p["name"]
+
+    rows = sorted(({"id": pid, **p} for pid, p in players.items()),
+                  key=lambda p: (p["name"].split()[-1].lower(), p["name"].lower()))
+    output = DATA / sport / str(year) / "players.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    # One player per line: small, and readable in a diff
+    lines = ",\n".join(json.dumps(r, ensure_ascii=False, separators=(",", ":")) for r in rows)
+    output.write_text(f"[\n{lines}\n]\n", encoding="utf-8")
+    print(f"  {output}: {len(rows)} players")
 
 
 def update_manifest(entry):
@@ -168,9 +204,32 @@ def mlb_team_abbreviations(year):
     return {t["id"]: t["abbreviation"] for t in teams}
 
 
+def mlb_players(year, teams):
+    """Everyone who played: the season's player list (names, positions),
+    with teams from the season's batting and pitching lines."""
+    people = json.loads(fetch(f"{MLB_API}/sports/1/players?season={year}"))["people"]
+    players = {p["id"]: {"name": p["fullName"],
+                         "team": teams.get(p.get("currentTeam", {}).get("id"), ""),
+                         "pos": p.get("primaryPosition", {}).get("abbreviation", "")}
+               for p in people}
+    for group in MLB_GROUPS.values():
+        url = f"{MLB_API}/stats?stats=season&group={group}&season={year}&playerPool=ALL&sportId=1&limit=5000"
+        for split in json.loads(fetch(url))["stats"][0]["splits"]:
+            player = players.get(split["player"]["id"])
+            if not player:
+                continue
+            num_teams = split.get("numTeams", 1)
+            team = f"{num_teams}TM" if num_teams > 1 else teams.get(split.get("team", {}).get("id"))
+            if team:
+                player["team"] = team
+        time.sleep(0.5)
+    return players
+
+
 def build_mlb(year):
     print(f"MLB {year}")
     teams = mlb_team_abbreviations(year)
+    game_files = []
 
     for category, labels in MLB_STATS.items():
         url = (f"{MLB_API}/stats/leaders?sportId=1&season={year}&limit=100"
@@ -187,14 +246,16 @@ def build_mlb(year):
                     continue  # e.g. holds before they were tracked
                 num_teams = leader.get("numTeams", 1)
                 team = f"{num_teams}TM" if num_teams > 1 else teams.get(leader["team"]["id"], "")
-                rows.append({"rank": leader["rank"], "name": leader["person"]["fullName"],
-                             "team": team, "value": value})
+                rows.append({"rank": leader["rank"], "id": str(leader["person"]["id"]),
+                             "name": leader["person"]["fullName"], "team": team, "value": value})
             stat = make_stat(label, rows)
             if stat:
                 stats.append(stat)
 
-        write_game_file("mlb", category, year, stats)
+        game_files.append(write_game_file("mlb", category, year, stats))
         time.sleep(0.5)  # be polite to the API
+
+    write_players_file("mlb", year, mlb_players(year, teams), game_files)
 
 
 # ------------------------------------------------------------
@@ -283,6 +344,10 @@ def nfl_stats(team_games):
 NFL_MOVES = [("LA", 2016, "STL"), ("LAC", 2017, "SD"), ("LV", 2020, "OAK")]
 
 
+# nflverse writes safeties as SAF in recent seasons and S before
+NFL_POSITION_FIXES = {"SAF": "S"}
+
+
 def nfl_team(code, year):
     for new, since, old in NFL_MOVES:
         if code == new and year < since:
@@ -299,7 +364,7 @@ def rank_rows(players, value_of, fmt, year):
             break
         shown = fmt(value)
         rank = rows[-1]["rank"] if rows and rows[-1]["value"] == shown else i + 1
-        rows.append({"rank": rank, "name": r["player_display_name"],
+        rows.append({"rank": rank, "id": r["player_id"], "name": r["player_display_name"],
                      "team": nfl_team(r["recent_team"], year), "value": shown})
     return rows
 
@@ -318,7 +383,13 @@ def build_nfl(year):
         if stat:
             stats.append(stat)
 
-    write_game_file("nfl", None, year, stats)
+    game_file = write_game_file("nfl", None, year, stats)
+
+    roster = {r["player_id"]: {"name": r["player_display_name"],
+                               "team": nfl_team(r["recent_team"], year),
+                               "pos": NFL_POSITION_FIXES.get(r["position"], r["position"])}
+              for r in players}
+    write_players_file("nfl", year, roster, [game_file])
 
 
 # ------------------------------------------------------------
@@ -361,6 +432,12 @@ NBA_STATS = [
     ("Turnovers", "TOV", "Totals", whole),
 ]
 
+# Everyone who played, sorted by minutes (Totals mode applies no minimums).
+# stats.nba.com's endpoints with positions don't answer scripts, so NBA
+# players have a team but no position.
+NBA_PLAYERS_API = ("https://stats.nba.com/stats/leagueleaders?LeagueID=00&Scope=S"
+                   "&SeasonType=Regular%20Season&ActiveFlag=&PerMode=Totals&Season={season}&StatCategory=MIN")
+
 # stats.nba.com's codes for some teams in older seasons, as fans know them
 NBA_TEAM_FIXES = {"UTH": "UTA", "GOS": "GSW", "PHL": "PHI", "SAN": "SAS"}
 
@@ -370,20 +447,28 @@ def nba_season(year):
     return f"{year - 1}-{str(year)[-2:]}"
 
 
+def fetch_nba(url):
+    try:
+        request = urllib.request.Request(url, headers=NBA_HEADERS)
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read().decode("utf-8"))["resultSet"]
+    finally:
+        time.sleep(0.6)  # stats.nba.com blocks rapid-fire requests
+
+
+def nba_team(code):
+    return NBA_TEAM_FIXES.get(code, code)
+
+
 def build_nba(year):
     print(f"NBA {nba_season(year)}")
     stats = []
     for label, category, mode, fmt in NBA_STATS:
-        url = NBA_API.format(mode=mode, season=nba_season(year), stat=category)
         try:
-            request = urllib.request.Request(url, headers=NBA_HEADERS)
-            with urllib.request.urlopen(request, timeout=60) as response:
-                result = json.loads(response.read().decode("utf-8"))["resultSet"]
+            result = fetch_nba(NBA_API.format(mode=mode, season=nba_season(year), stat=category))
         except Exception as error:
             print(f"  ! skipped {label}: {error}")
             continue
-        finally:
-            time.sleep(0.6)  # stats.nba.com blocks rapid-fire requests
 
         column = {name: i for i, name in enumerate(result["headers"])}
         # Already in leaderboard order; rank by the value players will see
@@ -394,14 +479,19 @@ def build_nba(year):
                 continue
             shown = fmt(value)
             rank = rows[-1]["rank"] if rows and rows[-1]["value"] == shown else i + 1
-            team = row[column["TEAM"]]
-            rows.append({"rank": rank, "name": row[column["PLAYER"]],
-                         "team": NBA_TEAM_FIXES.get(team, team), "value": shown})
+            rows.append({"rank": rank, "id": str(row[column["PLAYER_ID"]]), "name": row[column["PLAYER"]],
+                         "team": nba_team(row[column["TEAM"]]), "value": shown})
         stat = make_stat(label, rows)
         if stat:
             stats.append(stat)
 
-    write_game_file("nba", None, year, stats)
+    game_file = write_game_file("nba", None, year, stats)
+
+    result = fetch_nba(NBA_PLAYERS_API.format(season=nba_season(year)))
+    column = {name: i for i, name in enumerate(result["headers"])}
+    roster = {row[column["PLAYER_ID"]]: {"name": row[column["PLAYER"]], "team": nba_team(row[column["TEAM"]]), "pos": ""}
+              for row in result["rowSet"]}
+    write_players_file("nba", year, roster, [game_file])
 
 
 # ------------------------------------------------------------

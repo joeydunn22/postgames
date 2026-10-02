@@ -4,66 +4,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "33.5"
       },
       {
         "rank": 2,
+        "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
         "value": "31.1"
       },
       {
         "rank": 3,
+        "id": "1630162",
         "name": "Anthony Edwards",
         "team": "MIN",
         "value": "28.8"
       },
       {
         "rank": 4,
+        "id": "1627759",
         "name": "Jaylen Brown",
         "team": "BOS",
         "value": "28.7"
       },
       {
         "rank": 5,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "28.3"
       },
       {
         "rank": 6,
+        "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
         "value": "27.9"
       },
       {
         "rank": 6,
+        "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
         "value": "27.9"
       },
       {
         "rank": 8,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "27.7"
       },
       {
         "rank": 9,
+        "id": "1626164",
         "name": "Devin Booker",
         "team": "PHX",
         "value": "26.1"
       },
       {
         "rank": 10,
+        "id": "1628973",
         "name": "Jalen Brunson",
         "team": "NYK",
         "value": "26.0"
       },
       {
         "rank": 10,
+        "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
         "value": "26.0"
@@ -75,60 +86,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "12.9"
       },
       {
         "rank": 2,
+        "id": "1626157",
         "name": "Karl-Anthony Towns",
         "team": "NYK",
         "value": "11.9"
       },
       {
         "rank": 3,
+        "id": "1642270",
         "name": "Donovan Clingan",
         "team": "POR",
         "value": "11.6"
       },
       {
         "rank": 4,
+        "id": "1641705",
         "name": "Victor Wembanyama",
         "team": "SAS",
         "value": "11.5"
       },
       {
         "rank": 4,
+        "id": "203497",
         "name": "Rudy Gobert",
         "team": "MIN",
         "value": "11.5"
       },
       {
         "rank": 6,
+        "id": "1631105",
         "name": "Jalen Duren",
         "team": "DET",
         "value": "10.5"
       },
       {
         "rank": 7,
+        "id": "1630552",
         "name": "Jalen Johnson",
         "team": "ATL",
         "value": "10.3"
       },
       {
         "rank": 8,
+        "id": "1628389",
         "name": "Bam Adebayo",
         "team": "MIA",
         "value": "10.0"
       },
       {
         "rank": 9,
+        "id": "1630596",
         "name": "Evan Mobley",
         "team": "CLE",
         "value": "9.0"
       },
       {
         "rank": 9,
+        "id": "1642276",
         "name": "Kel'el Ware",
         "team": "MIA",
         "value": "9.0"
@@ -140,60 +161,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "10.7"
       },
       {
         "rank": 2,
+        "id": "1630595",
         "name": "Cade Cunningham",
         "team": "DET",
         "value": "9.9"
       },
       {
         "rank": 3,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "8.3"
       },
       {
         "rank": 4,
+        "id": "201935",
         "name": "James Harden",
         "team": "CLE",
         "value": "8.0"
       },
       {
         "rank": 5,
+        "id": "1630552",
         "name": "Jalen Johnson",
         "team": "ATL",
         "value": "7.9"
       },
       {
         "rank": 6,
+        "id": "1642264",
         "name": "Stephon Castle",
         "team": "SAS",
         "value": "7.4"
       },
       {
         "rank": 7,
+        "id": "2544",
         "name": "LeBron James",
         "team": "LAL",
         "value": "7.2"
       },
       {
         "rank": 7,
+        "id": "1642268",
         "name": "Isaiah Collier",
         "team": "UTA",
         "value": "7.2"
       },
       {
         "rank": 9,
+        "id": "1630163",
         "name": "LaMelo Ball",
         "team": "CHA",
         "value": "7.1"
       },
       {
         "rank": 9,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "7.1"
@@ -205,84 +236,98 @@
     "players": [
       {
         "rank": 1,
+        "id": "1641709",
         "name": "Ausar Thompson",
         "team": "DET",
         "value": "2.0"
       },
       {
         "rank": 1,
+        "id": "1630700",
         "name": "Dyson Daniels",
         "team": "ATL",
         "value": "2.0"
       },
       {
         "rank": 3,
+        "id": "1641717",
         "name": "Cason Wallace",
         "team": "OKC",
         "value": "1.9"
       },
       {
         "rank": 3,
+        "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
         "value": "1.9"
       },
       {
         "rank": 3,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "1.9"
       },
       {
         "rank": 6,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "1.6"
       },
       {
         "rank": 6,
+        "id": "1627739",
         "name": "Kris Dunn",
         "team": "LAC",
         "value": "1.6"
       },
       {
         "rank": 6,
+        "id": "1628384",
         "name": "OG Anunoby",
         "team": "NYK",
         "value": "1.6"
       },
       {
         "rank": 9,
+        "id": "1630692",
         "name": "Jordan Goodwin",
         "team": "PHX",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1641708",
         "name": "Amen Thompson",
         "team": "HOU",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1630530",
         "name": "Trey Murphy III",
         "team": "NOP",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1642263",
         "name": "Reed Sheppard",
         "team": "HOU",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1631157",
         "name": "Ryan Rollins",
         "team": "MIL",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
         "value": "1.5"
@@ -294,78 +339,91 @@
     "players": [
       {
         "rank": 1,
+        "id": "1641705",
         "name": "Victor Wembanyama",
         "team": "SAS",
         "value": "3.1"
       },
       {
         "rank": 2,
+        "id": "1631096",
         "name": "Chet Holmgren",
         "team": "OKC",
         "value": "1.9"
       },
       {
         "rank": 2,
+        "id": "1630643",
         "name": "Jay Huff",
         "team": "IND",
         "value": "1.9"
       },
       {
         "rank": 4,
+        "id": "1630596",
         "name": "Evan Mobley",
         "team": "CLE",
         "value": "1.7"
       },
       {
         "rank": 4,
+        "id": "1642270",
         "name": "Donovan Clingan",
         "team": "POR",
         "value": "1.7"
       },
       {
         "rank": 6,
+        "id": "203497",
         "name": "Rudy Gobert",
         "team": "MIN",
         "value": "1.6"
       },
       {
         "rank": 6,
+        "id": "1626167",
         "name": "Myles Turner",
         "team": "MIL",
         "value": "1.6"
       },
       {
         "rank": 6,
+        "id": "1630191",
         "name": "Isaiah Stewart",
         "team": "DET",
         "value": "1.6"
       },
       {
         "rank": 9,
+        "id": "1642274",
         "name": "Yves Missi",
         "team": "NOP",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1641824",
         "name": "Matas Buzelis",
         "team": "CHI",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1629057",
         "name": "Robert Williams III",
         "team": "POR",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1641750",
         "name": "Ryan Kalkbrenner",
         "team": "CHA",
         "value": "1.5"
       },
       {
         "rank": 9,
+        "id": "1630567",
         "name": "Scottie Barnes",
         "team": "TOR",
         "value": "1.5"
@@ -377,66 +435,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "4.0"
       },
       {
         "rank": 2,
+        "id": "1630163",
         "name": "LaMelo Ball",
         "team": "CHA",
         "value": "3.8"
       },
       {
         "rank": 3,
+        "id": "1642851",
         "name": "Kon Knueppel",
         "team": "CHA",
         "value": "3.4"
       },
       {
         "rank": 3,
+        "id": "1630162",
         "name": "Anthony Edwards",
         "team": "MIN",
         "value": "3.4"
       },
       {
         "rank": 5,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "3.3"
       },
       {
         "rank": 6,
+        "id": "1630530",
         "name": "Trey Murphy III",
         "team": "NOP",
         "value": "3.2"
       },
       {
         "rank": 6,
+        "id": "1629638",
         "name": "Nickeil Alexander-Walker",
         "team": "ATL",
         "value": "3.2"
       },
       {
         "rank": 6,
+        "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
         "value": "3.2"
       },
       {
         "rank": 9,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "3.1"
       },
       {
         "rank": 9,
+        "id": "1641706",
         "name": "Brandon Miller",
         "team": "CHA",
         "value": "3.1"
       },
       {
         "rank": 9,
+        "id": "201935",
         "name": "James Harden",
         "team": "CLE",
         "value": "3.1"
@@ -448,66 +517,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "38.0"
       },
       {
         "rank": 2,
+        "id": "1641708",
         "name": "Amen Thompson",
         "team": "HOU",
         "value": "37.4"
       },
       {
         "rank": 3,
+        "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
         "value": "36.4"
       },
       {
         "rank": 4,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "35.8"
       },
       {
         "rank": 5,
+        "id": "1630530",
         "name": "Trey Murphy III",
         "team": "NOP",
         "value": "35.5"
       },
       {
         "rank": 6,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "35.4"
       },
       {
         "rank": 7,
+        "id": "1630552",
         "name": "Jalen Johnson",
         "team": "ATL",
         "value": "35.2"
       },
       {
         "rank": 8,
+        "id": "1631095",
         "name": "Jabari Smith Jr.",
         "team": "HOU",
         "value": "35.1"
       },
       {
         "rank": 9,
+        "id": "1630162",
         "name": "Anthony Edwards",
         "team": "MIN",
         "value": "35.0"
       },
       {
         "rank": 9,
+        "id": "1628973",
         "name": "Jalen Brunson",
         "team": "NYK",
         "value": "35.0"
       },
       {
         "rank": 9,
+        "id": "1642845",
         "name": "VJ Edgecombe",
         "team": "PHI",
         "value": "35.0"
@@ -519,60 +599,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "203497",
         "name": "Rudy Gobert",
         "team": "MIN",
         "value": "68.2%"
       },
       {
         "rank": 2,
+        "id": "1629028",
         "name": "Deandre Ayton",
         "team": "LAL",
         "value": "67.1%"
       },
       {
         "rank": 3,
+        "id": "1629674",
         "name": "Neemias Queta",
         "team": "BOS",
         "value": "65.3%"
       },
       {
         "rank": 4,
+        "id": "1631105",
         "name": "Jalen Duren",
         "team": "DET",
         "value": "65.0%"
       },
       {
         "rank": 5,
+        "id": "1628386",
         "name": "Jarrett Allen",
         "team": "CLE",
         "value": "63.8%"
       },
       {
         "rank": 6,
+        "id": "203507",
         "name": "Giannis Antetokounmpo",
         "team": "MIL",
         "value": "62.4%"
       },
       {
         "rank": 7,
+        "id": "1629627",
         "name": "Zion Williamson",
         "team": "NOP",
         "value": "60.0%"
       },
       {
         "rank": 8,
+        "id": "1629651",
         "name": "Nic Claxton",
         "team": "BKN",
         "value": "57.1%"
       },
       {
         "rank": 8,
+        "id": "1642875",
         "name": "Maxime Raynaud",
         "team": "SAC",
         "value": "57.1%"
       },
       {
         "rank": 10,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "56.9%"
@@ -584,60 +674,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1628379",
         "name": "Luke Kennard",
         "team": "LAL",
         "value": "47.8%"
       },
       {
         "rank": 2,
+        "id": "1626171",
         "name": "Bobby Portis Jr.",
         "team": "MIL",
         "value": "45.6%"
       },
       {
         "rank": 3,
+        "id": "1642285",
         "name": "Cam Spencer",
         "team": "MEM",
         "value": "44.9%"
       },
       {
         "rank": 4,
+        "id": "1642281",
         "name": "Jaylon Tyson",
         "team": "CLE",
         "value": "44.6%"
       },
       {
         "rank": 5,
+        "id": "1629060",
         "name": "Rui Hachimura",
         "team": "LAL",
         "value": "44.3%"
       },
       {
         "rank": 6,
+        "id": "1630245",
         "name": "Ayo Dosunmu",
         "team": "MIN",
         "value": "43.9%"
       },
       {
         "rank": 7,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "43.5%"
       },
       {
         "rank": 8,
+        "id": "1629661",
         "name": "Cameron Johnson",
         "team": "DEN",
         "value": "43.0%"
       },
       {
         "rank": 9,
+        "id": "1642851",
         "name": "Kon Knueppel",
         "team": "CHA",
         "value": "42.5%"
       },
       {
         "rank": 10,
+        "id": "1630198",
         "name": "Isaiah Joe",
         "team": "OKC",
         "value": "42.3%"
@@ -649,72 +749,84 @@
     "players": [
       {
         "rank": 1,
+        "id": "1642285",
         "name": "Cam Spencer",
         "team": "MEM",
         "value": "94.0%"
       },
       {
         "rank": 2,
+        "id": "201939",
         "name": "Stephen Curry",
         "team": "GSW",
         "value": "92.3%"
       },
       {
         "rank": 3,
+        "id": "1630217",
         "name": "Desmond Bane",
         "team": "ORL",
         "value": "90.8%"
       },
       {
         "rank": 4,
+        "id": "1629638",
         "name": "Nickeil Alexander-Walker",
         "team": "ATL",
         "value": "90.2%"
       },
       {
         "rank": 4,
+        "id": "1628401",
         "name": "Derrick White",
         "team": "BOS",
         "value": "90.2%"
       },
       {
         "rank": 6,
+        "id": "1630163",
         "name": "LaMelo Ball",
         "team": "CHA",
         "value": "89.9%"
       },
       {
         "rank": 6,
+        "id": "1631108",
         "name": "Max Christie",
         "team": "DAL",
         "value": "89.9%"
       },
       {
         "rank": 8,
+        "id": "1628374",
         "name": "Lauri Markkanen",
         "team": "UTA",
         "value": "89.6%"
       },
       {
         "rank": 9,
+        "id": "1641706",
         "name": "Brandon Miller",
         "team": "CHA",
         "value": "89.2%"
       },
       {
         "rank": 9,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "89.2%"
       },
       {
         "rank": 9,
+        "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
         "value": "89.2%"
       },
       {
         "rank": 9,
+        "id": "1641718",
         "name": "Keyonte George",
         "team": "UTA",
         "value": "89.2%"
@@ -726,60 +838,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "2143"
       },
       {
         "rank": 2,
+        "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
         "value": "2117"
       },
       {
         "rank": 3,
+        "id": "1627759",
         "name": "Jaylen Brown",
         "team": "BOS",
         "value": "2038"
       },
       {
         "rank": 4,
+        "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
         "value": "2026"
       },
       {
         "rank": 5,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "1980"
       },
       {
         "rank": 6,
+        "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
         "value": "1952"
       },
       {
         "rank": 7,
+        "id": "1628973",
         "name": "Jalen Brunson",
         "team": "NYK",
         "value": "1927"
       },
       {
         "rank": 8,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "1905"
       },
       {
         "rank": 9,
+        "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
         "value": "1813"
       },
       {
         "rank": 10,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "1799"
@@ -791,60 +913,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1642270",
         "name": "Donovan Clingan",
         "team": "POR",
         "value": "892"
       },
       {
         "rank": 2,
+        "id": "1626157",
         "name": "Karl-Anthony Towns",
         "team": "NYK",
         "value": "889"
       },
       {
         "rank": 3,
+        "id": "203497",
         "name": "Rudy Gobert",
         "team": "MIN",
         "value": "872"
       },
       {
         "rank": 4,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "836"
       },
       {
         "rank": 5,
+        "id": "1630552",
         "name": "Jalen Johnson",
         "team": "ATL",
         "value": "740"
       },
       {
         "rank": 6,
+        "id": "1631105",
         "name": "Jalen Duren",
         "team": "DET",
         "value": "737"
       },
       {
         "rank": 7,
+        "id": "1641705",
         "name": "Victor Wembanyama",
         "team": "SAS",
         "value": "736"
       },
       {
         "rank": 8,
+        "id": "1628389",
         "name": "Bam Adebayo",
         "team": "MIA",
         "value": "732"
       },
       {
         "rank": 9,
+        "id": "1642276",
         "name": "Kel'el Ware",
         "team": "MIA",
         "value": "694"
       },
       {
         "rank": 10,
+        "id": "1630578",
         "name": "Alperen Sengun",
         "team": "HOU",
         "value": "640"
@@ -856,60 +988,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "697"
       },
       {
         "rank": 2,
+        "id": "1630595",
         "name": "Cade Cunningham",
         "team": "DET",
         "value": "634"
       },
       {
         "rank": 3,
+        "id": "1630552",
         "name": "Jalen Johnson",
         "team": "ATL",
         "value": "566"
       },
       {
         "rank": 4,
+        "id": "201935",
         "name": "James Harden",
         "team": "CLE",
         "value": "557"
       },
       {
         "rank": 5,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "535"
       },
       {
         "rank": 6,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "530"
       },
       {
         "rank": 7,
+        "id": "1630163",
         "name": "LaMelo Ball",
         "team": "CHA",
         "value": "514"
       },
       {
         "rank": 8,
+        "id": "1628973",
         "name": "Jalen Brunson",
         "team": "NYK",
         "value": "503"
       },
       {
         "rank": 9,
+        "id": "1642264",
         "name": "Stephon Castle",
         "team": "SAS",
         "value": "502"
       },
       {
         "rank": 10,
+        "id": "1630581",
         "name": "Josh Giddey",
         "team": "CHI",
         "value": "494"
@@ -921,60 +1063,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1641717",
         "name": "Cason Wallace",
         "team": "OKC",
         "value": "150"
       },
       {
         "rank": 2,
+        "id": "1630700",
         "name": "Dyson Daniels",
         "team": "ATL",
         "value": "149"
       },
       {
         "rank": 3,
+        "id": "1641709",
         "name": "Ausar Thompson",
         "team": "DET",
         "value": "146"
       },
       {
         "rank": 4,
+        "id": "1627739",
         "name": "Kris Dunn",
         "team": "LAC",
         "value": "131"
       },
       {
         "rank": 5,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "130"
       },
       {
         "rank": 6,
+        "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
         "value": "122"
       },
       {
         "rank": 6,
+        "id": "1642263",
         "name": "Reed Sheppard",
         "team": "HOU",
         "value": "122"
       },
       {
         "rank": 8,
+        "id": "1641708",
         "name": "Amen Thompson",
         "team": "HOU",
         "value": "119"
       },
       {
         "rank": 9,
+        "id": "1630567",
         "name": "Scottie Barnes",
         "team": "TOR",
         "value": "114"
       },
       {
         "rank": 10,
+        "id": "1631157",
         "name": "Ryan Rollins",
         "team": "MIL",
         "value": "110"
@@ -986,66 +1138,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "1641705",
         "name": "Victor Wembanyama",
         "team": "SAS",
         "value": "197"
       },
       {
         "rank": 2,
+        "id": "1630643",
         "name": "Jay Huff",
         "team": "IND",
         "value": "153"
       },
       {
         "rank": 3,
+        "id": "1631096",
         "name": "Chet Holmgren",
         "team": "OKC",
         "value": "131"
       },
       {
         "rank": 4,
+        "id": "1642270",
         "name": "Donovan Clingan",
         "team": "POR",
         "value": "130"
       },
       {
         "rank": 5,
+        "id": "203497",
         "name": "Rudy Gobert",
         "team": "MIN",
         "value": "124"
       },
       {
         "rank": 6,
+        "id": "1641824",
         "name": "Matas Buzelis",
         "team": "CHI",
         "value": "116"
       },
       {
         "rank": 6,
+        "id": "1630567",
         "name": "Scottie Barnes",
         "team": "TOR",
         "value": "116"
       },
       {
         "rank": 8,
+        "id": "1626167",
         "name": "Myles Turner",
         "team": "MIL",
         "value": "115"
       },
       {
         "rank": 9,
+        "id": "1630596",
         "name": "Evan Mobley",
         "team": "CLE",
         "value": "113"
       },
       {
         "rank": 10,
+        "id": "1641750",
         "name": "Ryan Kalkbrenner",
         "team": "CHA",
         "value": "101"
       },
       {
         "rank": 10,
+        "id": "1642274",
         "name": "Yves Missi",
         "team": "NOP",
         "value": "101"
@@ -1057,66 +1220,77 @@
     "players": [
       {
         "rank": 1,
+        "id": "1642851",
         "name": "Kon Knueppel",
         "team": "CHA",
         "value": "273"
       },
       {
         "rank": 2,
+        "id": "1630163",
         "name": "LaMelo Ball",
         "team": "CHA",
         "value": "272"
       },
       {
         "rank": 3,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "254"
       },
       {
         "rank": 4,
+        "id": "1629638",
         "name": "Nickeil Alexander-Walker",
         "team": "ATL",
         "value": "251"
       },
       {
         "rank": 5,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "245"
       },
       {
         "rank": 6,
+        "id": "1628978",
         "name": "Donte DiVincenzo",
         "team": "MIN",
         "value": "244"
       },
       {
         "rank": 7,
+        "id": "1631260",
         "name": "AJ Green",
         "team": "MIL",
         "value": "232"
       },
       {
         "rank": 7,
+        "id": "1631221",
         "name": "Collin Gillespie",
         "team": "PHX",
         "value": "232"
       },
       {
         "rank": 9,
+        "id": "1642263",
         "name": "Reed Sheppard",
         "team": "HOU",
         "value": "227"
       },
       {
         "rank": 10,
+        "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
         "value": "224"
       },
       {
         "rank": 10,
+        "id": "203501",
         "name": "Tim Hardaway Jr.",
         "team": "DEN",
         "value": "224"
@@ -1128,60 +1302,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
         "value": "540"
       },
       {
         "rank": 2,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "503"
       },
       {
         "rank": 3,
+        "id": "1630166",
         "name": "Deni Avdija",
         "team": "POR",
         "value": "489"
       },
       {
         "rank": 4,
+        "id": "201935",
         "name": "James Harden",
         "team": "CLE",
         "value": "463"
       },
       {
         "rank": 5,
+        "id": "1631094",
         "name": "Paolo Banchero",
         "team": "ORL",
         "value": "457"
       },
       {
         "rank": 6,
+        "id": "1626164",
         "name": "Devin Booker",
         "team": "PHX",
         "value": "454"
       },
       {
         "rank": 7,
+        "id": "1627759",
         "name": "Jaylen Brown",
         "team": "BOS",
         "value": "426"
       },
       {
         "rank": 8,
+        "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
         "value": "408"
       },
       {
         "rank": 9,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "399"
       },
       {
         "rank": 10,
+        "id": "203944",
         "name": "Julius Randle",
         "team": "MIN",
         "value": "398"
@@ -1193,60 +1377,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1627759",
         "name": "Jaylen Brown",
         "team": "BOS",
         "value": "736"
       },
       {
         "rank": 2,
+        "id": "1628983",
         "name": "Shai Gilgeous-Alexander",
         "team": "OKC",
         "value": "731"
       },
       {
         "rank": 3,
+        "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
         "value": "716"
       },
       {
         "rank": 4,
+        "id": "1630178",
         "name": "Tyrese Maxey",
         "team": "PHI",
         "value": "694"
       },
       {
         "rank": 5,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "693"
       },
       {
         "rank": 6,
+        "id": "1628973",
         "name": "Jalen Brunson",
         "team": "NYK",
         "value": "689"
       },
       {
         "rank": 7,
+        "id": "1628378",
         "name": "Donovan Mitchell",
         "team": "CLE",
         "value": "678"
       },
       {
         "rank": 8,
+        "id": "1627750",
         "name": "Jamal Murray",
         "team": "DEN",
         "value": "657"
       },
       {
         "rank": 9,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "644"
       },
       {
         "rank": 10,
+        "id": "202695",
         "name": "Kawhi Leonard",
         "team": "LAC",
         "value": "635"
@@ -1258,60 +1452,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1642270",
         "name": "Donovan Clingan",
         "team": "POR",
         "value": "347"
       },
       {
         "rank": 2,
+        "id": "203497",
         "name": "Rudy Gobert",
         "team": "MIN",
         "value": "299"
       },
       {
         "rank": 3,
+        "id": "1631217",
         "name": "Moussa Diabaté",
         "team": "CHA",
         "value": "273"
       },
       {
         "rank": 4,
+        "id": "1631105",
         "name": "Jalen Duren",
         "team": "DET",
         "value": "265"
       },
       {
         "rank": 5,
+        "id": "1629011",
         "name": "Mitchell Robinson",
         "team": "NYK",
         "value": "252"
       },
       {
         "rank": 6,
+        "id": "1641708",
         "name": "Amen Thompson",
         "team": "HOU",
         "value": "235"
       },
       {
         "rank": 7,
+        "id": "1626157",
         "name": "Karl-Anthony Towns",
         "team": "NYK",
         "value": "233"
       },
       {
         "rank": 8,
+        "id": "1629674",
         "name": "Neemias Queta",
         "team": "BOS",
         "value": "230"
       },
       {
         "rank": 9,
+        "id": "1642276",
         "name": "Kel'el Ware",
         "team": "MIA",
         "value": "217"
       },
       {
         "rank": 10,
+        "id": "1630578",
         "name": "Alperen Sengun",
         "team": "HOU",
         "value": "215"
@@ -1323,60 +1527,70 @@
     "players": [
       {
         "rank": 1,
+        "id": "1627759",
         "name": "Jaylen Brown",
         "team": "BOS",
         "value": "259"
       },
       {
         "rank": 2,
+        "id": "1629029",
         "name": "Luka Dončić",
         "team": "LAL",
         "value": "255"
       },
       {
         "rank": 3,
+        "id": "1630166",
         "name": "Deni Avdija",
         "team": "POR",
         "value": "253"
       },
       {
         "rank": 4,
+        "id": "201142",
         "name": "Kevin Durant",
         "team": "HOU",
         "value": "246"
       },
       {
         "rank": 5,
+        "id": "201935",
         "name": "James Harden",
         "team": "CLE",
         "value": "245"
       },
       {
         "rank": 6,
+        "id": "1630552",
         "name": "Jalen Johnson",
         "team": "ATL",
         "value": "244"
       },
       {
         "rank": 7,
+        "id": "203999",
         "name": "Nikola Jokić",
         "team": "DEN",
         "value": "243"
       },
       {
         "rank": 8,
+        "id": "1630595",
         "name": "Cade Cunningham",
         "team": "DET",
         "value": "236"
       },
       {
         "rank": 9,
+        "id": "1630578",
         "name": "Alperen Sengun",
         "team": "HOU",
         "value": "227"
       },
       {
         "rank": 10,
+        "id": "1631094",
         "name": "Paolo Banchero",
         "team": "ORL",
         "value": "222"
