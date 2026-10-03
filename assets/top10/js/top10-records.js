@@ -100,12 +100,6 @@ function saveDailyDay(date, entry, key = DAILY_KEY) {
     }
 }
 
-function clearDailyDays() {
-    try {
-        localStorage.removeItem(DAILY_KEY);
-    } catch {}
-}
-
 // "YYYY-MM-DD" for the phone's local date, so the puzzle changes at your midnight
 function localDateKey(date = new Date()) {
     return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
@@ -154,33 +148,35 @@ function dailySummary(days = loadDailyDays(), today = localDateKey()) {
    TOP SHELF
    Saved like the daily above (loadDailyDays / saveDailyDay with these
    keys), one entry per day:
-     { number, stage: "stat" | "players" | "value" | "done",
-       statGuesses: [stat labels, wrong ones and the right one],
-       statSolved, playerGuesses: [{ id, hit }], valueGuess,
+     { v: 2, number, stage: "season" | "players" | "order" | "value" | "done",
+       seasonGuesses: [years], seasonSolved, playerGuesses: [{ id, hit }],
+       order: [ids, your #1 first], orderCorrect: how many in the right spot,
+       valueGuess,
        valueTier: "exact" | "close" | "near" | "far", done, at }
-   Points: the stat 3/2/1 by try (0 if missed), 1 per top player named,
-   the number 3/2/1/0 by how close.
+   Points: the season 3/2/1 by try (0 if missed), 1 per top player
+   named, 1 per player put in the right spot, the number 3/2/1/0 by how
+   close. Entries without v: 2 are from an older format and start over.
    ============================================================ */
 
 const SHELF_KEY = "postgames.top10.topshelf";
 const SHELF_TEST_KEY = "postgames.top10.topshelf-test";
-const SHELF_STAT_TRIES = 3;
+const SHELF_SEASON_TRIES = 3;
 const SHELF_PLAYER_MISSES = 3;
 const SHELF_VALUE_POINTS = { exact: 3, close: 2, near: 1, far: 0 };
 
 function shelfPoints(day) {
-    const stat = day.statSolved ? SHELF_STAT_TRIES + 1 - day.statGuesses.length : 0;
+    const season = day.seasonSolved ? SHELF_SEASON_TRIES + 1 - day.seasonGuesses.length : 0;
     const players = (day.playerGuesses || []).filter(g => g.hit).length;
-    return stat + players + (SHELF_VALUE_POINTS[day.valueTier] ?? 0);
+    return season + players + (day.orderCorrect || 0) + (SHELF_VALUE_POINTS[day.valueTier] ?? 0);
 }
 
 function shelfMaxPoints(hidden) {
-    return SHELF_STAT_TRIES + hidden + SHELF_VALUE_POINTS.exact;
+    return SHELF_SEASON_TRIES + hidden * 2 + SHELF_VALUE_POINTS.exact;
 }
 
 // Played, average and best points, and streaks of days in a row played
 function shelfSummary(days, today = localDateKey()) {
-    const finished = Object.entries(days).filter(([, d]) => d.done).sort(([a], [b]) => a.localeCompare(b));
+    const finished = Object.entries(days).filter(([, d]) => d.done && d.v === 2).sort(([a], [b]) => a.localeCompare(b));
     let best = 0, run = 0, bestStreak = 0, previous = null, total = 0;
     for (const [date, day] of finished) {
         const points = shelfPoints(day);

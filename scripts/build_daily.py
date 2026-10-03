@@ -4,9 +4,8 @@ Two dailies, one board each per day:
 - Who's Missing: one player hidden. This script picks the board and the
   hidden player, and works out the hints the game can't get from the data
   files: the hidden player's league/conference and division that season.
-- Top Shelf: the stat name, the top 2-3 names and the values hidden.
-  This script picks the board and how many names to hide, and lists the
-  stats offered as answers.
+- Top Shelf: the season, the top 3 names and the values hidden. This
+  script picks the board.
 
 Days already in the file are kept as they are, so a day's puzzle never
 changes once scheduled; new days are added up to DAYS_AHEAD from today.
@@ -69,16 +68,9 @@ HIDE_RANKS = {
     ("older", "easy"): range(1, 6),
 }
 
-# Top Shelf: how many of the top names are hidden. Easy boards hide more.
-SHELF_HIDDEN = {
-    ("recent", "easy"): 3,
-    ("recent", "hard"): 2,
-    ("older", "easy"): 2,
-}
-# A board is skipped for Top Shelf when another daily stat that season
-# shares this many of its 10 names: from the names alone the two would
-# be a coin flip (Rushing Yards vs Rushing TDs, say).
-SHELF_LOOKALIKE = 7
+# Top Shelf hides the top SHELF_HIDDEN names; the players then put them
+# in order. Older seasons use easy stats only, as for Who's Missing.
+SHELF_HIDDEN = 3
 # Top Shelf never repeats its own board within SHELF_REPEAT_DAYS, and
 # stays this many days away from a board Who's Missing uses (the NFL has
 # too few seasons for the two dailies never to share one).
@@ -298,38 +290,20 @@ def pick_day(rng, entries, used, yesterday_sport):
 # ------------------------------------------------------------------
 # Top Shelf
 # ------------------------------------------------------------------
-def shelf_options(sport):
-    """Every daily stat for a sport, the answers Top Shelf offers."""
-    return [label for (s, _), stats in DAILY_STATS.items() if s == sport for label in stats]
-
-
-def season_boards(entries, sport, year):
-    """Every daily-stat board in one season of a sport, all categories: {label: board}."""
-    boards = {}
-    for entry in entries:
-        if entry["sport"] == sport and entry["year"] == year:
-            stats = DAILY_STATS.get((sport, entry.get("category")), {})
-            boards.update({b["label"]: b for b in load_json(entry["file"]) if b["label"] in stats})
-    return boards
-
-
 def shelf_boards(entry, entries):
-    """Boards in one data file Top Shelf can use, each with how many names to hide."""
+    """Boards in one data file Top Shelf can use: a daily stat for that era,
+    and no ties among the top SHELF_HIDDEN + 1 (the order must be clear)."""
     stats = DAILY_STATS.get((entry["sport"], entry.get("category")))
     if not stats:
         return []
     era = era_of(entry, entries)
-    season = season_boards(entries, entry["sport"], entry["year"])
     found = []
     for board in load_json(entry["file"]):
-        hidden = SHELF_HIDDEN.get((era, stats.get(board["label"])))
-        if not hidden or len(board["players"]) < hidden + 5:
+        if not HIDE_RANKS.get((era, stats.get(board["label"]))):
             continue
-        names = {p["id"] for p in board["players"]}
-        lookalike = any(len(names & {p["id"] for p in other["players"]}) >= SHELF_LOOKALIKE
-                        for label, other in season.items() if label != board["label"])
-        if not lookalike:
-            found.append((board, hidden))
+        top = [p["value"] for p in board["players"][:SHELF_HIDDEN + 1]]
+        if len(board["players"]) >= SHELF_HIDDEN + 5 and len(set(top)) == len(top):
+            found.append(board)
     return found
 
 
@@ -346,18 +320,16 @@ def pick_shelf_day(rng, entries, used, avoid_sports):
         if not pool:
             continue
         entry = rng.choice(pool)
-        options = [(b, hidden) for b, hidden in shelf_boards(entry, entries)
+        options = [b for b in shelf_boards(entry, entries)
                    if (entry["sport"], entry.get("category"), entry["year"], b["label"]) not in used]
         if options:
-            board, hidden = rng.choice(options)
+            board = rng.choice(options)
             return {
                 "sport": entry["sport"],
                 "category": entry.get("category"),
                 "year": entry["year"],
                 "stat": board["label"],
-                "group": board.get("group", ""),
-                "hidden": hidden,
-                "options": shelf_options(entry["sport"]),
+                "hidden": SHELF_HIDDEN,
             }
     raise SystemExit("Couldn't find an unused Top Shelf board after 500 tries")
 

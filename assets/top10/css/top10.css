@@ -1402,24 +1402,19 @@
    9. TOP SHELF (top10-topshelf.html)
    ========================================= */
 
-.play-stat.shelf-unknown {
-    color: var(--accent);
-    letter-spacing: 0.1em;
-}
-
 /* The three rounds */
 .shelf-rounds {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
 }
 
 .shelf-round {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     color: var(--faint);
@@ -1433,7 +1428,7 @@
 }
 
 .shelf-round-label {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -1462,15 +1457,6 @@
 
 .shelf-prompt strong {
     color: var(--accent);
-}
-
-/* Round 1 answers */
-.shelf-options .chip.wrong:disabled {
-    color: var(--bad);
-    border-color: var(--bad);
-    border-style: solid;
-    background: var(--bad-soft);
-    text-decoration: line-through;
 }
 
 /* Hidden top rows */
@@ -1513,20 +1499,89 @@
 .slot.tier-near .slot-value { color: var(--accent); }
 .slot.tier-far .slot-value { color: var(--bad); }
 
-.shelf-initials {
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: var(--text);
+/* Round 2: found names and hints, in no particular order */
+.shelf-tray {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Round 3 */
+.shelf-tray:empty {
+    display: none;
+}
+
+.shelf-tray-found {
+    font-weight: 700;
+    color: var(--good);
+}
+
+.shelf-tray-found .team-tag,
+.shelf-tray-hint .team-tag {
+    font-size: 13px;
+}
+
+.shelf-tray-hint .daily-hint-label {
+    margin-right: 8px;
+}
+
+/* Round 3: tap the names into order */
+.shelf-order-choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.shelf-order-choice:disabled {
+    opacity: 0.3;
+}
+
+.shelf-order-picked {
+    list-style: none;
+}
+
+.shelf-order-slot {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    column-gap: 12px;
+    min-height: 52px;
+    padding: 6px 4px;
+    border-bottom: 1px solid var(--line);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.shelf-order-slot:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.shelf-order-slot.filled .slot-rank {
+    color: var(--accent);
+}
+
+.shelf-order-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Rounds 1 and 4: a field and a button side by side */
 .shelf-value-form {
     display: flex;
     gap: 10px;
 }
 
-.shelf-value-form .guess-input {
+.shelf-value-form .guess-input,
+.shelf-value-form .select {
+    flex: 1;
     min-width: 0;
+}
+
+.shelf-value-form .select {
+    min-height: 60px;
+    font-size: 18px;
 }
 
 .shelf-value-form .btn {
@@ -1535,7 +1590,3 @@
     white-space: nowrap;
 }
 
-.daily-play .feedback.correct:empty,
-.daily-play .feedback:empty {
-    display: none;
-}

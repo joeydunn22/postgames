@@ -3668,7083 +3668,2563 @@
    "sport": "nfl",
    "category": null,
    "year": 2012,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2025,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2022,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2020,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
    "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1994,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1999,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2026,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2015,
+   "stat": "OPS (On-Base + Slugging)",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Rebounds per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 2025,
    "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2016,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2004,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2025,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
-   "category": null,
-   "year": 2012,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2025,
-   "stat": "Stolen Bases",
-   "group": "Speed",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1983,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2018,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1995,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2024,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1993,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2020,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2019,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2017,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2022,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
    "category": null,
    "year": 2023,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2004,
+   "year": 2025,
    "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2021,
-   "stat": "OPS (On-Base + Slugging)",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2012,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Sacks",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2002,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 2024,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2010,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "ERA",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 1992,
+   "year": 2009,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2013,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2002,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2023,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Assists per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 2023,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Batting Average",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2010,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 1996,
    "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1988,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2003,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2005,
+   "stat": "Passing TDs",
+   "hidden": 3
   },
   {
    "sport": "mlb",
-   "category": "pitching",
+   "category": "batting",
+   "year": 1996,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
    "year": 2014,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2023,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Rebounds per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
-   "category": "pitching",
-   "year": 2008,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "category": "batting",
+   "year": 2023,
+   "stat": "Home Runs",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
+   "year": 1990,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2009,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
    "year": 2019,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2023,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Hits",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2016,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2022,
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 1995,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2017,
+   "stat": "3-Pointers Made",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2025,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2006,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2016,
    "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2004,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 2022,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Strikeouts",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2017,
+   "year": 2014,
    "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2015,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2019,
+   "stat": "Runs Scored",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2014,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "3-Point %",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 1994,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Batting Average",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2020,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "3-Point %",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2008,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Receptions",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1987,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2021,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
+   "sport": "nfl",
    "category": null,
-   "year": 2018,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2020,
+   "stat": "Interceptions",
+   "hidden": 3
   },
   {
    "sport": "mlb",
-   "category": "pitching",
-   "year": 2016,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "category": "batting",
+   "year": 2018,
+   "stat": "Stolen Bases",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2022,
    "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2011,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
-   "category": "pitching",
+   "category": "batting",
+   "year": 2012,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
    "year": 2016,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "3-Point %",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2019,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Sacks",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 2018,
    "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1980,
    "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2002,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2020,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Blocks per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 2014,
    "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2023,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2009,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 1999,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2026,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
-   "stat": "Passing Yards",
-   "group": "Passing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2015,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2015,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 1989,
+   "stat": "Points per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2023,
+   "year": 2020,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1992,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2020,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
    "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2010,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1998,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1990,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2012,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1985,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2004,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2023,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2001,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2025,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2021,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1985,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2024,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2020,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2024,
-   "stat": "Stolen Bases",
-   "group": "Speed",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2016,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2019,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2013,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
    "year": 2010,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 1991,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2016,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2024,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1984,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2019,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2009,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2012,
-   "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2008,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Runs Batted In",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1988,
    "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 1991,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1983,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2026,
-   "stat": "Stolen Bases",
-   "group": "Speed",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1984,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2013,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2023,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2018,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2026,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2010,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2007,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2002,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2020,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2011,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2025,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2024,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2021,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2024,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2025,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2002,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2008,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2006,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2011,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1982,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2011,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2023,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2025,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2011,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2004,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1984,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2014,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1994,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2022,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2010,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2007,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1996,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2007,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2016,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2013,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2024,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2003,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2000,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2022,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2000,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
+   "year": 2017,
    "stat": "Passing TDs",
-   "group": "Passing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1997,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2012,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2013,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2017,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2014,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2023,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2019,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2023,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1987,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2019,
-   "stat": "OPS (On-Base + Slugging)",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2012,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2017,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2018,
+   "stat": "Runs Batted In",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2001,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2021,
+   "stat": "Sacks",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2021,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2012,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Field Goal %",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2006,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1990,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2018,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2019,
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2022,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2013,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2023,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1985,
    "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 1999,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2015,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
    "year": 2003,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2023,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2001,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1999,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2002,
    "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2021,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1990,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2014,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1983,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2017,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2016,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2020,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2021,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2020,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2008,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2010,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2026,
-   "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2023,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2011,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1981,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2022,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2025,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2015,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1997,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2021,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2016,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2013,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2022,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 1992,
-   "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2022,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2000,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2025,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2014,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2000,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2017,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2000,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2009,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2007,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2018,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2021,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2007,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2018,
-   "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2012,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2003,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2011,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2017,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2000,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2025,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2009,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2012,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 2024,
-   "stat": "OPS (On-Base + Slugging)",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2020,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2021,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1997,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Hits",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2013,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2011,
+   "stat": "Receiving TDs",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2019,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2020,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2010,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2012,
+   "stat": "OPS (On-Base + Slugging)",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2008,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2019,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 1988,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2000,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1997,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1983,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2011,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2008,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 1993,
    "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2019,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2022,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2017,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2025,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2001,
-   "stat": "Passing Yards",
-   "group": "Passing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2015,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2006,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2022,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2000,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2001,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2000,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2020,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2021,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2023,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2024,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2005,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2016,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2007,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2001,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2000,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2020,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2017,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2000,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2018,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2008,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2012,
+   "year": 1982,
    "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 1995,
-   "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Batting Average",
+   "hidden": 3
   },
   {
-   "sport": "nba",
+   "sport": "nfl",
    "category": null,
-   "year": 1981,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2015,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2006,
+   "year": 2012,
    "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2003,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2015,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2002,
+   "stat": "Receiving TDs",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2023,
-   "stat": "Stolen Bases",
-   "group": "Speed",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
    "year": 2017,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2019,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Home Runs",
+   "hidden": 3
   },
   {
    "sport": "nfl",
-   "category": null,
-   "year": 1999,
-   "stat": "Rushing Yards",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2001,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
    "category": null,
    "year": 2020,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Receiving TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2012,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2003,
+   "stat": "Points per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 2004,
    "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2014,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 1998,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2011,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1997,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2019,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2002,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2013,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2004,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2011,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2013,
-   "stat": "OPS (On-Base + Slugging)",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2015,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2008,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2018,
-   "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2022,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2015,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1994,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2025,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2015,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2016,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2022,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2022,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2009,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1982,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2016,
-   "stat": "Passing Yards",
-   "group": "Passing",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2006,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2001,
-   "stat": "Passing TDs",
-   "group": "Passing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "mlb",
-   "category": "pitching",
-   "year": 1992,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "category": "batting",
+   "year": 2011,
+   "stat": "Runs Batted In",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 1999,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2023,
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1990,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "3-Pointers Made",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 2012,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1984,
+   "stat": "Points per Game",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2013,
+   "year": 2010,
    "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2014,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 1981,
+   "year": 1994,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2020,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2022,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2021,
+   "stat": "Receiving TDs",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2016,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2009,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2008,
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
-   "category": "batting",
+   "category": "pitching",
+   "year": 2004,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
    "year": 2007,
-   "stat": "Home Runs",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Receiving TDs",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2019,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "3-Point %",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2006,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2019,
+   "stat": "Wins",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2007,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1993,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2026,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1998,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2012,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2013,
+   "stat": "3-Point %",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2026,
+   "year": 2025,
    "stat": "OPS (On-Base + Slugging)",
-   "group": "Power",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2014,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2002,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2018,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2000,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2016,
-   "stat": "Blocks per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2006,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2015,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2018,
+   "stat": "Wins",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2011,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Sacks",
+   "hidden": 3
   },
   {
-   "sport": "nba",
-   "category": null,
-   "year": 2025,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2014,
+   "stat": "ERA",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2020,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2022,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2013,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2024,
+   "stat": "Field Goal %",
+   "hidden": 3
   },
   {
    "sport": "nfl",
+   "category": null,
+   "year": 2004,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
    "category": null,
    "year": 2019,
-   "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "stat": "Field Goal %",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 1992,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2013,
-   "stat": "Interceptions",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1986,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1994,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2023,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 1999,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1998,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2021,
+   "year": 2012,
    "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2013,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2013,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1993,
-   "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2000,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 1992,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2020,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
    "year": 2017,
-   "stat": "Saves",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Rushing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2022,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2007,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Receiving Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2012,
-   "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2010,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2001,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Blocks per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2026,
+   "year": 2006,
    "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
-   "year": 2020,
-   "stat": "Sacks",
-   "group": "Defense",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2002,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2007,
-   "stat": "Rushing TDs",
-   "group": "Rushing",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "year": 2010,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2023,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2002,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2018,
+   "year": 2022,
    "stat": "Assists per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
   },
   {
-   "sport": "mlb",
-   "category": "pitching",
-   "year": 2003,
-   "stat": "Wins",
-   "group": "Results",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Passing TDs",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2015,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 1993,
+   "year": 1996,
+   "stat": "Wins",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Receiving TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1995,
    "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2016,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1990,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2002,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2018,
+   "stat": "Home Runs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "3-Point %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2020,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1999,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2012,
+   "stat": "Stolen Bases",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2022,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2005,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1995,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2019,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2022,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1997,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2016,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Receiving TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2024,
+   "stat": "Saves",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2004,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1986,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "Stolen Bases",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1989,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2004,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2016,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2021,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2022,
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1998,
+   "stat": "Home Runs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2002,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Sacks",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2003,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2013,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2000,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2025,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2009,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2024,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "3-Point %",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2004,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2019,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1992,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Receiving TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2017,
+   "stat": "Stolen Bases",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Sacks",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2014,
+   "stat": "Saves",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1994,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1995,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1997,
+   "stat": "Home Runs",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2001,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2000,
+   "stat": "Receiving TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2020,
+   "stat": "Stolen Bases",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1996,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1990,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2000,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2016,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2000,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2004,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2018,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2009,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2024,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1996,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2023,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2011,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2023,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2020,
+   "stat": "Saves",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2002,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2016,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2020,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1994,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1996,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2013,
+   "stat": "OPS (On-Base + Slugging)",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1986,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Passing Yards",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 2024,
    "stat": "3-Pointers Made",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2026,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Receiving Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2017,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2000,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1980,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2001,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1991,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1990,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Steals per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2021,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1981,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1991,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2016,
+   "stat": "Stolen Bases",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "3-Point %",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2024,
+   "stat": "OPS (On-Base + Slugging)",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2023,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2016,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2007,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2009,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "3-Point %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2002,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2012,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 2013,
-   "stat": "Batting Average",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Runs Batted In",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2014,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2017,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1993,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2007,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
    "year": 2023,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Stolen Bases",
+   "hidden": 3
   },
   {
-   "sport": "nba",
+   "sport": "nfl",
    "category": null,
-   "year": 1997,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2022,
+   "stat": "Rushing Yards",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
    "year": 1999,
-   "stat": "ERA",
-   "group": "Run Prevention",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "Strikeouts",
+   "hidden": 3
   },
   {
    "sport": "nfl",
    "category": null,
    "year": 2020,
    "stat": "Receiving Yards",
-   "group": "Receiving",
-   "hidden": 3,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2018,
-   "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2013,
+   "stat": "Rebounds per Game",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 1991,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 1998,
+   "stat": "Batting Average",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2026,
+   "year": 2013,
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2002,
+   "stat": "Home Runs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1982,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2014,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2023,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
    "stat": "Steals per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2016,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Passing TDs",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "pitching",
-   "year": 2003,
-   "stat": "Strikeouts",
-   "group": "Strikeouts & Control",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2008,
-   "stat": "Receiving TDs",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 1997,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2021,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "nfl",
-   "category": null,
-   "year": 2009,
-   "stat": "Receptions",
-   "group": "Receiving",
-   "hidden": 2,
-   "options": [
-    "Passing Yards",
-    "Passing TDs",
-    "Rushing Yards",
-    "Rushing TDs",
-    "Receptions",
-    "Receiving Yards",
-    "Receiving TDs",
-    "Sacks",
-    "Interceptions"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2006,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
    "year": 1999,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2026,
-   "stat": "3-Point %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2009,
-   "stat": "Runs Scored",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
-  },
-  {
-   "sport": "nba",
-   "category": null,
-   "year": 2017,
-   "stat": "Field Goal %",
-   "group": "Shooting",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
-  },
-  {
-   "sport": "mlb",
-   "category": "batting",
-   "year": 2025,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "stat": "ERA",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
    "year": 1998,
-   "stat": "Points per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2016,
+   "stat": "Passing TDs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "3-Point %",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 2012,
+   "year": 1999,
    "stat": "Runs Batted In",
-   "group": "Hitting",
-   "hidden": 3,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 1989,
-   "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 2,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "year": 2014,
+   "stat": "Field Goal %",
+   "hidden": 3
   },
   {
    "sport": "mlb",
    "category": "batting",
-   "year": 1997,
-   "stat": "Hits",
-   "group": "Hitting",
-   "hidden": 2,
-   "options": [
-    "Batting Average",
-    "Home Runs",
-    "Runs Batted In",
-    "Hits",
-    "Runs Scored",
-    "OPS (On-Base + Slugging)",
-    "Stolen Bases",
-    "Wins",
-    "ERA",
-    "Strikeouts",
-    "Saves"
-   ]
+   "year": 2023,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Sacks",
+   "hidden": 3
   },
   {
    "sport": "nba",
    "category": null,
-   "year": 2020,
+   "year": 2018,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2003,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
    "stat": "Rebounds per Game",
-   "group": "Per Game",
-   "hidden": 3,
-   "options": [
-    "Points per Game",
-    "Rebounds per Game",
-    "Assists per Game",
-    "Steals per Game",
-    "Blocks per Game",
-    "3-Pointers Made",
-    "3-Point %",
-    "Field Goal %"
-   ]
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1993,
+   "stat": "ERA",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1992,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2001,
+   "stat": "Rebounds per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2009,
+   "stat": "Strikeouts",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2001,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "Home Runs",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2016,
+   "stat": "Rushing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2014,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2022,
+   "stat": "Receptions",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2009,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Passing Yards",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2014,
+   "stat": "Hits",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2005,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2002,
+   "stat": "Batting Average",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2016,
+   "stat": "3-Pointers Made",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "Runs Batted In",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Blocks per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2014,
+   "stat": "OPS (On-Base + Slugging)",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Field Goal %",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2018,
+   "stat": "Saves",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1999,
+   "stat": "Points per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2005,
+   "stat": "Runs Scored",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "Assists per Game",
+   "hidden": 3
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2007,
+   "stat": "Home Runs",
+   "hidden": 3
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2000,
+   "stat": "Points per Game",
+   "hidden": 3
   }
  ]
 }

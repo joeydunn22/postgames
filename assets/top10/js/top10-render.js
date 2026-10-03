@@ -41,13 +41,6 @@ function isFreshGuess() {
     return !!game.lastGuess && game.lastGuess.at > _lastSeenGuessAt;
 }
 
-// Replay a CSS animation class on an element
-function replayAnimation(el, className) {
-    el.classList.remove(className);
-    void el.offsetWidth;
-    el.classList.add(className);
-}
-
 
 /* ============================================================
    2. SETUP SCREEN
@@ -318,8 +311,8 @@ function renderFeedback() {
     ui.feedback.classList.add(last.result);
 
     if (isFreshGuess()) {
-        replayAnimation(ui.feedback, "fresh");
-        if (last.result !== "correct") replayAnimation(ui.guessForm, "shake");
+        replayClass(ui.feedback, "fresh");
+        if (last.result !== "correct") replayClass(ui.guessForm, "shake");
     }
 }
 

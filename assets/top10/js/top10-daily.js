@@ -14,7 +14,6 @@
 
 const SHARE_URL = "https://joeydunn22.github.io/postgames/pages/top10-daily.html";
 const MARK_EMOJI = { miss: "❌", hint: "💡", correct: "✅" };
-const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
 
 const daily = {
     status: "loading",   // loading | ready | none | error
@@ -143,14 +142,6 @@ function takeHint() {
 /* ============================================================
    3. HINTS AND SHARING
    ============================================================ */
-
-// "Amon-Ra St. Brown" -> "A.S.B.", "Ken Griffey Jr." -> "K.G."
-function initials(name) {
-    return name.split(/\s+/)
-        .filter(word => !NAME_SUFFIXES.has(normalize(word)))
-        .map(word => word[0].toUpperCase() + ".")
-        .join("");
-}
 
 function hintRows() {
     const { puzzle, answer } = daily;

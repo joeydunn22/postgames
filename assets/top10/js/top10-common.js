@@ -59,6 +59,16 @@ function normalize(text) {
     return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
+
+// "Amon-Ra St. Brown" -> "A.S.B.", "Ken Griffey Jr." -> "K.G."
+function initials(name) {
+    return name.split(/\s+/)
+        .filter(word => !NAME_SUFFIXES.has(normalize(word)))
+        .map(word => word[0].toUpperCase() + ".")
+        .join("");
+}
+
 // Words a search can start with. "Amon-Ra St. Brown": amonra, amon, ra, st, brown
 function withSearchWords(player) {
     const pieces = player.name.split(/\s+/).flatMap(word => [word, ...word.split("-")]);
