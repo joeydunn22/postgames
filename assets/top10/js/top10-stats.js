@@ -85,6 +85,13 @@ function renderDaily() {
     const summary = dailySummary();
     document.getElementById("statsDaily").classList.toggle("hidden", summary.played === 0);
     if (summary.played) document.getElementById("statsDailySummary").innerHTML = dailySummaryHTML(summary);
+
+    const shelfStats = shelfSummary(loadDailyDays(SHELF_KEY));
+    document.getElementById("statsShelf").classList.toggle("hidden", shelfStats.played === 0);
+    const tiles = [["Played", shelfStats.played], ["Avg pts", shelfStats.average.toFixed(1)],
+                   ["Best", shelfStats.best], ["Streak", shelfStats.streak]];
+    document.getElementById("statsShelfSummary").innerHTML = `<div class="stats-totals">${tiles.map(([label, value]) =>
+        `<div class="stats-total"><span class="stats-total-num">${value}</span><span class="stats-total-label">${label}</span></div>`).join("")}</div>`;
 }
 
 function renderStats() {

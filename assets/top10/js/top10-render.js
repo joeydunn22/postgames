@@ -143,14 +143,22 @@ function renderBestHint() {
         : "You haven't played this one solo yet.";
 }
 
-// The daily challenge card: hidden in a room, and says when today's is done
+// The daily challenge cards: hidden in a room, and say when today's are done
 function renderDailyLink() {
-    ui.dailyLink.classList.toggle("hidden", inRoom());
-    const today = loadDailyDays()[localDateKey()];
-    if (!today?.done) return;
-    const { streak } = dailySummary();
-    ui.dailyLinkStatus.textContent = (today.solved ? `Solved in ${today.marks.length}` : "Done for today") +
-        (streak ? ` · ${streak}-day streak` : "");
+    ui.dailyLinks.classList.toggle("hidden", inRoom());
+    const today = localDateKey();
+
+    const missing = loadDailyDays()[today];
+    if (missing?.done) {
+        const { streak } = dailySummary();
+        ui.dailyLinkStatus.textContent = (missing.solved ? `Solved in ${missing.marks.length}` : "Done for today") +
+            (streak ? ` · ${streak}-day streak` : "");
+    }
+    const shelfDay = loadDailyDays(SHELF_KEY)[today];
+    if (shelfDay?.done) {
+        const { streak } = shelfSummary(loadDailyDays(SHELF_KEY));
+        ui.shelfLinkStatus.textContent = `Scored ${shelfPoints(shelfDay)} today` + (streak ? ` · ${streak}-day streak` : "");
+    }
 }
 
 // How the players listed will play
@@ -650,8 +658,9 @@ function findElements() {
         bestHint: byId("bestHint"),
         modeHint: byId("modeHint"),
         statsLink: byId("statsLink"),
-        dailyLink: byId("dailyLink"),
+        dailyLinks: byId("dailyLinks"),
         dailyLinkStatus: byId("dailyLinkStatus"),
+        shelfLinkStatus: byId("shelfLinkStatus"),
         randomAnyBtn: byId("randomAnyBtn"),
         randomSportBtn: byId("randomSportBtn"),
         timerChips: chips("timerChips"),

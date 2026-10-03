@@ -1,9 +1,12 @@
 """Build the daily challenge schedule (data/daily.json) from the trivia data.
 
-Who's Missing: each day is one top-10 board with one player hidden. This
-script picks the board and the hidden player for every day, and works out
-the hints the game can't get from the data files: the hidden player's
-league/conference and division that season.
+Two dailies, one board each per day:
+- Who's Missing: one player hidden. This script picks the board and the
+  hidden player, and works out the hints the game can't get from the data
+  files: the hidden player's league/conference and division that season.
+- Top Shelf: the stat name, the top 2-3 names and the values hidden.
+  This script picks the board and how many names to hide, and lists the
+  stats offered as answers.
 
 Days already in the file are kept as they are, so a day's puzzle never
 changes once scheduled; new days are added up to DAYS_AHEAD from today.
@@ -14,6 +17,7 @@ Run from the repo root (standard library only):
 """
 
 import datetime
+import functools
 import json
 import random
 import sys
@@ -64,6 +68,22 @@ HIDE_RANKS = {
     ("recent", "hard"): range(1, 6),
     ("older", "easy"): range(1, 6),
 }
+
+# Top Shelf: how many of the top names are hidden. Easy boards hide more.
+SHELF_HIDDEN = {
+    ("recent", "easy"): 3,
+    ("recent", "hard"): 2,
+    ("older", "easy"): 2,
+}
+# A board is skipped for Top Shelf when another daily stat that season
+# shares this many of its 10 names: from the names alone the two would
+# be a coin flip (Rushing Yards vs Rushing TDs, say).
+SHELF_LOOKALIKE = 7
+# Top Shelf never repeats its own board within SHELF_REPEAT_DAYS, and
+# stays this many days away from a board Who's Missing uses (the NFL has
+# too few seasons for the two dailies never to share one).
+SHELF_REPEAT_DAYS = 365
+SHELF_MISSING_GAP = 30
 
 
 # ------------------------------------------------------------------
@@ -188,7 +208,9 @@ def manifest():
     return json.loads((DATA / "manifest.json").read_text(encoding="utf-8"))["available"]
 
 
+@functools.lru_cache(maxsize=None)
 def load_json(path):
+    """A data file, read once (callers must not change what comes back)."""
     return json.loads((DATA / path).read_text(encoding="utf-8"))
 
 
@@ -273,6 +295,73 @@ def pick_day(rng, entries, used, yesterday_sport):
     raise SystemExit("Couldn't find an unused board after 500 tries")
 
 
+# ------------------------------------------------------------------
+# Top Shelf
+# ------------------------------------------------------------------
+def shelf_options(sport):
+    """Every daily stat for a sport, the answers Top Shelf offers."""
+    return [label for (s, _), stats in DAILY_STATS.items() if s == sport for label in stats]
+
+
+def season_boards(entries, sport, year):
+    """Every daily-stat board in one season of a sport, all categories: {label: board}."""
+    boards = {}
+    for entry in entries:
+        if entry["sport"] == sport and entry["year"] == year:
+            stats = DAILY_STATS.get((sport, entry.get("category")), {})
+            boards.update({b["label"]: b for b in load_json(entry["file"]) if b["label"] in stats})
+    return boards
+
+
+def shelf_boards(entry, entries):
+    """Boards in one data file Top Shelf can use, each with how many names to hide."""
+    stats = DAILY_STATS.get((entry["sport"], entry.get("category")))
+    if not stats:
+        return []
+    era = era_of(entry, entries)
+    season = season_boards(entries, entry["sport"], entry["year"])
+    found = []
+    for board in load_json(entry["file"]):
+        hidden = SHELF_HIDDEN.get((era, stats.get(board["label"])))
+        if not hidden or len(board["players"]) < hidden + 5:
+            continue
+        names = {p["id"] for p in board["players"]}
+        lookalike = any(len(names & {p["id"] for p in other["players"]}) >= SHELF_LOOKALIKE
+                        for label, other in season.items() if label != board["label"])
+        if not lookalike:
+            found.append((board, hidden))
+    return found
+
+
+def pick_shelf_day(rng, entries, used, avoid_sports):
+    """One Top Shelf puzzle, picked like pick_day: sport (not yesterday's
+    or today's Who's Missing sport, when there's a choice), era, season,
+    then stat. Boards in `used` are skipped."""
+    all_sports = sorted({e["sport"] for e in entries})
+    preferred = [s for s in all_sports if s not in avoid_sports] or all_sports
+    for attempt in range(500):
+        sport = rng.choice(preferred if attempt < 300 else all_sports)
+        era = "recent" if rng.random() < RECENT_SHARE else "older"
+        pool = [e for e in entries if e["sport"] == sport and era_of(e, entries) == era]
+        if not pool:
+            continue
+        entry = rng.choice(pool)
+        options = [(b, hidden) for b, hidden in shelf_boards(entry, entries)
+                   if (entry["sport"], entry.get("category"), entry["year"], b["label"]) not in used]
+        if options:
+            board, hidden = rng.choice(options)
+            return {
+                "sport": entry["sport"],
+                "category": entry.get("category"),
+                "year": entry["year"],
+                "stat": board["label"],
+                "group": board.get("group", ""),
+                "hidden": hidden,
+                "options": shelf_options(entry["sport"]),
+            }
+    raise SystemExit("Couldn't find an unused Top Shelf board after 500 tries")
+
+
 def check_divisions(entries):
     """Every team on every board in every season must have a division."""
     missing = set()
@@ -298,8 +387,10 @@ def main():
     puzzles = schedule.get("puzzles", [])
     days_needed = (datetime.date.today() - START).days + DAYS_AHEAD + 1
 
-    rng = random.Random(f"postgames-daily-{len(puzzles)}")
+    shelf = schedule.get("top_shelf", [])
     used = {board_id(p) for p in puzzles}
+
+    rng = random.Random(f"postgames-daily-{len(puzzles)}")
     added = 0
     while len(puzzles) < days_needed:
         yesterday = puzzles[-1]["sport"] if puzzles else None
@@ -308,13 +399,25 @@ def main():
         used.add(board_id(puzzle))
         added += 1
 
+    shelf_rng = random.Random(f"postgames-top-shelf-{len(shelf)}")
+    shelf_added = 0
+    while len(shelf) < days_needed:
+        day = len(shelf)
+        avoid = {puzzles[day]["sport"]} | ({shelf[-1]["sport"]} if shelf else set())
+        shelf_used = ({board_id(p) for p in shelf[-SHELF_REPEAT_DAYS:]} |
+                      {board_id(p) for p in puzzles[max(0, day - SHELF_MISSING_GAP):day + SHELF_MISSING_GAP + 1]})
+        shelf.append(pick_shelf_day(shelf_rng, entries, shelf_used, avoid))
+        shelf_added += 1
+
     SCHEDULE.write_text(json.dumps({
-        "_readme": "Daily challenge schedule: puzzles[0] is Daily #1 on `start`, one per day after. "
-                   "Built by scripts/build_daily.py, which keeps existing days and adds new ones.",
+        "_readme": "Daily challenge schedule: puzzles[0] (Who's Missing) and top_shelf[0] are Daily #1 on `start`, "
+                   "one per day after. Built by scripts/build_daily.py, which keeps existing days and adds new ones.",
         "start": START.isoformat(),
         "puzzles": puzzles,
+        "top_shelf": shelf,
     }, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"{SCHEDULE}: {len(puzzles)} days ({added} new), through {START + datetime.timedelta(days=len(puzzles) - 1)}")
+    through = START + datetime.timedelta(days=len(puzzles) - 1)
+    print(f"{SCHEDULE}: {len(puzzles)} days ({added} new Who's Missing, {shelf_added} new Top Shelf), through {through}")
 
 
 if __name__ == "__main__":

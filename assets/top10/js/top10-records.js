@@ -148,3 +148,53 @@ function dailySummary(days = loadDailyDays(), today = localDateKey()) {
 
     return { played: finished.length, solved, streak: current, bestStreak: best, distribution };
 }
+
+
+/* ============================================================
+   TOP SHELF
+   Saved like the daily above (loadDailyDays / saveDailyDay with these
+   keys), one entry per day:
+     { number, stage: "stat" | "players" | "value" | "done",
+       statGuesses: [stat labels, wrong ones and the right one],
+       statSolved, playerGuesses: [{ id, hit }], valueGuess,
+       valueTier: "exact" | "close" | "near" | "far", done, at }
+   Points: the stat 3/2/1 by try (0 if missed), 1 per top player named,
+   the number 3/2/1/0 by how close.
+   ============================================================ */
+
+const SHELF_KEY = "postgames.top10.topshelf";
+const SHELF_TEST_KEY = "postgames.top10.topshelf-test";
+const SHELF_STAT_TRIES = 3;
+const SHELF_PLAYER_MISSES = 3;
+const SHELF_VALUE_POINTS = { exact: 3, close: 2, near: 1, far: 0 };
+
+function shelfPoints(day) {
+    const stat = day.statSolved ? SHELF_STAT_TRIES + 1 - day.statGuesses.length : 0;
+    const players = (day.playerGuesses || []).filter(g => g.hit).length;
+    return stat + players + (SHELF_VALUE_POINTS[day.valueTier] ?? 0);
+}
+
+function shelfMaxPoints(hidden) {
+    return SHELF_STAT_TRIES + hidden + SHELF_VALUE_POINTS.exact;
+}
+
+// Played, average and best points, and streaks of days in a row played
+function shelfSummary(days, today = localDateKey()) {
+    const finished = Object.entries(days).filter(([, d]) => d.done).sort(([a], [b]) => a.localeCompare(b));
+    let best = 0, run = 0, bestStreak = 0, previous = null, total = 0;
+    for (const [date, day] of finished) {
+        const points = shelfPoints(day);
+        total += points;
+        best = Math.max(best, points);
+        run = previous && daysBetween(previous, date) === 1 ? run + 1 : 1;
+        bestStreak = Math.max(bestStreak, run);
+        previous = date;
+    }
+    return {
+        played: finished.length,
+        average: finished.length ? total / finished.length : 0,
+        best,
+        streak: previous && daysBetween(previous, today) <= 1 ? run : 0,
+        bestStreak
+    };
+}

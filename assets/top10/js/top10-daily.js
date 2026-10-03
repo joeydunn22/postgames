@@ -7,16 +7,14 @@
    Progress is saved after every guess (top10-records.js), so closing
    the app never resets the day.
 
-   Test mode, for trying puzzles without waiting a day: tap "Daily #N"
-   five times (or open the page with ?test). Arrows move to any day,
-   Replay clears it, and everything saves under DAILY_TEST_KEY, apart
-   from the real record and streak.
+   Test mode (see top10-common.js): arrows move to any day, Replay
+   clears it, and everything saves under DAILY_TEST_KEY, apart from the
+   real record and streak.
    ============================================================ */
 
 const SHARE_URL = "https://joeydunn22.github.io/postgames/pages/top10-daily.html";
 const MARK_EMOJI = { miss: "❌", hint: "💡", correct: "✅" };
 const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
-const TEST_FLAG = "postgames.top10.daily-test-on";
 
 const daily = {
     status: "loading",   // loading | ready | none | error
@@ -36,20 +34,10 @@ function storeKey() {
     return daily.test ? DAILY_TEST_KEY : DAILY_KEY;
 }
 
-function readTestFlag() {
-    try {
-        return localStorage.getItem(TEST_FLAG) === "1" || new URLSearchParams(location.search).has("test");
-    } catch {
-        return false;
-    }
-}
-
 function setTestMode(on) {
     daily.test = on;
     daily.testOffset = 0;
-    try {
-        on ? localStorage.setItem(TEST_FLAG, "1") : localStorage.removeItem(TEST_FLAG);
-    } catch {}
+    writeDailyTestFlag(on);
     loadToday();
 }
 
@@ -60,12 +48,6 @@ let _highlight = -1;     // guess result picked with the arrow keys
 /* ============================================================
    1. LOADING TODAY'S PUZZLE
    ============================================================ */
-async function fetchJSON(path) {
-    const response = await fetch(`../data/${path}`, { cache: "no-cache" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
-}
-
 async function loadToday() {
     daily.date = daily.test ? addDays(localDateKey(), daily.testOffset) : localDateKey();
     daily.status = "loading";
@@ -73,7 +55,7 @@ async function loadToday() {
     render();
 
     try {
-        const schedule = await fetchJSON("daily.json");
+        const schedule = await fetchData("daily.json");
         const index = daysBetween(schedule.start, daily.date);
         const puzzle = schedule.puzzles[index];
         if (!puzzle) {
@@ -84,8 +66,8 @@ async function loadToday() {
 
         const folder = `${puzzle.sport}/${puzzle.year}`;
         const [stats, roster] = await Promise.all([
-            fetchJSON(`${folder}/${puzzle.category || "stats"}.json`),
-            fetchJSON(`${folder}/players.json`)
+            fetchData(`${folder}/${puzzle.category || "stats"}.json`),
+            fetchData(`${folder}/players.json`)
         ]);
         const board = stats.find(s => s.label === puzzle.stat);
         const hidden = board?.players.find(p => p.id === puzzle.id);
@@ -189,28 +171,6 @@ function shareText() {
     return `${title}\n${day.marks.map(m => MARK_EMOJI[m]).join("")} ${score}\n${SHARE_URL}`;
 }
 
-// The phone's share sheet where there is one, else copy to the clipboard
-async function shareResult() {
-    const text = shareText();
-    try {
-        if (navigator.share) {
-            await navigator.share({ text });
-            return;
-        }
-        await navigator.clipboard.writeText(text);
-        ui.shareStatus.textContent = "Copied. Paste it in the group chat.";
-    } catch (error) {
-        if (error?.name !== "AbortError") ui.shareStatus.textContent = "Couldn't share. Try again.";
-    }
-}
-
-function timeToNextPuzzle() {
-    const now = new Date();
-    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    const minutes = Math.max(1, Math.ceil((midnight - now) / 60000));
-    const hours = Math.floor(minutes / 60);
-    return hours ? `${hours}h ${minutes % 60}m` : `${minutes}m`;
-}
 
 
 /* ============================================================
@@ -261,15 +221,9 @@ function renderFeedback() {
     ui.feedback.innerHTML = main + hint;
     ui.feedback.classList.add(last.kind === "miss" ? "wrong" : "hinted");
     if (isFreshAction()) {
-        replay(ui.feedback, "fresh");
-        if (last.kind === "miss") replay(ui.guessForm, "shake");
+        replayClass(ui.feedback, "fresh");
+        if (last.kind === "miss") replayClass(ui.guessForm, "shake");
     }
-}
-
-function replay(el, className) {
-    el.classList.remove(className);
-    void el.offsetWidth;
-    el.classList.add(className);
 }
 
 // The board: everyone shown but the hidden player, whose value is a clue.
@@ -375,8 +329,7 @@ function render() {
 function renderTestBar() {
     ui.testBar.classList.toggle("hidden", !daily.test);
     if (!daily.test) return;
-    const offset = daily.testOffset;
-    ui.testDay.textContent = `${daily.number ? `#${daily.number} · ` : ""}${offset === 0 ? "today" : `${offset > 0 ? "+" : ""}${offset} day${Math.abs(offset) === 1 ? "" : "s"}`}`;
+    ui.testDay.textContent = testDayLabel(daily.number, daily.testOffset);
 }
 
 
@@ -401,16 +354,7 @@ function finishedScroll() {
     ui.marks.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// Five quick taps on "Daily #N" switch test mode on or off
-let _eyebrowTaps = [];
-function onEyebrowTap() {
-    const now = Date.now();
-    _eyebrowTaps = [..._eyebrowTaps.filter(t => now - t < 3000), now];
-    if (_eyebrowTaps.length >= 5) {
-        _eyebrowTaps = [];
-        setTestMode(!daily.test);
-    }
-}
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const byId = id => document.getElementById(id);
@@ -456,9 +400,9 @@ document.addEventListener("DOMContentLoaded", () => {
         takeHint();
         if (daily.day.done) finishedScroll();
     });
-    ui.shareBtn.addEventListener("click", shareResult);
+    ui.shareBtn.addEventListener("click", () => shareOrCopy(shareText(), ui.shareStatus));
 
-    ui.eyebrow.addEventListener("click", onEyebrowTap);
+    ui.eyebrow.addEventListener("click", fiveTaps(() => setTestMode(!daily.test)));
     byId("testPrev").addEventListener("click", () => { daily.testOffset -= 1; loadToday(); });
     byId("testNext").addEventListener("click", () => { daily.testOffset += 1; loadToday(); });
     byId("testReset").addEventListener("click", () => { saveDailyDay(daily.date, null, DAILY_TEST_KEY); loadToday(); });
@@ -469,6 +413,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (document.visibilityState === "visible" && localDateKey() !== daily.date) loadToday();
     });
 
-    daily.test = readTestFlag();
+    daily.test = readDailyTestFlag();
     loadToday();
 });

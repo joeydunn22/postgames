@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daily Challenge · Postgames</title>
+  <title>Top Shelf · Postgames</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
@@ -35,8 +35,8 @@
 
     <div class="intro">
       <p id="dailyEyebrow" class="eyebrow">Daily</p>
-      <h1 class="display intro-title">Who's Missing?</h1>
-      <p class="lede">One name is missing from today's top 10. You get five guesses, and every miss unlocks a hint.</p>
+      <h1 class="display intro-title">Top Shelf</h1>
+      <p class="lede">The top of today's leaderboard is hidden. Name the stat, then the stars, then the number.</p>
     </div>
 
     <!-- Test mode: tap "Daily #N" five times. Plays any day; saved apart from the real record. -->
@@ -53,26 +53,43 @@
 
     <section id="dailyGame" class="daily-game hidden">
       <header class="play-head">
-        <p id="dailyContext" class="eyebrow"></p>
-        <h2 id="dailyStat" class="display play-stat"></h2>
-        <p id="dailyQualifier" class="hint stat-qualifier"></p>
+        <p id="shelfContext" class="eyebrow"></p>
+        <h2 id="shelfStat" class="display play-stat"></h2>
+        <p id="shelfQualifier" class="hint stat-qualifier"></p>
       </header>
 
-      <!-- One box per guess: ❌ miss, 💡 hint taken, ✅ got it -->
-      <div id="dailyMarks" class="daily-marks" aria-label="Guesses used"></div>
+      <!-- The three rounds -->
+      <ol id="shelfRounds" class="shelf-rounds"></ol>
 
-      <ol id="dailyHints" class="daily-hints"></ol>
+      <!-- Round 1: which stat -->
+      <div id="statRound" class="daily-play hidden">
+        <p class="shelf-prompt">Which stat is this?</p>
+        <div id="statOptions" class="chips shelf-options"></div>
+        <p id="statFeedback" class="feedback" role="status" aria-live="polite"></p>
+      </div>
 
-      <div id="dailyPlay" class="daily-play">
+      <!-- Round 2: the hidden top players -->
+      <div id="playerRound" class="daily-play hidden">
+        <p id="playerPrompt" class="shelf-prompt"></p>
         <form id="guessForm" class="guess-form" autocomplete="off">
-          <input id="guessInput" class="input guess-input" type="text" placeholder="Who's missing?"
+          <input id="guessInput" class="input guess-input" type="text" placeholder="Name a top player"
             autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="go"
             role="combobox" aria-autocomplete="list" aria-controls="guessResults" aria-expanded="false"
             aria-label="Your guess">
           <ul id="guessResults" class="guess-results hidden" role="listbox"></ul>
         </form>
-        <button id="hintBtn" class="link-btn daily-hint-btn" type="button">Take a hint (uses a guess)</button>
-        <p id="dailyFeedback" class="feedback" role="status" aria-live="polite"></p>
+        <p id="playerFeedback" class="feedback" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Round 3: #1's number -->
+      <div id="valueRound" class="daily-play hidden">
+        <p id="valuePrompt" class="shelf-prompt"></p>
+        <form id="valueForm" class="shelf-value-form" autocomplete="off">
+          <input id="valueInput" class="input guess-input" type="text" inputmode="decimal"
+            placeholder="Your guess" aria-label="#1's number">
+          <button class="btn btn-primary" type="submit">Lock it in</button>
+        </form>
+        <p id="valueHint" class="hint"></p>
       </div>
 
       <div id="dailyDone" class="daily-done hidden">
@@ -82,7 +99,7 @@
         <p id="shareStatus" class="hint center" role="status"></p>
         <div id="dailySummary"></div>
         <p id="nextPuzzle" class="hint center"></p>
-        <a class="link-btn intro-link" href="top10-topshelf.html">Also today: Top Shelf</a>
+        <a class="link-btn intro-link" href="top10-daily.html">Also today: Who's Missing?</a>
       </div>
 
       <ol id="dailyBoard" class="board"></ol>
@@ -96,7 +113,7 @@
   <script defer src="../assets/top10/js/top10-common.js?v=136"></script>
   <script defer src="../assets/top10/js/top10-teams.js?v=136"></script>
   <script defer src="../assets/top10/js/top10-records.js?v=136"></script>
-  <script defer src="../assets/top10/js/top10-daily.js?v=136"></script>
+  <script defer src="../assets/top10/js/top10-topshelf.js?v=136"></script>
 
 </body>
 </html>

@@ -148,3 +148,83 @@ function statQualifier(sport, label, year) {
     }
     return "";
 }
+
+
+/* ============================================================
+   DAILY PAGES (Who's Missing, Top Shelf)
+   Shared plumbing: fetching data, sharing, the countdown and test mode.
+   Test mode is one switch for both dailies: five quick taps on
+   "Daily #N" (or ?test in the address) turns it on. It lets you play
+   any day's puzzle, saved apart from your real record.
+   ============================================================ */
+const DAILY_TEST_FLAG = "postgames.top10.daily-test-on";
+
+// A file under data/ (paths are relative to pages/)
+async function fetchData(path) {
+    const response = await fetch(`../data/${path}`, { cache: "no-cache" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return response.json();
+}
+
+function timeToNextPuzzle() {
+    const now = new Date();
+    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const minutes = Math.max(1, Math.ceil((midnight - now) / 60000));
+    const hours = Math.floor(minutes / 60);
+    return hours ? `${hours}h ${minutes % 60}m` : `${minutes}m`;
+}
+
+// The phone's share sheet where there is one, else copy to the clipboard;
+// `statusEl` says what happened
+async function shareOrCopy(text, statusEl) {
+    try {
+        if (navigator.share) {
+            await navigator.share({ text });
+            return;
+        }
+        await navigator.clipboard.writeText(text);
+        statusEl.textContent = "Copied. Paste it in the group chat.";
+    } catch (error) {
+        if (error?.name !== "AbortError") statusEl.textContent = "Couldn't share. Try again.";
+    }
+}
+
+function readDailyTestFlag() {
+    try {
+        return localStorage.getItem(DAILY_TEST_FLAG) === "1" || new URLSearchParams(location.search).has("test");
+    } catch {
+        return false;
+    }
+}
+
+function writeDailyTestFlag(on) {
+    try {
+        on ? localStorage.setItem(DAILY_TEST_FLAG, "1") : localStorage.removeItem(DAILY_TEST_FLAG);
+    } catch {}
+}
+
+// Calls `onToggle` after five taps within three seconds
+function fiveTaps(onToggle) {
+    let taps = [];
+    return () => {
+        const now = Date.now();
+        taps = [...taps.filter(t => now - t < 3000), now];
+        if (taps.length >= 5) {
+            taps = [];
+            onToggle();
+        }
+    };
+}
+
+// "today", "+2 days", "-1 day" for the test bar
+function testDayLabel(number, offset) {
+    const when = offset === 0 ? "today" : `${offset > 0 ? "+" : ""}${offset} day${Math.abs(offset) === 1 ? "" : "s"}`;
+    return `${number ? `#${number} · ` : ""}${when}`;
+}
+
+// Replay a CSS animation class on an element
+function replayClass(el, className) {
+    el.classList.remove(className);
+    void el.offsetWidth;
+    el.classList.add(className);
+}

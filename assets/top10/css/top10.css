@@ -1282,7 +1282,13 @@
     color: var(--accent-ink);
 }
 
-/* Entry point on the trivia setup screen */
+/* Entry points on the trivia setup screen */
+.daily-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .daily-link {
     display: flex;
     align-items: center;
@@ -1387,6 +1393,149 @@
 }
 
 /* No room saved for feedback until there's a miss to show */
+.daily-play .feedback:empty {
+    display: none;
+}
+
+
+/* =========================================
+   9. TOP SHELF (top10-topshelf.html)
+   ========================================= */
+
+.play-stat.shelf-unknown {
+    color: var(--accent);
+    letter-spacing: 0.1em;
+}
+
+/* The three rounds */
+.shelf-rounds {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.shelf-round {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--faint);
+}
+
+.shelf-round-num {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.shelf-round-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.shelf-round-result {
+    min-height: 1.5em;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.shelf-round.now {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+.shelf-round.done {
+    color: var(--muted);
+}
+
+.shelf-prompt {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.shelf-prompt strong {
+    color: var(--accent);
+}
+
+/* Round 1 answers */
+.shelf-options .chip.wrong:disabled {
+    color: var(--bad);
+    border-color: var(--bad);
+    border-style: solid;
+    background: var(--bad-soft);
+    text-decoration: line-through;
+}
+
+/* Hidden top rows */
+.slot.shelf-hidden {
+    border: 1px dashed var(--accent);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+}
+
+.slot.shelf-hidden + .slot.shelf-hidden {
+    margin-top: 4px;
+}
+
+.slot.shelf-hidden .slot-rank {
+    color: var(--accent);
+}
+
+.slot.shelf-hidden.solved {
+    border: 1px solid var(--good);
+    background: var(--good-soft);
+}
+
+.slot.shelf-hidden.solved .slot-rank,
+.slot.shelf-hidden.solved .slot-name {
+    color: var(--good);
+}
+
+.slot.shelf-hidden.failed {
+    border: 1px solid var(--bad);
+    background: var(--bad-soft);
+}
+
+.slot.shelf-hidden.failed .slot-rank,
+.slot.shelf-hidden.failed .slot-name {
+    color: var(--bad);
+}
+
+.slot.tier-exact .slot-value,
+.slot.tier-close .slot-value { color: var(--good); }
+.slot.tier-near .slot-value { color: var(--accent); }
+.slot.tier-far .slot-value { color: var(--bad); }
+
+.shelf-initials {
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--text);
+}
+
+/* Round 3 */
+.shelf-value-form {
+    display: flex;
+    gap: 10px;
+}
+
+.shelf-value-form .guess-input {
+    min-width: 0;
+}
+
+.shelf-value-form .btn {
+    min-height: 60px;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.daily-play .feedback.correct:empty,
 .daily-play .feedback:empty {
     display: none;
 }
