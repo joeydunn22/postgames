@@ -6,11 +6,17 @@
    each miss, or a hint taken, uses one and unlocks the next hint.
    Progress is saved after every guess (top10-records.js), so closing
    the app never resets the day.
+
+   Test mode, for trying puzzles without waiting a day: tap "Daily #N"
+   five times (or open the page with ?test). Arrows move to any day,
+   Replay clears it, and everything saves under DAILY_TEST_KEY, apart
+   from the real record and streak.
    ============================================================ */
 
 const SHARE_URL = "https://joeydunn22.github.io/postgames/pages/top10-daily.html";
 const MARK_EMOJI = { miss: "❌", hint: "💡", correct: "✅" };
 const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
+const TEST_FLAG = "postgames.top10.daily-test-on";
 
 const daily = {
     status: "loading",   // loading | ready | none | error
@@ -20,8 +26,32 @@ const daily = {
     board: null,         // { label, players: [...] } from the stat file
     roster: [],          // everyone who played that season (the guess list)
     answer: null,        // the hidden player: { id, name, team, pos, rank, value }
-    day: null            // saved progress: { number, marks, missIds, done, solved, at }
+    day: null,           // saved progress: { number, marks, missIds, done, solved, at }
+    lastAction: null,    // { kind: "miss" | "hint", id, at }: shown under the guess box
+    test: false,         // test mode (see top of file)
+    testOffset: 0        // test mode: days from today
 };
+
+function storeKey() {
+    return daily.test ? DAILY_TEST_KEY : DAILY_KEY;
+}
+
+function readTestFlag() {
+    try {
+        return localStorage.getItem(TEST_FLAG) === "1" || new URLSearchParams(location.search).has("test");
+    } catch {
+        return false;
+    }
+}
+
+function setTestMode(on) {
+    daily.test = on;
+    daily.testOffset = 0;
+    try {
+        on ? localStorage.setItem(TEST_FLAG, "1") : localStorage.removeItem(TEST_FLAG);
+    } catch {}
+    loadToday();
+}
 
 const ui = {};
 let _highlight = -1;     // guess result picked with the arrow keys
@@ -37,8 +67,9 @@ async function fetchJSON(path) {
 }
 
 async function loadToday() {
-    daily.date = localDateKey();
+    daily.date = daily.test ? addDays(localDateKey(), daily.testOffset) : localDateKey();
     daily.status = "loading";
+    daily.lastAction = null;
     render();
 
     try {
@@ -68,7 +99,7 @@ async function loadToday() {
             board,
             roster: roster.map(withSearchWords),
             answer: { ...hidden, pos: rosterEntry?.pos || "" },
-            day: loadDailyDays()[daily.date] || { number: index + 1, marks: [], missIds: [], done: false, solved: false }
+            day: loadDailyDays(storeKey())[daily.date] || { number: index + 1, marks: [], missIds: [], done: false, solved: false }
         });
     } catch (error) {
         console.error("Couldn't load the daily:", error);
@@ -100,7 +131,7 @@ function useGuess(mark) {
     day.solved = mark === "correct";
     day.done = day.solved || day.marks.length >= DAILY_GUESSES;
     day.at = Date.now();
-    saveDailyDay(daily.date, day);
+    saveDailyDay(daily.date, day, storeKey());
 }
 
 function submitGuess(playerId) {
@@ -113,7 +144,7 @@ function submitGuess(playerId) {
         daily.day.missIds.push(playerId);
         useGuess("miss");
     }
-    daily.lastGuess = { id: playerId, at: Date.now() };
+    daily.lastAction = { kind: "miss", id: playerId, at: Date.now() };
     render();
 }
 
@@ -122,7 +153,7 @@ function submitGuess(playerId) {
 function takeHint() {
     if (daily.status !== "ready" || daily.day.done || hintsShown() >= 4) return;
     useGuess("hint");
-    daily.lastGuess = null;
+    daily.lastAction = { kind: "hint", id: null, at: Date.now() };
     render();
 }
 
@@ -191,31 +222,54 @@ function renderMarks() {
         `<span class="daily-mark ${marks[i] || ""}">${marks[i] ? MARK_EMOJI[marks[i]] : ""}</span>`).join("");
 }
 
+// The hint the last miss or hint tap unlocked (index), or -1
+function newestHint() {
+    return daily.lastAction && !daily.day.done ? hintsShown() - 1 : -1;
+}
+
 function renderHints() {
     const shown = hintsShown();
+    const fresh = isFreshAction() ? newestHint() : -1;
     ui.hints.innerHTML = hintRows().map(([label, value], i) => i < shown
-        ? `<li class="daily-hint"><span class="daily-hint-label">${label}</span><span class="daily-hint-value">${value}</span></li>`
+        ? `<li class="daily-hint ${i === fresh ? "fresh" : ""}"><span class="daily-hint-label">${label}</span><span class="daily-hint-value">${value}</span></li>`
         : `<li class="daily-hint locked"><span class="daily-hint-label">Hint ${i + 1}</span><span class="daily-hint-value">Unlocks after a miss</span></li>`
     ).join("");
 }
 
+function isFreshAction() {
+    return !!daily.lastAction && daily.lastAction.at > (daily.lastDrawnAt || 0);
+}
+
+// Right under the guess box, so it's seen with the keyboard up: what
+// happened, then the hint it unlocked
 function renderFeedback() {
-    const last = daily.lastGuess;
-    const missed = last && daily.day.missIds.includes(last.id);
+    const last = daily.lastAction;
     ui.feedback.className = "feedback";
-    if (!missed) {
+    if (!last || daily.day.done) {
         ui.feedback.innerHTML = "";
         return;
     }
-    const name = daily.roster.find(p => p.id === last.id)?.name;
-    ui.feedback.innerHTML = `<span class="feedback-main">✗ “${escapeHTML(name)}” <span class="feedback-note">isn't the one</span></span>`;
-    ui.feedback.classList.add("wrong");
-    if (last.at > (daily.lastDrawnAt || 0)) {
-        daily.lastDrawnAt = last.at;
-        ui.guessForm.classList.remove("shake");
-        void ui.guessForm.offsetWidth;
-        ui.guessForm.classList.add("shake");
+
+    const hintIndex = newestHint();
+    const [label, value] = hintRows()[hintIndex] || [];
+    const name = last.kind === "miss" ? daily.roster.find(p => p.id === last.id)?.name : "";
+    const main = last.kind === "miss"
+        ? `<span class="feedback-main">✗ “${escapeHTML(name)}” <span class="feedback-note">isn't the one</span></span>`
+        : `<span class="feedback-main daily-hint-taken">💡 Hint taken</span>`;
+    const hint = value ? `<span class="daily-new-hint">New hint · ${label}: <strong>${value}</strong></span>` : "";
+
+    ui.feedback.innerHTML = main + hint;
+    ui.feedback.classList.add(last.kind === "miss" ? "wrong" : "hinted");
+    if (isFreshAction()) {
+        replay(ui.feedback, "fresh");
+        if (last.kind === "miss") replay(ui.guessForm, "shake");
     }
+}
+
+function replay(el, className) {
+    el.classList.remove(className);
+    void el.offsetWidth;
+    el.classList.add(className);
 }
 
 // The board: everyone shown but the hidden player, whose value is a clue.
@@ -280,12 +334,13 @@ function renderDone() {
     ui.doneSub.textContent = day.solved
         ? `${answer.name}. ${["Ice cold.", "Sharp.", "Nice work.", "Close call.", "Just made it."][used - 1]}`
         : `It was ${answer.name}.`;
-    ui.summary.innerHTML = dailySummaryHTML(dailySummary(), day.solved ? used : null);
+    ui.summary.innerHTML = dailySummaryHTML(dailySummary(loadDailyDays(storeKey())), day.solved ? used : null);
     ui.nextPuzzle.textContent = `Next puzzle in ${timeToNextPuzzle()}`;
 }
 
 function render() {
     if (!ui.status) return;
+    renderTestBar();
     const ready = daily.status === "ready";
     ui.game.classList.toggle("hidden", !ready);
     ui.status.textContent = {
@@ -299,6 +354,7 @@ function render() {
     ui.eyebrow.textContent = `Daily #${daily.number}`;
     ui.context.textContent = boardContextLabel(puzzle);
     ui.stat.textContent = puzzle.stat;
+    ui.qualifier.textContent = statQualifier(puzzle.sport, puzzle.stat, puzzle.year);
 
     renderMarks();
     renderHints();
@@ -313,6 +369,14 @@ function render() {
         renderFeedback();
         renderGuessResults();
     }
+    if (daily.lastAction) daily.lastDrawnAt = Math.max(daily.lastDrawnAt || 0, daily.lastAction.at);
+}
+
+function renderTestBar() {
+    ui.testBar.classList.toggle("hidden", !daily.test);
+    if (!daily.test) return;
+    const offset = daily.testOffset;
+    ui.testDay.textContent = `${daily.number ? `#${daily.number} · ` : ""}${offset === 0 ? "today" : `${offset > 0 ? "+" : ""}${offset} day${Math.abs(offset) === 1 ? "" : "s"}`}`;
 }
 
 
@@ -326,6 +390,25 @@ function pickGuess(playerId) {
     if (!daily.day.done) {
         renderGuessResults();
         ui.guessInput.focus();
+    } else {
+        finishedScroll();
+    }
+}
+
+// Done: drop the keyboard and bring the result into view
+function finishedScroll() {
+    ui.guessInput.blur();
+    ui.marks.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// Five quick taps on "Daily #N" switch test mode on or off
+let _eyebrowTaps = [];
+function onEyebrowTap() {
+    const now = Date.now();
+    _eyebrowTaps = [..._eyebrowTaps.filter(t => now - t < 3000), now];
+    if (_eyebrowTaps.length >= 5) {
+        _eyebrowTaps = [];
+        setTestMode(!daily.test);
     }
 }
 
@@ -333,7 +416,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const byId = id => document.getElementById(id);
     Object.assign(ui, {
         eyebrow: byId("dailyEyebrow"), status: byId("dailyStatus"), game: byId("dailyGame"),
-        context: byId("dailyContext"), stat: byId("dailyStat"), marks: byId("dailyMarks"), hints: byId("dailyHints"),
+        context: byId("dailyContext"), stat: byId("dailyStat"), qualifier: byId("dailyQualifier"),
+        marks: byId("dailyMarks"), hints: byId("dailyHints"),
+        testBar: byId("testBar"), testDay: byId("testDay"),
         play: byId("dailyPlay"), guessForm: byId("guessForm"), guessInput: byId("guessInput"),
         guessResults: byId("guessResults"), feedback: byId("dailyFeedback"), hintBtn: byId("hintBtn"),
         done: byId("dailyDone"), doneTitle: byId("doneTitle"), doneSub: byId("doneSub"),
@@ -367,13 +452,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const option = e.target.closest(".guess-option");
         if (option && !option.disabled) pickGuess(option.dataset.id);
     });
-    ui.hintBtn.addEventListener("click", takeHint);
+    ui.hintBtn.addEventListener("click", () => {
+        takeHint();
+        if (daily.day.done) finishedScroll();
+    });
     ui.shareBtn.addEventListener("click", shareResult);
+
+    ui.eyebrow.addEventListener("click", onEyebrowTap);
+    byId("testPrev").addEventListener("click", () => { daily.testOffset -= 1; loadToday(); });
+    byId("testNext").addEventListener("click", () => { daily.testOffset += 1; loadToday(); });
+    byId("testReset").addEventListener("click", () => { saveDailyDay(daily.date, null, DAILY_TEST_KEY); loadToday(); });
+    byId("testExit").addEventListener("click", () => setTestMode(false));
 
     // The installed app resumes rather than reloading: pick up a new day
     document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible" && localDateKey() !== daily.date) loadToday();
     });
 
+    daily.test = readTestFlag();
     loadToday();
 });

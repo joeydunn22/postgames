@@ -457,6 +457,7 @@ function renderEndGameButton() {
 function renderPlaying() {
     ui.playContext.textContent = gameContextLabel();
     ui.playStat.textContent = game.stat || "";
+    ui.playQualifier.textContent = statQualifier(game.sport, game.stat, game.year);
 
     const canGuess = isMyTurn() && !roundOver();
     ui.guessInput.disabled = !canGuess;
@@ -663,6 +664,7 @@ function findElements() {
         playing: byId("playSection"),
         playContext: byId("playContext"),
         playStat: byId("playStat"),
+        playQualifier: byId("playQualifier"),
         scoreboard: byId("scoreboard"),
         turn: byId("turn"),
         turnClock: byId("turnClock"),

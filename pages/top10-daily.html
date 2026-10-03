@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
-  <link rel="stylesheet" href="../assets/global/global.css?v=134">
-  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=134">
+  <link rel="stylesheet" href="../assets/global/global.css?v=135">
+  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=135">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
@@ -39,12 +39,23 @@
       <p class="lede">One name is missing from today's top 10. You get five guesses, and every miss unlocks a hint.</p>
     </div>
 
+    <!-- Test mode: tap "Daily #N" five times. Plays any day; saved apart from the real record. -->
+    <div id="testBar" class="daily-test hidden">
+      <span class="daily-test-label">Test mode</span>
+      <button id="testPrev" class="btn daily-test-btn" type="button" aria-label="Previous day">‹</button>
+      <span id="testDay" class="daily-test-day"></span>
+      <button id="testNext" class="btn daily-test-btn" type="button" aria-label="Next day">›</button>
+      <button id="testReset" class="link-btn" type="button">Replay</button>
+      <button id="testExit" class="link-btn" type="button">Exit</button>
+    </div>
+
     <p id="dailyStatus" class="hint daily-status" role="status"></p>
 
     <section id="dailyGame" class="daily-game hidden">
       <header class="play-head">
         <p id="dailyContext" class="eyebrow"></p>
         <h2 id="dailyStat" class="display play-stat"></h2>
+        <p id="dailyQualifier" class="hint stat-qualifier"></p>
       </header>
 
       <!-- One box per guess: ❌ miss, 💡 hint taken, ✅ got it -->
@@ -78,13 +89,13 @@
 
     <a class="link-btn intro-link" href="top10.html">Back to trivia</a>
 
-    <p class="version">Version 134</p>
+    <p class="version">Version 135</p>
   </main>
 
-  <script defer src="../assets/top10/js/top10-common.js?v=134"></script>
-  <script defer src="../assets/top10/js/top10-teams.js?v=134"></script>
-  <script defer src="../assets/top10/js/top10-records.js?v=134"></script>
-  <script defer src="../assets/top10/js/top10-daily.js?v=134"></script>
+  <script defer src="../assets/top10/js/top10-common.js?v=135"></script>
+  <script defer src="../assets/top10/js/top10-teams.js?v=135"></script>
+  <script defer src="../assets/top10/js/top10-records.js?v=135"></script>
+  <script defer src="../assets/top10/js/top10-daily.js?v=135"></script>
 
 </body>
 </html>

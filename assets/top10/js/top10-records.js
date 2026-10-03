@@ -72,23 +72,29 @@ function summarizeGames(games) {
      { version: 1, days: { "2026-10-03": { number, marks, missIds,
                                            done, solved, at } } }
    marks: one per guess used, "miss" | "hint" | "correct".
+   Test mode (see top10-daily.js) saves the same way under
+   DAILY_TEST_KEY, so it never touches the real record.
    ============================================================ */
 
 const DAILY_KEY = "postgames.top10.daily";
+const DAILY_TEST_KEY = "postgames.top10.daily-test";
 const DAILY_GUESSES = 5;
 
-function loadDailyDays() {
+function loadDailyDays(key = DAILY_KEY) {
     try {
-        const saved = JSON.parse(localStorage.getItem(DAILY_KEY));
+        const saved = JSON.parse(localStorage.getItem(key));
         return saved?.days && typeof saved.days === "object" ? saved.days : {};
     } catch {
         return {};
     }
 }
 
-function saveDailyDay(date, entry) {
+// Save one day's progress; null removes the day
+function saveDailyDay(date, entry, key = DAILY_KEY) {
+    const days = { ...loadDailyDays(key), [date]: entry };
+    if (!entry) delete days[date];
     try {
-        localStorage.setItem(DAILY_KEY, JSON.stringify({ version: 1, days: { ...loadDailyDays(), [date]: entry } }));
+        localStorage.setItem(key, JSON.stringify({ version: 1, days }));
     } catch (error) {
         console.error("Couldn't save the daily:", error);
     }
@@ -104,6 +110,12 @@ function clearDailyDays() {
 function localDateKey(date = new Date()) {
     return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
         .map((n, i) => String(n).padStart(i ? 2 : 4, "0")).join("-");
+}
+
+// The date key `days` after (or before) another
+function addDays(key, days) {
+    const [y, m, d] = key.split("-").map(Number);
+    return localDateKey(new Date(y, m - 1, d + days));
 }
 
 // Whole days from one date key to another

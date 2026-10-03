@@ -107,3 +107,44 @@ function dailySummaryHTML(summary, highlight = null) {
                 </li>`).join("")}
         </ol>`;
 }
+
+
+/* ============================================================
+   QUALIFIERS
+   Rate stats (averages, percentages, per-game) only rank players who
+   played enough. The sources apply their own minimums (MLB and the NBA
+   in their APIs, NFL in scripts/build_trivia_data.py following Pro
+   Football Reference); this just says so under the stat name.
+   ============================================================ */
+const MLB_RATE_BATTING = ["Batting Average", "On-Base %", "Slugging %", "OPS (On-Base + Slugging)"];
+const MLB_RATE_PITCHING = ["ERA", "WHIP", "Win %", "Hits per 9 Innings", "Strikeouts per 9 Innings",
+    "Strikeout-to-Walk Ratio", "Walks per 9 Innings"];
+const NFL_RATE = {
+    "Completion %": [14, "pass attempts"],
+    "Yards per Pass Attempt": [14, "pass attempts"],
+    "Passer Rating": [14, "pass attempts"],
+    "Yards per Carry": [6.25, "carries"],
+    "Yards per Reception": [1.875, "catches"]
+};
+
+// A short note for a rate stat, or "" for a counting stat
+function statQualifier(sport, label, year) {
+    if (sport === "mlb" && MLB_RATE_BATTING.includes(label)) {
+        return "Qualified hitters only: 3.1 plate appearances per team game (502 in a full season)";
+    }
+    if (sport === "mlb" && MLB_RATE_PITCHING.includes(label)) {
+        return "Qualified pitchers only: 1 inning per team game (162 in a full season)";
+    }
+    if (sport === "nfl" && NFL_RATE[label]) {
+        const [perGame, what] = NFL_RATE[label];
+        const games = Number(year) >= 2021 ? 17 : 16;
+        return `Qualified players only: ${Math.ceil(perGame * games)}+ ${what} (${perGame} per team game)`;
+    }
+    if (sport === "nba" && label.endsWith("%")) {
+        return "Qualified players only: the NBA's minimum made shots";
+    }
+    if (sport === "nba" && label.endsWith("per Game")) {
+        return "Qualified players only: the NBA's minimum games played";
+    }
+    return "";
+}

@@ -1322,6 +1322,70 @@
     }
 }
 
+.stat-qualifier:empty {
+    display: none;
+}
+
+.feedback.hinted .feedback-main {
+    color: var(--accent);
+}
+
+/* The hint a miss unlocked, under the guess box */
+.daily-new-hint {
+    margin-top: 4px;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.daily-new-hint strong {
+    color: var(--text);
+}
+
+.daily-new-hint .team-tag {
+    font-size: 13px;
+}
+
+.daily-hint.fresh {
+    animation: reveal 1.2s var(--ease);
+}
+
+/* Test mode bar */
+.daily-test {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 10px 14px;
+    border: 1px dashed var(--bad);
+    border-radius: var(--radius);
+}
+
+.daily-test-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bad);
+}
+
+.daily-test-btn {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 20px;
+}
+
+.daily-test-day {
+    min-width: 92px;
+    text-align: center;
+    font-weight: 700;
+}
+
+#dailyEyebrow {
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 /* No room saved for feedback until there's a miss to show */
 .daily-play .feedback:empty {
     display: none;
