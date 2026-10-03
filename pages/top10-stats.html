@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
-  <link rel="stylesheet" href="../assets/global/global.css?v=133">
-  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=133">
+  <link rel="stylesheet" href="../assets/global/global.css?v=134">
+  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=134">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
@@ -34,11 +34,19 @@
   <main class="page stats-page">
 
     <div class="intro">
-      <p class="eyebrow">Solo Trivia</p>
+      <p class="eyebrow">Trivia</p>
       <h1 class="display intro-title">Your Stats</h1>
-      <p class="lede">Every solo game you've finished, saved on this phone.</p>
+      <p class="lede">Your daily challenges and solo games, saved on this phone.</p>
       <a class="link-btn intro-link" href="top10.html">Back to trivia</a>
     </div>
+
+    <!-- Daily challenge -->
+    <section id="statsDaily" class="stats-section hidden">
+      <h2 class="section-label">Daily challenge</h2>
+      <div id="statsDailySummary"></div>
+    </section>
+
+    <h2 class="section-label stats-solo-label">Solo games</h2>
 
     <!-- No games yet -->
     <div id="statsEmpty" class="stats-empty hidden">
@@ -63,15 +71,16 @@
 
       <div class="stats-footer">
         <p class="hint">Deleting the app or clearing its data erases these.</p>
-        <button id="statsResetBtn" class="link-btn" type="button">Reset my stats</button>
+        <button id="statsResetBtn" class="link-btn" type="button">Reset my solo stats</button>
       </div>
     </div>
 
-    <p class="version">Version 133</p>
+    <p class="version">Version 134</p>
   </main>
 
-  <script defer src="../assets/top10/js/top10-records.js?v=133"></script>
-  <script defer src="../assets/top10/js/top10-stats.js?v=133"></script>
+  <script defer src="../assets/top10/js/top10-common.js?v=134"></script>
+  <script defer src="../assets/top10/js/top10-records.js?v=134"></script>
+  <script defer src="../assets/top10/js/top10-stats.js?v=134"></script>
 
 </body>
 </html>

@@ -1084,9 +1084,245 @@
     color: var(--good);
 }
 
+.stats-page > .stats-solo-label {
+    margin: 0 0 -28px;
+}
+
 .stats-footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+}
+
+
+/* =========================================
+   8. DAILY CHALLENGE (top10-daily.html)
+   ========================================= */
+
+.daily,
+.daily-game,
+.daily-play,
+.daily-done {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.daily-done {
+    gap: 16px;
+}
+
+.daily-status:empty {
+    display: none;
+}
+
+/* One box per guess */
+.daily-marks {
+    display: flex;
+    gap: 8px;
+}
+
+.daily-mark {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    font-size: 22px;
+}
+
+.daily-mark.miss { border-color: var(--bad); background: var(--bad-soft); }
+.daily-mark.hint { border-color: var(--accent); background: var(--accent-soft); }
+.daily-mark.correct { border-color: var(--good); background: var(--good-soft); }
+
+/* Hints: label on the left, value on the right */
+.daily-hints {
+    list-style: none;
+}
+
+.daily-hint {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--line);
+}
+
+.daily-hint:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.daily-hint-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.daily-hint-value {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.daily-hint-value .team-tag {
+    font-size: 14px;
+}
+
+.daily-hint-pos {
+    margin-left: 6px;
+    color: var(--muted);
+}
+
+.daily-hint.locked .daily-hint-label,
+.daily-hint.locked .daily-hint-value {
+    color: var(--faint);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.daily-hint-btn {
+    align-self: flex-start;
+    margin: -12px 0 0 20px;
+}
+
+.daily-hint-btn:disabled {
+    color: var(--faint);
+    text-decoration: none;
+    cursor: default;
+}
+
+/* The board: the hidden player's slot stands out */
+.slot.daily-answer {
+    border: 1px dashed var(--accent);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+}
+
+.slot.daily-answer .slot-rank,
+.slot.daily-answer .slot-value {
+    color: var(--accent);
+}
+
+.daily-unknown {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+.slot.daily-answer.solved {
+    border: 1px solid var(--good);
+    background: var(--good-soft);
+}
+
+.slot.daily-answer.solved .slot-rank,
+.slot.daily-answer.solved .slot-value,
+.slot.daily-answer.solved .slot-name {
+    color: var(--good);
+}
+
+.slot.daily-answer.failed {
+    border: 1px solid var(--bad);
+    background: var(--bad-soft);
+}
+
+.slot.daily-answer.failed .slot-rank,
+.slot.daily-answer.failed .slot-value,
+.slot.daily-answer.failed .slot-name {
+    color: var(--bad);
+}
+
+/* Finished */
+.daily-done-title {
+    font-size: clamp(48px, 12vw, 80px);
+    color: var(--accent);
+    animation: rise 0.5s var(--ease);
+}
+
+/* How many guesses each solve took */
+.daily-dist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.daily-dist-row {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.daily-dist-label {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--muted);
+}
+
+.daily-dist-bar {
+    min-width: 28px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: var(--line-strong);
+    font-weight: 700;
+    font-size: 14px;
+    text-align: right;
+}
+
+.daily-dist-row.today .daily-dist-bar {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+/* Entry point on the trivia setup screen */
+.daily-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: linear-gradient(90deg, var(--accent-soft), transparent 80%);
+    text-decoration: none;
+}
+
+.daily-link-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.daily-link-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.daily-link-cta {
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .daily-hint {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+}
+
+/* No room saved for feedback until there's a miss to show */
+.daily-play .feedback:empty {
+    display: none;
 }

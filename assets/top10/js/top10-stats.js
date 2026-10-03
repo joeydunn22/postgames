@@ -1,27 +1,15 @@
 /* ============================================================
    TOP 10 — STATS PAGE (pages/top10-stats.html)
-   Lifetime numbers from the solo games saved on this phone (see
-   top10-records.js). Everything is worked out fresh from the saved
+   Daily challenge record, then lifetime numbers from the solo games
+   saved on this phone (see top10-records.js). Everything is worked out fresh from the saved
    list each time the page opens.
    ============================================================ */
 
 const BOARDS_SHOWN = 20;   // boards listed before "Show all"
 let _showAllBoards = false;
 
-function escapeHTML(value) {
-    return String(value ?? "").replace(/[&<>"']/g, ch => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-    })[ch]);
-}
-
 function formatAverage(n) {
     return n.toFixed(1);
-}
-
-// "MLB · Batting · 2023"
-function boardContext({ sport, category, year }) {
-    const cat = category && category[0].toUpperCase() + category.slice(1);
-    return [SPORT_LABELS[sport] || sport, cat, formatSeason(sport, year)].filter(Boolean).join(" · ");
 }
 
 // Big numbers across the top
@@ -83,7 +71,7 @@ function renderBoards(games) {
         <li class="stats-board ${board.best === board.total ? "perfect" : ""}">
             <span class="stats-board-main">
                 <span class="stats-board-stat">${escapeHTML(board.stat)}</span>
-                <span class="stats-board-context">${escapeHTML(boardContext(board))} · played ${board.plays}×</span>
+                <span class="stats-board-context">${escapeHTML(boardContextLabel(board))} · played ${board.plays}×</span>
             </span>
             <span class="stats-board-best">${board.best}<span class="stats-board-total">/${board.total}</span></span>
         </li>`).join("");
@@ -93,7 +81,14 @@ function renderBoards(games) {
     moreBtn.textContent = `Show all ${rows.length} boards`;
 }
 
+function renderDaily() {
+    const summary = dailySummary();
+    document.getElementById("statsDaily").classList.toggle("hidden", summary.played === 0);
+    if (summary.played) document.getElementById("statsDailySummary").innerHTML = dailySummaryHTML(summary);
+}
+
 function renderStats() {
+    renderDaily();
     const games = loadSoloGames();
     document.getElementById("statsEmpty").classList.toggle("hidden", games.length > 0);
     document.getElementById("statsBody").classList.toggle("hidden", games.length === 0);

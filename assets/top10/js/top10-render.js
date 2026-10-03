@@ -24,31 +24,13 @@ const STAT_HINTS = {
    1. HELPERS
    ============================================================ */
 
-// Names and guesses come from other players via Firebase, so never
-// put them into innerHTML without escaping
-function escapeHTML(value) {
-    return String(value ?? "").replace(/[&<>"']/g, ch => ({
-        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-    })[ch]);
-}
-
-// The data uses "2TM"/"3TM" for players traded mid-season
-function formatTeam(team) {
-    const multi = /^(\d)TM$/.exec(team);
-    return multi ? `${multi[1]} teams` : team;
-}
-
-// A team code as a small tag in the team's color (see top10-teams.js)
+// A team code as a colored tag, for the current game's sport
 function teamTag(team, extraClass = "") {
-    if (!team) return "";
-    const color = teamColor(game.sport, team);
-    const style = color ? ` style="--team: ${color}"` : "";
-    return `<span class="team-tag ${color ? "has-color" : ""} ${extraClass}"${style}>${escapeHTML(formatTeam(team))}</span>`;
+    return teamTagFor(game.sport, team, extraClass);
 }
 
 function gameContextLabel() {
-    const category = game.category && game.category[0].toUpperCase() + game.category.slice(1);
-    return [SPORT_LABELS[game.sport], category, formatSeason(game.sport, game.year)].filter(Boolean).join(" · ");
+    return game.sport ? boardContextLabel(game) : "";
 }
 
 function timesLabel(n) {
@@ -161,6 +143,16 @@ function renderBestHint() {
         : "You haven't played this one solo yet.";
 }
 
+// The daily challenge card: hidden in a room, and says when today's is done
+function renderDailyLink() {
+    ui.dailyLink.classList.toggle("hidden", inRoom());
+    const today = loadDailyDays()[localDateKey()];
+    if (!today?.done) return;
+    const { streak } = dailySummary();
+    ui.dailyLinkStatus.textContent = (today.solved ? `Solved in ${today.marks.length}` : "Done for today") +
+        (streak ? ` · ${streak}-day streak` : "");
+}
+
 // How the players listed will play
 function renderModeHint() {
     ui.modeHint.textContent = inRoom()
@@ -248,6 +240,7 @@ function renderSetup() {
     renderModeHint();
     renderSessionBoard(ui.sessionSetup);
     ui.statsLink.classList.toggle("hidden", inRoom());
+    renderDailyLink();
 
     ui.startGameBtn.classList.toggle("hidden", !isHost());
     ui.startGameBtn.disabled = !canStartGame();
@@ -656,6 +649,8 @@ function findElements() {
         bestHint: byId("bestHint"),
         modeHint: byId("modeHint"),
         statsLink: byId("statsLink"),
+        dailyLink: byId("dailyLink"),
+        dailyLinkStatus: byId("dailyLinkStatus"),
         randomAnyBtn: byId("randomAnyBtn"),
         randomSportBtn: byId("randomSportBtn"),
         timerChips: chips("timerChips"),

@@ -1,6 +1,6 @@
 /* ============================================================
    TOP 10 — SHARED STATE
-   Loaded first (after top10-records.js). These are plain scripts (not
+   Loaded after top10-common.js and top10-records.js. These are plain scripts (not
    modules), so every top-level variable and function in any of the
    files is visible to the others.
    ============================================================ */
@@ -133,11 +133,6 @@ function emptySession() {
 
 // DOM references, filled in by the renderer
 const ui = {};
-
-// Guess search: names show once this many letters are typed, at most
-// GUESS_RESULTS at a time
-const GUESS_MIN_LETTERS = 3;
-const GUESS_RESULTS = 5;
 
 // Entries from data/manifest.json: which sport/category/year combos have data
 let dataManifest = [];

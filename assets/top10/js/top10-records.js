@@ -1,9 +1,9 @@
 /* ============================================================
-   TOP 10 — SOLO RECORDS
-   Solo games saved on this phone (localStorage), shared by the trivia
-   page and the stats page. Never touches the page.
+   TOP 10 — SAVED RECORDS
+   Solo games and daily challenges saved on this phone (localStorage),
+   shared by the trivia, daily and stats pages. Never touches the page.
 
-   Saved as one list of finished games, oldest first:
+   Solo games are saved as one list of finished games, oldest first:
      { version: 1, games: [{ sport, category, year, stat, score, total,
                              strikes, timer, at }] }
    Every best and total is worked out from that list, so new stats need
@@ -11,15 +11,6 @@
    ============================================================ */
 
 const RECORDS_KEY = "postgames.top10.solo";
-
-const SPORT_LABELS = { mlb: "MLB", nba: "NBA", nfl: "NFL" };
-
-// NBA seasons span two years and are stored by the year they end:
-// 2025 is shown as "2024-25"
-function formatSeason(sport, year) {
-    if (!year) return "";
-    return sport === "nba" ? `${year - 1}-${String(year).slice(-2)}` : String(year);
-}
 
 // One board = sport + category + season + stat
 function boardKey({ sport, category, year, stat }) {
@@ -71,4 +62,77 @@ function summarizeGames(games) {
         average: games.length ? found / games.length : 0,
         perfect: games.filter(g => g.score === g.total).length
     };
+}
+
+
+/* ============================================================
+   DAILY CHALLENGE
+   One entry per day played, saved after every guess so closing the
+   app mid-puzzle never resets it:
+     { version: 1, days: { "2026-10-03": { number, marks, missIds,
+                                           done, solved, at } } }
+   marks: one per guess used, "miss" | "hint" | "correct".
+   ============================================================ */
+
+const DAILY_KEY = "postgames.top10.daily";
+const DAILY_GUESSES = 5;
+
+function loadDailyDays() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(DAILY_KEY));
+        return saved?.days && typeof saved.days === "object" ? saved.days : {};
+    } catch {
+        return {};
+    }
+}
+
+function saveDailyDay(date, entry) {
+    try {
+        localStorage.setItem(DAILY_KEY, JSON.stringify({ version: 1, days: { ...loadDailyDays(), [date]: entry } }));
+    } catch (error) {
+        console.error("Couldn't save the daily:", error);
+    }
+}
+
+function clearDailyDays() {
+    try {
+        localStorage.removeItem(DAILY_KEY);
+    } catch {}
+}
+
+// "YYYY-MM-DD" for the phone's local date, so the puzzle changes at your midnight
+function localDateKey(date = new Date()) {
+    return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
+        .map((n, i) => String(n).padStart(i ? 2 : 4, "0")).join("-");
+}
+
+// Whole days from one date key to another
+function daysBetween(fromKey, toKey) {
+    const utc = key => Date.UTC(...key.split("-").map((n, i) => Number(n) - (i === 1 ? 1 : 0)));
+    return Math.round((utc(toKey) - utc(fromKey)) / 86400000);
+}
+
+// Played, solved, streaks (days in a row solved) and how many guesses
+// each solve took. The current streak survives until a day is missed or
+// failed, so it still counts this morning before today's is played.
+function dailySummary(days = loadDailyDays(), today = localDateKey()) {
+    const finished = Object.entries(days).filter(([, d]) => d.done).sort(([a], [b]) => a.localeCompare(b));
+    const distribution = Array(DAILY_GUESSES).fill(0);
+    let best = 0, run = 0, previous = null;
+
+    for (const [date, day] of finished) {
+        if (day.solved) {
+            distribution[day.marks.length - 1] += 1;
+            run = previous && daysBetween(previous, date) === 1 ? run + 1 : 1;
+            previous = date;
+            best = Math.max(best, run);
+        } else {
+            run = 0;
+            previous = null;
+        }
+    }
+    const current = previous && daysBetween(previous, today) <= 1 ? run : 0;
+    const solved = distribution.reduce((a, b) => a + b, 0);
+
+    return { played: finished.length, solved, streak: current, bestStreak: best, distribution };
 }

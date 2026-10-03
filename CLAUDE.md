@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no package manager, no tests) with Firebase Realtime Database for multiplayer. Remote: `github.com/joeydunn22/postgames`; the live site is GitHub Pages at `joeydunn22.github.io/postgames`. The local copy lives at `C:/Users/josep/Claude Code/Postgames`, deliberately outside OneDrive (a OneDrive move once left a partial copy, and syncing fights with git). The only real feature is **Top 10 Trivia** (`pages/top10.html`, plus its solo stats page `pages/top10-stats.html`); `debates.html`, `movies.html`, `snacks.html` are "coming soon" placeholders.
+Postgames is a static website (plain HTML/CSS/vanilla JS, no build step, no package manager, no tests) with Firebase Realtime Database for multiplayer. Remote: `github.com/joeydunn22/postgames`; the live site is GitHub Pages at `joeydunn22.github.io/postgames`. The local copy lives at `C:/Users/josep/Claude Code/Postgames`, deliberately outside OneDrive (a OneDrive move once left a partial copy, and syncing fights with git). The only real feature is **Top 10 Trivia** (`pages/top10.html`), with its daily challenge (`pages/top10-daily.html`) and stats page (`pages/top10-stats.html`); `debates.html`, `movies.html`, `snacks.html` are "coming soon" placeholders.
 
 ## Vision
 
@@ -38,11 +38,10 @@ Small gameplay additions that make a night of play more fun.
 
 - [x] Turn timer (host setting: off / 45s / 60s / 90s; running out counts as a miss)
 - [x] Random board: any sport, or random within the picked sport
-- [ ] "Pass" option on your turn
 - [ ] Hints (reveal a team or first letter, maybe at a point cost)
 - [x] Era filter (host setting: All / Last 5 / Last 10 / 2010s / 2000s / Pre-2000)
 - [ ] Difficulty filter (e.g. by how famous the players are), if a good signal exists
-- [ ] Other game modes beyond "name the top 10" (e.g. guess the stat from the list, team-based boards)
+- [ ] Other game modes beyond "name the top 10" (e.g. team-based boards; see the dailies below)
 - [x] Guess by picking a player from a search of everyone who played that season (replaced free-text matching, typos and nicknames)
 - [ ] Revisit tap-to-guess if accidental taps turn out to be a problem in real games
 - [ ] NBA positions in the guess list, if an open source answers scripts (stats.nba.com's position endpoints time out)
@@ -54,10 +53,12 @@ Small gameplay additions that make a night of play more fun.
 The owner wants to grow this into sign-in, friends and daily challenges. Agreed order (2026-10-03): solo on the device first, then a daily challenge that needs no accounts, then Google sign-in once people want bests across phones or a real leaderboard, then friends. Keep three ways to play working throughout: solo, one phone for a group, and rooms across phones.
 
 - [x] Solo mode (one player, not in a room): three strikes, best per board and a lifetime stats page, saved on the device (localStorage, no accounts)
-- [ ] Daily challenge: the same board for everyone each day (picked from the date, no accounts), with a shareable emoji result for the group chat, Wordle-style
+- [x] Daily challenge "Who's Missing?": one hidden player per day, 5 guesses, hints, streaks, shareable emoji result (see Daily challenge below)
+- [ ] **Next: second daily, "Mystery Board"**, on the same Daily page, reusing the schedule and saving. The owner's design (2026-10-03): the season is shown the whole time; the top 1-3 players are hidden (more hidden on easier stats) and the rest of the board's names shown. Round 1: guess the stat. Round 2: guess the hidden top players (then the values show). Round 3: guess #1's value, scored by closeness. Walk through the details (tries per round, scoring, share grid, boards whose top 10 look alike) before building
+- [ ] Top up the daily schedule before it runs out (`python scripts/build_daily.py`; it's built through 2027-10-03), and rebuild NFL/NBA current seasons with care, since a scheduled puzzle needs its hidden player to stay on the board
 - [ ] Real login: upgrade Firebase anonymous auth to Google sign-in (keeps existing uids), and copy the phone's saved solo games up on first sign-in. Its own session: Google sign-in inside an iPhone home-screen app has popup/redirect quirks, and accounts need a privacy policy and per-user database rules
 - [ ] Friends list and daily-challenge leaderboards (needs sign-in)
-- [ ] More solo stats if wanted (day streaks, per-era numbers): the saved game list already has what they need
+- [ ] More solo stats if wanted (per-era numbers): the saved game list already has what they need
 
 ### 4. Other pages — SOMEDAY
 
@@ -114,13 +115,14 @@ There is deliberately **no service worker** (the owner chose no offline mode), s
 
 ## Top 10 Trivia architecture
 
-`pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Five **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. As classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — no imports/exports, and no two files may declare the same top-level name. Fetch paths are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
+`pages/top10.html` inlines the Firebase init as a module and exposes the SDK on `window` (`db`, `auth`, `ref`, `set`, `onValue`, `remove`, `get`, `onAuthStateChanged`, `signInAnonymously`). Six **plain `defer` scripts** (not modules) then run in order from `assets/top10/js/`. As classic scripts, every top-level `let`/`const`/`function` in one file is visible to the others — no imports/exports, and no two files may declare the same top-level name. Fetch paths are relative to `pages/top10.html` (e.g. `../data/manifest.json`).
 
-1. `top10-records.js` — solo games saved on the phone (see Solo mode below), plus `SPORT_LABELS` and `formatSeason()`. Also loaded by the stats page, so it touches neither the DOM nor Firebase.
-2. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `era`, `timerSeconds`, `players: [{id, name, score}]`, `currentPlayerIndex`, `turnEndsAt`, `guessed: [{id, by}]`, `misses: [{id, name, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`roster`/`dataStatus`/`strikes`/`soloResult` are local (`emptyGameData()` resets them). Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `isSolo()`, `struckOut()`, `roundOver()`, `hasData()`, `availableYears()`, `serverNow()`, `randomItem()`, `newLocalPlayer()`. `TIMER_OPTIONS` lists the timer choices; `GUESS_MIN_LETTERS`/`GUESS_RESULTS` set the guess search; `ERAS` holds the era tests, and `playableEntries()` is the manifest filtered to the picked era (`hasData()` and `availableYears()` go through it).
-3. `top10-teams.js` — `TEAM_COLORS`: one standout color per team code, per sport, and `teamColor()`, which brightens dark ones (keeping hue) until they read on the background. Add a code here when new teams show up in the data.
-4. `top10-render.js` — the only file that touches the DOM. `render()` redraws from state after any change, showing one of the setup / playing / results sections. Event handlers call logic actions (`selectSport`, `submitGuess`, `voteToEndGame`, …) and never change state themselves. Startup runs on `DOMContentLoaded` because rendering uses helpers from the logic file. Anything interpolated into `innerHTML` must go through `escapeHTML()` — names and guesses come from other players.
-5. `top10-logic.js` — actions and rules: sign-in, rooms and their Firebase listeners, setup actions, game flow (`startGame` / `endGame` / `newGame`), end-game voting, guessing, data loading, and the player search for guesses. Never touches the DOM: change state, then call `render()`.
+1. `top10-common.js` — helpers every trivia page uses: `escapeHTML()`, `formatSeason()`, `formatTeam()`, `teamTagFor(sport, team)`, `boardContextLabel()`, `SPORT_LABELS`, the player search (`normalize`, `withSearchWords`, `matchPlayers`, `GUESS_MIN_LETTERS`/`GUESS_RESULTS`) and `dailySummaryHTML()`. No state, no Firebase.
+2. `top10-records.js` — everything saved on the phone: solo games and daily results (see below). Touches neither the DOM nor Firebase.
+3. `top10-state.js` — all shared state. `game` holds the current game; the fields listed in `SYNCED_DEFAULTS` (`state`, `sport`, `category`, `year`, `stat`, `era`, `timerSeconds`, `players: [{id, name, score}]`, `currentPlayerIndex`, `turnEndsAt`, `guessed: [{id, by}]`, `misses: [{id, name, by}]`, `roundComplete`, `lastGuess`) are exactly what's mirrored to Firebase; `data`/`roster`/`dataStatus`/`strikes`/`soloResult` are local (`emptyGameData()` resets them). Also room state (`currentUser`, `currentRoomCode`, `hostId`, `roomMembers`, `endVotes`, `roomStatus`), `session`, `dataManifest`, and helpers `inRoom()`, `isHost()` (always true off-room), `isSolo()`, `struckOut()`, `roundOver()`, `hasData()`, `availableYears()`, `serverNow()`, `randomItem()`, `newLocalPlayer()`. `TIMER_OPTIONS` lists the timer choices; `ERAS` holds the era tests, and `playableEntries()` is the manifest filtered to the picked era (`hasData()` and `availableYears()` go through it).
+4. `top10-teams.js` — `TEAM_COLORS`: one standout color per team code, per sport, and `teamColor()`, which brightens dark ones (keeping hue) until they read on the background. Add a code here when new teams show up in the data.
+5. `top10-render.js` — the only file that touches the DOM. `render()` redraws from state after any change, showing one of the setup / playing / results sections. Event handlers call logic actions (`selectSport`, `submitGuess`, `voteToEndGame`, …) and never change state themselves. Startup runs on `DOMContentLoaded` because rendering uses helpers from the logic file. Anything interpolated into `innerHTML` must go through `escapeHTML()` — names and guesses come from other players. `teamTag(team)` is `teamTagFor` with the game's sport.
+6. `top10-logic.js` — actions and rules: sign-in, rooms and their Firebase listeners, setup actions, game flow (`startGame` / `endGame` / `newGame`), end-game voting, guessing, data loading, and the player search for guesses. Never touches the DOM: change state, then call `render()`.
 
 ### Three ways to play
 
@@ -132,7 +134,20 @@ There is deliberately **no service worker** (the owner chose no offline mode), s
 
 ### Solo mode and saved games
 
-`top10-records.js` keeps every finished solo game in localStorage under `postgames.top10.solo` as `{ version: 1, games: [{ sport, category, year, stat, score, total, strikes, timer, at }] }`, oldest first. Nothing else is stored: bests and totals are worked out from that list (`bestOnBoard()`, `summarizeGames()`), so new stats need no new saving, and the list is what gets copied up to an account once sign-in exists. Every localStorage call is wrapped in try/catch (private browsing can block it); the game still plays, it just doesn't save. `recordSoloGame()` runs in `endGame` when solo, skips a game quit before any guess, and sets `game.soloResult` (`{ previousBest, newBest }`) for the results line. Setup shows "Your best: 7 of 10" for the picked board (solo only). `pages/top10-stats.html` + `top10-stats.js` show lifetime totals, per-sport rows and the best on every board played, with a reset. The iPhone home-screen app and Safari have separate storage, so they keep separate stats.
+`top10-records.js` keeps every finished solo game in localStorage under `postgames.top10.solo` as `{ version: 1, games: [{ sport, category, year, stat, score, total, strikes, timer, at }] }`, oldest first. Nothing else is stored: bests and totals are worked out from that list (`bestOnBoard()`, `summarizeGames()`), so new stats need no new saving, and the list is what gets copied up to an account once sign-in exists. Every localStorage call is wrapped in try/catch (private browsing can block it); the game still plays, it just doesn't save. `recordSoloGame()` runs in `endGame` when solo, skips a game quit before any guess, and sets `game.soloResult` (`{ previousBest, newBest }`) for the results line. Setup shows "Your best: 7 of 10" for the picked board (solo only). `pages/top10-stats.html` + `top10-stats.js` show the daily record, then solo lifetime totals, per-sport rows and the best on every board played, with a reset (solo only). The iPhone home-screen app and Safari have separate storage, so they keep separate stats.
+
+### Daily challenge: Who's Missing?
+
+`pages/top10-daily.html` + `top10-daily.js` (loads `top10-common`, `top10-teams`, `top10-records`; no Firebase). One top-10 board a day with one player hidden; everyone gets the same one. The board shows every other name, team and value, and the hidden player's value. Five guesses (`DAILY_GUESSES`): a miss, or tapping "Take a hint", uses one and unlocks the next hint: league/conference → division → team + position (NBA: team) → initials. The hint button goes away once all four are out. Guessing uses the same season-wide search as the game; board players and your own misses are greyed out. Finished: answer revealed on the board, a share button (phone share sheet, else clipboard: `Postgames Daily #N · MLB 2005 ERA` / `❌💡✅ 3/5` / link), streaks and how many guesses each solve took, time to the next puzzle. The puzzle changes at the phone's local midnight (`localDateKey()`); the installed app reloads it on resume if the date changed.
+
+- **Schedule:** `data/daily.json` = `{ start, puzzles: [{ sport, category, year, stat, rank, id, league, division }] }`, `puzzles[0]` is Daily #1 on `start` (2026-10-03). The page finds the hidden player on the board by `id`. `league`/`division` are worked out by the script because the data files don't have them.
+- **`scripts/build_daily.py`** keeps every existing day and adds days through `DAYS_AHEAD` (365) from today; `--check` only checks the division table. Its tables:
+  - `DAILY_STATS`: which stats the daily uses, each `easy` or `hard`. `RECENT_SEASONS` (15): recent seasons use every listed stat; older ones only easy stats (old boards in niche stats are near impossible). `HIDE_RANKS`: which ranks can be hidden (recent easy 1-10, recent hard 1-5, older easy 1-5).
+  - `RECENT_SHARE` (0.6) of days use recent seasons. Each day picks evenly a sport (never yesterday's), era, season, stat, then player, so niche stats get their turn. A board is never reused.
+  - Never hidden: players traded mid-season (no single team/division) and players in a bottom tie with players left off the board (`more_tied`).
+  - `MLB_DIVISIONS` / `NFL_DIVISIONS` / `NBA_DIVISIONS` (+ `NBA_MOVES`) give each team's league and division by season, realignments included. The script refuses to run if any team on any board lacks one; add new team codes there.
+- **Saved:** `postgames.top10.daily` = `{ version: 1, days: { "YYYY-MM-DD": { number, marks: ["miss"|"hint"|"correct"], missIds, done, solved, at } } }`, written after every guess so closing the app never resets the day. `dailySummary()` gives played, solved, current/best streak (days in a row solved; a miss or fail resets) and the guess distribution. The trivia setup screen's daily card shows today's result and streak; it's hidden in rooms. The home page links the daily too.
+- Static site, so someone determined could read the answer from the data files; accepted for now.
 
 ### Multiplayer model (host-authoritative)
 
@@ -173,3 +188,4 @@ python scripts/build_trivia_data.py nba 1980-2026
 - `top_ten()` keeps everyone ranked 10th or better. A tie at the bottom that would push a board past 15 is dropped into `more_tied`. A board with fewer than 5 players, or where everyone is tied, is skipped for that season.
 - Every build also writes the season's `players.json` (`write_players_file`): MLB from `sports/1/players?season=` plus the season's batting/pitching lines for teams; NFL from the same nflverse CSV; NBA from the league-leaders endpoint in Totals mode (everyone who played, no position). It adds any board player missing from the list, with a warning, and uses the board's spelling of names, so every answer can always be picked.
 - To add a stat, add a line to `MLB_STATS`, `NBA_STATS` or `nfl_stats()`, list its label under a group in `STAT_GROUPS`, and rerun the seasons.
+- `data/daily.json` (the daily schedule) is built separately by `scripts/build_daily.py` (see Daily challenge). It refers to boards by stat label and player id, so renaming a stat label means updating it there too.

@@ -1,0 +1,3666 @@
+{
+ "_readme": "Daily challenge schedule: puzzles[0] is Daily #1 on `start`, one per day after. Built by scripts/build_daily.py, which keeps existing days and adds new ones.",
+ "start": "2026-10-03",
+ "puzzles": [
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2005,
+   "stat": "ERA",
+   "rank": 5,
+   "id": "112020",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "3-Pointers Made",
+   "rank": 5,
+   "id": "202738",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Passing TDs",
+   "rank": 6,
+   "id": "00-0022942",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2004,
+   "stat": "Assists per Game",
+   "rank": 3,
+   "id": "959",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Passing Yards",
+   "rank": 3,
+   "id": "00-0005106",
+   "league": "NFC",
+   "division": "NFC Central"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2018,
+   "stat": "ERA",
+   "rank": 9,
+   "id": "592314",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1996,
+   "stat": "Points per Game",
+   "rank": 2,
+   "id": "165",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2022,
+   "stat": "Interceptions",
+   "rank": 5,
+   "id": "00-0029606",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2015,
+   "stat": "Stolen Bases",
+   "rank": 3,
+   "id": "453568",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Sacks",
+   "rank": 4,
+   "id": "00-0035717",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
+   "stat": "Wins",
+   "rank": 3,
+   "id": "543521",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1996,
+   "stat": "Assists per Game",
+   "rank": 3,
+   "id": "393",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2015,
+   "stat": "Runs Batted In",
+   "rank": 2,
+   "id": "518626",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "203076",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Rushing TDs",
+   "rank": 4,
+   "id": "00-0025394",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1993,
+   "stat": "Assists per Game",
+   "rank": 4,
+   "id": "177",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2010,
+   "stat": "Wins",
+   "rank": 3,
+   "id": "425794",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Rushing TDs",
+   "rank": 10,
+   "id": "00-0035831",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "3-Pointers Made",
+   "rank": 1,
+   "id": "201939",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Passing Yards",
+   "rank": 4,
+   "id": "00-0026143",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2008,
+   "stat": "Points per Game",
+   "rank": 1,
+   "id": "2544",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2019,
+   "stat": "Saves",
+   "rank": 3,
+   "id": "547973",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2010,
+   "stat": "Passing TDs",
+   "rank": 2,
+   "id": "00-0010346",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2001,
+   "stat": "Assists per Game",
+   "rank": 3,
+   "id": "89",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1998,
+   "stat": "Home Runs",
+   "rank": 5,
+   "id": "110839",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2008,
+   "stat": "Rushing Yards",
+   "rank": 2,
+   "id": "00-0022821",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2010,
+   "stat": "Hits",
+   "rank": 1,
+   "id": "400085",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Passing TDs",
+   "rank": 7,
+   "id": "00-0020531",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2003,
+   "stat": "ERA",
+   "rank": 5,
+   "id": "218596",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2002,
+   "stat": "Points per Game",
+   "rank": 1,
+   "id": "947",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Receptions",
+   "rank": 4,
+   "id": "00-0037744",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2001,
+   "stat": "Points per Game",
+   "rank": 3,
+   "id": "406",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Receiving TDs",
+   "rank": 2,
+   "id": "00-0007024",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2005,
+   "stat": "Wins",
+   "rank": 5,
+   "id": "424324",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1987,
+   "stat": "Assists per Game",
+   "rank": 1,
+   "id": "77142",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2015,
+   "stat": "Batting Average",
+   "rank": 9,
+   "id": "458015",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Receiving Yards",
+   "rank": 1,
+   "id": "00-0007024",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2008,
+   "stat": "Rebounds per Game",
+   "rank": 3,
+   "id": "2199",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2022,
+   "stat": "Rushing TDs",
+   "rank": 8,
+   "id": "00-0035243",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2024,
+   "stat": "Saves",
+   "rank": 2,
+   "id": "661403",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2024,
+   "stat": "Receiving Yards",
+   "rank": 4,
+   "id": "00-0037238",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2018,
+   "stat": "Home Runs",
+   "rank": 4,
+   "id": "545361",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2009,
+   "stat": "Passing Yards",
+   "rank": 4,
+   "id": "00-0023459",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "Batting Average",
+   "rank": 8,
+   "id": "571448",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2000,
+   "stat": "Receiving TDs",
+   "rank": 3,
+   "id": "00-0012478",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2020,
+   "stat": "Strikeouts",
+   "rank": 4,
+   "id": "608337",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "3-Point %",
+   "rank": 2,
+   "id": "201939",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Receiving TDs",
+   "rank": 6,
+   "id": "00-0027902",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2026,
+   "stat": "Wins",
+   "rank": 3,
+   "id": "656876",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Rushing TDs",
+   "rank": 4,
+   "id": "00-0022250",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2006,
+   "stat": "Rebounds per Game",
+   "rank": 2,
+   "id": "2730",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2013,
+   "stat": "ERA",
+   "rank": 5,
+   "id": "425844",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2020,
+   "stat": "Passing TDs",
+   "rank": 7,
+   "id": "00-0033537",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2012,
+   "stat": "ERA",
+   "rank": 6,
+   "id": "430912",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2016,
+   "stat": "3-Pointers Made",
+   "rank": 1,
+   "id": "201939",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2009,
+   "stat": "Receiving TDs",
+   "rank": 1,
+   "id": "00-0024221",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2006,
+   "stat": "Home Runs",
+   "rank": 1,
+   "id": "429667",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Assists per Game",
+   "rank": 7,
+   "id": "101108",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2022,
+   "stat": "Hits",
+   "rank": 3,
+   "id": "666182",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Assists per Game",
+   "rank": 2,
+   "id": "101108",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2009,
+   "stat": "Wins",
+   "rank": 5,
+   "id": "444857",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Passing TDs",
+   "rank": 2,
+   "id": "00-0010346",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2002,
+   "stat": "Assists per Game",
+   "rank": 5,
+   "id": "304",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Passing Yards",
+   "rank": 5,
+   "id": "00-0026143",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Steals per Game",
+   "rank": 3,
+   "id": "1641717",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Rushing Yards",
+   "rank": 3,
+   "id": "00-0004052",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Points per Game",
+   "rank": 9,
+   "id": "203999",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Receiving Yards",
+   "rank": 2,
+   "id": "00-0011754",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1996,
+   "stat": "Runs Scored",
+   "rank": 2,
+   "id": "121347",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "3-Pointers Made",
+   "rank": 3,
+   "id": "1629130",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Rushing TDs",
+   "rank": 3,
+   "id": "00-0028011",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "3-Point %",
+   "rank": 5,
+   "id": "1630249",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2004,
+   "stat": "Passing TDs",
+   "rank": 5,
+   "id": "00-0004161",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1990,
+   "stat": "Strikeouts",
+   "rank": 3,
+   "id": "114947",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1983,
+   "stat": "Rebounds per Game",
+   "rank": 2,
+   "id": "433",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2013,
+   "stat": "Saves",
+   "rank": 4,
+   "id": "121250",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2008,
+   "stat": "Assists per Game",
+   "rank": 1,
+   "id": "101108",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Passing TDs",
+   "rank": 6,
+   "id": "00-0026143",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "3-Point %",
+   "rank": 4,
+   "id": "101141",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Rushing Yards",
+   "rank": 10,
+   "id": "00-0033893",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1982,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "78331",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1996,
+   "stat": "Wins",
+   "rank": 2,
+   "id": "120485",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Blocks per Game",
+   "rank": 2,
+   "id": "203497",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Sacks",
+   "rank": 4,
+   "id": "00-0023750",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Field Goal %",
+   "rank": 3,
+   "id": "1629674",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Receiving TDs",
+   "rank": 2,
+   "id": "00-0034351",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "Stolen Bases",
+   "rank": 1,
+   "id": "605480",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "3-Point %",
+   "rank": 2,
+   "id": "203493",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1993,
+   "stat": "Hits",
+   "rank": 5,
+   "id": "115007",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Blocks per Game",
+   "rank": 1,
+   "id": "203076",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1997,
+   "stat": "Strikeouts",
+   "rank": 3,
+   "id": "112388",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "3-Pointers Made",
+   "rank": 4,
+   "id": "1628401",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
+   "stat": "ERA",
+   "rank": 7,
+   "id": "543037",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Receptions",
+   "rank": 2,
+   "id": "00-0015218",
+   "league": "AFC",
+   "division": "AFC Central"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1993,
+   "stat": "Wins",
+   "rank": 1,
+   "id": "118656",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Receiving Yards",
+   "rank": 10,
+   "id": "00-0035216",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "Field Goal %",
+   "rank": 1,
+   "id": "1629011",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Receptions",
+   "rank": 5,
+   "id": "00-0018958",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Steals per Game",
+   "rank": 1,
+   "id": "101108",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Sacks",
+   "rank": 4,
+   "id": "00-0027662",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2011,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "201933",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Interceptions",
+   "rank": 4,
+   "id": "00-0033132",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2025,
+   "stat": "ERA",
+   "rank": 4,
+   "id": "808967",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "3-Point %",
+   "rank": 1,
+   "id": "201588",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2023,
+   "stat": "Runs Scored",
+   "rank": 8,
+   "id": "656941",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2020,
+   "stat": "Receptions",
+   "rank": 10,
+   "id": "00-0032688",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2019,
+   "stat": "3-Pointers Made",
+   "rank": 4,
+   "id": "1627741",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Receiving Yards",
+   "rank": 3,
+   "id": "00-0012478",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "Field Goal %",
+   "rank": 4,
+   "id": "2730",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Receptions",
+   "rank": 4,
+   "id": "00-0030035",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1996,
+   "stat": "Batting Average",
+   "rank": 5,
+   "id": "117197",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1987,
+   "stat": "Rebounds per Game",
+   "rank": 1,
+   "id": "787",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2024,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 2,
+   "id": "660271",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2022,
+   "stat": "3-Point %",
+   "rank": 1,
+   "id": "1628379",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Receiving TDs",
+   "rank": 7,
+   "id": "00-0030472",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1989,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "17",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2010,
+   "stat": "Rushing Yards",
+   "rank": 5,
+   "id": "00-0024275",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1990,
+   "stat": "Points per Game",
+   "rank": 3,
+   "id": "121",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2014,
+   "stat": "Runs Scored",
+   "rank": 3,
+   "id": "543685",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1983,
+   "stat": "Assists per Game",
+   "rank": 1,
+   "id": "77142",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Rushing Yards",
+   "rank": 6,
+   "id": "00-0032780",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2005,
+   "stat": "Rebounds per Game",
+   "rank": 5,
+   "id": "2211",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Receptions",
+   "rank": 3,
+   "id": "00-0020498",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1995,
+   "stat": "ERA",
+   "rank": 2,
+   "id": "116615",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Passing Yards",
+   "rank": 3,
+   "id": "00-0021678",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2006,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "2240",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Passing Yards",
+   "rank": 9,
+   "id": "00-0029604",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Steals per Game",
+   "rank": 3,
+   "id": "1627936",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "Runs Scored",
+   "rank": 4,
+   "id": "596019",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1987,
+   "stat": "Points per Game",
+   "rank": 5,
+   "id": "78404",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2024,
+   "stat": "Hits",
+   "rank": 9,
+   "id": "683002",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1992,
+   "stat": "Assists per Game",
+   "rank": 4,
+   "id": "177",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2020,
+   "stat": "Wins",
+   "rank": 1,
+   "id": "669456",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Rushing TDs",
+   "rank": 4,
+   "id": "00-0020536",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "3-Pointers Made",
+   "rank": 5,
+   "id": "1627750",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1994,
+   "stat": "Wins",
+   "rank": 2,
+   "id": "115941",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Receiving TDs",
+   "rank": 10,
+   "id": "00-0022811",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "Home Runs",
+   "rank": 1,
+   "id": "663728",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Rushing Yards",
+   "rank": 5,
+   "id": "00-0039040",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2006,
+   "stat": "Assists per Game",
+   "rank": 5,
+   "id": "467",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Passing Yards",
+   "rank": 5,
+   "id": "00-0023459",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Points per Game",
+   "rank": 9,
+   "id": "202326",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1994,
+   "stat": "Hits",
+   "rank": 2,
+   "id": "117863",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "3-Point %",
+   "rank": 4,
+   "id": "101181",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Receiving Yards",
+   "rank": 5,
+   "id": "00-0022910",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "Steals per Game",
+   "rank": 5,
+   "id": "201935",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1990,
+   "stat": "Wins",
+   "rank": 2,
+   "id": "122775",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "1641705",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2026,
+   "stat": "Runs Batted In",
+   "rank": 3,
+   "id": "701398",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Interceptions",
+   "rank": 5,
+   "id": "00-0031151",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2004,
+   "stat": "ERA",
+   "rank": 4,
+   "id": "282656",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Receiving TDs",
+   "rank": 4,
+   "id": "00-0032765",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "Steals per Game",
+   "rank": 4,
+   "id": "203496",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1995,
+   "stat": "Home Runs",
+   "rank": 5,
+   "id": "118743",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Rushing TDs",
+   "rank": 2,
+   "id": "00-0032764",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Rebounds per Game",
+   "rank": 10,
+   "id": "101106",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2020,
+   "stat": "Receiving TDs",
+   "rank": 5,
+   "id": "00-0033757",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2016,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 1,
+   "id": "120074",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Assists per Game",
+   "rank": 9,
+   "id": "201952",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2022,
+   "stat": "Receiving Yards",
+   "rank": 8,
+   "id": "00-0030506",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "201567",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2023,
+   "stat": "Saves",
+   "rank": 1,
+   "id": "661403",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Blocks per Game",
+   "rank": 4,
+   "id": "1626167",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1996,
+   "stat": "Runs Batted In",
+   "rank": 5,
+   "id": "120191",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1996,
+   "stat": "Rebounds per Game",
+   "rank": 3,
+   "id": "87",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Receiving TDs",
+   "rank": 2,
+   "id": "00-0031381",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "Hits",
+   "rank": 5,
+   "id": "645277",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Rushing Yards",
+   "rank": 4,
+   "id": "00-0020527",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Field Goal %",
+   "rank": 2,
+   "id": "2730",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2002,
+   "stat": "Passing TDs",
+   "rank": 1,
+   "id": "00-0019596",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2020,
+   "stat": "Saves",
+   "rank": 2,
+   "id": "521230",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Receptions",
+   "rank": 4,
+   "id": "00-0002058",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2019,
+   "stat": "Wins",
+   "rank": 3,
+   "id": "593958",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1995,
+   "stat": "Assists per Game",
+   "rank": 3,
+   "id": "896",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1992,
+   "stat": "Wins",
+   "rank": 1,
+   "id": "119399",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "Rebounds per Game",
+   "rank": 1,
+   "id": "203083",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2016,
+   "stat": "Saves",
+   "rank": 2,
+   "id": "502154",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2020,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "1629027",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2002,
+   "stat": "ERA",
+   "rank": 1,
+   "id": "118377",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Passing Yards",
+   "rank": 3,
+   "id": "00-0019599",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2013,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 3,
+   "id": "545361",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "3-Pointers Made",
+   "rank": 3,
+   "id": "202691",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Passing Yards",
+   "rank": 7,
+   "id": "00-0031407",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Field Goal %",
+   "rank": 2,
+   "id": "1626158",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Receiving TDs",
+   "rank": 4,
+   "id": "00-0020438",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2001,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "1495",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Receptions",
+   "rank": 9,
+   "id": "00-0031588",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2008,
+   "stat": "Wins",
+   "rank": 3,
+   "id": "119608",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2003,
+   "stat": "Points per Game",
+   "rank": 2,
+   "id": "977",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Interceptions",
+   "rank": 1,
+   "id": "00-0033132",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Rebounds per Game",
+   "rank": 6,
+   "id": "2501",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Passing TDs",
+   "rank": 3,
+   "id": "00-0036355",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "3-Point %",
+   "rank": 3,
+   "id": "1642285",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2007,
+   "stat": "Strikeouts",
+   "rank": 1,
+   "id": "408241",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Rushing TDs",
+   "rank": 6,
+   "id": "00-0033923",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
+   "stat": "Blocks per Game",
+   "rank": 1,
+   "id": "203076",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Passing TDs",
+   "rank": 2,
+   "id": "00-0021429",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2007,
+   "stat": "Runs Batted In",
+   "rank": 4,
+   "id": "429667",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Field Goal %",
+   "rank": 2,
+   "id": "1631105",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2019,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 4,
+   "id": "443558",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1995,
+   "stat": "Points per Game",
+   "rank": 2,
+   "id": "165",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Receptions",
+   "rank": 9,
+   "id": "00-0027265",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2003,
+   "stat": "Hits",
+   "rank": 5,
+   "id": "276545",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Interceptions",
+   "rank": 1,
+   "id": "00-0027081",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2012,
+   "stat": "Hits",
+   "rank": 4,
+   "id": "134181",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2010,
+   "stat": "Receiving Yards",
+   "rank": 1,
+   "id": "00-0022097",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2018,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 4,
+   "id": "592885",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Receiving TDs",
+   "rank": 9,
+   "id": "00-0034983",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1998,
+   "stat": "Points per Game",
+   "rank": 2,
+   "id": "406",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2006,
+   "stat": "Rushing Yards",
+   "rank": 3,
+   "id": "00-0023500",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2023,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 5,
+   "id": "605141",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2000,
+   "stat": "Receptions",
+   "rank": 3,
+   "id": "00-0010650",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2013,
+   "stat": "Steals per Game",
+   "rank": 4,
+   "id": "101145",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2007,
+   "stat": "Home Runs",
+   "rank": 3,
+   "id": "429667",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "Field Goal %",
+   "rank": 5,
+   "id": "202683",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2012,
+   "stat": "Wins",
+   "rank": 2,
+   "id": "285079",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1993,
+   "stat": "Points per Game",
+   "rank": 1,
+   "id": "893",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Rushing TDs",
+   "rank": 5,
+   "id": "00-0023544",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1994,
+   "stat": "ERA",
+   "rank": 4,
+   "id": "113538",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Steals per Game",
+   "rank": 5,
+   "id": "202695",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2026,
+   "stat": "Home Runs",
+   "rank": 9,
+   "id": "646240",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "3-Pointers Made",
+   "rank": 3,
+   "id": "201939",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1998,
+   "stat": "Batting Average",
+   "rank": 1,
+   "id": "123833",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1988,
+   "stat": "Points per Game",
+   "rank": 1,
+   "id": "893",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1992,
+   "stat": "Runs Scored",
+   "rank": 1,
+   "id": "120522",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Receiving Yards",
+   "rank": 6,
+   "id": "00-0029608",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2016,
+   "stat": "Assists per Game",
+   "rank": 6,
+   "id": "201935",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2017,
+   "stat": "Interceptions",
+   "rank": 5,
+   "id": "00-0029606",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1998,
+   "stat": "Assists per Game",
+   "rank": 4,
+   "id": "950",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2007,
+   "stat": "Wins",
+   "rank": 1,
+   "id": "277417",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1988,
+   "stat": "Rebounds per Game",
+   "rank": 1,
+   "id": "262",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Rushing TDs",
+   "rank": 5,
+   "id": "00-0032241",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2005,
+   "stat": "Hits",
+   "rank": 4,
+   "id": "123173",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Receptions",
+   "rank": 7,
+   "id": "00-0029708",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Points per Game",
+   "rank": 10,
+   "id": "1629630",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Sacks",
+   "rank": 3,
+   "id": "00-0031565",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1990,
+   "stat": "Batting Average",
+   "rank": 5,
+   "id": "115749",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Blocks per Game",
+   "rank": 3,
+   "id": "1626167",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2003,
+   "stat": "Strikeouts",
+   "rank": 1,
+   "id": "134268",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2012,
+   "stat": "Blocks per Game",
+   "rank": 1,
+   "id": "201586",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1992,
+   "stat": "Hits",
+   "rank": 3,
+   "id": "120381",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Receptions",
+   "rank": 7,
+   "id": "00-0027874",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2014,
+   "stat": "Field Goal %",
+   "rank": 1,
+   "id": "201599",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1993,
+   "stat": "ERA",
+   "rank": 1,
+   "id": "118120",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Interceptions",
+   "rank": 5,
+   "id": "00-0027375",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2012,
+   "stat": "Strikeouts",
+   "rank": 5,
+   "id": "433587",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2010,
+   "stat": "Passing Yards",
+   "rank": 2,
+   "id": "00-0010346",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2016,
+   "stat": "Runs Scored",
+   "rank": 2,
+   "id": "605141",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Passing Yards",
+   "rank": 10,
+   "id": "00-0029604",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2004,
+   "stat": "Hits",
+   "rank": 2,
+   "id": "334393",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Receiving TDs",
+   "rank": 3,
+   "id": "00-0020446",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Steals per Game",
+   "rank": 4,
+   "id": "1641709",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2023,
+   "stat": "Runs Batted In",
+   "rank": 1,
+   "id": "621566",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2019,
+   "stat": "Assists per Game",
+   "rank": 10,
+   "id": "1626156",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2006,
+   "stat": "ERA",
+   "rank": 2,
+   "id": "400061",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Rushing Yards",
+   "rank": 4,
+   "id": "00-0029141",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2007,
+   "stat": "ERA",
+   "rank": 4,
+   "id": "207267",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "1627826",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2010,
+   "stat": "Strikeouts",
+   "rank": 3,
+   "id": "453311",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Passing Yards",
+   "rank": 10,
+   "id": "00-0034855",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
+   "stat": "Strikeouts",
+   "rank": 9,
+   "id": "572971",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2000,
+   "stat": "Passing TDs",
+   "rank": 4,
+   "id": "00-0005741",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2002,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "1504",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Sacks",
+   "rank": 1,
+   "id": "00-0031388",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2007,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "2544",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2023,
+   "stat": "Passing Yards",
+   "rank": 2,
+   "id": "00-0033106",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2003,
+   "stat": "Runs Batted In",
+   "rank": 3,
+   "id": "122111",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1982,
+   "stat": "Assists per Game",
+   "rank": 3,
+   "id": "76385",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1993,
+   "stat": "Home Runs",
+   "rank": 1,
+   "id": "111188",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2025,
+   "stat": "Receiving Yards",
+   "rank": 9,
+   "id": "00-0036554",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "203497",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2003,
+   "stat": "Wins",
+   "rank": 1,
+   "id": "136880",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Points per Game",
+   "rank": 3,
+   "id": "1630162",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2020,
+   "stat": "Runs Scored",
+   "rank": 7,
+   "id": "641313",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1998,
+   "stat": "Rebounds per Game",
+   "rank": 5,
+   "id": "764",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Sacks",
+   "rank": 4,
+   "id": "00-0027867",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2007,
+   "stat": "Hits",
+   "rank": 2,
+   "id": "407812",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Receiving TDs",
+   "rank": 4,
+   "id": "00-0028002",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2009,
+   "stat": "ERA",
+   "rank": 2,
+   "id": "112020",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2025,
+   "stat": "Points per Game",
+   "rank": 5,
+   "id": "1628369",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Receiving Yards",
+   "rank": 1,
+   "id": "00-0027944",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1985,
+   "stat": "Rebounds per Game",
+   "rank": 1,
+   "id": "77449",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Interceptions",
+   "rank": 4,
+   "id": "00-0032971",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2016,
+   "stat": "Batting Average",
+   "rank": 4,
+   "id": "458015",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2021,
+   "stat": "Rushing Yards",
+   "rank": 10,
+   "id": "00-0035657",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2014,
+   "stat": "Saves",
+   "rank": 1,
+   "id": "407845",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2007,
+   "stat": "Assists per Game",
+   "rank": 3,
+   "id": "467",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2009,
+   "stat": "Strikeouts",
+   "rank": 3,
+   "id": "425844",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2002,
+   "stat": "Receiving TDs",
+   "rank": 2,
+   "id": "00-0017162",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "Hits",
+   "rank": 4,
+   "id": "592450",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Field Goal %",
+   "rank": 3,
+   "id": "1627826",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2012,
+   "stat": "Saves",
+   "rank": 3,
+   "id": "400089",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2010,
+   "stat": "Rushing TDs",
+   "rank": 4,
+   "id": "00-0022821",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Steals per Game",
+   "rank": 2,
+   "id": "202710",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1998,
+   "stat": "Hits",
+   "rank": 4,
+   "id": "112106",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Passing Yards",
+   "rank": 4,
+   "id": "00-0007091",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 1991,
+   "stat": "Wins",
+   "rank": 1,
+   "id": "114849",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Rushing Yards",
+   "rank": 10,
+   "id": "00-0034791",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2026,
+   "stat": "ERA",
+   "rank": 10,
+   "id": "593958",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2005,
+   "stat": "Receiving Yards",
+   "rank": 1,
+   "id": "00-0020337",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1998,
+   "stat": "Runs Batted In",
+   "rank": 3,
+   "id": "110839",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 1999,
+   "stat": "Rushing Yards",
+   "rank": 4,
+   "id": "00-0015165",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2002,
+   "stat": "Runs Scored",
+   "rank": 3,
+   "id": "116539",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Receiving Yards",
+   "rank": 5,
+   "id": "00-0010500",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2017,
+   "stat": "ERA",
+   "rank": 7,
+   "id": "461829",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2009,
+   "stat": "Points per Game",
+   "rank": 4,
+   "id": "1717",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Receptions",
+   "rank": 1,
+   "id": "00-0025389",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2022,
+   "stat": "Wins",
+   "rank": 8,
+   "id": "677651",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Rushing Yards",
+   "rank": 4,
+   "id": "00-0022250",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2010,
+   "stat": "ERA",
+   "rank": 5,
+   "id": "136880",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2009,
+   "stat": "Receptions",
+   "rank": 5,
+   "id": "00-0022165",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Rebounds per Game",
+   "rank": 4,
+   "id": "203999",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2018,
+   "stat": "Rushing TDs",
+   "rank": 3,
+   "id": "00-0033553",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "3-Pointers Made",
+   "rank": 3,
+   "id": "203081",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2003,
+   "stat": "Home Runs",
+   "rank": 1,
+   "id": "123272",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2015,
+   "stat": "Rushing Yards",
+   "rank": 3,
+   "id": "00-0032241",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1991,
+   "stat": "Batting Average",
+   "rank": 2,
+   "id": "111153",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2023,
+   "stat": "Assists per Game",
+   "rank": 6,
+   "id": "1629029",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1991,
+   "stat": "Hits",
+   "rank": 1,
+   "id": "119236",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Rushing TDs",
+   "rank": 3,
+   "id": "00-0019647",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2025,
+   "stat": "Strikeouts",
+   "rank": 4,
+   "id": "666200",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1992,
+   "stat": "Rebounds per Game",
+   "rank": 5,
+   "id": "165",
+   "league": "Western Conference",
+   "division": "Midwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2001,
+   "stat": "Receiving TDs",
+   "rank": 5,
+   "id": "00-0014489",
+   "league": "NFC",
+   "division": "NFC Central"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1992,
+   "stat": "Batting Average",
+   "rank": 4,
+   "id": "123653",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Sacks",
+   "rank": 4,
+   "id": "00-0027022",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2010,
+   "stat": "Runs Scored",
+   "rank": 4,
+   "id": "471865",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2007,
+   "stat": "Passing TDs",
+   "rank": 1,
+   "id": "00-0019596",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2015,
+   "stat": "Saves",
+   "rank": 1,
+   "id": "453343",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2016,
+   "stat": "Rebounds per Game",
+   "rank": 5,
+   "id": "202326",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2013,
+   "stat": "Stolen Bases",
+   "rank": 5,
+   "id": "462101",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Assists per Game",
+   "rank": 8,
+   "id": "1629630",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2004,
+   "stat": "Runs Batted In",
+   "rank": 1,
+   "id": "123173",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2019,
+   "stat": "Rushing TDs",
+   "rank": 8,
+   "id": "00-0034857",
+   "league": "AFC",
+   "division": "AFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "Rebounds per Game",
+   "rank": 7,
+   "id": "203076",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1998,
+   "stat": "Runs Scored",
+   "rank": 1,
+   "id": "122544",
+   "league": "National League",
+   "division": "NL Central"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2003,
+   "stat": "Receptions",
+   "rank": 1,
+   "id": "00-0007681",
+   "league": "NFC",
+   "division": "NFC West"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 1995,
+   "stat": "Hits",
+   "rank": 1,
+   "id": "110974",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "Rebounds per Game",
+   "rank": 3,
+   "id": "2730",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2005,
+   "stat": "Runs Batted In",
+   "rank": 2,
+   "id": "407893",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2013,
+   "stat": "Receiving Yards",
+   "rank": 7,
+   "id": "00-0022044",
+   "league": "AFC",
+   "division": "AFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "Stolen Bases",
+   "rank": 4,
+   "id": "677951",
+   "league": "American League",
+   "division": "AL Central"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2024,
+   "stat": "Blocks per Game",
+   "rank": 4,
+   "id": "203076",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2012,
+   "stat": "Batting Average",
+   "rank": 8,
+   "id": "116539",
+   "league": "American League",
+   "division": "AL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2002,
+   "stat": "Receptions",
+   "rank": 2,
+   "id": "00-0017162",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2004,
+   "stat": "Wins",
+   "rank": 4,
+   "id": "134321",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Rushing TDs",
+   "rank": 3,
+   "id": "00-0026213",
+   "league": "AFC",
+   "division": "AFC West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2017,
+   "stat": "Assists per Game",
+   "rank": 4,
+   "id": "101108",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2025,
+   "stat": "OPS (On-Base + Slugging)",
+   "rank": 4,
+   "id": "663728",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2010,
+   "stat": "Points per Game",
+   "rank": 1,
+   "id": "201142",
+   "league": "Western Conference",
+   "division": "Northwest Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2021,
+   "stat": "Home Runs",
+   "rank": 3,
+   "id": "660271",
+   "league": "American League",
+   "division": "AL West"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2022,
+   "stat": "Passing Yards",
+   "rank": 4,
+   "id": "00-0029604",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2018,
+   "stat": "3-Pointers Made",
+   "rank": 5,
+   "id": "202691",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2011,
+   "stat": "Receiving Yards",
+   "rank": 8,
+   "id": "00-0023462",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "mlb",
+   "category": "pitching",
+   "year": 2023,
+   "stat": "Wins",
+   "rank": 9,
+   "id": "605483",
+   "league": "National League",
+   "division": "NL West"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2004,
+   "stat": "Rebounds per Game",
+   "rank": 2,
+   "id": "1112",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2014,
+   "stat": "Receptions",
+   "rank": 3,
+   "id": "00-0027944",
+   "league": "NFC",
+   "division": "NFC South"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 1995,
+   "stat": "Rebounds per Game",
+   "rank": 3,
+   "id": "406",
+   "league": "Eastern Conference",
+   "division": "Atlantic Division"
+  },
+  {
+   "sport": "mlb",
+   "category": "batting",
+   "year": 2020,
+   "stat": "Home Runs",
+   "rank": 3,
+   "id": "542303",
+   "league": "National League",
+   "division": "NL East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2026,
+   "stat": "Assists per Game",
+   "rank": 4,
+   "id": "201935",
+   "league": "Eastern Conference",
+   "division": "Central Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Interceptions",
+   "rank": 2,
+   "id": "00-0027842",
+   "league": "NFC",
+   "division": "NFC East"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Rebounds per Game",
+   "rank": 1,
+   "id": "203991",
+   "league": "Eastern Conference",
+   "division": "Southeast Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2016,
+   "stat": "Receiving TDs",
+   "rank": 2,
+   "id": "00-0031381",
+   "league": "NFC",
+   "division": "NFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2015,
+   "stat": "3-Point %",
+   "rank": 3,
+   "id": "201939",
+   "league": "Western Conference",
+   "division": "Pacific Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2020,
+   "stat": "Sacks",
+   "rank": 1,
+   "id": "00-0033886",
+   "league": "AFC",
+   "division": "AFC North"
+  },
+  {
+   "sport": "nba",
+   "category": null,
+   "year": 2021,
+   "stat": "Points per Game",
+   "rank": 6,
+   "id": "1629029",
+   "league": "Western Conference",
+   "division": "Southwest Division"
+  },
+  {
+   "sport": "nfl",
+   "category": null,
+   "year": 2012,
+   "stat": "Rushing Yards",
+   "rank": 7,
+   "id": "00-0028011",
+   "league": "AFC",
+   "division": "AFC East"
+  }
+ ]
+}

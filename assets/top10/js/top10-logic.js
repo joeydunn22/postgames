@@ -680,46 +680,25 @@ async function loadStats() {
 
 /* ============================================================
    10. SEARCHING FOR A PLAYER TO GUESS
-   Guesses are picked from everyone who played that season, never just
-   the board, so the list gives nothing away. Names show once
-   GUESS_MIN_LETTERS letters are typed. Every typed word must be the
-   start of a word in the name ("aj bro" finds A.J. Brown), ignoring
-   accents and punctuation. No typo or nickname matching: you pick the
-   exact player.
+   The matching itself is matchPlayers() in top10-common.js.
    ============================================================ */
-function normalize(text) {
-    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
-}
-
-// Words a search can start with. "Amon-Ra St. Brown": amonra, amon, ra, st, brown
-function withSearchWords(player) {
-    const pieces = player.name.split(/\s+/).flatMap(word => [word, ...word.split("-")]);
-    return { ...player, full: normalize(player.name), words: [...new Set(pieces.map(normalize).filter(Boolean))] };
-}
-
 function rosterPlayer(id) {
     return game.roster.find(p => p.id === id) || null;
 }
 
-// Up to GUESS_RESULTS players matching what's typed, in the roster's
-// (surname) order, and how many more matched. null below the letter minimum.
-// Each has a `status` for whoever's turn it is (see guessStatus) and, when
-// found, `by`: who found them.
+// Players matching what's typed (see matchPlayers), each with a `status`
+// for whoever's turn it is (see guessStatus) and, when found, `by`: who
+// found them. null below the letter minimum.
 function searchRoster(query) {
-    const typed = query.split(/\s+/).map(normalize).filter(Boolean);
-    if (typed.join("").length < GUESS_MIN_LETTERS) return null;
-
-    const matches = game.roster.filter(player =>
-        typed.every(part => player.words.some(word => word.startsWith(part))) ||
-        player.full.startsWith(typed.join("")));
-
+    const found = matchPlayers(game.roster, query);
+    if (!found) return null;
     return {
-        players: matches.slice(0, GUESS_RESULTS).map(player => ({
+        ...found,
+        players: found.players.map(player => ({
             ...player,
             status: guessStatus(player.id, currentGuesserId()),
             by: game.guessed.find(g => g.id === player.id)?.by ?? null
-        })),
-        more: Math.max(0, matches.length - GUESS_RESULTS)
+        }))
     };
 }
 
