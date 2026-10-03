@@ -1,8 +1,8 @@
 /* ============================================================
    TOP 10 — SHARED STATE
-   Loaded first. These are plain scripts (not modules), so every
-   top-level variable and function in any of the three files is
-   visible to the other two.
+   Loaded first (after top10-records.js). These are plain scripts (not
+   modules), so every top-level variable and function in any of the
+   files is visible to the others.
    ============================================================ */
 
 const GAME_STATES = {
@@ -13,6 +13,13 @@ const GAME_STATES = {
 
 // Applies to both pass-the-phone games and rooms
 const MAX_PLAYERS = 4;
+
+// Three ways to play:
+//   solo        one player on this phone, not in a room: three strikes and
+//               you're out, and finished games are saved (top10-records.js)
+//   one phone   2-4 players passing this phone around
+//   room        everyone on their own phone (see top10-logic.js)
+const SOLO_STRIKES = 3;
 
 
 /* ============================================================
@@ -60,12 +67,14 @@ const game = {
     // Local only
     data: {},             // stat label -> { players: [{ rank, id, name, team, value }], more_tied? }
     roster: [],           // everyone who played that season, what guesses are picked from (see loadStats)
-    dataStatus: "idle"    // idle | loading | ready | empty | error
+    dataStatus: "idle",   // idle | loading | ready | empty | error
+    strikes: 0,           // solo: wrong guesses and timeouts this game
+    soloResult: null      // solo: { previousBest, newBest } for the results screen, once saved
 };
 
 // The local-only fields of `game`, empty
 function emptyGameData() {
-    return { data: {}, roster: [], dataStatus: "idle" };
+    return { data: {}, roster: [], dataStatus: "idle", strikes: 0, soloResult: null };
 }
 
 
@@ -87,6 +96,19 @@ function inRoom() {
 // Solo/pass-the-phone players are always "host": they control everything
 function isHost() {
     return !inRoom() || currentUser?.uid === hostId;
+}
+
+function isSolo() {
+    return !inRoom() && game.players.length === 1;
+}
+
+function struckOut() {
+    return isSolo() && game.strikes >= SOLO_STRIKES;
+}
+
+// No more guesses: the board's cleared, or a solo player struck out
+function roundOver() {
+    return game.roundComplete || struckOut();
 }
 
 

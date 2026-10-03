@@ -373,7 +373,9 @@ function startGame() {
         guessed: [],
         misses: [],
         roundComplete: false,
-        lastGuess: null
+        lastGuess: null,
+        strikes: 0,
+        soloResult: null
     });
     game.players = game.players.map(p => ({ ...p, score: 0 }));
     startTurnClock();
@@ -390,6 +392,7 @@ function endGame() {
     game.turnEndsAt = null;
     clearEndVotes();
     recordGameResult();
+    if (isSolo()) recordSoloGame();
     syncGameState();
     render();
 }
@@ -406,7 +409,9 @@ function newGame() {
         guessed: [],
         misses: [],
         roundComplete: false,
-        lastGuess: null
+        lastGuess: null,
+        strikes: 0,
+        soloResult: null
     });
     game.players = game.players.map(p => ({ ...p, score: 0 }));
     clearEndVotes();
@@ -435,6 +440,29 @@ function recordGameResult() {
     }
 
     if (inRoom()) set(roomRef("session"), session);
+}
+
+// Save a finished solo game on this phone, noting the board's best before
+// this game for the results screen. A game quit before any guess isn't saved.
+function recordSoloGame() {
+    const stat = game.data[game.stat];
+    const player = game.players[0];
+    if (!stat || !player || (player.score === 0 && game.strikes === 0)) return;
+
+    const board = { sport: game.sport, category: game.category, year: game.year, stat: game.stat };
+    const previous = bestOnBoard(board);
+    addSoloGame({
+        ...board,
+        score: player.score,
+        total: stat.players.length,
+        strikes: game.strikes,
+        timer: game.timerSeconds,
+        at: Date.now()
+    });
+    game.soloResult = {
+        previousBest: previous?.best ?? null,
+        newBest: !!previous && player.score > previous.best
+    };
 }
 
 
@@ -513,7 +541,7 @@ function applyGuess(playerId) {
     const guesser = game.players[game.currentPlayerIndex];
     const picked = rosterPlayer(playerId);
     // A repeat can only come from a phone that hadn't caught up yet: ignore it, turn and all
-    if (!stat || !guesser || !picked || guessStatus(playerId, guesser.id) || game.roundComplete) return;
+    if (!stat || !guesser || !picked || guessStatus(playerId, guesser.id) || roundOver()) return;
 
     const onBoard = stat.players.find(p => p.id === playerId);
     const result = onBoard ? "correct" : "wrong";
@@ -530,19 +558,26 @@ function applyGuess(playerId) {
     if (result === "correct") {
         guesser.score += 1;
         game.guessed.push({ id: playerId, by: guesser.id });
+        game.roundComplete = game.guessed.length === stat.players.length;
     } else {
         game.misses.push({ id: playerId, name: picked.name, by: guesser.id });
-        game.roundComplete = game.guessed.length === stat.players.length;
+        if (isSolo()) game.strikes += 1;
     }
 
-    if (game.roundComplete) {
-        // Everything's been found: no vote needed, show results after a beat
+    finishTurn();
+    render();
+}
+
+// After a guess or a timeout: once the round's over (board cleared, or a
+// solo player's third strike) show results after a beat, no vote needed.
+// Otherwise it's the next player's turn.
+function finishTurn() {
+    if (roundOver()) {
         game.turnEndsAt = null;
         _autoEndTimer = setTimeout(endGame, 2500);
     } else {
         nextTurn();
     }
-    render();
 }
 
 function nextTurn() {
@@ -556,19 +591,20 @@ function nextTurn() {
    With a timer on, each turn gets game.timerSeconds. The deadline is
    synced as server time so every phone counts down together. Only
    the host (or the one device) checks it: running out counts as a
-   miss and passes the turn.
+   miss (a strike, solo) and passes the turn.
    ============================================================ */
 function startTurnClock() {
     game.turnEndsAt = game.timerSeconds ? serverNow() + game.timerSeconds * 1000 : null;
 }
 
 function checkTurnClock() {
-    if (!isHost() || game.state !== GAME_STATES.PLAYING || game.roundComplete) return;
+    if (!isHost() || game.state !== GAME_STATES.PLAYING || roundOver()) return;
     if (!game.turnEndsAt || serverNow() < game.turnEndsAt) return;
 
     const player = game.players[game.currentPlayerIndex];
     game.lastGuess = { playerName: player?.name || "", id: null, guess: "", answer: null, result: "timeout", at: Date.now() };
-    nextTurn();
+    if (isSolo()) game.strikes += 1;
+    finishTurn();
     syncGameState();
     render();
 }

@@ -13,8 +13,6 @@ let _yearOptionsKey = null;    // which season list the dropdown currently holds
 let _statOptionsKey = null;    // which stat list the dropdown currently holds
 let _playerPillsKey = null;    // which players the pills currently show
 
-const SPORT_LABELS = { mlb: "MLB", nba: "NBA", nfl: "NFL" };
-
 const STAT_HINTS = {
     loading: "Loading stats…",
     empty: "No stats for this pick yet.",
@@ -48,16 +46,13 @@ function teamTag(team, extraClass = "") {
     return `<span class="team-tag ${color ? "has-color" : ""} ${extraClass}"${style}>${escapeHTML(formatTeam(team))}</span>`;
 }
 
-// NBA seasons span two years and are stored by the year they end:
-// 2025 is shown as "2024-25"
-function formatSeason(sport, year) {
-    if (!year) return "";
-    return sport === "nba" ? `${year - 1}-${String(year).slice(-2)}` : String(year);
-}
-
 function gameContextLabel() {
     const category = game.category && game.category[0].toUpperCase() + game.category.slice(1);
     return [SPORT_LABELS[game.sport], category, formatSeason(game.sport, game.year)].filter(Boolean).join(" · ");
+}
+
+function timesLabel(n) {
+    return n === 1 ? "once" : n === 2 ? "twice" : `${n} times`;
 }
 
 function isFreshGuess() {
@@ -150,6 +145,29 @@ function renderStatPicker(locked) {
     ui.statSelect.value = game.stat || "";
     ui.statSelect.disabled = locked || game.dataStatus !== "ready";
     ui.statHint.textContent = STAT_HINTS[game.dataStatus] || "";
+    renderBestHint();
+}
+
+// Solo: your best on the picked board, from the games saved on this phone
+function renderBestHint() {
+    const stat = isSolo() ? game.data[game.stat] : null;
+    if (!stat) {
+        ui.bestHint.textContent = "";
+        return;
+    }
+    const best = bestOnBoard({ sport: game.sport, category: game.category, year: game.year, stat: game.stat });
+    ui.bestHint.textContent = best
+        ? `Your best: ${best.best} of ${stat.players.length} · played ${timesLabel(best.plays)}`
+        : "You haven't played this one solo yet.";
+}
+
+// How the players listed will play
+function renderModeHint() {
+    ui.modeHint.textContent = inRoom()
+        ? "Everyone plays on their own phone."
+        : isSolo()
+            ? "Solo: three strikes and you're out, and your scores are saved on this phone. Add a player to pass the phone around."
+            : "Pass this phone around. Miss and it's the next player's turn.";
 }
 
 // Player names as pills. One device: add, remove and rename anyone.
@@ -227,7 +245,9 @@ function renderSetup() {
     renderRoomBar();
     renderPickers();
     renderPlayerPills();
+    renderModeHint();
     renderSessionBoard(ui.sessionSetup);
+    ui.statsLink.classList.toggle("hidden", inRoom());
 
     ui.startGameBtn.classList.toggle("hidden", !isHost());
     ui.startGameBtn.disabled = !canStartGame();
@@ -238,13 +258,24 @@ function renderSetup() {
 /* ============================================================
    3. PLAYING SCREEN
    ============================================================ */
+// Solo also shows strikes: a red ✗ per strike used, faint ones still left
 function renderScoreboard() {
-    ui.scoreboard.innerHTML = game.players.map((player, idx) => `
-        <div class="score ${idx === game.currentPlayerIndex && !game.roundComplete ? "is-turn" : ""}">
+    const scores = game.players.map((player, idx) => `
+        <div class="score ${idx === game.currentPlayerIndex && !roundOver() ? "is-turn" : ""}">
             <span class="score-name">${escapeHTML(player.name)}</span>
             <span class="score-num">${player.score}</span>
         </div>
-    `).join("");
+    `);
+    if (isSolo()) {
+        const marks = Array.from({ length: SOLO_STRIKES }, (_, i) =>
+            `<span class="strike ${i < game.strikes ? "used" : ""}">✗</span>`).join("");
+        scores.push(`
+            <div class="score strikes" aria-label="${game.strikes} of ${SOLO_STRIKES} strikes">
+                <span class="score-name">Strikes</span>
+                <span class="strike-marks">${marks}</span>
+            </div>`);
+    }
+    ui.scoreboard.innerHTML = scores.join("");
 }
 
 function renderTurn() {
@@ -252,6 +283,8 @@ function renderTurn() {
 
     if (game.roundComplete) {
         ui.turn.textContent = "Board cleared!";
+    } else if (struckOut()) {
+        ui.turn.textContent = "Three strikes";
     } else if (inRoom() && !isMyTurn()) {
         ui.turn.innerHTML = `<span class="waiting">Waiting on</span> ${name}`;
     } else if (!inRoom() && game.players.length > 1) {
@@ -336,7 +369,7 @@ function renderBoard(listEl, { final = false } = {}) {
 // Countdown for timed turns. Also runs on its own every 250ms
 // (see startup), since time passes without any state changing.
 function renderTurnClock() {
-    const timed = game.state === GAME_STATES.PLAYING && !!game.turnEndsAt && !game.roundComplete;
+    const timed = game.state === GAME_STATES.PLAYING && !!game.turnEndsAt && !roundOver();
     ui.turnClock.classList.toggle("hidden", !timed);
     ui.turnBar.classList.toggle("hidden", !timed);
     if (!timed) return;
@@ -359,7 +392,7 @@ function renderTurnClock() {
 const GUESS_STATUS_LABELS = { correct: "✓ On the board", wrong: "✗ You missed" };
 
 function renderGuessResults() {
-    const canGuess = game.state === GAME_STATES.PLAYING && isMyTurn() && !game.roundComplete;
+    const canGuess = game.state === GAME_STATES.PLAYING && isMyTurn() && !roundOver();
     const found = canGuess ? searchRoster(ui.guessInput.value) : null;
 
     ui.guessResults.classList.toggle("hidden", !found);
@@ -407,7 +440,7 @@ function pickGuess(playerId) {
 }
 
 function renderEndGameButton() {
-    ui.endGameBtn.disabled = game.roundComplete;
+    ui.endGameBtn.disabled = roundOver();
 
     if (!inRoom()) {
         ui.endGameBtn.textContent = "End Game";
@@ -432,7 +465,7 @@ function renderPlaying() {
     ui.playContext.textContent = gameContextLabel();
     ui.playStat.textContent = game.stat || "";
 
-    const canGuess = isMyTurn() && !game.roundComplete;
+    const canGuess = isMyTurn() && !roundOver();
     ui.guessInput.disabled = !canGuess;
     ui.guessInput.placeholder = canGuess ? "Type a player's name" : "Not your turn";
     if (!canGuess) ui.guessInput.value = "";
@@ -505,7 +538,7 @@ function renderResults() {
     let title, sub;
     if (standings.length === 1) {
         title = `${topScore} of ${total}`;
-        sub = topScore === total ? "Perfect. Every single one." : `${standings[0].name}'s final score.`;
+        sub = soloResultLine(topScore, total);
     } else if (leaders.length > 1) {
         title = "It's a tie";
         sub = `${leaders.map(p => p.name).join(" & ")} with ${points(topScore)} each.`;
@@ -531,8 +564,24 @@ function renderResults() {
     renderBoard(ui.resultsBoard, { final: true });
     renderMisses();
 
+    ui.resultsStatsLink.classList.toggle("hidden", !isSolo());
     ui.newGameBtn.classList.toggle("hidden", !isHost());
     ui.newGameWaiting.classList.toggle("hidden", isHost());
+}
+
+// Solo results: how it ended, then how it compares with your best here
+function soloResultLine(score, total) {
+    const parts = [];
+    if (score === total) parts.push("Perfect. Every single one.");
+    else if (struckOut()) parts.push("Three strikes.");
+
+    const saved = game.soloResult;
+    if (saved?.newBest) parts.push("New personal best!");
+    else if (saved?.previousBest === score) parts.push("Tied your best.");
+    else if (saved?.previousBest != null) parts.push(`Your best here: ${saved.previousBest} of ${total}.`);
+    else if (saved) parts.push("First time on this board.");
+
+    return parts.join(" ") || "Your final score.";
 }
 
 
@@ -579,7 +628,7 @@ function render() {
 
 /* ============================================================
    7. STARTUP
-   Runs on DOMContentLoaded, after all three scripts have loaded,
+   Runs on DOMContentLoaded, after all the scripts have loaded,
    because rendering uses helpers from top10-logic.js.
    ============================================================ */
 function findElements() {
@@ -604,6 +653,9 @@ function findElements() {
         yearSelect: byId("yearSelect"),
         statSelect: byId("statSelect"),
         statHint: byId("statHint"),
+        bestHint: byId("bestHint"),
+        modeHint: byId("modeHint"),
+        statsLink: byId("statsLink"),
         randomAnyBtn: byId("randomAnyBtn"),
         randomSportBtn: byId("randomSportBtn"),
         timerChips: chips("timerChips"),
@@ -634,6 +686,7 @@ function findElements() {
         resultsContext: byId("resultsContext"),
         resultsTitle: byId("resultsTitle"),
         resultsSub: byId("resultsSub"),
+        resultsStatsLink: byId("resultsStatsLink"),
         standings: byId("standings"),
         sessionResults: byId("sessionResults"),
         resultsBoard: byId("resultsBoard"),

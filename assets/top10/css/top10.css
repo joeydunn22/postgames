@@ -26,6 +26,11 @@
     font-size: clamp(56px, 14vw, 96px);
 }
 
+.intro-link {
+    align-self: flex-start;
+    font-size: 15px;
+}
+
 /* Rooms */
 .room {
     display: flex;
@@ -112,8 +117,13 @@
     gap: 6px;
 }
 
-.stat-hint:empty {
+.stat-hint:empty,
+.best-hint:empty {
     display: none;
+}
+
+.best-hint {
+    color: var(--accent);
 }
 
 /* Random picks: amber outline so they read as actions, not choices */
@@ -305,6 +315,29 @@
 
 .score.is-turn .score-num {
     color: var(--accent);
+}
+
+/* Solo strikes, pushed to the right of the score */
+.score.strikes {
+    margin-left: auto;
+}
+
+.strike-marks {
+    display: flex;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.strike {
+    color: var(--line-strong);
+    transition: color 0.2s;
+}
+
+.strike.used {
+    color: var(--bad);
 }
 
 /* Whose turn, with the countdown on the right when a timer is on */
@@ -892,4 +925,168 @@
 .session-row.leader .session-place,
 .session-row.leader .session-wins {
     color: var(--accent);
+}
+
+
+/* =========================================
+   7. STATS PAGE (top10-stats.html)
+   ========================================= */
+
+.stats-page,
+.stats-body,
+.stats-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.stats-empty {
+    gap: 24px;
+}
+
+/* Big numbers: two across on phones, four on wider screens */
+.stats-totals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 16px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.stats-total {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stats-total-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+}
+
+.stats-total-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+@media (max-width: 480px) {
+    .stats-totals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.stats-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stats-section .section-label {
+    margin: 0;
+}
+
+/* By sport */
+.stats-cols,
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 64px 56px 64px;
+    align-items: baseline;
+    gap: 12px;
+    padding: 0 4px;
+}
+
+.stats-cols {
+    padding-bottom: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+}
+
+.stats-cols span,
+.stats-num {
+    text-align: right;
+}
+
+.stats-list,
+.stats-boards {
+    list-style: none;
+}
+
+.stats-row {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.stats-row:last-child,
+.stats-board:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.stats-sport {
+    font-weight: 700;
+}
+
+.stats-num {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* Boards */
+.stats-board {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 4px;
+    border-top: 1px solid var(--line);
+}
+
+.stats-board-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.stats-board-stat {
+    font-weight: 600;
+}
+
+.stats-board-context {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.stats-board-best {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.stats-board-total {
+    font-size: 18px;
+    color: var(--faint);
+}
+
+.stats-board.perfect .stats-board-best {
+    color: var(--good);
+}
+
+.stats-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
 }
