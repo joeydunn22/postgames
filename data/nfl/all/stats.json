@@ -1,0 +1,1398 @@
+[
+  {
+    "label": "Passing Yards",
+    "group": "Passing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0019596",
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "89214"
+      },
+      {
+        "rank": 2,
+        "id": "00-0020531",
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "80358"
+      },
+      {
+        "rank": 3,
+        "id": "00-0010346",
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "71940"
+      },
+      {
+        "rank": 4,
+        "id": "00-0005106",
+        "name": "Brett Favre",
+        "team": "GB",
+        "value": "71838"
+      },
+      {
+        "rank": 5,
+        "id": "00-0023459",
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "67273"
+      },
+      {
+        "rank": 6,
+        "id": "00-0026498",
+        "name": "Matthew Stafford",
+        "team": "DET",
+        "value": "65705"
+      },
+      {
+        "rank": 7,
+        "id": "00-0022924",
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "64088"
+      },
+      {
+        "rank": 8,
+        "id": "00-0022942",
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "63984"
+      },
+      {
+        "rank": 9,
+        "id": "00-0026143",
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "62792"
+      },
+      {
+        "rank": 10,
+        "id": "00-0010379",
+        "name": "Dan Marino",
+        "team": "MIA",
+        "value": "61361"
+      }
+    ]
+  },
+  {
+    "label": "Passing TDs",
+    "group": "Passing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0019596",
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "649"
+      },
+      {
+        "rank": 2,
+        "id": "00-0020531",
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "571"
+      },
+      {
+        "rank": 3,
+        "id": "00-0010346",
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "539"
+      },
+      {
+        "rank": 4,
+        "id": "00-0023459",
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "534"
+      },
+      {
+        "rank": 5,
+        "id": "00-0005106",
+        "name": "Brett Favre",
+        "team": "GB",
+        "value": "508"
+      },
+      {
+        "rank": 6,
+        "id": "00-0026498",
+        "name": "Matthew Stafford",
+        "team": "DET",
+        "value": "429"
+      },
+      {
+        "rank": 7,
+        "id": "00-0022942",
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "425"
+      },
+      {
+        "rank": 8,
+        "id": "00-0010379",
+        "name": "Dan Marino",
+        "team": "MIA",
+        "value": "420"
+      },
+      {
+        "rank": 9,
+        "id": "00-0022924",
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "418"
+      },
+      {
+        "rank": 10,
+        "id": "00-0026143",
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "381"
+      }
+    ]
+  },
+  {
+    "label": "Interceptions Thrown",
+    "group": "Passing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0005106",
+        "name": "Brett Favre",
+        "team": "GB",
+        "value": "336"
+      },
+      {
+        "rank": 2,
+        "id": "nfl-george-blanda-1927-09-17",
+        "name": "George Blanda",
+        "team": "CHI",
+        "value": "277"
+      },
+      {
+        "rank": 3,
+        "id": "nfl-john-hadl-1940-02-15",
+        "name": "John Hadl",
+        "team": "SD",
+        "value": "268"
+      },
+      {
+        "rank": 4,
+        "id": "00-0016193",
+        "name": "Vinny Testaverde",
+        "team": "NYJ",
+        "value": "267"
+      },
+      {
+        "rank": 5,
+        "id": "nfl-fran-tarkenton-1940-02-03",
+        "name": "Fran Tarkenton",
+        "team": "MIN",
+        "value": "266"
+      },
+      {
+        "rank": 6,
+        "id": "nfl-norm-snead-1939-07-31",
+        "name": "Norm Snead",
+        "team": "PHI",
+        "value": "257"
+      },
+      {
+        "rank": 7,
+        "id": "nfl-johnny-unitas-1933-05-07",
+        "name": "Johnny Unitas",
+        "team": "BAL",
+        "value": "253"
+      },
+      {
+        "rank": 8,
+        "id": "00-0010379",
+        "name": "Dan Marino",
+        "team": "MIA",
+        "value": "252"
+      },
+      {
+        "rank": 9,
+        "id": "00-0010346",
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "251"
+      },
+      {
+        "rank": 10,
+        "id": "nfl-ya-tittle-1926-10-24",
+        "name": "Y. A. Tittle",
+        "team": "SF",
+        "value": "248"
+      }
+    ]
+  },
+  {
+    "label": "Completions",
+    "group": "Passing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0019596",
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "7753"
+      },
+      {
+        "rank": 2,
+        "id": "00-0020531",
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "7142"
+      },
+      {
+        "rank": 3,
+        "id": "00-0005106",
+        "name": "Brett Favre",
+        "team": "GB",
+        "value": "6300"
+      },
+      {
+        "rank": 4,
+        "id": "00-0010346",
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "6125"
+      },
+      {
+        "rank": 5,
+        "id": "00-0023459",
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "5784"
+      },
+      {
+        "rank": 6,
+        "id": "00-0026498",
+        "name": "Matthew Stafford",
+        "team": "DET",
+        "value": "5661"
+      },
+      {
+        "rank": 7,
+        "id": "00-0026143",
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "5551"
+      },
+      {
+        "rank": 8,
+        "id": "00-0022924",
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "5440"
+      },
+      {
+        "rank": 9,
+        "id": "00-0022942",
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "5335"
+      },
+      {
+        "rank": 10,
+        "id": "00-0010379",
+        "name": "Dan Marino",
+        "team": "MIA",
+        "value": "4967"
+      }
+    ]
+  },
+  {
+    "label": "Passer Rating",
+    "group": "Passing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0034796",
+        "name": "Lamar Jackson",
+        "team": "BAL",
+        "value": "102.4"
+      },
+      {
+        "rank": 2,
+        "id": "00-0023459",
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "101.8"
+      },
+      {
+        "rank": 3,
+        "id": "00-0036442",
+        "name": "Joe Burrow",
+        "team": "CIN",
+        "value": "101.3"
+      },
+      {
+        "rank": 4,
+        "id": "00-0033873",
+        "name": "Patrick Mahomes",
+        "team": "KC",
+        "value": "100.9"
+      },
+      {
+        "rank": 5,
+        "id": "00-0029263",
+        "name": "Russell Wilson",
+        "team": "SEA",
+        "value": "99.3"
+      },
+      {
+        "rank": 6,
+        "id": "00-0033537",
+        "name": "Deshaun Watson",
+        "team": "CLE",
+        "value": "98.9"
+      },
+      {
+        "rank": 7,
+        "id": "00-0020531",
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "98.7"
+      },
+      {
+        "rank": 8,
+        "id": "00-0033077",
+        "name": "Dak Prescott",
+        "team": "DAL",
+        "value": "98.5"
+      },
+      {
+        "rank": 9,
+        "id": "00-0031345",
+        "name": "Jimmy Garoppolo",
+        "team": "SF",
+        "value": "97.6"
+      },
+      {
+        "rank": 10,
+        "id": "00-0019596",
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "97.2"
+      },
+      {
+        "rank": 10,
+        "id": "00-0033106",
+        "name": "Jared Goff",
+        "team": "DET",
+        "value": "97.2"
+      }
+    ]
+  },
+  {
+    "label": "Quarterback Wins",
+    "group": "Passing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0019596",
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "251"
+      },
+      {
+        "rank": 2,
+        "id": "00-0005106",
+        "name": "Brett Favre",
+        "team": "GB",
+        "value": "186"
+      },
+      {
+        "rank": 2,
+        "id": "00-0010346",
+        "name": "Peyton Manning",
+        "team": "IND",
+        "value": "186"
+      },
+      {
+        "rank": 4,
+        "id": "00-0020531",
+        "name": "Drew Brees",
+        "team": "NO",
+        "value": "172"
+      },
+      {
+        "rank": 5,
+        "id": "00-0023459",
+        "name": "Aaron Rodgers",
+        "team": "GB",
+        "value": "165"
+      },
+      {
+        "rank": 5,
+        "id": "00-0022924",
+        "name": "Ben Roethlisberger",
+        "team": "PIT",
+        "value": "165"
+      },
+      {
+        "rank": 7,
+        "id": "00-0004884",
+        "name": "John Elway",
+        "team": "DEN",
+        "value": "148"
+      },
+      {
+        "rank": 8,
+        "id": "00-0010379",
+        "name": "Dan Marino",
+        "team": "MIA",
+        "value": "147"
+      },
+      {
+        "rank": 9,
+        "id": "00-0022942",
+        "name": "Philip Rivers",
+        "team": "SD",
+        "value": "134"
+      },
+      {
+        "rank": 10,
+        "id": "00-0026143",
+        "name": "Matt Ryan",
+        "team": "ATL",
+        "value": "124"
+      },
+      {
+        "rank": 10,
+        "id": "nfl-fran-tarkenton-1940-02-03",
+        "name": "Fran Tarkenton",
+        "team": "MIN",
+        "value": "124"
+      }
+    ]
+  },
+  {
+    "label": "Rushing Yards",
+    "group": "Rushing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0015165",
+        "name": "Emmitt Smith",
+        "team": "DAL",
+        "value": "18355"
+      },
+      {
+        "rank": 2,
+        "id": "nfl-walter-payton-1954-07-25",
+        "name": "Walter Payton",
+        "team": "CHI",
+        "value": "16726"
+      },
+      {
+        "rank": 3,
+        "id": "00-0023500",
+        "name": "Frank Gore",
+        "team": "SF",
+        "value": "16000"
+      },
+      {
+        "rank": 4,
+        "id": "00-0014313",
+        "name": "Barry Sanders",
+        "team": "DET",
+        "value": "15269"
+      },
+      {
+        "rank": 5,
+        "id": "00-0025394",
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "14918"
+      },
+      {
+        "rank": 6,
+        "id": "00-0010442",
+        "name": "Curtis Martin",
+        "team": "NYJ",
+        "value": "14101"
+      },
+      {
+        "rank": 7,
+        "id": "00-0020536",
+        "name": "LaDainian Tomlinson",
+        "team": "SD",
+        "value": "13684"
+      },
+      {
+        "rank": 8,
+        "id": "00-0001215",
+        "name": "Jerome Bettis",
+        "team": "PIT",
+        "value": "13662"
+      },
+      {
+        "rank": 9,
+        "id": "00-0032764",
+        "name": "Derrick Henry",
+        "team": "TEN",
+        "value": "13319"
+      },
+      {
+        "rank": 10,
+        "id": "00-0004266",
+        "name": "Eric Dickerson",
+        "team": "IND",
+        "value": "13259"
+      }
+    ]
+  },
+  {
+    "label": "Rushing TDs",
+    "group": "Rushing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0015165",
+        "name": "Emmitt Smith",
+        "team": "DAL",
+        "value": "164"
+      },
+      {
+        "rank": 2,
+        "id": "00-0020536",
+        "name": "LaDainian Tomlinson",
+        "team": "SD",
+        "value": "145"
+      },
+      {
+        "rank": 3,
+        "id": "00-0032764",
+        "name": "Derrick Henry",
+        "team": "TEN",
+        "value": "128"
+      },
+      {
+        "rank": 4,
+        "id": "00-0000220",
+        "name": "Marcus Allen",
+        "team": "RAI",
+        "value": "123"
+      },
+      {
+        "rank": 5,
+        "id": "00-0025394",
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "120"
+      },
+      {
+        "rank": 6,
+        "id": "nfl-walter-payton-1954-07-25",
+        "name": "Walter Payton",
+        "team": "CHI",
+        "value": "110"
+      },
+      {
+        "rank": 7,
+        "id": "nfl-jim-brown-1936-02-17",
+        "name": "Jim Brown",
+        "team": "CLE",
+        "value": "106"
+      },
+      {
+        "rank": 8,
+        "id": "nfl-john-riggins-1949-08-04",
+        "name": "John Riggins",
+        "team": "WAS",
+        "value": "104"
+      },
+      {
+        "rank": 9,
+        "id": "00-0019647",
+        "name": "Shaun Alexander",
+        "team": "SEA",
+        "value": "100"
+      },
+      {
+        "rank": 9,
+        "id": "00-0005092",
+        "name": "Marshall Faulk",
+        "team": "STL",
+        "value": "100"
+      }
+    ]
+  },
+  {
+    "label": "Carries",
+    "group": "Rushing",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0015165",
+        "name": "Emmitt Smith",
+        "team": "DAL",
+        "value": "4409"
+      },
+      {
+        "rank": 2,
+        "id": "nfl-walter-payton-1954-07-25",
+        "name": "Walter Payton",
+        "team": "CHI",
+        "value": "3838"
+      },
+      {
+        "rank": 3,
+        "id": "00-0023500",
+        "name": "Frank Gore",
+        "team": "SF",
+        "value": "3735"
+      },
+      {
+        "rank": 4,
+        "id": "00-0010442",
+        "name": "Curtis Martin",
+        "team": "NYJ",
+        "value": "3518"
+      },
+      {
+        "rank": 5,
+        "id": "00-0001215",
+        "name": "Jerome Bettis",
+        "team": "PIT",
+        "value": "3479"
+      },
+      {
+        "rank": 6,
+        "id": "00-0025394",
+        "name": "Adrian Peterson",
+        "team": "MIN",
+        "value": "3210"
+      },
+      {
+        "rank": 7,
+        "id": "00-0020536",
+        "name": "LaDainian Tomlinson",
+        "team": "SD",
+        "value": "3174"
+      },
+      {
+        "rank": 8,
+        "id": "00-0014313",
+        "name": "Barry Sanders",
+        "team": "DET",
+        "value": "3062"
+      },
+      {
+        "rank": 9,
+        "id": "00-0008241",
+        "name": "Edgerrin James",
+        "team": "IND",
+        "value": "3028"
+      },
+      {
+        "rank": 10,
+        "id": "00-0000220",
+        "name": "Marcus Allen",
+        "team": "RAI",
+        "value": "3022"
+      }
+    ]
+  },
+  {
+    "label": "Receptions",
+    "group": "Receiving",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0013639",
+        "name": "Jerry Rice",
+        "team": "SF",
+        "value": "1549"
+      },
+      {
+        "rank": 2,
+        "id": "00-0022921",
+        "name": "Larry Fitzgerald",
+        "team": "ARI",
+        "value": "1432"
+      },
+      {
+        "rank": 3,
+        "id": "00-0006101",
+        "name": "Tony Gonzalez",
+        "team": "KC",
+        "value": "1325"
+      },
+      {
+        "rank": 4,
+        "id": "00-0022127",
+        "name": "Jason Witten",
+        "team": "DAL",
+        "value": "1228"
+      },
+      {
+        "rank": 5,
+        "id": "00-0007024",
+        "name": "Marvin Harrison",
+        "team": "IND",
+        "value": "1102"
+      },
+      {
+        "rank": 6,
+        "id": "00-0002721",
+        "name": "Cris Carter",
+        "team": "MIN",
+        "value": "1101"
+      },
+      {
+        "rank": 7,
+        "id": "00-0002058",
+        "name": "Tim Brown",
+        "team": "OAK",
+        "value": "1094"
+      },
+      {
+        "rank": 7,
+        "id": "00-0030506",
+        "name": "Travis Kelce",
+        "team": "KC",
+        "value": "1094"
+      },
+      {
+        "rank": 9,
+        "id": "00-0012478",
+        "name": "Terrell Owens",
+        "team": "SF",
+        "value": "1078"
+      },
+      {
+        "rank": 10,
+        "id": "00-0022084",
+        "name": "Anquan Boldin",
+        "team": "ARI",
+        "value": "1076"
+      }
+    ]
+  },
+  {
+    "label": "Receiving Yards",
+    "group": "Receiving",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0013639",
+        "name": "Jerry Rice",
+        "team": "SF",
+        "value": "22895"
+      },
+      {
+        "rank": 2,
+        "id": "00-0022921",
+        "name": "Larry Fitzgerald",
+        "team": "ARI",
+        "value": "17492"
+      },
+      {
+        "rank": 3,
+        "id": "00-0012478",
+        "name": "Terrell Owens",
+        "team": "SF",
+        "value": "15934"
+      },
+      {
+        "rank": 4,
+        "id": "00-0011754",
+        "name": "Randy Moss",
+        "team": "MIN",
+        "value": "15292"
+      },
+      {
+        "rank": 5,
+        "id": "00-0002099",
+        "name": "Isaac Bruce",
+        "team": "STL",
+        "value": "15208"
+      },
+      {
+        "rank": 6,
+        "id": "00-0006101",
+        "name": "Tony Gonzalez",
+        "team": "KC",
+        "value": "15127"
+      },
+      {
+        "rank": 7,
+        "id": "00-0002058",
+        "name": "Tim Brown",
+        "team": "OAK",
+        "value": "14934"
+      },
+      {
+        "rank": 8,
+        "id": "00-0020337",
+        "name": "Steve Smith Sr.",
+        "team": "CAR",
+        "value": "14731"
+      },
+      {
+        "rank": 9,
+        "id": "00-0007024",
+        "name": "Marvin Harrison",
+        "team": "IND",
+        "value": "14580"
+      },
+      {
+        "rank": 10,
+        "id": "00-0020498",
+        "name": "Reggie Wayne",
+        "team": "IND",
+        "value": "14345"
+      }
+    ]
+  },
+  {
+    "label": "Receiving TDs",
+    "group": "Receiving",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0013639",
+        "name": "Jerry Rice",
+        "team": "SF",
+        "value": "197"
+      },
+      {
+        "rank": 2,
+        "id": "00-0011754",
+        "name": "Randy Moss",
+        "team": "MIN",
+        "value": "156"
+      },
+      {
+        "rank": 3,
+        "id": "00-0012478",
+        "name": "Terrell Owens",
+        "team": "SF",
+        "value": "153"
+      },
+      {
+        "rank": 4,
+        "id": "00-0002721",
+        "name": "Cris Carter",
+        "team": "MIN",
+        "value": "130"
+      },
+      {
+        "rank": 5,
+        "id": "00-0007024",
+        "name": "Marvin Harrison",
+        "team": "IND",
+        "value": "128"
+      },
+      {
+        "rank": 6,
+        "id": "00-0022921",
+        "name": "Larry Fitzgerald",
+        "team": "ARI",
+        "value": "121"
+      },
+      {
+        "rank": 7,
+        "id": "00-0031381",
+        "name": "Davante Adams",
+        "team": "GB",
+        "value": "119"
+      },
+      {
+        "rank": 8,
+        "id": "00-0021547",
+        "name": "Antonio Gates",
+        "team": "SD",
+        "value": "116"
+      },
+      {
+        "rank": 9,
+        "id": "00-0006101",
+        "name": "Tony Gonzalez",
+        "team": "KC",
+        "value": "111"
+      },
+      {
+        "rank": 10,
+        "id": "00-0031408",
+        "name": "Mike Evans",
+        "team": "TB",
+        "value": "110"
+      }
+    ]
+  },
+  {
+    "label": "All-Purpose Yards",
+    "group": "All-Purpose",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0013639",
+        "name": "Jerry Rice",
+        "team": "SF",
+        "value": "23546"
+      },
+      {
+        "rank": 2,
+        "id": "00-0011399",
+        "name": "Brian Mitchell",
+        "team": "WAS",
+        "value": "23330"
+      },
+      {
+        "rank": 3,
+        "id": "nfl-walter-payton-1954-07-25",
+        "name": "Walter Payton",
+        "team": "CHI",
+        "value": "21803"
+      },
+      {
+        "rank": 4,
+        "id": "00-0015165",
+        "name": "Emmitt Smith",
+        "team": "DAL",
+        "value": "21564"
+      },
+      {
+        "rank": 5,
+        "id": "00-0023500",
+        "name": "Frank Gore",
+        "team": "SF",
+        "value": "19992"
+      },
+      {
+        "rank": 6,
+        "id": "00-0023564",
+        "name": "Darren Sproles",
+        "team": "PHI",
+        "value": "19696"
+      },
+      {
+        "rank": 7,
+        "id": "00-0002058",
+        "name": "Tim Brown",
+        "team": "OAK",
+        "value": "19682"
+      },
+      {
+        "rank": 8,
+        "id": "00-0005092",
+        "name": "Marshall Faulk",
+        "team": "STL",
+        "value": "19190"
+      },
+      {
+        "rank": 9,
+        "id": "00-0020337",
+        "name": "Steve Smith Sr.",
+        "team": "CAR",
+        "value": "19180"
+      },
+      {
+        "rank": 10,
+        "id": "00-0020536",
+        "name": "LaDainian Tomlinson",
+        "team": "SD",
+        "value": "18456"
+      }
+    ]
+  },
+  {
+    "label": "Points Scored",
+    "group": "All-Purpose",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0016919",
+        "name": "Adam Vinatieri",
+        "team": "IND",
+        "value": "2673"
+      },
+      {
+        "rank": 2,
+        "id": "00-0000282",
+        "name": "Morten Andersen",
+        "team": "NO",
+        "value": "2544"
+      },
+      {
+        "rank": 3,
+        "id": "00-0000313",
+        "name": "Gary Anderson",
+        "team": "PIT",
+        "value": "2434"
+      },
+      {
+        "rank": 4,
+        "id": "00-0006800",
+        "name": "Jason Hanson",
+        "team": "DET",
+        "value": "2150"
+      },
+      {
+        "rank": 5,
+        "id": "00-0002655",
+        "name": "John Carney",
+        "team": "SD",
+        "value": "2062"
+      },
+      {
+        "rank": 6,
+        "id": "00-0015784",
+        "name": "Matt Stover",
+        "team": "BAL",
+        "value": "2004"
+      },
+      {
+        "rank": 7,
+        "id": "nfl-george-blanda-1927-09-17",
+        "name": "George Blanda",
+        "team": "CHI",
+        "value": "2002"
+      },
+      {
+        "rank": 8,
+        "id": "00-0004811",
+        "name": "Jason Elam",
+        "team": "DEN",
+        "value": "1983"
+      },
+      {
+        "rank": 9,
+        "id": "00-0009028",
+        "name": "John Kasay",
+        "team": "CAR",
+        "value": "1970"
+      },
+      {
+        "rank": 10,
+        "id": "00-0023252",
+        "name": "Robbie Gould",
+        "team": "CHI",
+        "value": "1961"
+      }
+    ]
+  },
+  {
+    "label": "Games Played",
+    "group": "All-Purpose",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0000282",
+        "name": "Morten Andersen",
+        "team": "NO",
+        "value": "382"
+      },
+      {
+        "rank": 2,
+        "id": "00-0016919",
+        "name": "Adam Vinatieri",
+        "team": "IND",
+        "value": "365"
+      },
+      {
+        "rank": 3,
+        "id": "00-0000313",
+        "name": "Gary Anderson",
+        "team": "PIT",
+        "value": "353"
+      },
+      {
+        "rank": 4,
+        "id": "00-0005113",
+        "name": "Jeff Feagles",
+        "team": "NYG",
+        "value": "352"
+      },
+      {
+        "rank": 5,
+        "id": "nfl-george-blanda-1927-09-17",
+        "name": "George Blanda",
+        "team": "CHI",
+        "value": "340"
+      },
+      {
+        "rank": 6,
+        "id": "00-0019596",
+        "name": "Tom Brady",
+        "team": "NE",
+        "value": "335"
+      },
+      {
+        "rank": 7,
+        "id": "00-0006800",
+        "name": "Jason Hanson",
+        "team": "DET",
+        "value": "327"
+      },
+      {
+        "rank": 8,
+        "id": "00-0004091",
+        "name": "Phil Dawson",
+        "team": "CLE",
+        "value": "305"
+      },
+      {
+        "rank": 9,
+        "id": "00-0013639",
+        "name": "Jerry Rice",
+        "team": "SF",
+        "value": "303"
+      },
+      {
+        "rank": 10,
+        "id": "00-0002655",
+        "name": "John Carney",
+        "team": "SD",
+        "value": "302"
+      },
+      {
+        "rank": 10,
+        "id": "00-0005106",
+        "name": "Brett Favre",
+        "team": "GB",
+        "value": "302"
+      }
+    ]
+  },
+  {
+    "label": "Sacks",
+    "group": "Defense",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0015111",
+        "name": "Bruce Smith",
+        "team": "BUF",
+        "value": "200.0"
+      },
+      {
+        "rank": 2,
+        "id": "00-0017567",
+        "name": "Reggie White",
+        "team": "PHI",
+        "value": "198.0"
+      },
+      {
+        "rank": 3,
+        "id": "00-0006373",
+        "name": "Kevin Greene",
+        "team": "LA",
+        "value": "160.0"
+      },
+      {
+        "rank": 4,
+        "id": "00-0021140",
+        "name": "Julius Peppers",
+        "team": "CAR",
+        "value": "159.5"
+      },
+      {
+        "rank": 5,
+        "id": "00-0004396",
+        "name": "Chris Doleman",
+        "team": "MIN",
+        "value": "150.5"
+      },
+      {
+        "rank": 6,
+        "id": "00-0015795",
+        "name": "Michael Strahan",
+        "team": "NYG",
+        "value": "141.5"
+      },
+      {
+        "rank": 7,
+        "id": "00-0016112",
+        "name": "Jason Taylor",
+        "team": "MIA",
+        "value": "139.5"
+      },
+      {
+        "rank": 8,
+        "id": "00-0022161",
+        "name": "Terrell Suggs",
+        "team": "BAL",
+        "value": "139.0"
+      },
+      {
+        "rank": 9,
+        "id": "00-0027940",
+        "name": "Von Miller",
+        "team": "DEN",
+        "value": "138.5"
+      },
+      {
+        "rank": 9,
+        "id": "00-0023445",
+        "name": "DeMarcus Ware",
+        "team": "DAL",
+        "value": "138.5"
+      }
+    ]
+  },
+  {
+    "label": "Interceptions",
+    "group": "Defense",
+    "players": [
+      {
+        "rank": 1,
+        "id": "nfl-paul-krause-1942-02-19",
+        "name": "Paul Krause",
+        "team": "MIN",
+        "value": "81"
+      },
+      {
+        "rank": 2,
+        "id": "nfl-emlen-tunnell-1925-03-29",
+        "name": "Emlen Tunnell",
+        "team": "NYG",
+        "value": "79"
+      },
+      {
+        "rank": 3,
+        "id": "00-0018229",
+        "name": "Rod Woodson",
+        "team": "PIT",
+        "value": "71"
+      },
+      {
+        "rank": 4,
+        "id": "nfl-night-train-lane-1927-04-16",
+        "name": "Dick Lane",
+        "team": "DET",
+        "value": "68"
+      },
+      {
+        "rank": 5,
+        "id": "nfl-ken-riley-1947-08-06",
+        "name": "Ken Riley",
+        "team": "CIN",
+        "value": "65"
+      },
+      {
+        "rank": 5,
+        "id": "00-0018227",
+        "name": "Charles Woodson",
+        "team": "OAK",
+        "value": "65"
+      },
+      {
+        "rank": 7,
+        "id": "00-0021377",
+        "name": "Ed Reed",
+        "team": "BAL",
+        "value": "64"
+      },
+      {
+        "rank": 8,
+        "id": "00-0010088",
+        "name": "Ronnie Lott",
+        "team": "SF",
+        "value": "63"
+      },
+      {
+        "rank": 8,
+        "id": "00-0014724",
+        "name": "Darren Sharper",
+        "team": "GB",
+        "value": "63"
+      },
+      {
+        "rank": 10,
+        "id": "nfl-dave-brown-1953-01-16",
+        "name": "Dave Brown",
+        "team": "SEA",
+        "value": "62"
+      },
+      {
+        "rank": 10,
+        "id": "nfl-dick-lebeau-1937-09-09",
+        "name": "Dick LeBeau",
+        "team": "DET",
+        "value": "62"
+      }
+    ]
+  },
+  {
+    "label": "Kick Return Yards",
+    "group": "Kicking & Returns",
+    "players": [
+      {
+        "rank": 1,
+        "id": "00-0011399",
+        "name": "Brian Mitchell",
+        "team": "WAS",
+        "value": "14014"
+      },
+      {
+        "rank": 2,
+        "id": "00-0014071",
+        "name": "Allen Rossum",
+        "team": "ATL",
+        "value": "11947"
+      },
+      {
+        "rank": 3,
+        "id": "00-0023176",
+        "name": "Josh Cribbs",
+        "team": "CLE",
+        "value": "11113"
+      },
+      {
+        "rank": 4,
+        "id": "00-0006282",
+        "name": "Mel Gray",
+        "team": "DET",
+        "value": "10250"
+      },
+      {
+        "rank": 5,
+        "id": "00-0019539",
+        "name": "Dante Hall",
+        "team": "KC",
+        "value": "10136"
+      },
+      {
+        "rank": 6,
+        "id": "00-0011213",
+        "name": "Glyn Milburn",
+        "team": "CHI",
+        "value": "9788"
+      },
+      {
+        "rank": 7,
+        "id": "00-0000872",
+        "name": "Michael Bates",
+        "team": "CAR",
+        "value": "9110"
+      },
+      {
+        "rank": 8,
+        "id": "00-0023564",
+        "name": "Darren Sproles",
+        "team": "PHI",
+        "value": "8352"
+      },
+      {
+        "rank": 9,
+        "id": "00-0030578",
+        "name": "Cordarrelle Patterson",
+        "team": "MIN",
+        "value": "8229"
+      },
+      {
+        "rank": 10,
+        "id": "00-0007798",
+        "name": "Desmond Howard",
+        "team": "DET",
+        "value": "7959"
+      }
+    ]
+  }
+]

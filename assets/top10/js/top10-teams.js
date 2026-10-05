@@ -26,7 +26,7 @@ const TEAM_COLORS = {
         DET: "#0076B6", GB: "#FFB612", HOU: "#A71930", IND: "#002C5F", JAX: "#006778",
         KC: "#E31837", LA: "#003594", LAC: "#0080C6", LV: "#A5ACAF", MIA: "#008E97",
         MIN: "#4F2683", NE: "#C60C30", NO: "#D3BC8D", NYG: "#0B2265", NYJ: "#125740",
-        OAK: "#A5ACAF", PHI: "#004C54", PIT: "#FFB612", SD: "#0080C6", SEA: "#69BE28",
+        OAK: "#A5ACAF", RAI: "#A5ACAF", PHI: "#004C54", PIT: "#FFB612", SD: "#0080C6", SEA: "#69BE28",
         SF: "#AA0000", STL: "#B3995D", TB: "#D50A0A", TEN: "#4B92DB", WAS: "#FFB612"
     },
     nba: {

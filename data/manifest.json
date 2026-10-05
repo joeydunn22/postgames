@@ -699,6 +699,11 @@
     },
     {
       "sport": "nfl",
+      "year": "all",
+      "file": "nfl/all/stats.json"
+    },
+    {
+      "sport": "nfl",
       "year": 2025,
       "file": "nfl/2025/stats.json"
     },

@@ -195,21 +195,24 @@ function statQualifier(sport, label, year) {
     return "";
 }
 
-// All-time boards: what counts, and the career minimums for rate stats
+// All-time boards: the career minimum for a rate stat, what counts, and
+// which team is shown
 function careerQualifier(sport, label) {
-    if (sport === "mlb") {
-        const minimum = MLB_RATE_BATTING.includes(label) ? "MLB's career minimum plate appearances. "
-            : MLB_RATE_PITCHING.includes(label) ? "MLB's career minimum innings. "
-            : "";
-        return `${minimum}Includes the Negro Leagues (1920-48), which MLB counts as major leagues.`;
-    }
+    const notes = [];
+    if (sport === "mlb" && MLB_RATE_BATTING.includes(label)) notes.push("MLB's career minimum plate appearances.");
+    if (sport === "mlb" && MLB_RATE_PITCHING.includes(label)) notes.push("MLB's career minimum innings.");
     if (sport === "nba") {
-        const minimum = NBA_CAREER_MINIMUMS[label] ? `Minimum ${NBA_CAREER_MINIMUMS[label]}. `
-            : label.endsWith("per Game") ? "Minimum 400 games. "
-            : "";
-        return `${minimum}NBA regular seasons (and the BAA before it), not the ABA.`;
+        if (NBA_CAREER_MINIMUMS[label]) notes.push(`Minimum ${NBA_CAREER_MINIMUMS[label]}.`);
+        else if (label.endsWith("per Game")) notes.push("Minimum 400 games.");
+        notes.push("NBA regular seasons (and the BAA before it), not the ABA.");
     }
-    return "";
+    if (sport === "nfl") {
+        if (label === "Passer Rating") notes.push("Minimum 1,500 attempts.");
+        notes.push("Team shown: where each player played the most seasons. Career totals from Wikipedia's NFL records lists.");
+    } else {
+        notes.push("Team shown: where each player played the most games.");
+    }
+    return notes.join(" ");
 }
 
 

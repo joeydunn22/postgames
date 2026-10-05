@@ -7,8 +7,9 @@ Usage (run from the repo root):
     python scripts/build_trivia_data.py nfl 1999-2025
     python scripts/build_trivia_data.py nba 1980-2026   (NBA years are the
                                                          season's end: 2026 = 2025-26)
-    python scripts/build_trivia_data.py mlb all         (all-time career boards;
-    python scripts/build_trivia_data.py nba all          MLB and NBA only)
+    python scripts/build_trivia_data.py mlb all         (all-time career boards)
+    python scripts/build_trivia_data.py nba all
+    python scripts/build_trivia_data.py nfl all
 
 Sources:
     MLB  the MLB Stats API (statsapi.mlb.com): league leaders per stat,
@@ -30,7 +31,12 @@ All-time boards (year "all"):
     NBA  stats.nba.com's "All Time" totals, one request for every player
          ever, ranked here with career minimums, plus one request per
          season for each player's years and teams.
-    Each board player's team is the one they played the most games for.
+    NFL  Wikipedia's lists of NFL career leaders (nflverse starts in 1999,
+         too late for careers), matched to players in nflverse's season
+         rosters, 1920 on, which also give the guess list. About 125
+         requests.
+    Each board player's team is the one they played the most games for
+    (NFL: the most seasons).
     The guess list has everyone's years and position but no team (only
     board players have one, so showing it would give them away).
 
@@ -53,9 +59,12 @@ import csv
 import datetime
 import io
 import json
+import re
 import sys
 import time
+import urllib.parse
 import urllib.request
+from html.parser import HTMLParser
 from pathlib import Path
 
 DATA = Path("data")
@@ -127,10 +136,11 @@ STAT_GROUPS = {
     ],
     ("nfl", None): [
         ("Passing", ["Passing Yards", "Passing TDs", "Interceptions Thrown", "Completions", "Pass Attempts",
-                     "Completion %", "Yards per Pass Attempt", "Passer Rating", "Times Sacked"]),
+                     "Completion %", "Yards per Pass Attempt", "Passer Rating", "Times Sacked", "Quarterback Wins"]),
         ("Rushing", ["Rushing Yards", "Rushing TDs", "Carries", "Yards per Carry"]),
         ("Receiving", ["Receptions", "Receiving Yards", "Receiving TDs", "Targets", "Yards per Reception"]),
-        ("All-Purpose", ["Yards from Scrimmage", "Rushing + Receiving TDs", "Fantasy Points (PPR)", "Fumbles"]),
+        ("All-Purpose", ["Yards from Scrimmage", "All-Purpose Yards", "Rushing + Receiving TDs", "Points Scored",
+                         "Fantasy Points (PPR)", "Fumbles", "Games Played"]),
         ("Defense", ["Sacks", "Combined Tackles", "Solo Tackles", "Tackles for Loss", "Interceptions",
                      "Passes Defended", "Forced Fumbles"]),
         ("Kicking & Returns", ["Field Goals Made", "Longest Field Goal", "Kick Return Yards", "Punt Return Yards"]),
@@ -419,8 +429,9 @@ def nfl_stats(team_games):
 NFL_MOVES = [("LA", 2016, "STL"), ("LAC", 2017, "SD"), ("LV", 2020, "OAK")]
 
 
-# nflverse writes safeties as SAF in recent seasons and S before
-NFL_POSITION_FIXES = {"SAF": "S"}
+# nflverse writes safeties as SAF in recent seasons and S before, and
+# kickers and punters as SPEC in old rosters
+NFL_POSITION_FIXES = {"SAF": "S", "SPEC": "K/P"}
 
 
 def nfl_team(code, year):
@@ -776,12 +787,280 @@ def build_nba_all_time():
     teams = {pid: main_team(c["games"]) for pid, c in careers.items()}
     write_all_time("nba", {None: stats}, roster, teams)
 
+# NFL ------------------------------------------------------------
+# No open source has full NFL careers as numbers (nflverse starts in
+# 1999), so the boards come from Wikipedia's lists of NFL career leaders
+# (kept current by editors, from Pro Football Reference; free to reuse
+# with credit), and the players from nflverse's season rosters, 1920 on.
+
+WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php?action=parse&prop=text&format=json&formatversion=2&page="
+# Wikipedia wants a descriptive User-Agent with a way to reach us
+WIKIPEDIA_HEADERS = {"User-Agent": "postgames-trivia-builder/1.0 (https://github.com/joeydunn22/postgames)"}
+NFL_ROSTERS = "https://github.com/nflverse/nflverse-data/releases/download/rosters/roster_{year}.csv"
+NFL_FIRST_SEASON = 1920
+
+# (label, Wikipedia list "List of NFL career ___ leaders", value column,
+# display format, positions the player plays: used only to tell apart
+# two players with the same name)
+NFL_CAREER_STATS = [
+    ("Passing Yards", "passing yards", "Yds", whole, {"QB"}),
+    ("Passing TDs", "passing touchdowns", "TDs", whole, {"QB"}),
+    ("Completions", "passing completions", "Completions", whole, {"QB"}),
+    ("Interceptions Thrown", "interceptions thrown", "Total", whole, {"QB"}),
+    ("Passer Rating", "passer rating", "Rating", one_decimal, {"QB"}),
+    ("Quarterback Wins", "quarterback wins", "Career wins", whole, {"QB"}),
+    ("Rushing Yards", "rushing yards", "Yards", whole, {"RB", "FB", "HB", "QB"}),
+    ("Rushing TDs", "rushing touchdowns", "Touchdowns", whole, {"RB", "FB", "HB", "QB"}),
+    ("Carries", "rushing attempts", "Attempts", whole, {"RB", "FB", "HB"}),
+    ("Receptions", "receptions", "Receptions", whole, {"WR", "TE", "RB", "FB", "HB", "E"}),
+    ("Receiving Yards", "receiving yards", "Yards", whole, {"WR", "TE", "RB", "FB", "HB", "E"}),
+    ("Receiving TDs", "receiving touchdowns", "Touchdowns", whole, {"WR", "TE", "RB", "FB", "HB", "E"}),
+    ("All-Purpose Yards", "all-purpose yards", "Total all-purpose yards gained", whole, None),
+    ("Points Scored", "scoring", "Points", whole, {"K", "PK"}),
+    ("Games Played", "games played", "Games", whole, None),
+    ("Sacks", "sacks", "Sacks", one_decimal, {"DE", "DT", "LB", "OLB", "DL", "NT"}),
+    ("Interceptions", "interceptions", "Ints", whole, {"CB", "S", "SS", "FS", "DB", "SAF"}),
+    ("Kick Return Yards", "kickoff return yards", "Yards", whole, None),
+]
+
+# nflverse's roster codes for some teams and eras, as fans know them
+# (CHR was the Chicago Rockets before it was the 1960 LA Chargers)
+NFL_ROSTER_TEAM_FIXES = {"ARZ": "ARI", "BLT": "BAL", "CLV": "CLE", "HST": "HOU", "SL": "STL",
+                         "COW": "DAL", "RAM": "LA", "CHB": "CHI", "NY": "NYG"}
+NFL_ROSTER_TEAM_FIXES_BY_SEASON = {("CHR", 1960): "LAC"}
+# Roster statuses for a season a player wasn't on the team: retired, a
+# free agent, not with the team. These seasons don't count.
+NFL_OFF_ROSTER = {"RET", "RSR", "RSN", "UFA", "RFA", "NWT", "EXE"}
+NFL_NAME_SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+# Wikipedia's name -> the roster's, where they differ by more than punctuation
+NFL_NAME_FIXES = {"Michael Vick": "Mike Vick", "Josh Cribbs": "Joshua Cribbs", "Matthew Slater": "Matt Slater",
+                  'Ed "Too Tall" Jones': "Too Tall Jones", "Dick Lane": "Night Train Lane"}
+
+
+def name_key(name):
+    """'Odell Beckham Jr.' and 'Odell Beckham' -> 'odell beckham';
+    'Y. A. Tittle' and 'Y.A. Tittle' -> 'ya tittle'."""
+    import unicodedata
+    plain = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    plain = re.sub(r"\b(\w)\.\s*(?=\w\.)", r"\1", plain)   # run initials together
+    words = [w for w in "".join(c if c.isalnum() or c.isspace() else "" for c in plain).split()
+             if w not in NFL_NAME_SUFFIXES]
+    return " ".join(words)
+
+
+class WikiTables(HTMLParser):
+    """Every table on a Wikipedia page as rows of cell texts, header row
+    first, with cells that span rows or columns repeated where they reach.
+    Footnote marks and hidden sort keys are left out."""
+
+    def __init__(self):
+        super().__init__()
+        self.tables, self._open, self._cell, self._skip = [], [], None, 0
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        hidden = (tag == "sup" or tag == "style"
+                  or (tag == "span" and ("sortkey" in (a.get("class") or "")
+                                         or "display:none" in (a.get("style") or "").replace(" ", ""))))
+        if self._skip or hidden:
+            if tag in ("sup", "style", "span"):
+                self._skip += 1
+            return
+        if tag == "table":
+            self._open.append([])
+        elif not self._open:
+            return
+        elif tag == "tr":
+            self._open[-1].append([])
+        elif tag in ("td", "th"):
+            span = lambda key: int("".join(c for c in a.get(key, "1") if c.isdigit()) or 1)
+            self._cell = {"text": "", "rows": span("rowspan"), "cols": span("colspan")}
+        elif tag == "br" and self._cell:
+            self._cell["text"] += " "
+
+    def handle_endtag(self, tag):
+        if self._skip:
+            if tag in ("sup", "style", "span"):
+                self._skip -= 1
+            return
+        if tag in ("td", "th") and self._cell is not None and self._open and self._open[-1]:
+            self._open[-1][-1].append(self._cell)
+            self._cell = None
+        elif tag == "table" and self._open:
+            self.tables.append(self._fill(self._open.pop()))
+
+    def handle_data(self, data):
+        if self._cell is not None and not self._skip:
+            self._cell["text"] += data
+
+    @staticmethod
+    def _fill(rows):
+        grid, carried = [], {}   # column -> (text, rows still to cover)
+        for cells in rows:
+            row, cells = [], list(cells)
+            while cells or len(row) in carried:
+                col = len(row)
+                if col in carried:
+                    text, left = carried.pop(col)
+                    if left > 1:
+                        carried[col] = (text, left - 1)
+                    row.append(text)
+                    continue
+                cell = cells.pop(0)
+                text = " ".join(cell["text"].replace("\xad", "").split())
+                for _ in range(cell["cols"]):
+                    if cell["rows"] > 1:
+                        carried[len(row)] = (text, cell["rows"] - 1)
+                    row.append(text)
+            grid.append(row)
+        return grid
+
+
+def wikipedia_leaders(page, value_column):
+    """The first table on 'List of NFL career {page} leaders' with a
+    `value_column` column (the regular season list; playoff lists come
+    after): [{name, value, years}], one per player in list order. years
+    is the (first, last) season the row mentions, or None."""
+    url = WIKIPEDIA_API + urllib.parse.quote(f"List of NFL career {page} leaders".replace(" ", "_"))
+    request = urllib.request.Request(url, headers=WIKIPEDIA_HEADERS)
+    with urllib.request.urlopen(request, timeout=60) as response:
+        html = json.loads(response.read().decode("utf-8"))["parse"]["text"]
+    time.sleep(1)
+
+    parser = WikiTables()
+    parser.feed(html)
+    clean = lambda text: re.sub(r"\[?\w?\d*\]|[†‡^*§#¤]", "", text).strip()
+    for table in parser.tables:
+        if not table:
+            continue
+        header = [clean(h) for h in table[0]]
+        player_col = next((i for i, h in enumerate(header) if h in ("Player", "Name", "Quarterback")), None)
+        if value_column not in header or player_col is None:
+            continue
+        value_col = header.index(value_column)
+        year_cols = [i for i, h in enumerate(header) if re.search(r"Season|Team|Career|Period", h)]
+        players = {}
+        for row in table[1:]:
+            if len(row) <= max(value_col, player_col):
+                continue
+            name = clean(row[player_col])
+            number = row[value_col].replace(",", "")
+            try:
+                value = float(re.match(r"[\d.]+", number).group())
+            except (AttributeError, ValueError):
+                continue
+            seen = players.setdefault(name, {"name": name, "value": value, "years": set()})
+            for i in year_cols:
+                text = row[i] if i < len(row) else ""
+                seen["years"].update(int(y) for y in re.findall(r"\b(?:19|20)\d\d\b", text))
+                if "present" in text:
+                    seen["years"].add(datetime.date.today().year)
+        found = list(players.values())
+        for p in found:
+            p["years"] = (min(p["years"]), max(p["years"])) if p["years"] else None
+        return found
+    raise ValueError(f"no '{value_column}' table on the {page} list")
+
+
+def nfl_all_time_players():
+    """Everyone on an NFL roster since 1920, from nflverse's season
+    rosters: {id: {name, pos, years, team}}, team being the one they were
+    on for the most seasons. A player is one id across seasons: their
+    nflverse (gsis) id, else Pro Football Reference id, else name + birth
+    date (older rosters have no ids)."""
+    rows = []
+    for year in range(NFL_FIRST_SEASON, datetime.date.today().year + 1):
+        try:
+            rows += [r for r in csv.DictReader(io.StringIO(fetch(NFL_ROSTERS.format(year=year))))
+                     if r["full_name"].strip()]
+        except Exception as error:
+            print(f"  ! no roster for {year}: {error}")
+    known = {}   # (name, birth date) -> an id seen for that player
+    for r in rows:
+        if r["birth_date"] and (r["gsis_id"] or r["pfr_id"]):
+            known.setdefault((name_key(r["full_name"]), r["birth_date"]), r["gsis_id"] or r["pfr_id"])
+
+    players = {}
+    for r in sorted(rows, key=lambda r: int(r["season"])):
+        if r["status"] in NFL_OFF_ROSTER:
+            continue
+        key = (name_key(r["full_name"]), r["birth_date"])
+        pid = r["gsis_id"] or known.get(key) or r["pfr_id"] or \
+            "nfl-" + "-".join(key[0].split() + ([r["birth_date"]] if r["birth_date"] else []))
+        p = players.setdefault(pid, {"name": r["full_name"], "seasons": {}, "positions": {}})
+        p["name"] = r["full_name"]   # latest spelling
+        season = int(r["season"])
+        team = NFL_ROSTER_TEAM_FIXES_BY_SEASON.get((r["team"], season)) or NFL_ROSTER_TEAM_FIXES.get(r["team"], r["team"])
+        p["seasons"].setdefault(team, set()).add(season)
+        pos = NFL_POSITION_FIXES.get(r["position"], r["position"])
+        if pos:
+            p["positions"][pos] = p["positions"].get(pos, 0) + 1
+
+    roster = {}
+    for pid, p in players.items():
+        seasons = sorted(s for years in p["seasons"].values() for s in years)
+        by_team = {team: len(years) for team, years in sorted(p["seasons"].items(), key=lambda kv: max(kv[1]))}
+        roster[pid] = {"name": p["name"],
+                       "pos": max(p["positions"], key=p["positions"].get) if p["positions"] else "",
+                       "years": career_years(seasons[0], seasons[-1]),
+                       "team": main_team(by_team), "first": seasons[0], "last": seasons[-1]}
+    print(f"  {len(roster)} players, {NFL_FIRST_SEASON}-{datetime.date.today().year}")
+    return roster
+
+
+def match_nfl_player(leader, positions, by_name):
+    """The roster id for a Wikipedia list's player: same name, then (for
+    two players with one name) a career overlapping the list's seasons,
+    then a fitting position, then the longest career. None if no name matches."""
+    candidates = by_name.get(name_key(NFL_NAME_FIXES.get(leader["name"], leader["name"])), [])
+    if leader["years"] and len(candidates) > 1:
+        first, last = leader["years"]
+        overlapping = [c for c in candidates if c[1]["first"] <= last and c[1]["last"] >= first]
+        candidates = overlapping or candidates
+    if positions and len(candidates) > 1:
+        candidates = [c for c in candidates if c[1]["pos"] in positions] or candidates
+    if not candidates:
+        return None
+    return max(candidates, key=lambda c: c[1]["last"] - c[1]["first"])[0]
+
+
+def build_nfl_all_time():
+    print("NFL all-time")
+    roster = nfl_all_time_players()
+    by_name = {}
+    for pid, p in roster.items():
+        by_name.setdefault(name_key(p["name"]), []).append((pid, p))
+
+    stats = []
+    for label, page, column, fmt, positions in NFL_CAREER_STATS:
+        try:
+            leaders = wikipedia_leaders(page, column)
+        except Exception as error:
+            print(f"  ! skipped {label}: {error}")
+            continue
+        for leader in leaders:
+            pid = match_nfl_player(leader, positions, by_name)
+            if pid:
+                leader["id"] = pid   # keeping Wikipedia's spelling of the name, the better known one
+            else:
+                print(f"  ! {label}: no roster match for {leader['name']}")
+                leader["id"] = "wiki-" + "-".join(name_key(leader["name"]).split())
+        describe = lambda r: {"id": r["id"], "name": r["name"], "team": ""}
+        stat = make_stat(label, rank_rows(leaders, lambda r: r["value"], fmt, describe))
+        if stat:
+            stats.append(stat)
+
+    teams = {pid: p["team"] for pid, p in roster.items()}
+    guess_list = {pid: {"name": p["name"], "pos": p["pos"], "years": p["years"]} for pid, p in roster.items()}
+    write_all_time("nfl", {None: stats}, guess_list, teams)
+
+
 # ------------------------------------------------------------
 # Command line
 # ------------------------------------------------------------
 
 BUILDERS = {"mlb": build_mlb, "nba": build_nba, "nfl": build_nfl}
-ALL_TIME_BUILDERS = {"mlb": build_mlb_all_time, "nba": build_nba_all_time}
+ALL_TIME_BUILDERS = {"mlb": build_mlb_all_time, "nba": build_nba_all_time, "nfl": build_nfl_all_time}
 
 
 def parse_years(text):
