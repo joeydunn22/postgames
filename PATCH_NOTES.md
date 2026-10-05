@@ -10,3 +10,4 @@ What's new in Postgames, newest first.
 
 ### Improvements
 - All-time leaderboards refresh nightly, so active players' career totals stay current.
+- Various bug fixes and minor changes.
