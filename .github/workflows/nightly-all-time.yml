@@ -44,16 +44,30 @@ jobs:
         continue-on-error: true
         run: python scripts/build_trivia_data.py nfl all
 
+      # GitHub pauses scheduled jobs after 60 days without a commit. So
+      # on a quiet night (no data changes), if nothing has been committed
+      # in KEEPALIVE_DAYS, the date goes into .github/keepalive (a file
+      # the site never reads) and that's committed instead.
       - name: Save changes
+        env:
+          KEEPALIVE_DAYS: 45
         run: |
-          git add data
-          if git diff --cached --quiet; then
-            echo "No changes tonight."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "data | nightly all-time refresh"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "data | nightly all-time refresh"
+          else
+            echo "No changes tonight."
+            quiet_days=$(( ($(date +%s) - $(git log -1 --format=%ct)) / 86400 ))
+            echo "Last commit was $quiet_days days ago."
+            if [ "$quiet_days" -lt "$KEEPALIVE_DAYS" ]; then
+              exit 0
+            fi
+            date -u +%F > .github/keepalive
+            git add .github/keepalive
+            git commit -m "keepalive | no commits for $quiet_days days; keeps the nightly schedule on"
+          fi
           git pull --rebase origin main
           git push origin HEAD:main
 
