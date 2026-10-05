@@ -91,7 +91,9 @@ async function loadToday() {
             puzzle,
             board,
             roster: roster.map(withSearchWords),
-            years: [...new Set(manifest.available.filter(e => e.sport === puzzle.sport).map(e => e.year))].sort((a, b) => b - a),
+            years: [...new Set(manifest.available
+                .filter(e => e.sport === puzzle.sport && e.year !== ALL_TIME)
+                .map(e => e.year))].sort((a, b) => b - a),
             day: saved?.v === 2 ? saved : newDay(index + 1)
         });
     } catch (error) {

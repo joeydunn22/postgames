@@ -15,7 +15,10 @@ const TEAM_COLORS = {
         MIL: "#FFC52F", MIN: "#D31145", MON: "#003087", NYM: "#FF5910", NYY: "#003087",
         OAK: "#003831", PHI: "#E81828", PIT: "#FDB827", SD: "#FFC425", SEA: "#005C5C",
         SF: "#FD5A1E", STL: "#C41E3A", TB: "#8FBCE6", TEX: "#003278", TOR: "#134A8E",
-        WSH: "#AB0003"
+        WSH: "#AB0003",
+        // Older codes, for all-time boards
+        BRO: "#005A9C", BSN: "#CE1141", NYG: "#FD5A1E", PHA: "#003831", SLB: "#DF4601",
+        WAS: "#AB0003"
     },
     nfl: {
         ARI: "#97233F", ATL: "#A71930", BAL: "#241773", BUF: "#00338D", CAR: "#0085CA",
@@ -34,7 +37,9 @@ const TEAM_COLORS = {
         NJN: "#CD1041", NOH: "#00778B", NOK: "#00778B", NOP: "#B4975A", NYK: "#F58426",
         OKC: "#007AC1", ORL: "#0077C0", PHI: "#006BB6", PHX: "#E56020", POR: "#E03A3E",
         SAC: "#5A2D81", SAS: "#C4CED4", SDC: "#00A3E0", SEA: "#00653A", TOR: "#CE1141",
-        UTA: "#F9A01B", VAN: "#00B2A9", WAS: "#E31837"
+        UTA: "#F9A01B", VAN: "#00B2A9", WAS: "#E31837",
+        // Older codes, for all-time boards
+        CIN: "#5A2D81", SFW: "#FFC72C", STL: "#E03A3E"
     }
 };
 

@@ -40,6 +40,7 @@ const SYNCED_DEFAULTS = {
     players: [],          // [{ id, name, score }] in turn order
     currentPlayerIndex: 0,
     turnEndsAt: null,     // server time (ms) the current turn runs out, when timed
+    hintLevel: 0,         // hints given this game, for every slot still blank (see hintSteps)
     guessed: [],          // [{ id, by }] board players found (by player id) and who got them
     misses: [],           // [{ id, name, by }] wrong guesses, in order, and who made them
     roundComplete: false, // every answer found
@@ -87,6 +88,7 @@ let currentRoomCode = null;
 let hostId = null;
 let roomMembers = {};     // uid -> display name, everyone in the room
 let endVotes = {};        // uid -> true, players who voted to end the game
+let hintVotes = {};       // uid -> true, players who voted for the next hint
 let roomStatus = "";      // short message under the room controls
 
 function inRoom() {
@@ -137,18 +139,29 @@ const ui = {};
 // Entries from data/manifest.json: which sport/category/year combos have data
 let dataManifest = [];
 
+// Leagues and divisions by season (data/divisions.json), for hints
+let divisionTable = null;
+
 function seasonStartYear(sport, year) {
     return sport === "nba" ? Number(year) - 1 : Number(year);
 }
 
-// Manifest entries inside the picked era
+function isAllTime(year = game.year) {
+    return year === ALL_TIME;
+}
+
+// Manifest entries inside the picked era. All-time boards belong to no
+// era, so they're only offered with All.
 function playableEntries(era = game.era) {
     const test = ERAS[era] || ERAS.all;
+    const seasons = dataManifest.filter(entry => !isAllTime(entry.year));
     const newest = {};
-    for (const entry of dataManifest) {
+    for (const entry of seasons) {
         newest[entry.sport] = Math.max(newest[entry.sport] ?? -Infinity, seasonStartYear(entry.sport, entry.year));
     }
-    return dataManifest.filter(entry => test(seasonStartYear(entry.sport, entry.year), newest[entry.sport]));
+    return dataManifest.filter(entry => isAllTime(entry.year)
+        ? era === "all"
+        : test(seasonStartYear(entry.sport, entry.year), newest[entry.sport]));
 }
 
 // True if the picked era has data matching the given sport/category/year (omitted = any)
@@ -163,7 +176,8 @@ function availableYears({ sport, category } = {}) {
     const years = playableEntries()
         .filter(entry => entry.sport === sport && (!category || entry.category === category))
         .map(entry => entry.year);
-    return [...new Set(years)].sort((a, b) => b - a);
+    // All-time first, then newest season first
+    return [...new Set(years)].sort((a, b) => isAllTime(a) ? -1 : isAllTime(b) ? 1 : b - a);
 }
 
 // Phones' clocks disagree by a few seconds, so turn timers use Firebase's

@@ -3,6 +3,18 @@
   "available": [
     {
       "sport": "mlb",
+      "year": "all",
+      "file": "mlb/all/batting.json",
+      "category": "batting"
+    },
+    {
+      "sport": "mlb",
+      "year": "all",
+      "file": "mlb/all/pitching.json",
+      "category": "pitching"
+    },
+    {
+      "sport": "mlb",
       "year": 2026,
       "file": "mlb/2026/batting.json",
       "category": "batting"
@@ -444,6 +456,11 @@
       "year": 1990,
       "file": "mlb/1990/pitching.json",
       "category": "pitching"
+    },
+    {
+      "sport": "nba",
+      "year": "all",
+      "file": "nba/all/stats.json"
     },
     {
       "sport": "nba",

@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
-  <link rel="stylesheet" href="../assets/global/global.css?v=137">
-  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=137">
+  <link rel="stylesheet" href="../assets/global/global.css?v=138">
+  <link rel="stylesheet" href="../assets/top10/css/top10.css?v=138">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
@@ -39,7 +39,7 @@
       <div class="intro">
         <p class="eyebrow">Sports Trivia</p>
         <h1 class="display intro-title">Name the Top&nbsp;10</h1>
-        <p class="lede">Pick a stat and name the leaders. Play solo, pass one phone around, or start a room.</p>
+        <p class="lede">Pick a stat, a season or all-time, and name the leaders. Play solo, pass one phone around, or start a room.</p>
         <a id="statsLink" class="link-btn intro-link" href="top10-stats.html">Your stats</a>
       </div>
 
@@ -57,7 +57,7 @@
           <span class="daily-link-text">
             <span class="eyebrow">Daily challenge</span>
             <span class="daily-link-title">Top Shelf</span>
-            <span id="shelfLinkStatus" class="hint">The top names are hidden. Name the stat, the stars, the number.</span>
+            <span id="shelfLinkStatus" class="hint">The top names are hidden. Name the season, the top 3, their order, #1's number.</span>
           </span>
           <span class="daily-link-cta">Play <span aria-hidden="true">→</span></span>
         </a>
@@ -201,6 +201,12 @@
 
       <p id="guessFeedback" class="feedback" role="status" aria-live="polite"></p>
 
+      <!-- Hints: one step at a time, on every blank slot -->
+      <div class="hint-bar">
+        <button id="hintBtn" class="link-btn hint-btn" type="button"></button>
+        <p id="hintStatus" class="hint"></p>
+      </div>
+
       <ol id="board" class="board"></ol>
 
       <div class="end-game">
@@ -236,7 +242,7 @@
       <p id="newGameWaiting" class="hint center hidden">Waiting for the host to start a new game.</p>
     </section>
 
-    <p class="version">Version 137</p>
+    <p class="version">Version 138</p>
   </main>
 
 
@@ -278,12 +284,12 @@
 
   <!-- Top 10 game: plain deferred scripts. They run in this order after the
        Firebase module above and share top-level names with each other. -->
-  <script defer src="../assets/top10/js/top10-common.js?v=137"></script>
-  <script defer src="../assets/top10/js/top10-records.js?v=137"></script>
-  <script defer src="../assets/top10/js/top10-state.js?v=137"></script>
-  <script defer src="../assets/top10/js/top10-teams.js?v=137"></script>
-  <script defer src="../assets/top10/js/top10-render.js?v=137"></script>
-  <script defer src="../assets/top10/js/top10-logic.js?v=137"></script>
+  <script defer src="../assets/top10/js/top10-common.js?v=138"></script>
+  <script defer src="../assets/top10/js/top10-records.js?v=138"></script>
+  <script defer src="../assets/top10/js/top10-state.js?v=138"></script>
+  <script defer src="../assets/top10/js/top10-teams.js?v=138"></script>
+  <script defer src="../assets/top10/js/top10-render.js?v=138"></script>
+  <script defer src="../assets/top10/js/top10-logic.js?v=138"></script>
 
 </body>
 </html>

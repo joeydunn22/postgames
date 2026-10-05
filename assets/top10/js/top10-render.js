@@ -12,6 +12,7 @@ let _highlight = -1;           // guess result picked with the arrow keys, -1 = 
 let _yearOptionsKey = null;    // which season list the dropdown currently holds
 let _statOptionsKey = null;    // which stat list the dropdown currently holds
 let _playerPillsKey = null;    // which players the pills currently show
+let _hintLevelDrawn = 0;       // so only a brand-new hint flashes
 
 const STAT_HINTS = {
     loading: "Loading stats…",
@@ -330,6 +331,7 @@ function renderBoard(listEl, { final = false } = {}) {
     const freshId = !final && isFreshGuess() && game.lastGuess.result === "correct"
         ? game.lastGuess.id
         : null;
+    const freshHint = !final && game.hintLevel > _hintLevelDrawn;
 
     const slots = stat.players.map(item => {
         const guessed = item.id in guessedBy;
@@ -343,7 +345,7 @@ function renderBoard(listEl, { final = false } = {}) {
         const main = revealed
             ? `<span class="slot-line"><span class="slot-name">${escapeHTML(item.name)}</span>` +
               `${teamTag(item.team, "slot-team")}</span>${by}`
-            : `<span class="slot-blank"></span>`;
+            : slotHintHTML(slotHint(item), freshHint);
 
         return `
             <li class="${classes}">
@@ -358,6 +360,20 @@ function renderBoard(listEl, { final = false } = {}) {
         slots.push(`<li class="slot-note hint">+${stat.more_tied} more tied at ${escapeHTML(stat.players.at(-1).value)}, not in play</li>`);
     }
     listEl.innerHTML = slots.join("");
+}
+
+// A blank slot: a placeholder bar, or what the hints so far say (see slotHint)
+function slotHintHTML(hint, fresh) {
+    if (!hint) return `<span class="slot-blank"></span>`;
+    const parts = [
+        hint.initials && `<strong class="slot-hint-initials">${escapeHTML(hint.initials)}</strong>`,
+        hint.team && teamTag(hint.team, "slot-team"),
+        hint.pos && `<span>${escapeHTML(hint.pos)}</span>`,
+        hint.league && `<span>${escapeHTML(hint.league)}</span>`,
+        hint.division && `<span>${escapeHTML(hint.division)}</span>`,
+        hint.years && `<span>${escapeHTML(hint.years)}</span>`
+    ].filter(Boolean);
+    return `<span class="slot-hint ${fresh ? "fresh" : ""}">${parts.join("")}</span>`;
 }
 
 // Countdown for timed turns. Also runs on its own every 250ms
@@ -401,7 +417,9 @@ function renderGuessResults() {
 
     const nameOf = id => game.players.find(p => p.id === id)?.name;
     const rows = found.players.map((player, idx) => {
-        let meta = teamTag(player.team) + (player.pos ? `<span class="guess-option-pos">${escapeHTML(player.pos)}</span>` : "");
+        let meta = teamTag(player.team) +
+            (player.pos ? `<span class="guess-option-pos">${escapeHTML(player.pos)}</span>` : "") +
+            (player.years ? `<span class="guess-option-years">${escapeHTML(player.years)}</span>` : "");
         if (player.status) {
             const by = game.players.length > 1 && nameOf(player.by) ? ` · ${escapeHTML(nameOf(player.by))}` : "";
             meta = `<span class="guess-status">${GUESS_STATUS_LABELS[player.status]}${by}</span>`;
@@ -431,6 +449,37 @@ function pickGuess(playerId) {
     _highlight = -1;
     renderGuessResults();
     ui.guessInput.focus();
+}
+
+// The hint button. One device: it gives the next hint. Room: a vote,
+// counted like End Game, and the hint comes once everyone's voted.
+function renderHintBar() {
+    const next = nextHintLabel();
+    ui.hintBtn.disabled = !canTakeHint();
+
+    let status;
+    if (!next) {
+        ui.hintBtn.textContent = "No more hints";
+    } else if (!inRoom()) {
+        ui.hintBtn.textContent = `💡 Hint: ${next}`;
+    } else {
+        const members = Object.keys(roomMembers);
+        const votes = members.filter(uid => hintVotes[uid]).length;
+        const iVoted = !!hintVotes[currentUser?.uid];
+        ui.hintBtn.textContent = `💡 ${iVoted ? "Cancel my vote" : "Vote for a hint"}: ${next} (${votes}/${members.length})`;
+        const waitingOn = game.players.filter(p => !hintVotes[p.id]).map(p => p.name);
+        if (votes > 0 && waitingOn.length > 0) status = `Waiting on ${waitingOn.join(", ")}`;
+    }
+    ui.hintBtn.classList.toggle("voted", inRoom() && !!hintVotes[currentUser?.uid]);
+
+    if (!status) {
+        status = isSolo() && game.hintLevel > 0 ? "Hints used, so this game won't be saved to your stats."
+            : isSolo() ? "Shows on every blank slot. Games with hints aren't saved to your stats."
+            : game.hintLevel === 0 && inRoom() ? "Shows on every blank slot once everyone votes."
+            : game.hintLevel === 0 ? "Shows on every blank slot."
+            : "";
+    }
+    ui.hintStatus.textContent = next || isSolo() ? status : "";
 }
 
 function renderEndGameButton() {
@@ -471,6 +520,8 @@ function renderPlaying() {
     renderTurnClock();
     renderFeedback();
     renderBoard(ui.board);
+    _hintLevelDrawn = game.hintLevel;
+    renderHintBar();
     renderEndGameButton();
 
     if (canGuess && !_wasMyTurn) ui.guessInput.focus();
@@ -571,7 +622,8 @@ function soloResultLine(score, total) {
     else if (struckOut()) parts.push("Three strikes.");
 
     const saved = game.soloResult;
-    if (saved?.newBest) parts.push("New personal best!");
+    if (saved?.hinted) parts.push("Hints used, so this one isn't saved to your stats.");
+    else if (saved?.newBest) parts.push("New personal best!");
     else if (saved?.previousBest === score) parts.push("Tied your best.");
     else if (saved?.previousBest != null) parts.push(`Your best here: ${saved.previousBest} of ${total}.`);
     else if (saved) parts.push("First time on this board.");
@@ -677,6 +729,8 @@ function findElements() {
         guessResults: byId("guessResults"),
         feedback: byId("guessFeedback"),
         board: byId("board"),
+        hintBtn: byId("hintBtn"),
+        hintStatus: byId("hintStatus"),
         endGameBtn: byId("endGameBtn"),
         endVoteStatus: byId("endVoteStatus"),
 
@@ -741,6 +795,7 @@ function wireEvents() {
         const option = e.target.closest(".guess-option");
         if (option && !option.disabled) pickGuess(option.dataset.id);
     });
+    ui.hintBtn.addEventListener("click", voteForHint);
     ui.endGameBtn.addEventListener("click", voteToEndGame);
     ui.newGameBtn.addEventListener("click", newGame);
 }

@@ -37,6 +37,7 @@ onValue(ref(db, ".info/serverTimeOffset"), snapshot => {
      gameState     mirror of the synced parts of `game` (host writes)
      pendingGuess  uid -> { guess: player id } from non-hosts, host processes
      endVotes      uid -> true
+     hintVotes     uid -> true
      session       the "Tonight" leaderboard (host writes)
    ============================================================ */
 function roomRef(path = "") {
@@ -99,6 +100,7 @@ function enterRoom(code, host) {
     currentRoomCode = code;
     hostId = host;
     endVotes = {};
+    hintVotes = {};
     session = emptySession();
 
     // The host brings their current picks; everyone else waits for the room's game
@@ -113,6 +115,7 @@ function enterRoom(code, host) {
         onValue(roomRef("gameState"), onGameStateChange),
         onValue(roomRef("pendingGuess"), onPendingGuess),
         onValue(roomRef("endVotes"), onEndVotesChange),
+        onValue(roomRef("hintVotes"), onHintVotesChange),
         onValue(roomRef("session"), onSessionChange)
     ];
 }
@@ -142,6 +145,7 @@ function resetToLocalGame(message) {
     hostId = null;
     roomMembers = {};
     endVotes = {};
+    hintVotes = {};
     session = emptySession();
     Object.assign(game, structuredClone(SYNCED_DEFAULTS), emptyGameData());
     game.players = [newLocalPlayer("Player 1")];
@@ -184,6 +188,7 @@ function onMembersChange(snapshot) {
 
     render();
     checkEndVotes();
+    checkHintVotes();
 }
 
 function onGameStateChange(snapshot) {
@@ -219,6 +224,12 @@ function onEndVotesChange(snapshot) {
     endVotes = snapshot.val() || {};
     render();
     checkEndVotes();
+}
+
+function onHintVotesChange(snapshot) {
+    hintVotes = snapshot.val() || {};
+    render();
+    checkHintVotes();
 }
 
 function onSessionChange(snapshot) {
@@ -374,12 +385,14 @@ function startGame() {
         misses: [],
         roundComplete: false,
         lastGuess: null,
+        hintLevel: 0,
         strikes: 0,
         soloResult: null
     });
     game.players = game.players.map(p => ({ ...p, score: 0 }));
     startTurnClock();
     clearEndVotes();
+    clearHintVotes();
     syncGameState();
     render();
 }
@@ -391,6 +404,7 @@ function endGame() {
     game.state = GAME_STATES.RESULTS;
     game.turnEndsAt = null;
     clearEndVotes();
+    clearHintVotes();
     recordGameResult();
     if (isSolo()) recordSoloGame();
     syncGameState();
@@ -410,11 +424,13 @@ function newGame() {
         misses: [],
         roundComplete: false,
         lastGuess: null,
+        hintLevel: 0,
         strikes: 0,
         soloResult: null
     });
     game.players = game.players.map(p => ({ ...p, score: 0 }));
     clearEndVotes();
+    clearHintVotes();
     syncGameState();
     render();
 }
@@ -443,11 +459,16 @@ function recordGameResult() {
 }
 
 // Save a finished solo game on this phone, noting the board's best before
-// this game for the results screen. A game quit before any guess isn't saved.
+// this game for the results screen. Not saved: a game quit before any
+// guess, or one where hints were used (it wouldn't be a fair best).
 function recordSoloGame() {
     const stat = game.data[game.stat];
     const player = game.players[0];
     if (!stat || !player || (player.score === 0 && game.strikes === 0)) return;
+    if (game.hintLevel > 0) {
+        game.soloResult = { hinted: true };
+        return;
+    }
 
     const board = { sport: game.sport, category: game.category, year: game.year, stat: game.stat };
     const previous = bestOnBoard(board);
@@ -474,22 +495,25 @@ function recordSoloGame() {
 function voteToEndGame() {
     if (game.state !== GAME_STATES.PLAYING) return;
 
-    if (!inRoom()) {
-        endGame();
-    } else if (endVotes[currentUser.uid]) {
-        remove(roomRef(`endVotes/${currentUser.uid}`));
-    } else {
-        set(roomRef(`endVotes/${currentUser.uid}`), true);
-    }
+    if (!inRoom()) endGame();
+    else toggleMyVote("endVotes", endVotes);
+}
+
+// Room: add or take back this player's vote under rooms/{code}/{path}
+function toggleMyVote(path, votes) {
+    const voteRef = roomRef(`${path}/${currentUser.uid}`);
+    votes[currentUser.uid] ? remove(voteRef) : set(voteRef, true);
+}
+
+function everyoneVoted(votes) {
+    const members = Object.keys(roomMembers);
+    return members.length > 0 && members.every(uid => votes[uid]);
 }
 
 function checkEndVotes() {
     if (!inRoom() || !isHost() || game.state !== GAME_STATES.PLAYING) return;
 
-    const members = Object.keys(roomMembers);
-    if (members.length > 0 && members.every(uid => endVotes[uid])) {
-        endGame();
-    }
+    if (everyoneVoted(endVotes)) endGame();
 }
 
 function clearEndVotes() {
@@ -499,7 +523,86 @@ function clearEndVotes() {
 
 
 /* ============================================================
-   7. GUESSING
+   7. HINTS
+   One step at a time, for every slot still blank. Season boards:
+   league (NBA: conference) → division → team and position → initials.
+   All-time boards: career years → team → initials. One device: Hint
+   gives the next step at once. Room: everyone votes, like ending the
+   game, and the host gives it once all have. Hints cost nothing, but a
+   solo game with hints isn't saved to your stats (see recordSoloGame).
+   ============================================================ */
+const SEASON_HINT_STEPS = ["league", "division", "team", "initials"];
+const ALL_TIME_HINT_STEPS = ["years", "team", "initials"];
+
+function hintSteps() {
+    return isAllTime() ? ALL_TIME_HINT_STEPS : SEASON_HINT_STEPS;
+}
+
+// The next step's name, for the button: "Division", or null when all are out
+function nextHintLabel() {
+    const step = hintSteps()[game.hintLevel];
+    if (!step) return null;
+    if (step === "league") return game.sport === "nba" ? "Conference" : "League";
+    if (step === "years") return "Career years";
+    return step[0].toUpperCase() + step.slice(1);
+}
+
+function canTakeHint() {
+    return game.state === GAME_STATES.PLAYING && !roundOver() && game.hintLevel < hintSteps().length;
+}
+
+function voteForHint() {
+    if (!canTakeHint()) return;
+    if (!inRoom()) takeHint();
+    else toggleMyVote("hintVotes", hintVotes);
+}
+
+function checkHintVotes() {
+    if (inRoom() && isHost() && canTakeHint() && everyoneVoted(hintVotes)) takeHint();
+}
+
+// Host (or the one device) only
+function takeHint() {
+    if (!isHost() || !canTakeHint()) return;
+    game.hintLevel += 1;
+    clearHintVotes();
+    syncGameState();
+    render();
+}
+
+function clearHintVotes() {
+    hintVotes = {};
+    if (inRoom() && isHost()) remove(roomRef("hintVotes"));
+}
+
+// What the hints so far say about one board player, the most telling
+// piece of each step: { league: "AL" }, { division: "AL East" }, then
+// { team, pos }, then initials too. All-time: { years }, then team and
+// initials. A season-board player traded mid-season (team "2TM") has no
+// single league or division, so those steps show their team ("2 teams").
+function slotHint(item) {
+    const steps = hintSteps().slice(0, game.hintLevel);
+    if (steps.length === 0) return null;
+
+    const listed = rosterPlayer(item.id);
+    const hint = {};
+    if (steps.includes("initials")) hint.initials = initials(item.name);
+    if (steps.includes("years")) hint.years = listed?.years || "";
+    if (steps.includes("team")) {
+        hint.team = item.team;
+        hint.pos = listed?.pos || "";
+    } else if (steps.includes("league")) {
+        const where = divisionOf(divisionTable, game.sport, item.team, game.year);
+        if (!where) hint.team = item.team;
+        else if (!steps.includes("division")) hint.league = where.league;
+        else hint.division = game.sport === "nba" ? `${where.league} · ${where.division}` : where.division;
+    }
+    return hint;
+}
+
+
+/* ============================================================
+   8. GUESSING
    ============================================================ */
 function isMyTurn() {
     if (!inRoom()) return true;
@@ -587,7 +690,7 @@ function nextTurn() {
 
 
 /* ============================================================
-   8. TURN TIMER
+   9. TURN TIMER
    With a timer on, each turn gets game.timerSeconds. The deadline is
    synced as server time so every phone counts down together. Only
    the host (or the one device) checks it: running out counts as a
@@ -613,7 +716,7 @@ setInterval(checkTurnClock, 250);
 
 
 /* ============================================================
-   9. DATA
+   10. DATA
    Fetched with cache "no-cache": the phone always checks the file is
    current (a quick "not modified" when it is), so new code never runs
    on stale data.
@@ -624,13 +727,20 @@ setInterval(checkTurnClock, 250);
    ============================================================ */
 async function loadDataManifest() {
     try {
-        const response = await fetch("../data/manifest.json", { cache: "no-cache" });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        dataManifest = (await response.json()).available;
+        dataManifest = (await fetchData("manifest.json")).available;
     } catch (error) {
         console.error("Couldn't load the data manifest:", error);
     }
     render();
+}
+
+// Leagues and divisions, for hints. Without them, hints show the team instead.
+async function loadDivisions() {
+    try {
+        divisionTable = await fetchData("divisions.json");
+    } catch (error) {
+        console.error("Couldn't load the division table:", error);
+    }
 }
 
 async function loadStats() {
@@ -679,7 +789,7 @@ async function loadStats() {
 
 
 /* ============================================================
-   10. SEARCHING FOR A PLAYER TO GUESS
+   11. SEARCHING FOR A PLAYER TO GUESS
    The matching itself is matchPlayers() in top10-common.js.
    ============================================================ */
 function rosterPlayer(id) {
@@ -704,3 +814,4 @@ function searchRoster(query) {
 
 
 loadDataManifest();
+loadDivisions();

@@ -7,6 +7,8 @@ Usage (run from the repo root):
     python scripts/build_trivia_data.py nfl 1999-2025
     python scripts/build_trivia_data.py nba 1980-2026   (NBA years are the
                                                          season's end: 2026 = 2025-26)
+    python scripts/build_trivia_data.py mlb all         (all-time career boards;
+    python scripts/build_trivia_data.py nba all          MLB and NBA only)
 
 Sources:
     MLB  the MLB Stats API (statsapi.mlb.com): league leaders per stat,
@@ -19,6 +21,18 @@ Sources:
     NBA  stats.nba.com league leaders (the site behind NBA.com's stats
          pages): one request per stat per season, already ranked and
          limited to qualified players, plus one for the player list.
+
+All-time boards (year "all"):
+    MLB  the Stats API's career leaders (which include the Negro Leagues,
+         part of MLB's official record since 2024), plus each board
+         player's season-by-season teams, and every season's player list
+         for the guess list. About 170 requests.
+    NBA  stats.nba.com's "All Time" totals, one request for every player
+         ever, ranked here with career minimums, plus one request per
+         season for each player's years and teams.
+    Each board player's team is the one they played the most games for.
+    The guess list has everyone's years and position but no team (only
+    board players have one, so showing it would give them away).
 
 Output:  data/{sport}/{year}/{category or "stats"}.json
          and a matching entry in data/manifest.json, so the game offers it.
@@ -36,6 +50,7 @@ by id, so two players with the same name never get mixed up.
 """
 
 import csv
+import datetime
 import io
 import json
 import sys
@@ -49,6 +64,7 @@ MANIFEST = DATA / "manifest.json"
 TOP_N = 10
 MAX_BOARD = 15   # more answers than this and the tie at the bottom is left out
 MIN_BOARD = 5    # fewer answers than this and the stat is skipped for that season
+ALL_TIME = "all" # the "year" all-time (career) boards are filed under
 
 
 # ------------------------------------------------------------
@@ -160,7 +176,8 @@ def write_game_file(sport, category, year, stats):
 
 def write_players_file(sport, year, players, game_files):
     """
-    players: {id: {name, team, pos}} for everyone who played that season.
+    players: {id: {name, team, pos}} for everyone who played that season
+    (all-time: {id: {name, pos, years}}, no team).
     Every board answer must be pickable, so any board player missing from
     the list is added (with a warning), and names follow the boards.
     """
@@ -171,7 +188,8 @@ def write_players_file(sport, year, players, game_files):
                 listed = players.get(p["id"])
                 if listed is None:
                     print(f"  ! {p['name']} ({p['id']}) is on a board but not in the player list; adding")
-                    players[p["id"]] = {"name": p["name"], "team": p["team"], "pos": ""}
+                    players[p["id"]] = ({"name": p["name"], "pos": "", "years": ""} if year == ALL_TIME
+                                        else {"name": p["name"], "team": p["team"], "pos": ""})
                 else:
                     listed["name"] = p["name"]
 
@@ -188,7 +206,9 @@ def write_players_file(sport, year, players, game_files):
 def update_manifest(entry):
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     entries = [e for e in manifest["available"] if e["file"] != entry["file"]] + [entry]
-    manifest["available"] = sorted(entries, key=lambda e: (e["sport"], -e["year"], e.get("category", "")))
+    manifest["available"] = sorted(entries, key=lambda e: (e["sport"], e["year"] != ALL_TIME,
+                                                           0 if e["year"] == ALL_TIME else -e["year"],
+                                                           e.get("category", "")))
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -410,8 +430,9 @@ def nfl_team(code, year):
     return code
 
 
-def rank_rows(players, value_of, fmt, year):
-    """Sort high to low and rank; players whose shown values match share a rank."""
+def rank_rows(players, value_of, fmt, describe):
+    """Sort high to low and rank; players whose shown values match share a rank.
+    describe(row) gives the player's {id, name, team}."""
     scored = sorted(((value_of(r), r) for r in players), key=lambda pair: -pair[0])
     rows = []
     for i, (value, r) in enumerate(scored):
@@ -419,8 +440,7 @@ def rank_rows(players, value_of, fmt, year):
             break
         shown = fmt(value)
         rank = rows[-1]["rank"] if rows and rows[-1]["value"] == shown else i + 1
-        rows.append({"rank": rank, "id": r["player_id"], "name": r["player_display_name"],
-                     "team": nfl_team(r["recent_team"], year), "value": shown})
+        rows.append({"rank": rank, **describe(r), "value": shown})
     return rows
 
 
@@ -434,7 +454,9 @@ def build_nfl(year):
     stats = []
     for label, value_of, fmt, qualifies in nfl_stats(team_games):
         pool = [r for r in players if qualifies is None or qualifies(r)]
-        stat = make_stat(label, rank_rows(pool, value_of, fmt, year))
+        describe = lambda r: {"id": r["player_id"], "name": r["player_display_name"],
+                              "team": nfl_team(r["recent_team"], year)}
+        stat = make_stat(label, rank_rows(pool, value_of, fmt, describe))
         if stat:
             stats.append(stat)
 
@@ -550,10 +572,216 @@ def build_nba(year):
 
 
 # ------------------------------------------------------------
+# All-time (career) boards
+# ------------------------------------------------------------
+
+def career_years(first, last):
+    """'1966–1993', or one year for a one-season career, '' if unknown."""
+    if not first:
+        return ""
+    return str(first) if first == last else f"{first}–{last}"
+
+
+def main_team(games_by_team):
+    """The team a player played the most games for. games_by_team is
+    {team: games} in the order they played for them; a tie goes to the
+    later team."""
+    best = None
+    for team, games in games_by_team.items():
+        if best is None or games >= games_by_team[best]:
+            best = team
+    return best or ""
+
+
+def write_all_time(sport, boards_by_category, roster, teams):
+    """Give board players their main team, then write the game files and the guess list."""
+    game_files = []
+    for category, stats in boards_by_category.items():
+        for stat in stats:
+            for p in stat["players"]:
+                p["team"] = teams.get(p["id"], "")
+        game_files.append(write_game_file(sport, category, ALL_TIME, stats))
+    write_players_file(sport, ALL_TIME, roster, game_files)
+
+
+# MLB ------------------------------------------------------------
+
+def mlb_main_teams(ids):
+    """{player id: team code} for the team each played the most games for,
+    from their season-by-season lines. A franchise counts as one team
+    (Brooklyn and LA Dodgers), shown by its code in the player's last
+    season there (Christy Mathewson: the New York Giants, not SF)."""
+    codes = {}   # (team id, season) -> code
+
+    def code(team_id, season):
+        if (team_id, season) not in codes:
+            teams = json.loads(fetch(f"{MLB_API}/teams/{team_id}?season={season}")).get("teams", [])
+            if not teams:  # some old teams only answer without a season
+                teams = json.loads(fetch(f"{MLB_API}/teams/{team_id}")).get("teams", [])
+            codes[team_id, season] = teams[0].get("abbreviation", "") if teams else ""
+        return codes[team_id, season]
+
+    result = {}
+    ids = sorted(ids)
+    for start in range(0, len(ids), 40):
+        batch = ",".join(ids[start:start + 40])
+        url = f"{MLB_API}/people?personIds={batch}&hydrate=stats(group=[hitting,pitching],type=[yearByYear])"
+        for person in json.loads(fetch(url))["people"]:
+            games = {}  # (season, team id) -> games, hitting or pitching, whichever is more
+            for line in person.get("stats", []):
+                for split in line["splits"]:
+                    team = split.get("team", {}).get("id")
+                    if not team or split.get("sport", {}).get("id", 1) != 1:
+                        continue  # a season's total across teams, or the minors
+                    key = (int(split["season"]), team)
+                    games[key] = max(games.get(key, 0), split["stat"].get("gamesPlayed", 0))
+            by_team, last_season = {}, {}
+            for (season, team), n in sorted(games.items()):
+                by_team[team] = by_team.get(team, 0) + n
+                last_season[team] = season
+            team = main_team(by_team)
+            result[str(person["id"])] = code(team, last_season[team]) if team else ""
+        time.sleep(0.5)
+    return result
+
+
+def mlb_all_time_players():
+    """Everyone who ever played, from each season's player list:
+    {id: {name, pos, years}}."""
+    players, seen = {}, {}
+    for year in range(1871, datetime.date.today().year + 1):
+        for p in json.loads(fetch(f"{MLB_API}/sports/1/players?season={year}")).get("people", []):
+            first, last = seen.get(p["id"], (year, year))
+            seen[p["id"]] = (min(first, year), max(last, year))
+            players[p["id"]] = p
+        time.sleep(0.2)
+
+    roster = {}
+    for pid, p in players.items():
+        first, last = seen[pid]
+        # Debut and last game are more exact than the season lists (which include the bench)
+        if p.get("mlbDebutDate"):
+            first = int(p["mlbDebutDate"][:4])
+        if p.get("lastPlayedDate"):
+            last = max(first, int(p["lastPlayedDate"][:4]))
+        pos = p.get("primaryPosition", {}).get("abbreviation", "")
+        roster[pid] = {"name": p["fullName"], "pos": "" if pos == "X" else pos,  # X: unknown
+                       "years": career_years(first, last)}
+    print(f"  {len(roster)} players, 1871-{datetime.date.today().year}")
+    return roster
+
+
+def build_mlb_all_time():
+    print("MLB all-time")
+    boards = {}
+    for category, labels in MLB_STATS.items():
+        url = (f"{MLB_API}/stats/leaders?sportId=1&statType=career&limit=100"
+               f"&statGroup={MLB_GROUPS[category]}&leaderCategories={','.join(labels)}")
+        leaders = {c["leaderCategory"]: c.get("leaders", [])
+                   for c in json.loads(fetch(url))["leagueLeaders"]}
+        stats = []
+        for key, label in labels.items():
+            rows = [{"rank": leader["rank"], "id": str(leader["person"]["id"]),
+                     "name": leader["person"]["fullName"], "team": "", "value": leader["value"]}
+                    for leader in leaders.get(key, []) if leader["value"] and float(leader["value"]) != 0]
+            stat = make_stat(label, rows)
+            if stat:
+                stats.append(stat)
+        boards[category] = stats
+        time.sleep(0.5)
+
+    ids = {p["id"] for stats in boards.values() for stat in stats for p in stat["players"]}
+    write_all_time("mlb", boards, mlb_all_time_players(), mlb_main_teams(ids))
+
+
+# NBA ------------------------------------------------------------
+
+NBA_ALL_TIME_API = ("https://stats.nba.com/stats/leagueleaders?LeagueID=00&Scope=S"
+                    "&SeasonType=Regular%20Season&ActiveFlag=&PerMode=Totals&Season=All%20Time&StatCategory=PTS")
+NBA_FIRST_SEASON = 1947  # 1946-47, the BAA's first season
+
+
+# Career minimums, as Basketball Reference's all-time lists use:
+# per-game stats need 400 games; percentages need enough makes.
+def nba_all_time_stats():
+    per_game = lambda column: lambda r: r[column] / r["GP"]
+    games = lambda r: r["GP"] >= 400
+    return [
+        ("Points per Game", per_game("PTS"), one_decimal, games),
+        ("Rebounds per Game", per_game("REB"), one_decimal, games),
+        ("Assists per Game", per_game("AST"), one_decimal, games),
+        ("Steals per Game", per_game("STL"), one_decimal, games),
+        ("Blocks per Game", per_game("BLK"), one_decimal, games),
+        ("3-Pointers Made per Game", per_game("FG3M"), one_decimal, games),
+        ("Minutes per Game", per_game("MIN"), one_decimal, games),
+        ("Field Goal %", lambda r: r["FGM"] / r["FGA"] * 100, percent, lambda r: r["FGM"] >= 2000),
+        ("3-Point %", lambda r: r["FG3M"] / r["FG3A"] * 100, percent, lambda r: r["FG3M"] >= 250),
+        ("Free Throw %", lambda r: r["FTM"] / r["FTA"] * 100, percent, lambda r: r["FTM"] >= 1200),
+        ("Total Points", lambda r: r["PTS"], whole, None),
+        ("Total Rebounds", lambda r: r["REB"], whole, None),
+        ("Total Assists", lambda r: r["AST"], whole, None),
+        ("Total Steals", lambda r: r["STL"], whole, None),
+        ("Total Blocks", lambda r: r["BLK"], whole, None),
+        ("3-Pointers Made", lambda r: r["FG3M"], whole, None),
+        ("Free Throws Made", lambda r: r["FTM"], whole, None),
+        ("Field Goals Made", lambda r: r["FGM"], whole, None),
+        ("Offensive Rebounds", lambda r: r["OREB"], whole, None),
+        ("Turnovers", lambda r: r["TOV"], whole, None),
+    ]
+
+
+def nba_careers():
+    """Every player's seasons and games per team, from each season's
+    player list: {id: {"first", "last", "games": {team: games}}}, NBA
+    years being the season's end. Seasons the source has no list for
+    (the earliest few) are skipped."""
+    careers = {}
+    for year in range(NBA_FIRST_SEASON, datetime.date.today().year + 2):
+        url = NBA_PLAYERS_API.format(season=nba_season(year)).replace("StatCategory=MIN", "StatCategory=PTS")
+        try:
+            rows = fetch_nba(url)
+        except Exception as error:
+            print(f"  ! no player list for {nba_season(year)}: {error}")
+            continue
+        column = {name: i for i, name in enumerate(rows["headers"])}
+        for row in rows["rowSet"]:
+            career = careers.setdefault(str(row[column["PLAYER_ID"]]), {"first": year, "last": year, "games": {}})
+            career["last"] = year
+            team = nba_team(row[column["TEAM"]])
+            career["games"][team] = career["games"].get(team, 0) + (row[column["GP"]] or 0)
+    return careers
+
+
+def build_nba_all_time():
+    print("NBA all-time")
+    result = fetch_nba(NBA_ALL_TIME_API)
+    column = {name: i for i, name in enumerate(result["headers"])}
+    players = [{name: row[i] or 0 for name, i in column.items()} for row in result["rowSet"]]
+    print(f"  {len(players)} players")
+
+    describe = lambda r: {"id": str(r["PLAYER_ID"]), "name": r["PLAYER_NAME"], "team": ""}
+    stats = []
+    for label, value_of, fmt, qualifies in nba_all_time_stats():
+        pool = [r for r in players if r["GP"] and (qualifies is None or qualifies(r))]
+        stat = make_stat(label, rank_rows(pool, value_of, fmt, describe))
+        if stat:
+            stats.append(stat)
+
+    careers = nba_careers()
+    # Years run from the first season's start to the last one's end: 1969–1989
+    years = lambda c: career_years(c["first"] - 1, c["last"]) if c else ""
+    roster = {str(r["PLAYER_ID"]): {"name": r["PLAYER_NAME"], "pos": "",
+                                    "years": years(careers.get(str(r["PLAYER_ID"])))}
+              for r in players}
+    teams = {pid: main_team(c["games"]) for pid, c in careers.items()}
+    write_all_time("nba", {None: stats}, roster, teams)
+
+# ------------------------------------------------------------
 # Command line
 # ------------------------------------------------------------
 
 BUILDERS = {"mlb": build_mlb, "nba": build_nba, "nfl": build_nfl}
+ALL_TIME_BUILDERS = {"mlb": build_mlb_all_time, "nba": build_nba_all_time}
 
 
 def parse_years(text):
@@ -566,6 +794,11 @@ def parse_years(text):
 def main(args):
     if len(args) != 2 or args[0] not in BUILDERS:
         sys.exit(__doc__)
+    if args[1] == ALL_TIME:
+        if args[0] not in ALL_TIME_BUILDERS:
+            sys.exit(f"No all-time boards for {args[0]} yet.")
+        ALL_TIME_BUILDERS[args[0]]()
+        return
     for year in parse_years(args[1]):
         try:
             BUILDERS[args[0]](year)

@@ -19,11 +19,39 @@ function escapeHTML(value) {
     })[ch]);
 }
 
+// All-time (career) boards are filed under this "year"
+const ALL_TIME = "all";
+
 // NBA seasons span two years and are stored by the year they end:
 // 2025 is shown as "2024-25"
 function formatSeason(sport, year) {
     if (!year) return "";
+    if (year === ALL_TIME) return "All-time";
     return sport === "nba" ? `${year - 1}-${String(year).slice(-2)}` : String(year);
+}
+
+// A team's league/conference and division that season, short, from
+// data/divisions.json (written by scripts/divisions.py, which mirrors
+// this): { league: "AL", division: "AL East" }, NBA { league: "West",
+// division: "Pacific" }. null when the team isn't in the table.
+function divisionOf(table, sport, team, year) {
+    const sportTable = table?.[sport];
+    if (!sportTable) return null;
+    year = Number(year);
+
+    let division = null;
+    for (const block of sportTable.blocks) {
+        if (block.first <= year && year <= block.last) {
+            division = Object.keys(block.divisions).find(d => block.divisions[d].includes(team)) ?? null;
+        }
+    }
+    for (const move of sportTable.moves || []) {
+        if (move.team === team && move.first <= year && year <= move.last) division = move.division;
+    }
+    if (!division) return null;
+
+    const [league, ...rest] = division.split(" ");
+    return sport === "nba" ? { league, division: rest.join(" ") } : { league, division };
 }
 
 // The data uses "2TM"/"3TM" for players traded mid-season
@@ -137,8 +165,16 @@ const NFL_RATE = {
     "Yards per Reception": [1.875, "catches"]
 };
 
+// All-time NBA rate stats use career minimums (scripts/build_trivia_data.py)
+const NBA_CAREER_MINIMUMS = {
+    "Field Goal %": "2,000 made field goals",
+    "3-Point %": "250 made threes",
+    "Free Throw %": "1,200 made free throws"
+};
+
 // A short note for a rate stat, or "" for a counting stat
 function statQualifier(sport, label, year) {
+    if (year === ALL_TIME) return careerQualifier(sport, label);
     if (sport === "mlb" && MLB_RATE_BATTING.includes(label)) {
         return "Qualified hitters only: 3.1 plate appearances per team game (502 in a full season)";
     }
@@ -155,6 +191,23 @@ function statQualifier(sport, label, year) {
     }
     if (sport === "nba" && label.endsWith("per Game")) {
         return "Qualified players only: the NBA's minimum games played";
+    }
+    return "";
+}
+
+// All-time boards: what counts, and the career minimums for rate stats
+function careerQualifier(sport, label) {
+    if (sport === "mlb") {
+        const minimum = MLB_RATE_BATTING.includes(label) ? "MLB's career minimum plate appearances. "
+            : MLB_RATE_PITCHING.includes(label) ? "MLB's career minimum innings. "
+            : "";
+        return `${minimum}Includes the Negro Leagues (1920-48), which MLB counts as major leagues.`;
+    }
+    if (sport === "nba") {
+        const minimum = NBA_CAREER_MINIMUMS[label] ? `Minimum ${NBA_CAREER_MINIMUMS[label]}. `
+            : label.endsWith("per Game") ? "Minimum 400 games. "
+            : "";
+        return `${minimum}NBA regular seasons (and the BAA before it), not the ABA.`;
     }
     return "";
 }

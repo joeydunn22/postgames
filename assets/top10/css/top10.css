@@ -559,6 +559,60 @@
     to { opacity: 1; transform: none; }
 }
 
+/* Hints: the button above the board, and what they say on blank slots */
+.hint-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 12px;
+    margin-bottom: 10px;
+}
+
+.hint-btn:disabled {
+    color: var(--faint);
+    text-decoration: none;
+    cursor: default;
+}
+
+.hint-btn.voted {
+    text-decoration-style: dashed;
+}
+
+.hint-bar .hint:empty {
+    display: none;
+}
+
+.slot-hint {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.slot-hint-initials {
+    font-size: 18px;
+    color: var(--text);
+    letter-spacing: 0.04em;
+}
+
+.slot-hint.fresh {
+    animation: hint-in 1.2s var(--ease);
+}
+
+@keyframes hint-in {
+    0% { color: var(--accent); opacity: 0; transform: translateX(-6px); }
+    30% { opacity: 1; transform: none; }
+    100% { color: var(--muted); }
+}
+
+.guess-option-years {
+    font-size: 13px;
+    color: var(--faint);
+}
+
 /* End game */
 .end-game {
     display: flex;

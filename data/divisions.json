@@ -1,0 +1,466 @@
+{
+ "_readme": "Leagues and divisions by season, for the game's hints. Written by scripts/divisions.py; edit the tables there.",
+ "mlb": {
+  "leagues": {
+   "AL": "American League",
+   "NL": "National League"
+  },
+  "blocks": [
+   {
+    "first": 1990,
+    "last": 1993,
+    "divisions": {
+     "AL East": [
+      "BAL",
+      "BOS",
+      "CLE",
+      "DET",
+      "MIL",
+      "NYY",
+      "TOR"
+     ],
+     "AL West": [
+      "CAL",
+      "CWS",
+      "KC",
+      "MIN",
+      "OAK",
+      "SEA",
+      "TEX"
+     ],
+     "NL East": [
+      "CHC",
+      "FLA",
+      "MON",
+      "NYM",
+      "PHI",
+      "PIT",
+      "STL"
+     ],
+     "NL West": [
+      "ATL",
+      "CIN",
+      "COL",
+      "HOU",
+      "LA",
+      "SD",
+      "SF"
+     ]
+    }
+   },
+   {
+    "first": 1994,
+    "last": 1997,
+    "divisions": {
+     "AL East": [
+      "BAL",
+      "BOS",
+      "DET",
+      "NYY",
+      "TOR"
+     ],
+     "AL Central": [
+      "CLE",
+      "CWS",
+      "KC",
+      "MIL",
+      "MIN"
+     ],
+     "AL West": [
+      "ANA",
+      "CAL",
+      "OAK",
+      "SEA",
+      "TEX"
+     ],
+     "NL East": [
+      "ATL",
+      "FLA",
+      "MON",
+      "NYM",
+      "PHI"
+     ],
+     "NL Central": [
+      "CHC",
+      "CIN",
+      "HOU",
+      "PIT",
+      "STL"
+     ],
+     "NL West": [
+      "COL",
+      "LA",
+      "SD",
+      "SF"
+     ]
+    }
+   },
+   {
+    "first": 1998,
+    "last": 2012,
+    "divisions": {
+     "AL East": [
+      "BAL",
+      "BOS",
+      "NYY",
+      "TB",
+      "TOR"
+     ],
+     "AL Central": [
+      "CLE",
+      "CWS",
+      "DET",
+      "KC",
+      "MIN"
+     ],
+     "AL West": [
+      "ANA",
+      "LAA",
+      "OAK",
+      "SEA",
+      "TEX"
+     ],
+     "NL East": [
+      "ATL",
+      "FLA",
+      "MIA",
+      "MON",
+      "NYM",
+      "PHI",
+      "WSH"
+     ],
+     "NL Central": [
+      "CHC",
+      "CIN",
+      "HOU",
+      "MIL",
+      "PIT",
+      "STL"
+     ],
+     "NL West": [
+      "AZ",
+      "COL",
+      "LA",
+      "LAD",
+      "SD",
+      "SF"
+     ]
+    }
+   },
+   {
+    "first": 2013,
+    "last": 2100,
+    "divisions": {
+     "AL East": [
+      "BAL",
+      "BOS",
+      "NYY",
+      "TB",
+      "TOR"
+     ],
+     "AL Central": [
+      "CLE",
+      "CWS",
+      "DET",
+      "KC",
+      "MIN"
+     ],
+     "AL West": [
+      "ATH",
+      "HOU",
+      "LAA",
+      "OAK",
+      "SEA",
+      "TEX"
+     ],
+     "NL East": [
+      "ATL",
+      "MIA",
+      "NYM",
+      "PHI",
+      "WSH"
+     ],
+     "NL Central": [
+      "CHC",
+      "CIN",
+      "MIL",
+      "PIT",
+      "STL"
+     ],
+     "NL West": [
+      "AZ",
+      "COL",
+      "LAD",
+      "SD",
+      "SF"
+     ]
+    }
+   }
+  ]
+ },
+ "nfl": {
+  "leagues": {
+   "AFC": "AFC",
+   "NFC": "NFC"
+  },
+  "blocks": [
+   {
+    "first": 1999,
+    "last": 2001,
+    "divisions": {
+     "AFC East": [
+      "BUF",
+      "IND",
+      "MIA",
+      "NE",
+      "NYJ"
+     ],
+     "AFC Central": [
+      "BAL",
+      "CIN",
+      "CLE",
+      "JAX",
+      "PIT",
+      "TEN"
+     ],
+     "AFC West": [
+      "DEN",
+      "KC",
+      "OAK",
+      "SD",
+      "SEA"
+     ],
+     "NFC East": [
+      "ARI",
+      "DAL",
+      "NYG",
+      "PHI",
+      "WAS"
+     ],
+     "NFC Central": [
+      "CHI",
+      "DET",
+      "GB",
+      "MIN",
+      "TB"
+     ],
+     "NFC West": [
+      "ATL",
+      "CAR",
+      "NO",
+      "SF",
+      "STL"
+     ]
+    }
+   },
+   {
+    "first": 2002,
+    "last": 2100,
+    "divisions": {
+     "AFC East": [
+      "BUF",
+      "MIA",
+      "NE",
+      "NYJ"
+     ],
+     "AFC North": [
+      "BAL",
+      "CIN",
+      "CLE",
+      "PIT"
+     ],
+     "AFC South": [
+      "HOU",
+      "IND",
+      "JAX",
+      "TEN"
+     ],
+     "AFC West": [
+      "DEN",
+      "KC",
+      "LAC",
+      "LV",
+      "OAK",
+      "SD"
+     ],
+     "NFC East": [
+      "DAL",
+      "NYG",
+      "PHI",
+      "WAS"
+     ],
+     "NFC North": [
+      "CHI",
+      "DET",
+      "GB",
+      "MIN"
+     ],
+     "NFC South": [
+      "ATL",
+      "CAR",
+      "NO",
+      "TB"
+     ],
+     "NFC West": [
+      "ARI",
+      "LA",
+      "SEA",
+      "SF",
+      "STL"
+     ]
+    }
+   }
+  ]
+ },
+ "nba": {
+  "leagues": {
+   "East": "Eastern Conference",
+   "West": "Western Conference"
+  },
+  "blocks": [
+   {
+    "first": 1980,
+    "last": 2004,
+    "divisions": {
+     "East Atlantic": [
+      "BOS",
+      "MIA",
+      "NJN",
+      "NYK",
+      "ORL",
+      "PHI",
+      "WAS"
+     ],
+     "East Central": [
+      "ATL",
+      "CHH",
+      "CHI",
+      "CLE",
+      "DET",
+      "IND",
+      "MIL",
+      "NOH",
+      "TOR"
+     ],
+     "West Midwest": [
+      "DAL",
+      "DEN",
+      "HOU",
+      "KCK",
+      "MEM",
+      "MIN",
+      "SAC",
+      "SAS",
+      "UTA",
+      "VAN"
+     ],
+     "West Pacific": [
+      "GSW",
+      "LAC",
+      "LAL",
+      "PHX",
+      "POR",
+      "SDC",
+      "SEA"
+     ]
+    }
+   },
+   {
+    "first": 2005,
+    "last": 2100,
+    "divisions": {
+     "East Atlantic": [
+      "BKN",
+      "BOS",
+      "NJN",
+      "NYK",
+      "PHI",
+      "TOR"
+     ],
+     "East Central": [
+      "CHI",
+      "CLE",
+      "DET",
+      "IND",
+      "MIL"
+     ],
+     "East Southeast": [
+      "ATL",
+      "CHA",
+      "MIA",
+      "ORL",
+      "WAS"
+     ],
+     "West Northwest": [
+      "DEN",
+      "MIN",
+      "OKC",
+      "POR",
+      "SEA",
+      "UTA"
+     ],
+     "West Pacific": [
+      "GSW",
+      "LAC",
+      "LAL",
+      "PHX",
+      "SAC"
+     ],
+     "West Southwest": [
+      "DAL",
+      "HOU",
+      "MEM",
+      "NOH",
+      "NOK",
+      "NOP",
+      "SAS"
+     ]
+    }
+   }
+  ],
+  "moves": [
+   {
+    "team": "HOU",
+    "first": 1980,
+    "last": 1980,
+    "division": "East Central"
+   },
+   {
+    "team": "SAS",
+    "first": 1980,
+    "last": 1980,
+    "division": "East Central"
+   },
+   {
+    "team": "CHI",
+    "first": 1980,
+    "last": 1980,
+    "division": "West Midwest"
+   },
+   {
+    "team": "MIL",
+    "first": 1980,
+    "last": 1980,
+    "division": "West Midwest"
+   },
+   {
+    "team": "SAC",
+    "first": 1989,
+    "last": 2004,
+    "division": "West Pacific"
+   },
+   {
+    "team": "CHH",
+    "first": 1990,
+    "last": 1990,
+    "division": "West Midwest"
+   },
+   {
+    "team": "ORL",
+    "first": 1990,
+    "last": 1990,
+    "division": "East Central"
+   }
+  ]
+ }
+}
