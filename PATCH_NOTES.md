@@ -1,11 +1,12 @@
 # Postgames patch notes
 
-What's new in Postgames, newest first. One line per update.
+What's new in Postgames, newest first.
 
-## October 4, 2026
+## October 4, 2026 (v138–v142)
 
-- **v142** Behind the scenes: the nightly stats update now stays switched on through the quiet offseason.
-- **v141** Behind the scenes: the nightly stats update now gets through to NBA.com more reliably.
-- **v140** All-time leaderboards now update every night, so active players' career totals stay current.
-- **v139** NFL all-time boards are here: 18 career stats, from Brady's passing yards to Bruce Smith's sacks.
-- **v138** New: all-time boards for MLB and NBA (name the top 10 career leaders), plus hints in the main game that reveal league, division, team, then initials.
+### New
+- **All-time leaderboards.** Name the top 10 career leaders in MLB, NBA and NFL: career home runs, all-time points, passing yards and more. Pick "All-time" in the Season list.
+- **Hints.** Stuck on a board? Reveal a clue on every blank spot, one step at a time: league, then division, then team, then initials. In a room, everyone votes before a hint is shown.
+
+### Improvements
+- All-time leaderboards refresh nightly, so active players' career totals stay current.
