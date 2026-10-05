@@ -535,13 +535,22 @@ def nba_season(year):
     return f"{year - 1}-{str(year)[-2:]}"
 
 
-def fetch_nba(url):
-    try:
-        request = urllib.request.Request(url, headers=NBA_HEADERS)
-        with urllib.request.urlopen(request, timeout=60) as response:
-            return json.loads(response.read().decode("utf-8"))["resultSet"]
-    finally:
-        time.sleep(0.6)  # stats.nba.com blocks rapid-fire requests
+def fetch_nba(url, tries=4):
+    """stats.nba.com now and then answers with a server error or times
+    out (more often from cloud computers, like the nightly job's), so a
+    failed request is tried again after a growing wait."""
+    for attempt in range(1, tries + 1):
+        try:
+            request = urllib.request.Request(url, headers=NBA_HEADERS)
+            with urllib.request.urlopen(request, timeout=60) as response:
+                return json.loads(response.read().decode("utf-8"))["resultSet"]
+        except Exception as error:
+            if attempt == tries:
+                raise
+            print(f"  ! {error}; trying again ({url.split('Season=')[1].split('&')[0]})")
+            time.sleep(5 * attempt)
+        finally:
+            time.sleep(0.6)  # stats.nba.com blocks rapid-fire requests
 
 
 def nba_team(code):
