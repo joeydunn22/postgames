@@ -745,14 +745,19 @@ def nba_careers():
     """Every player's seasons and games per team, from each season's
     player list: {id: {"first", "last", "games": {team: games}}}, NBA
     years being the season's end. Seasons the source has no list for
-    (the earliest few) are skipped."""
+    (the earliest few) come back empty. Any other failure stops the
+    build, so a bad night never writes boards with missing years; only
+    next season (which may not be listed yet) can fail quietly."""
     careers = {}
-    for year in range(NBA_FIRST_SEASON, datetime.date.today().year + 2):
+    last = datetime.date.today().year + 1
+    for year in range(NBA_FIRST_SEASON, last + 1):
         url = NBA_PLAYERS_API.format(season=nba_season(year)).replace("StatCategory=MIN", "StatCategory=PTS")
         try:
             rows = fetch_nba(url)
         except Exception as error:
-            print(f"  ! no player list for {nba_season(year)}: {error}")
+            if year < last:
+                raise
+            print(f"  ! no player list for {nba_season(year)} yet: {error}")
             continue
         column = {name: i for i, name in enumerate(rows["headers"])}
         for row in rows["rowSet"]:
@@ -969,12 +974,15 @@ def nfl_all_time_players():
     nflverse (gsis) id, else Pro Football Reference id, else name + birth
     date (older rosters have no ids)."""
     rows = []
-    for year in range(NFL_FIRST_SEASON, datetime.date.today().year + 1):
+    this_year = datetime.date.today().year
+    for year in range(NFL_FIRST_SEASON, this_year + 1):
         try:
             rows += [r for r in csv.DictReader(io.StringIO(fetch(NFL_ROSTERS.format(year=year))))
                      if r["full_name"].strip()]
         except Exception as error:
-            print(f"  ! no roster for {year}: {error}")
+            if year < this_year:
+                raise   # stop rather than write a list missing a season
+            print(f"  ! no roster for {year} yet: {error}")
     known = {}   # (name, birth date) -> an id seen for that player
     for r in rows:
         if r["birth_date"] and (r["gsis_id"] or r["pfr_id"]):
@@ -1033,11 +1041,7 @@ def build_nfl_all_time():
 
     stats = []
     for label, page, column, fmt, positions in NFL_CAREER_STATS:
-        try:
-            leaders = wikipedia_leaders(page, column)
-        except Exception as error:
-            print(f"  ! skipped {label}: {error}")
-            continue
+        leaders = wikipedia_leaders(page, column)   # a failure stops the build: never drop a board
         for leader in leaders:
             pid = match_nfl_player(leader, positions, by_name)
             if pid:

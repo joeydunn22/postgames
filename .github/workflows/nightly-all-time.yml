@@ -1,0 +1,67 @@
+# Nightly refresh of the all-time (career) boards, so active players'
+# totals stay current. Runs on GitHub's computers (free for a public
+# repo), rebuilds each sport with scripts/build_trivia_data.py, and
+# commits the data only if something changed. A sport whose source fails
+# is skipped, keeping the previous night's boards (the script never
+# writes a partial build). Run it by hand from the Actions tab, or with
+# `gh workflow run nightly-all-time.yml`.
+
+name: Nightly all-time refresh
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 08:00 UTC: 4 a.m. Eastern in summer, 3 a.m. in winter
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: nightly-all-time
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: MLB
+        id: mlb
+        continue-on-error: true
+        run: python scripts/build_trivia_data.py mlb all
+
+      - name: NBA
+        id: nba
+        continue-on-error: true
+        run: python scripts/build_trivia_data.py nba all
+
+      - name: NFL
+        id: nfl
+        continue-on-error: true
+        run: python scripts/build_trivia_data.py nfl all
+
+      - name: Save changes
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "No changes tonight."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data | nightly all-time refresh"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Report
+        run: |
+          echo "MLB: ${{ steps.mlb.outcome }}"
+          echo "NBA: ${{ steps.nba.outcome }}"
+          echo "NFL: ${{ steps.nfl.outcome }}"
+          if [ "${{ steps.mlb.outcome }}${{ steps.nba.outcome }}${{ steps.nfl.outcome }}" != "successsuccesssuccess" ]; then
+            echo "::warning::At least one sport didn't refresh tonight; its boards are unchanged."
+          fi
