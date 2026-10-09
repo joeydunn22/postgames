@@ -140,19 +140,19 @@ function renderBestHint() {
 // The daily challenge cards: hidden in a room, and say when today's are done
 function renderDailyLink() {
     ui.dailyLinks.classList.toggle("hidden", inRoom());
-    const today = localDateKey();
+    const results = todaysDailyResults();
+    markDailyCard(ui.dailyLinkStatus, results.missing);
+    markDailyCard(ui.shelfLinkStatus, results.shelf);
+}
 
-    const missing = loadDailyDays()[today];
-    if (missing?.done) {
-        const { streak } = dailySummary();
-        ui.dailyLinkStatus.textContent = (missing.solved ? `Solved in ${missing.marks.length}` : "Done for today") +
-            (streak ? ` · ${streak}-day streak` : "");
-    }
-    const shelfDay = loadDailyDays(SHELF_KEY)[today];
-    if (shelfDay?.done) {
-        const { streak } = shelfSummary(loadDailyDays(SHELF_KEY));
-        ui.shelfLinkStatus.textContent = `Scored ${shelfPoints(shelfDay)} today` + (streak ? ` · ${streak}-day streak` : "");
-    }
+// A finished daily's card turns green and shows today's result
+function markDailyCard(statusEl, result) {
+    if (!result) return;
+    const card = statusEl.closest(".daily-link");
+    card.classList.add("done");
+    card.querySelector(".eyebrow").textContent = "✓ Done today";
+    card.querySelector(".daily-link-cta").innerHTML = `Result <span aria-hidden="true">→</span>`;
+    statusEl.textContent = result;
 }
 
 // How the players listed will play

@@ -70,6 +70,26 @@
     transform: translateX(4px);
 }
 
+/* A daily that's done today: green, with the result */
+.feature.done {
+    border-left-color: var(--good);
+    background: linear-gradient(90deg, var(--good-soft), transparent 70%);
+}
+
+.feature.done:hover {
+    background: linear-gradient(90deg, rgba(61, 220, 151, 0.2), transparent 80%);
+}
+
+.feature.done .feature-tag,
+.feature.done .feature-cta {
+    color: var(--good);
+}
+
+.feature.done .feature-desc {
+    font-weight: 600;
+    color: var(--text);
+}
+
 /* Everything else: a quiet list */
 .soon {
     display: flex;

@@ -157,9 +157,15 @@ function hintRows() {
 
 function shareText() {
     const { puzzle, day } = daily;
-    const title = `Postgames Daily #${daily.number} · ${SPORT_LABELS[puzzle.sport]} ${formatSeason(puzzle.sport, puzzle.year)} ${puzzle.stat}`;
     const score = day.solved ? `${day.marks.length}/${DAILY_GUESSES}` : `X/${DAILY_GUESSES}`;
-    return `${title}\n${day.marks.map(m => MARK_EMOJI[m]).join("")} ${score}\n${SHARE_URL}`;
+    return [
+        `Postgames Who's Missing? #${daily.number}`,
+        `${SPORT_LABELS[puzzle.sport]} · ${formatSeason(puzzle.sport, puzzle.year)} · ${puzzle.stat}`,
+        "",
+        `${day.marks.map(m => MARK_EMOJI[m]).join("")}  ${score}`,
+        "",
+        SHARE_URL
+    ].join("\n");
 }
 
 

@@ -1375,6 +1375,22 @@
     white-space: nowrap;
 }
 
+/* Today's is finished: green, with the result */
+.daily-link.done {
+    border-left-color: var(--good);
+    background: linear-gradient(90deg, var(--good-soft), transparent 80%);
+}
+
+.daily-link.done .eyebrow,
+.daily-link.done .daily-link-cta {
+    color: var(--good);
+}
+
+.daily-link.done .hint {
+    font-weight: 600;
+    color: var(--text);
+}
+
 @media (max-width: 480px) {
     .daily-hint {
         grid-template-columns: 1fr;
@@ -1502,6 +1518,47 @@
 
 .shelf-round.done {
     color: var(--muted);
+}
+
+/* Finished: points by round */
+.shelf-breakdown {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.shelf-breakdown-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.shelf-breakdown-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.shelf-breakdown-detail {
+    grid-column: 1;
+}
+
+.shelf-breakdown-points {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.shelf-breakdown-row.full .shelf-breakdown-points {
+    color: var(--good);
 }
 
 .shelf-prompt {

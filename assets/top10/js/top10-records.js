@@ -148,14 +148,12 @@ function dailySummary(days = loadDailyDays(), today = localDateKey()) {
    TOP SHELF
    Saved like the daily above (loadDailyDays / saveDailyDay with these
    keys), one entry per day:
-     { v: 2, number, stage: "season" | "players" | "order" | "value" | "done",
+     { v: 2, number, hidden, stage: "season" | "players" | "order" | "value" | "done",
        seasonGuesses: [years], seasonSolved, playerGuesses: [{ id, hit }],
        order: [ids, your #1 first], orderCorrect: how many in the right spot,
        valueGuess,
        valueTier: "exact" | "close" | "near" | "far", done, at }
-   Points: the season 3/2/1 by try (0 if missed), 1 per top player
-   named, 1 per player put in the right spot, the number 3/2/1/0 by how
-   close. Entries without v: 2 are from an older format and start over.
+   Points: see shelfRoundPoints(). Entries without v: 2 are from an older format and start over.
    ============================================================ */
 
 const SHELF_KEY = "postgames.top10.topshelf";
@@ -164,14 +162,32 @@ const SHELF_SEASON_TRIES = 3;
 const SHELF_PLAYER_MISSES = 3;
 const SHELF_VALUE_POINTS = { exact: 3, close: 2, near: 1, far: 0 };
 
-function shelfPoints(day) {
-    const season = day.seasonSolved ? SHELF_SEASON_TRIES + 1 - day.seasonGuesses.length : 0;
-    const players = (day.playerGuesses || []).filter(g => g.hit).length;
-    return season + players + (day.orderCorrect || 0) + (SHELF_VALUE_POINTS[day.valueTier] ?? 0);
+// Points per round. Season: 3/2/1 by try. Top 3: 1 per name, plus a
+// bonus point for naming them all without a miss, so only a mistake-free
+// day gets the max. Order: 1 per right spot. Number: 3/2/1/0 by closeness.
+function shelfRoundPoints(day, hidden) {
+    const guesses = day.playerGuesses || [];
+    const found = guesses.filter(g => g.hit).length;
+    const clean = found === hidden && guesses.length === hidden;
+    return {
+        season: day.seasonSolved ? SHELF_SEASON_TRIES + 1 - day.seasonGuesses.length : 0,
+        players: found + (clean ? 1 : 0),
+        order: day.orderCorrect || 0,
+        value: SHELF_VALUE_POINTS[day.valueTier] ?? 0
+    };
 }
 
-function shelfMaxPoints(hidden) {
-    return SHELF_SEASON_TRIES + hidden * 2 + SHELF_VALUE_POINTS.exact;
+function shelfRoundMax(hidden) {
+    return { season: SHELF_SEASON_TRIES, players: hidden + 1, order: hidden, value: SHELF_VALUE_POINTS.exact };
+}
+
+// Days saved before `hidden` was kept all hid 3
+function shelfPoints(day) {
+    return Object.values(shelfRoundPoints(day, day.hidden || 3)).reduce((a, b) => a + b, 0);
+}
+
+function shelfMaxPoints(hidden = 3) {
+    return Object.values(shelfRoundMax(hidden)).reduce((a, b) => a + b, 0);
 }
 
 // Played, average and best points, and streaks of days in a row played
@@ -192,5 +208,25 @@ function shelfSummary(days, today = localDateKey()) {
         best,
         streak: previous && daysBetween(previous, today) <= 1 ? run : 0,
         bestStreak
+    };
+}
+
+/* ============================================================
+   TODAY'S DAILIES
+   Whether each daily is done today and a one-line result, for the
+   cards that link to them (home page and the trivia setup screen).
+   null when today's isn't finished.
+   ============================================================ */
+function todaysDailyResults(today = localDateKey()) {
+    const missing = loadDailyDays()[today];
+    const shelf = loadDailyDays(SHELF_KEY)[today];
+    const streak = n => (n > 1 ? ` · ${n}-day streak` : "");
+    return {
+        missing: missing?.done
+            ? (missing.solved ? `Solved in ${missing.marks.length}/${DAILY_GUESSES}` : "Not today") + streak(dailySummary().streak)
+            : null,
+        shelf: shelf?.done && shelf.v === 2
+            ? `Scored ${shelfPoints(shelf)}/${shelfMaxPoints(shelf.hidden || 3)}` + streak(shelfSummary(loadDailyDays(SHELF_KEY)).streak)
+            : null
     };
 }

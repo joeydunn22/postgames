@@ -22,12 +22,16 @@ function escapeHTML(value) {
 // All-time (career) boards are filed under this "year"
 const ALL_TIME = "all";
 
-// NBA seasons span two years and are stored by the year they end:
-// 2025 is shown as "2024-25"
+// NBA and NFL seasons span New Year, so they show both years. NBA is
+// stored by the year it ends (2025 → "2024-25"), NFL by the year it
+// starts (2024 → "2024-25")
 function formatSeason(sport, year) {
     if (!year) return "";
     if (year === ALL_TIME) return "All-time";
-    return sport === "nba" ? `${year - 1}-${String(year).slice(-2)}` : String(year);
+    year = Number(year);
+    if (sport === "nba") return `${year - 1}-${String(year).slice(-2)}`;
+    if (sport === "nfl") return `${year}-${String(year + 1).slice(-2)}`;
+    return String(year);
 }
 
 // A team's league/conference and division that season, short, from

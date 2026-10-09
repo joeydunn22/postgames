@@ -55,8 +55,8 @@ function setTestMode(on) {
     loadToday();
 }
 
-function newDay(number) {
-    return { v: 2, number, stage: "season", seasonGuesses: [], seasonSolved: false, playerGuesses: [],
+function newDay(number, hidden) {
+    return { v: 2, number, hidden, stage: "season", seasonGuesses: [], seasonSolved: false, playerGuesses: [],
              order: [], orderCorrect: 0, valueGuess: null, valueTier: null, done: false, at: Date.now() };
 }
 
@@ -94,7 +94,7 @@ async function loadToday() {
             years: [...new Set(manifest.available
                 .filter(e => e.sport === puzzle.sport && e.year !== ALL_TIME)
                 .map(e => e.year))].sort((a, b) => b - a),
-            day: saved?.v === 2 ? saved : newDay(index + 1)
+            day: saved?.v === 2 ? saved : newDay(index + 1, puzzle.hidden)
         });
     } catch (error) {
         console.error("Couldn't load Top Shelf:", error);
@@ -263,9 +263,22 @@ function shareText() {
         : "❌".repeat(SHELF_SEASON_TRIES);
     const players = marks(day.playerGuesses.map(g => g.hit));
     const order = marks(day.order.map((id, i) => id === hiddenPlayers()[i].id));
-    return `Postgames Top Shelf #${shelf.number} · ${SPORT_LABELS[puzzle.sport]} ${puzzle.stat}\n` +
-        `Season ${season} · Top ${puzzle.hidden} ${players} · Order ${order} · #1 ${TIER_EMOJI[day.valueTier]}\n` +
-        `${shelfPoints(day)}/${shelfMaxPoints(puzzle.hidden)} · ${SHARE_URL}`;
+    const points = shelfRoundPoints(day, puzzle.hidden);
+    const max = shelfRoundMax(puzzle.hidden);
+    const line = (label, result, key) => `${label} ${result}  ${points[key]}/${max[key]}`;
+    // No season in the title: it's the first thing to guess
+    return [
+        `Postgames Top Shelf #${shelf.number}`,
+        `${SPORT_LABELS[puzzle.sport]} · ${puzzle.stat}`,
+        `🏆 ${shelfPoints(day)}/${shelfMaxPoints(puzzle.hidden)}`,
+        "",
+        line("📅 Season", season, "season"),
+        line(`👥 Top ${puzzle.hidden}`, players, "players"),
+        line("🔢 Order", order, "order"),
+        line("🎯 #1's number", TIER_EMOJI[day.valueTier], "value"),
+        "",
+        SHARE_URL
+    ].join("\n");
 }
 
 
@@ -350,7 +363,8 @@ function renderPlayerRound() {
     const season = formatSeason(puzzle.sport, puzzle.year);
     const intro = { seasonRight: "Got it. ", seasonMissed: `It was <strong>${season}</strong>. ` }[shelf.lastAction?.kind] || "";
     ui.playerPrompt.innerHTML = `${intro}Name the top ${puzzle.hidden}, in any order: ${remaining} to go, ` +
-        `${left} ${left === 1 ? "miss" : "misses"} left.`;
+        `${left} ${left === 1 ? "miss" : "misses"} left.` +
+        (playerMisses() === 0 ? ` Get all ${puzzle.hidden} without a miss for a bonus point.` : "");
 
     const last = ["hit", "miss"].includes(shelf.lastAction?.kind) ? shelf.lastAction : null;
     ui.playerFeedback.className = "feedback";
@@ -457,11 +471,28 @@ function renderValueRound() {
 function renderDone() {
     const { day, puzzle, board } = shelf;
     ui.doneTitle.textContent = `${shelfPoints(day)} / ${shelfMaxPoints(puzzle.hidden)}`;
+
+    // One row per round: what happened, and the points it earned
     const season = formatSeason(puzzle.sport, puzzle.year);
-    const seasonPart = day.seasonSolved ? `${season} in ${day.seasonGuesses.length}` : `Missed the season (${season})`;
-    ui.doneSub.textContent = `${seasonPart} · ${foundIds().length} of ${puzzle.hidden} named · ` +
-        `${day.orderCorrect} of ${puzzle.hidden} in order · #1: ${board.players[0].value} ` +
-        `(you said ${day.valueGuess}, ${TIER_LABEL[day.valueTier]})`;
+    const tries = day.seasonGuesses.length;
+    const found = foundIds().length;
+    const misses = playerMisses();
+    const points = shelfRoundPoints(day, puzzle.hidden);
+    const max = shelfRoundMax(puzzle.hidden);
+    const rows = [
+        ["Season", day.seasonSolved ? `${season}, ${tries === 1 ? "first try" : `in ${tries} tries`}` : `Missed: it was ${season}`, "season"],
+        [`Top ${puzzle.hidden}`, found === puzzle.hidden && misses === 0
+            ? `All ${found}, no misses (+1 bonus)`
+            : `${found} of ${puzzle.hidden} named, ${misses} ${misses === 1 ? "miss" : "misses"}`, "players"],
+        ["Order", `${day.orderCorrect} of ${puzzle.hidden} in the right spot`, "order"],
+        ["#1's number", `${board.players[0].value} (you said ${day.valueGuess}, ${TIER_LABEL[day.valueTier]})`, "value"]
+    ];
+    ui.doneSub.innerHTML = rows.map(([label, detail, key]) => `
+        <li class="shelf-breakdown-row ${points[key] === max[key] ? "full" : ""}">
+            <span class="shelf-breakdown-label">${label}</span>
+            <span class="shelf-breakdown-detail">${escapeHTML(detail)}</span>
+            <span class="shelf-breakdown-points">${points[key]}/${max[key]}</span>
+        </li>`).join("");
 
     const summary = shelfSummary(loadDailyDays(storeKey()));
     const tiles = [["Played", summary.played], ["Avg pts", summary.average.toFixed(1)], ["Best", summary.best], ["Streak", summary.streak]];

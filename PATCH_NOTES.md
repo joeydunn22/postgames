@@ -2,6 +2,17 @@
 
 What's new in Postgames, newest first.
 
+## October 9, 2026 (v146)
+
+### New
+- **Done-for-today badges.** Once you finish a daily, its card on the home page and the trivia screen turns green with your result and streak, so you can see at a glance what's left to play.
+
+### Improvements
+- **Top Shelf scoring is tougher at the top.** Name all three without a miss for a bonus point. A perfect score is now 13, and only a day without a single ✗ gets it.
+- Top Shelf's results screen breaks down your points round by round.
+- Shared results are easier to read in the group chat, with each round on its own line.
+- NFL seasons now show both years, like the NBA: "2024-25" instead of "2024".
+
 ## October 4, 2026 (v138–v142)
 
 ### New
